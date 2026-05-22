@@ -139,7 +139,7 @@ meta:
   sources:
     - "FAI Paragliding Commission (CIVL) operational guidelines"
     - "European paragliding XC league weather criteria (CCC/Coupe Icare standards)"
-  review_status: draft
+  maturity: provisional
   notes: |
     Profile uses currently-implemented MetricEnum. L1d extension will add
     thermal_lift_index (m/s), convective_cloud_base_m, wind_shear_vertical,

@@ -121,7 +121,7 @@ meta:
   sources:
     - "International Federation of Mountain Guides Associations (IFMGA) safety guidance"
     - "European Avalanche Warning Services (EAWS) bulletin standards"
-  review_status: draft
+  maturity: provisional
   notes: |
     Profile uses currently-implemented MetricEnum. Once L1d ships, will
     extend with snow_surface_quality, snowpack_stability_class, and

@@ -147,7 +147,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: draft
+  maturity: provisional
   reviewed_by: []
   sources:
     - "Parco Naturale Tre Cime / Drei Zinnen visitor management plan 2024"

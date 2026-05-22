@@ -118,7 +118,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: provisional
+  maturity: provisional
   reviewed_by: []
   sources:
     - "ISA SUP Safety Guidelines 2023"

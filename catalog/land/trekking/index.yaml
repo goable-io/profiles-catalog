@@ -123,7 +123,7 @@ meta:
   sources:
     - "UIAA (International Climbing and Mountaineering Federation) trekking safety guidance"
     - "European hiking federation (ERA) trail rating standards"
-  review_status: draft
+  maturity: provisional
   notes: |
     Profile uses currently-implemented MetricEnum. L1d additions will
     refine: wbgt_c for heat stress (replaces apparent_temp at high

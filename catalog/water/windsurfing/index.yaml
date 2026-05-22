@@ -130,6 +130,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
+  maturity: provisional
   reviewed_by: []
   sources:
     - "International Windsports Association (IWA) safety guidelines"

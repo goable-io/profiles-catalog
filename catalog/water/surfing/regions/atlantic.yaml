@@ -127,7 +127,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: provisional
+  maturity: provisional
   reviewed_by: []
   sources:
     - "Mach et al. 2021, surf resource scoring framework, J. Coastal Research"

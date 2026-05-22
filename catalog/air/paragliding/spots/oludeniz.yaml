@@ -148,7 +148,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: draft
+  maturity: provisional
   reviewed_by: []
   sources:
     - "Ölüdeniz Air Games (annual FAI World Air Games event) site weather criteria"

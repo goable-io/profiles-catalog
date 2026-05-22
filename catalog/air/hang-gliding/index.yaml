@@ -136,7 +136,7 @@ meta:
   sources:
     - "FAI Hang Gliding and Paragliding Commission (CIVL) safety guidance"
     - "USHPA (US Hang Gliding & Paragliding Association) site rating standards (reference baseline)"
-  review_status: draft
+  maturity: provisional
   notes: |
     Profile uses currently-implemented MetricEnum. L1d extension will add
     thermal_lift_index, convective_cloud_base_m, and xc_condition_score

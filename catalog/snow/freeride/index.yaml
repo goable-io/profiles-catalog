@@ -114,7 +114,7 @@ meta:
   sources:
     - "European Avalanche Warning Services (EAWS) bulletin standards"
     - "Federation Internationale de Ski (FIS) freeride safety guidance"
-  review_status: draft
+  maturity: provisional
   notes: |
     Profile uses currently-implemented MetricEnum. L1d additions will
     refine via snow_surface_quality (powder/packed/crust), snow_density

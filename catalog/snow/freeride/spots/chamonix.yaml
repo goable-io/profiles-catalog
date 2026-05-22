@@ -137,7 +137,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: draft
+  maturity: provisional
   reviewed_by: []
   sources:
     - "Météo-France BERA (Bulletin d'estimation du risque d'avalanche) Mont-Blanc massif"

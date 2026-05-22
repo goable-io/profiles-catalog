@@ -131,7 +131,7 @@ meta:
   sources:
     - "UIAA (International Climbing and Mountaineering Federation) safety guidance"
     - "ENSA (École nationale de ski et d'alpinisme) outdoor climbing weather criteria"
-  review_status: draft
+  maturity: provisional
   notes: |
     Profile uses currently-implemented MetricEnum. L1d will add
     lightning_proximity (hard-gated for alpine multipitch),

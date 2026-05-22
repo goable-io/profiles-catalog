@@ -138,7 +138,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: draft
+  maturity: provisional
   reviewed_by: []
   sources:
     - "DHV (Deutscher Hängegleiterverband) alpine site rating standards"

@@ -117,7 +117,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: provisional
+  maturity: provisional
   reviewed_by: []
   sources:
     - "Mendes & Cascão 2023, Nazaré wave amplification, Ocean Engineering"

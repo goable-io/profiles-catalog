@@ -129,10 +129,10 @@ const MetaSchema = z
     reviewed_by: z.array(z.string()).default([]),
     sources: z.array(z.string()).default([]),
     notes: z.string().optional(),
-    review_status: z.enum(["draft", "provisional", "validated", "calibrated"]).optional(),
+    maturity: z.enum(["provisional", "reviewed", "calibrated"]),
     calibration: CalibrationSchema.optional(),
   })
-  .default({ reviewed_by: [], sources: [] })
+  .default({ reviewed_by: [], sources: [], maturity: "provisional" })
 
 const SustainabilitySchema = z
   .object({
@@ -165,10 +165,10 @@ export const ProfileSchema = z.object({
   sustainability: SustainabilitySchema,
   meta: MetaSchema,
 }).refine(
-  (data) => data.meta.review_status !== "calibrated" || data.meta.calibration !== undefined,
+  (data) => data.meta.maturity !== "calibrated" || data.meta.calibration !== undefined,
   {
     message:
-      "meta.review_status='calibrated' requires meta.calibration block (datasetVersion, modelVersion, samples, fitDate). Calibrated status is emitted only by Goable's L3 pipeline, not by external contributors.",
+      "meta.maturity='calibrated' requires meta.calibration block (datasetVersion, modelVersion, samples, fitDate). Calibrated status is emitted only by Goable's L3 pipeline, not by external contributors.",
     path: ["meta", "calibration"],
   },
 )

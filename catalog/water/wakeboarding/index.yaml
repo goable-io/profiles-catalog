@@ -117,6 +117,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
+  maturity: provisional
   reviewed_by: []
   sources:
     - "World Wake Association (WWA) safety guidelines"

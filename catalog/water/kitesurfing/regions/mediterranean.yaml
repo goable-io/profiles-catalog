@@ -134,7 +134,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: provisional
+  maturity: provisional
   reviewed_by: []
   sources:
     - "Papanastasiou et al. 2010, Meltemi wind climatology, Int. J. Climatology"

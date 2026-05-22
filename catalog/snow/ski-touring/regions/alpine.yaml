@@ -121,7 +121,7 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
-  review_status: draft
+  maturity: provisional
   reviewed_by: []
   sources:
     - "Swiss Avalanche Warning Service (SLF) winter touring guidance"
