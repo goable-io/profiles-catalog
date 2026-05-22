@@ -7,7 +7,6 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, '[skip-release]')"
     permissions:
       contents: write
       id-token: write
@@ -27,23 +26,37 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm bundle
-      - name: Bump patch version
+
+      # Source of truth for the published version is npm itself, NOT the
+      # repository's package.json — this avoids race conditions between
+      # the release workflow's commit-back and concurrent PR merges.
+      - name: Compute next patch version
         id: bump
         run: |
-          new_version=$(npm version patch --no-git-tag-version)
-          echo "version=${new_version}" >> "$GITHUB_OUTPUT"
+          set -euo pipefail
+          PKG_NAME=$(node -p "require('./package.json').name")
+          LATEST=$(npm view "$PKG_NAME" version 2>/dev/null || echo "0.0.0")
+          MAJOR=$(echo "$LATEST" | cut -d. -f1)
+          MINOR=$(echo "$LATEST" | cut -d. -f2)
+          PATCH=$(echo "$LATEST" | cut -d. -f3)
+          NEXT="${MAJOR}.${MINOR}.$((PATCH + 1))"
+          echo "Latest on npm: ${LATEST}  →  next: ${NEXT}"
+          npm version "$NEXT" --no-git-tag-version --allow-same-version
+          echo "version=v${NEXT}" >> "$GITHUB_OUTPUT"
+          echo "version_plain=${NEXT}" >> "$GITHUB_OUTPUT"
+
       - name: Publish to npm
         run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Commit + tag version bump
+
+      # Tag-only push (no commit back to main). package.json on main stays
+      # untouched; consumers always read the actual version from npm.
+      - name: Create and push tag
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package.json
-          git commit -m "chore: release ${{ steps.bump.outputs.version }} [skip-release]"
           git tag "${{ steps.bump.outputs.version }}"
-          git push origin main --follow-tags
+          git push origin "${{ steps.bump.outputs.version }}"
+
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.bump.outputs.version }}

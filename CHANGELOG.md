@@ -2,15 +2,31 @@
 
 All notable changes to `@goable-io/profiles-catalog` are documented here.
 Versions follow [Semantic Versioning](https://semver.org/). Each merge to
-`main` triggers a patch bump via `.github/workflows/release.yml`; manual
-entries below cover schema-level changes (minor / major) and notable
-catalog additions.
+`main` triggers a patch release via `.github/workflows/release.yml`. The
+release workflow computes the next version from the latest tag on npm
+(not from `package.json` in the repo), so the version field in this repo
+is intentionally treated as a placeholder — the source of truth is npm.
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## [Unreleased] — lands as 1.0.2
+
+### Fixed
+- Release workflow now derives the next version from `npm view <pkg> version`
+  instead of bumping the repository's `package.json`. The previous design
+  was vulnerable to a race where a release's commit-back to `main` could
+  be skipped (branch protection, concurrent merges, conflicts), causing
+  the next merge to attempt republishing an already-published version.
+  Symptom we hit: PR #2 (the 17 new profiles) merged before the bump from
+  PR #1 had landed on main, and the workflow tried to publish `1.0.1`
+  again — npm rejected with 403. With this change there is no commit-back
+  to main; only a tag is pushed.
 
 ### Added — 17 new profiles (33 → 50)
+
+These profiles were merged in PR #2 but never reached npm because the
+release workflow failed before publish (see Fixed above). They ship in
+1.0.2.
 
 **10 new base profiles:**
 - Land (5): `trail-running`, `mountain-biking`, `road-cycling`, `bouldering`, `canyoning`
