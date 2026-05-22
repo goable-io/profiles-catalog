@@ -1,0 +1,159 @@
+slug: canyoning
+version: "1.0.0"
+category: land
+display_name:
+  en: Canyoning
+  it: Canyoning
+  es: Barranquismo
+  fr: Canyoning
+  de: Canyoning
+description:
+  en: |
+    Descending water-carved canyons by walking, swimming, abseiling, and
+    jumping into pools. Flash-flood risk dominates the safety model:
+    upstream precipitation hours before the descent can cause sudden
+    surges with no surface warning at the canyon entry. Water and air
+    temperature drive comfort (cold-water exposure even in summer);
+    visibility matters for spotting submerged hazards. Most canyon
+    fatalities involve flash floods, so the precipitation gate is
+    deliberately conservative.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: 5,   s: 0.10 }
+      - { x: 12,  s: 0.45 }
+      - { x: 18,  s: 0.85 }
+      - { x: 24,  s: 1.00 }
+      - { x: 30,  s: 0.90 }
+      - { x: 35,  s: 0.65 }
+      - { x: 40,  s: 0.20 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.35
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.45 }
+      - { x: 1.5, s: 0.10 }
+      - { x: 3,   s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 2,  s: 0.00 }
+      - { x: 8,  s: 0.30 }
+      - { x: 14, s: 0.70 }
+      - { x: 18, s: 0.95 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 15, s: 0.90 }
+      - { x: 28, s: 0.50 }
+      - { x: 45, s: 0.05 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.15 }
+      - { x: 1,  s: 0.55 }
+      - { x: 3,  s: 0.90 }
+      - { x: 8,  s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 7,  s: 0.85 }
+      - { x: 10, s: 0.55 }
+
+  - name: visibility_underwater_proxy
+    metric: turbidity_proxy
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 5,  s: 0.85 }
+      - { x: 15, s: 0.50 }
+      - { x: 30, s: 0.10 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 2
+    reason_code: FLASH_FLOOD_RISK
+    description: Active precipitation above 2 mm/h anywhere in the upstream catchment is a hard gate — canyons can surge from wet conditions hours before downstream observation. Canyoning federations universally suspend activity under these forecasts.
+
+  - metric: water_temperature_c
+    condition: lt
+    value: 4
+    reason_code: HYPOTHERMIA_RISK
+    description: Water temperature below 4°C creates rapid hypothermia onset during swimming-and-abseil sequences even in full neoprene.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: 5
+    reason_code: EXIT_HYPOTHERMIA
+    description: Air temperature below 5°C after extended swimming exposure creates secondary hypothermia risk at canyon exit.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: APPROACH_NAVIGATION
+    description: Visibility below 500m on approach trails makes entry-point navigation unsafe; many canyon approaches cross alpine terrain.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Human-powered with zero direct emissions per descent. Equipment
+    footprint (neoprene wetsuit, harness, helmet, ropes, descender)
+    is moderate but neoprene end-of-life is poorly recycled. Carrying
+    capacity sensitivity is high: most commercial canyons (Vajolet,
+    Riolan, Gorges du Verdon, Furco) have strict daily party limits
+    enforced by local regional parks — habitat sensitivity around
+    waterfalls and pool ecosystems is well-documented.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Commission International de Canyon (CIC) safety guidelines"
+    - "AIC (Associazione Italiana Canyoning) descent protocols"
+    - "Saanen et al. 2014, hydrology and flash-flood risk in narrow canyons"
+  notes: |
+    Precipitation has the single highest weight (0.35) and the tightest
+    gate (2 mm/h) of any profile in the catalog — driven by the
+    asymmetric risk profile of flash floods. L1e will add upstream_
+    catchment_precip_24h as a dedicated metric (current curve uses
+    on-site instantaneous rate as a proxy). L1d additions: lightning_
+    proximity_score (hard-gate, slot canyons are death traps in
+    lightning storms).

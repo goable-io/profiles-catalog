@@ -1,0 +1,148 @@
+slug: alpine-skiing
+version: "1.0.0"
+category: snow
+display_name:
+  en: Alpine Skiing (Resort)
+  it: Sci Alpino (Pista)
+  es: Esquí Alpino (Estación)
+  fr: Ski Alpin (Station)
+  de: Alpiner Skilauf
+description:
+  en: |
+    Resort-based downhill skiing on groomed and patrolled pistes. Unlike
+    freeride and ski touring, this profile assumes managed terrain, lift
+    access, and avalanche-controlled slopes — so the dominant scoring
+    factors shift to snow surface quality, visibility for navigating
+    pistes, wind speed (which closes upper lifts), and temperature
+    comfort. Precipitation during sessions is moderately negative for
+    quality but not safety-gated as it is for backcountry sports.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.20 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_quality_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -25, s: 0.80 }
+      - { x: -10, s: 1.00 }
+      - { x: -3,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 4,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts and gondolas at most resorts; on-piste exposure on upper slopes becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200m makes piste navigation unsafe even on marked runs, increasing collision and off-piste-drift risk.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: FROSTBITE_RISK
+    description: Apparent temperature below -28°C creates immediate frostbite risk on exposed skin even with lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    Resort skiing has the highest operational footprint in the snow
+    category: lift electricity (regional grid mix), snowmaking water
+    + energy (now standard at all altitudes <2200m due to climate
+    pressure), grooming fuel (typically diesel; some resorts piloting
+    HVO/electric piste-bashers), and access transport (private car
+    dominates outside Alpine rail-connected resorts). Equipment
+    footprint is high (skis, boots, helmet, layers). Carrying capacity
+    sensitivity is high in peak season — overcrowding drives lift-line
+    queues, on-piste collisions, and ecological pressure on resort-
+    adjacent habitats.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Internationale de Ski (FIS) alpine racing weather standards"
+    - "European resort operators consortium (FANY/Domaines Skiables de France) lift-closure protocols"
+    - "Steiger et al. 2019, climate change vulnerability of Alpine ski resorts"
+  notes: |
+    Resort context inverts several risk priorities vs ski-touring: ski
+    patrol manages avalanche risk on-piste, so precipitation is a quality
+    factor (fresh snow over groomed) rather than a safety gate.
+    snow_quality_proxy via water_temperature_c is a coarse stand-in for
+    snow surface quality; L1d will introduce snow_surface_quality and
+    snow_density_estimate_kg_m3 as direct metrics.

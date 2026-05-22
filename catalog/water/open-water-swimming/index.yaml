@@ -1,0 +1,158 @@
+slug: open-water-swimming
+version: "1.0.0"
+category: water
+display_name:
+  en: Open Water Swimming
+  it: Nuoto in Acque Libere
+  es: Natación en Aguas Abiertas
+  fr: Nage en Eau Libre
+  de: Freiwasserschwimmen
+description:
+  en: |
+    Swimming in lakes, rivers, or sea outside of supervised pools.
+    Includes training, organised events (1.5km-marathon), and triathlon
+    legs. Water temperature is the single dominant factor: FINA and most
+    federations gate marathon swims below 16°C (hypothermia) and above
+    31°C (heat stroke). Sea state, currents, and visibility for boat
+    traffic complete the safety picture. Algal blooms and water quality
+    are emergent risk metrics that current MetricEnum approximates with
+    water_clarity_index and algal_bloom_risk.
+
+dimensions:
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.35
+    curve:
+      - { x: 10, s: 0.00 }
+      - { x: 14, s: 0.20 }
+      - { x: 17, s: 0.60 }
+      - { x: 20, s: 0.90 }
+      - { x: 23, s: 1.00 }
+      - { x: 26, s: 0.95 }
+      - { x: 29, s: 0.55 }
+      - { x: 32, s: 0.15 }
+
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 1.0, s: 0.70 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
+      - { x: 4.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.30 }
+      - { x: 2,  s: 0.80 }
+      - { x: 8,  s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.85 }
+      - { x: 18, s: 0.45 }
+      - { x: 25, s: 0.15 }
+      - { x: 35, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.50 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.70 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 0.85 }
+      - { x: 38, s: 0.45 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+gates:
+  - metric: water_temperature_c
+    condition: lt
+    value: 11
+    reason_code: HYPOTHERMIA_RISK
+    description: Water temperature below 11°C creates rapid hypothermia onset; FINA gates marathon events below 16°C and recreational organised swims below 12-13°C in wetsuits.
+
+  - metric: water_temperature_c
+    condition: gt
+    value: 33
+    reason_code: HEAT_STROKE_RISK
+    description: Water temperature above 33°C eliminates evaporative cooling and creates heat-stroke risk on sustained efforts; FINA caps events at 31°C.
+
+  - metric: wave_height_m
+    condition: gt
+    value: 3
+    reason_code: SEA_STATE_UNSAFE
+    description: Wave height above 3m creates dangerous in-water conditions for non-equipped swimmers and impairs boat-based safety crew coverage.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: BOAT_TRAFFIC_VISIBILITY
+    description: Visibility below 500m makes swimmers invisible to boat traffic at safe stopping distance.
+
+  - metric: algal_bloom_risk
+    condition: gt
+    value: 0.7
+    reason_code: ALGAL_BLOOM
+    description: High cyanobacteria bloom indicator (>0.7) creates skin, GI, and respiratory exposure risk during swimming.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: low
+  notes: |
+    Human-powered with zero direct emissions. Equipment (swimsuit/
+    wetsuit, goggles, cap, optional buoy) is the lowest-footprint of
+    any water sport in the catalog. The activity itself imposes
+    negligible ecological pressure; carrying capacity sensitivity is
+    low except where swimmers must share zones with motorised craft.
+    Event-day organised swims (Lac d'Annecy, Bosporus, Capri-Napoli)
+    require traffic management but no infrastructure impact.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FINA Open Water Swimming temperature and condition rules"
+    - "International Triathlon Union (ITU/World Triathlon) swim leg condition standards"
+    - "WHO Guidelines for Safe Recreational Water Environments — Vol 1 Coastal & Fresh"
+  notes: |
+    water_temperature_c carries the highest single weight (0.35) of any
+    catalog profile — it dominates both safety and comfort. Two-sided
+    gates (lower hypothermia + upper heat-stroke) are unique to open-
+    water swimming. L1e additions already used here: water_clarity_index
+    and algal_bloom_risk. Future refinement: rip_current_proxy as gate
+    for coastal events; tidal_current_speed_kn for tidal-zone swims.

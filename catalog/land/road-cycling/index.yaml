@@ -1,0 +1,150 @@
+slug: road-cycling
+version: "1.0.0"
+category: land
+display_name:
+  en: Road Cycling
+  it: Ciclismo su Strada
+  es: Ciclismo de Ruta
+  fr: Cyclisme sur Route
+  de: Rennradfahren
+description:
+  en: |
+    Road cycling on paved roads, from flat valley spins to high-mountain
+    cols. Crosswind is the most distinctive risk vs other land sports —
+    sustained crosswind above 25 knots makes high-speed descents
+    unmanageable. Wet roads halve braking grip and dramatically increase
+    crash severity; low visibility around traffic is a hard gate. Heat
+    stress profile is similar to trail running given comparable
+    intensity but with more sustained durations (3-6 hour rides).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -5,  s: 0.10 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.95 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 38,  s: 0.15 }
+      - { x: 42,  s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.75 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 5,   s: 0.10 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 8,  s: 0.50 }
+      - { x: 11, s: 0.15 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.80 }
+      - { x: 1.6, s: 0.40 }
+      - { x: 2.0, s: 0.05 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_RAIN_TRAFFIC
+    description: Heavy active rain reduces tyre grip on painted lines and metal covers, halves braking distance, and impairs driver visibility around cyclists.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: GALE_FORCE_WIND
+    description: Sustained wind above 45 knots makes high-speed descents and shoulder-of-road riding unsafe, particularly in crosswind orientations.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: TRAFFIC_VISIBILITY
+    description: Visibility below 500m makes road cyclists invisible to drivers at safe stopping distance.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 42
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 42°C creates immediate heat-illness risk over multi-hour rides.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 38
+  carrying_capacity_sensitivity: low
+  notes: |
+    Human-powered with zero direct emissions per session. Bicycle and
+    consumables (tyres ~3000-5000km, chain ~5000km, cassette/chainrings
+    every 2-3 chains) have material footprint, partly offset by the
+    sport replacing motorised commutes for many practitioners. Roads
+    are shared infrastructure, so carrying capacity sensitivity is low
+    except for iconic cols (Mortirolo, Stelvio, Galibier) where peak-day
+    cyclist counts (>2000) create their own congestion issues.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Union Cycliste Internationale (UCI) road race safety regulations"
+    - "Atkinson & Brunskill 2000, environmental conditions and cycling performance"
+    - "British Cycling commute and group-ride safety guidance"
+  notes: |
+    Wind weighting is higher than trail running because road speeds (30-70
+    km/h on descents) interact dangerously with crosswind, and because
+    sustained headwinds gate long routes. L1d additions: lightning_
+    proximity_score (hard-gate on exposed cols), wbgt_c for sustained
+    heat. L1e: aqi_composite (urban routes and wildfire seasons).

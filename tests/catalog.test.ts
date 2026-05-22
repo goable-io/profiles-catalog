@@ -16,9 +16,9 @@ const collect = async () => {
 }
 
 describe("catalog", () => {
-  it("contains at least the documented 33 profiles", async () => {
+  it("contains at least the documented 50 profiles", async () => {
     const all = await collect()
-    expect(all.length).toBeGreaterThanOrEqual(33)
+    expect(all.length).toBeGreaterThanOrEqual(50)
   })
 
   it("every YAML validates against ProfileSchema", async () => {

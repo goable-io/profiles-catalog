@@ -1,0 +1,149 @@
+slug: climbing-spot-el-chorro
+version: "1.0.0"
+category: land
+extends: climbing
+region: mediterranean
+display_name:
+  en: Climbing — El Chorro
+  it: Arrampicata — El Chorro
+  es: Escalada — El Chorro
+  fr: Escalade — El Chorro
+  de: Klettern — El Chorro
+description:
+  en: |
+    El Chorro (Málaga province, Andalucía) is a year-round sport-climbing
+    destination with limestone and conglomerate cliffs across the Desfiladero
+    de los Gaitanes (Caminito del Rey gorge). 2000+ routes from F4 to F9a
+    on south-, west-, north-, and east-facing aspects, enabling all-season
+    climbing by aspect rotation. The defining condition is temperature: the
+    same crag is unclimbable in July afternoon sun and superb in shaded
+    morning. Wet weather is rare (Mediterranean climate, ~300mm annual
+    rainfall) but post-rain runoff can persist on limestone for 24-48h.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 0.50 }
+      - { x: 6,  s: 0.85 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.95 }
+      - { x: 24, s: 0.70 }
+      - { x: 30, s: 0.35 }
+      - { x: 36, s: 0.10 }
+      - { x: 42, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.25 }
+      - { x: 0.5, s: 0.05 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.85 }
+      - { x: 25, s: 0.45 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 30, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+      - { x: 11, s: 0.25 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.20 }
+      - { x: 0.5, s: 0.55 }
+      - { x: 2,  s: 0.85 }
+      - { x: 5,  s: 1.00 }
+
+  - name: humidity_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 24, s: 0.55 }
+      - { x: 30, s: 0.20 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: WET_LIMESTONE_RUNOFF
+    description: Active precipitation makes El Chorro limestone unsafely slick; post-rain runoff persists on overhanging routes for 24-48h.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT_GORGE
+    description: Apparent temperature above 40°C in the gorge — common July-August at south-facing sectors — makes both climbing and belaying unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: HIGH_WIND_GORGE
+    description: Sustained Levante or Poniente above 45 knots in the Desfiladero creates rope-drag and communication hazards on multipitch routes.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 45
+  carrying_capacity_sensitivity: high
+  notes: |
+    El Chorro experiences peak European climber crowding October-April
+    (climbers escape colder northern climates). Junta de Andalucía
+    introduced access permits for the Desfiladero de los Gaitanes
+    (Caminito del Rey side) to manage traffic; some crags now require
+    booking. Bolting standards and re-bolting maintained by local
+    federation (FAA - Federación Andaluza de Montañismo). Wildlife
+    sensitivities: griffon vulture and Bonelli's eagle nesting closes
+    select crags January-July seasonally.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Andaluza de Montañismo (FAA) El Chorro access and bolting documentation"
+    - "Junta de Andalucía Caminito del Rey management plan"
+    - "Rockfax El Chorro guidebook (Hewitt, 2023) seasonal condition guidance"
+    - "AEMET Málaga climatological records 1981-2020"
+  notes: |
+    Spot overrides vs global climbing: temperature dominant (0.35 weight)
+    because aspect-rotation is the key strategic decision at El Chorro;
+    precipitation gate tightened to 0.5 mm/h (limestone runoff
+    persistence); humidity_proxy via water_temperature_c added to flag
+    August heat-humidity stagnation; year-round season (45 weeks) is the
+    longest of any climbing spot in the catalog.

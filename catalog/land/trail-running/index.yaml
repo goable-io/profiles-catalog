@@ -1,0 +1,147 @@
+slug: trail-running
+version: "1.0.0"
+category: land
+display_name:
+  en: Trail Running
+  it: Trail Running
+  es: Carrera de Montaña
+  fr: Trail
+  de: Trailrunning
+description:
+  en: |
+    Off-road running on unpaved trails ranging from rolling forest paths to
+    technical alpine singletrack. High aerobic intensity makes heat stress
+    the dominant comfort and safety factor: optimal performance window is
+    8-15°C apparent temperature. Wet trail surfaces, low visibility on
+    high-altitude routes, and lightning exposure on exposed ridges are
+    the recurring risks.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.30
+    curve:
+      - { x: -10, s: 0.05 }
+      - { x: 0,   s: 0.40 }
+      - { x: 8,   s: 0.95 }
+      - { x: 12,  s: 1.00 }
+      - { x: 18,  s: 0.90 }
+      - { x: 24,  s: 0.65 }
+      - { x: 30,  s: 0.30 }
+      - { x: 38,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.50 }
+      - { x: 5,   s: 0.20 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.40 }
+      - { x: 3,  s: 0.80 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 22, s: 0.55 }
+      - { x: 32, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 8,  s: 0.50 }
+      - { x: 11, s: 0.15 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: -5, s: 0.30 }
+      - { x: 5,  s: 0.80 }
+      - { x: 15, s: 1.00 }
+      - { x: 25, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m on alpine trails makes route-finding unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain creates dangerous trail conditions, flash-flood risk in gullies, and hypothermia exposure at high intensity.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed ridges creates fall risk at running pace.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 38
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 38°C creates immediate heat-illness risk under sustained aerobic load.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Human-powered with zero direct emissions per session. Footwear is the
+    only equipment with material footprint (~500-800km lifespan per pair).
+    Race events on iconic trails (UTMB-routes, Western States, Lavaredo
+    Ultra) drive concentrated erosion in peak-week windows; the ITRA
+    (International Trail Running Association) carrying-capacity standard
+    recommends per-spot caps.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "International Trail Running Association (ITRA) safety and trail classification guidelines"
+    - "Périard et al. 2015, heat stress and endurance running performance, Compr. Physiol."
+    - "ACSM position stand: exertional heat illness during training and competition (2007)"
+  notes: |
+    Heat-stress weighting is heavier than hiking/trekking because aerobic
+    intensity drives metabolic heat production 4-8x resting. L1d will
+    refine via wbgt_c (replaces apparent_temp_c at high humidity) and
+    lightning_proximity_score (hard-gated above ridge). L1e will add
+    soil_moisture (trail muddiness) and aqi_composite for wildfire smoke.

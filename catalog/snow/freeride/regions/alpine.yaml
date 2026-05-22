@@ -1,0 +1,131 @@
+slug: freeride-alpine
+version: "1.0.0"
+category: snow
+extends: freeride
+region: alpine
+display_name:
+  en: Freeride — Alpine
+  it: Freeride — Alpino
+  es: Freeride — Alpino
+  fr: Freeride — Alpin
+  de: Freeride — Alpin
+description:
+  en: |
+    Alpine freeride covers lift-accessed sidecountry in the Alps,
+    Pyrenees, and Carpathians during the December-April core season.
+    Avalanche risk is the defining hazard and is OUT OF SCOPE for this
+    profile — operators MUST consult the relevant national avalanche
+    bulletin (SLF in Switzerland, LWD in Austria, Meteomont in Italy,
+    ANENA in France). Regional overrides tighten the wind upper bound
+    (alpine ridge exposure), shift optimal temperature colder (altitudes
+    typically 1800-3500m), and raise visibility weight given north-face
+    descent navigation in flat light.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -28, s: 0.00 }
+      - { x: -18, s: 0.50 }
+      - { x: -10, s: 0.95 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.80 }
+      - { x: 4,   s: 0.40 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.80 }
+      - { x: 4,   s: 0.45 }
+      - { x: 8,   s: 0.10 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.25 }
+      - { x: 3,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.50 }
+      - { x: 15, s: 0.85 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m in alpine freeride terrain makes slope-judgment and crevasse identification unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots at ridge altitude makes col access dangerous and accelerates wind-slab formation downwind.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: ACTIVE_HEAVY_SNOWFALL_LOADING
+    description: Heavy active snowfall (>10 mm/h water equivalent) loads slopes acutely; consult the regional avalanche bulletin before any descent.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: high
+  notes: |
+    Alpine freeride depends on resort lift infrastructure (electricity,
+    grooming, snowmaking on lower runs). Equipment footprint is high
+    (skis/board, boots, safety kit, avalanche transceiver, shovel,
+    probe). Carrying capacity sensitivity is high in lift-accessed
+    sidecountry zones (La Grave, Verbier, St. Anton, Chamonix North
+    Face) — concentrated weekend traffic on stability-marginal slopes
+    drives skier-triggered avalanche cycles documented in EAWS data.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Swiss Avalanche Warning Service (SLF) freeride and sidecountry guidance"
+    - "European Avalanche Warning Services (EAWS) bulletin coordination standard"
+    - "ANENA freeride safety protocols"
+    - "Meteomont alpine freeride weather criteria"
+  notes: |
+    Regional overrides vs global freeride: temperature optimum lowered
+    from -3 to -5°C (Alpine altitudes); wind upper threshold tightened
+    from 50 to 42 knots (ridge exposure); precipitation peak shifted
+    to 0.5 mm/h (powder windows) with tighter hard-gate at 10 mm/h
+    (acute loading vs base 12). Visibility weight raised from 0.20 to
+    0.25. Sun weight raised from 0.20 to 0.20 (unchanged but criticality
+    is route-specific in the Alps).
