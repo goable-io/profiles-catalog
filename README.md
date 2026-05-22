@@ -32,23 +32,48 @@ data under **CC BY 4.0**.
 npm install @goable-io/profiles-catalog
 ```
 
-Two consumption paths ship in the same package:
+Four consumption paths ship in the same package:
 
 - **YAML directory** at `node_modules/@goable-io/profiles-catalog/catalog/` —
   original files for tools that walk a directory tree.
-- **Pre-bundled JSON** at `node_modules/@goable-io/profiles-catalog/dist/catalog.json` —
+- **Pre-bundled JSON** at `@goable-io/profiles-catalog/catalog.json` —
   single file, all profiles parsed and merged. Faster startup.
+- **Zod schema + TypeScript types** from the package root — for runtime
+  validation of custom profiles or strong typing in TS projects.
+- **JSON Schema** (Draft 2020-12) at
+  `@goable-io/profiles-catalog/profile.schema.json` — for non-TS
+  consumers (Python `jsonschema`, Go `gojsonschema`, ajv, etc.). Also
+  attached to every GitHub Release.
 
 ## Usage
 
-See `schema/profile.schema.ts` for the canonical structure of a profile, and
-`catalog/<family>/<activity>/index.yaml` for examples.
+### Read the pre-bundled catalog
 
 ```ts
-import catalog from "@goable-io/profiles-catalog/dist/catalog.json"
+import catalog from "@goable-io/profiles-catalog/catalog.json" with { type: "json" }
 console.log(Object.keys(catalog.profiles))
-// → ["kitesurfing", "surfing", "ski-touring", ...]
+// → ["water/kitesurfing/index", "water/surfing/index", "snow/ski-touring/index", ...]
 ```
+
+### Validate a custom profile against the schema
+
+```ts
+import { ProfileSchema, type Profile } from "@goable-io/profiles-catalog"
+
+const myProfile: Profile = ProfileSchema.parse(yourYaml)
+```
+
+### Use the JSON Schema from any language
+
+```py
+import json, jsonschema, yaml
+schema = json.load(open("node_modules/@goable-io/profiles-catalog/dist/profile.schema.json"))
+profile = yaml.safe_load(open("my-profile.yaml"))
+jsonschema.validate(profile, schema)
+```
+
+See `schema/profile.schema.ts` for the canonical Zod definition and
+`catalog/<family>/<activity>/index.yaml` for examples.
 
 ## Contributing
 

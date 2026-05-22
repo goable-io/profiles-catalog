@@ -25,6 +25,21 @@
     "open-data"
   ],
   "type": "module",
+  "main": "./dist/schema/index.js",
+  "types": "./dist/schema/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/schema/index.d.ts",
+      "import": "./dist/schema/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schema/index.d.ts",
+      "import": "./dist/schema/index.js"
+    },
+    "./catalog.json": "./dist/catalog.json",
+    "./profile.schema.json": "./dist/profile.schema.json",
+    "./package.json": "./package.json"
+  },
   "files": [
     "catalog",
     "dist",
@@ -35,9 +50,15 @@
   ],
   "scripts": {
     "validate": "tsx schema/validate.ts",
-    "bundle": "tsx scripts/bundle-for-npm.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "bundle": "tsx scripts/bundle-for-npm.ts && tsx scripts/emit-json-schema.ts",
+    "list-profiles": "tsx scripts/list-profiles.ts",
     "test": "vitest run --passWithNoTests",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm validate && pnpm typecheck && pnpm test && pnpm build && pnpm bundle"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
@@ -45,14 +66,14 @@
     "tsx": "^4.22.0",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8",
-    "yaml": "^2.7.0",
-    "zod": "^4.0.0"
+    "yaml": "^2.7.0"
   },
   "engines": {
     "node": ">=20"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "packageManager": "pnpm@11.2.2+sha512.36e6621fad506178936455e70247b8808ef4ec25797a9f437a93281a020484e2607f6a469a22e982987c3dbb8866e3071514ab10a4a1749e06edcd1ec118436f"
 }

@@ -1,41 +1,33 @@
-# Goable Activity Physics Profiles Catalog
+# Goable Activity Profiles Catalog
 
-This directory holds the **Activity Physics Profiles** consumed by the Goable
-scoring engine. Each profile is a YAML file describing how a single outdoor
-activity is scored: which physical quantities matter, how much each one
-contributes, and which combinations are unsafe.
+This directory holds the **Activity Profiles** that describe how a single
+outdoor activity is scored: which physical quantities matter, how much
+each one contributes, and which combinations are unsafe. Each profile is
+a YAML file validated against [`schema/profile.schema.ts`](../schema/profile.schema.ts).
 
-> **Long-term plan:** this catalog will be extracted into a separate public
-> repository (`goable/profiles`) under **CC BY 4.0**, with community
-> contributions accepted via GitHub Issues and Pull Requests. The scoring
-> engine remains proprietary. See
-> `docs/superpowers/specs/2026-05-20-engine-design.md` § 4.7 for the full
-> open-catalog governance model.
+Open data under **CC BY 4.0**. The Goable scoring engine that consumes
+this catalog is proprietary; the activity definitions are open.
 
 ---
 
 ## Categories
 
-The catalog is organised by activity family. The schema's `category` field
-(`packages/profiles/src/schema.ts`) accepts: `water`, `snow`, `air`, `land`,
-`commercial`. Subdirectories follow:
+The catalog is organised by activity family. The schema's `category`
+field accepts: `water`, `snow`, `air`, `land`, `commercial`.
 
-| Category | Directory | Base profiles | Regional / spot variants | Phase | Status |
-|---|---|---|---|---|---|
-| Water sports | `water/` | 12 (kitesurfing, windsurfing, surfing, SUP, sailing, scuba, snorkeling, wakeboarding, wing-foiling, kayak, jet-ski, boat-excursion) | regional (mediterranean, atlantic), spot (Tarifa) | Phase 1 | Production-ready |
-| Snow sports | `snow/` | 2 (ski-touring, freeride) | regional (ski-touring-alpine), spot (freeride-chamonix) | Phase 4 | Draft (architectural demo) |
-| Air sports | `air/` | 2 (paragliding, hang-gliding) | regional (paragliding-alpine), spot (paragliding-oludeniz) | Phase 4 | Draft (architectural demo) |
-| Land outdoor | `land/` | 2 (trekking, climbing) | regional (trekking-alpine), spot (trekking-dolomites-tre-cime) | Phase 5+ opportunistic | Draft (architectural demo) |
-| Commercial | `commercial/` | (none yet) | — | Out of 5-year scope | Not started |
+| Category | Directory | Base profiles | Regional / spot variants |
+|---|---|---|---|
+| Water sports | `water/` | 12 (kitesurfing, windsurfing, surfing, SUP, sailing, scuba, snorkeling, wakeboarding, wing-foiling, kayak, jet-ski, boat-excursion) | regional (mediterranean, atlantic), spot (Tarifa, Nazaré) |
+| Snow sports | `snow/` | 2 (ski-touring, freeride) | regional (ski-touring-alpine), spot (freeride-chamonix) |
+| Air sports | `air/` | 2 (paragliding, hang-gliding) | regional (paragliding-alpine), spot (paragliding-oludeniz) |
+| Land outdoor | `land/` | 2 (trekking, climbing) | regional (trekking-alpine), spot (trekking-dolomites-tre-cime) |
+| Commercial | `commercial/` | (none yet) | — |
 
-The snow and air profiles in this repository are **architectural
-demonstrations** that the engine handles multi-domain scoring with the
-same YAML structure, schema, and runtime path as water profiles. They use
-the currently-implemented `MetricEnum` and will be refined once L1d and
-L1e (`docs/superpowers/specs/2026-05-20-engine-design.md`) add domain-
-specific metrics: `thermal_lift_index`, `snow_surface_quality`,
-`snowpack_stability_class`, `convective_cloud_base_m`, `aqi_composite`,
-and others.
+The snow, air, and land profiles use the currently-implemented
+`MetricEnum`. Domain-specific metrics (e.g. `thermal_lift_index`,
+`snow_surface_quality`, `aqi_composite`, `freezing_level_m`) are
+declared in the schema and progressively adopted as community
+contributions extend coverage.
 
 ---
 
@@ -46,18 +38,19 @@ catalog/
   <category>/
     <activity-slug>/
       index.yaml              ← canonical global profile
-      regional/               ← optional region-specific overrides (extends: ...)
+      regions/                ← optional region-specific overrides (extends: <base-slug>)
         mediterranean.yaml
         atlantic.yaml
-      spots/                  ← optional spot-specific profiles (Phase 4)
+      spots/                  ← optional spot-specific profiles
         tarifa.yaml
         nazare.yaml
 ```
 
-Each `index.yaml` must validate against `packages/profiles/src/schema.ts`.
-Key required fields: `slug`, `version` (semver), `category`, `display_name`
+Each `index.yaml` must validate against
+[`schema/profile.schema.ts`](../schema/profile.schema.ts). Key required
+fields: `slug`, `version` (semver), `category`, `display_name`
 (per-locale), `dimensions` (weights summing to 1), `gates` (safety
-hard-gates), `verdict_buckets`, optional `sustainability` block.
+hard-gates), `verdict_buckets`, and a `meta` block with a `maturity` tag.
 
 ---
 
@@ -75,9 +68,9 @@ description:
     Free text describing the activity, conditions that favour it, and
     why specific physical quantities matter for safety and quality.
 extends: null                # optional: parent profile slug for inheritance
-region: null                 # optional: mediterranean | atlantic | ... | global
+region: null                 # optional: mediterranean | atlantic | pacific | indian | alpine | global
 
-dimensions:                  # weights MUST sum to 1.0
+dimensions:                  # weights MUST sum to 1.0 (tolerance 0.001)
   - name: <human-readable>
     metric: <from MetricEnum>
     weight: 0.30
@@ -112,49 +105,44 @@ verdict_buckets:
   excellent: [86, 100]
 
 meta:
+  maturity: provisional | reviewed | calibrated
   reviewed_by: ["Name (Affiliation)", ...]
   sources: ["Citation 1", "URL 2", ...]
-  review_status: draft | provisional | validated | calibrated
   notes: |
     Provenance, known limitations, calibration plan.
+  calibration:               # REQUIRED iff maturity == "calibrated"
+    datasetVersion: "outcomes-2026Q4-v3"
+    modelVersion: "L3-isotonic-v1.2"
+    samples: 4200
+    fitDate: "2026-05-22"
 ```
+
+The `calibrated` maturity tag is **reserved**: schema validation
+rejects it without a `meta.calibration` block, and those values are
+emitted only by Goable's L3 outcome-data pipeline. External
+contributors use `provisional` or `reviewed`. See
+[GOVERNANCE.md](../GOVERNANCE.md).
 
 ---
 
-## Contributing a profile (current internal process)
+## Contributing a profile
 
-Until the catalog is extracted to a public repository (planned: Phase 4),
-contributions go through internal review:
+See [CONTRIBUTING.md](../CONTRIBUTING.md). Short version:
 
-1. Branch from `main` (or current working branch)
-2. Create `<category>/<activity-slug>/index.yaml` following the schema above
-3. Ensure `pnpm test --filter @goable-io/profiles` passes (schema + weight-sum)
-4. Open a PR with: profile YAML, references for chosen thresholds, and a
-   short rationale for the curve shapes
-5. Founder review + (where available) domain expert sign-off via the
-   `meta.reviewed_by` list
-
-After Phase 4 extraction the same workflow runs on the public
-`goable/profiles` repository, with PRs accepted from external domain
-experts (kite instructors, certified avalanche professionals, IFMGA
-guides, paragliding examiners, etc.).
+1. Fork, branch from `main`
+2. Add `<category>/<activity-slug>/index.yaml` following the schema
+3. Run `pnpm validate` locally (must pass)
+4. Open a PR using the template — include citations and rationale
+5. Reviewer SLA: 1 week. Merge → automatic patch-version bump + npm publish
 
 ---
 
 ## Why open catalog, closed engine?
 
-This is the most-asked question. Short answer:
-
-- **Physics formulas** (in `@goable-io/physics`) and **profile YAMLs** become
-  the **open standard**. Open earns credibility, attracts contributors,
-  and accelerates catalog coverage — exactly what we want.
-- **Scoring engine, ensemble logic, ML calibration** stay proprietary.
-  These are the actual product moat: the composition of physics + curves
-  + gates into a calibrated score with confidence intervals and a
-  multi-tenant audit log.
-- The YAML alone, without the engine, scores nothing. Anyone can fork
-  the profiles and re-implement scoring; over time the *catalog quality
-  + endorsement network* is the moat, not the data files in isolation.
-
-Full rationale in `docs/superpowers/specs/2026-05-20-engine-design.md`
-§ 4.7 "Open catalog governance".
+- The **YAML profiles** and the **schema** are the open standard. Open
+  earns credibility, attracts domain-expert contributors, and
+  accelerates catalog coverage.
+- The **scoring engine** (ensemble logic, ML calibration, multi-tenant
+  audit log) stays proprietary. The catalog alone, without the engine,
+  scores nothing — anyone can fork the data and re-implement scoring.
+  Over time the *catalog quality + endorsement network* is the moat.
