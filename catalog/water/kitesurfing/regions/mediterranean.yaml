@@ -1,0 +1,147 @@
+slug: kitesurfing-mediterranean
+version: "1.0.0"
+category: water
+extends: kitesurfing
+region: mediterranean
+display_name:
+  en: Kitesurfing — Mediterranean
+  it: Kitesurf — Mediterraneo
+  es: Kitesurf — Mediterráneo
+  fr: Kitesurf — Méditerranée
+  de: Kitesurfen — Mittelmeer
+description:
+  en: |
+    Mediterranean kitesurfing is dominated by thermal winds (Tramontane,
+    Mistral, Meltemi, Maestrale): reliable afternoon breezes in the 12-20 knot
+    range with gust factors of 1.1-1.3x. Waves are short-period (4-7s) and
+    small (0.3-0.8m), rarely exceeding 1.5m even in storm conditions. Flat
+    water and predictable thermals make the Mediterranean ideal for learning
+    and intermediate sessions. Tides are micro-tidal (< 0.4m). The thermal
+    window typically opens 11:00-17:00 local time.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.45
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.20 }
+      - { x: 12, s: 0.65 }
+      - { x: 18, s: 1.00 }
+      - { x: 24, s: 0.80 }
+      - { x: 32, s: 0.30 }
+      - { x: 38, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.35
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 180, to: 270, multiplier: 1.0 }
+        - { from: 90,  to: 180, multiplier: 0.7 }
+        - { from: 0,   to: 90,  multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.75 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 2.0, s: 0.25 }
+      - { x: 3.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 18, s: 0.9 }
+      - { x: 28, s: 1.0 }
+      - { x: 38, s: 0.6 }
+      - { x: 42, s: 0.2 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 18, s: 0.5 }
+      - { x: 22, s: 0.9 }
+      - { x: 26, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: GALE_FORCE_WIND
+    description: Tramontane/Bora above 40 knots is unsafe for kitesurfing.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Mediterranean season typically runs April-October with peak activity
+    in summer. Thermal windows are predictable, reducing energy-intensive
+    return trips. Meltemi in the Aegean extends usable season into October.
+    Sandy beaches and shallow lagoons (e.g., Lefkada, Tarquinia, Leucate)
+    have high sensitivity to concurrent kite density.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: provisional
+  reviewed_by: []
+  sources:
+    - "Papanastasiou et al. 2010, Meltemi wind climatology, Int. J. Climatology"
+    - "Obermann et al. 2018, Mediterranean sea breeze and thermal wind regimes"
+    - "Tramontane climatology, Météo-France coastal observations 1981-2020"
+  notes: |
+    Regional overrides vs global kitesurfing: wind sweet spot lowered from
+    22kn to 18kn (thermal pattern); gust threshold tightened from 1.4 to 1.35;
+    wave curve shifted to favour 0.3m flat water over 0.5m chop; upper gate
+    lowered from 45kn to 40kn. Water temp curve adjusted for warmer Med basin.

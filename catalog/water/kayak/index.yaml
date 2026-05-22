@@ -1,0 +1,131 @@
+slug: kayak
+version: "1.0.0"
+category: water
+display_name:
+  en: Kayaking
+  it: Kayak
+  es: Kayak
+  fr: Kayak
+  de: Kajak-Fahren
+description:
+  en: |
+    Kayaking is most suitable in calm to light wind conditions. Headwind is
+    the critical factor — a kayaker paddling at 3-4 knots is completely
+    stopped by a 20-knot headwind. Wave height affects stability and safety.
+    Precipitation and visibility are important for navigation and thermal safety.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.25
+    curve:
+      - { x: 0, s: 0.90 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.75 }
+      - { x: 15, s: 0.45 }
+      - { x: 18, s: 0.20 }
+      - { x: 22, s: 0.05 }
+      - { x: 25, s: 0.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.80 }
+      - { x: 1.2, s: 0.45 }
+      - { x: 1.8, s: 0.15 }
+      - { x: 2.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.5 }
+      - { x: 5, s: 0.9 }
+      - { x: 10, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.15
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 10, s: 0.2 }
+      - { x: 15, s: 0.6 }
+      - { x: 20, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 2.0, s: 0.90 }
+      - { x: 5.0, s: 0.60 }
+      - { x: 10.0, s: 0.20 }
+      - { x: 15.0, s: 0.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 20
+    reason_code: STRONG_WIND
+    description: Wind above 20 knots is unsafe for sea kayaking — a paddler can be blown offshore.
+
+  - metric: wave_height_m
+    condition: gt
+    value: 2.0
+    reason_code: HIGH_SEAS
+    description: Waves above 2m are unsafe for recreational kayaking.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe for navigation.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: low
+  notes: |
+    Human-powered activity with zero direct emissions per session.
+    Equipment footprint is low (kayak, paddle, PFD, wetsuit) with a long
+    lifespan. Sea kayaks can access very remote and sensitive coastal
+    habitats — carrying capacity sensitivity depends heavily on the
+    specific route and ecosystem (very low in open water, potentially
+    higher near nesting sites or MPAs).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "British Canoe Union (BCU) sea kayaking safety guidelines"
+    - "Schoen & Stano 2002, sea kayaking fatality analysis, Wilderness Medicine"
+  notes: |
+    Provisional profile v1.0. Wind is weighted heavily (0.25) because
+    headwind resistance is exponential — doubling wind speed quadruples
+    the effort required to maintain pace. Water temperature weight (0.10)
+    reflects cold shock risk: immersion in water below 15°C causes
+    involuntary gasping that is a primary cause of kayaking drowning.

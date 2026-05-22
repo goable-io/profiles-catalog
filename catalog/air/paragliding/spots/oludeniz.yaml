@@ -1,0 +1,165 @@
+slug: paragliding-spot-oludeniz
+version: "0.1.0"
+category: air
+extends: paragliding
+region: mediterranean
+display_name:
+  en: Paragliding — Ölüdeniz (Babadağ)
+  it: Parapendio — Ölüdeniz (Babadağ)
+  es: Parapente — Ölüdeniz (Babadağ)
+  fr: Parapente — Ölüdeniz (Babadağ)
+  de: Gleitschirmfliegen — Ölüdeniz (Babadağ)
+description:
+  en: |
+    Ölüdeniz (Turkey) is one of the world's most consistent paragliding
+    sites, with the 1965m Babadağ launch overlooking the Blue Lagoon and
+    the Mediterranean. The site combines coastal soaring (afternoon sea
+    breeze pushes onshore against the mountain face) with classic
+    thermal flying (south-facing sun-exposed slopes). Season runs
+    roughly April-November with peak July-September. Wind direction
+    matters more than at most alpine sites: the upper launch (1700m+)
+    is south-facing and operates with SW-SE on-shore flow; cross-shore
+    or offshore conditions force the lower launches or wash out the
+    site. Daily flights average 1200+ from May-October.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.45 }
+      - { x: 3,  s: 0.80 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 16, s: 0.85 }
+      - { x: 20, s: 0.50 }
+      - { x: 24, s: 0.15 }
+      - { x: 28, s: 0.00 }
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.20
+    modifiers:
+      direction_preference:
+        - { from: 135, to: 225, multiplier: 1.0 }   # S-SW on-shore: ideal Babadağ
+        - { from: 90,  to: 135, multiplier: 0.7 }   # SE: lower launches still flyable
+        - { from: 225, to: 270, multiplier: 0.6 }   # W: marginal, lower launches
+        - { from: 270, to: 360, multiplier: 0.2 }   # NW/N: offshore, washes site out
+        - { from: 0,   to: 90,  multiplier: 0.3 }   # NE/E: marginal
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.15
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.4, s: 0.60 }
+      - { x: 1.6, s: 0.25 }
+      - { x: 1.9, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.60 }
+      - { x: 30, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.40 }
+      - { x: 8,  s: 0.90 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.05
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.30 }
+      - { x: 0.8, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 0,   s: 0.40 }
+      - { x: 12,  s: 0.85 }
+      - { x: 22,  s: 1.00 }
+      - { x: 32,  s: 0.85 }
+      - { x: 42,  s: 0.30 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: HIGH_WIND
+    description: Sustained wind above 28 knots at Babadağ launch makes the site dangerous; many fatal accidents historically associated with marginal launch decisions in strong winds.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.9
+    reason_code: TURBULENT_AIR
+    description: Gust factor above 1.9x at Babadağ indicates rotor risk on the lee side of the ridge; do not launch.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: LOW_VISIBILITY
+    description: Babadağ summit fog is common in shoulder seasons; visibility below 3km makes valley landings dangerous.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.8
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation on the south-facing flank often correlates with downdraft and thunderstorm initiation.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Babadağ tandem operations close at sunset; recreational night flight not permitted on the site.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: medium
+  notes: |
+    The Babadağ access road and launch infrastructure has non-zero
+    operational footprint (van shuttle, summit facilities). Per-flight
+    activity itself is carbon-neutral. Carrying capacity at Babadağ is
+    moderate-to-high in peak season (1200+ daily flights summer); local
+    operators rotate launch windows and the site management imposes
+    queue limits. Ölüdeniz beach below is a national park with seasonal
+    swimming-zone restrictions for landing flexibility; pilots are
+    expected to land in designated zones to avoid disturbing protected
+    coastal biota.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: draft
+  reviewed_by: []
+  sources:
+    - "Ölüdeniz Air Games (annual FAI World Air Games event) site weather criteria"
+    - "Turkish Aeronautical Association (THK) Babadağ site briefing"
+    - "Local tandem operator operational thresholds (Skyrunners, Reaction Tandem 2023)"
+  notes: |
+    Spot overrides vs global paragliding: extended wind sweet spot
+    (6-12kn vs 6-10kn) due to consistent sea-breeze; added strong
+    direction preference (180° = ideal on-shore flow); slightly higher
+    temperature tolerance (Mediterranean climate); visibility floor
+    raised to 3km (summit-to-valley terrain). Site is known for late-
+    afternoon thermal-coastal convergence creating excellent XC
+    potential — captured once L1d's thermal_lift_index and
+    convective_cloud_base_m are wired in.

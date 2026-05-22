@@ -1,0 +1,129 @@
+slug: wakeboarding
+version: "1.0.0"
+category: water
+display_name:
+  en: Wakeboarding
+  it: Wakeboard
+  es: Wakeboard
+  fr: Wakeboard
+  de: Wakeboarden
+description:
+  en: |
+    Wakeboarding requires flat to mildly choppy water and calm wind.
+    The activity takes place behind a motorboat or cable tow system.
+    Ideal in protected bays, lakes, and flat-water coastal areas.
+    Not suitable for open ocean or strong wind conditions.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.2, s: 1.00 }
+      - { x: 0.5, s: 0.70 }
+      - { x: 0.8, s: 0.35 }
+      - { x: 1.0, s: 0.10 }
+      - { x: 1.2, s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.80 }
+      - { x: 15, s: 0.50 }
+      - { x: 18, s: 0.20 }
+      - { x: 22, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.3 }
+      - { x: 20, s: 0.9 }
+      - { x: 28, s: 1.0 }
+      - { x: 38, s: 0.7 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.4 }
+      - { x: 20, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.6 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 1.0
+    reason_code: CHOPPY_WATER
+    description: Waves above 1m make wakeboarding unsafe and impractical.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 20
+    reason_code: HIGH_WIND
+    description: Wind above 20 knots creates surface chop incompatible with wakeboarding.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe for boat operation.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: medium
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Wakeboarding requires a motorboat or cable system — direct CO2 emissions
+    per session are significant (motorboat: ~5-15 kg CO2 per hour of towing).
+    Electric towboats exist and reduce emissions substantially. Equipment
+    footprint is medium (board, bindings, wetsuit, handle and rope).
+    Activity is concentrated in protected flat-water areas; noise and
+    wake disturbance affects other water users and local fauna.
+    Included in the sustainability research dataset for comparative
+    motorized vs. human-powered activity analysis (sustainability_eligible).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "World Wake Association (WWA) safety guidelines"
+    - "Munn et al. 2014, recreational boating environmental impact, Aquatic Conservation"
+  notes: |
+    Provisional profile v1.0. carbon_neutral: false because the activity
+    requires a tow vehicle (motorboat or electric cable system) in all
+    practical deployments. This profile is excluded from the suitability
+    calibration research dataset but included in the sustainability
+    environmental tracking dataset.

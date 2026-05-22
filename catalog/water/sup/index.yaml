@@ -1,0 +1,125 @@
+slug: sup
+version: "1.0.0"
+category: water
+display_name:
+  en: Stand Up Paddleboarding
+  it: Stand Up Paddle
+  es: Paddle Surf
+  fr: Paddle debout
+  de: Stand-Up-Paddeln
+description:
+  en: |
+    SUP requires calm to light wind (0-12 knots) and manageable wave conditions.
+    Strong wind becomes dangerous quickly due to the large board surface area
+    acting as a sail. Suitable for flat water lakes, bays, and gentle coastal
+    conditions.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.80 }
+      - { x: 13, s: 0.50 }
+      - { x: 15, s: 0.20 }
+      - { x: 20, s: 0.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.80 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 1.5, s: 0.20 }
+      - { x: 2.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.15
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.3 }
+      - { x: 18, s: 0.9 }
+      - { x: 28, s: 1.0 }
+      - { x: 38, s: 0.7 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 18, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 15
+    reason_code: STRONG_WIND
+    description: Wind above 15 knots is unsafe for SUP — the board acts as a sail.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Human-powered activity with zero direct emissions per session.
+    Equipment footprint is medium (board, paddle, leash) with a 5-8 year
+    board lifespan. Inflatable SUP boards have a larger footprint during
+    production but a longer lifespan than hard boards. SUP can coexist
+    with other beach users given its low launch-space requirement.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "International Surfing Association (ISA) SUP safety guidelines"
+    - "Moran & Sherker 2009, paddling injury prevention, Wilderness Medicine"
+  notes: |
+    Provisional profile v1.0. The wind gate at 15 knots is strict by design:
+    an off-shore gust above this threshold can carry an inexperienced paddler
+    away from shore rapidly. Operators may raise this gate for experienced/
+    racing sessions via tenant_profile_overrides.

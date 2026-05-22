@@ -1,0 +1,131 @@
+slug: sup-mediterranean
+version: "1.0.0"
+category: water
+extends: sup
+region: mediterranean
+display_name:
+  en: Stand Up Paddleboarding — Mediterranean
+  it: Stand Up Paddle — Mediterraneo
+  es: Paddle Surf — Mediterráneo
+  fr: Paddle debout — Méditerranée
+  de: Stand-Up-Paddeln — Mittelmeer
+description:
+  en: |
+    Mediterranean SUP benefits from calm protected bays, flat-water lagoons,
+    and predictable afternoon thermals. The micro-tidal environment (< 0.4m
+    range) makes shore management easy. Thermal winds follow a daily pattern:
+    calm mornings, building breeze 11:00-17:00, dying at sunset. This makes
+    early morning and evening the safest windows for distance touring. Wind
+    gate relaxed to 18 knots vs global 15 knots, as Mediterranean thermals
+    are more predictable and dissipate before becoming dangerous.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 14, s: 0.65 }
+      - { x: 18, s: 0.25 }
+      - { x: 22, s: 0.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.6, s: 0.80 }
+      - { x: 1.0, s: 0.40 }
+      - { x: 1.5, s: 0.10 }
+      - { x: 2.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.15
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 18, s: 0.9 }
+      - { x: 28, s: 1.0 }
+      - { x: 38, s: 0.7 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 18, s: 0.5 }
+      - { x: 22, s: 0.9 }
+      - { x: 26, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 18
+    reason_code: STRONG_WIND
+    description: Wind above 18 knots is unsafe for SUP in the Mediterranean — thermal surges can develop rapidly.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 38
+  carrying_capacity_sensitivity: low
+  notes: |
+    Mediterranean SUP season is the longest of all board sports (April-October
+    for casual paddlers; year-round in southern Med). Micro-tidal conditions
+    and calm bays allow SUP to coexist with swimming zones and anchored boats.
+    Low carrying capacity impact compared to kite/windsurf.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: provisional
+  reviewed_by: []
+  sources:
+    - "ISA SUP Safety Guidelines 2023"
+    - "Obermann et al. 2018, Mediterranean thermal wind regimes"
+    - "Moran & Sherker 2009, paddling injury prevention"
+  notes: |
+    Regional override vs global SUP: wind gate relaxed from 15kn to 18kn
+    (Mediterranean thermals are predictable and follow daily patterns, making
+    18kn manageable for aware paddlers); water temp curve calibrated for
+    warmer Med basin (14-30°C range vs 5-30°C global).

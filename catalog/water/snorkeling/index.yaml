@@ -1,0 +1,127 @@
+slug: snorkeling
+version: "1.0.0"
+category: water
+display_name:
+  en: Snorkeling
+  it: Snorkeling
+  es: Snorkel
+  fr: Snorkeling
+  de: Schnorcheln
+description:
+  en: |
+    Snorkeling requires calm, clear, shallow water. Small waves and low
+    wind are essential — conditions that make scuba challenging are
+    disqualifying for snorkeling. Warm water and sunlight improve the
+    underwater experience significantly.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.2, s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 0.8, s: 0.50 }
+      - { x: 1.2, s: 0.20 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.3 }
+      - { x: 20, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 15, s: 0.30 }
+      - { x: 20, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.4 }
+      - { x: 22, s: 0.9 }
+      - { x: 30, s: 1.0 }
+      - { x: 40, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 15, s: 0.5 }
+      - { x: 30, s: 0.9 }
+      - { x: 45, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 1.5
+    reason_code: CHOPPY_SEA
+    description: Waves above 1.5m make snorkeling unsafe, especially for beginners.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 15
+    reason_code: HIGH_WIND
+    description: Wind above 15 knots creates surface chop and current that is dangerous for snorkelers.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Human-powered activity with zero direct emissions per session.
+    Equipment footprint is low (mask, snorkel, fins, wetsuit) and very long
+    lasting. Snorkeling concentrates users over shallow reef and seagrass
+    habitats — physical contact with substrate from inexperienced snorkelers
+    is documented to cause damage. Carrying capacity sensitivity is medium
+    and site-specific.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "PADI snorkeling condition guidelines"
+    - "Barker & Roberts 2004, snorkeling impact on coral reefs, Biological Conservation"
+  notes: |
+    Provisional profile v1.0. Sun altitude weight is higher than other profiles
+    (0.10) because sunlight directly affects underwater visibility and the
+    aesthetic experience. Wave threshold gate is strict (1.5m) because
+    snorkelers are at surface level without the buoyancy control of scuba.

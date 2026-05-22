@@ -1,0 +1,128 @@
+slug: scuba
+version: "1.0.0"
+category: water
+display_name:
+  en: Scuba Diving
+  it: Immersione subacquea
+  es: Buceo
+  fr: Plongée sous-marine
+  de: Tauchen
+description:
+  en: |
+    Scuba diving requires calm surface conditions and good visibility.
+    Wave height affects safe entry and exit; rough seas stir up sediment
+    reducing underwater visibility. Water temperature determines wetsuit
+    thickness and thermal safety. Wind affects surface navigation to and
+    from the dive site.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.8, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.0, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 8, s: 0.3 }
+      - { x: 15, s: 0.7 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 8, s: 1.00 }
+      - { x: 15, s: 0.70 }
+      - { x: 20, s: 0.40 }
+      - { x: 25, s: 0.10 }
+      - { x: 30, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 38, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.6 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.5
+    reason_code: HIGH_SEAS
+    description: Wave height above 2.5m makes safe entry and exit from the water dangerous.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe for navigation to dive sites.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces surface visibility and indicates storm conditions.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: low
+  notes: |
+    Human-powered activity with zero direct emissions per session (excluding
+    boat transport to site). Equipment footprint is high (BCD, tank, regulator,
+    wetsuit, fins, mask) but amortised over 10-15 years. Dive sites are fragile
+    ecosystems — carrying capacity sensitivity is low per session but cumulative
+    stress from high visitor volume is a documented concern (coral bleaching,
+    sediment disturbance). Phase 2 will add MPA proximity flagging.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "PADI dive condition guidelines and open water standards"
+    - "Rouabah et al. 2022, coastal diving site assessment, Mediterranean"
+  notes: |
+    Provisional profile v1.0. visibility_km is a proxy for surface conditions;
+    underwater visibility depends on water turbidity (sediment, plankton bloom,
+    runoff) which requires a dedicated metric not yet in Phase 1. Wave height
+    is used as the primary proxy for turbidity at the surface entry point.

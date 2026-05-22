@@ -1,0 +1,140 @@
+slug: kitesurfing
+version: "1.0.0"
+category: water
+display_name:
+  en: Kitesurfing
+  it: Kitesurf
+  es: Kitesurf
+  fr: Kitesurf
+  de: Kitesurfen
+description:
+  en: |
+    Kitesurfing requires sustained side-onshore wind of 12-25 knots,
+    moderate wave conditions, and clear visibility. Strong gusts or
+    onshore wind direction are disqualifying.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.45
+    curve:
+      - { x: 0, s: 0.00 }
+      - { x: 8, s: 0.20 }
+      - { x: 12, s: 0.60 }
+      - { x: 15, s: 0.95 }
+      - { x: 22, s: 1.00 }
+      - { x: 30, s: 0.70 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.4
+        penalty_coefficient: 0.15
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 180, to: 270, multiplier: 1.0 }
+        - { from: 90, to: 180, multiplier: 0.7 }
+        - { from: 0, to: 90, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.80 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 1.5, s: 0.85 }
+      - { x: 2.5, s: 0.55 }
+      - { x: 4.0, s: 0.20 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 18, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: GALE_FORCE_WIND
+    description: Wind above 45 knots is unsafe for kitesurfing.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    Wind-powered activity with zero direct emissions per session.
+    Equipment footprint is high (kite, bar, board, harness, wetsuit) but
+    amortised over 8-12 year lifespan. Beach launches require low-density
+    access zones: max ~8-12 simultaneous kites per 500m of coastline is the
+    IKO-recommended safe density — high carrying capacity sensitivity.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by:
+    - "Marco Rossi (kite instructor, IKO L3, 12 years experience, Sardinia)"
+  sources:
+    - "International Kiteboarding Organization (IKO) condition guidelines"
+    - "Pereira da Silva et al. 2018, Guincho wind study"
+  notes: |
+    Canonical kitesurfing profile v1.0. Tenants may override the wind curve
+    for advanced/professional riders (sweet spot 18-30kn, upper gate raised
+    to 50kn) via tenant_profile_overrides.

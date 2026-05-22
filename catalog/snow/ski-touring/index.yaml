@@ -1,0 +1,131 @@
+slug: ski-touring
+version: "0.1.0"
+category: snow
+display_name:
+  en: Ski Touring
+  it: Sci alpinismo
+  es: Esquí de travesía
+  fr: Ski de randonnée
+  de: Skitourengehen
+description:
+  en: |
+    Ski touring combines uphill ascent and downhill skiing on natural snow,
+    typically in alpine or backcountry terrain. Conditions favour stable
+    snowpack, moderate temperatures (cold enough to preserve snow, not so
+    cold that exposure becomes dangerous), low wind, and good visibility
+    for route-finding. Avalanche risk is the dominant safety factor and
+    REQUIRES consultation of local professional avalanche bulletins —
+    this profile's score is operational guidance only, NEVER a substitute
+    for an avalanche forecast.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -25, s: 0.00 }
+      - { x: -15, s: 0.40 }
+      - { x: -8,  s: 0.85 }
+      - { x: -2,  s: 1.00 }
+      - { x: 2,   s: 0.85 }
+      - { x: 8,   s: 0.40 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 40, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.90 }
+      - { x: 2,   s: 0.55 }
+      - { x: 5,   s: 0.20 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+      - { x: 60, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 500m creates whiteout conditions; route-finding becomes unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 45 knots at altitude makes exposed ridges and cols dangerous.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: EXTREME_COLD
+    description: Apparent temperature below -25°C creates immediate frostbite risk on exposed skin.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: ACTIVE_HEAVY_SNOWFALL
+    description: Heavy active snowfall reduces visibility, loads slopes, and elevates avalanche risk acutely.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Human-powered ascent with zero direct emissions during the activity.
+    Equipment footprint is moderate-to-high (skis + skins + boots + safety
+    kit including transceiver/probe/shovel/airbag). Carrying capacity
+    concerns concentrate on popular routes during high-pressure weekend
+    windows; sensitive habitats include wintering wildlife (chamois,
+    capercaillie, ptarmigan) — route planning should avoid known
+    wildlife wintering zones during low-light periods.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "International Federation of Mountain Guides Associations (IFMGA) safety guidance"
+    - "European Avalanche Warning Services (EAWS) bulletin standards"
+  review_status: draft
+  notes: |
+    Profile uses currently-implemented MetricEnum. Once L1d ships, will
+    extend with snow_surface_quality, snowpack_stability_class, and
+    snow_density_estimate_kg_m3 as additional weighted dimensions and
+    gates. Once L1e ships, will add freezing_level_m and aqi_composite.
+    Avalanche stability proxy (L1d) will provide an advisory tier, NEVER
+    replacing professional avalanche bulletins.

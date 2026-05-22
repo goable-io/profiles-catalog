@@ -1,0 +1,122 @@
+slug: freeride
+version: "0.1.0"
+category: snow
+display_name:
+  en: Freeride Skiing / Snowboarding
+  it: Freeride
+  es: Freeride
+  fr: Freeride
+  de: Freeride
+description:
+  en: |
+    Freeride is off-piste skiing or snowboarding on natural, ungroomed
+    snow, typically in lift-accessed sidecountry or backcountry terrain.
+    Conditions favour fresh snow (powder), stable snowpack, manageable
+    wind (preserves snow quality), good visibility, and full daylight.
+    Like ski touring, avalanche risk is the dominant safety factor and
+    REQUIRES consulting professional avalanche bulletins; this profile's
+    output is operational guidance only.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.00 }
+      - { x: -15, s: 0.50 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 2,   s: 0.75 }
+      - { x: 6,   s: 0.30 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 20, s: 0.55 }
+      - { x: 30, s: 0.15 }
+      - { x: 40, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 5,   s: 0.50 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 10, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.60 }
+      - { x: 25, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 500m makes off-piste navigation unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots at altitude makes ridge access and traverses dangerous.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: ACTIVE_HEAVY_SNOWFALL
+    description: Heavy active snowfall during freeride sessions acutely loads slopes and elevates avalanche risk.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: high
+  notes: |
+    Lift-accessed freeride relies on resort infrastructure with non-zero
+    operational emissions (groomer fuel, lift electricity from regional
+    grid mix). Equipment footprint is high (skis/snowboard, boots, safety
+    kit). Carrying capacity is high-sensitivity because optimal powder
+    windows concentrate users into the same sidecountry zones; user
+    pressure on sensitive wildlife habitats and on snowpack stability
+    (skier-triggered avalanche cycles) is well-documented in alpine
+    research literature.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "European Avalanche Warning Services (EAWS) bulletin standards"
+    - "Federation Internationale de Ski (FIS) freeride safety guidance"
+  review_status: draft
+  notes: |
+    Profile uses currently-implemented MetricEnum. L1d additions will
+    refine via snow_surface_quality (powder/packed/crust), snow_density
+    (favours <100 kg/m³), snowpack_stability_class advisory. L1e adds
+    aqi_composite and freezing_level_m.

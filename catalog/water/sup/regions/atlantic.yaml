@@ -1,0 +1,132 @@
+slug: sup-atlantic
+version: "1.0.0"
+category: water
+extends: sup
+region: atlantic
+display_name:
+  en: Stand Up Paddleboarding — Atlantic
+  it: Stand Up Paddle — Atlantico
+  es: Paddle Surf — Atlántico
+  fr: Paddle debout — Atlantique
+  de: Stand-Up-Paddeln — Atlantik
+description:
+  en: |
+    Atlantic SUP is more demanding than Mediterranean: synoptic winds (10-20kn)
+    are persistent and harder to escape, tidal range is significant (2-4m),
+    and Atlantic swell creates confused chop even in sheltered bays. Wind gate
+    lowered to 12 knots — Atlantic gusts are sustained rather than pulsing,
+    and an off-shore wind in open coastal conditions can carry even experienced
+    paddlers into serious danger. Best conditions: protected estuaries, river
+    mouths, and harbours at slack tide. Flatwater touring in the Algarve,
+    Bretagne coast, and Canary Islands protected bays.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 8,  s: 0.80 }
+      - { x: 12, s: 0.30 }
+      - { x: 15, s: 0.05 }
+      - { x: 18, s: 0.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 0.90 }
+      - { x: 0.5, s: 0.65 }
+      - { x: 0.8, s: 0.30 }
+      - { x: 1.0, s: 0.10 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.15
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 35, s: 0.7 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 5,  s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 16, s: 0.7 }
+      - { x: 20, s: 1.0 }
+      - { x: 26, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 12
+    reason_code: STRONG_WIND
+    description: Wind above 12 knots in open Atlantic conditions is unsafe for SUP — sustained off-shore gusts are life-threatening.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: low
+  notes: |
+    Atlantic SUP season is concentrated (June-September for comfort) but
+    protected estuary and harbour paddling extends the season. Cold water
+    requires thicker wetsuit, increasing material footprint. Atlantic spots
+    see lower SUP density than Mediterranean due to harder conditions.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: provisional
+  reviewed_by: []
+  sources:
+    - "ISA SUP Safety Guidelines 2023"
+    - "Moran & Sherker 2009, paddling injury prevention, Wilderness Medicine"
+    - "RNLI (Royal National Lifeboat Institution) coastal safety guidance 2022"
+  notes: |
+    Regional override vs global SUP: wind gate tightened from 15kn to 12kn
+    (Atlantic sustained winds are far more dangerous than Mediterranean thermals
+    — RNLI data shows SUP incidents concentrate above 12kn in open coastal
+    conditions); wave curve compressed to reflect smaller acceptable swell.

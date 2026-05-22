@@ -1,0 +1,138 @@
+slug: wing-foiling
+version: "1.0.0"
+category: water
+display_name:
+  en: Wing Foiling
+  it: Wing Foil
+  es: Wing Foil
+  fr: Wing Foil
+  de: Wing-Foilen
+description:
+  en: |
+    Wing foiling requires a narrow wind band of 12-22 knots. The hydrofoil
+    lifts the board above the water surface, reducing wave sensitivity
+    compared to kitesurfing but requiring more precise wind control.
+    Gusty conditions are particularly problematic as they cause the wing
+    to surge and destabilise the foil.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0, s: 0.00 }
+      - { x: 8, s: 0.10 }
+      - { x: 12, s: 0.70 }
+      - { x: 15, s: 1.00 }
+      - { x: 20, s: 0.90 }
+      - { x: 25, s: 0.55 }
+      - { x: 30, s: 0.20 }
+      - { x: 35, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.3
+        penalty_coefficient: 0.20
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 0.70 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 1.2, s: 0.90 }
+      - { x: 2.0, s: 0.70 }
+      - { x: 3.0, s: 0.40 }
+      - { x: 5.0, s: 0.10 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 180, to: 270, multiplier: 1.0 }
+        - { from: 90, to: 180, multiplier: 0.7 }
+        - { from: 270, to: 360, multiplier: 0.6 }
+        - { from: 0, to: 90, multiplier: 0.3 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 18, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: GALE_FORCE_WIND
+    description: Wind above 35 knots is unsafe for wing foiling.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    Wind-powered activity with zero direct emissions per session.
+    Equipment footprint is high (wing, foil board, mast, fuselage, front and
+    rear wings, wetsuit, impact vest) and significantly more expensive than
+    kitesurfing. The foil mast requires open water clearance from other
+    users — carrying capacity sensitivity is high as the submerged foil
+    is an invisible hazard to swimmers and other water users.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "International Windfoil Association (IWA) safety guidelines"
+    - "Brizendine et al. 2023, foilboard accident analysis, Journal of Sports Medicine"
+  notes: |
+    Provisional profile v1.0. Wing foiling is a recent discipline (post-2018)
+    with fewer published condition studies than kitesurfing or windsurfing.
+    The wind curve is narrower than both: the wing cannot depower as
+    efficiently as a kite, and the foil amplifies instability in gusty
+    conditions. Expert review from IWA pending.

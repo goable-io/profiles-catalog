@@ -1,0 +1,149 @@
+slug: paragliding
+version: "0.1.0"
+category: air
+display_name:
+  en: Paragliding
+  it: Parapendio
+  es: Parapente
+  fr: Parapente
+  de: Gleitschirmfliegen
+description:
+  en: |
+    Paragliding requires light-to-moderate wind, low gust factor, daylight,
+    good visibility, dry conditions, and thermal activity for soaring or
+    cross-country flights. Excessive wind, strong gusts, precipitation,
+    or low cloud ceilings make flight unsafe. This profile encodes baseline
+    physics with current MetricEnum; once L1d ships, thermal_lift_index,
+    convective_cloud_base_m, and wind_shear_vertical will refine scoring
+    significantly — paragliding's competitive scoring lives in thermal
+    quality, not just wind speed.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.40 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.85 }
+      - { x: 18, s: 0.55 }
+      - { x: 22, s: 0.20 }
+      - { x: 28, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.20
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.4, s: 0.65 }
+      - { x: 1.6, s: 0.30 }
+      - { x: 2.0, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 25, s: 0.95 }
+      - { x: 40, s: 1.00 }
+      - { x: 70, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 2,  s: 0.30 }
+      - { x: 5,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -10, s: 0.20 }
+      - { x: 0,   s: 0.70 }
+      - { x: 12,  s: 1.00 }
+      - { x: 25,  s: 1.00 }
+      - { x: 35,  s: 0.65 }
+      - { x: 42,  s: 0.20 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: HIGH_WIND
+    description: Sustained wind above 28 knots makes paraglider control unsafe; canopy collapse risk rises sharply.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 2.0
+    reason_code: GUSTY_TURBULENT_AIR
+    description: Gust factor above 2.0x indicates turbulent air with severe canopy collapse risk.
+
+  - metric: visibility_km
+    condition: lt
+    value: 2
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 2km violates VFR flight requirements and creates terrain collision risk.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation degrades canopy fabric and dramatically increases stall risk.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Paragliding requires daylight; night operations are not standard recreational practice.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: low
+  notes: |
+    Free-flight paragliding has zero direct emissions per session.
+    Equipment footprint is moderate (canopy with multi-year lifespan,
+    harness, reserve parachute, helmet, varios/GPS). Carrying capacity
+    sensitivity is low — paragliders disperse spatially across thermal
+    columns. Local wildlife considerations include raptor nesting sites
+    during breeding season (March-July in most EU mountain ranges);
+    pilots should respect no-fly zones around known nesting cliffs.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "FAI Paragliding Commission (CIVL) operational guidelines"
+    - "European paragliding XC league weather criteria (CCC/Coupe Icare standards)"
+  review_status: draft
+  notes: |
+    Profile uses currently-implemented MetricEnum. L1d extension will add
+    thermal_lift_index (m/s), convective_cloud_base_m, wind_shear_vertical,
+    and xc_condition_score as dimensions — these are the variables that
+    distinguish a "good thermal day" from a "good wind day", which is the
+    heart of paragliding competitive scoring. L1e adds aqi_composite,
+    twilight_band, and golden_hour_evening for end-of-day soaring windows.

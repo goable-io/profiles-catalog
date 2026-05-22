@@ -1,0 +1,136 @@
+slug: boat-excursion
+version: "1.0.0"
+category: water
+display_name:
+  en: Boat Excursion
+  it: Escursione in barca
+  es: Excursión en barco
+  fr: Excursion en bateau
+  de: Bootsausflug
+description:
+  en: |
+    Boat excursions carry passengers who expect comfort and safety. Wave
+    height and period determine whether passengers experience seasickness
+    or unsafe conditions. Wind below 25 knots is acceptable; sustained
+    swell period matters more than height alone for passenger comfort.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 0.90 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 1.0, s: 0.90 }
+      - { x: 1.8, s: 0.65 }
+      - { x: 2.5, s: 0.35 }
+      - { x: 3.5, s: 0.10 }
+      - { x: 4.5, s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0, s: 0.70 }
+      - { x: 5, s: 0.90 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.90 }
+      - { x: 25, s: 0.65 }
+      - { x: 30, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.50 }
+      - { x: 4, s: 0.60 }
+      - { x: 7, s: 0.80 }
+      - { x: 10, s: 1.00 }
+      - { x: 16, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 3, s: 0.5 }
+      - { x: 5, s: 0.8 }
+      - { x: 10, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.15
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.2 }
+      - { x: 15, s: 0.7 }
+      - { x: 25, s: 1.0 }
+      - { x: 38, s: 0.7 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 2, s: 0.85 }
+      - { x: 5, s: 0.55 }
+      - { x: 10, s: 0.20 }
+      - { x: 15, s: 0.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 4.0
+    reason_code: HEAVY_SEAS
+    description: Waves above 4m are unsafe for passenger boat excursions.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: STRONG_WIND
+    description: Wind above 30 knots makes passenger boat operation unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe for navigation.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Motorised activity with direct emissions per session proportional to
+    vessel size and duration (typical day-trip boat: 15-50 kg CO2 per hour).
+    Equipment footprint is very high (vessel purchase, maintenance, fuel,
+    marina fees). Passenger excursions concentrate visitors at marine
+    attractions — snorkelling stops, cetacean watching routes, and
+    coastal cave visits create localised pressure on sensitive habitats.
+    Excluded from the suitability calibration research dataset.
+    Included in the sustainability environmental tracking dataset to
+    document motorised tourism pressure and seasonal intensity patterns
+    in coastal zones and MPAs.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "International Maritime Organization (IMO) small vessel passenger safety guidelines"
+    - "Hoyt 2001, whale watching industry review, Whale and Dolphin Conservation Society"
+  notes: |
+    Provisional profile v1.0. carbon_neutral: false. Wave period dimension
+    weight (0.10) reflects the documented correlation between short-period
+    swell and passenger seasickness — choppy 1m waves at 4s period cause
+    more discomfort than smooth 2m waves at 12s period. This profile is
+    sustainability_eligible for environmental impact tracking.

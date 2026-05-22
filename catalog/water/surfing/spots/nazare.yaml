@@ -1,0 +1,135 @@
+slug: surfing-spot-nazare
+version: "1.0.0"
+category: water
+extends: surfing-atlantic
+region: atlantic
+display_name:
+  en: Surfing — Nazaré
+  it: Surf — Nazaré
+  es: Surf — Nazaré
+  fr: Surf — Nazaré
+  de: Surfen — Nazaré
+description:
+  en: |
+    Nazaré (Portugal) is home to the world's largest surfed waves, driven by
+    the Nazaré Submarine Canyon — a 5000m-deep, 230km-long trench running from
+    the shelf break to 500m offshore. The canyon focuses and amplifies North
+    Atlantic groundswell, creating waves up to 30m+ at Praia do Norte. This
+    profile targets the expert tow-in and big-wave paddle-out community; the
+    village beach (Praia da Nazaré) scores differently — it has a regular
+    beach break suitable for intermediates when the canyon is not firing.
+    Active during North Atlantic storm season: October-February prime window.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.50
+    curve:
+      - { x: 0.0,  s: 0.00 }
+      - { x: 1.0,  s: 0.10 }
+      - { x: 3.0,  s: 0.50 }
+      - { x: 5.0,  s: 0.85 }
+      - { x: 8.0,  s: 1.00 }
+      - { x: 15.0, s: 1.00 }
+      - { x: 25.0, s: 0.70 }
+      - { x: 30.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.20 }
+      - { x: 12, s: 0.60 }
+      - { x: 16, s: 0.90 }
+      - { x: 18, s: 1.00 }
+      - { x: 24, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.70 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.5 }
+      - { x: 15, s: 0.9 }
+      - { x: 22, s: 1.0 }
+      - { x: 35, s: 0.7 }
+
+gates:
+  - metric: wave_height_m
+    condition: lt
+    value: 3
+    reason_code: INSUFFICIENT_SWELL
+    description: Praia do Norte big-wave spot requires minimum 3m to be worth the paddle/tow-in.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND
+    description: Wind above 35 knots closes the canyon; spray prevents lineup vision and tow-rope control.
+
+  - metric: visibility_km
+    condition: lt
+    value: 2
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 2 km is unsafe at extreme scale — jet-ski rescue requires visual contact.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    Nazaré big-wave season runs October-February. Praia do Norte receives
+    only expert surfers (5-20 per day maximum) due to extreme conditions.
+    However, the village and surrounding area experience extreme tourist
+    pressure during winter swells — thousands of spectators, TV crews, and
+    media teams impact local infrastructure. The municipality has introduced
+    crowd management and beach access protocols during major swell events.
+    Rescue jet-ski operations consume fuel; this is unavoidable for safety
+    at this scale.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: provisional
+  reviewed_by: []
+  sources:
+    - "Mendes & Cascão 2023, Nazaré wave amplification, Ocean Engineering"
+    - "Gama et al. 2014, Submarine canyon influence on wave shoaling, Coastal Engineering"
+    - "WSL Big Wave Tour Nazaré Challenge venue specification 2023"
+    - "Câmara Municipal de Nazaré, crowd management plan 2022"
+  notes: |
+    EXPERT PROFILE — this profile is for big-wave surfing at Praia do Norte
+    only. Scores apply to tow-in and elite paddle-out sessions (3m+ minimum).
+    The intermediate beach break at Praia da Nazaré requires a separate profile.
+    Spot overrides vs surfing-atlantic: wave_height weight 0.50 (dominant),
+    wave_period weight 0.25 (long-period swell required for canyon to function);
+    wave curve shifted dramatically upward (optimal 8-15m); gate inverted:
+    MINIMUM wave gate of 3m (not a maximum) — small surf is not the use case;
+    upper gate at 30m (beyond world record); wind gate tightened to 35kn.

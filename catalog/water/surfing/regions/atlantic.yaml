@@ -1,0 +1,142 @@
+slug: surfing-atlantic
+version: "1.0.0"
+category: water
+extends: surfing
+region: atlantic
+display_name:
+  en: Surfing — Atlantic
+  it: Surf — Atlantico
+  es: Surf — Atlántico
+  fr: Surf — Atlantique
+  de: Surfen — Atlantik
+description:
+  en: |
+    Atlantic surfing is defined by long-period groundswell (10-16s) generated
+    by distant North Atlantic storms. Optimal wave height for recreational
+    surfing is 1.2-2.0m; advanced riders regularly surf 2.5-4.0m. The
+    Nazaré submarine canyon (5000m deep, 500m from shore) amplifies swell
+    to world-record heights. Hossegor, Mundaka, and Peniche host WSL CT
+    events due to consistent bank and reef formation. Cold water (12-18°C)
+    requires 4/3mm to 5/4mm wetsuit year-round north of Portugal.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.35 }
+      - { x: 0.7, s: 0.75 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.8, s: 1.00 }
+      - { x: 2.5, s: 0.90 }
+      - { x: 4.0, s: 0.55 }
+      - { x: 6.0, s: 0.20 }
+      - { x: 8.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.15 }
+      - { x: 8,  s: 0.55 }
+      - { x: 12, s: 0.90 }
+      - { x: 14, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.70 }
+      - { x: 5,  s: 1.00 }
+      - { x: 10, s: 0.80 }
+      - { x: 15, s: 0.50 }
+      - { x: 20, s: 0.20 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 16, s: 0.7 }
+      - { x: 20, s: 1.0 }
+      - { x: 26, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 8
+    reason_code: EXTREME_SURF
+    description: Wave height above 8m is unsafe for recreational Atlantic surfing.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_WIND
+    description: Strong onshore wind above 30 knots creates disorganised, dangerous conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Atlantic surf season is consistent year-round: autumn-winter for large
+    swell (1.5-4m), spring-summer for smaller cleaner waves. Cold water
+    demands more equipment (thick wetsuit, boots, gloves) increasing material
+    footprint. World-class breaks like Nazaré and Mundaka draw international
+    crowds that stress local infrastructure; surf tourism is the primary
+    economic driver in several Atlantic coastal towns.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: provisional
+  reviewed_by: []
+  sources:
+    - "Mach et al. 2021, surf resource scoring framework, J. Coastal Research"
+    - "Scarfe et al. 2009, research-based surfing literature review"
+    - "Mendes & Cascão 2023, Nazaré wave amplification, Ocean Engineering"
+    - "WSL Championship Tour venue scoring criteria 2023"
+  notes: |
+    Regional overrides vs global surfing: wave_height optimal shifted to 1.8m
+    (vs 1.2m global, reflecting Atlantic groundswell norms); wave_period weight
+    increased from 0.15 to 0.20 (balanced by wave_height reduction 0.45→0.40)
+    to emphasise long-period swell quality; wave gate raised from 6m to 8m for
+    advanced Atlantic conditions; water temp curve calibrated for colder Atlantic.

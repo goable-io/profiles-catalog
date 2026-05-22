@@ -1,0 +1,152 @@
+slug: trekking-alpine
+version: "0.1.0"
+category: land
+extends: trekking
+region: alpine
+display_name:
+  en: Trekking — Alpine
+  it: Trekking — Alpino
+  es: Senderismo — Alpino
+  fr: Randonnée — Alpine
+  de: Wandern — Alpin
+description:
+  en: |
+    Alpine trekking covers high-mountain hiking above ~1500m elevation
+    across the Alps, Pyrenees, Carpathians, and Caucasus. Conditions
+    differ from generic trekking: cooler optimal temperatures (lapse rate
+    reduces summit temps by 6-9°C per 1000m vs valley), stronger winds on
+    ridges, rapid weather changes typical of orographic convection,
+    lightning risk peaking in afternoon thunderstorms (esp. June-August),
+    and snow possible year-round above 2500m. Earlier morning starts are
+    strongly preferred; afternoon thunderstorm risk is a defining feature
+    of alpine summer trekking weather.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -15, s: 0.05 }
+      - { x: -5,  s: 0.40 }
+      - { x: 5,   s: 0.85 }
+      - { x: 14,  s: 1.00 }
+      - { x: 22,  s: 0.85 }
+      - { x: 30,  s: 0.40 }
+      - { x: 38,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 4,   s: 0.10 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 35, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 1.00 }
+      - { x: 7,  s: 0.80 }
+      - { x: 10, s: 0.50 }
+      - { x: 13, s: 0.20 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 300m in alpine terrain creates immediate route-finding hazard; high-altitude rescue often impossible.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_PRECIPITATION_ALPINE
+    description: Heavy active precipitation in alpine terrain triggers flash floods in gullies and rapidly degrades trail surface.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 50 knots at alpine altitude makes ridge traverses and exposed sections dangerous.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: EXTREME_COLD_ALPINE
+    description: Apparent temperature below -20°C in alpine terrain creates immediate frostbite risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Alpine trekking is human-powered with zero direct emissions, but
+    high-use trails (Tour du Mont Blanc, Haute Route, Dolomiti Alta Via)
+    show measurable trail erosion, with mountain hut operations adding
+    indirect emissions (helicopter resupply in some valleys). Carrying
+    capacity sensitivity is high on iconic routes during the short June-
+    September window; permit systems are increasingly common (e.g., GR20
+    Corsica) and Goable can surface these as informational alerts in
+    spot profiles. Wildlife disturbance peaks in summer when alpine
+    mammals (chamois, ibex, marmot) are most active.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: draft
+  reviewed_by: []
+  sources:
+    - "UIAA Alpine Skill Set technical standards"
+    - "MeteoSwiss alpine weather classification (typical orographic convection patterns)"
+    - "European Avalanche Warning Services (EAWS) shoulder-season trekking guidance"
+  notes: |
+    Regional overrides vs global trekking: temperature sweet spot lowered
+    from 18°C to 14°C (lapse rate to summit altitude); visibility weight
+    raised from 0.15 to 0.20 (route-finding criticality); wind gate
+    lowered from 50kn to 50kn but with steeper degradation curve; added
+    explicit ALPINE_WHITEOUT gate with stricter visibility floor.
+    Afternoon-thunderstorm bias is the most-requested L1d enhancement:
+    once lightning_proximity_score is wired in, this profile gains a
+    time-of-day-aware penalty rising sharply post-13:00 local during
+    June-August.

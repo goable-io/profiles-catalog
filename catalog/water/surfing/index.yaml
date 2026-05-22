@@ -1,0 +1,131 @@
+slug: surfing
+version: "1.0.0"
+category: water
+display_name:
+  en: Surfing
+  it: Surf
+  es: Surf
+  fr: Surf
+  de: Surfen
+description:
+  en: |
+    Surfing is primarily wave-driven. Clean groundswell (long period, 0.5-2.5m)
+    with light offshore or cross-shore wind is optimal. Onshore wind creates
+    choppy, disorganised waves. Tide data will refine scoring in Phase 2.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.45
+    curve:
+      - { x: 0.0, s: 0.20 }
+      - { x: 0.3, s: 0.60 }
+      - { x: 0.7, s: 0.95 }
+      - { x: 1.2, s: 1.00 }
+      - { x: 2.0, s: 0.90 }
+      - { x: 3.0, s: 0.60 }
+      - { x: 5.0, s: 0.20 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.00 }
+      - { x: 4, s: 0.20 }
+      - { x: 7, s: 0.60 }
+      - { x: 10, s: 0.90 }
+      - { x: 12, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.80 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.80 }
+      - { x: 15, s: 0.55 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 18, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 6
+    reason_code: EXTREME_SURF
+    description: Wave height above 6m is unsafe for recreational surfing.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_WIND
+    description: Strong onshore wind above 30 knots creates disorganised, dangerous conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Human and wave-powered activity with zero direct emissions per session.
+    Equipment footprint is medium (surfboard, leash, wetsuit) with a
+    3-7 year board lifespan. Breaks concentrate surfers in a small zone
+    (the lineup); overcrowding is a real risk at popular spots but less
+    spatial than kite/windsurf. Longboard and shortboard sessions have
+    different optimal conditions — this profile targets shortboard/mid-length.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "International Surfing Association (ISA) wave classification guidelines"
+    - "Butt, T. & Russell, P. (2002) Surf Science, University of Hawaii Press"
+    - "Mach et al. 2021, surf resource scoring framework, Journal of Coastal Research"
+  notes: |
+    Provisional profile v1.0. Tide data (phase and height) will be added in
+    Phase 2 to improve low-tide sandbar and reef break differentiation.
+    Expert review pending.

@@ -1,0 +1,133 @@
+slug: trekking
+version: "0.1.0"
+category: land
+display_name:
+  en: Trekking
+  it: Trekking
+  es: Senderismo
+  fr: Randonnée
+  de: Wandern
+description:
+  en: |
+    Trekking covers day hikes and multi-day backpacking on established
+    trails. Conditions favour moderate temperatures, dry trails, low wind,
+    and good visibility for navigation. Lightning risk and active heavy
+    precipitation are hard gates. Profile uses currently-implemented
+    MetricEnum; L1d (WBGT for heat stress, lightning_proximity, precip
+    forms) and L1e (soil_moisture, trail_surface, freezing_level for
+    high-altitude treks) will refine scoring once those layers ship.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m makes off-trail navigation unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain creates slippery trails, flash-flood risk in canyons, and hypothermia exposure.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed ridges creates fall risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Human-powered activity with zero direct emissions per session.
+    Equipment footprint is low (boots with multi-year lifespan, pack,
+    layers). Carrying capacity sensitivity is medium and route-specific —
+    iconic trails (Tour du Mont Blanc, Cinque Terre, Cammino di Santiago)
+    experience peak-season overcrowding that drives trail erosion and
+    wildlife disturbance. Carrying capacity gates should be applied per
+    spot profile rather than at the global level.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "UIAA (International Climbing and Mountaineering Federation) trekking safety guidance"
+    - "European hiking federation (ERA) trail rating standards"
+  review_status: draft
+  notes: |
+    Profile uses currently-implemented MetricEnum. L1d additions will
+    refine: wbgt_c for heat stress (replaces apparent_temp at high
+    humidity), lightning_proximity_score (hard-gated), precipitation_form
+    (distinguishes rain/sleet/snow impact). L1e additions: soil_moisture
+    for trail muddiness, trail_surface_state, freezing_level_m for
+    high-altitude routes, aqi_composite for wildfire-affected regions.

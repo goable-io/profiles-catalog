@@ -1,0 +1,155 @@
+slug: freeride-spot-chamonix
+version: "0.1.0"
+category: snow
+extends: freeride
+region: alpine
+display_name:
+  en: Freeride — Chamonix (Mont Blanc)
+  it: Freeride — Chamonix (Monte Bianco)
+  es: Freeride — Chamonix (Mont Blanc)
+  fr: Freeride — Chamonix (Mont Blanc)
+  de: Freeride — Chamonix (Mont-Blanc)
+description:
+  en: |
+    Chamonix-Mont-Blanc (France) is arguably the world's most iconic
+    freeride destination: lift-accessed off-piste from Aiguille du Midi
+    (3842m) into the Mer de Glace and the Vallée Blanche, plus sector
+    classics at Grands Montets, Brévent-Flégère, and Les Houches. The
+    valley sits in the cross-roads of Atlantic moisture (snow-rich
+    westerly storms) and Mediterranean influence (occasional warm
+    inversions). Conditions favour cold-after-storm windows with high
+    pressure following westerly fronts; the most dangerous moments are
+    warm-up cycles in February-March when sun-affected slopes shed
+    avalanche cycles. The Vallée Blanche descent specifically requires
+    glacier-travel competence; this profile is for the resort-accessed
+    sectors, not the alpine glacier descents.
+
+  it: |
+    Chamonix-Mont-Blanc (Francia) è probabilmente la destinazione
+    freeride più iconica al mondo: fuoripista accessibile da impianti
+    dall'Aiguille du Midi (3842m) verso la Mer de Glace e la Vallée
+    Blanche, più i settori classici di Grands Montets, Brévent-Flégère
+    e Les Houches. Il profilo qui descritto è per i settori accessibili
+    in resort, non per le discese su ghiacciaio che richiedono
+    competenze alpinistiche specifiche.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -28, s: 0.10 }
+      - { x: -18, s: 0.55 }
+      - { x: -10, s: 0.95 }
+      - { x: -4,  s: 1.00 }
+      - { x: 0,   s: 0.70 }
+      - { x: 4,   s: 0.25 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.95 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 1.5, s: 0.85 }
+      - { x: 4,   s: 0.40 }
+      - { x: 8,   s: 0.05 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.50 }
+      - { x: 15, s: 0.85 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m on the Chamonix high-altitude lifts (Aiguille du Midi, Grands Montets) makes off-piste route-finding unsafe; lifts may close at this threshold anyway.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: HIGH_WIND_CABLES_AND_RIDGE
+    description: Sustained wind above 45 knots typically forces Aiguille du Midi cable car closure and creates dangerous loading on Vallée-Blanche-bound itineraries.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: ACUTE_AVALANCHE_LOADING
+    description: Heavy active snowfall on Chamonix slopes creates immediate slab-formation cycles; check Météo-France BERA bulletin and consider postponing off-piste descents.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD_HIGH_ALPINE
+    description: Apparent temperature below -28°C at Aiguille du Midi altitude creates immediate frostbite risk and equipment-failure window.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Chamonix freeride is lift-accessed, with lift operations powered by
+    a mixed grid (~75% nuclear + hydro in French electricity mix). Cable
+    car and gondola fuel/electricity costs distribute to per-skier
+    emissions at non-zero levels. Carrying capacity is HIGH-sensitivity:
+    iconic itineraries (Vallée Blanche, Pas de Chèvre) see hundreds of
+    skiers per day during powder windows, creating measurable snowpack
+    impact and increasing skier-triggered avalanche risk in shared
+    descent zones. The valley is in scope for upcoming CSRD reporting
+    by the Compagnie du Mont-Blanc operator; Goable data could be
+    referenced for operational decisions on lift closures during high-
+    pressure overuse windows.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: draft
+  reviewed_by: []
+  sources:
+    - "Météo-France BERA (Bulletin d'estimation du risque d'avalanche) Mont-Blanc massif"
+    - "Compagnie du Mont-Blanc operational wind closure thresholds"
+    - "Henry's Avalanche Talk (HAT) Chamonix winter education guidance"
+    - "ENSA (École nationale de ski et d'alpinisme) freeride safety curriculum"
+  notes: |
+    Spot overrides vs freeride-alpine baseline: visibility weight raised
+    to 0.25 (lift accessibility depends on visibility); wind upper gate
+    set to 45kn (matches Aiguille du Midi cable car operational
+    threshold); precipitation sweet spot peaks at 0.3 mm/h (just-snowed
+    powder windows are best) rather than 0.5; explicit ACUTE_AVALANCHE_
+    LOADING gate at 8 mm/h. Operators using this profile MUST cross-
+    reference the daily Météo-France BERA bulletin; this profile
+    NEVER replaces a professional avalanche bulletin.

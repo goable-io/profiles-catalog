@@ -1,0 +1,139 @@
+slug: ski-touring-alpine
+version: "0.1.0"
+category: snow
+extends: ski-touring
+region: alpine
+display_name:
+  en: Ski Touring — Alpine
+  it: Sci alpinismo — Alpino
+  es: Esquí de travesía — Alpino
+  fr: Ski de randonnée — Alpin
+  de: Skitourengehen — Alpin
+description:
+  en: |
+    Alpine ski touring covers the Alps, Pyrenees, and Carpathians in the
+    November-May window. The defining safety variable is avalanche risk,
+    which this profile CANNOT compute — operators MUST consult the
+    relevant national avalanche service (SLF in Switzerland, LWD Tirol /
+    LWD Salzburg in Austria, Meteomont in Italy, ANENA in France).
+    Compared to the global base profile, this regional variant tightens
+    visibility and wind gates due to typically more exposed terrain, and
+    expects colder optimal temperatures driven by altitude (most touring
+    above 2000m).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -28, s: 0.00 }
+      - { x: -18, s: 0.45 }
+      - { x: -10, s: 0.90 }
+      - { x: -4,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 5,   s: 0.35 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m in alpine ski touring terrain makes route-finding and slope-judgment unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots at ridge altitude makes col crossings and exposed ridges dangerous; wind slab formation accelerates.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD_ALPINE
+    description: Apparent temperature below -28°C creates immediate frostbite risk; equipment (skins, bindings) malfunction risk rises sharply.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall (>8 mm/h water equivalent) loads slopes acutely and elevates avalanche danger; consult national avalanche bulletin.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Alpine ski touring is human-powered with zero direct session
+    emissions. Equipment footprint is moderate (touring skis + skins +
+    boots + safety kit). Sensitive concerns: wildlife wintering zones
+    (chamois, capercaillie, black grouse) along corridor routes;
+    avalanche victim recovery operations have helicopter-fuel footprint
+    that is excluded from per-session accounting but should be
+    acknowledged in operator reporting.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: draft
+  reviewed_by: []
+  sources:
+    - "Swiss Avalanche Warning Service (SLF) winter touring guidance"
+    - "Austrian Avalanche Warning Service (LWD) regional bulletin standards"
+    - "ANENA (France) ski touring weather criteria"
+    - "Meteomont (Italy) winter mountain bulletin format"
+  notes: |
+    Regional overrides vs global ski-touring: optimal apparent temp
+    lowered from -2 to -4°C (typical alpine altitudes); wind upper
+    threshold reduced to 42 knots (exposed terrain); visibility weight
+    raised from 0.20 to 0.25 (route-finding criticality on cold-smoke
+    descents); precipitation gate tightened from 10 to 8 mm/h (acute
+    avalanche loading). Critical caveat in description: avalanche safety
+    is OUT OF SCOPE for this engine; operators must consult national
+    bulletins.

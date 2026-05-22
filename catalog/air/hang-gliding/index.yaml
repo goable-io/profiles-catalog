@@ -1,0 +1,145 @@
+slug: hang-gliding
+version: "0.1.0"
+category: air
+display_name:
+  en: Hang Gliding
+  it: Deltaplano
+  es: Ala delta
+  fr: Deltaplane
+  de: Drachenfliegen
+description:
+  en: |
+    Hang gliding shares paragliding's reliance on wind, thermals, and
+    daylight, but tolerates slightly stronger and gustier conditions
+    thanks to the rigid wing's higher penetration and stability. Cross-
+    country potential is highest when thermal activity is strong and
+    cloud bases are elevated; minimum wind for safe ridge soaring is
+    slightly higher than paragliding. This profile encodes baseline
+    physics with current MetricEnum; L1d additions will refine.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 4,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 22, s: 0.55 }
+      - { x: 28, s: 0.20 }
+      - { x: 34, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.20
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.90 }
+      - { x: 1.5, s: 0.65 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.2, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 25, s: 0.95 }
+      - { x: 40, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 2,  s: 0.30 }
+      - { x: 5,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.55 }
+      - { x: 0.8, s: 0.10 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -10, s: 0.20 }
+      - { x: 0,   s: 0.65 }
+      - { x: 12,  s: 1.00 }
+      - { x: 28,  s: 1.00 }
+      - { x: 38,  s: 0.60 }
+      - { x: 45,  s: 0.15 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 34
+    reason_code: HIGH_WIND
+    description: Sustained wind above 34 knots exceeds safe hang glider launch conditions at most sites.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 2.2
+    reason_code: GUSTY_TURBULENT_AIR
+    description: Gust factor above 2.2x indicates dangerous turbulent boundary layer conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 2
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 2km violates VFR flight requirements.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 1.0
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation degrades sail fabric and increases control surface stall risk.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Hang gliding requires daylight; night flight is not standard recreational practice.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: low
+  notes: |
+    Free-flight hang gliding has zero direct emissions per session.
+    Equipment footprint is moderate (rigid-wing aluminium/composite
+    aircraft with 5-15 year lifespan, harness, helmet, reserve). Spatial
+    dispersion is high; pilots concentrate at known launch sites but
+    disperse during flight. Raptor nesting respect protocols apply same
+    as paragliding.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  reviewed_by: []
+  sources:
+    - "FAI Hang Gliding and Paragliding Commission (CIVL) safety guidance"
+    - "USHPA (US Hang Gliding & Paragliding Association) site rating standards (reference baseline)"
+  review_status: draft
+  notes: |
+    Profile uses currently-implemented MetricEnum. L1d extension will add
+    thermal_lift_index, convective_cloud_base_m, and xc_condition_score
+    for cross-country scoring. L1e adds twilight_band for evening glass-off
+    sessions and aqi_composite for wildfire-affected regions (increasingly
+    relevant in southern EU summers).

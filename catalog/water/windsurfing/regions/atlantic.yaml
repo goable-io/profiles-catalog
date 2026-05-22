@@ -1,0 +1,149 @@
+slug: windsurfing-atlantic
+version: "1.0.0"
+category: water
+extends: windsurfing
+region: atlantic
+display_name:
+  en: Windsurfing — Atlantic
+  it: Windsurf — Atlantico
+  es: Windsurf — Atlántico
+  fr: Planche à voile — Atlantique
+  de: Windsurfen — Atlantik
+description:
+  en: |
+    Atlantic windsurfing is wave and speed sailing territory. Synoptic lows
+    and trade winds generate 14-28 knot conditions with real groundswell
+    (1.0-2.5m, 10-14s). The Algarve, Fuerteventura, and Bretagne coasts
+    deliver strong, gusty wind (factor 1.25-1.5x) typical of frontal systems.
+    Fuerteventura's Flag Beach and Sotavento are world-class PWA venues due
+    to consistent trade winds. Cold water (12-18°C in NW Atlantic) requires
+    thick wetsuits outside summer.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.20 }
+      - { x: 16, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 0.85 }
+      - { x: 35, s: 0.35 }
+      - { x: 42, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.30
+        penalty_coefficient: 0.20
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 180, to: 270, multiplier: 1.0 }
+        - { from: 90,  to: 180, multiplier: 0.7 }
+        - { from: 270, to: 360, multiplier: 0.6 }
+        - { from: 0,   to: 90,  multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.55 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.0, s: 1.00 }
+      - { x: 2.0, s: 0.85 }
+      - { x: 3.0, s: 0.55 }
+      - { x: 4.5, s: 0.15 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 16, s: 0.7 }
+      - { x: 20, s: 1.0 }
+      - { x: 26, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: GALE_FORCE_WIND
+    description: Wind above 42 knots is unsafe for windsurfing in Atlantic conditions.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Atlantic windsurfing season is short (June-September for water temp comfort)
+    but world-class venues operate year-round with appropriate equipment.
+    Fuerteventura and the Algarve coast see concentrated tourism pressure;
+    PWA events significantly impact local beach access during competition weeks.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: provisional
+  reviewed_by: []
+  sources:
+    - "PWA World Windsurfing Tour venue specifications 2023"
+    - "Alves 2006, Atlantic swell observations, J. Geophys. Res."
+    - "Caldeira et al. 2019, windsurf condition analysis, Algarve coast"
+  notes: |
+    Regional overrides vs global windsurfing: wind sweet spot shifted to 22kn
+    (synoptic lows vs thermal peak); wave weight increased from 0.10 to 0.15
+    (balanced by wind reduction 0.45→0.40) to reflect Atlantic groundswell;
+    wave curve extended to 6m (vs 5m global) for advanced sessions; gate
+    raised from 40kn to 42kn for experienced Atlantic conditions.

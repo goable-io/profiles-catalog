@@ -1,0 +1,165 @@
+slug: trekking-spot-dolomites-tre-cime
+version: "0.1.0"
+category: land
+extends: trekking
+region: alpine
+display_name:
+  en: Trekking — Tre Cime di Lavaredo (Dolomites)
+  it: Trekking — Tre Cime di Lavaredo (Dolomiti)
+  es: Senderismo — Tre Cime di Lavaredo (Dolomitas)
+  fr: Randonnée — Tre Cime di Lavaredo (Dolomites)
+  de: Wandern — Drei Zinnen (Dolomiten)
+description:
+  en: |
+    Tre Cime di Lavaredo (UNESCO World Heritage site, Italian Dolomites)
+    is one of the most photographed mountain landscapes in Europe and
+    a flagship Alpine trekking destination. The classic loop from
+    Rifugio Auronzo (2320m) to Rifugio Locatelli (2438m) and back
+    typically takes 4-5 hours. Conditions favour cool stable summer
+    weather with low afternoon convection risk; the loop is exposed
+    above tree-line throughout and offers no escape route during
+    thunderstorms. The optimal season is mid-June to mid-September.
+    Visitor density is extreme during peak summer windows; permit and
+    parking access has been progressively restricted since 2023.
+
+  it: |
+    Tre Cime di Lavaredo (Patrimonio UNESCO, Dolomiti italiane) è uno
+    dei paesaggi montani più fotografati d'Europa e una meta di
+    trekking alpino di riferimento. Il giro classico dal Rifugio
+    Auronzo (2320m) al Rifugio Locatelli (2438m) richiede tipicamente
+    4-5 ore. Il sentiero è interamente sopra il limite degli alberi e
+    non offre vie di fuga durante temporali. Stagione ottimale metà
+    giugno - metà settembre. Densità di visitatori estrema nei picchi
+    estivi.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -10, s: 0.00 }
+      - { x: 0,   s: 0.40 }
+      - { x: 8,   s: 0.85 }
+      - { x: 16,  s: 1.00 }
+      - { x: 24,  s: 0.85 }
+      - { x: 30,  s: 0.45 }
+      - { x: 38,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.30
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.80 }
+      - { x: 1.0, s: 0.40 }
+      - { x: 3,   s: 0.10 }
+      - { x: 6,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.15 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.65 }
+      - { x: 28, s: 0.25 }
+      - { x: 40, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.50 }
+      - { x: 15, s: 0.85 }
+      - { x: 30, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 1.00 }
+      - { x: 7,  s: 0.75 }
+      - { x: 10, s: 0.40 }
+      - { x: 13, s: 0.10 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: EXPOSED_RIDGE_WHITEOUT
+    description: Tre Cime trail is entirely above tree-line; visibility below 500m makes navigation hazardous and the iconic views (the principal reason for the trek) impossible to appreciate.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 6
+    reason_code: HEAVY_PRECIPITATION_EXPOSED
+    description: Heavy active precipitation on the Tre Cime loop creates flash-flood risk in side gullies and rapid hypothermia exposure above 2400m; afternoon thunderstorm cells often deliver this intensity in July-August.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: HIGH_WIND_EXPOSED_RIDGE
+    description: Sustained wind above 45 knots on the Lavaredo saddles creates fall risk for trekkers carrying camera gear and pack.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -10
+    reason_code: HYPOTHERMIA_EXPOSURE
+    description: At Tre Cime altitudes, apparent temperatures below -10°C combined with wet conditions create immediate hypothermia risk on the open ridge.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Tre Cime loop is human-powered with zero direct emissions per
+    session. However, the 7km toll road to Rifugio Auronzo is a major
+    indirect emission source (estimated 800,000+ vehicle visits per
+    summer pre-restrictions; toll capacity now limits this). Carrying
+    capacity sensitivity is VERY HIGH: trail erosion is measurable, the
+    iconic photo zones suffer vegetation trampling, and wildlife
+    (ibex, golden eagle, marmot) shows documented displacement from
+    historical zones. Goable score should factor a "destination
+    overuse" advisory during peak windows (12:00-15:00 July-August)
+    even when meteorological conditions are excellent. Permit/parking
+    restrictions introduced 2023 are administrative carrying-capacity
+    mechanisms outside Goable's scoring scope.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: draft
+  reviewed_by: []
+  sources:
+    - "Parco Naturale Tre Cime / Drei Zinnen visitor management plan 2024"
+    - "ARPA Veneto alpine weather climatology for Dolomite massifs"
+    - "Club Alpino Italiano (CAI) section Cortina d'Ampezzo trail safety guidance"
+    - "MeteoTrentino orographic convection patterns in eastern Dolomites"
+  notes: |
+    Spot overrides vs trekking-alpine baseline: visibility weight raised
+    to 0.25 (the loop's value IS the view; whiteout removes both
+    safety and reason to be there); precipitation weight raised to 0.30
+    (no shelter on the exposed ridge); explicit gates for ridge-
+    exposure scenarios. Future L1d/L1e: lightning_proximity will be
+    HARD-GATED for this profile given exposure and lack of escape;
+    aqi_composite advisory during wildfire smoke episodes
+    (increasingly common in Alpine summers post-2022).

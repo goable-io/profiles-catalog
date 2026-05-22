@@ -1,0 +1,155 @@
+slug: paragliding-alpine
+version: "0.1.0"
+category: air
+extends: paragliding
+region: alpine
+display_name:
+  en: Paragliding — Alpine
+  it: Parapendio — Alpino
+  es: Parapente — Alpino
+  fr: Parapente — Alpin
+  de: Gleitschirmfliegen — Alpin
+description:
+  en: |
+    Alpine paragliding sites (Annecy, Chamonix, Interlaken, Bassano,
+    Macugnaga, Solden) rely on valley-thermal cycles, slope-anabatic
+    convection, and convergence at ridgelines. Compared to generic
+    paragliding, alpine conditions favour higher mid-day thermal
+    activity, are stricter on wind speed (turbulence on lee slopes is
+    severe and unforgiving), require sharper attention to convective
+    cloud development, and concentrate flying into morning + early-
+    afternoon windows before afternoon thunderstorm development. Strict
+    no-fly periods around raptor nesting cliffs apply in many sites
+    (March-July typically); these are operator/site responsibility.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 18, s: 0.35 }
+      - { x: 22, s: 0.10 }
+      - { x: 26, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.25 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.30 }
+      - { x: 8,  s: 0.85 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.40 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -15, s: 0.10 }
+      - { x: 0,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 22,  s: 1.00 }
+      - { x: 32,  s: 0.65 }
+      - { x: 40,  s: 0.20 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 26
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 26 knots in alpine paragliding terrain creates dangerous turbulence on lee slopes and at ridges; tighter than coastal because alpine boundary layer is more turbulent.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: ALPINE_TURBULENT_AIR
+    description: Gust factor above 1.8x in alpine terrain indicates severe boundary-layer turbulence; canopy collapse risk in rotor zones.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ALPINE_LOW_VISIBILITY
+    description: Alpine paragliding requires visibility above 3km for terrain awareness on glide-outs and valley crossings.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in alpine terrain often correlates with downdraft and turbulence; immediate land-out required.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Alpine paragliding requires daylight; night flight is not standard recreational practice.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: low
+  notes: |
+    Alpine paragliding is free-flight with zero direct emissions per
+    session. Cable car or driving access to launch sites adds
+    infrastructure-dependent emissions that are out of session scope.
+    Carrying capacity dispersion is high during flight; concentration
+    at launch sites is medium-to-high during peak summer windows
+    (mid-June to mid-September); raptor nesting protections apply at
+    sites like Le Brévent (Chamonix), Mt-Joly (Saint-Gervais),
+    Monte Lema (Switzerland-Italy border) typically March-July.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  review_status: draft
+  reviewed_by: []
+  sources:
+    - "DHV (Deutscher Hängegleiterverband) alpine site rating standards"
+    - "Swiss Hang Gliding Federation (SHV) Alpine flying guidance"
+    - "FFVL (Fédération Française de Vol Libre) alpine flying weather criteria"
+  notes: |
+    Regional overrides vs global paragliding: wind sweet spot tightened
+    (peak 6-10kn vs 6-12kn globally) due to lee turbulence sensitivity;
+    gust factor gate tightened from 2.0 to 1.8 (alpine boundary layer
+    more turbulent); visibility gate raised from 2 to 3 km (terrain
+    awareness on glides); precipitation gate tightened (alpine downdraft
+    risk). Once L1d ships, thermal_lift_index becomes the highest-weight
+    quality dimension for alpine paragliding (currently approximated by
+    sun_altitude_deg only).
