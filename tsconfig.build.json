@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "schema",
+    "outDir": "dist/schema",
+    "noEmit": false,
+    "emitDeclarationOnly": false
+  },
+  "include": ["schema/**/*.ts"],
+  "exclude": ["node_modules", "dist", "scripts", "tests", "schema/validate.ts"]
+}

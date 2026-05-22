@@ -1,0 +1,46 @@
+name: Curve / threshold change
+description: Propose a change to an existing dimension curve, gate threshold, or modifier.
+labels: ["curve-change", "proposal"]
+body:
+  - type: input
+    id: profile
+    attributes:
+      label: Profile path
+      description: Path under `catalog/`. Example `water/kitesurfing/regions/mediterranean.yaml`.
+      placeholder: "water/kitesurfing/index.yaml"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current value(s)
+      description: Paste the curve / gate / modifier you want to change, exactly as it appears.
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: Proposed value(s)
+      description: Same shape — but with your new numbers.
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale + citation
+      description: Why this is more accurate. CONTRIBUTING.md requires a published citation OR ≥100 documented practitioner-sessions.
+    validations:
+      required: true
+  - type: dropdown
+    id: blast-radius
+    attributes:
+      label: Blast radius
+      description: What scope does this change affect?
+      options:
+        - "Only this profile"
+        - "This profile + its regional/spot variants"
+        - "Methodology change that affects multiple profiles"
+    validations:
+      required: true

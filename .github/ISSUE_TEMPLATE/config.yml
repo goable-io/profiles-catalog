@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/goable-io/profiles-catalog/security/advisories/new
+    about: For security issues, use the private security advisory flow — not a public issue. See SECURITY.md.
+  - name: Question
+    url: https://github.com/goable-io/profiles-catalog/discussions
+    about: Open-ended questions about the catalog, schema, or scoring methodology.

@@ -1,0 +1,60 @@
+name: New activity proposal
+description: Propose a new sport / activity profile (before opening the PR).
+labels: ["new-activity", "proposal"]
+body:
+  - type: input
+    id: activity
+    attributes:
+      label: Activity slug
+      description: Lowercase, dashes only. Example "stand-up-paddle", "via-ferrata".
+      placeholder: "via-ferrata"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: [water, snow, air, land, commercial]
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What is this activity, and why does it deserve its own profile?
+      description: One paragraph. Mention if existing profiles cover most of it (in which case a regional variant may be a better fit).
+    validations:
+      required: true
+  - type: textarea
+    id: dimensions
+    attributes:
+      label: Proposed dimensions and weights
+      description: "Bullet list. Example: `wind_speed_kn 0.4 / wave_height_m 0.3 / visibility_km 0.2 / sun_altitude_deg 0.1`. Weights must sum to 1."
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: gates
+    attributes:
+      label: Proposed safety gates (hard stops)
+      description: "Example: `wind_speed_kn > 45 → GALE_FORCE_WIND`. List as many as apply."
+    validations:
+      required: true
+  - type: textarea
+    id: citations
+    attributes:
+      label: Citations
+      description: Sport-science papers, federation guidelines (IKO, IFMGA, CIVL, FFCAM...), or equipment-manufacturer thresholds. Minimum 1.
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Practitioner experience
+      description: How many sessions / years are your curve choices grounded in? ≥100 sessions is meaningful. List any certifications.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: I will open a PR with the YAML if this proposal gets a maintainer ack
+        - label: I will tag the profile as `provisional` (not `reviewed` / `calibrated`)

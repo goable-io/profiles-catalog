@@ -10,12 +10,13 @@ jobs:
     if: "!contains(github.event.head_commit.message, '[skip-release]')"
     permissions:
       contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
-        with: { version: 9 }
+        with: { version: 11 }
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
@@ -23,6 +24,9 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: pnpm install --frozen-lockfile
       - run: pnpm validate
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
       - run: pnpm bundle
       - name: Bump patch version
         id: bump
@@ -30,7 +34,7 @@ jobs:
           new_version=$(npm version patch --no-git-tag-version)
           echo "version=${new_version}" >> "$GITHUB_OUTPUT"
       - name: Publish to npm
-        run: npm publish --access public
+        run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Commit + tag version bump
@@ -44,5 +48,7 @@ jobs:
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.bump.outputs.version }}
-          files: dist/catalog.json
+          files: |
+            dist/catalog.json
+            dist/profile.schema.json
           generate_release_notes: true
