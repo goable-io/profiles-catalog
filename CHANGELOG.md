@@ -10,6 +10,30 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+### Added — 17 new profiles (33 → 50)
+
+**10 new base profiles:**
+- Land (5): `trail-running`, `mountain-biking`, `road-cycling`, `bouldering`, `canyoning`
+- Snow (2): `alpine-skiing` (resort), `snowboarding` (resort)
+- Water (2): `bodyboarding`, `open-water-swimming`
+- Air (1): `hot-air-ballooning`
+
+**4 new regional variants** (extend existing base profiles):
+- `snow/freeride/regions/alpine`
+- `air/hang-gliding/regions/alpine`
+- `water/scuba/regions/mediterranean`
+- `land/climbing/regions/alpine`
+
+**3 new spot profiles:**
+- `water/windsurfing/spots/tarifa` (Strait of Gibraltar, bidirectional Levante/Poniente)
+- `land/climbing/spots/el-chorro` (Andalusian limestone, year-round)
+- `water/scuba/spots/red-sea` (warm-water tier-1, region: indian)
+
+All new profiles are `maturity: provisional` with 2-4 citations each. Catalog now covers
+50 profiles across all four activity families. Tests updated to assert ≥50 profiles.
+
+## [1.0.1] — Previous unreleased entries
+
 ### Added
 - Public TypeScript library entry: `import { ProfileSchema, MetricEnum, type Profile } from "@goable-io/profiles-catalog"`
 - JSON Schema (Draft 2020-12) emitted to `dist/profile.schema.json` for non-TS consumers

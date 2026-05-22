@@ -1,0 +1,150 @@
+slug: mountain-biking
+version: "1.0.0"
+category: land
+display_name:
+  en: Mountain Biking
+  it: Mountain Bike
+  es: Ciclismo de Montaña
+  fr: VTT
+  de: Mountainbiken
+description:
+  en: |
+    Off-road cycling on technical singletrack, fire roads, or bike-park
+    descents. Trail surface moisture is the dominant trail-quality factor:
+    dry-to-tacky soil grips well, mud destroys traction and damages
+    trail tread. Strong crosswind impacts handling on exposed ridge
+    sections; heavy rain creates braking and visibility hazards. Profile
+    targets cross-country / trail riding; enduro and downhill share the
+    base curves but with tighter wind and lower upper temperature gates.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8,  s: 0.10 }
+      - { x: 2,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 16,  s: 1.00 }
+      - { x: 22,  s: 0.95 }
+      - { x: 28,  s: 0.70 }
+      - { x: 35,  s: 0.30 }
+      - { x: 40,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.20 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.85 }
+      - { x: 1.6, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_TRAIL_DAMAGE
+    description: Heavy active rain creates dangerous traction loss and accelerates trail erosion — IMBA and trail-stewardship policy gates riding above this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed ridges destabilises riders at descent speeds.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: LOW_VISIBILITY_DESCENT
+    description: Visibility below 200m makes descending technical sections at speed unsafe.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 40°C creates immediate heat-illness risk under sustained effort with helmet and pads.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: high
+  notes: |
+    Human-powered with zero direct emissions per session, but bike +
+    components (frame, suspension, drivetrain, tires) have material
+    footprint and frequent consumables (tires every 1500-3000km, brake
+    pads, chain). E-MTB shifts this further. Wet-trail riding damages
+    soil structure and accelerates erosion: IMBA and most European
+    federations recommend gating riding above precipitation thresholds;
+    carrying capacity sensitivity is high for popular trail networks
+    (Finale Ligure, Whistler, Morzine).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "International Mountain Bicycling Association (IMBA) trail-stewardship and wet-weather riding guidelines"
+    - "UCI Mountain Bike Commission safety standards"
+    - "Marion & Wimpey 2007, environmental impact of mountain biking"
+  notes: |
+    Precipitation weighting is heavier than for trekking because wet-trail
+    damage is severe and irreversible on certain soils (peat, clay). L1d
+    will add soil_moisture as a direct trail-state metric. L1e additions:
+    lightning_proximity_score for ridge exposure, freezing_level_m for
+    high-altitude tours.

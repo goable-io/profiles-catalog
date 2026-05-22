@@ -1,0 +1,146 @@
+slug: snowboarding
+version: "1.0.0"
+category: snow
+display_name:
+  en: Snowboarding (Resort)
+  it: Snowboard (Pista)
+  es: Snowboard (Estación)
+  fr: Snowboard (Station)
+  de: Snowboarden
+description:
+  en: |
+    Resort-based snowboarding on groomed pistes and managed park
+    features. Shares most curves with alpine-skiing but with two
+    differences: lower upper temperature tolerance (board carving and
+    park sessions degrade faster in slush above 4°C), and a slightly
+    looser wind gate for lift closure since snowboarders typically
+    avoid the highest exposed lifts due to flat-traverse penalties.
+    Precipitation during sessions is a quality plus for powder days
+    on resort sidecountry runs.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.80 }
+      - { x: 4,   s: 0.45 }
+      - { x: 8,   s: 0.15 }
+      - { x: 14,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.20 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 0.95 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_quality_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -25, s: 0.80 }
+      - { x: -10, s: 1.00 }
+      - { x: -3,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 4,   s: 0.50 }
+      - { x: 10,  s: 0.15 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts and gondolas; flat-traverse exits become unmanageable on a snowboard.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200m makes piste navigation unsafe — snowboarders rely on visual feedback for edge transitions at speed.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: FROSTBITE_RISK
+    description: Apparent temperature below -28°C creates immediate frostbite risk on exposed skin.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    Operational footprint is identical to alpine-skiing (shared
+    resort infrastructure: lifts, snowmaking, grooming, access).
+    Equipment lifecycle is slightly shorter than skis (boards tend to
+    lose camber after 100-150 days). Park features have additional
+    construction/maintenance impact. Park user concentration in
+    dedicated zones reduces wider habitat pressure vs all-mountain
+    ski traffic.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Internationale de Ski (FIS) snowboard discipline safety regulations"
+    - "World Snowboard Federation event-condition standards"
+    - "Resort operators consortium lift-closure protocols (shared with alpine-skiing)"
+  notes: |
+    Differs from alpine-skiing on: (a) upper temperature curve falls
+    faster above freezing — board-pressing in slush degrades technique
+    and damages base material more rapidly than ski edges; (b)
+    precipitation peak shifted from 'no precip' to '0.5 mm/h' because
+    powder is more central to snowboarding's quality model. L1d will
+    add snow_surface_quality (powder/packed/crust/ice) as direct metric.

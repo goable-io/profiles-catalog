@@ -1,0 +1,161 @@
+slug: bodyboarding
+version: "1.0.0"
+category: water
+display_name:
+  en: Bodyboarding
+  it: Bodyboard
+  es: Bodyboard
+  fr: Bodyboard
+  de: Bodyboarden
+description:
+  en: |
+    Wave riding lying prone on a foam board, using swim fins for
+    propulsion and direction. Compared to surfing, bodyboarding favours
+    steeper, hollower waves (heavy shorebreak, reefbreak) and slightly
+    smaller swell sizes since the rider's centre of gravity is lower
+    and rotational manoeuvres need more wave pocket than open face. Wind
+    sensitivity is similar to surfing but with tighter wave-quality
+    weighting — clean conditions matter more than absolute size.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.35
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.30 }
+      - { x: 0.8, s: 0.85 }
+      - { x: 1.3, s: 1.00 }
+      - { x: 2.0, s: 0.90 }
+      - { x: 3.0, s: 0.55 }
+      - { x: 4.5, s: 0.15 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.20
+    curve:
+      - { x: 4,  s: 0.20 }
+      - { x: 7,  s: 0.65 }
+      - { x: 10, s: 0.95 }
+      - { x: 13, s: 1.00 }
+      - { x: 18, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 6,  s: 0.95 }
+      - { x: 12, s: 0.70 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.05 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 8,  s: 0.10 }
+      - { x: 14, s: 0.50 }
+      - { x: 18, s: 0.85 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.10 }
+      - { x: 1,  s: 0.50 }
+      - { x: 3,  s: 0.90 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -2, s: 0.10 }
+      - { x: 8,  s: 0.50 }
+      - { x: 18, s: 0.95 }
+      - { x: 28, s: 1.00 }
+      - { x: 38, s: 0.65 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 0.95 }
+      - { x: 7,  s: 0.75 }
+      - { x: 10, s: 0.40 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 7
+    reason_code: OVERSIZED_SHOREBREAK
+    description: Shorebreak above 7m generates closeout conditions and impact zones that exceed safe bodyboarding limits.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: WIND_DEGRADED_WAVES
+    description: Onshore wind above 35 knots destroys wave shape and creates dangerous chop on take-off.
+
+  - metric: water_temperature_c
+    condition: lt
+    value: 6
+    reason_code: HYPOTHERMIA_RISK
+    description: Water temperature below 6°C creates rapid hypothermia onset during prone-position sessions even in full neoprene.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 300m makes spotting other surfers, reef hazards, and rescue craft unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Wave-powered with zero direct emissions per session. Bodyboard
+    (PE/EPS core), fins, leash, and wetsuit have modest material
+    footprint with 5-10 year lifespan. Bodyboard cores are difficult
+    to recycle. Carrying capacity sensitivity is medium and shorebreak-
+    specific: iconic shorebreaks (Sandy Beach Hawaii, Puerto Escondido,
+    Itacoatiara) experience peak-swell overcrowding that creates
+    in-water collision risk independent of wave size.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "International Bodyboarding Corporation (IBC) competition condition standards"
+    - "Surfing Australia bodyboard discipline safety guidelines"
+    - "Surf Life Saving water condition classifications"
+  notes: |
+    Wave_period is more heavily weighted than for general surfing because
+    bodyboarding pockets need both height AND adequate period (12-15s
+    optimal) for rotational manoeuvres. Wind tolerance gate is set at 35
+    kn vs surfing's typical 40 kn — shorebreak orientation is more
+    sensitive to onshore breeze. L1f additions: breaker_type for
+    distinguishing barrel/spilling/dumping conditions critical to
+    bodyboarding suitability.

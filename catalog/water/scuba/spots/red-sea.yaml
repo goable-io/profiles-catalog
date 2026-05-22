@@ -1,0 +1,163 @@
+slug: scuba-spot-red-sea
+version: "1.0.0"
+category: water
+extends: scuba
+region: indian
+display_name:
+  en: Scuba Diving — Red Sea
+  it: Immersione — Mar Rosso
+  es: Buceo — Mar Rojo
+  fr: Plongée — Mer Rouge
+  de: Tauchen — Rotes Meer
+description:
+  en: |
+    The Red Sea (Egyptian, Sudanese, Saudi coasts) is the global tier-1
+    warm-water diving destination, with year-round 22-29°C surface
+    temperatures, 25-40m visibility, and unique fringing reef + offshore
+    seamount topology. Dominant condition factor is wind — the prevailing
+    NW (Etesian-Khamsin transition) creates short-period chop above
+    20 knots that gates safari (liveaboard) operations. Underwater
+    visibility is exceptional but turbidity briefly drops post-shamal
+    sandstorms and during spring/autumn current shifts. This profile
+    targets recreational + technical Red Sea diving from both shore-based
+    (Dahab, Aqaba, Sharm) and liveaboard (Brothers, Daedalus, Elphinstone)
+    operations.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.1 }
+      - { x: 1.5, s: 0.6 }
+      - { x: 3.0, s: 0.9 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 0.95 }
+      - { x: 0.8, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 15, s: 0.80 }
+      - { x: 22, s: 0.40 }
+      - { x: 30, s: 0.05 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 18, s: 0.30 }
+      - { x: 21, s: 0.65 }
+      - { x: 24, s: 0.95 }
+      - { x: 27, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.85 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 10, s: 0.20 }
+      - { x: 18, s: 0.65 }
+      - { x: 25, s: 1.00 }
+      - { x: 35, s: 0.95 }
+      - { x: 42, s: 0.50 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.70 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3
+    reason_code: SHAMAL_HIGH_SEAS
+    description: Wave height above 3m during shamal (northwesterly) events makes liveaboard transfer and small-boat zodiac drops to offshore reefs unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: SAFARI_OPERATIONS_GATE
+    description: Sustained wind above 28 knots gates Red Sea safari (liveaboard) routes to offshore reefs — boats remain on coastal stops only.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: SURFACE_VISIBILITY_NAVIGATION
+    description: Surface visibility below 800m during khamsin sandstorms makes site-finding and small-boat navigation unsafe.
+
+  - metric: water_temperature_c
+    condition: lt
+    value: 17
+    reason_code: COLD_WATER_UNUSUAL
+    description: Water temperature below 17°C (unusual for Red Sea; January Northern Red Sea minimums) requires thicker exposure protection than typical dive operator stock.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 50
+  carrying_capacity_sensitivity: high
+  notes: |
+    Red Sea diving has the highest operational footprint of any scuba
+    sub-category: international flights + liveaboard vessels (5-12 day
+    cruises burning marine diesel for navigation, generators, water-
+    makers) account for the bulk of per-trip emissions. Reef carrying
+    capacity sensitivity is high and actively managed: HEPCA (Hurghada
+    Environmental Protection and Conservation Association) caps boats
+    per site at major offshore reefs; SS Thistlegorm wreck has mooring
+    rotation. Anchor damage, fin-contact damage, and sunscreen runoff
+    are documented coral-stress factors with operator codes of practice.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HEPCA Red Sea reef carrying capacity and mooring rotation standards"
+    - "Eladawy et al. 2017, Northern Red Sea oceanography and seasonal variability"
+    - "Egyptian Tourism Federation safari operator weather standards"
+    - "PADI Red Sea regional dive guide condition handbook"
+  notes: |
+    Spot overrides vs global scuba: water_temp curve shifted dramatically
+    warmer (sweet spot 27°C vs base 22°C); wind sub-25 kn upper bound
+    enforced for safari-route operations; visibility weight slightly
+    reduced (0.25 vs base 0.30) because Red Sea baseline visibility is
+    so consistently excellent that diminishing-returns saturation makes
+    other factors more discriminating. region tag = indian (Red Sea is
+    catalogued with Indian Ocean basin in the catalog's six-region
+    schema — closest match given absence of a dedicated middle-eastern
+    designation). Season is 50 weeks/year — among the longest in the
+    catalog.

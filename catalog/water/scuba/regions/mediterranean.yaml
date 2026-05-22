@@ -1,0 +1,157 @@
+slug: scuba-mediterranean
+version: "1.0.0"
+category: water
+extends: scuba
+region: mediterranean
+display_name:
+  en: Scuba Diving — Mediterranean
+  it: Immersione — Mediterraneo
+  es: Buceo — Mediterráneo
+  fr: Plongée — Méditerranée
+  de: Tauchen — Mittelmeer
+description:
+  en: |
+    Mediterranean diving spans coastal walls, posidonia meadows, wrecks,
+    and seamount drift dives across the basin. Visibility is generally
+    better than Atlantic sites (15-30m typical) but seasonally variable —
+    spring blooms and post-storm sediment can briefly halve it. Water
+    temperature stratification is sharp: thermocline at 15-25m drops
+    bottom temperatures by 6-10°C below mixed-layer values. Regional
+    overrides shift the optimal water_temperature curve to a higher
+    sweet spot (basin warms to 26-28°C in August) and weight visibility
+    higher because Mediterranean clarity is part of the value proposition.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.1 }
+      - { x: 1.0, s: 0.5 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 0.90 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave height above 2.3m in Mediterranean coastal sites (Tramontane/Mistral storm events) creates unsafe shore-entry and small-boat access conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800m during Mediterranean haze/sirocco events makes site-finding unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy active rain in coastal sites triggers terrestrial runoff that drops underwater visibility from 20m+ to 1-3m at impacted sites within hours.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity (post-storm sediment, river plumes) destroys diving quality and creates underwater navigation hazards.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Mediterranean dive sites are concentrated in Marine Protected Areas
+    (Medes Islands, Lavezzi, Capraia, Ustica, Kornati) where carrying
+    capacity is actively managed via permits and daily diver caps.
+    Coral and gorgonian degradation from contact + bubble exposure is
+    documented; site managers enforce trim and frequency limits. Boat
+    transport accounts for the largest per-session footprint in the
+    Mediterranean basin (typically 5-30 min RIB transfer).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS (Italian underwater federation) Mediterranean dive site classification"
+    - "Mediterranean Action Plan (UNEP/MAP) MPA carrying capacity guidance"
+    - "Lloret et al. 2008, Mediterranean SCUBA diving impact studies"
+    - "PADI Mediterranean regional dive condition handbook"
+  notes: |
+    Regional overrides vs global scuba: visibility weight raised from
+    0.30 to 0.32 (Mediterranean clarity is part of the value proposition);
+    water_temp optimal shifted from 22 to 26°C (basin warming); added
+    turbidity_proxy gate (post-storm sediment events are the main
+    quality killer in shoulder seasons). Water clarity sub-metric added
+    explicitly as a small weight to flag bloom periods (April-May,
+    September). Wave gate tightened from 2.5 to 2.3 m given prevailing
+    shore-entry sites.

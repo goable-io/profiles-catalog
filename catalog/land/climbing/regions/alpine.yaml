@@ -1,0 +1,159 @@
+slug: climbing-alpine
+version: "1.0.0"
+category: land
+extends: climbing
+region: alpine
+display_name:
+  en: Climbing — Alpine
+  it: Arrampicata — Alpina
+  es: Escalada — Alpina
+  fr: Escalade — Alpine
+  de: Klettern — Alpin
+description:
+  en: |
+    Alpine climbing covers multipitch rock, mixed alpine routes, and
+    high-altitude granite/limestone classics in the Alps, Pyrenees, and
+    Dolomites. Compared to the global climbing base, this regional
+    variant tightens the temperature comfort band (altitude exposure
+    drops apparent_temp 5-8°C below valley reference), adds a tighter
+    wind gate for ridge traverses and arête climbing, and lowers the
+    precipitation tolerance (rapid weather deterioration in afternoon
+    convective storms is the recurring fatality driver in the Western
+    Alps and Dolomites in July-August). Rockfall risk after freeze-thaw
+    nights is a critical factor not yet captured by current MetricEnum.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.22
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -2,  s: 0.55 }
+      - { x: 6,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 24,  s: 0.65 }
+      - { x: 30,  s: 0.25 }
+      - { x: 36,  s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.40 }
+      - { x: 0.7, s: 0.10 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.95 }
+      - { x: 5,  s: 1.00 }
+      - { x: 14, s: 0.80 }
+      - { x: 22, s: 0.40 }
+      - { x: 32, s: 0.05 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.75 }
+      - { x: 9,  s: 0.35 }
+      - { x: 11, s: 0.10 }
+
+  - name: freezing_proxy
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: -8, s: 0.60 }
+      - { x: 0,  s: 0.95 }
+      - { x: 6,  s: 1.00 }
+      - { x: 15, s: 0.90 }
+      - { x: 25, s: 0.60 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.7
+    reason_code: WET_ROCK_AND_STORM
+    description: Active precipitation above 0.7 mm/h in alpine terrain makes rock unclimbable, signals incoming convective storms, and triggers lightning risk on ridges and summit blocks.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 38 knots on alpine ridges and arêtes creates fall risk and impairs verbal partner communication.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_NAVIGATION
+    description: Visibility below 400m on multipitch alpine routes makes route-finding and descent navigation unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -15
+    reason_code: ALPINE_HYPOTHERMIA
+    description: Apparent temperature below -15°C creates immediate frostbite risk on belay stances and impairs rope handling and protection placement.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    Alpine climbing has zero direct emissions per session. Approach
+    transport (often cable car) and hut accommodation account for the
+    bulk of footprint. Carrying capacity sensitivity is high on classic
+    routes: Cassin Ridge (Badile), Comici (Cima Grande), Walker Spur,
+    Hörnli Ridge (Matterhorn) — peak summer windows concentrate
+    hundreds of parties on single routes, driving rockfall hazards
+    (cumulative loosening) and queue-related accident rates. IFMGA
+    guides actively rotate parties to mitigate.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "UIAA Mountain Medicine Commission alpine climbing safety standards"
+    - "IFMGA (International Federation of Mountain Guides Associations) alpine route condition criteria"
+    - "Club Alpino Italiano (CAI) alpine route grading and condition reporting"
+    - "Bourdeau et al. 2020, alpine climate change and climbing-route conditions"
+  notes: |
+    Regional overrides vs global climbing: precipitation gate tightened
+    sharply from base (typically 1.5+ mm/h) to 0.7 mm/h because alpine
+    convective storms create lightning + rockfall + slip cascade; wind
+    upper threshold to 38 kn (ridge exposure); temperature optimum
+    shifted cooler (12°C peak vs 18°C valley reference) reflecting
+    altitude. The freezing_proxy via water_temperature_c is a coarse
+    rockfall-after-freeze-thaw indicator; L1e adds direct rockfall_risk_
+    index for this.

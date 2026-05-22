@@ -1,0 +1,152 @@
+slug: hang-gliding-alpine
+version: "1.0.0"
+category: air
+extends: hang-gliding
+region: alpine
+display_name:
+  en: Hang Gliding — Alpine
+  it: Deltaplano — Alpino
+  es: Ala delta — Alpino
+  fr: Deltaplane — Alpin
+  de: Drachenfliegen — Alpin
+description:
+  en: |
+    Alpine hang gliding from classic launch sites (Greifenburg, Laragne,
+    Bassano, Pian dell'Avena, Annecy region). Strong thermal regimes from
+    south-facing slopes give long XC potential April-September. Regional
+    overrides vs the global profile: thermal-window sun_altitude curve
+    shifted later (mountain-launches need angle for slope insolation),
+    valley-wind dynamics tighten the wind-speed sweet spot, and gust-
+    factor tolerance is lower because alpine convergence lines create
+    sharp wind transitions on ridges. Cross-country potential scoring
+    benefits significantly from convective indices, which L1d will add.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.28
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 4,  s: 0.75 }
+      - { x: 8,  s: 1.00 }
+      - { x: 13, s: 1.00 }
+      - { x: 17, s: 0.80 }
+      - { x: 22, s: 0.45 }
+      - { x: 28, s: 0.10 }
+      - { x: 33, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.22
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.25, s: 0.90 }
+      - { x: 1.45, s: 0.55 }
+      - { x: 1.7,  s: 0.20 }
+      - { x: 2.0,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 15, s: 0.55 }
+      - { x: 30, s: 0.90 }
+      - { x: 45, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 2,  s: 0.25 }
+      - { x: 5,  s: 0.65 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.55 }
+      - { x: 0.8, s: 0.10 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.55 }
+      - { x: 12,  s: 1.00 }
+      - { x: 26,  s: 1.00 }
+      - { x: 36,  s: 0.65 }
+      - { x: 45,  s: 0.15 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 32
+    reason_code: HIGH_WIND_ALPINE
+    description: Sustained wind above 32 knots at alpine launch sites is unsafe — Föhn and Bora-type events can exceed this; consult site-specific NOTAMs.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 2.0
+    reason_code: GUSTY_ALPINE_CONVERGENCE
+    description: Gust factor above 2.0x in alpine terrain indicates dangerous convergence lines and rotor zones downwind of ridges.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ALPINE_VFR_MINIMUM
+    description: Visibility below 3km in alpine terrain violates safe VFR for ridge clearance and emergency landing field selection.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.8
+    reason_code: ALPINE_PRECIPITATION
+    description: Active precipitation in alpine flying corridors degrades sail and creates rapid weather deterioration risk in mountain valleys.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Hang gliding requires daylight; alpine terrain shadowing makes pre-dawn launches especially hazardous.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Alpine launch sites are concentrated at limited approved take-off
+    zones with infrastructure (ramps, parking, retrievals). Raptor
+    nesting protocols (golden eagle, bearded vulture in Pyrenees and
+    Alps) apply seasonally and constrain certain ridge corridors.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FAI CIVL hang-gliding alpine flying guidelines"
+    - "Aero Club d'Italia site-rating documentation for alpine launches"
+    - "DHV (Deutscher Hängegleiterverband) alpine soaring protocols"
+    - "FFVL alpine and pre-alpine flying site safety briefings"
+  notes: |
+    Regional overrides vs global hang-gliding: wind upper threshold
+    tightened from 34 to 32 kn; gust hard-gate from 2.2 to 2.0
+    (convergence sensitivity); VFR visibility minimum raised from 2km
+    to 3km (terrain clearance); precipitation gate tightened from 1.0 to
+    0.8 mm/h (rapid alpine weather deterioration). Thermal-window
+    sun_altitude shifted later (alpine slopes need higher sun angle for
+    productive thermals; pre-dawn and post-sunset windows are unusable
+    in steep valley flying).

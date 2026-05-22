@@ -22,7 +22,7 @@ describe("dist/catalog.json bundle", () => {
     const raw = await readFile("dist/catalog.json", "utf8")
     const data = JSON.parse(raw) as { profiles: Record<string, unknown> }
     const keys = Object.keys(data.profiles)
-    expect(keys.length).toBeGreaterThanOrEqual(33)
+    expect(keys.length).toBeGreaterThanOrEqual(50)
     expect(new Set(keys).size).toBe(keys.length)
   }, 30_000)
 })
