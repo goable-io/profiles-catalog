@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this catalog in research, please cite it as below."
+title: "Goable Outdoor Activity Profiles Catalog"
+type: dataset
+authors:
+  - family-names: Carucci
+    given-names: Fabio
+    affiliation: "Goable"
+    email: contact@fabio-carucci.com
+version: 1.0.0
+date-released: 2026-05-22
+license: CC-BY-4.0
+repository-code: "https://github.com/goable-io/profiles-catalog"
+url: "https://github.com/goable-io/profiles-catalog"
+keywords:
+  - outdoor activities
+  - sport science
+  - weather scoring
+  - climatology
+  - kitesurfing
+  - paragliding
+  - ski touring
+abstract: >-
+  Open catalog of outdoor activity profiles defining how weather inputs
+  combine into a 0-100 suitability score per activity. Covers water,
+  snow, air, and land sports across the European Alpine, Mediterranean,
+  and Atlantic regions. Designed for use by booking platforms, parametric
+  insurance underwriting models, and climate adaptation analyses.
+  Each profile documents its sources and review status; a refinement
+  constraint enforces that only Goable's L3 outcome-data pipeline
+  can mark profiles as 'calibrated'.
