@@ -1,0 +1,49 @@
+slug: windsurfing-spot-tarifa-punta-paloma
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: windsurfing-spot-tarifa
+parent_cluster: windsurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0667, lng: -5.7053 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Same point as kite Punta Paloma — downwind rock and reef section,
+    wave-influenced when Poniente combines with Atlantic groundswell.
+    For windsurfers the consequence is more severe than for kiters in
+    one specific failure mode: a broken mast or rigging at this point
+    puts the sailor head-first downwind onto rock with much slower
+    swim-back capability than a kiter can manage. Used by wave
+    windsurfers familiar with the point on selected Poniente swell days.
+
+display_name:
+  en: Windsurfing — Tarifa Punta Paloma
+  it: Windsurf — Tarifa Punta Paloma
+  es: Windsurf — Tarifa Punta Paloma
+  fr: Windsurf — Tarifa Punta Paloma
+  de: Windsurfen — Tarifa Punta Paloma
+
+description:
+  en: |
+    The wave-sailing end of the Tarifa cluster. Works on Poniente plus
+    Atlantic groundswell, typically October-April. A specialist's spot
+    — the local wave-windsurf community treats it the way the local
+    wave-kite community treats it: known hazards, considered conditions,
+    not a place for visitors to try out new gear.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Local wave-windsurfing community documentation (Tarifa wave riders)"
+    - "Pereira & Belo-Pereira 2018, Strait of Gibraltar wind climatology"
+  notes: |
+    Sub-spot of windsurfing-spot-tarifa cluster. Tier 3: hazardous
+    downwind rock section, wave-influenced, slower swim-back than
+    kitesurfing due to gear drag. Same physical location as the kite
+    sub-spot but with a sport-specific consequence amplifier.

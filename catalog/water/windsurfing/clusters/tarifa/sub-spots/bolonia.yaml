@@ -1,0 +1,46 @@
+slug: windsurfing-spot-tarifa-bolonia
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: windsurfing-spot-tarifa
+parent_cluster: windsurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0858, lng: -5.7711 }
+  radius_m: 600
+
+tier: 2
+tier_rationale:
+  en: |
+    Same Bolonia beach as the kite cluster, used by the smaller Tarifa
+    wave-windsurf community. Cleaner wind than Valdevaqueros (past the
+    Sierra-lee rotor zone) and direct Atlantic swell reaching the beach.
+    Sand bottom along the full length. Lower school density than at the
+    in-town beaches, so rescue coverage is sparser; the failure mode for
+    a windsurfer here is a longer swim with slower gear drag than for
+    kiters. Errors still recoverable for a competent intermediate.
+
+display_name:
+  en: Windsurfing — Bolonia
+  it: Windsurf — Bolonia
+  es: Windsurf — Bolonia
+  fr: Windsurf — Bolonia
+  de: Windsurfen — Bolonia
+
+description:
+  en: |
+    Wave-and-bump-and-jump windsurf alternative to the busier Tarifa
+    in-town beaches. Less crowded, cleaner wind, more swell. Best in
+    autumn-spring with Atlantic groundswell + Levante or Poniente.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parque Natural del Estrecho windsurf access documentation"
+    - "Tarifa wave-windsurf community trip reports (multiple)"
+  notes: |
+    Sub-spot of windsurfing-spot-tarifa cluster. Tier 2: same physical
+    conditions as kite-Bolonia, with slightly higher gear-drag swim-back
+    cost typical of windsurf failure mode.

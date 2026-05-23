@@ -1,0 +1,49 @@
+slug: climbing-spot-el-chorro-makinodromo
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-el-chorro
+parent_cluster: climbing-spot-el-chorro
+region: mediterranean
+
+coordinates:
+  center: { lat: 36.9128, lng: -4.7625 }
+  radius_m: 250
+
+tier: 2
+tier_rationale:
+  en: |
+    Steep limestone tufa wall in the Garganta del Chorro, with routes in
+    the F6c-F8c range. Well-bolted by local equippers (FAA-coordinated)
+    with stainless hardware and chain anchors. South-facing — full sun
+    from late morning, becomes climbable from October to April. Falls
+    are clean steep falls onto bolts (no ledges to hit). Approach by
+    bridge across the Garganta; cell coverage moderate. Climbing
+    consequences are routine bolted-sport-route risks: lowering errors,
+    rope-end accidents, holds breaking on hard moves.
+
+display_name:
+  en: Climbing — El Chorro Makinodromo
+  it: Arrampicata — El Chorro Makinodromo
+  es: Escalada — El Chorro Makinodromo
+  fr: Escalade — El Chorro Makinodromo
+  de: Klettern — El Chorro Makinodromo
+
+description:
+  en: |
+    Steep tufa wall on the east side of the Garganta del Chorro. The
+    high-end sport climbing showcase of the area, with routes in the
+    F7a-F8c sweet spot and several F9 testpieces. Well-bolted with
+    stainless hardware. South aspect makes it a winter venue (October-
+    April); too hot May-September.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax El Chorro guidebook (Hewitt, 2023)"
+    - "Federación Andaluza de Montañismo (FAA) Makinodromo bolting log"
+  notes: |
+    Sub-spot of climbing-spot-el-chorro cluster. Tier 2: bolted sport,
+    stainless hardware, clean falls, on-call rescue. Standard sport-
+    climbing residual risk.

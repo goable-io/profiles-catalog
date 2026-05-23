@@ -1,0 +1,52 @@
+slug: scuba-spot-red-sea-ras-mohammed
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-red-sea
+parent_cluster: scuba-spot-red-sea
+region: indian
+
+coordinates:
+  center: { lat: 27.7297, lng: 34.2522 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    National park at the southern tip of the Sinai Peninsula — Shark and
+    Yolanda reefs, with steep drop-offs and reliable currents. Drift
+    diving on a current line down to 30-40 m is the standard mode.
+    Boat-based with permanent moorings and on-board O₂ + first aid by
+    Egyptian liveaboard standards. Risks: current carries divers off
+    the wall (recoverable with surface marker buoy + boat pickup),
+    occasional decompression-stress at the deeper end of recreational
+    range. No deep penetration, no overhead.
+
+display_name:
+  en: Scuba — Red Sea Ras Mohammed
+  it: Immersione — Ras Mohammed
+  es: Buceo — Ras Mohammed
+  fr: Plongée — Ras Mohammed
+  de: Tauchen — Ras Mohammed
+
+description:
+  en: |
+    The Red Sea's signature national park dive — Shark Reef + Yolanda
+    Reef as a single drift profile, dropping past mid-water schools of
+    barracuda, jack, and snapper into the gardens of soft coral on the
+    Yolanda wreck debris. Best March-May and September-November when
+    currents are predictable and visibility is at 25-40 m baseline.
+    Operated by Sharm-based and southern-liveaboard fleets with HEPCA
+    mooring rotation in place.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HEPCA Ras Mohammed National Park mooring rotation rules"
+    - "Egyptian Tourism Federation Ras Mohammed safari operator handbook"
+    - "Lieske & Myers 2004, Coral Reef Guide Red Sea (site descriptions)"
+  notes: |
+    Sub-spot of scuba-spot-red-sea cluster. Tier 2: drift diving with
+    currents but established protocols + surface support. Recoverable
+    consequences for trained recreational divers.

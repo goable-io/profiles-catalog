@@ -1,0 +1,52 @@
+slug: freeride-spot-chamonix-grands-montets
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-chamonix
+parent_cluster: freeride-spot-chamonix
+region: alpine
+
+coordinates:
+  center: { lat: 45.9722, lng: 6.9783 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Grands Montets is the steep north-facing freeride zone of the
+    Chamonix valley — Pas de Chèvre, Couloir Pyramide, Hors Piste de
+    l'Argentière. Slope angle commonly 35-45° on the classic lines,
+    extending to 50°+ on the Pas de Chèvre. Crevasses below the glacier
+    sections, cliff bands across the face, north-aspect snow that holds
+    wind slab through the season. Errors at speed on this terrain
+    typically produce serious or fatal injury. Lift access makes it
+    deceptively reachable for under-prepared visitors.
+
+display_name:
+  en: Freeride — Grands Montets
+  it: Freeride — Grands Montets
+  es: Freeride — Grands Montets
+  fr: Freeride — Grands Montets
+  de: Freeride — Grands Montets
+
+description:
+  en: |
+    The serious freeride end of Chamonix. Where the local rippers go
+    when the snow is good. Multiple recorded fatalities every season
+    on Pas de Chèvre alone. Reserved for advanced freeride skiers
+    fully equipped (transceiver, shovel, probe, airbag where
+    available), comfortable with steep technical north-face skiing,
+    and ideally with a local guide for first visits.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie des Guides de Chamonix Grands Montets sector guide"
+    - "PGHM Chamonix annual rescue report (publicly available summaries)"
+    - "ANENA Chamonix freeride classification"
+  notes: |
+    Sub-spot of freeride-spot-chamonix cluster. Tier 3: steep, exposed
+    to crevasses and cliff bands, persistent wind-slab risk, regular
+    fatalities. Avalanche-bulletin hard-gate from base profile +
+    elevated terrain-feature consequence.

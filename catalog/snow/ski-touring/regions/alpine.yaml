@@ -1,4 +1,5 @@
 slug: ski-touring-alpine
+spot_kind: region
 version: "0.1.0"
 category: snow
 extends: ski-touring

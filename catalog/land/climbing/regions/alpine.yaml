@@ -1,4 +1,5 @@
 slug: climbing-alpine
+spot_kind: region
 version: "1.0.0"
 category: land
 extends: climbing

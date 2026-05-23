@@ -1,0 +1,50 @@
+slug: trekking-spot-dolomites-tre-cime-classic-loop
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-dolomites-tre-cime
+parent_cluster: trekking-spot-dolomites-tre-cime
+region: alpine
+
+coordinates:
+  center: { lat: 46.6175, lng: 12.3050 }
+  radius_m: 2000
+
+tier: 1
+tier_rationale:
+  en: |
+    The 9.5 km Rifugio Auronzo → Rifugio Locatelli → Rifugio Lavaredo
+    circuit. Wide, signed, well-maintained gravel path with maximum
+    grade ~10%. Three staffed alpine huts on the loop (food, water,
+    radio contact, emergency shelter). Walked by 20-50 thousand
+    visitors per peak summer day. Within mobile-phone coverage along
+    the entire circuit. Mountain Rescue Cortina + Auronzo bases within
+    helicopter reach. Worst-case consequence: blister or weather-
+    exposure ascent, recoverable with hut shelter.
+
+display_name:
+  en: Trekking — Tre Cime Classic Loop
+  it: Trekking — Giro delle Tre Cime
+  es: Trekking — Vuelta a las Tres Cimas
+  fr: Trekking — Tour des Tre Cime
+  de: Wandern — Drei-Zinnen-Umrundung
+
+description:
+  en: |
+    The most-walked alpine hike in Italy. The 9.5 km loop circles all
+    three north faces of the Tre Cime di Lavaredo at relatively flat
+    altitude (~2300 m). Suitable for any reasonably fit walker without
+    technical training, in summer (mid-June to mid-October). Highly
+    crowded — book hut overnight stays months ahead in peak season.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Club Alpino Italiano (CAI) Tre Cime trail classification (Sentiero 101/104)"
+    - "Parco Naturale Tre Cime di Lavaredo annual visitor report"
+    - "Soccorso Alpino Veneto operational coverage maps"
+  notes: |
+    Sub-spot of trekking-spot-dolomites-tre-cime cluster. Tier 1: wide
+    path, three staffed huts, mass-walked, in-coverage, helicopter
+    rescue reach. Most forgiving sub-spot in any land profile.

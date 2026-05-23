@@ -1,4 +1,5 @@
 slug: hang-gliding-alpine
+spot_kind: region
 version: "1.0.0"
 category: air
 extends: hang-gliding

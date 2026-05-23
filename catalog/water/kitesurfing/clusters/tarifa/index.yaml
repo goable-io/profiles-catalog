@@ -1,8 +1,15 @@
 slug: kitesurfing-spot-tarifa
+spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
 region: atlantic
+sub_spots:
+  - kitesurfing-spot-tarifa-balneario
+  - kitesurfing-spot-tarifa-los-lances-nord
+  - kitesurfing-spot-tarifa-valdevaqueros
+  - kitesurfing-spot-tarifa-punta-paloma
+  - kitesurfing-spot-tarifa-bolonia
 display_name:
   en: Kitesurfing — Tarifa
   it: Kitesurf — Tarifa

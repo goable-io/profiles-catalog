@@ -1,0 +1,47 @@
+slug: climbing-spot-el-chorro-frontales
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-el-chorro
+parent_cluster: climbing-spot-el-chorro
+region: mediterranean
+
+coordinates:
+  center: { lat: 36.9061, lng: -4.7708 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Sun-exposed slabby and vertical limestone wall above the village,
+    F4-F7a range. The introductory crag of El Chorro — most schools
+    and visiting groups start here. Bolting is consistent and recent;
+    approach is a 10-minute walk from village parking. Falls onto bolts
+    are clean. Routine sport-climbing risks (lowering, communication,
+    holds) apply.
+
+display_name:
+  en: Climbing — El Chorro Frontales
+  it: Arrampicata — El Chorro Frontales
+  es: Escalada — El Chorro Frontales
+  fr: Escalade — El Chorro Frontales
+  de: Klettern — El Chorro Frontales
+
+description:
+  en: |
+    The starter crag of El Chorro. Easy approach, sun-warmed limestone
+    in autumn-spring, plenty of grades 5-6c+ for groups and learning.
+    Crowded on European holiday weeks but spreads across multiple
+    sectors. Best aspect rotation: morning shade in autumn, all-day
+    sun in winter, mornings only in early summer.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax El Chorro guidebook (Hewitt, 2023)"
+    - "FAA Frontales sector documentation"
+  notes: |
+    Sub-spot of climbing-spot-el-chorro cluster. Tier 2: bolted sport
+    on moderate-angle limestone, friendly grades, school-friendly. The
+    learning sub-spot of the cluster.

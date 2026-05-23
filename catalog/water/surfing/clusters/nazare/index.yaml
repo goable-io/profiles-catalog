@@ -1,8 +1,13 @@
 slug: surfing-spot-nazare
+spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: surfing-atlantic
 region: atlantic
+sub_spots:
+  - surfing-spot-nazare-praia-do-norte-xl
+  - surfing-spot-nazare-praia-do-norte
+  - surfing-spot-nazare-praia-da-vila
 display_name:
   en: Surfing — Nazaré
   it: Surf — Nazaré

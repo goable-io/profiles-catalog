@@ -147,30 +147,124 @@ const SustainabilitySchema = z
 export const RegionEnum = z.enum(["mediterranean", "atlantic", "pacific", "indian", "alpine", "global"])
 export type Region = z.infer<typeof RegionEnum>
 
-export const ProfileSchema = z.object({
+// v2.0.0 additions ────────────────────────────────────────────────────────────
+
+export const CoordinatesSchema = z.object({
+  center: z.object({
+    lat: z.number().min(-90).max(90),
+    lng: z.number().min(-180).max(180),
+  }),
+  radius_m: z.number().int().positive().max(5000),
+})
+
+export type Coordinates = z.infer<typeof CoordinatesSchema>
+
+export const TierSchema = z.union([z.literal(1), z.literal(2), z.literal(3)])
+export type Tier = z.infer<typeof TierSchema>
+
+export const SpotKindEnum = z.enum(["base", "region", "cluster", "sub-spot"])
+export type SpotKind = z.infer<typeof SpotKindEnum>
+
+// Dimensions sum-to-1 check used by base/region/cluster variants
+const dimsSumToOne = (dims: Array<z.infer<typeof DimensionSchema>>): boolean =>
+  Math.abs(dims.reduce((s, d) => s + d.weight, 0) - 1) < 0.001
+const dimsSumMessage = "Sum of dimension weights must equal 1 (tolerance 0.001)"
+
+// Calibration refinement: if maturity is "calibrated", meta.calibration is required.
+// Defined as a (data) => boolean predicate so it can be passed to .refine() on any
+// schema whose output has a `meta` shape.
+const calibrationOk = (data: {
+  meta: { maturity: string; calibration?: unknown }
+}): boolean =>
+  data.meta.maturity !== "calibrated" || data.meta.calibration !== undefined
+
+const calibrationRefineMessage = {
+  message:
+    "meta.maturity='calibrated' requires meta.calibration block (datasetVersion, modelVersion, samples, fitDate). Calibrated status is emitted only by Goable's L3 pipeline, not by external contributors.",
+  path: ["meta", "calibration"],
+}
+
+// Fields common to every variant
+const commonFields = {
   slug: z.string().regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with dashes"),
   version: z.string().regex(/^\d+\.\d+\.\d+$/, "Version must be semver MAJOR.MINOR.PATCH"),
   category: z.enum(["water", "snow", "air", "land", "commercial"]),
   display_name: z.record(z.string(), z.string()),
   description: z.record(z.string(), z.string()).optional(),
-  extends: z.string().optional(),
-  region: RegionEnum.optional(),
-  dimensions: z
-    .array(DimensionSchema)
-    .refine((dims) => Math.abs(dims.reduce((s, d) => s + d.weight, 0) - 1) < 0.001, {
-      message: "Sum of dimension weights must equal 1 (tolerance 0.001)",
-    }),
   gates: z.array(GateSchema).default([]),
-  verdict_buckets: VerdictBucketsSchema,
   sustainability: SustainabilitySchema,
   meta: MetaSchema,
-}).refine(
-  (data) => data.meta.maturity !== "calibrated" || data.meta.calibration !== undefined,
-  {
-    message:
-      "meta.maturity='calibrated' requires meta.calibration block (datasetVersion, modelVersion, samples, fitDate). Calibrated status is emitted only by Goable's L3 pipeline, not by external contributors.",
-    path: ["meta", "calibration"],
-  },
-)
+}
+
+// ── base ────────────────────────────────────────────────────────────────────
+const baseInner = z.object({
+  spot_kind: z.literal("base"),
+  ...commonFields,
+  dimensions: z.array(DimensionSchema).refine(dimsSumToOne, { message: dimsSumMessage }),
+  verdict_buckets: VerdictBucketsSchema,
+})
+export const BaseProfileSchema = baseInner.refine(calibrationOk, calibrationRefineMessage)
+
+// ── region ──────────────────────────────────────────────────────────────────
+const regionInner = z.object({
+  spot_kind: z.literal("region"),
+  extends: z.string(),
+  region: RegionEnum,
+  ...commonFields,
+  dimensions: z.array(DimensionSchema).refine(dimsSumToOne, { message: dimsSumMessage }),
+  verdict_buckets: VerdictBucketsSchema,
+})
+export const RegionProfileSchema = regionInner.refine(calibrationOk, calibrationRefineMessage)
+
+// ── cluster ─────────────────────────────────────────────────────────────────
+const clusterInner = z.object({
+  spot_kind: z.literal("cluster"),
+  extends: z.string(),
+  region: RegionEnum.optional(),
+  sub_spots: z
+    .array(z.string())
+    .min(1, "cluster must reference at least one sub-spot in `sub_spots`"),
+  ...commonFields,
+  dimensions: z.array(DimensionSchema).refine(dimsSumToOne, { message: dimsSumMessage }),
+  verdict_buckets: VerdictBucketsSchema,
+})
+export const ClusterProfileSchema = clusterInner.refine(calibrationOk, calibrationRefineMessage)
+
+// ── sub-spot ────────────────────────────────────────────────────────────────
+// On sub-spots, scoring fields (dimensions, verdict_buckets) are optional —
+// they inherit from the parent cluster when absent. coordinates + tier +
+// tier_rationale are mandatory.
+const subSpotInner = z.object({
+  spot_kind: z.literal("sub-spot"),
+  extends: z.string(),
+  parent_cluster: z.string(),
+  region: RegionEnum.optional(),
+  coordinates: CoordinatesSchema,
+  tier: TierSchema,
+  tier_rationale: z.record(z.string(), z.string()).refine(
+    (r) => typeof r.en === "string" && r.en.trim().length > 0,
+    { message: "tier_rationale must include an 'en' entry" },
+  ),
+  ...commonFields,
+  dimensions: z
+    .array(DimensionSchema)
+    .refine(dimsSumToOne, { message: dimsSumMessage })
+    .optional(),
+  verdict_buckets: VerdictBucketsSchema.optional(),
+})
+export const SubSpotProfileSchema = subSpotInner.refine(calibrationOk, calibrationRefineMessage)
+
+// ── union ───────────────────────────────────────────────────────────────────
+// discriminatedUnion takes the unrefined inner ZodObjects (Zod v4 requires
+// ZodObject members on the union). The calibration refinement is applied once
+// to the union's output, which catches calibrated profiles missing the
+// calibration block across every variant.
+export const ProfileSchema = z
+  .discriminatedUnion("spot_kind", [baseInner, regionInner, clusterInner, subSpotInner])
+  .refine(calibrationOk, calibrationRefineMessage)
 
 export type Profile = z.infer<typeof ProfileSchema>
+export type BaseProfile = z.infer<typeof baseInner>
+export type RegionProfile = z.infer<typeof regionInner>
+export type ClusterProfile = z.infer<typeof clusterInner>
+export type SubSpotProfile = z.infer<typeof subSpotInner>

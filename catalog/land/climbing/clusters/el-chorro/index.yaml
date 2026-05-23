@@ -1,8 +1,13 @@
 slug: climbing-spot-el-chorro
+spot_kind: cluster
 version: "1.0.0"
 category: land
 extends: climbing
 region: mediterranean
+sub_spots:
+  - climbing-spot-el-chorro-makinodromo
+  - climbing-spot-el-chorro-frontales
+  - climbing-spot-el-chorro-poema-de-roca
 display_name:
   en: Climbing — El Chorro
   it: Arrampicata — El Chorro

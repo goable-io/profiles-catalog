@@ -1,4 +1,5 @@
 slug: scuba-mediterranean
+spot_kind: region
 version: "1.0.0"
 category: water
 extends: scuba

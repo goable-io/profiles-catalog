@@ -5,24 +5,39 @@ import { readFile } from "node:fs/promises"
 
 const exec = promisify(execFile)
 
-describe("dist/catalog.json bundle", () => {
+describe("dist/catalog.json bundle (v2 dual-index)", () => {
   it("regenerates deterministically (run twice → identical bytes)", async () => {
     await exec("pnpm", ["bundle"])
     const a = await readFile("dist/catalog.json", "utf8")
     await exec("pnpm", ["bundle"])
     const b = await readFile("dist/catalog.json", "utf8")
-    // generatedAt drifts, so strip it for the equality check
     const stripGen = (s: string) =>
       s.replace(/"generatedAt": "[^"]+"/, '"generatedAt": "<stripped>"')
     expect(stripGen(a)).toBe(stripGen(b))
   }, 30_000)
 
-  it("exposes all profiles under unique bundle keys", async () => {
+  it("emits schemaVersion 2.0.0 + profilesByPath + profilesBySlug", async () => {
     await exec("pnpm", ["bundle"])
     const raw = await readFile("dist/catalog.json", "utf8")
-    const data = JSON.parse(raw) as { profiles: Record<string, unknown> }
-    const keys = Object.keys(data.profiles)
-    expect(keys.length).toBeGreaterThanOrEqual(50)
-    expect(new Set(keys).size).toBe(keys.length)
+    const data = JSON.parse(raw) as {
+      schemaVersion: string
+      profilesByPath: Record<string, unknown>
+      profilesBySlug: Record<string, unknown>
+    }
+    expect(data.schemaVersion).toBe("2.0.0")
+    expect(Object.keys(data.profilesByPath).length).toBeGreaterThanOrEqual(70)
+    expect(Object.keys(data.profilesBySlug).length).toBeGreaterThanOrEqual(70)
+  }, 30_000)
+
+  it("profilesByPath and profilesBySlug have matching cardinality (no dropped profiles)", async () => {
+    await exec("pnpm", ["bundle"])
+    const raw = await readFile("dist/catalog.json", "utf8")
+    const data = JSON.parse(raw) as {
+      profilesByPath: Record<string, unknown>
+      profilesBySlug: Record<string, unknown>
+    }
+    expect(Object.keys(data.profilesByPath).length).toBe(
+      Object.keys(data.profilesBySlug).length,
+    )
   }, 30_000)
 })

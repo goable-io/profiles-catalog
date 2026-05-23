@@ -1,4 +1,5 @@
 slug: freeride-alpine
+spot_kind: region
 version: "1.0.0"
 category: snow
 extends: freeride

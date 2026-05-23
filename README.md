@@ -37,7 +37,7 @@ Four consumption paths ship in the same package:
 - **YAML directory** at `node_modules/@goable-io/profiles-catalog/catalog/` —
   original files for tools that walk a directory tree.
 - **Pre-bundled JSON** at `@goable-io/profiles-catalog/catalog.json` —
-  single file, all profiles parsed and merged. Faster startup.
+  all profiles indexed by both path and slug. Faster startup.
 - **Zod schema + TypeScript types** from the package root — for runtime
   validation of custom profiles or strong typing in TS projects.
 - **JSON Schema** (Draft 2020-12) at
@@ -45,14 +45,35 @@ Four consumption paths ship in the same package:
   consumers (Python `jsonschema`, Go `gojsonschema`, ajv, etc.). Also
   attached to every GitHub Release.
 
+## Schema (v2)
+
+Profiles are organised in a 4-level hierarchy via the `spot_kind`
+discriminator:
+
+| `spot_kind` | Example slug | Required v2 fields |
+|---|---|---|
+| `base` | `kitesurfing` | (none beyond v1) |
+| `region` | `kitesurfing-atlantic` | `extends`, `region` |
+| `cluster` | `kitesurfing-spot-tarifa` | `extends`, `sub_spots[]` |
+| `sub-spot` | `kitesurfing-spot-tarifa-balneario` | `extends`, `parent_cluster`, `coordinates`, `tier`, `tier_rationale.en` |
+
+Sub-spots inherit `dimensions`, `verdict_buckets`, and other scoring
+fields from their parent cluster when not overridden. The engine's
+spatial resolver returns the nearest sub-spot within `radius_m` of
+incoming request coordinates.
+
 ## Usage
 
-### Read the pre-bundled catalog
+### Read the pre-bundled catalog (v2 dual-index)
 
 ```ts
 import catalog from "@goable-io/profiles-catalog/catalog.json" with { type: "json" }
-console.log(Object.keys(catalog.profiles))
-// → ["water/kitesurfing/index", "water/surfing/index", "snow/ski-touring/index", ...]
+
+// By slug (recommended — stable across restructures)
+const tarifaBalneario = catalog.profilesBySlug["kitesurfing-spot-tarifa-balneario"]
+
+// By filesystem path (mirrors the catalog/ directory layout)
+const tarifaCluster = catalog.profilesByPath["water/kitesurfing/clusters/tarifa/index"]
 ```
 
 ### Validate a custom profile against the schema
@@ -61,6 +82,11 @@ console.log(Object.keys(catalog.profiles))
 import { ProfileSchema, type Profile } from "@goable-io/profiles-catalog"
 
 const myProfile: Profile = ProfileSchema.parse(yourYaml)
+
+// Discriminated union — branch on spot_kind for variant-specific fields
+if (myProfile.spot_kind === "sub-spot") {
+  console.log(myProfile.coordinates.center, myProfile.tier)
+}
 ```
 
 ### Use the JSON Schema from any language

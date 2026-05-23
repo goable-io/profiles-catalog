@@ -1,0 +1,49 @@
+slug: climbing-spot-el-chorro-poema-de-roca
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-el-chorro
+parent_cluster: climbing-spot-el-chorro
+region: mediterranean
+
+coordinates:
+  center: { lat: 36.9239, lng: -4.7656 }
+  radius_m: 250
+
+tier: 2
+tier_rationale:
+  en: |
+    Multi-pitch sport routes on the long limestone faces above the El
+    Chorro reservoir, F5+ to F7a. Routes are 3-7 pitches, bolted with
+    rappel anchors. Consequence of routine multi-pitch error (rope-up
+    misorganisation, dropped gear) is higher than single-pitch sport
+    because of the descent commitment — rappel from height in case of
+    weather is the standard exit. Cell coverage limited on the upper
+    pitches; rescue by helicopter from Málaga base.
+
+display_name:
+  en: Climbing — El Chorro Poema de Roca
+  it: Arrampicata — El Chorro Poema de Roca
+  es: Escalada — El Chorro Poema de Roca
+  fr: Escalade — El Chorro Poema de Roca
+  de: Klettern — El Chorro Poema de Roca
+
+description:
+  en: |
+    El Chorro's multi-pitch sport showcase. Routes like "Poema de Roca"
+    (4 pitches, F6b+) and "Las Buitreras" (6 pitches, F6c) are classics.
+    Sun-baked in summer; best in cool winter days. Approach by a short
+    via ferrata or by the Caminito del Rey access path (separate permit
+    required for the latter).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax El Chorro guidebook (Hewitt, 2023) multi-pitch section"
+    - "FAA multi-pitch route inventory and bolting standards"
+  notes: |
+    Sub-spot of climbing-spot-el-chorro cluster. Tier 2: bolted multi-
+    pitch, established rappel descent, but altitude + descent
+    commitment elevate consequence vs single-pitch Frontales /
+    Makinodromo.

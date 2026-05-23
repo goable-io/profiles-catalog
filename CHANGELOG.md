@@ -18,15 +18,162 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased]
+## [Unreleased] — lands as 2.0.0
 
-### Changed
-- Release workflow now honours `package.json.version` when it is ahead of
-  npm latest, instead of unconditionally auto-bumping the patch. This
-  enables planned major/minor releases (e.g. v2.0.0) to land via a normal
-  PR that includes the version bump in the diff, with no manual tagging
-  step. Routine merges still auto-bump patch as before. Drift in the wrong
-  direction (repo behind npm) is now a CI failure.
+### BREAKING — hierarchical 5-level schema
+
+The profile schema is now a discriminated union on a new required field
+`spot_kind`, with four variants:
+
+```
+base → region → cluster → sub-spot
+```
+
+This is a major-version change. Consumers must update both their imports
+and their data-loading code. See "Migration guide" below.
+
+#### New required fields per variant
+
+- **`base`** (was the implicit default in v1): no change to existing
+  contents; the field `spot_kind: base` is now required at the top of
+  every base profile YAML.
+- **`region`** (e.g. `kitesurfing-mediterranean`): unchanged contents;
+  `spot_kind: region` now required.
+- **`cluster`** (renamed from "spot" in v1, e.g. `kitesurfing-spot-tarifa`):
+  the v1 spot YAMLs become cluster YAMLs. New required fields:
+  - `spot_kind: cluster`
+  - `sub_spots: [...]` — must list ≥1 child sub-spot slug
+- **`sub-spot`** (NEW, e.g. `kitesurfing-spot-tarifa-balneario`): the
+  fine-grained spatial unit that the engine's spatial resolver returns.
+  Required fields:
+  - `spot_kind: sub-spot`
+  - `parent_cluster: <cluster-slug>`
+  - `coordinates: { center: { lat, lng }, radius_m }` (4+ decimal precision recommended)
+  - `tier: 1 | 2 | 3` (physical-consequence classification)
+  - `tier_rationale: { en: "..." }` (≥3 sentences, English mandatory)
+  - All scoring fields (`dimensions`, `verdict_buckets`) are now optional
+    on sub-spots — they inherit from the parent cluster when absent.
+
+#### New directory layout
+
+```
+catalog/<family>/<activity>/
+├── index.yaml                      (base, spot_kind: base)
+├── regions/<region>.yaml           (region, spot_kind: region)
+└── clusters/<name>/                (renamed from spots/)
+    ├── index.yaml                  (cluster, spot_kind: cluster)
+    └── sub-spots/<sub-name>.yaml   (sub-spot, spot_kind: sub-spot)
+```
+
+#### Bundle changes — `dist/catalog.json`
+
+The bundled JSON now exposes two indexes:
+
+```jsonc
+{
+  "schemaVersion": "2.0.0",
+  "version": "2.0.0",
+  "generatedAt": "...",
+  "profilesByPath": {
+    "water/kitesurfing/index": { ... },
+    "water/kitesurfing/clusters/tarifa/index": { ... },
+    "water/kitesurfing/clusters/tarifa/sub-spots/balneario": { ... }
+  },
+  "profilesBySlug": {
+    "kitesurfing": { ... },
+    "kitesurfing-spot-tarifa": { ... },
+    "kitesurfing-spot-tarifa-balneario": { ... }
+  }
+}
+```
+
+**The v1 single-index format `{ "water/kitesurfing/spots/tarifa": ... }`
+is gone.** Consumers should migrate to `profilesBySlug` (stable
+identifiers) for forward-compat against future re-structures.
+
+### Migration guide for downstream consumers
+
+1. **TypeScript / Zod consumers**: bump dependency to `^2.0.0`. The
+   `Profile` type is now a discriminated union — branch on
+   `spot_kind` before accessing variant-specific fields (`coordinates`,
+   `tier`, `sub_spots`, etc.).
+
+2. **JSON consumers** reading `dist/catalog.json` directly: replace
+   indexing by path with indexing by slug. Old key
+   `"water/kitesurfing/spots/tarifa"` is now
+   `"water/kitesurfing/clusters/tarifa/index"` in `profilesByPath`,
+   and the same content is available under `"kitesurfing-spot-tarifa"`
+   in the new `profilesBySlug` index (preferred for stability).
+
+3. **Engine consumers** using the inheritance chain: a sub-spot now
+   inherits from its cluster (which inherits from region → base). When
+   resolving scoring data for a sub-spot, walk `parent_cluster` first,
+   then `extends` upward. Sub-spot YAMLs may omit `dimensions` and
+   `verdict_buckets`; the resolver must fill these from the cluster.
+
+### Added — initial sub-spot bootstrap (26 sub-spots across 8 clusters)
+
+The 8 existing v1 spot profiles have been promoted to clusters, each
+with initial sub-spots:
+
+| Cluster | Sub-spots | Tiers |
+|---|---|---|
+| `kitesurfing-spot-tarifa` | balneario, los-lances-nord, valdevaqueros, punta-paloma, bolonia | 2, 1, 2, 3, 2 |
+| `windsurfing-spot-tarifa` | balneario, los-lances-nord, valdevaqueros, punta-paloma, bolonia | 2, 1, 2, 3, 2 |
+| `surfing-spot-nazare` | praia-do-norte-xl, praia-do-norte, praia-da-vila | 3, 3, 2 |
+| `scuba-spot-red-sea` | ras-mohammed, thistlegorm, brothers | 2, 2, 3 |
+| `freeride-spot-chamonix` | vallee-blanche, grands-montets, aiguille-du-midi | 2, 3, 3 |
+| `paragliding-spot-oludeniz` | babadag-1700, babadag-1900 | 2, 3 |
+| `trekking-spot-dolomites-tre-cime` | classic-loop, via-ferrata-innerkofler | 1, 2 |
+| `climbing-spot-el-chorro` | makinodromo, frontales, poema-de-roca | 2, 2, 2 |
+
+All sub-spots are `maturity: provisional`. Coordinates from public sources
+(Wikipedia, OpenStreetMap, federation documentation). Tier classifications
+reflect objective physical features (bottom type, rescue presence, wind
+exposure, glaciation, etc.) and are flagged for domain-expert review.
+
+### Added — schema exports
+
+New named exports for typed consumption per variant:
+
+```ts
+import {
+  ProfileSchema,
+  BaseProfileSchema,
+  RegionProfileSchema,
+  ClusterProfileSchema,
+  SubSpotProfileSchema,
+  CoordinatesSchema,
+  TierSchema,
+  SpotKindEnum,
+  type BaseProfile,
+  type RegionProfile,
+  type ClusterProfile,
+  type SubSpotProfile,
+  type Coordinates,
+  type Tier,
+  type SpotKind,
+} from "@goable-io/profiles-catalog"
+```
+
+### Added — integrity test suite (9 new tests)
+
+- `cluster.sub_spots[]` references must resolve to existing sub-spot slugs
+- `sub-spot.parent_cluster` must match an existing cluster slug
+- Sub-spot must be listed in its parent cluster's `sub_spots[]` (bidirectional consistency)
+- `tier_rationale.en` ≥3 sentences
+- Coordinates within approximate bbox of declared region
+- `radius_m` in (0, 5000]
+- Sub-spot slug starts with `parent_cluster + "-"`
+
+### Future bootstrap targets
+
+This release covers the 8 existing clusters with their initial sub-spots
+(26 total). Future PRs will bootstrap new clusters (Ho'okipa, Yosemite,
+Kalymnos, Fontainebleau, etc.) and additional sub-spots for the existing
+clusters, targeting 250-500 sub-spot YAMLs across 150-200 unique physical
+locations × 2-3 activities per location. See `CONTRIBUTING.md` for the
+sub-spot authoring conventions.
 
 ## [1.0.2] — 2026-05-22
 

@@ -1,8 +1,15 @@
 slug: windsurfing-spot-tarifa
+spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: windsurfing-atlantic
 region: atlantic
+sub_spots:
+  - windsurfing-spot-tarifa-balneario
+  - windsurfing-spot-tarifa-los-lances-nord
+  - windsurfing-spot-tarifa-valdevaqueros
+  - windsurfing-spot-tarifa-punta-paloma
+  - windsurfing-spot-tarifa-bolonia
 display_name:
   en: Windsurfing — Tarifa
   it: Windsurf — Tarifa

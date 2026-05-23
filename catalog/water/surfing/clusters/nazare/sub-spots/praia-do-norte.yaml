@@ -1,0 +1,49 @@
+slug: surfing-spot-nazare-praia-do-norte
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-nazare
+parent_cluster: surfing-spot-nazare
+region: atlantic
+
+coordinates:
+  center: { lat: 39.6088, lng: -9.0810 }
+  radius_m: 600
+
+tier: 3
+tier_rationale:
+  en: |
+    Praia do Norte in "regular" North Atlantic swell — waves 3-8 m, not
+    the XL canyon focus but still beyond ability of most recreational
+    surfers. Heavy beach break with shifting peaks driven by canyon
+    refraction, very strong rip currents off the harbour wall, and cold
+    water (13-17 °C in winter). Rescue presence depends on whether WSL
+    or municipal teams are on duty; outside event windows, in-water
+    support is limited.
+
+display_name:
+  en: Surfing — Nazaré Praia do Norte
+  it: Surf — Nazaré Praia do Norte
+  es: Surf — Nazaré Praia do Norte
+  fr: Surf — Nazaré Praia do Norte
+  de: Surfen — Nazaré Praia do Norte
+
+description:
+  en: |
+    The same beach as Praia do Norte XL, but on more frequent
+    "non-canyon-firing" North Atlantic swells. Still heavy by global
+    standards (consistent 3-5 m winter days) and used as training
+    ground by the local big-wave community. Not suitable for
+    intermediate surfers — neighbouring Praia da Vila is the
+    intermediate option in the Nazaré cluster.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mendes & Cascão 2023, Nazaré wave amplification, Ocean Engineering"
+    - "Federação Portuguesa de Surf (FPS) Nazaré spot classification"
+  notes: |
+    Sub-spot of surfing-spot-nazare cluster. Tier 3 even outside XL
+    windows: heavy currents, cold water, limited routine rescue, shifting
+    canyon-driven peaks. Domain-expert review recommended.

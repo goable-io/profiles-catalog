@@ -1,0 +1,51 @@
+slug: trekking-spot-dolomites-tre-cime-via-ferrata-innerkofler
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-dolomites-tre-cime
+parent_cluster: trekking-spot-dolomites-tre-cime
+region: alpine
+
+coordinates:
+  center: { lat: 46.6303, lng: 12.3025 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Sextner Innerkofler / Toblin via ferrata starting from Rifugio
+    Locatelli — a WWI-era fixed-rope route involving short tunnels,
+    exposed ledges, and ~150 m of altitude on protected steel cable.
+    Requires harness, ferrata lanyard, and helmet (rentable at huts).
+    Consequence of a fall is held by the lanyard but with significant
+    impact force; route is technically scrambling rather than climbing.
+    Cellular coverage variable in the tunnels; one fixed rescue line
+    runs through the cluster.
+
+display_name:
+  en: Trekking — Tre Cime Ferrata Innerkofler
+  it: Trekking — Ferrata Innerkofler Tre Cime
+  es: Trekking — Vía Ferrata Innerkofler Tre Cime
+  fr: Trekking — Via Ferrata Innerkofler Tre Cime
+  de: Wandern — Klettersteig Innerkofler Drei Zinnen
+
+description:
+  en: |
+    Historic WWI-era ferrata above Rifugio Locatelli, connecting
+    artillery positions on Monte Paterno / Paternkofel. Spectacular
+    views of the north faces of the Tre Cime. Requires ferrata kit
+    + ability to move on steel cable in exposure. Most active in
+    mid-July to early September.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Club Alpino Italiano (CAI) via ferrata classification"
+    - "Soccorso Alpino Veneto ferrata operations protocol"
+    - "Werner Beikircher, Klettersteigatlas Alpen (Bergverlag Rother)"
+  notes: |
+    Sub-spot of trekking-spot-dolomites-tre-cime cluster. Tier 2:
+    protected fixed-rope route, kit required, exposure but managed,
+    rescue infrastructure present. Higher consequence than the loop
+    but standard ferrata kit + competence keeps it recoverable.

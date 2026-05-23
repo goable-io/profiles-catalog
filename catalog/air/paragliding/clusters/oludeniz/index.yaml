@@ -1,8 +1,12 @@
 slug: paragliding-spot-oludeniz
+spot_kind: cluster
 version: "0.1.0"
 category: air
 extends: paragliding
 region: mediterranean
+sub_spots:
+  - paragliding-spot-oludeniz-babadag-1700
+  - paragliding-spot-oludeniz-babadag-1900
 display_name:
   en: Paragliding — Ölüdeniz (Babadağ)
   it: Parapendio — Ölüdeniz (Babadağ)

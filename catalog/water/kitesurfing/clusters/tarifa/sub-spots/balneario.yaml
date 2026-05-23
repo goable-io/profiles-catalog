@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-tarifa-balneario
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-tarifa
+parent_cluster: kitesurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0133, lng: -5.6044 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Open beach south of town with deep water from roughly 20 m offshore.
+    Sand bottom, no rocks or reef. Side-on Levante (E) and Poniente (W)
+    keep kiters parallel to shore, not pushed out. Rescue craft available
+    from local kite schools during operating hours. Worst-case consequence
+    of a session error: lost gear or a swim back — recoverable.
+
+display_name:
+  en: Kitesurfing — Tarifa Balneario
+  it: Kitesurf — Tarifa Balneario
+  es: Kitesurf — Tarifa Balneario
+  fr: Kitesurf — Tarifa Balneario
+  de: Kitesurfen — Tarifa Balneario
+
+description:
+  en: |
+    The most popular Tarifa kite spot, on a wide open beach just south of
+    the old town. Wind is side-on for both Levante (E) and Poniente (W),
+    keeping kiters running parallel to the coast in both regimes. Deep
+    water requires a swim back if the kite is lost, mitigated by IKO
+    school rescue services during the day. The sandy bottom and absence
+    of submerged hazards mark this as the beginner-and-intermediate-
+    friendly Tarifa option.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Local Tarifa kite school operational guidelines (e.g. Free Your Mind, ION Club)"
+    - "IKO venue risk assessment for Strait of Gibraltar sites"
+  notes: |
+    Sub-spot of kitesurfing-spot-tarifa cluster. Tier 2 because: deep
+    water, side-on prevailing wind, rescue available, sand bottom.
+    Errors lose gear but are recoverable.

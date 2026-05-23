@@ -31,26 +31,37 @@ contributions extend coverage.
 
 ---
 
-## Profile file structure
+## Profile file structure (v2 hierarchical schema)
 
 ```
 catalog/
   <category>/
     <activity-slug>/
-      index.yaml              ← canonical global profile
-      regions/                ← optional region-specific overrides (extends: <base-slug>)
+      index.yaml              ← base profile (spot_kind: base)
+      regions/                ← region-specific overrides (spot_kind: region)
         mediterranean.yaml
         atlantic.yaml
-      spots/                  ← optional spot-specific profiles
-        tarifa.yaml
-        nazare.yaml
+      clusters/               ← named geographic areas (spot_kind: cluster)
+        tarifa/
+          index.yaml          ← cluster profile (sub_spots: [...])
+          sub-spots/          ← physical locations within the cluster
+            balneario.yaml    ← spot_kind: sub-spot
+            valdevaqueros.yaml
 ```
 
-Each `index.yaml` must validate against
-[`schema/profile.schema.ts`](../schema/profile.schema.ts). Key required
-fields: `slug`, `version` (semver), `category`, `display_name`
-(per-locale), `dimensions` (weights summing to 1), `gates` (safety
-hard-gates), `verdict_buckets`, and a `meta` block with a `maturity` tag.
+Each YAML must validate against
+[`schema/profile.schema.ts`](../schema/profile.schema.ts), which is a
+discriminated union on `spot_kind`. Required fields per variant:
+
+| Variant | Required fields |
+|---|---|
+| `base` | slug, spot_kind, version, category, display_name, dimensions (weights=1), verdict_buckets, meta |
+| `region` | base fields + `extends`, `region` (RegionEnum) |
+| `cluster` | base fields + `extends`, `sub_spots[]` (≥1 child slug) |
+| `sub-spot` | slug, spot_kind, version, category, display_name, meta + `extends`, `parent_cluster`, `coordinates`, `tier` (1\|2\|3), `tier_rationale.en` |
+
+On sub-spots, scoring fields (`dimensions`, `verdict_buckets`) are
+**optional** — they inherit from the parent cluster when absent.
 
 ---
 
