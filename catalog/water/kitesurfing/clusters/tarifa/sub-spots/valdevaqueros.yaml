@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-tarifa-valdevaqueros
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-tarifa
+parent_cluster: kitesurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0644, lng: -5.6928 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Long open beach 10 km northwest of Tarifa town, the busiest kite
+    launch in southern Spain. Levante is more onshore here than at
+    Balneario (gusts can be stronger in the lee of the Sierra de la
+    Plata), making body-drag returns harder if a kite is lost downwind.
+    Sand bottom and rescue craft from on-beach schools keep this
+    moderate-risk, but the higher kite density (peak 300+ kites
+    simultaneously in summer) raises in-water collision probability.
+
+display_name:
+  en: Kitesurfing — Tarifa Valdevaqueros
+  it: Kitesurf — Tarifa Valdevaqueros
+  es: Kitesurf — Tarifa Valdevaqueros
+  fr: Kitesurf — Tarifa Valdevaqueros
+  de: Kitesurfen — Tarifa Valdevaqueros
+
+description:
+  en: |
+    The iconic Tarifa kite beach — the one in every photo. Long, wide,
+    consistent Levante delivery, but kite density during July-August
+    peak weekends is the highest of any European spot and the dominant
+    "Tarifa Valdevaqueros" risk factor is other kiters, not the wind or
+    water. Better space and cleaner Levante in shoulder season
+    (May, September, October).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Andaluza de Vela (FAV) site documentation"
+    - "Punta Paloma–Valdevaqueros coastal wind study (Pereira & Belo-Pereira 2018)"
+  notes: |
+    Sub-spot of kitesurfing-spot-tarifa cluster. Tier 2: sand bottom and
+    rescue infrastructure, but higher exposure to gusty Levante in the
+    Sierra de la Plata lee + extreme peak-season kite density.

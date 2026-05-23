@@ -1,0 +1,53 @@
+slug: kitesurfing-spot-tarifa-punta-paloma
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-tarifa
+parent_cluster: kitesurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0667, lng: -5.7053 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Headland at the northwest end of the Valdevaqueros bay. The shore
+    transitions from sand into rock and seaweed-covered reef in the
+    final 100 m of the point. When combined with Atlantic groundswell
+    (Poniente weeks), wave height can exceed 2.5 m, and kiters are
+    pushed onto rock if a kite fails downwind. No on-beach rescue
+    services at the point itself — the nearest help is the kite-school
+    fleet at Valdevaqueros, several minutes upwind. Reserved for advanced
+    riders comfortable in waves with hazardous downwind features.
+
+display_name:
+  en: Kitesurfing — Tarifa Punta Paloma
+  it: Kitesurf — Tarifa Punta Paloma
+  es: Kitesurf — Tarifa Punta Paloma
+  fr: Kitesurf — Tarifa Punta Paloma
+  de: Kitesurfen — Tarifa Punta Paloma
+
+description:
+  en: |
+    The wave-riding end of the Tarifa cluster, working best on Poniente
+    with Atlantic groundswell. Punta Paloma is the only Tarifa sub-spot
+    where wave height regularly exceeds 1.5 m; on big Poniente days it
+    becomes a strapless/foil destination for the local advanced
+    community. The downwind rock section and absence of close rescue
+    coverage make it a serious step up in consequence from Balneario or
+    Valdevaqueros.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Local Tarifa kite community wave-day briefings (informal but widely shared)"
+    - "Pereira & Belo-Pereira 2018, Strait of Gibraltar wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-tarifa cluster. Tier 3: hazardous
+    downwind rock section, wave-influenced, no immediate rescue coverage
+    at the point. Errors here can cause severe injury, especially on
+    big-swell Poniente days. Domain-expert review needed for L1f
+    breaker_height_m calibration.

@@ -1,0 +1,51 @@
+slug: surfing-spot-nazare-praia-do-norte-xl
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-nazare
+parent_cluster: surfing-spot-nazare
+region: atlantic
+
+coordinates:
+  center: { lat: 39.6126, lng: -9.0828 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    The big-wave zone of Praia do Norte, focused over the Nazaré
+    submarine canyon. On firing days waves exceed 10 m and routinely
+    reach 20-25 m; the world's largest paddled and towed-in waves are
+    recorded here. Failure mode is multi-wave hold-down at extreme
+    scale, with no possibility of paddling out of the impact zone —
+    jet-ski rescue is mandatory and even then there have been fatalities
+    and career-ending injuries. Exclusively for invited elite tow-in
+    teams when the canyon fires.
+
+display_name:
+  en: Surfing — Nazaré Praia do Norte XL
+  it: Surf — Nazaré Praia do Norte XL
+  es: Surf — Nazaré Praia do Norte XL
+  fr: Surf — Nazaré Praia do Norte XL
+  de: Surfen — Nazaré Praia do Norte XL
+
+description:
+  en: |
+    Big-wave laboratory of European surfing. Activates roughly 5-15 days
+    per winter when North Atlantic storms align with the canyon
+    bathymetry. Tow-in only above 10 m; paddle attempts below that
+    threshold by a small number of elite specialists. The lineup is
+    serviced by jet-ski teams under municipal coordination during major
+    WSL events.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mendes & Cascão 2023, Nazaré wave amplification, Ocean Engineering"
+    - "WSL Big Wave Tour Nazaré Challenge venue specification 2023"
+    - "Câmara Municipal de Nazaré big-swell day operational protocol"
+  notes: |
+    Sub-spot of surfing-spot-nazare cluster. Tier 3: extreme consequence,
+    jet-ski rescue required, recorded fatalities. Inherits cluster's
+    expert-only minimum-wave gate logic.

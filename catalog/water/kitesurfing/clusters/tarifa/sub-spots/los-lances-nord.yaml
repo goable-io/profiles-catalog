@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-tarifa-los-lances-nord
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-tarifa
+parent_cluster: kitesurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0289, lng: -5.6225 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    Northern end of Playa de los Lances, the broad sandy bay between
+    Tarifa town and Punta Paloma. Knee- to waist-deep shallow water
+    extends 80-150 m offshore — body-draggable distance with no risk of
+    being pushed beyond rescue range. Side-on Levante orientation keeps
+    kiters parallel to shore. Highest concentration of kite schools in
+    the area, so multiple rescue boats operate concurrently. Errors here
+    typically result in a wet walk back, not loss of equipment.
+
+display_name:
+  en: Kitesurfing — Tarifa Los Lances Nord
+  it: Kitesurf — Tarifa Los Lances Nord
+  es: Kitesurf — Tarifa Los Lances Norte
+  fr: Kitesurf — Tarifa Los Lances Nord
+  de: Kitesurfen — Tarifa Los Lances Nord
+
+description:
+  en: |
+    Beginner-friendly end of Los Lances beach. The long shallow shelf is
+    the main reason Tarifa works as a beginner destination at all — most
+    kite schools use this zone for first lessons and body-drag practice.
+    Less crowded than Balneario at peak (schools spread along the long
+    beach), and the shallow water tolerates a much wider margin of error.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO certified school location data, Tarifa region"
+    - "Junta de Andalucía coastal classification, Playa de los Lances"
+  notes: |
+    Sub-spot of kitesurfing-spot-tarifa cluster. Tier 1: shallow water
+    (depth <1.5m for 80-150m offshore), sand bottom, schools-dense, side-
+    on wind. Most forgiving of any Tarifa sub-spot for new kiters.

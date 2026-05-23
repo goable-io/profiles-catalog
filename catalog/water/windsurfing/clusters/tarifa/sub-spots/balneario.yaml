@@ -1,0 +1,50 @@
+slug: windsurfing-spot-tarifa-balneario
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: windsurfing-spot-tarifa
+parent_cluster: windsurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0133, lng: -5.6044 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Same Balneario beach as the kitesurfing cluster, used by the Tarifa
+    windsurf community on Levante (E) and Poniente (W) afternoons. Deep
+    water from 20 m offshore, sand bottom, side-on prevailing wind.
+    Windsurf-specific risk: drift-off if mast breaks or sail rips at
+    25 kn+ — the swim back is the same distance as for kiters but slower
+    because the rider is also dragging gear. Rescue boats from local
+    windsurf schools (slightly fewer than kite schools but still present
+    during operating hours).
+
+display_name:
+  en: Windsurfing — Tarifa Balneario
+  it: Windsurf — Tarifa Balneario
+  es: Windsurf — Tarifa Balneario
+  fr: Windsurf — Tarifa Balneario
+  de: Windsurfen — Tarifa Balneario
+
+description:
+  en: |
+    Tarifa's windsurf entry point. Beach launch with side-on
+    bidirectional wind (Levante or Poniente). The windsurf community
+    here is smaller and older than the kite community but consistently
+    represented. Water-start practice happens close to shore; speed runs
+    further out are inside the inshore zone (no need to commit to deep
+    open water). Same operational season as kitesurfing-tarifa-balneario.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Real Federación Española de Vela (RFEV) Tarifa site documentation"
+    - "AEMET Tarifa station historical record"
+  notes: |
+    Sub-spot of windsurfing-spot-tarifa cluster. Tier 2: deep water,
+    side-on wind, school presence. Slightly higher risk than kite
+    Balneario because gear-drag in failure mode is slower to swim with.

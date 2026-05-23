@@ -1,0 +1,50 @@
+slug: windsurfing-spot-tarifa-los-lances-nord
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: windsurfing-spot-tarifa
+parent_cluster: windsurfing-spot-tarifa
+region: atlantic
+
+coordinates:
+  center: { lat: 36.0289, lng: -5.6225 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    Northern end of Playa de los Lances. Shallow shelf of 80-150 m
+    works less well for windsurf than for kite (waterstart requires
+    more depth than body-drag practice), but the shallow zone IS used
+    by beginner windsurfers for upper-body planning practice and uphaul
+    recovery without exposure to deep water. Sand bottom, side-on
+    Levante, dense school coverage in the immediate area. Failure mode
+    is a wet walk back to the beach — most recoverable Tarifa windsurf
+    sub-spot.
+
+display_name:
+  en: Windsurfing — Tarifa Los Lances Nord
+  it: Windsurf — Tarifa Los Lances Nord
+  es: Windsurf — Tarifa Los Lances Norte
+  fr: Windsurf — Tarifa Los Lances Nord
+  de: Windsurfen — Tarifa Los Lances Nord
+
+description:
+  en: |
+    The beginner-friendly windsurf zone of the Tarifa cluster. Shallow
+    water from the school launch and broad sand beach make this the
+    standard entry-point for windsurf lessons in southern Spain. Less
+    appealing for advanced sailors (limited wave content, busy with
+    schools and kiters), but the only Tarifa sub-spot with Tier 1
+    physical safety.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Real Federación Española de Vela (RFEV) Tarifa windsurf school registry"
+    - "Tarifa local windsurf school operational reports"
+  notes: |
+    Sub-spot of windsurfing-spot-tarifa cluster. Tier 1: shallow water,
+    sand bottom, dense school presence, side-on wind. Beginner-grade
+    windsurf venue.

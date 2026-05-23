@@ -1,8 +1,12 @@
 slug: trekking-spot-dolomites-tre-cime
+spot_kind: cluster
 version: "0.1.0"
 category: land
 extends: trekking
 region: alpine
+sub_spots:
+  - trekking-spot-dolomites-tre-cime-classic-loop
+  - trekking-spot-dolomites-tre-cime-via-ferrata-innerkofler
 display_name:
   en: Trekking — Tre Cime di Lavaredo (Dolomites)
   it: Trekking — Tre Cime di Lavaredo (Dolomiti)

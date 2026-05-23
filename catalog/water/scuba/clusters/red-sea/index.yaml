@@ -1,8 +1,13 @@
 slug: scuba-spot-red-sea
+spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: scuba
 region: indian
+sub_spots:
+  - scuba-spot-red-sea-ras-mohammed
+  - scuba-spot-red-sea-thistlegorm
+  - scuba-spot-red-sea-brothers
 display_name:
   en: Scuba Diving — Red Sea
   it: Immersione — Mar Rosso

@@ -1,0 +1,48 @@
+slug: surfing-spot-nazare-praia-da-vila
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-nazare
+parent_cluster: surfing-spot-nazare
+region: atlantic
+
+coordinates:
+  center: { lat: 39.6011, lng: -9.0744 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    The "town beach" south of Nazaré harbour, sheltered from the full
+    canyon amplification by the headland and breakwater. Wave height
+    typically 0.5-2 m even when Praia do Norte is overhead, making this
+    the intermediate-friendly counterpart in the cluster. Lifeguards
+    operate during the May-October bathing season; rescue presence is
+    limited in winter. Sand bottom, no rocks.
+
+display_name:
+  en: Surfing — Nazaré Praia da Vila
+  it: Surf — Nazaré Praia da Vila
+  es: Surf — Nazaré Praia da Vila
+  fr: Surf — Nazaré Praia da Vila
+  de: Surfen — Nazaré Praia da Vila
+
+description:
+  en: |
+    Where most Nazaré recreational and learning surf happens. Town beach
+    feel, multiple surf schools, and crucially-different physics: the
+    breakwater of the fishing port truncates the canyon's wave
+    amplification, so even on big-Praia-do-Norte days this beach stays
+    rideable for intermediates. Crowded in summer; uncrowded but cold
+    in winter.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federação Portuguesa de Surf (FPS) certified school registry, Nazaré"
+    - "Município da Nazaré, bathing-season lifeguard rota"
+  notes: |
+    Sub-spot of surfing-spot-nazare cluster. Tier 2: sheltered by
+    breakwater, sand bottom, lifeguards in season. Worst case typically
+    lost board / swim back to shore, recoverable.

@@ -1,0 +1,50 @@
+slug: paragliding-spot-oludeniz-babadag-1700
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-oludeniz
+parent_cluster: paragliding-spot-oludeniz
+region: mediterranean
+
+coordinates:
+  center: { lat: 36.5400, lng: 29.1567 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    The 1700 m launch on Babadağ — the main commercial tandem launch
+    used by the majority of Ölüdeniz operators. Sea-breeze convergence
+    gives reliable smooth thermal conditions in the May-October peak
+    window. Launch ramp + paved access road managed by the Ölüdeniz
+    Hava Sporları Komisyonu. Landing zone is the large Belcekiz beach
+    with clear approach corridors. Tandem and intermediate solo pilots
+    operate routinely; the only consequential failure mode is
+    mid-flight deflation in convergence turbulence (very rare in
+    morning sea-breeze conditions).
+
+display_name:
+  en: Paragliding — Babadağ 1700
+  it: Parapendio — Babadağ 1700
+  es: Parapente — Babadağ 1700
+  fr: Parapente — Babadağ 1700
+  de: Gleitschirmfliegen — Babadağ 1700
+
+description:
+  en: |
+    The most-flown paragliding launch in Turkey. ~150-300 tandem flights
+    per day in peak season. Smooth sea-breeze convergence in the morning,
+    growing thermal activity into early afternoon. Pilots departing
+    later in the day move to the 1900 launch for stronger conditions.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Türkiye Hava Sporları Federasyonu (THSF) Ölüdeniz launch documentation"
+    - "Ölüdeniz Hava Sporları Komisyonu operational rules"
+    - "FAI CIVL Ölüdeniz site rating"
+  notes: |
+    Sub-spot of paragliding-spot-oludeniz cluster. Tier 2: commercial
+    tandem operations, established LZ, but still air-sport with
+    inherent deflation/midair-collision residual risk.

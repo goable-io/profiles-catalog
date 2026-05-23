@@ -1,0 +1,53 @@
+slug: freeride-spot-chamonix-vallee-blanche
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-chamonix
+parent_cluster: freeride-spot-chamonix
+region: alpine
+
+coordinates:
+  center: { lat: 45.9061, lng: 6.9883 }
+  radius_m: 4000
+
+tier: 2
+tier_rationale:
+  en: |
+    The classic 20 km glaciated freeride descent from the Aiguille du
+    Midi (3842 m) down to Chamonix town (1035 m). Crevassed terrain
+    throughout, but on a well-known route with established crevasse-
+    crossing points and bridges. Mandatory: avalanche transceiver +
+    shovel + probe; harness, rope, and rescue gear for the glacier;
+    professional IFMGA guide for first-timers. Risk profile is medium-
+    high for prepared parties (crevasse fall is the dominant
+    consequence) and unrecoverable for unprepared ones.
+
+display_name:
+  en: Freeride — Vallée Blanche
+  it: Freeride — Vallée Blanche
+  es: Freeride — Vallée Blanche
+  fr: Freeride — Vallée Blanche
+  de: Freeride — Vallée Blanche
+
+description:
+  en: |
+    The Vallée Blanche is the most-skied glacier descent in the world —
+    typical day sees 100-300 skiers depending on conditions. The actual
+    consequences of an error are not "mild" by general freeride
+    standards (it's still a glaciated traverse), but the route is so
+    well-trafficked that rescue mobilisation is fast and the variants
+    are well-mapped (Vrai Vallée Blanche, Envers du Plan, Petit Envers).
+    Tier 2 for prepared parties with avalanche/glacier kit and a guide.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie des Guides de Chamonix Vallée Blanche operational guide"
+    - "Météo-France Chamonix avalanche bulletin daily product"
+    - "Bourdeau et al. 2020, alpine climate change impacts on glaciated descents"
+  notes: |
+    Sub-spot of freeride-spot-chamonix cluster. Tier 2 because: high
+    daily traffic, established route, fast rescue mobilisation, but
+    genuinely glaciated. Avalanche risk hard-gate from base profile
+    applies — consult Météo-France BERA daily.

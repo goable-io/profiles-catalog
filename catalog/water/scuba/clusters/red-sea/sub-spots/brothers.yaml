@@ -1,0 +1,51 @@
+slug: scuba-spot-red-sea-brothers
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-red-sea
+parent_cluster: scuba-spot-red-sea
+region: indian
+
+coordinates:
+  center: { lat: 26.3361, lng: 34.8531 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Two small offshore islands (Big Brother and Little Brother) 60 km
+    east of the Egyptian mainland — accessible only by multi-day
+    liveaboard. Walls drop into the open Red Sea (over 1000 m beyond
+    the shelf), with strong unpredictable currents. Resident oceanic
+    whitetip and thresher shark populations. Deepest reliable recovery
+    point is back on the liveaboard, multiple hours from the nearest
+    chamber (Hurghada or Marsa Alam). Reserved for advanced divers with
+    deep specialty + at least 100 logged dives per most operator rules.
+
+display_name:
+  en: Scuba — Red Sea Brothers Islands
+  it: Immersione — Mar Rosso Brothers Islands
+  es: Buceo — Mar Rojo Brothers Islands
+  fr: Plongée — Mer Rouge Brothers Islands
+  de: Tauchen — Rotes Meer Brothers Islands
+
+description:
+  en: |
+    Offshore tier-1 wall diving for the experienced Red Sea community.
+    Pelagic encounters (oceanic whitetip, thresher, occasional hammerhead
+    schools at Little Brother) are the draw. Diving exclusively from
+    liveaboards moored on the islands' protected lee side; conditions
+    in even moderate weather make pickup non-trivial. Season is
+    roughly May-October — winter swell makes the crossing impractical.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HEPCA Offshore Marine Park access permit system"
+    - "Egyptian Tourism Federation Brothers Islands operator standards"
+    - "Pinheiro et al. 2018, oceanic whitetip behavior Red Sea brothers islands"
+  notes: |
+    Sub-spot of scuba-spot-red-sea cluster. Tier 3: offshore, strong
+    current, pelagic encounters, long evacuation chain. Operator-gated
+    by experience requirements (typically 100+ dives, deep diver cert).

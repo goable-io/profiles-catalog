@@ -1,18 +1,32 @@
 export {
   ProfileSchema,
+  BaseProfileSchema,
+  RegionProfileSchema,
+  ClusterProfileSchema,
+  SubSpotProfileSchema,
   DimensionSchema,
   CurvePointSchema,
   GateSchema,
+  CoordinatesSchema,
+  TierSchema,
+  SpotKindEnum,
   MetricEnum,
   RegionEnum,
 } from "./profile.schema.js"
 
 export type {
   Profile,
+  BaseProfile,
+  RegionProfile,
+  ClusterProfile,
+  SubSpotProfile,
   Dimension,
   CurvePoint,
   Gate,
   Metric,
   Region,
   Calibration,
+  Coordinates,
+  Tier,
+  SpotKind,
 } from "./profile.schema.js"

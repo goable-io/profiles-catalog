@@ -1,0 +1,53 @@
+slug: freeride-spot-chamonix-aiguille-du-midi
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-chamonix
+parent_cluster: freeride-spot-chamonix
+region: alpine
+
+coordinates:
+  center: { lat: 45.8786, lng: 6.8869 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Aiguille du Midi summit zone (3842 m), departure point for the
+    most committing Chamonix freeride lines — Cosmiques Couloir, Mallory
+    couloirs, Glacier Rond, Y Couloir. Sustained 45-55° slope angle,
+    high glaciation with serac fall hazard from the Glacier des Bossons,
+    and an extreme altitude effect (significant performance reduction
+    on the first run for non-acclimatised skiers). Most lines require
+    rope + ice axe + crampons before the ski portion begins. Errors at
+    altitude with cliff bands below are typically unrecoverable.
+
+display_name:
+  en: Freeride — Aiguille du Midi (Cosmiques, Mallory, Glacier Rond)
+  it: Freeride — Aiguille du Midi
+  es: Freeride — Aiguille du Midi
+  fr: Freeride — Aiguille du Midi
+  de: Freeride — Aiguille du Midi
+
+description:
+  en: |
+    The Aiguille du Midi entry-point lines are the Chamonix freeride
+    destination for the elite end of the community. Famous testpieces:
+    Cosmiques Couloir, Mallory-Porter, Glacier Rond. Pure alpinism
+    overlap — most parties rope up for the initial section. IFMGA
+    guide essential except for genuinely experienced local freeriders.
+    Best in cold spring conditions; summer brings glacier collapse
+    and rockfall hazards.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie des Guides de Chamonix Aiguille du Midi sector operations manual"
+    - "Office de Haute Montagne (OHM) Chamonix descent classification"
+    - "Bourdeau et al. 2020, glacier dynamics and high-altitude freeride access"
+  notes: |
+    Sub-spot of freeride-spot-chamonix cluster. Tier 3 with high
+    confidence: altitude, slope angle, glaciation, cliff exposure all
+    compound. Sustained-3000 m+ glacier terrain. PGHM rescue is
+    helicopter-only in good weather.

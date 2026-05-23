@@ -1,8 +1,13 @@
 slug: freeride-spot-chamonix
+spot_kind: cluster
 version: "0.1.0"
 category: snow
 extends: freeride
 region: alpine
+sub_spots:
+  - freeride-spot-chamonix-vallee-blanche
+  - freeride-spot-chamonix-grands-montets
+  - freeride-spot-chamonix-aiguille-du-midi
 display_name:
   en: Freeride — Chamonix (Mont Blanc)
   it: Freeride — Chamonix (Monte Bianco)

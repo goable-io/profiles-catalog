@@ -1,0 +1,51 @@
+slug: scuba-spot-red-sea-thistlegorm
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-red-sea
+parent_cluster: scuba-spot-red-sea
+region: indian
+
+coordinates:
+  center: { lat: 27.8133, lng: 33.9211 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    World-famous wreck of a British supply ship sunk in 1941, sitting
+    upright at 16-32 m in the Strait of Gubal. Standard dive is an
+    external tour at 24-30 m with optional limited penetration of the
+    cargo holds (the truck and motorbike rooms). Current at the wreck
+    is variable and sometimes strong (running between the Sinai and the
+    mainland). Penetration in the holds is "swim-through" rather than
+    deep wreck penetration — no overhead more than 2-3 m from open water
+    on the standard tour. Multiple competent boats moored above.
+
+display_name:
+  en: Scuba — Red Sea SS Thistlegorm
+  it: Immersione — Mar Rosso SS Thistlegorm
+  es: Buceo — Mar Rojo SS Thistlegorm
+  fr: Plongée — Mer Rouge SS Thistlegorm
+  de: Tauchen — Rotes Meer SS Thistlegorm
+
+description:
+  en: |
+    The Red Sea's most-visited wreck dive — British WWII supply ship
+    with intact cargo (trucks, motorcycles, locomotives, rifles).
+    Standard operating profile is two dives: external + light
+    penetration through the cargo holds. Mooring rotation in place to
+    limit anchor damage on the wreck (HEPCA + Egyptian authority
+    coordination). Visibility seasonally variable (20-35 m).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HEPCA Thistlegorm mooring buoy management plan"
+    - "Mikhailov et al. 2014, Strait of Gubal current variability"
+    - "SS Thistlegorm Wreck Survey Project (Nottingham University)"
+  notes: |
+    Sub-spot of scuba-spot-red-sea cluster. Tier 2: light penetration
+    only (no real deep wreck), current variable, multiple support
+    vessels. Errors recoverable for AOWD-level divers.
