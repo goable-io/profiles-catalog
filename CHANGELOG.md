@@ -1,15 +1,34 @@
 # Changelog
 
 All notable changes to `@goable-io/profiles-catalog` are documented here.
-Versions follow [Semantic Versioning](https://semver.org/). Each merge to
-`main` triggers a patch release via `.github/workflows/release.yml`. The
-release workflow computes the next version from the latest tag on npm
-(not from `package.json` in the repo), so the version field in this repo
-is intentionally treated as a placeholder — the source of truth is npm.
+Versions follow [Semantic Versioning](https://semver.org/).
+
+### Release process
+
+Each merge to `main` triggers `.github/workflows/release.yml`, which
+resolves the version to publish as follows:
+
+- If `package.json.version` is **strictly greater** than the latest version
+  on npm, that exact version is published. This is the manual path for
+  major and minor bumps — edit `package.json` in the PR.
+- If `package.json.version` **equals** npm latest, the workflow auto-bumps
+  the patch component. This is the default path for routine merges.
+- If `package.json.version` is **less than** npm latest, the workflow
+  fails loudly. Drift between repo and npm is treated as an error.
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 1.0.2
+## [Unreleased]
+
+### Changed
+- Release workflow now honours `package.json.version` when it is ahead of
+  npm latest, instead of unconditionally auto-bumping the patch. This
+  enables planned major/minor releases (e.g. v2.0.0) to land via a normal
+  PR that includes the version bump in the diff, with no manual tagging
+  step. Routine merges still auto-bump patch as before. Drift in the wrong
+  direction (repo behind npm) is now a CI failure.
+
+## [1.0.2] — 2026-05-22
 
 ### Fixed
 - Release workflow now derives the next version from `npm view <pkg> version`
