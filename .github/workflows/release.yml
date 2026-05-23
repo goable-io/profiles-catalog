@@ -27,21 +27,62 @@ jobs:
       - run: pnpm build
       - run: pnpm bundle
 
-      # Source of truth for the published version is npm itself, NOT the
-      # repository's package.json — this avoids race conditions between
-      # the release workflow's commit-back and concurrent PR merges.
-      - name: Compute next patch version
+      # Version resolution policy:
+      #
+      #   - If package.json version is strictly greater than the latest version
+      #     on npm, publish package.json's version exactly (manual major/minor
+      #     bump path — used for v2.0.0 and similar planned releases).
+      #   - If package.json version equals npm latest, auto-bump the patch
+      #     component (routine merge path — most merges to main land here).
+      #   - If package.json version is less than npm latest, fail loudly:
+      #     someone forgot to bump after a release, or the repo and npm have
+      #     drifted in an unsafe way.
+      - name: Resolve next version
         id: bump
         run: |
           set -euo pipefail
           PKG_NAME=$(node -p "require('./package.json').name")
-          LATEST=$(npm view "$PKG_NAME" version 2>/dev/null || echo "0.0.0")
-          MAJOR=$(echo "$LATEST" | cut -d. -f1)
-          MINOR=$(echo "$LATEST" | cut -d. -f2)
-          PATCH=$(echo "$LATEST" | cut -d. -f3)
-          NEXT="${MAJOR}.${MINOR}.$((PATCH + 1))"
-          echo "Latest on npm: ${LATEST}  →  next: ${NEXT}"
-          npm version "$NEXT" --no-git-tag-version --allow-same-version
+          REPO_VERSION=$(node -p "require('./package.json').version")
+          NPM_LATEST=$(npm view "$PKG_NAME" version 2>/dev/null || echo "0.0.0")
+
+          CMP=$(node -e "
+            const v = (s) => s.split('.').map(Number);
+            const a = v('$REPO_VERSION');
+            const b = v('$NPM_LATEST');
+            for (let i = 0; i < 3; i++) {
+              if (a[i] > b[i]) { console.log('gt'); process.exit(0); }
+              if (a[i] < b[i]) { console.log('lt'); process.exit(0); }
+            }
+            console.log('eq');
+          ")
+
+          echo "package.json: $REPO_VERSION"
+          echo "npm latest:   $NPM_LATEST"
+          echo "comparison:   $CMP"
+
+          case "$CMP" in
+            gt)
+              NEXT="$REPO_VERSION"
+              echo "Using package.json version (manual bump): $NEXT"
+              ;;
+            eq)
+              MAJOR=$(echo "$NPM_LATEST" | cut -d. -f1)
+              MINOR=$(echo "$NPM_LATEST" | cut -d. -f2)
+              PATCH=$(echo "$NPM_LATEST" | cut -d. -f3)
+              NEXT="${MAJOR}.${MINOR}.$((PATCH + 1))"
+              echo "Auto-bumping patch: $NEXT"
+              npm version "$NEXT" --no-git-tag-version --allow-same-version
+              ;;
+            lt)
+              echo "::error::package.json ($REPO_VERSION) is BEHIND npm latest ($NPM_LATEST). Manual intervention required." >&2
+              exit 1
+              ;;
+            *)
+              echo "::error::Could not compare versions" >&2
+              exit 1
+              ;;
+          esac
+
           echo "version=v${NEXT}" >> "$GITHUB_OUTPUT"
           echo "version_plain=${NEXT}" >> "$GITHUB_OUTPUT"
 
