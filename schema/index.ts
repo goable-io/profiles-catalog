@@ -10,6 +10,7 @@ export {
   CoordinatesSchema,
   TierSchema,
   SpotKindEnum,
+  SkillCurveFamilySchema,
   MetricEnum,
   RegionEnum,
 } from "./profile.schema.js"
@@ -29,4 +30,5 @@ export type {
   Coordinates,
   Tier,
   SpotKind,
+  SkillCurveFamily,
 } from "./profile.schema.js"

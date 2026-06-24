@@ -165,6 +165,70 @@ export type Tier = z.infer<typeof TierSchema>
 export const SpotKindEnum = z.enum(["base", "region", "cluster", "sub-spot"])
 export type SpotKind = z.infer<typeof SpotKindEnum>
 
+// v2.1.0 additions ────────────────────────────────────────────────────────────
+
+// L15 Inverse Suitability "skill curve family" — pre-computed suitability
+// curves conditioned on rider skill, emitted by the M4 latent-factor
+// calibrator in the consumer monorepo. When present, scoring engines may
+// prefer these pre-computed values over the on-the-fly fallback derived
+// from the difficulty atlas. Reserved for `meta.maturity: "calibrated"`
+// profiles — external contributors cannot author this block.
+export const SkillCurveFamilySchema = z
+  .object({
+    // SHA-256 hex of the canonicalised cohort parquet that produced
+    // this fit. Joinable to the consumer's calibration_runs.cohort_hash.
+    cohort_hash: z.string().regex(/^[a-f0-9]{8,}$/i),
+    // Fitted discrimination scalar from M4 (a > 0).
+    a: z.number().positive(),
+    // Paired-outcome count behind the fit.
+    n_train: z.number().int().positive(),
+    // The θ quantile anchors — Phase 1 ships [-1, 0, 1] (beginner /
+    // intermediate / expert under the N(0, 1) prior). Length L.
+    levels: z.array(z.number()).min(2).max(7),
+    // Metric grid where suitability is evaluated. Strictly monotonic
+    // ascending. Length G.
+    grid: z.array(z.number()).min(2),
+    // Suitability values per (level × grid point). Shape L × G,
+    // every entry in [0, 1].
+    curves: z.array(z.array(z.number().min(0).max(1))).min(2),
+  })
+  .strict()
+  .superRefine((data, ctx) => {
+    const L = data.levels.length
+    const G = data.grid.length
+    if (data.curves.length !== L) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `curves rows (${data.curves.length}) must equal levels.length (${L})`,
+        path: ["curves"],
+      })
+    }
+    data.curves.forEach((row, i) => {
+      if (row.length !== G) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: `curves[${i}] length (${row.length}) must equal grid.length (${G})`,
+          path: ["curves", i],
+        })
+      }
+    })
+    // Strict-monotone grid (consumers linear-interp between adjacent points).
+    for (let i = 1; i < data.grid.length; i++) {
+      const prev = data.grid[i - 1]
+      const curr = data.grid[i]
+      if (prev === undefined || curr === undefined) continue
+      if (curr <= prev) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: `grid must be strictly ascending; failed at index ${i}`,
+          path: ["grid", i],
+        })
+      }
+    }
+  })
+
+export type SkillCurveFamily = z.infer<typeof SkillCurveFamilySchema>
+
 // Dimensions sum-to-1 check used by base/region/cluster variants
 const dimsSumToOne = (dims: Array<z.infer<typeof DimensionSchema>>): boolean =>
   Math.abs(dims.reduce((s, d) => s + d.weight, 0) - 1) < 0.001
@@ -184,6 +248,21 @@ const calibrationRefineMessage = {
   path: ["meta", "calibration"],
 }
 
+// skill_curves gate: a profile with `meta.maturity !== "calibrated"` MUST NOT
+// carry `skill_curves`. The block is emitted only by the L15 M4 fitter on
+// the consumer side; external contributors cannot fabricate it.
+const skillCurvesOk = (data: {
+  meta: { maturity: string }
+  skill_curves?: unknown
+}): boolean =>
+  data.meta.maturity === "calibrated" || data.skill_curves === undefined
+
+const skillCurvesRefineMessage = {
+  message:
+    "skill_curves block requires meta.maturity='calibrated'. External contributors cannot fabricate it — only the L15 M4 pipeline emits this block.",
+  path: ["skill_curves"],
+}
+
 // Fields common to every variant
 const commonFields = {
   slug: z.string().regex(/^[a-z0-9-]+$/, "Slug must be lowercase alphanumeric with dashes"),
@@ -194,6 +273,9 @@ const commonFields = {
   gates: z.array(GateSchema).default([]),
   sustainability: SustainabilitySchema,
   meta: MetaSchema,
+  // v2.1.0: optional L15 skill-conditioned suitability curves. Reserved
+  // for `meta.maturity: "calibrated"` profiles — see refinement below.
+  skill_curves: SkillCurveFamilySchema.optional(),
 }
 
 // ── base ────────────────────────────────────────────────────────────────────
@@ -204,6 +286,7 @@ const baseInner = z.object({
   verdict_buckets: VerdictBucketsSchema,
 })
 export const BaseProfileSchema = baseInner.refine(calibrationOk, calibrationRefineMessage)
+  .refine(skillCurvesOk, skillCurvesRefineMessage)
 
 // ── region ──────────────────────────────────────────────────────────────────
 const regionInner = z.object({
@@ -215,6 +298,7 @@ const regionInner = z.object({
   verdict_buckets: VerdictBucketsSchema,
 })
 export const RegionProfileSchema = regionInner.refine(calibrationOk, calibrationRefineMessage)
+  .refine(skillCurvesOk, skillCurvesRefineMessage)
 
 // ── cluster ─────────────────────────────────────────────────────────────────
 const clusterInner = z.object({
@@ -229,6 +313,7 @@ const clusterInner = z.object({
   verdict_buckets: VerdictBucketsSchema,
 })
 export const ClusterProfileSchema = clusterInner.refine(calibrationOk, calibrationRefineMessage)
+  .refine(skillCurvesOk, skillCurvesRefineMessage)
 
 // ── sub-spot ────────────────────────────────────────────────────────────────
 // On sub-spots, scoring fields (dimensions, verdict_buckets) are optional —
@@ -253,6 +338,7 @@ const subSpotInner = z.object({
   verdict_buckets: VerdictBucketsSchema.optional(),
 })
 export const SubSpotProfileSchema = subSpotInner.refine(calibrationOk, calibrationRefineMessage)
+  .refine(skillCurvesOk, skillCurvesRefineMessage)
 
 // ── union ───────────────────────────────────────────────────────────────────
 // discriminatedUnion takes the unrefined inner ZodObjects (Zod v4 requires
@@ -262,6 +348,7 @@ export const SubSpotProfileSchema = subSpotInner.refine(calibrationOk, calibrati
 export const ProfileSchema = z
   .discriminatedUnion("spot_kind", [baseInner, regionInner, clusterInner, subSpotInner])
   .refine(calibrationOk, calibrationRefineMessage)
+  .refine(skillCurvesOk, skillCurvesRefineMessage)
 
 export type Profile = z.infer<typeof ProfileSchema>
 export type BaseProfile = z.infer<typeof baseInner>

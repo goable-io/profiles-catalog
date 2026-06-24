@@ -180,3 +180,150 @@ describe("ProfileSchema discriminated union", () => {
     expect(values.length).toBeGreaterThan(20)
   })
 })
+
+// ─── v2.1.0 skill_curves ────────────────────────────────────────────────────
+
+const validSkillCurves = {
+  cohort_hash: "a1b2c3d4e5f60718",
+  a: 1.42,
+  n_train: 4200,
+  levels: [-1, 0, 1],
+  grid: [0, 5, 10, 15, 20, 25, 30],
+  curves: [
+    [0.05, 0.20, 0.55, 0.80, 0.95, 0.90, 0.70], // beginner
+    [0.10, 0.30, 0.65, 0.90, 1.00, 0.95, 0.75], // intermediate
+    [0.15, 0.40, 0.75, 0.95, 1.00, 1.00, 0.85], // expert
+  ],
+}
+
+const calibratedMeta = {
+  reviewed_by: [],
+  sources: [],
+  maturity: "calibrated" as const,
+  calibration: {
+    datasetVersion: "outcomes-2026Q4-v3",
+    modelVersion: "L15-M4-isotonic-v1.2",
+    samples: 4200,
+    fitDate: "2026-05-22",
+  },
+}
+
+describe("ProfileSchema skill_curves (v2.1.0)", () => {
+  it("accepts skill_curves on a calibrated profile", () => {
+    const good = {
+      ...validBase,
+      meta: calibratedMeta,
+      skill_curves: validSkillCurves,
+    }
+    const result = ProfileSchema.safeParse(good)
+    expect(result.success, JSON.stringify(result, null, 2)).toBe(true)
+  })
+
+  it("rejects skill_curves on a provisional profile", () => {
+    const bad = {
+      ...validBase,
+      // explicit provisional (validBase already has this, but be loud)
+      meta: { reviewed_by: [], sources: [], maturity: "provisional" as const },
+      skill_curves: validSkillCurves,
+    }
+    expect(ProfileSchema.safeParse(bad).success).toBe(false)
+  })
+
+  it("rejects skill_curves on a reviewed profile", () => {
+    const bad = {
+      ...validBase,
+      meta: {
+        reviewed_by: ["Reviewer One", "Reviewer Two"],
+        sources: ["Some peer-reviewed paper, 2025"],
+        maturity: "reviewed" as const,
+      },
+      skill_curves: validSkillCurves,
+    }
+    expect(ProfileSchema.safeParse(bad).success).toBe(false)
+  })
+
+  it("rejects curves with mismatched L × G shape", () => {
+    const bad = {
+      ...validBase,
+      meta: calibratedMeta,
+      skill_curves: {
+        ...validSkillCurves,
+        // levels.length=3 but curves.length=2 — should fail superRefine
+        curves: [
+          [0.05, 0.20, 0.55, 0.80, 0.95, 0.90, 0.70],
+          [0.10, 0.30, 0.65, 0.90, 1.00, 0.95, 0.75],
+        ],
+      },
+    }
+    expect(ProfileSchema.safeParse(bad).success).toBe(false)
+  })
+
+  it("rejects curves with row length not matching grid.length", () => {
+    const bad = {
+      ...validBase,
+      meta: calibratedMeta,
+      skill_curves: {
+        ...validSkillCurves,
+        // grid.length=7 but row 1 has 6 entries
+        curves: [
+          [0.05, 0.20, 0.55, 0.80, 0.95, 0.90, 0.70],
+          [0.10, 0.30, 0.65, 0.90, 1.00, 0.95], // ← 6 entries
+          [0.15, 0.40, 0.75, 0.95, 1.00, 1.00, 0.85],
+        ],
+      },
+    }
+    expect(ProfileSchema.safeParse(bad).success).toBe(false)
+  })
+
+  it("rejects a non-monotonic grid", () => {
+    const bad = {
+      ...validBase,
+      meta: calibratedMeta,
+      skill_curves: {
+        ...validSkillCurves,
+        // duplicate value violates strict monotonicity
+        grid: [0, 5, 10, 10, 20, 25, 30],
+      },
+    }
+    expect(ProfileSchema.safeParse(bad).success).toBe(false)
+  })
+
+  it("accepts a profile WITHOUT skill_curves at any maturity (backward-compat)", () => {
+    const provisional = { ...validBase }
+    expect(ProfileSchema.safeParse(provisional).success).toBe(true)
+
+    const reviewed = {
+      ...validBase,
+      meta: {
+        reviewed_by: ["A", "B"],
+        sources: ["a"],
+        maturity: "reviewed" as const,
+      },
+    }
+    expect(ProfileSchema.safeParse(reviewed).success).toBe(true)
+
+    const calibrated = { ...validBase, meta: calibratedMeta }
+    expect(ProfileSchema.safeParse(calibrated).success).toBe(true)
+  })
+
+  it("rejects skill_curves with unknown extra fields (strict)", () => {
+    const bad = {
+      ...validBase,
+      meta: calibratedMeta,
+      skill_curves: {
+        ...validSkillCurves,
+        unknown_field: "should not be here",
+      },
+    }
+    expect(ProfileSchema.safeParse(bad).success).toBe(false)
+  })
+
+  it("rejects negative discrimination scalar a", () => {
+    const bad = {
+      ...validBase,
+      meta: calibratedMeta,
+      skill_curves: { ...validSkillCurves, a: -0.5 },
+    }
+    expect(ProfileSchema.safeParse(bad).success).toBe(false)
+  })
+})

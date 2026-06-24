@@ -18,7 +18,60 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.0.0
+## [Unreleased] — lands as 2.1.0
+
+### Added — optional `skill_curves` block (L15 Phase 1c)
+
+Profiles may now carry a pre-computed `SkillCurveFamily` emitted by the
+Goable engine's L15 M4 latent-factor calibrator. When present, downstream
+scoring engines can prefer these pre-computed values over the on-the-fly
+fallback derived from the difficulty atlas — an optimisation, not a
+correctness gate.
+
+Shape:
+
+```yaml
+skill_curves:
+  cohort_hash: "a1b2c3d4..."        # SHA-256 of the cohort parquet
+  a: 1.42                            # M4 discrimination scalar (> 0)
+  n_train: 4200                      # paired outcomes behind the fit
+  levels: [-1, 0, 1]                 # θ quantile anchors (L entries)
+  grid: [0, 5, 10, 15, 20]           # metric grid, strictly ascending (G entries)
+  curves:                             # L × G suitability values ∈ [0, 1]
+    - [0.05, 0.20, 0.55, 0.80, 0.95]  # beginner
+    - [0.10, 0.30, 0.65, 0.90, 1.00]  # intermediate
+    - [0.15, 0.40, 0.75, 0.95, 1.00]  # expert
+```
+
+- **Optional**: every existing profile continues to validate unchanged.
+- **Reserved for `meta.maturity: "calibrated"`**: external contributors
+  cannot fabricate `skill_curves` — the schema refinement rejects it
+  on `provisional` and `reviewed` profiles. Only the L15 M4 pipeline
+  emits this block.
+- **Strict**: `.strict()` rejects unknown fields inside the block.
+- **Cross-field validation**: `curves` must be `L × G`; `grid` must be
+  strictly ascending; all suitability values ∈ [0, 1]; `a > 0`.
+
+New exports:
+
+```ts
+import {
+  SkillCurveFamilySchema,
+  type SkillCurveFamily,
+} from "@goable-io/profiles-catalog"
+```
+
+9 new tests in `tests/schema.test.ts` exercise the maturity gate,
+shape constraints, monotonic-grid check, strict-unknown-field, and
+backward-compatibility (every existing catalog profile still validates).
+
+No catalog YAMLs change in this release — the block is emitted by the
+L15 M4 fitter on the consumer side, never authored by hand.
+
+### Bumped
+- `package.json` version 2.0.0 → 2.1.0 (additive, no breaking).
+
+## [2.0.0] — published 2026-05-23
 
 ### BREAKING — hierarchical 5-level schema
 
