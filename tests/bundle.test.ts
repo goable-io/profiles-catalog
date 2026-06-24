@@ -16,7 +16,7 @@ describe("dist/catalog.json bundle (v2 dual-index)", () => {
     expect(stripGen(a)).toBe(stripGen(b))
   }, 30_000)
 
-  it("emits schemaVersion 2.0.0 + profilesByPath + profilesBySlug", async () => {
+  it("emits schemaVersion 2.1.0 + profilesByPath + profilesBySlug", async () => {
     await exec("pnpm", ["bundle"])
     const raw = await readFile("dist/catalog.json", "utf8")
     const data = JSON.parse(raw) as {
@@ -24,7 +24,7 @@ describe("dist/catalog.json bundle (v2 dual-index)", () => {
       profilesByPath: Record<string, unknown>
       profilesBySlug: Record<string, unknown>
     }
-    expect(data.schemaVersion).toBe("2.0.0")
+    expect(data.schemaVersion).toBe("2.1.0")
     expect(Object.keys(data.profilesByPath).length).toBeGreaterThanOrEqual(70)
     expect(Object.keys(data.profilesBySlug).length).toBeGreaterThanOrEqual(70)
   }, 30_000)
