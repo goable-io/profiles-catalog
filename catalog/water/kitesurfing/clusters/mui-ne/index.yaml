@@ -3,7 +3,7 @@ spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: kitesurfing-pacific
-region: pacific
+region: south-china-sea
 sub_spots:
   - kitesurfing-spot-mui-ne-main-beach
   - kitesurfing-spot-mui-ne-malibu
@@ -145,6 +145,6 @@ meta:
     - "Wang & Wu 2018, South China Sea NE monsoon kitesurfing season"
   notes: |
     Cluster aggregates Mui Ne main beach (resort strip) + Malibu Beach
-    3 km east. Region tag `pacific` covers the South China Sea via the
-    broader Pacific basin convention (a `south-china-sea` enum value
-    is on the schema v2.2 roadmap).
+    3 km east. Cluster tagged `region: south-china-sea` (SE Asia NE-
+    monsoon regime, distinct from the broader Pacific basin). The
+    `south-china-sea` value was added to RegionEnum in schema v2.2.

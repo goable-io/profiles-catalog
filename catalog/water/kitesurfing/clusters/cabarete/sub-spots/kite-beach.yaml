@@ -4,7 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-spot-cabarete
 parent_cluster: kitesurfing-spot-cabarete
-region: atlantic
+region: caribbean
 
 coordinates:
   center: { lat: 19.7647, lng: -70.4339 }

@@ -144,7 +144,20 @@ const SustainabilitySchema = z
   })
   .optional()
 
-export const RegionEnum = z.enum(["mediterranean", "atlantic", "pacific", "indian", "alpine", "global"])
+export const RegionEnum = z.enum([
+  // v1 core basins
+  "mediterranean",
+  "atlantic",
+  "pacific",
+  "indian",
+  "alpine",
+  "global",
+  // v2.2 — finer-grained sub-basins (additive)
+  "caribbean",       // tropical W Atlantic — Caribbean Sea + adjacent islands
+  "red-sea",         // separates from "indian" — distinct hydrography and use case
+  "aegean",          // Mediterranean sub-basin with the dominant Meltemi regime
+  "south-china-sea", // Pacific sub-basin with the SE Asia NE-monsoon regime
+])
 export type Region = z.infer<typeof RegionEnum>
 
 // v2.0.0 additions ────────────────────────────────────────────────────────────

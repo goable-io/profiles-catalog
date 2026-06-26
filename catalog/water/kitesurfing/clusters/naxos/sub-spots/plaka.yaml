@@ -4,7 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-spot-naxos
 parent_cluster: kitesurfing-spot-naxos
-region: mediterranean
+region: aegean
 
 coordinates:
   center: { lat: 37.0419, lng: 25.3789 }

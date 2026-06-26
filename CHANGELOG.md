@@ -18,7 +18,48 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.1.1
+## [Unreleased] — lands as 2.2.0
+
+### Added — 4 new RegionEnum values (additive)
+
+`RegionEnum` was undersized at 6 values for v1 and v2; this release adds
+4 finer-grained sub-basin tags so clusters can declare a region that
+matches their actual climatology + forecast pool. Existing 6 values
+unchanged.
+
+| New value | Migrated clusters | Reason |
+|---|---|---|
+| `caribbean` | `kitesurfing-spot-cabarete` (cluster + 3 sub-spots) | Trade-wind tropical, distinct from northern-Atlantic synoptic regime. |
+| `red-sea` | `scuba-spot-red-sea` (cluster + 3 sub-spots) | Distinct hydrography from the Indian Ocean basin; warmer mean SST + reef ecosystem. |
+| `aegean` | `kitesurfing-spot-naxos` (cluster + 2 sub-spots) | Meltemi summer regime is climatologically distinct from the broader Mediterranean. |
+| `south-china-sea` | `kitesurfing-spot-mui-ne` (cluster + 2 sub-spots) | NE monsoon delivery (Nov–Apr) is climatologically distinct from the broader Pacific. |
+
+= 14 YAML files migrated.
+
+### Changed
+- `dist/catalog.json` `schemaVersion` bumped 2.1.0 → 2.2.0 (additive
+  schema change). Downstream consumers reading `schemaVersion` can
+  branch their parser version against this string.
+- `tests/integrity.test.ts` region bbox table extended with the 4 new
+  regions. Approximate tolerances per usual.
+
+### Cleaned up
+- `cabarete/index.yaml`, `mui-ne/index.yaml`, `scuba/clusters/red-sea/index.yaml`:
+  the placeholder notes explaining "tagged as X until the schema adds Y"
+  have been replaced with positive statements about the actual v2.2 tag.
+
+### Compatibility
+
+This is **additive** — every previously-valid profile still validates
+unchanged. Downstream `RegionEnum` consumers that exhaustively
+pattern-match on the 6 v1 values (e.g. with a `default: never` arm)
+will get a TypeScript exhaustiveness error and must add cases for the
+4 new values. The byte-hash schema-sync test in the consumer monorepo
+will fail with an expected mismatch.
+
+## [2.1.1] — published 2026-06-26
+
+### Added — kitesurfing sub-spots bootstrap (12 clusters, 32 sub-spots)
 
 ### Added — kitesurfing sub-spots bootstrap (12 clusters, 32 sub-spots)
 
