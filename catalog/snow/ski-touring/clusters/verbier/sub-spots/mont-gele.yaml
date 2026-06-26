@@ -1,0 +1,46 @@
+slug: ski-touring-spot-verbier-mont-gele
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-verbier
+parent_cluster: ski-touring-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0931, lng: 7.2761 }
+  radius_m: 1000
+
+tier: 3
+tier_rationale:
+  en: |
+    Mont Gelé (3023 m) is the steep-skiing-end of the Verbier
+    cluster. Accessed by an old tram (recently restored to access-
+    only operation). Multiple steep north and east faces (40-50°)
+    with rock-band exposure. Lift-tram has been historically used
+    only by the local advanced community and FWT competitors.
+    Reserved for experienced steep skiers; not a touring beginner
+    venue.
+
+display_name:
+  en: Ski Touring — Mont Gelé
+  it: Sci alpinismo — Mont Gelé
+  es: Esquí de travesía — Mont Gelé
+  fr: Ski de randonnée — Mont Gelé
+  de: Skitourengehen — Mont Gelé
+
+description:
+  en: |
+    Verbier's steep-skiing reference summit. Mont Gelé tram access is
+    the cluster's gateway to 40°+ north-face descents. FWT athletes
+    and local steep skiers dominate the lineup.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Freeride World Tour Mont Gelé venue notes"
+    - "SBV Verbier steep-skiing inventory"
+  notes: |
+    Sub-spot of ski-touring-spot-verbier cluster. Tier 3: steep
+    north and east faces, rock-band exposure, advanced-only.

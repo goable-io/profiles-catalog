@@ -1,0 +1,49 @@
+slug: ski-touring-spot-zermatt-klein-matterhorn
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-zermatt
+parent_cluster: ski-touring-spot-zermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 45.9389, lng: 7.7250 }
+  radius_m: 1000
+
+tier: 3
+tier_rationale:
+  en: |
+    Klein Matterhorn (3883 m) — Europe's highest lift terminal —
+    gives instant access to high-altitude ski-touring summit days.
+    Breithorn (4164 m) via short skin from the lift is the most-
+    accessible 4000-m summit on the planet. Glacier travel required,
+    altitude-onset risk (no acclimatisation possible from lift),
+    cold gate at -30°C is the routine winter operating band.
+    Despite the lift access, the terrain is committing — guided
+    parties dominate the lineup.
+
+display_name:
+  en: Ski Touring — Klein Matterhorn / Breithorn
+  it: Sci alpinismo — Klein Matterhorn / Breithorn
+  es: Esquí de travesía — Klein Matterhorn / Breithorn
+  fr: Ski de randonnée — Klein Matterhorn / Breithorn
+  de: Skitourengehen — Klein Matterhorn / Breithorn
+
+description:
+  en: |
+    The lift-served gateway to the easiest 4000-m summit in the Alps
+    (Breithorn). Klein Matterhorn delivers altitude-and-glacier
+    experience in a single half-day with full lift support.
+    Standard touring intro for clients new to altitude skiing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ZMG Breithorn standard-route documentation"
+    - "Matterhorn Glacier Paradise (Klein Matterhorn) operational data"
+  notes: |
+    Sub-spot of ski-touring-spot-zermatt cluster. Tier 3: glaciated,
+    high-altitude commitment, altitude-onset risk. The "easiest"
+    4000-m summit but still serious mountain.

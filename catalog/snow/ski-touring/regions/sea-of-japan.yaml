@@ -1,0 +1,141 @@
+slug: ski-touring-sea-of-japan
+spot_kind: region
+version: "1.0.0"
+category: snow
+extends: ski-touring
+region: sea-of-japan
+display_name:
+  en: Ski Touring — Sea of Japan (Japow)
+  it: Sci alpinismo — Mare del Giappone
+  es: Esquí de travesía — Mar del Japón
+  fr: Ski de randonnée — Mer du Japon
+  de: Skitourengehen — Japanisches Meer
+description:
+  en: |
+    Sea-of-Japan ski touring covers the Japanese mountain ranges that
+    receive the Asian winter monsoon's lake-effect snowfall — Hakuba
+    (Northern Alps), Niseko (Hokkaido), Myoko, Nozawa Onsen. The
+    defining feature is snow VOLUME: cold-air mass from Siberia picks
+    up moisture crossing the Sea of Japan and dumps 10-20 m annual
+    snowfall on the western mountain spine. Avalanche risk varies
+    sharply with bulletin region — consult Hakuba Avalanche Network
+    (HAN) and JAN (Japan Avalanche Network) bulletins. Distinct from
+    alpine: lower-elevation peaks (1500-3000 m), warmer base
+    temperatures (-5 to +2°C typical), wetter snow than continental
+    Europe, lake-effect storms that can drop 1 m in a single day.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 4,   s: 0.45 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.20 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 4,   s: 0.55 }
+      - { x: 8,   s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.50 }
+      - { x: 20, s: 0.90 }
+      - { x: 32, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: JAPOW_WHITEOUT
+    description: Visibility below 400m during a lake-effect dump makes terrain selection unsafe; the storms can drop visibility to 50m for hours.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on Japanese ridge altitudes makes col crossings dangerous; the wind-loaded slab character of the basin is documented.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD
+    description: Apparent temperature below -28°C is rare in the Sea-of-Japan band but does occur during continental cold-air outbreaks — same gear-failure risks as Alpine.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: LAKE_EFFECT_DUMP
+    description: Lake-effect snowfall above 15 mm/h water equivalent loads slopes acutely; HAN/JAN bulletins gate touring during these storms.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: low
+  notes: |
+    Sea-of-Japan touring season runs roughly January-March. Most peaks
+    are accessed via lift-assist from the resort base (Tsugaike,
+    Hakuba 47, Niseko) and a short skin to the backcountry zone.
+    International-flight transport drives the bulk of per-trip
+    footprint for European/Australian/American visitors.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hakuba Avalanche Network (HAN) bulletin standards"
+    - "Japan Avalanche Network (JAN) Hokkaido + Honshu bulletin coordination"
+    - "Iwasaka & Hyodo 2017, Sea of Japan effect snowfall climatology"
+  notes: |
+    Regional overrides vs global ski-touring: precipitation peak shifted
+    to 0.5 mm/h (lake-effect storms are the defining condition — dry
+    bluebird is the recovery day, not the operating condition);
+    precipitation gate raised to 15 mm/h (the basin's signature events
+    routinely exceed Alpine norms); wind upper threshold 42 kn matches
+    Alpine; temperature optimum shifted slightly warmer (-3°C) due to
+    lower peak altitudes (1500-3000 m vs Alpine 2500-4000 m); sun
+    weight 0.22 because the visibility constraint is high during
+    storm sequences.

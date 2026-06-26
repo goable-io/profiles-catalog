@@ -1,0 +1,48 @@
+slug: ski-touring-spot-zermatt-schwarzsee
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-zermatt
+parent_cluster: ski-touring-spot-zermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 45.9856, lng: 7.6989 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    The Schwarzsee zone (2583 m base) offers ski-touring approaches
+    to the Matterhorn massif's east face without committing to
+    glaciated terrain. Lift-assisted start from Furi → Schwarzsee
+    chairlift; touring routes from there to Hornli Hut + back.
+    Open above-tree-line slopes 30-40°, no crevasse exposure,
+    avalanche-managed by standard SLF observations. The cluster's
+    intermediate-friendly touring option.
+
+display_name:
+  en: Ski Touring — Schwarzsee (Matterhorn east)
+  it: Sci alpinismo — Schwarzsee
+  es: Esquí de travesía — Schwarzsee
+  fr: Ski de randonnée — Schwarzsee
+  de: Skitourengehen — Schwarzsee
+
+description:
+  en: |
+    The Matterhorn east-side touring base. Schwarzsee delivers open
+    above-tree-line slopes with the most-photographed mountain on
+    Earth as the backdrop. Best for intermediate touring days when
+    full glaciated terrain is too committing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ZMG Schwarzsee touring documentation"
+    - "Zermatt Bergbahnen Schwarzsee lift operational map"
+  notes: |
+    Sub-spot of ski-touring-spot-zermatt cluster. Tier 2: no
+    crevassed terrain, above-tree-line bowls, lift-assisted start.
+    The intermediate-friendly side of the cluster.

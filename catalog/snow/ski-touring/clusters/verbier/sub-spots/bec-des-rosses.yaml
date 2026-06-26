@@ -1,0 +1,49 @@
+slug: ski-touring-spot-verbier-bec-des-rosses
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-verbier
+parent_cluster: ski-touring-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0686, lng: 7.3000 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    The Bec des Rosses (3222 m) is the spire above the Mont Fort
+    valley, home to the FWT Verbier Xtreme finale. North face
+    50-55° steep, exposed couloirs separating rock spines, mandatory
+    boot-pack ascent of 45 min from the Mont Fort tram. Reserved
+    exclusively for advanced steep skiers and FWT competitors. Most
+    sessions involve a guide and a multi-pitch rappel for the
+    upper section.
+
+display_name:
+  en: Ski Touring — Bec des Rosses
+  it: Sci alpinismo — Bec des Rosses
+  es: Esquí de travesía — Bec des Rosses
+  fr: Ski de randonnée — Bec des Rosses
+  de: Skitourengehen — Bec des Rosses
+
+description:
+  en: |
+    The Freeride World Tour finale venue. Bec des Rosses is one of
+    the most photographed lines in extreme skiing — a 600-m boot-pack
+    + 700-m descent over 50° couloirs and rock-spine separation.
+    Reserved for the FWT-level elite and visiting steep specialists.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Freeride World Tour Verbier Xtreme venue dossier"
+    - "SBV Bec des Rosses guided-descent documentation"
+  notes: |
+    Sub-spot of ski-touring-spot-verbier cluster. Tier 3 with extreme
+    confidence: 50°+ couloirs, rock-spine separation, mandatory
+    boot-pack ascent, FWT-finale venue. Domain-expert review needed
+    for the rappel-required descent boundary.

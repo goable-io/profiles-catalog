@@ -1,0 +1,48 @@
+slug: ski-touring-spot-verbier-tortin
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-verbier
+parent_cluster: ski-touring-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0653, lng: 7.3081 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    The legendary Tortin north-face descent, accessed from the Col
+    des Gentianes chairlift. Long open 30-40° slope with moderate
+    avalanche character and no glaciated terrain. Returns to lift-
+    served piste at the base, so the consequence of a stuck-in-
+    valley scenario is low. The most-skied "real" off-piste descent
+    of the Verbier cluster — locals consider it the cluster's
+    must-do introduction.
+
+display_name:
+  en: Ski Touring — Tortin (Col des Gentianes)
+  it: Sci alpinismo — Tortin
+  es: Esquí de travesía — Tortin
+  fr: Ski de randonnée — Tortin
+  de: Skitourengehen — Tortin
+
+description:
+  en: |
+    The classic Verbier off-piste introduction. Tortin's open north
+    face delivers consistent powder for the first weeks after a snow
+    event. Best mid-January through March; spring corn-snow window
+    on the lower section.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Verbier Sport+ Tortin descent documentation"
+    - "SBV Verbier off-piste classics inventory"
+  notes: |
+    Sub-spot of ski-touring-spot-verbier cluster. Tier 2: open north
+    face, no glacier, lift return at base. The intermediate-advanced
+    introduction to the cluster.

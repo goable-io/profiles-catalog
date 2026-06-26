@@ -1,0 +1,136 @@
+slug: ski-touring-spot-zermatt
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-alpine
+region: alpine
+country_code: CH
+sub_spots:
+  - ski-touring-spot-zermatt-theodul-glacier
+  - ski-touring-spot-zermatt-stockhorn
+  - ski-touring-spot-zermatt-schwarzsee
+  - ski-touring-spot-zermatt-klein-matterhorn
+display_name:
+  en: Ski Touring — Zermatt
+  it: Sci alpinismo — Zermatt
+  es: Esquí de travesía — Zermatt
+  fr: Ski de randonnée — Zermatt
+  de: Skitourengehen — Zermatt
+description:
+  en: |
+    Zermatt (Valais, Swiss Alps) sits at the foot of the Matterhorn
+    and provides European ski-touring's highest lift-served start
+    point — Klein Matterhorn at 3883 m. The Theodul Glacier and
+    Stockhorn-Gornergrat zones offer glacier-touring classics with
+    summit lines on 4000-m peaks. Avalanche risk consult: SLF Valais
+    East bulletin. Peak season December-April; high-altitude lift
+    service runs year-round.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -30, s: 0.00 }
+      - { x: -20, s: 0.40 }
+      - { x: -12, s: 0.85 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.80 }
+      - { x: 5,   s: 0.30 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.50 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m on Zermatt's high-altitude touring terrain makes glacier travel unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: HIGH_WIND_HIGH_ALTITUDE
+    description: Sustained wind above 38 knots at 3500+ m makes ridge / col crossings unsafe and accelerates wind-slab formation.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -30
+    reason_code: EXTREME_COLD_HIGH_ALTITUDE
+    description: Apparent temperature below -30°C is common at 4000 m peaks in winter — equipment-failure rates rise sharply.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult SLF Valais East bulletin.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Zermatt is famously car-free; access via the Tasch-Zermatt train
+    or electric taxi. Lift-system electricity from Swiss grid mix
+    (significant hydro). Klein Matterhorn lift (the highest cable
+    car in Europe) is a year-round operational expenditure.
+    Matterhorn pyramid is a UNESCO World Heritage natural site.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zermatt Mountain Guides Association (ZMG) touring guide"
+    - "SLF Valais East avalanche bulletin standards"
+    - "Matterhorn Glacier Paradise (Klein Matterhorn) operational dossier"
+  notes: |
+    Cluster aggregates 4 high-altitude touring zones accessed from
+    Zermatt's lift system. Region tag: alpine. Cold-gate at -30°C
+    (vs alpine parent -28°C) reflects routine 4000-m peak operation.

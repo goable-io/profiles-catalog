@@ -1,0 +1,47 @@
+slug: ski-touring-spot-zermatt-theodul-glacier
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-zermatt
+parent_cluster: ski-touring-spot-zermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 45.9486, lng: 7.7647 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Theodul Glacier covers the broad plateau between the Swiss
+    and Italian sides of the Matterhorn massif, 3000-3500 m
+    elevation. Glacier touring with crevassed sections — full
+    glacier kit (rope, harness, crevasse rescue) required. Multiple
+    summit lines accessed from the plateau: Theodulhorn, Klein
+    Matterhorn (lift-assisted), Castor + Pollux (long days). Standard
+    summit days are 6-9 hours with experienced guides.
+
+display_name:
+  en: Ski Touring — Theodul Glacier
+  it: Sci alpinismo — Ghiacciaio del Teodulo
+  es: Esquí de travesía — Glaciar del Teodulo
+  fr: Ski de randonnée — Glacier du Théodule
+  de: Skitourengehen — Theodulgletscher
+
+description:
+  en: |
+    The high-altitude glacier touring base for the Zermatt cluster.
+    Theodul gives access to multiple 4000-m peaks via lift-assisted
+    approaches. Best March-May after the spring-snowpack stabilises.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zermatt Mountain Guides Association (ZMG) Theodul touring documentation"
+    - "Matterhorn Glacier Paradise operational maps"
+  notes: |
+    Sub-spot of ski-touring-spot-zermatt cluster. Tier 3: glaciated,
+    crevassed, high altitude, mandatory glacier kit. The
+    high-altitude reference of the cluster.
