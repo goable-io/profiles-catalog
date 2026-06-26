@@ -1,0 +1,49 @@
+slug: freeride-spot-whistler-spankys-ladder
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-whistler
+parent_cluster: freeride-spot-whistler
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.1050, lng: -122.8900 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    Spanky's Ladder is Blackcomb mountain's signature freeride
+    feature — a 15-minute boot-pack hike from the Glacier Express
+    chair leading to the Garnet Bowls, Sapphire Bowls, and Diamond
+    Bowls (35-45° sustained pitch). Out-of-bounds patrolled
+    terrain — avalanche-controlled but with longer access (no
+    immediate ski-patrol on the bowls). The cluster's
+    advanced freeride reference; routine sessions but consequence-
+    elevated vs Symphony.
+
+display_name:
+  en: Freeride — Spanky's Ladder (Blackcomb)
+  it: Freeride — Spanky's Ladder
+  es: Freeride — Spanky's Ladder
+  fr: Freeride — Spanky's Ladder
+  de: Freeride — Spanky's Ladder
+
+description:
+  en: |
+    The Blackcomb hike-to freeride bowls. Spanky's accesses three
+    bowls (Garnet, Sapphire, Diamond) at 35-45° pitch — Whistler-
+    Blackcomb's most-photographed steep-skiing zone outside the
+    actual BC.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Mountain Operations Spanky's zone documentation"
+    - "Avalanche Canada Spanky's bowls avalanche-control reports"
+  notes: |
+    Sub-spot of freeride-spot-whistler cluster. Tier 3: hike-to
+    access, steep bowls, longer ski-patrol response time than
+    Symphony. The cluster's advanced reference.

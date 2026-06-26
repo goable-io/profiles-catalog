@@ -1,0 +1,50 @@
+slug: freeride-spot-verbier-mont-fort
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-verbier
+parent_cluster: freeride-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0586, lng: 7.3014 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mont Fort (3328 m) is Verbier's high-altitude freeride summit.
+    Multiple steep north-and-east-facing lines drop 1000+ m vertical
+    from the summit lift to the Tortin valley or directly back to
+    Verbier. Crevassed glacier sections on the upper bowls, cornice
+    exposure on the summit ridge, 35-45° sustained pitch on the
+    classic descents. Lift-served start removes the touring-day
+    commitment but the descents are committing freeride. Reserved
+    for advanced freeriders with avalanche kit + guide on first
+    visits.
+
+display_name:
+  en: Freeride — Mont Fort (Verbier)
+  it: Freeride — Mont Fort
+  es: Freeride — Mont Fort
+  fr: Freeride — Mont Fort
+  de: Freeride — Mont Fort
+
+description:
+  en: |
+    The lift-served high-altitude freeride reference of Verbier.
+    Mont Fort delivers 1000+ m vertical north-face descents from
+    the highest cable car in the Valais West. Glacier travel kit
+    recommended on the upper bowls.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SBV Verbier Mont Fort freeride descent inventory"
+    - "Verbier Sport+ Mont Fort lift operational map"
+  notes: |
+    Sub-spot of freeride-spot-verbier cluster. Tier 3: crevassed
+    glaciated upper, steep north faces, cornice exposure. Lift-
+    served start does not reduce descent consequence.

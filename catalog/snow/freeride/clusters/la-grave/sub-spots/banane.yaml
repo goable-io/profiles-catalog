@@ -1,0 +1,47 @@
+slug: freeride-spot-la-grave-banane
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-la-grave
+parent_cluster: freeride-spot-la-grave
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.0428, lng: 6.2961 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    The Banane couloir is a single wider line east of Trifides —
+    40-50° sustained, similar rock-wall enclosure but with a
+    slightly more forgiving exit onto the broader Vallons de la
+    Meije below. Still no-fall terrain in the upper section; a
+    rappel is sometimes used at the entry depending on snow
+    coverage. Mid-tier in the La Grave couloir lineup but
+    consequence remains tier 3.
+
+display_name:
+  en: Freeride — La Banane (La Grave)
+  it: Freeride — La Banane
+  es: Freeride — La Banane
+  fr: Freeride — La Banane
+  de: Freeride — La Banane
+
+description:
+  en: |
+    A single banana-shaped couloir east of Trifides. La Banane is
+    Trifides's slightly more forgiving sibling — same La Grave
+    no-fall geometry but with a wider line and lower exit angle.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie des Guides La Grave Banane documentation"
+    - "Steep-skiing guidebook La Grave couloir inventory"
+  notes: |
+    Sub-spot of freeride-spot-la-grave cluster. Tier 3: same no-fall
+    upper-couloir geometry as Trifides, slightly wider and easier
+    exit. Coordinate place near the standard entry.

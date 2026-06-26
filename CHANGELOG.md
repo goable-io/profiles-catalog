@@ -18,7 +18,61 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.3.2
+## [Unreleased] — lands as 2.3.3
+
+### Added — freeride sub-spots bootstrap (7 clusters, 20 sub-spots)
+
+PR4 of the 5-PR bootstrap roadmap. Brings freeride from 3 sub-spots
+(Chamonix only) to **23 sub-spots across 8 clusters worldwide**.
+Activity status flips `partial → seeded`.
+
+**7 new clusters** (region tag in parentheses):
+
+| Cluster | Country | Sub-spots × tiers | Region |
+|---|---|---|---|
+| `freeride-spot-verbier` | CH | mont-fort(T3), tortin(T2), bec-des-rosses(T3) | alpine |
+| `freeride-spot-la-grave` | FR | trifides(T3), banane(T3), vallons-meije(T3) | alpine |
+| `freeride-spot-niseko` | JP | hirafu(T3), annupuri(T3), hanazono-strawberry-fields(T2) | sea-of-japan |
+| `freeride-spot-hakuba` | JP | happo-sakka(T2), cortina-trees(T2), tsugaike-powder(T3) | sea-of-japan |
+| `freeride-spot-whistler` | CA | symphony-amphitheatre(T2), spankys-ladder(T3), spearhead(T3) | rockies |
+| `freeride-spot-revelstoke` | CA | sub-peak(T3), north-bowl(T3) | rockies |
+| `freeride-spot-jackson-hole` | US | corbets-couloir(T3), casper-bowl(T3), granite-canyon(T3) | rockies |
+
+= 7 new clusters + 20 new sub-spots. 1 new country (CA — Canada is
+new to the catalog).
+
+### Added — 2 freeride region variants
+
+- **`freeride-sea-of-japan`**: lake-effect snow regime (Niseko +
+  Hakuba freeride). Precip-peak shifted to 0.5 mm/h, 15 mm/h dump
+  gate, references HAN + JAN bulletins.
+- **`freeride-rockies`**: North-American Rocky Mountain belt
+  (Whistler + Revelstoke + Jackson Hole). -32°C cold gate for
+  continental arctic-air outbreaks, references CAA + AAA + UAC
+  bulletins.
+
+### Stats impact (live via `getCatalogStats()`)
+
+- Total sub-spots: 117 → 137 (+20)
+- Total clusters: 39 → 46 (+7)
+- Total regions: 19 → 21 (+freeride-sea-of-japan, +freeride-rockies)
+- Total countries: 18 → 19 (+CA)
+- Freeride activity status: partial → seeded (23 sub-spots, 5 countries:
+  FR, CH, JP, CA, US)
+
+### Versioning
+- package.json 2.3.2 → 2.3.3 (data-only patch; schema unchanged).
+- dist/catalog.json schemaVersion stays at 2.3.0.
+
+### Cross-activity coordinate sharing
+
+Several freeride sub-spots share physical coordinates with the
+ski-touring cluster from PR3 (Verbier's Mont Fort, Bec des Rosses;
+Hakuba's Tsugaike). Activity-specific tier rationale on each side
+documents the mode-specific risk profile (e.g. lift-served single-
+lap freeride vs touring-day glacier travel).
+
+## [2.3.2] — published 2026-06-26
 
 ### Added — ski-touring sub-spots bootstrap (7 clusters, 26 sub-spots)
 

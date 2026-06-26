@@ -1,0 +1,48 @@
+slug: freeride-spot-la-grave-trifides
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-la-grave
+parent_cluster: freeride-spot-la-grave
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.0419, lng: 6.3003 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    Les Trifides ("the three") is a series of three narrow north-
+    east-facing couloirs dropping off the Glacier de la Girose
+    plateau. 45-55° sustained pitch, rock walls on both sides,
+    mandatory rappel option for the steepest entries. No-fall
+    terrain — a tumble bounces off rock down 400 m vertical.
+    Reserved for expert steep skiers with IFMGA guide. The
+    cluster's signature steep-skiing reference.
+
+display_name:
+  en: Freeride — Les Trifides (La Grave)
+  it: Freeride — Les Trifides
+  es: Freeride — Les Trifides
+  fr: Freeride — Les Trifides
+  de: Freeride — Les Trifides
+
+description:
+  en: |
+    The "steep three" of La Grave. Trifides is the cluster's
+    technical reference — narrow couloirs at 45-55° with rock-wall
+    no-fall geometry. Reserved for the FWT-level community + La
+    Grave guides.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie des Guides La Grave Trifides documentation"
+    - "Steep skiing guidebooks (multiple) Trifides entry"
+  notes: |
+    Sub-spot of freeride-spot-la-grave cluster. Tier 3 with extreme
+    confidence: no-fall terrain, narrow couloirs, rock-wall
+    geometry, mandatory rappel option for steepest entries.

@@ -1,0 +1,46 @@
+slug: freeride-spot-revelstoke-sub-peak
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-revelstoke
+parent_cluster: freeride-spot-revelstoke
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.9200, lng: -118.1800 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Sub-Peak zone — Revelstoke Mountain Resort's signature
+    freeride bowl just below the Mt Mackenzie summit. Accessed
+    via the Stoke Chair + a 10-min hike. Open above-treeline
+    35-45° pitch, in-bounds patrolled and avalanche-controlled
+    but with serious upper-bowl + cliff-band features. The
+    resort's most-photographed freeride zone.
+
+display_name:
+  en: Freeride — Revelstoke Sub-Peak
+  it: Freeride — Revelstoke Sub-Peak
+  es: Freeride — Revelstoke Sub-Peak
+  fr: Freeride — Revelstoke Sub-Peak
+  de: Freeride — Revelstoke Sub-Peak
+
+description:
+  en: |
+    Revelstoke's signature in-bounds freeride bowl. Sub-Peak
+    delivers 1500 m vertical of patrolled alpine freeride from
+    Mt Mackenzie's near-summit zone.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Revelstoke Mountain Resort Sub-Peak zone documentation"
+    - "Avalanche Canada Columbia Mountains in-bounds reports"
+  notes: |
+    Sub-spot of freeride-spot-revelstoke cluster. Tier 3: steep
+    in-bounds bowls + cliff-band features, hike-to access. The
+    cluster's resort flagship.

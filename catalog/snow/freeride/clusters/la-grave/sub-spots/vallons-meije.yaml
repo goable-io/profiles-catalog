@@ -1,0 +1,50 @@
+slug: freeride-spot-la-grave-vallons-meije
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-la-grave
+parent_cluster: freeride-spot-la-grave
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.0250, lng: 6.3300 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Vallons de la Meije is the iconic open-glacier face below
+    the Girose plateau — 1500 m vertical of 25-40° terrain spanning
+    multiple line variants (Chancel, Patou, Y-Couloir descents).
+    Glaciated upper sections with crevasse exposure; lower bowls
+    open above the Romanche valley. The cluster's "main face" — most
+    visiting parties spend their days here once they've graduated
+    from lift-line laps. Avalanche-bulletin gated. Mandatory:
+    transceiver + glacier kit + IFMGA guide for non-locals.
+
+display_name:
+  en: Freeride — Vallons de la Meije
+  it: Freeride — Vallons de la Meije
+  es: Freeride — Vallons de la Meije
+  fr: Freeride — Vallons de la Meije
+  de: Freeride — Vallons de la Meije
+
+description:
+  en: |
+    The main face of La Grave. Vallons de la Meije gives the
+    cluster's signature open-glacier freeride — 1500 m vertical
+    of bowl-to-bowl skiing on the most-iconic face in the Western
+    Alps. Best January-April.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie des Guides La Grave Vallons de la Meije route inventory"
+    - "Téléphérique des Glaciers de la Meije operational dossier"
+  notes: |
+    Sub-spot of freeride-spot-la-grave cluster. Tier 3: glaciated
+    upper, crevassed sections, 1500 m vertical commitment, avalanche-
+    bulletin gated. The cluster's signature open-face freeride
+    venue. radius_m large (2000) — the face spans multiple km.

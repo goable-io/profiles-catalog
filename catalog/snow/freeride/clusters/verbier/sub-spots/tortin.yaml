@@ -1,0 +1,46 @@
+slug: freeride-spot-verbier-tortin
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-verbier
+parent_cluster: freeride-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0653, lng: 7.3081 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    The classic Tortin north-face descent from Col des Gentianes —
+    Verbier's standard off-piste introduction. Open 30-40° slope
+    with moderate avalanche character, no glaciated terrain on the
+    standard line. Lift return at the base of Tortin chairlift,
+    so the consequence of a stuck-in-valley scenario is low. The
+    most-skied freeride descent of the cluster — high lap-rate.
+
+display_name:
+  en: Freeride — Tortin (Col des Gentianes)
+  it: Freeride — Tortin
+  es: Freeride — Tortin
+  fr: Freeride — Tortin
+  de: Freeride — Tortin
+
+description:
+  en: |
+    The Verbier freeride mainstage. Tortin's open north-face delivers
+    consistent powder for the first weeks after each snow cycle.
+    Best mid-January through March.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Verbier Sport+ Tortin descent documentation"
+    - "SBV Verbier off-piste classics inventory"
+  notes: |
+    Sub-spot of freeride-spot-verbier cluster. Tier 2: no glacier,
+    open north face, lift return. The intermediate-friendly freeride
+    venue of the cluster.

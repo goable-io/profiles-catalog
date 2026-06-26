@@ -1,0 +1,47 @@
+slug: freeride-spot-jackson-hole-casper-bowl
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-jackson-hole
+parent_cluster: freeride-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.6050, lng: -110.8750 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    Casper Bowl is the open alpine bowl above the Casper Restaurant,
+    accessed from the Bridger Gondola + Sublette chair traverse.
+    Multi-feature 35-45° open-bowl freeride with smaller cliff-band
+    options. In-bounds patrolled and avalanche-controlled but with
+    serious slope-angle character. The cluster's standard "real
+    freeride" lap for Jackson regulars (vs Corbet's one-and-done
+    nature).
+
+display_name:
+  en: Freeride — Casper Bowl
+  it: Freeride — Casper Bowl
+  es: Freeride — Casper Bowl
+  fr: Freeride — Casper Bowl
+  de: Freeride — Casper Bowl
+
+description:
+  en: |
+    The Jackson Hole local-rider freeride main lap. Casper Bowl
+    delivers steep open alpine freeride without Corbet's
+    mandatory-cliff commitment.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort Casper zone documentation"
+    - "BTAC Jackson Hole in-bounds avalanche-control reports"
+  notes: |
+    Sub-spot of freeride-spot-jackson-hole cluster. Tier 3: open
+    alpine bowl, sustained 35-45°, smaller cliff bands, in-bounds
+    patrol coverage.

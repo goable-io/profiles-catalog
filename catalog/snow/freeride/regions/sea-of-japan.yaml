@@ -1,0 +1,137 @@
+slug: freeride-sea-of-japan
+spot_kind: region
+version: "1.0.0"
+category: snow
+extends: freeride
+region: sea-of-japan
+display_name:
+  en: Freeride — Sea of Japan (Japow)
+  it: Freeride — Mare del Giappone
+  es: Freeride — Mar del Japón
+  fr: Freeride — Mer du Japon
+  de: Freeride — Japanisches Meer
+description:
+  en: |
+    Sea-of-Japan freeride covers the lake-effect snowfall belt of the
+    Japanese Alps + Hokkaido — Niseko, Hakuba, Myoko, Nozawa Onsen.
+    Distinct from alpine freeride: lower elevations (1500-2300 m),
+    warmer base temperatures (-5 to +2°C), tree-skiing dominant
+    (forest line at 1200-1600 m), 10-15 m annual snowfall delivered
+    in repeated 30-100 cm overnight dumps. Avalanche risk consult
+    HAN (Hakuba) + JAN bulletins. Resort-adjacent backcountry is
+    the standard mode — formal sign-out gates at most resorts.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 4,   s: 0.45 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.20 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 0.80 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.95 }
+      - { x: 4,   s: 0.60 }
+      - { x: 8,   s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.55 }
+      - { x: 20, s: 0.95 }
+      - { x: 32, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: JAPOW_WHITEOUT
+    description: Visibility below 400m during a lake-effect dump makes terrain selection unsafe in Japow regions — the storms drop visibility to <50m for hours.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on the Japanese ridges accelerates wind-slab formation on leeward freeride bowls.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD
+    description: Apparent temperature below -28°C is rare in the Sea-of-Japan band but does occur during continental cold-air outbreaks.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: LAKE_EFFECT_DUMP
+    description: Lake-effect snowfall above 15 mm/h water equivalent loads slopes acutely; HAN/JAN bulletins gate sidecountry during these storms.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    Japow freeride operations are lift-resort-anchored — sidecountry
+    gates at Niseko + Hakuba resorts are formally HAN-coordinated
+    with kit checks. International-flight transport drives the bulk
+    of per-trip carbon footprint. Tree-skiing in protected national-
+    forest sectors (Niseko) has documented impact on understory
+    vegetation; the local Hokkaido Forestry Agency restricts certain
+    zones during early-season low-snow windows.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hakuba Avalanche Network (HAN) sidecountry bulletin standards"
+    - "Japan Avalanche Network (JAN) Hokkaido + Honshu bulletin coordination"
+    - "Hokkaido Forestry Agency Niseko forest-protection zone documentation"
+  notes: |
+    Regional overrides vs global freeride: precipitation peak shifted
+    to 0.5 mm/h (lake-effect storms ARE the operating condition;
+    dry days are recovery); precip-dump gate at 15 mm/h matches
+    ski-touring-sea-of-japan; tree-skiing-friendly visibility
+    weighting (0.22 vs alpine 0.20-0.25) because forest depth
+    partially compensates for whiteout above-treeline.

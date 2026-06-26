@@ -1,0 +1,46 @@
+slug: freeride-spot-niseko-annupuri
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-niseko
+parent_cluster: freeride-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8556, lng: 140.6917 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Niseko Annupuri Resort sidecountry — the quieter western face
+    of the Niseko mountain. Same Annupuri summit cone as Hirafu,
+    accessed from a different lift system. Lower crowd density
+    than Hirafu, similar avalanche profile. The cluster's
+    "real-locals" venue. Mt. Yotei volcano is the iconic backdrop
+    from the summit ridge.
+
+display_name:
+  en: Freeride — Niseko Annupuri
+  it: Freeride — Niseko Annupuri
+  es: Freeride — Niseko Annupuri
+  fr: Freeride — Niseko Annupuri
+  de: Freeride — Niseko Annupuri
+
+description:
+  en: |
+    The quiet side of Niseko United. Annupuri delivers the same
+    summit cone with lower crowd density and a "Japan domestic"
+    feel vs Hirafu's international visitor saturation.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko Avalanche Center Annupuri zone documentation"
+    - "Niseko Annupuri Resort operational map"
+  notes: |
+    Sub-spot of freeride-spot-niseko cluster. Tier 3: BC-proper
+    summit-cone terrain, same avalanche character as Hirafu, lower
+    crowd density.

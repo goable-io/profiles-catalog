@@ -1,0 +1,51 @@
+slug: freeride-spot-hakuba-tsugaike-powder
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-hakuba
+parent_cluster: freeride-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.7400, lng: 137.8147 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    Tsugaike Kogen Resort's "Powder Down" sidecountry zone —
+    accessed via the formal HAN-coordinated Gate 1 at the top of
+    the resort. Above-treeline open bowls at 1700-2100 m on the
+    Tsugaike Norikura summit cone. Higher avalanche-risk
+    character than the tree-skiing zones (Sakka, Cortina) because
+    of open-bowl wind-slab loading. Reserved for backcountry-
+    competent skiers with full kit. Same physical zone as the
+    ski-touring-spot-hakuba-tsugaike sub-spot but freeride focus
+    is single-lap lift-served vs touring up from the gate.
+
+display_name:
+  en: Freeride — Tsugaike Powder Down
+  it: Freeride — Tsugaike Powder Down
+  es: Freeride — Tsugaike Powder Down
+  fr: Freeride — Tsugaike Powder Down
+  de: Freeride — Tsugaike Powder Down
+
+description:
+  en: |
+    The Hakuba above-treeline BC venue. Tsugaike Powder Down's
+    open summit bowls are the cluster's most-committing freeride
+    terrain — wind-slab risk on every lap requires daily HAN
+    bulletin discipline.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HAN Tsugaike sidecountry zone documentation"
+    - "Tsugaike Kogen Resort BC gate operational map"
+  notes: |
+    Sub-spot of freeride-spot-hakuba cluster. Tier 3: above-
+    treeline bowls, wind-slab risk, formal kit-checked gate. Same
+    physical location as ski-touring-spot-hakuba-tsugaike (single
+    coordinate, different activity profiles).

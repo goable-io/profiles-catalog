@@ -1,0 +1,141 @@
+slug: freeride-spot-whistler
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: freeride-rockies
+region: rockies
+country_code: CA
+sub_spots:
+  - freeride-spot-whistler-symphony-amphitheatre
+  - freeride-spot-whistler-spankys-ladder
+  - freeride-spot-whistler-spearhead
+display_name:
+  en: Freeride — Whistler-Blackcomb
+  it: Freeride — Whistler-Blackcomb
+  es: Freeride — Whistler-Blackcomb
+  fr: Freeride — Whistler-Blackcomb
+  de: Freeride — Whistler-Blackcomb
+description:
+  en: |
+    Whistler-Blackcomb (British Columbia, Coast Range, Canada) is
+    North America's largest ski resort by skiable area + the
+    Western world's highest-volume freeride destination. Twin
+    mountains (Whistler 2182 m + Blackcomb 2284 m) connected by
+    the Peak2Peak gondola, with in-bounds patrolled freeride bowls
+    + extensive sidecountry + multi-day Spearhead Range backcountry
+    traverse. Coast Range maritime climate delivers heavy snowfall
+    (10-12 m annual) at slightly warmer temperatures than
+    continental Rockies. Avalanche risk consult Avalanche Canada
+    (CAA) Sea-to-Sky bulletin daily.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.20 }
+      - { x: -15, s: 0.60 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 4,   s: 0.40 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.18
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 4,   s: 0.55 }
+      - { x: 8,   s: 0.20 }
+      - { x: 12,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: COAST_RANGE_WHITEOUT
+    description: Visibility below 400m in Whistler alpine bowls makes terrain-selection unsafe; Coast Range storm cycles drop visibility for hours.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_PEAK
+    description: Sustained wind above 42 knots on Whistler / Blackcomb summit ridges accelerates wind-slab formation; peak lifts stop at this threshold.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: COAST_RANGE_COLD
+    description: Apparent temperature below -28°C is rare in the maritime Coast Range but does occur during arctic-outflow events.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult Avalanche Canada Sea-to-Sky bulletin.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Whistler-Blackcomb peak season (December-March) saturates the
+    resort village + lift capacity. BC's hydro-dominant grid mix
+    makes lift electricity low-carbon. Garibaldi Provincial Park
+    (Spearhead Range BC corridor) restricts off-resort camping
+    + ski-mountaineering activity to designated zones.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Avalanche Canada Sea-to-Sky bulletin standards"
+    - "Whistler Blackcomb Mountain Operations freeride-zone documentation"
+    - "BC Parks Garibaldi Provincial Park Spearhead Range plan"
+  notes: |
+    Cluster aggregates 3 freeride zones — in-bounds alpine bowl
+    (Symphony), sidecountry classic (Spanky's Ladder), and
+    multi-day BC corridor (Spearhead). Region tag: rockies. Cold
+    gate at -28°C (vs rockies parent -32°C) reflects the maritime
+    Coast Range climate.

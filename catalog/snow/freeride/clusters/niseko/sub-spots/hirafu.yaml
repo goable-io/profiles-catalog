@@ -1,0 +1,47 @@
+slug: freeride-spot-niseko-hirafu
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-niseko
+parent_cluster: freeride-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8631, lng: 140.7081 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Grand Hirafu is the most-visited Niseko resort and its
+    sidecountry zone — accessed via Gate 1 and Gate 2 at the top of
+    the resort lift system — is Japan's busiest BC area. Above-
+    treeline bowls on the Annupuri summit cone (40° slopes), tree-
+    skiing in the upper-resort forest below the gates. Avalanche-
+    bulletin gated, transceiver-check required at the gates. The
+    cluster's mainstage venue.
+
+display_name:
+  en: Freeride — Niseko Hirafu
+  it: Freeride — Niseko Hirafu
+  es: Freeride — Niseko Hirafu
+  fr: Freeride — Niseko Hirafu
+  de: Freeride — Niseko Hirafu
+
+description:
+  en: |
+    The Niseko freeride flagship. Hirafu's Gate-1 + Gate-2 access
+    delivers the most-skied BC powder runs in Japan. Best mid-
+    January to early February (deepest snowpack window).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko Avalanche Center Hirafu sidecountry zone documentation"
+    - "Grand Hirafu Resort gate operational map"
+  notes: |
+    Sub-spot of freeride-spot-niseko cluster. Tier 3: BC-proper
+    above-treeline bowls + tree skiing, formal kit-checked gate,
+    lake-effect-driven avalanche risk.
