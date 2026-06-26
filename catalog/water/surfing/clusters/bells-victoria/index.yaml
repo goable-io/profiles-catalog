@@ -1,0 +1,149 @@
+slug: surfing-spot-bells-victoria
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-pacific
+region: pacific
+country_code: AU
+sub_spots:
+  - surfing-spot-bells-victoria-bells-beach
+  - surfing-spot-bells-victoria-winkipop
+display_name:
+  en: Surfing — Bells Beach (Victoria)
+  it: Surf — Bells Beach (Victoria)
+  es: Surf — Bells Beach (Victoria)
+  fr: Surf — Bells Beach (Victoria)
+  de: Surfen — Bells Beach (Victoria)
+description:
+  en: |
+    Bells Beach (Torquay, Victoria, Australia) is the home of the
+    Rip Curl Pro Bells Beach — the longest-running surfing event
+    in the world (since 1962). Cold-water Southern-Ocean reef
+    break fed by huge SW swells. Bells (the headland point)
+    and Winkipop (the long right reef immediately south) are the
+    two flagship breaks; the broader cluster also includes Jan Juc
+    + Rincon, both walk-in distance. Water 13-18°C — full 4/3 mm
+    spring suit, 5/4 in winter.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.25 }
+      - { x: 0.7, s: 0.60 }
+      - { x: 1.2, s: 0.90 }
+      - { x: 1.8, s: 1.00 }
+      - { x: 2.5, s: 0.95 }
+      - { x: 4.0, s: 0.70 }
+      - { x: 6.0, s: 0.25 }
+      - { x: 8.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.45 }
+      - { x: 12, s: 0.90 }
+      - { x: 16, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.75 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.2 }
+      - { x: 10, s: 0.6 }
+      - { x: 18, s: 0.95 }
+      - { x: 24, s: 1.0 }
+      - { x: 32, s: 0.7 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 10, s: 0.3 }
+      - { x: 14, s: 0.7 }
+      - { x: 18, s: 1.0 }
+      - { x: 22, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.6 }
+      - { x: 25, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 8
+    reason_code: EXTREME_BELLS_SWELL
+    description: Above 8m the Bells Bowl is paddle-out impossible; outer-reef big-wave spots take over.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_ONSHORE_WIND
+    description: Onshore wind above 30 knots destroys the reef-break shape.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Bells Beach is Australia's first surfing reserve (declared 1973)
+    and remains under formal Victorian state-government protection.
+    Surfing Victoria + Surf Coast Shire manage access, parking, and
+    seasonal restrictions during the WSL event week.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Rip Curl Pro Bells Beach venue dossier (longest-running surf event)"
+    - "Surfing Victoria Bells reserve management plan"
+    - "Australian Bureau of Meteorology Southern-Ocean swell forecast methodology"
+  notes: |
+    Cluster aggregates Bells Beach (the headland) and Winkipop
+    (the long right reef immediately south, often considered the
+    superior wave by locals). Region tag: pacific (Southern-Ocean
+    Australian-coast subset).

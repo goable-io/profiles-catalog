@@ -1,0 +1,151 @@
+slug: surfing-spot-trestles
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-pacific
+region: pacific
+country_code: US
+sub_spots:
+  - surfing-spot-trestles-lower-trestles
+  - surfing-spot-trestles-upper-trestles
+  - surfing-spot-trestles-cottons
+display_name:
+  en: Surfing — Trestles (San Clemente)
+  it: Surf — Trestles (San Clemente)
+  es: Surf — Trestles (San Clemente)
+  fr: Surf — Trestles (San Clemente)
+  de: Surfen — Trestles (San Clemente)
+description:
+  en: |
+    Trestles (San Onofre State Beach, San Clemente, California) is
+    the WSL CT Finals venue — the venue that crowns the world
+    champion. Three high-performance cobblestone reef breaks within
+    a 1.5 km stretch — Lower Trestles, Upper Trestles, and Cottons
+    (named after the rail-bridge trestle that gave the area its
+    name). South-Pacific summer swell window (May-October) +
+    backup North-Pacific winter swell. Cold California Current water
+    (15-21°C) — full 3/2 mm year-round.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.38
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.40 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 1.00 }
+      - { x: 1.8, s: 0.95 }
+      - { x: 2.5, s: 0.75 }
+      - { x: 3.5, s: 0.35 }
+      - { x: 5.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.15 }
+      - { x: 8,  s: 0.55 }
+      - { x: 12, s: 0.95 }
+      - { x: 16, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 0.80 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.75 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.08
+    curve:
+      - { x: 5,  s: 0.4 }
+      - { x: 14, s: 0.85 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 0.95 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.07
+    curve:
+      - { x: 12, s: 0.3 }
+      - { x: 16, s: 0.7 }
+      - { x: 20, s: 1.0 }
+      - { x: 24, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.65 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 5
+    reason_code: HEAVY_CLOSEOUT
+    description: Above 5m the Trestles cobblestone reefs close out; advanced surfers move to outer-reef Cottons or further north.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: SANTA_ANA_OR_ONSHORE
+    description: Strong wind — onshore SW or strong offshore Santa Ana — destroys wave shape and creates safety issues.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: COASTAL_FOG
+    description: Visibility below 1 km — common in SoCal summer marine layer — is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 42
+  carrying_capacity_sensitivity: high
+  notes: |
+    Trestles sits inside San Onofre State Beach + the Camp Pendleton
+    USMC base — access is via a 1 km trail walk from the parking
+    area, which acts as a natural crowd-management mechanism. WSL CT
+    Finals week saturates the parking lot. The Save Trestles
+    campaign (2008-onwards) was a flagship coastal-protection win
+    against a proposed toll road.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Trestles Finals venue dossier (CT season-final since 2021)"
+    - "California State Parks San Onofre management plan"
+    - "Surfrider Foundation Save Trestles campaign documentation"
+  notes: |
+    Cluster aggregates Lower Trestles (the WSL Finals venue), Upper
+    Trestles (the second-most-photographed of the three), and
+    Cottons (the southernmost / Old Man's Wave option). All within
+    1.5 km along the San Onofre coast. Region tag: pacific.

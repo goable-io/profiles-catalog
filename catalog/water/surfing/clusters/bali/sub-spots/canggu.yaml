@@ -1,0 +1,50 @@
+slug: surfing-spot-bali-canggu
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-bali
+parent_cluster: surfing-spot-bali
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.6611, lng: 115.1306 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Beach-break + reef-and-sand mix on Bali's west coast, 15 km north of
+    the airport. Multiple peaks (Berawa, Echo Beach, Pererenan)
+    spread along a 3 km stretch. Sand-and-rock bottom, smaller and
+    cleaner than the Bukit reefs, the standard intermediate / learning
+    side of Bali surfing. International crowd density is extreme in
+    peak season (50+ surfers per peak at Echo Beach), but the
+    softer wave makes consequence-of-error lower than the Bukit
+    reef breaks.
+
+display_name:
+  en: Surfing — Canggu (Echo Beach)
+  it: Surf — Canggu (Echo Beach)
+  es: Surf — Canggu (Echo Beach)
+  fr: Surf — Canggu (Echo Beach)
+  de: Surfen — Canggu (Echo Beach)
+
+description:
+  en: |
+    Bali's intermediate-and-beginner surf hub. Canggu's mix of
+    accessible beach-break, surf schools, and digital-nomad culture
+    has made it the global poster-child of Indonesian surf tourism.
+    Best for first-week surfers and longboard sessions.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Indonesian Surfing Federation Canggu spot classification"
+    - "Surfline Canggu venue specification"
+    - "Badung Regency tourism + beach-zone allocation plan"
+  notes: |
+    Sub-spot of surfing-spot-bali cluster. Tier 2: sand-and-rock
+    bottom, softer wave, high school + crowd density. The learning /
+    intermediate side of the Bali cluster.

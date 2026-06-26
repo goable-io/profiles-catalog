@@ -1,0 +1,46 @@
+slug: surfing-spot-norcal-pleasure-point
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-norcal
+parent_cluster: surfing-spot-norcal
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 36.9550, lng: -121.9700 }
+  radius_m: 600
+
+tier: 2
+tier_rationale:
+  en: |
+    Long right-hand point break system 5 km east of Steamer Lane —
+    multiple connected peaks (First Peak, Middle Peak, Sewer Peak,
+    36th Avenue) along 600 m of urban cliff. Cobble + reef bottom,
+    softer wave than Steamer Lane, the Santa Cruz longboard /
+    intermediate hub. Crowded but spread across 4-5 peaks. Same
+    cold-water California Current — 4/3 mm year-round.
+
+display_name:
+  en: Surfing — Pleasure Point
+  it: Surf — Pleasure Point
+  es: Surf — Pleasure Point
+  fr: Surf — Pleasure Point
+  de: Surfen — Pleasure Point
+
+description:
+  en: |
+    The Santa Cruz longboard reference and local intermediate hub.
+    Pleasure Point is the most-surfed coastline mile in NorCal.
+    Best on N/NW winter swell + E offshore in the morning window.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfing Santa Cruz Pleasure Point spot documentation"
+    - "Santa Cruz County Pleasure Point access plan"
+  notes: |
+    Sub-spot of surfing-spot-norcal cluster. Tier 2: cobble reef,
+    softer wave, cold water, urban cliff access. The longboard /
+    intermediate side of the NorCal cluster.

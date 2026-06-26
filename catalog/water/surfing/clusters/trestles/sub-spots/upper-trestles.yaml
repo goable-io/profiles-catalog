@@ -1,0 +1,44 @@
+slug: surfing-spot-trestles-upper-trestles
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-trestles
+parent_cluster: surfing-spot-trestles
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 33.3856, lng: -117.5942 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Reef break north of Lower Trestles (the two are connected by a
+    short walk along the cobble beach). Predominantly a right-hand
+    point that breaks across a longer wall than Lowers. Cobble
+    bottom, mid-tide window, less crowded than Lowers because most
+    visitors stop at the first lineup.
+
+display_name:
+  en: Surfing — Upper Trestles
+  it: Surf — Upper Trestles
+  es: Surf — Upper Trestles
+  fr: Surf — Upper Trestles
+  de: Surfen — Upper Trestles
+
+description:
+  en: |
+    The "less-crowded better-wall" alternative to Lower Trestles for
+    locals. Most days Upper is the smarter choice for a longer
+    wave with a more relaxed lineup.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfline Upper Trestles spot specification"
+    - "California State Parks Upper Trestles documentation"
+  notes: |
+    Sub-spot of surfing-spot-trestles cluster. Tier 2: cobble bottom,
+    similar profile to Lowers but less crowded.

@@ -1,0 +1,47 @@
+slug: surfing-spot-oahu-north-shore-sunset
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-oahu-north-shore
+parent_cluster: surfing-spot-oahu-north-shore
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 21.6783, lng: -158.0386 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Outer reef point break — the most "open ocean" of the four
+    sub-spots. Three reefs (West, Inside, Boneyards) at increasing
+    distance from shore activate on increasing swell size. Sunset
+    is the historical big-wave training venue for the North Shore
+    (Eddie Aikau Bay Project pre-cursor). Long paddle out (300+ m)
+    means most surfers commit to a single peak per session.
+
+display_name:
+  en: Surfing — Sunset Beach
+  it: Surf — Sunset Beach
+  es: Surf — Sunset Beach
+  fr: Surf — Sunset Beach
+  de: Surfen — Sunset Beach
+
+description:
+  en: |
+    The big-wave training venue of the North Shore. Sunset operates
+    smoothly at 2-5 m and becomes serious paddle territory at 5-8 m.
+    Hosts the Vans World Cup of Surfing and various big-wave QS
+    events.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Vans World Cup of Surfing Sunset venue dossier"
+    - "Hawaii Water Safety Sunset operational coverage"
+  notes: |
+    Sub-spot of surfing-spot-oahu-north-shore cluster. Tier 3:
+    outer reef, long paddle, big-wave commitment. The classic
+    paddle-in big-wave venue.

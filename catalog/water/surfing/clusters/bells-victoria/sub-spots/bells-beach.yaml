@@ -1,0 +1,49 @@
+slug: surfing-spot-bells-victoria-bells-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-bells-victoria
+parent_cluster: surfing-spot-bells-victoria
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -38.3725, lng: 144.2825 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    The famous "Bells Bowl" right-hand reef break — long-walling
+    right that handles big SW swell better than almost any spot
+    in Australia. Rock-and-reef bottom with a paddle channel on
+    the inside (the "Rincon" channel). Wave height routinely 2-4 m
+    during the autumn / winter SW swell window; 6 m+ on rare
+    deep-low days. The WSL event historically runs in 2-4 m surf
+    over the Easter window. Crowd-density at event time is extreme;
+    locals enforce strict priority year-round.
+
+display_name:
+  en: Surfing — Bells Beach
+  it: Surf — Bells Beach
+  es: Surf — Bells Beach
+  fr: Surf — Bells Beach
+  de: Surfen — Bells Beach
+
+description:
+  en: |
+    The Australian surfing heritage venue. Bells is the spiritual
+    home of the Australian competition scene and the WSL Easter
+    stop. Cold water, long paddle, formidable wave when the
+    Southern Ocean delivers.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Rip Curl Pro Bells Beach venue specification (annual)"
+    - "Surfing Victoria Bells reserve operational plan"
+  notes: |
+    Sub-spot of surfing-spot-bells-victoria cluster. Tier 3: reef
+    bottom, cold water, big-swell exposure, hostile competitive
+    lineup. The cluster's reference wave.

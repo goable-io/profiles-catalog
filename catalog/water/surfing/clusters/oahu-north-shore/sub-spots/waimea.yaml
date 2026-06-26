@@ -1,0 +1,49 @@
+slug: surfing-spot-oahu-north-shore-waimea
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-oahu-north-shore
+parent_cluster: surfing-spot-oahu-north-shore
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 21.6394, lng: -158.0664 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The original big-wave paddle venue — Waimea Bay only activates
+    when the rest of the North Shore is closed-out, i.e. wave height
+    6-10 m. Reef bottom, long paddle from the beach, "the Bay" only
+    works on the right N/NNW direction (other directions close out
+    the inside section). Eddie Aikau Big Wave Invitational venue
+    (held only when the bay reaches 6 m / 20 ft Hawaiian — happens
+    a few times per decade). Reserved for the global big-wave
+    paddle elite.
+
+display_name:
+  en: Surfing — Waimea Bay
+  it: Surf — Waimea Bay
+  es: Surf — Waimea Bay
+  fr: Surf — Waimea Bay
+  de: Surfen — Waimea Bay
+
+description:
+  en: |
+    The Eddie. Waimea Bay is the historic home of paddle-in big-wave
+    surfing. The Eddie Aikau Big Wave Invitational only holds when
+    the bay reaches the legendary 6 m / 20 ft Hawaiian threshold,
+    which happens irregularly across multi-decade timescales.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Eddie Aikau Big Wave Invitational venue specification (Quiksilver-administered)"
+    - "Hawaii Water Safety Waimea operational protocol"
+  notes: |
+    Sub-spot of surfing-spot-oahu-north-shore cluster. Tier 3 with
+    extreme confidence: paddle big-wave only, 6-10 m operational
+    window. The historic paddle-in big-wave shrine.

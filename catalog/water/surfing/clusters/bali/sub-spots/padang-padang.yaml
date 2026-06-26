@@ -1,0 +1,47 @@
+slug: surfing-spot-bali-padang-padang
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-bali
+parent_cluster: surfing-spot-bali
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.8092, lng: 115.1083 }
+  radius_m: 350
+
+tier: 3
+tier_rationale:
+  en: |
+    Bukit peninsula reef break ~2 km north of Uluwatu. Hollow short-
+    barrel left over a shallow coral reef. Smaller window than
+    Uluwatu (needs ~2 m+ to start working, closes out >4 m), but
+    when it activates the inside-section barrel is among the best
+    paddle-in tubes on the planet. Very shallow at the take-off — a
+    wipeout puts a surfer onto exposed coral with a documented
+    accident rate.
+
+display_name:
+  en: Surfing — Padang Padang
+  it: Surf — Padang Padang
+  es: Surf — Padang Padang
+  fr: Surf — Padang Padang
+  de: Surfen — Padang Padang
+
+description:
+  en: |
+    "The Balinese Pipeline." Padang only works on solid swell + low-tide
+    window, but on a good day produces some of the most photographed
+    tubes in surfing. Hosts the Rip Curl Cup big-wave invitational on
+    selected swells.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rip Curl Cup Padang big-wave invitational venue dossier"
+    - "Surfline Padang Padang spot specification"
+  notes: |
+    Sub-spot of surfing-spot-bali cluster. Tier 3: shallow reef, sharp
+    coral, narrow swell-and-tide window. Big-wave invitational venue.

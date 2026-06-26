@@ -1,0 +1,47 @@
+slug: surfing-spot-gold-coast-kirra
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-gold-coast
+parent_cluster: surfing-spot-gold-coast
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -28.1633, lng: 153.5331 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Middle section of the Superbank, 1.5 km west of Snapper. Hollower
+    and faster than Snapper — produces the cluster's most iconic
+    barrels (the cyclone-swell Kirra rights are surfing's photographic
+    benchmark for sand-bottom tubes). Same engineered-sandbar bottom
+    as the rest of the Superbank, with rockier sections on the inside.
+    Less crowded than Snapper because the take-off zone is smaller
+    and locals self-select.
+
+display_name:
+  en: Surfing — Kirra
+  it: Surf — Kirra
+  es: Surf — Kirra
+  fr: Surf — Kirra
+  de: Surfen — Kirra
+
+description:
+  en: |
+    The barrel section of the Superbank. Kirra is the global reference
+    for engineered-sand-bottom tubes. Best on cyclone swell + light SW
+    offshore. Lineup is local-priority enforced.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfing Queensland Kirra spot documentation"
+    - "Tweed Sand Bypass quarterly engineering reports (Gold Coast City Council)"
+  notes: |
+    Sub-spot of surfing-spot-gold-coast cluster. Tier 2: engineered
+    sand bottom but hollower wave than Snapper. The barrel section
+    of the cluster.

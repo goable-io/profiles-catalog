@@ -1,0 +1,53 @@
+slug: surfing-spot-norcal-mavericks
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-norcal
+parent_cluster: surfing-spot-norcal
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 37.4956, lng: -122.5006 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The North American paddle big-wave reference. Mavericks breaks
+    over an outer reef ~1 km offshore from Pillar Point at Half Moon
+    Bay, activating only when wave height reaches 6+ m / 20+ ft
+    Hawaiian. Reef bottom (mixed shale + boulders), water 10-13°C,
+    long paddle out (~1 km from shore), exposed to open North
+    Pacific with no shelter geometry. Tow-in qualifying — multiple
+    recorded fatalities of elite big-wave specialists. Reserved
+    exclusively for the small global big-wave paddle / tow community
+    on the right swell.
+
+display_name:
+  en: Surfing — Mavericks
+  it: Surf — Mavericks
+  es: Surf — Mavericks
+  fr: Surf — Mavericks
+  de: Surfen — Mavericks
+
+description:
+  en: |
+    The Eddie of the mainland. Mavericks activates a handful of times
+    per winter on the right N/NW swell + period combination. Hosts
+    the Titans of Mavericks big-wave event when conditions align.
+    Cold-water North-Pacific paddle big-wave at the operational
+    limit of human capability.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mavericks Surf Foundation venue documentation"
+    - "Titans of Mavericks event specification (when held)"
+    - "NOAA Pillar Point swell amplification analysis"
+  notes: |
+    Sub-spot of surfing-spot-norcal cluster. Tier 3 with extreme
+    confidence: paddle big-wave only, recorded fatalities, cold
+    water, long paddle, no shelter. The mainland US paddle big-
+    wave shrine.

@@ -1,0 +1,50 @@
+slug: surfing-spot-oahu-north-shore-pipeline
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-oahu-north-shore
+parent_cluster: surfing-spot-oahu-north-shore
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 21.6645, lng: -158.0506 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    The heaviest tube ride in surfing, breaking over a shallow lava reef
+    100 m off the beach at Ehukai. First Reef breaks at 1.5-3 m, Second
+    Reef at 3-5 m, Third Reef at 5+ m. Reef bottom with exposed lava
+    rock spikes — the recorded fatality count is the highest of any
+    surf spot. Local lineup is governed by the Wolfpak, with strict
+    priority hierarchy. Mandatory: tow-in qualification, full lifeguard
+    coverage, helmet for most visitors. Reserved for elite tube
+    specialists.
+
+display_name:
+  en: Surfing — Banzai Pipeline
+  it: Surf — Pipeline
+  es: Surf — Pipeline
+  fr: Surf — Pipeline
+  de: Surfen — Pipeline
+
+description:
+  en: |
+    The sport's reference for heavy tube riding. Pipeline activates
+    on solid N/NW swell + light S/SE morning offshore. Hosts the WSL
+    Pipe Pro and the historic Pipeline Masters. The single most-
+    photographed wave on the planet.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Pipe Pro venue specification"
+    - "Hawaii Water Safety Pipeline operational protocol"
+    - "Surfline Pipeline spot dossier"
+  notes: |
+    Sub-spot of surfing-spot-oahu-north-shore cluster. Tier 3 with
+    high confidence: shallow lava reef, hostile lineup, documented
+    fatalities. Reserved for elite-level competence.

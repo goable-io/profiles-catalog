@@ -1,0 +1,48 @@
+slug: surfing-spot-oahu-north-shore-off-the-wall
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-oahu-north-shore
+parent_cluster: surfing-spot-oahu-north-shore
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 21.6650, lng: -158.0533 }
+  radius_m: 250
+
+tier: 3
+tier_rationale:
+  en: |
+    Right-hand reef break immediately west of Pipeline — the two
+    breaks share a parking lot and a take-off zone on the right
+    swell direction. Same shallow lava reef as Pipeline, comparable
+    heaviness but with a slightly steeper-and-shorter wave geometry.
+    Lineup is similarly hierarchical to Pipeline (Wolfpak priority).
+    Mid-tide window narrower than Pipeline. Reserved for elite tube
+    specialists.
+
+display_name:
+  en: Surfing — Off-the-Wall
+  it: Surf — Off-the-Wall
+  es: Surf — Off-the-Wall
+  fr: Surf — Off-the-Wall
+  de: Surfen — Off-the-Wall
+
+description:
+  en: |
+    The right-hand sister to Pipeline. OTW (and the immediately-
+    adjacent Backdoor) activates on the same swell window as Pipe
+    but rewards the right approach. Sub-2 m days have made photo
+    history (Slater 1995 free-surf footage).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfline Off-the-Wall spot specification"
+    - "Hawaii Water Safety Ehukai operational coverage"
+  notes: |
+    Sub-spot of surfing-spot-oahu-north-shore cluster. Tier 3: shares
+    Pipeline's lava reef + hierarchical lineup. Coordinate places
+    centre between Pipeline-First-Reef and the OTW take-off zone.

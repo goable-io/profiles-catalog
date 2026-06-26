@@ -1,0 +1,45 @@
+slug: surfing-spot-bells-victoria-winkipop
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-bells-victoria
+parent_cluster: surfing-spot-bells-victoria
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -38.3719, lng: 144.2825 }
+  radius_m: 350
+
+tier: 3
+tier_rationale:
+  en: |
+    Right-hand reef break immediately south of Bells (the two breaks
+    share a parking lot). Faster, hollower, more sectiony than Bells
+    — many Australian pros consider Winkipop the superior wave of
+    the pair. Same reef bottom, same cold water, similar swell
+    window but more critical take-off. Crowded but less so than Bells
+    (the Bells Bowl is the iconic spot).
+
+display_name:
+  en: Surfing — Winkipop
+  it: Surf — Winkipop
+  es: Surf — Winkipop
+  fr: Surf — Winkipop
+  de: Surfen — Winkipop
+
+description:
+  en: |
+    The "real" Bells wave according to most local opinion.
+    Winkipop's faster, hollower walls demand confident high-line
+    riding. Best on solid SW swell with light N offshore.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfing Victoria Winkipop spot inventory"
+    - "Rip Curl Pro Bells Beach backup-venue documentation"
+  notes: |
+    Sub-spot of surfing-spot-bells-victoria cluster. Tier 3: reef
+    bottom, hollower than Bells, cold water, advanced lineup.

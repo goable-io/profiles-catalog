@@ -1,0 +1,44 @@
+slug: surfing-spot-trestles-cottons
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-trestles
+parent_cluster: surfing-spot-trestles
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 33.3886, lng: -117.5961 }
+  radius_m: 350
+
+tier: 2
+tier_rationale:
+  en: |
+    The northernmost of the Trestles reefs, just south of San Clemente
+    State Beach. Cobble + reef bottom, slower softer wave than Lower
+    or Upper — the cluster's longboard / mid-length option. Best on
+    smaller S/SW summer swell when Lowers is closed-out.
+
+display_name:
+  en: Surfing — Cottons (Trestles)
+  it: Surf — Cottons (Trestles)
+  es: Surf — Cottons (Trestles)
+  fr: Surf — Cottons (Trestles)
+  de: Surfen — Cottons (Trestles)
+
+description:
+  en: |
+    The longboard / smaller-wave end of the Trestles cluster.
+    Cotton's softer wave geometry is the standard small-swell
+    fallback in the area.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfline Cottons spot classification"
+    - "California State Parks San Onofre comprehensive plan"
+  notes: |
+    Sub-spot of surfing-spot-trestles cluster. Tier 2: cobble bottom,
+    softer wave, longboard-friendly. The smaller-swell side of the
+    cluster.
