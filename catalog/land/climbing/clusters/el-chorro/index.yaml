@@ -4,6 +4,7 @@ version: "1.0.0"
 category: land
 extends: climbing
 region: mediterranean
+country_code: ES
 sub_spots:
   - climbing-spot-el-chorro-makinodromo
   - climbing-spot-el-chorro-frontales

@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-dakhla
 parent_cluster: kitesurfing-spot-dakhla
 region: atlantic
+country_code: MA
 
 coordinates:
   center: { lat: 23.6944, lng: -16.0139 }

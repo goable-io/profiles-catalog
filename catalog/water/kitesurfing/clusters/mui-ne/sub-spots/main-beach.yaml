@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-mui-ne
 parent_cluster: kitesurfing-spot-mui-ne
 region: south-china-sea
+country_code: VN
 
 coordinates:
   center: { lat: 10.9447, lng: 108.2811 }

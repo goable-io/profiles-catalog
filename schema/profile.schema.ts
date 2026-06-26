@@ -330,6 +330,9 @@ const clusterInner = z.object({
   spot_kind: z.literal("cluster"),
   extends: z.string(),
   region: RegionEnum.optional(),
+  // ISO 3166-1 alpha-2 country code. Optional on cluster (may span multiple
+  // countries in theory; required on every contained sub-spot in practice).
+  country_code: z.string().regex(/^[A-Z]{2}$/, "country_code must be ISO 3166-1 alpha-2 (e.g. IT, FR, US)").optional(),
   sub_spots: z
     .array(z.string())
     .min(1, "cluster must reference at least one sub-spot in `sub_spots`"),
@@ -349,6 +352,10 @@ const subSpotInner = z.object({
   extends: z.string(),
   parent_cluster: z.string(),
   region: RegionEnum.optional(),
+  // ISO 3166-1 alpha-2 country code. Optional in the schema for v2.x
+  // back-compat, but the compute-stats pipeline fails loudly if missing —
+  // every sub-spot in this repo MUST carry it.
+  country_code: z.string().regex(/^[A-Z]{2}$/, "country_code must be ISO 3166-1 alpha-2 (e.g. IT, FR, US)").optional(),
   coordinates: CoordinatesSchema,
   tier: TierSchema,
   tier_rationale: z.record(z.string(), z.string()).refine(

@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
 region: caribbean
+country_code: DO
 sub_spots:
   - kitesurfing-spot-cabarete-kite-beach
   - kitesurfing-spot-cabarete-la-boca

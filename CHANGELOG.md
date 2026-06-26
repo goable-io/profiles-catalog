@@ -18,7 +18,68 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.2.0
+## [Unreleased] — lands as 2.3.0
+
+### Added — live coverage stats via `/stats` subpath export
+
+Consumers (the goable.io landing being the first) need to show LIVE
+coverage numbers — sub-spots per activity, countries covered, status
+per activity — without hardcoding stats that go stale. This release
+adds a `./stats` subpath export with pre-computed counts read from an
+embedded JSON file. Build-time computation, runtime access, zero
+YAML parsing on the consumer side.
+
+```ts
+import { getCatalogStats, getActivityCoverage } from "@goable-io/profiles-catalog/stats"
+
+const { totals, byActivity } = getCatalogStats()
+// { activities: 28, subSpots: 58, clusters: 20, regions: 15, countries: 13 }
+
+const kite = getActivityCoverage("kitesurfing")
+// { slug: "kitesurfing", subSpotCount: 37, status: "seeded", countries: [...] }
+```
+
+Status thresholds:
+- `empty`: 0 sub-spots
+- `partial`: 1–9 sub-spots
+- `seeded`: 10+ sub-spots
+
+Per-activity `lastUpdatedAt` reads `git log -1 --format=%cI` on the
+activity dir, with a `null` fallback if git is unavailable.
+
+### Added — `country_code` field (additive, optional in schema, required at bundle-time for sub-spots)
+
+ISO 3166-1 alpha-2 country code on `cluster` and `sub-spot` variants.
+Schema makes it `.optional()` for v2.x backwards compatibility, but
+`scripts/compute-stats.ts` fails loudly if any sub-spot is missing it
+— our own catalog enforces full coverage.
+
+Backfilled in this PR across all 58 sub-spots + 20 clusters (78 YAML
+files). 13 distinct countries: BR, DO, EG, ES, FR, GR, IT, MA, PT,
+TR, US, VN, ZA.
+
+### Added
+
+- `scripts/compute-stats.ts`: walks catalog YAMLs, validates with Zod,
+  emits `dist/catalog-stats.json`. Wired into `pnpm bundle`.
+- `schema/stats.ts`: runtime accessor reading the JSON via
+  `fs.readFileSync` at module load. Exports `CatalogStats`,
+  `ActivityCoverage`, `ClusterCoverage` interfaces +
+  `getCatalogStats()` + `getActivityCoverage(slug)`.
+- `tests/stats.test.ts`: 10 cases (shape validation, sort order,
+  threshold check, totals integrity, ISO format).
+- `dist/catalog-stats.json` shipped alongside `catalog.json` (added
+  to `package.exports` under `./catalog-stats.json` for JSON consumers).
+- README section showing the new subpath.
+
+### Changed
+
+- `package.json` exports adds `./stats` and `./catalog-stats.json`.
+- `package.json` version bumped 2.2.0 → 2.3.0 (additive — schema is
+  backwards-compatible).
+- `dist/catalog.json` `schemaVersion` bumped 2.2.0 → 2.3.0.
+
+## [2.2.0] — published 2026-06-26
 
 ### Added — 14 new RegionEnum values (additive)
 

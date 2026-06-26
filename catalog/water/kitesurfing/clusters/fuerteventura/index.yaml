@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
 region: atlantic
+country_code: ES
 sub_spots:
   - kitesurfing-spot-fuerteventura-sotavento
   - kitesurfing-spot-fuerteventura-flag-beach

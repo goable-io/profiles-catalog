@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-pacific
 region: south-china-sea
+country_code: VN
 sub_spots:
   - kitesurfing-spot-mui-ne-main-beach
   - kitesurfing-spot-mui-ne-malibu

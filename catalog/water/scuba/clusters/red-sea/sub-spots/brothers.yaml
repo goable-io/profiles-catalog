@@ -5,6 +5,7 @@ category: water
 extends: scuba-spot-red-sea
 parent_cluster: scuba-spot-red-sea
 region: red-sea
+country_code: EG
 
 coordinates:
   center: { lat: 26.3361, lng: 34.8531 }

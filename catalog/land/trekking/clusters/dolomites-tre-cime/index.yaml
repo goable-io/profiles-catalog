@@ -4,6 +4,7 @@ version: "0.1.0"
 category: land
 extends: trekking
 region: alpine
+country_code: IT
 sub_spots:
   - trekking-spot-dolomites-tre-cime-classic-loop
   - trekking-spot-dolomites-tre-cime-via-ferrata-innerkofler

@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-maui
 parent_cluster: kitesurfing-spot-maui
 region: pacific
+country_code: US
 
 coordinates:
   center: { lat: 20.9342, lng: -156.3567 }

@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-fuerteventura
 parent_cluster: kitesurfing-spot-fuerteventura
 region: atlantic
+country_code: ES
 
 coordinates:
   center: { lat: 28.1311, lng: -14.2306 }

@@ -5,6 +5,7 @@ category: air
 extends: paragliding-spot-oludeniz
 parent_cluster: paragliding-spot-oludeniz
 region: mediterranean
+country_code: TR
 
 coordinates:
   center: { lat: 36.5400, lng: 29.1567 }

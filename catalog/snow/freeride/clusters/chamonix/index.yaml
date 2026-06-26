@@ -4,6 +4,7 @@ version: "0.1.0"
 category: snow
 extends: freeride
 region: alpine
+country_code: FR
 sub_spots:
   - freeride-spot-chamonix-vallee-blanche
   - freeride-spot-chamonix-grands-montets

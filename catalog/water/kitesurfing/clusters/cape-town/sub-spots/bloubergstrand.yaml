@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-cape-town
 parent_cluster: kitesurfing-spot-cape-town
 region: atlantic
+country_code: ZA
 
 coordinates:
   center: { lat: -33.7894, lng: 18.4642 }

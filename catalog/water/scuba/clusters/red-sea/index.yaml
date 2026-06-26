@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: scuba
 region: red-sea
+country_code: EG
 sub_spots:
   - scuba-spot-red-sea-ras-mohammed
   - scuba-spot-red-sea-thistlegorm

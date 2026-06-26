@@ -27,8 +27,8 @@ async function main(): Promise<void> {
 
   await mkdir("dist", { recursive: true })
   const out = {
-    schemaVersion: "2.2.0",
-    version: process.env.npm_package_version ?? "2.2.0",
+    schemaVersion: "2.3.0",
+    version: process.env.npm_package_version ?? "2.3.0",
     generatedAt: new Date().toISOString(),
     profilesByPath,
     profilesBySlug,

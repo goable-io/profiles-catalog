@@ -4,6 +4,7 @@ version: "0.1.0"
 category: air
 extends: paragliding
 region: mediterranean
+country_code: TR
 sub_spots:
   - paragliding-spot-oludeniz-babadag-1700
   - paragliding-spot-oludeniz-babadag-1900

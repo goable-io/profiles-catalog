@@ -1,6 +1,6 @@
 {
   "name": "@goable-io/profiles-catalog",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "Open catalog of outdoor activity profiles (water, snow, air, land) that define how weather inputs combine into a 0-100 suitability score. CC BY 4.0.",
   "license": "CC-BY-4.0",
   "author": "Fabio Carucci <contact@fabio-carucci.com>",
@@ -36,8 +36,13 @@
       "types": "./dist/schema/index.d.ts",
       "import": "./dist/schema/index.js"
     },
+    "./stats": {
+      "types": "./dist/schema/stats.d.ts",
+      "import": "./dist/schema/stats.js"
+    },
     "./catalog.json": "./dist/catalog.json",
     "./profile.schema.json": "./dist/profile.schema.json",
+    "./catalog-stats.json": "./dist/catalog-stats.json",
     "./package.json": "./package.json"
   },
   "files": [
@@ -51,7 +56,7 @@
   "scripts": {
     "validate": "tsx schema/validate.ts",
     "build": "tsc -p tsconfig.build.json",
-    "bundle": "tsx scripts/bundle-for-npm.ts && tsx scripts/emit-json-schema.ts",
+    "bundle": "tsx scripts/bundle-for-npm.ts && tsx scripts/emit-json-schema.ts && tsx scripts/compute-stats.ts",
     "list-profiles": "tsx scripts/list-profiles.ts",
     "test": "vitest run --passWithNoTests",
     "typecheck": "tsc --noEmit",

@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-pacific
 region: pacific
+country_code: US
 sub_spots:
   - kitesurfing-spot-maui-kanaha
   - kitesurfing-spot-maui-kite-beach-kihei

@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-mediterranean
 region: aegean
+country_code: GR
 sub_spots:
   - kitesurfing-spot-naxos-mikri-vigla
   - kitesurfing-spot-naxos-plaka

@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
 region: atlantic
+country_code: BR
 sub_spots:
   - kitesurfing-spot-jericoacoara-main
   - kitesurfing-spot-jericoacoara-prea
