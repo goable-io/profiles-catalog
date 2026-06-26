@@ -1,0 +1,52 @@
+slug: paragliding-spot-chamonix-brevent
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-chamonix
+parent_cluster: paragliding-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.9389, lng: 6.8472 }
+  radius_m: 600
+
+tier: 3
+tier_rationale:
+  en: |
+    Brévent (2525 m) is the upper Chamonix paragliding launch,
+    accessed by the Plan-Praz + Brévent cable-car link. South-facing
+    ramp directly opposite the Mont Blanc massif gives one of the
+    most dramatic alpine vol-bivouac departure points in Europe.
+    Wind exposure is severe (no shelter from synoptic flow), thermal
+    cycles couple with glacier-induced katabatic on the Bossons side,
+    and the 1500+ m vertical descent to the valley LZ leaves no easy
+    bail-out options. Site is operated by professional pilots with
+    documented mountain-bivouac experience. Solo recreational use
+    requires intermediate-plus rating plus site-briefing through
+    Chamonix Parapente or equivalent local school.
+
+display_name:
+  en: Paragliding — Brévent (Chamonix high)
+  it: Parapendio — Brévent (Chamonix)
+  es: Parapente — Brévent (Chamonix)
+  fr: Parapente — Brévent (Chamonix)
+  de: Gleitschirmfliegen — Brévent (Chamonix)
+
+description:
+  en: |
+    The 2525 m Brévent upper launch in the Chamonix valley. High-
+    alpine ramp opposite Mont Blanc with severe wind exposure and
+    no easy bail-outs. The cluster's serious vol-bivouac launch.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chamonix Parapente Brévent launch documentation"
+    - "Compagnie du Mont-Blanc Brévent cable-car flight-zone coordination"
+    - "FFVL Brévent launch operational rules"
+  notes: |
+    Sub-spot of paragliding-spot-chamonix cluster. Tier 3: high-
+    alpine launch, severe wind exposure, no easy bail-outs, vol-
+    bivouac grade commitment.

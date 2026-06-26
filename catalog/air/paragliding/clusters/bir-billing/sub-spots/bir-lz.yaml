@@ -1,0 +1,50 @@
+slug: paragliding-spot-bir-billing-bir-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-bir-billing
+parent_cluster: paragliding-spot-bir-billing
+region: himalayas
+country_code: IN
+
+coordinates:
+  center: { lat: 32.0367, lng: 76.7280 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    The Bir LZ is a wide cultivated plain at 1400 m on the Tibetan-
+    colony side of Bir village. ~14 km of open valley provides
+    multiple landing fields and minimal LZ-side commitment for the
+    standard 14 km / 1000 m vertical descent from Billing. BPA
+    coordinates field rotation with local residents during the
+    October-November competition window when daily flight volume
+    peaks. LZ failure modes are limited to over-shoot into the
+    perimeter road or village residential boundary; the field is
+    large enough to absorb concentrated traffic and tandem-school
+    operations.
+
+display_name:
+  en: Paragliding — Bir LZ (Bir-Billing)
+  it: Parapendio — Bir (LZ Bir-Billing)
+  es: Parapente — Bir (LZ Bir-Billing)
+  fr: Parapente — Bir (LZ Bir-Billing)
+  de: Gleitschirmfliegen — Bir (LZ Bir-Billing)
+
+description:
+  en: |
+    The Bir valley LZ at 1400 m. Wide cultivated plain on the
+    Tibetan-colony side of Bir village, BPA-coordinated landing
+    field for Billing-launched flights.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Billing Paragliding Association Bir LZ rules"
+    - "PWC Bir-Billing 2015 landing-field documentation"
+  notes: |
+    Sub-spot of paragliding-spot-bir-billing cluster. Tier 1:
+    valley LZ on cultivated plain, BPA-managed rotation, low LZ-
+    specific risk.

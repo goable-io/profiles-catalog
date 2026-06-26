@@ -1,0 +1,49 @@
+slug: paragliding-spot-soll-hohe-salve-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-soll
+parent_cluster: paragliding-spot-soll
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.4350, lng: 12.1700 }
+  radius_m: 600
+
+tier: 2
+tier_rationale:
+  en: |
+    Hohe Salve launch at 1828 m above Söll village — accessed by
+    the Hohe-Salve gondola from Söll. South-east-facing grass
+    ramp with the Wilder Kaiser as backdrop; sustained anabatic
+    on summer afternoons feeding the village LZ in glide range.
+    Standard Austrian intermediate-grade alpine launch with
+    rotation between schools and tandem operators. Cross-flow
+    rotor sensitivity above 18 kn forces ramp-side stand-down.
+    Pilot rating expectation: intermediate (DHV-2 / EN B+) solo,
+    documented site-briefing for visiting pilots.
+
+display_name:
+  en: Paragliding — Hohe Salve (Söll)
+  it: Parapendio — Hohe Salve (Söll)
+  es: Parapente — Hohe Salve (Söll)
+  fr: Parapente — Hohe Salve (Söll)
+  de: Gleitschirmfliegen — Hohe Salve (Söll)
+
+description:
+  en: |
+    The 1828 m Hohe Salve launch above Söll. SE-facing ramp with
+    Wilder Kaiser backdrop, gondola-served, standard Austrian
+    intermediate alpine launch.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ÖAeC Hohe Salve launch documentation"
+    - "Tyrolean Free-Flight Federation Söll site briefing"
+  notes: |
+    Sub-spot of paragliding-spot-soll cluster. Tier 2: alpine
+    intermediate launch, ÖAeC-permit-managed, intermediate-and-
+    above rating expected for solo.

@@ -1,0 +1,161 @@
+slug: paragliding-spot-bir-billing
+spot_kind: cluster
+version: "0.1.0"
+category: air
+extends: paragliding-himalayas
+region: himalayas
+country_code: IN
+sub_spots:
+  - paragliding-spot-bir-billing-billing-launch
+  - paragliding-spot-bir-billing-bir-lz
+display_name:
+  en: Paragliding — Bir-Billing
+  it: Parapendio — Bir-Billing
+  es: Parapente — Bir-Billing
+  fr: Parapente — Bir-Billing
+  de: Gleitschirmfliegen — Bir-Billing
+description:
+  en: |
+    Bir-Billing in Himachal Pradesh is India's paragliding capital
+    and host of the 2015 FAI Paragliding World Cup. The launch site
+    Billing sits at 2400 m on the Dhauladhar foothills; the LZ at
+    Bir village is at 1400 m, a 14 km Tibetan-colony plain ideal
+    for XC retrieve logistics. Post-monsoon (Oct-Nov) gives the
+    most stable XC window — cloud-base routinely 4500-5500 m,
+    Dhauladhar ridge gives sustained NW-flow-driven thermal
+    streets, and 100-200 km flights toward Mandi or Manali are
+    standard. Pre-monsoon (Mar-May) is the secondary season with
+    stronger but less stable convection. Monsoon (Jun-Sep) is
+    hard-closed: cu-nimb dominates and the site stands down. The
+    Billing-Bir corridor is one of the cleanest Himalayan paragliding
+    operating regimes globally.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.35 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 16, s: 0.65 }
+      - { x: 20, s: 0.20 }
+      - { x: 24, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.20 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.40 }
+      - { x: 10, s: 0.90 }
+      - { x: 20, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.30 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.55 }
+      - { x: 12,  s: 0.90 }
+      - { x: 22,  s: 1.00 }
+      - { x: 32,  s: 0.65 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 24
+    reason_code: HIMALAYAN_HIGH_WIND
+    description: Sustained wind above 24 knots on Billing launch creates severe lee-rotor on the Dhauladhar back-side; Billing Paragliding Association SOP stands down.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: HIMALAYAN_TURBULENT_AIR
+    description: Gust factor above 1.8x on the Billing ramp indicates Dhauladhar convergence turbulence; canopy collapse risk at altitude.
+
+  - metric: visibility_km
+    condition: lt
+    value: 4
+    reason_code: HIMALAYAN_LOW_VISIBILITY
+    description: Bir-Billing XC requires visibility above 4 km — Dhauladhar ridge XC over 100 km of valley with sparse alternate LZ options.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in the Bir-Billing corridor indicates monsoon-residual cu-nimb development; immediate land-out required.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Bir-Billing operations close at sunset; valley katabatic builds rapidly after.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: low
+  notes: |
+    Bir-Billing paragliding is carbon-neutral free-flight per session.
+    The Billing access road (graveled) carries vehicle emissions out
+    of session scope. Carrying capacity is low in the XC arena — even
+    during PWC season pilots disperse across 100+ km of Dhauladhar
+    ridge. Bir LZ field rotation is operator-managed by the Billing
+    Paragliding Association during competition windows; local
+    Tibetan-colony residential boundaries are respected by site
+    convention.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Billing Paragliding Association (BPA) Bir-Billing operational SOP"
+    - "PWC Bir-Billing 2015 venue meteorological + operational dossier"
+    - "Himachal Pradesh Tourism Department adventure-sport licensing rules"
+  notes: |
+    Spot overrides vs paragliding-himalayas: extended wind sweet-spot
+    (6-12kn) reflecting valley-flow consistency; sun weighting raised
+    to 0.20 (thermal-quality proxy until L1d ships); same 24-kn wind
+    gate as regional baseline. The Dhauladhar ridge provides the
+    most consistent post-monsoon thermal-streeting regime in the
+    Indian Himalaya — once L1d's thermal_lift_index and
+    convective_cloud_base_m are wired in, this site's PWC-grade XC
+    profile becomes scoring-grade.

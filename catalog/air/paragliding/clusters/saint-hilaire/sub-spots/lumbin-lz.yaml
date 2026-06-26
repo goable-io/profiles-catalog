@@ -1,0 +1,48 @@
+slug: paragliding-spot-saint-hilaire-lumbin-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-saint-hilaire
+parent_cluster: paragliding-spot-saint-hilaire
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.3008, lng: 5.9019 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    The Lumbin / Saint-Pancrasse LZ is the official Saint-Hilaire
+    landing field at 215 m in the Grésivaudan valley, ~500 m
+    vertical below the launch. Large grass field with open
+    approach from the north, FFVL-managed wind-sock infrastructure,
+    standard target for every flight. The only operational
+    coordination is with the adjacent Grenoble-Le-Versoud light-
+    aviation airport — site committee maintains a published
+    airspace integration protocol. LZ failure modes are limited to
+    student over-shoot into the perimeter road; the field is large
+    enough to accommodate concentrated Coupe Icare weekend volume.
+
+display_name:
+  en: Paragliding — Lumbin LZ (Saint-Hilaire)
+  it: Parapendio — Lumbin (Saint-Hilaire)
+  es: Parapente — Lumbin (Saint-Hilaire)
+  fr: Parapente — Lumbin (Saint-Hilaire)
+  de: Gleitschirmfliegen — Lumbin (Saint-Hilaire)
+
+description:
+  en: |
+    The Saint-Hilaire valley LZ at Lumbin. Large designated grass
+    field at 215 m with open approach from the north.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Lumbin LZ documentation"
+    - "Saint-Hilaire site committee airspace-integration protocol with Grenoble-Le-Versoud"
+  notes: |
+    Sub-spot of paragliding-spot-saint-hilaire cluster. Tier 1:
+    dedicated valley LZ, FFVL-managed, low LZ-specific risk.

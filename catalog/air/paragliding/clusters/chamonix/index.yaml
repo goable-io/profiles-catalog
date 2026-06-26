@@ -1,0 +1,163 @@
+slug: paragliding-spot-chamonix
+spot_kind: cluster
+version: "0.1.0"
+category: air
+extends: paragliding-alpine
+region: alpine
+country_code: FR
+sub_spots:
+  - paragliding-spot-chamonix-brevent
+  - paragliding-spot-chamonix-plan-praz
+  - paragliding-spot-chamonix-les-bossons
+display_name:
+  en: Paragliding — Chamonix (Mont Blanc valley)
+  it: Parapendio — Chamonix
+  es: Parapente — Chamonix
+  fr: Parapente — Chamonix
+  de: Gleitschirmfliegen — Chamonix
+description:
+  en: |
+    The Chamonix valley is the high-alpine reference for European
+    paragliding — launches between 1300 m (Plan-Praz) and 2500 m
+    (Brévent summit) with the Mont Blanc massif on the south side
+    and the Aiguilles Rouges on the north. Strong valley-thermal
+    cycles in summer (the Bossons glacier creates a katabatic
+    rebound against south-bank anabatic) but consistently shorter
+    flying days than Annecy (mountain-shadow + earlier valley
+    fill-in). Multiple cable-car-served launches reduce ground
+    access friction. Site is more committing than Annecy: terrain
+    drops are larger, LZ options are narrower, and lee-rotor on the
+    Aiguilles is severe. Raptor protection bands apply March-July
+    on the Brévent face. Tandem operations operate year-round but
+    XC-grade conditions are May-September.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.70 }
+      - { x: 18, s: 0.25 }
+      - { x: 22, s: 0.05 }
+      - { x: 26, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.25 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.30 }
+      - { x: 8,  s: 0.85 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.40 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -15, s: 0.10 }
+      - { x: 0,   s: 0.55 }
+      - { x: 12,  s: 0.95 }
+      - { x: 22,  s: 1.00 }
+      - { x: 32,  s: 0.65 }
+      - { x: 40,  s: 0.20 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 26
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 26 knots in the Chamonix high-alpine valley creates dangerous turbulence on the Aiguilles lee and Bossons valley return.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: ALPINE_TURBULENT_AIR
+    description: Gust factor above 1.8x in the Chamonix valley signals severe boundary-layer turbulence from glacier-valley katabatic interaction.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ALPINE_LOW_VISIBILITY
+    description: Chamonix paragliding requires visibility above 3 km — glacier face and Mont Blanc massif provide unforgiving terrain margin.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in the Chamonix valley correlates with rapid front passage and downdraft; immediate land-out required.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Chamonix paragliding requires daylight; cable-car closures dictate practical end-of-day windows.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Chamonix paragliding is carbon-neutral free-flight per session,
+    with cable-car launch access carrying its own infrastructure
+    footprint (Brévent + Plan-Praz cabins run year-round). Carrying
+    capacity is medium in peak summer (tandem volume + alpine valley
+    fills with mountaineering + ski + biking traffic on shared LZs).
+    Raptor nesting protections apply on the Brévent face (typically
+    Mar-Jul). LZ at Les Bossons is shared with paragliding schools
+    and the Aiguille du Midi exit traffic — operator coordination
+    required.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Chamonix-Mont-Blanc site committee operational standards"
+    - "Compagnie du Mont-Blanc cable-car operations + flight-zone coordination"
+    - "Office National des Forêts raptor-protection schedules for the Aiguilles Rouges"
+  notes: |
+    Spot overrides vs paragliding-alpine: same wind sweet-spot (6-10kn)
+    and gates as the regional baseline — Chamonix is the alpine
+    reference. Season tightened to 26 weeks (May-October XC-grade);
+    tandem operations year-round but recreational-grade scoring is
+    summer-window. Once L1f's freezing_level_m + rockfall_risk_index
+    ship, the morning glacier-katabatic window becomes scoring-grade.

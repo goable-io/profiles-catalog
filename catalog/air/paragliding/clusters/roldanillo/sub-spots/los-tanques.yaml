@@ -1,0 +1,50 @@
+slug: paragliding-spot-roldanillo-los-tanques
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-roldanillo
+parent_cluster: paragliding-spot-roldanillo
+region: andes
+country_code: CO
+
+coordinates:
+  center: { lat: 4.4083, lng: -76.1500 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Los Tanques launch at ~1500 m on the Cordillera Occidental
+    overlooks the Roldanillo town and the Cauca valley to the
+    east. The standard PWC launch — wide grass + dirt ramp accessed
+    by 4WD-graded mountain road, sustained N-NE morning anabatic
+    that couples into the Cauca-Cordillera convergence cycle by
+    11:00 local. PWC-grade pilots, intermediate XC, and tandems
+    launch from the same ramp with rotation managed by competition
+    director during PWC week, otherwise by local operators. Lee-
+    rotor sensitivity in W or strong-S flow forces the alternate
+    Pico Sin Nombre launch when conditions cross-flow.
+
+display_name:
+  en: Paragliding — Los Tanques (Roldanillo)
+  it: Parapendio — Los Tanques (Roldanillo)
+  es: Parapente — Los Tanques (Roldanillo)
+  fr: Parapente — Los Tanques (Roldanillo)
+  de: Gleitschirmfliegen — Los Tanques (Roldanillo)
+
+description:
+  en: |
+    The 1500 m Los Tanques launch on the Cordillera Occidental
+    overlooking Roldanillo. The PWC main launch — wide ramp with
+    N-NE morning anabatic and Cauca-Cordillera convergence cycle.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FAI PWC Roldanillo launch site documentation"
+    - "FCVL Los Tanques operational standards"
+  notes: |
+    Sub-spot of paragliding-spot-roldanillo cluster. Tier 2: PWC-
+    grade launch, intermediate-and-above expected for solo,
+    competition-director-rotated during PWC week.

@@ -1,0 +1,50 @@
+slug: paragliding-spot-bir-billing-billing-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-bir-billing
+parent_cluster: paragliding-spot-bir-billing
+region: himalayas
+country_code: IN
+
+coordinates:
+  center: { lat: 32.0530, lng: 76.7250 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Billing launch at 2400 m on the Dhauladhar foothills — a wide
+    grass + scree ramp accessed by a graveled mountain road from
+    Bir village (~30 minutes drive). South-facing orientation with
+    sustained NW-flow thermal streeting in post-monsoon. The
+    Billing Paragliding Association maintains site SOP, daily
+    weather briefings, and a launch-rotation protocol during peak
+    seasons. Tandem operations and PWC-grade pilots launch from
+    the same ramp; rating expectation is intermediate XC for solo
+    take-off. Lee-rotor sensitivity above the launch in cross-flow
+    above 16 kn is the dominant local hazard.
+
+display_name:
+  en: Paragliding — Billing Launch (Bir-Billing)
+  it: Parapendio — Billing (Bir-Billing)
+  es: Parapente — Billing (Bir-Billing)
+  fr: Parapente — Billing (Bir-Billing)
+  de: Gleitschirmfliegen — Billing (Bir-Billing)
+
+description:
+  en: |
+    The 2400 m Billing launch on the Dhauladhar foothills. South-
+    facing orientation, post-monsoon thermal streeting, BPA-managed
+    site SOP.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Billing Paragliding Association launch SOP"
+    - "PWC Bir-Billing 2015 launch operational dossier"
+  notes: |
+    Sub-spot of paragliding-spot-bir-billing cluster. Tier 2:
+    Himalayan ramp at altitude, BPA-managed, intermediate-XC and
+    above rating expected.

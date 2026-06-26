@@ -1,0 +1,50 @@
+slug: paragliding-spot-interlaken-beatenberg-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-interlaken
+parent_cluster: paragliding-spot-interlaken
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.7000, lng: 7.8000 }
+  radius_m: 700
+
+tier: 2
+tier_rationale:
+  en: |
+    Beatenberg launch at ~1600 m on the Niederhorn massif north of
+    Lake Thun — accessed by Niederhorn funicular + short bus.
+    South-facing grass ramp with the Hohematte LZ in glide range
+    (~1000 m vertical, ~5 km). Sustained anabatic in summer
+    afternoons + occasional convergence cycles with Lake Thun
+    breeze. Tandem operators use Beatenberg as the main commercial
+    launch with 4-hour daily windows; intermediate XC pilots
+    couple Beatenberg into the Niederhorn-Justistal-Stockhorn ridge
+    chain. Lee-rotor sensitivity above 18 kn cross-flow forces
+    operator stand-down.
+
+display_name:
+  en: Paragliding — Beatenberg (Interlaken)
+  it: Parapendio — Beatenberg (Interlaken)
+  es: Parapente — Beatenberg (Interlaken)
+  fr: Parapente — Beatenberg (Interlaken)
+  de: Gleitschirmfliegen — Beatenberg (Interlaken)
+
+description:
+  en: |
+    The 1600 m Beatenberg launch on the Niederhorn massif. South-
+    facing ramp with Hohematte LZ in glide range — Interlaken's
+    main commercial tandem launch.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SHV Beatenberg launch documentation"
+    - "Berner Oberland tandem-operator consolidated SOP"
+  notes: |
+    Sub-spot of paragliding-spot-interlaken cluster. Tier 2:
+    commercial tandem launch, SHV-permit-managed, intermediate
+    pilots use for XC departure.

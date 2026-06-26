@@ -1,0 +1,48 @@
+slug: paragliding-spot-chamonix-les-bossons
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-chamonix
+parent_cluster: paragliding-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.9050, lng: 6.8350 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    Les Bossons is the principal Chamonix valley LZ — a designated
+    grass field at the foot of the Bossons glacier, ~1000 m below
+    the Brévent and Plan-Praz launches. Open valley approach
+    corridor with wind-sock and a clear final 800 m, FFVL site-
+    committee managed and shared with multiple Chamonix paragliding
+    schools. LZ-specific failure modes are limited to over-shoot
+    into the adjacent road or the Chamonix-Aiguille du Midi cable-
+    car corridor on tailwind approaches; tandem operations and
+    student traffic land here by default.
+
+display_name:
+  en: Paragliding — Les Bossons LZ (Chamonix)
+  it: Parapendio — Les Bossons (Chamonix)
+  es: Parapente — Les Bossons (Chamonix)
+  fr: Parapente — Les Bossons (Chamonix)
+  de: Gleitschirmfliegen — Les Bossons (Chamonix)
+
+description:
+  en: |
+    The official Chamonix paragliding LZ at Les Bossons. Designated
+    grass field at the foot of the Bossons glacier, valley target
+    for Brévent + Plan-Praz flights.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Les Bossons LZ documentation"
+    - "Chamonix Parapente LZ rules + cable-car-corridor coordination"
+  notes: |
+    Sub-spot of paragliding-spot-chamonix cluster. Tier 1: dedicated
+    valley LZ, FFVL-managed, low residual risk for routine landings.

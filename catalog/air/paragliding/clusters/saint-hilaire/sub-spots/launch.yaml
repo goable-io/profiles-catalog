@@ -1,0 +1,50 @@
+slug: paragliding-spot-saint-hilaire-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-saint-hilaire
+parent_cluster: paragliding-spot-saint-hilaire
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.3147, lng: 5.8853 }
+  radius_m: 600
+
+tier: 2
+tier_rationale:
+  en: |
+    The plateau-edge launch at 950 m above Lumbin — a wide grass
+    ramp with W-NW orientation, the Coupe Icare main launch since
+    1973. Wind direction is the dominant safety variable: W-NW
+    on-flow gives textbook ridge soaring, but cross-flow above
+    18 kn triggers plateau-edge rotor on the back-side. Site
+    committee enforces direction and wind-strength gates and
+    schools coordinate take-off windows. Tandems, students, and
+    XC pilots launch from the same ramp with strict separation
+    rotation. The Coupe Icare weekend concentrates volume — the
+    site otherwise operates with comfortable spacing.
+
+display_name:
+  en: Paragliding — Saint-Hilaire Launch (Coupe Icare)
+  it: Parapendio — Saint-Hilaire (Coupe Icare)
+  es: Parapente — Saint-Hilaire (Coupe Icare)
+  fr: Parapente — Saint-Hilaire (Coupe Icare)
+  de: Gleitschirmfliegen — Saint-Hilaire (Coupe Icare)
+
+description:
+  en: |
+    The Coupe Icare main launch at 950 m on the Chartreuse plateau
+    edge. W-NW orientation, wide grass ramp, the historical French
+    paragliding-development reference site.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Coupe Icare venue Launch site documentation 1973-2023"
+    - "FFVL Saint-Hilaire site committee briefing"
+  notes: |
+    Sub-spot of paragliding-spot-saint-hilaire cluster. Tier 2:
+    historical reference launch, site-committee managed, direction-
+    and-wind gated, tandem-school-XC shared rotation.

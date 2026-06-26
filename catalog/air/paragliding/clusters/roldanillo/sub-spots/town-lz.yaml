@@ -1,0 +1,48 @@
+slug: paragliding-spot-roldanillo-town-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-roldanillo
+parent_cluster: paragliding-spot-roldanillo
+region: andes
+country_code: CO
+
+coordinates:
+  center: { lat: 4.4119, lng: -76.1539 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    The Roldanillo town LZ is a designated grass field on the
+    western edge of Roldanillo town at ~950 m. Standard target for
+    sport flights from Los Tanques and short-task PWC days. Wide
+    open approach from the east and south with no terrain
+    obstruction; the only LZ-side coordination is with the local
+    municipal soccer field overlap during weekend community use.
+    Field is large enough to absorb PWC-week concentrated traffic.
+    LZ failure modes are limited to over-shoot toward the
+    perimeter agricultural fence — local operators maintain
+    bilingual briefing for visiting pilots.
+
+display_name:
+  en: Paragliding — Roldanillo Town LZ
+  it: Parapendio — Roldanillo (LZ)
+  es: Parapente — Roldanillo (LZ)
+  fr: Parapente — Roldanillo (LZ)
+  de: Gleitschirmfliegen — Roldanillo (LZ)
+
+description:
+  en: |
+    The official Roldanillo paragliding LZ at the western edge of
+    town. Wide grass field with open approach from east and south.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FAI PWC Roldanillo LZ documentation"
+    - "Roldanillo paragliding operators LZ rotation protocol"
+  notes: |
+    Sub-spot of paragliding-spot-roldanillo cluster. Tier 1:
+    dedicated town LZ, low LZ-specific risk, PWC-grade capacity.

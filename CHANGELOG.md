@@ -18,7 +18,86 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.3.3
+## [Unreleased] — lands as 2.3.4
+
+### Added — paragliding sub-spots bootstrap (7 clusters, 16 sub-spots)
+
+PR5 — the final PR of the 5-PR bootstrap roadmap. Brings paragliding
+from 2 sub-spots (Ölüdeniz only) to **18 sub-spots across 8 clusters
+worldwide**. Activity status flips `partial → seeded`. Closes the
+bootstrap effort across kitesurfing, surfing, ski-touring, freeride,
+and paragliding.
+
+**7 new clusters** (region tag in parentheses):
+
+| Cluster | Country | Sub-spots × tiers | Region |
+|---|---|---|---|
+| `paragliding-spot-annecy` | FR | planfait(T1), forclaz(T2), doussard(T1) | alpine |
+| `paragliding-spot-chamonix` | FR | brevent(T3), plan-praz(T2), les-bossons(T1) | alpine |
+| `paragliding-spot-saint-hilaire` | FR | launch(T2), lumbin-lz(T1) | alpine |
+| `paragliding-spot-bir-billing` | IN | billing-launch(T2), bir-lz(T1) | himalayas |
+| `paragliding-spot-roldanillo` | CO | los-tanques(T2), town-lz(T1) | andes |
+| `paragliding-spot-interlaken` | CH | beatenberg-launch(T2), hohematte-lz(T1) | alpine |
+| `paragliding-spot-soll` | AT | hohe-salve-launch(T2), village-lz(T1) | alpine |
+
+= 7 new clusters + 16 new sub-spots. 3 new countries (IN — India,
+CO — Colombia, AT — Austria).
+
+### Added — 2 paragliding region variants
+
+- **`paragliding-himalayas`**: high-altitude regime for Bir-Billing
+  + future Himalayan sites. Wind gate tightened to 24kn (continental
+  lee-rotor amplification), visibility floor raised to 4km (multi-
+  valley XC), 16-week post/pre-monsoon season. References BPA SOP +
+  PWC Bir-Billing 2015 venue dossier.
+- **`paragliding-andes`**: South-American convergence regime for
+  Roldanillo + future Andean sites. Sun-weight raised to 0.25
+  (thermal-quality proxy until L1d), wider 6-14kn wind sweet-spot,
+  1.0 mm/h precip gate (slower-onset convective overdevelopment).
+  References FCVL standards + FAI PWC Roldanillo dossier.
+
+### Sub-spot composition rationale
+
+Paragliding clusters are split into launch + LZ pairs (and occasional
+multi-launch sites where elevation tiers differ meaningfully:
+Annecy = Planfait lower + Forclaz upper; Chamonix = Plan-Praz
+intermediate + Brévent high). Each launch sub-spot carries the
+ramp-side hazard profile; each LZ sub-spot carries the landing-
+side operational profile. This pairing is paragliding-specific —
+no other activity in the catalog separates launch + LZ as discrete
+sub-spots.
+
+### Stats impact (live via `getCatalogStats()`)
+
+- Total sub-spots: 137 → 153 (+16)
+- Total clusters: 46 → 53 (+7)
+- Total regions: 21 → 23 (+paragliding-himalayas, +paragliding-andes)
+- Total countries: 19 → 22 (+IN, +CO, +AT)
+- Paragliding activity status: partial → seeded (18 sub-spots,
+  6 countries: FR, CH, AT, TR, IN, CO)
+
+### Versioning
+- package.json 2.3.3 → 2.3.4 (data-only patch; schema unchanged).
+- dist/catalog.json schemaVersion stays at 2.3.0.
+
+### Roadmap closure
+
+PR5 closes the 5-PR seeding roadmap committed at the start of the
+bootstrap effort:
+
+| PR | Activity | Sub-spots added | New countries |
+|---|---|---|---|
+| PR1 | kitesurfing | 31 | DO, MA, BR, VN, ZA, GR (6) |
+| PR2 | surfing | 33 | PT, AU, ID (3, others already in catalog) |
+| PR3 | ski-touring | 26 | CH, NO, JP (3) |
+| PR4 | freeride | 20 | CA (1) |
+| PR5 | paragliding | 16 | IN, CO, AT (3) |
+
+Catalog now stands at 22 countries and 5 seeded activities
+(kitesurfing, surfing, ski-touring, freeride, paragliding).
+Remaining 24 `empty` activities are slated for community PRs.
+
+## [2.3.3] — published 2026-06-26
 
 ### Added — freeride sub-spots bootstrap (7 clusters, 20 sub-spots)
 
