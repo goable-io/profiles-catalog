@@ -1,0 +1,51 @@
+slug: kitesurfing-spot-cabarete-kite-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cabarete
+parent_cluster: kitesurfing-spot-cabarete
+region: atlantic
+
+coordinates:
+  center: { lat: 19.7647, lng: -70.4339 }
+  radius_m: 700
+
+tier: 2
+tier_rationale:
+  en: |
+    The original Cabarete Kite Beach — 1 km of sand fronting the densest
+    kite-school cluster in the Caribbean. Side-on E/NE trade blows clean
+    across the bay parallel to shore. Sand bottom, chest-deep at 40 m
+    offshore. Reef break ~200 m offshore on the bay-mouth side functions
+    as a swell breakwater, keeping the inside chest-deep zone manageable
+    even on 1-1.5 m days. School coverage is the highest in the
+    Caribbean kite community — concurrent rescue boats at all hours
+    of the daily wind window.
+
+display_name:
+  en: Kitesurfing — Cabarete Kite Beach
+  it: Kitesurf — Cabarete Kite Beach
+  es: Kitesurf — Cabarete Kite Beach
+  fr: Kitesurf — Cabarete Kite Beach
+  de: Kitesurfen — Cabarete Kite Beach
+
+description:
+  en: |
+    The Caribbean's flagship kite venue. Hosts the IKA Cabarete Race
+    Week and various freestyle events. Crowd density at peak (Jan-Mar)
+    is extreme — local etiquette and zone-rotation are essential. Best
+    for intermediate and freestyle riders comfortable in high in-water
+    density. Beginners typically use La Boca (next sub-spot west).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cabarete kite-school cooperative documentation"
+    - "IKA Cabarete event venue dossier"
+    - "ONAMET Puerto Plata wind records"
+  notes: |
+    Sub-spot of kitesurfing-spot-cabarete cluster. Tier 2: sand bottom,
+    side-on trade, dense school coverage, reef-protected outer line.
+    In-water collision risk at peak crowd is the dominant practical
+    hazard — not captured by current MetricEnum but real.

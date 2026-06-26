@@ -18,7 +18,69 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.1.0
+## [Unreleased] — lands as 2.1.1
+
+### Added — kitesurfing sub-spots bootstrap (12 clusters, 32 sub-spots)
+
+The /recommend-spot endpoint was failing in production because most
+regions had 0-3 sub-spots in radius. This release pushes kitesurfing
+coverage from 5 sub-spots (Tarifa only) to **37 sub-spots across 13
+clusters** by adding 12 new clusters and 32 new sub-spots in commercially
+priority order.
+
+**12 new clusters** (region tagged in parentheses):
+
+| Cluster | Sub-spots × tiers | Region |
+|---|---|---|
+| kitesurfing-spot-sardinia | punta-trettu(1), porto-pollo(2), sa-mola(3), chia(2) | mediterranean |
+| kitesurfing-spot-sicily | lo-stagnone(1), san-vito-lo-capo(2) | mediterranean |
+| kitesurfing-spot-naxos | mikri-vigla(2), plaka(2) | mediterranean |
+| kitesurfing-spot-fuerteventura | sotavento(2), flag-beach(2), el-cotillo(3) | atlantic |
+| kitesurfing-spot-dakhla | lagoon(1), speed-spot(2), foum-labouir(3) | atlantic |
+| kitesurfing-spot-essaouira | bay(2), sidi-kaouki(2), moulay(3) | atlantic |
+| kitesurfing-spot-cape-town | bloubergstrand(2), sunset-beach(2), langebaan(1) | atlantic |
+| kitesurfing-spot-cabarete | kite-beach(2), la-boca(2), encuentro(3) | atlantic ⚠ |
+| kitesurfing-spot-maui | kanaha(2), kite-beach-kihei(2), hookipa(3) | pacific |
+| kitesurfing-spot-cumbuco | beach(2), cauipe-lagoon(1) | atlantic |
+| kitesurfing-spot-jericoacoara | main(2), prea(2) | atlantic |
+| kitesurfing-spot-mui-ne | main-beach(2), malibu(2) | pacific ⚠ |
+
+⚠ marks clusters where the region tag is a least-bad fit pending the
+v2.2 region-enum expansion (Cabarete is Caribbean, Mui Ne is South
+China Sea — both broader Atlantic/Pacific by current enum).
+
+All new sub-spots are `maturity: provisional`, 2-4 citations each,
+coordinates verified against published kite-school sites and federation
+documentation (limited cross-source verification under current
+WebFetch sandbox; `meta.notes` flags where coordinates need
+domain-expert verification before production routing).
+
+### Added — `kitesurfing-pacific` region variant
+
+`catalog/water/kitesurfing/regions/pacific.yaml`. Required to host the
+Maui and Mui Ne clusters with a consistent base → region → cluster
+inheritance chain (mirroring the existing atlantic + mediterranean
+pattern). Curves favour NE-trade direction preference, warmer water
+sweet spot (25°C), tighter gust threshold (1.30 vs Atlantic 1.35).
+
+### Fixed — placeholder reviewer in `kitesurfing/index.yaml`
+
+The v1 seed listed `reviewed_by: ["Marco Rossi (kite instructor, IKO L3,
+12 years experience, Sardinia)"]` on the kitesurfing base profile.
+No actual Marco Rossi authored a review. Set to `[]` — no profile in
+the catalog currently claims a `reviewed_by` entry, restoring honesty
+to the maturity gate.
+
+### Fixed — integrity test region bbox coverage
+
+`tests/integrity.test.ts` region bounding-boxes were too narrow:
+- `atlantic` lngMax raised 5 → 25 to cover Cape Town / South African
+  Atlantic coast.
+- `pacific` now supports antimeridian wraparound (lngMin > lngMax
+  signals "lng >= lngMin OR lng <= lngMax"), so Hawaii (-156°E) and
+  Mui Ne (108°E) both validate. Added `lngInBbox` helper.
+
+## [2.1.0] — published 2026-06-24
 
 ### Added — optional `skill_curves` block (L15 Phase 1c)
 

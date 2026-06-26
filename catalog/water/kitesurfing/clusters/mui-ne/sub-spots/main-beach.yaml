@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-mui-ne-main-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-mui-ne
+parent_cluster: kitesurfing-spot-mui-ne
+region: pacific
+
+coordinates:
+  center: { lat: 10.9447, lng: 108.2811 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    The main Mui Ne kite-resort frontage — 3+ km of sand beach along
+    the resort strip. Side-onshore NE monsoon blows clean across the
+    beach. Sand bottom, gradual deepening, shorebreak 0.3–0.8 m
+    typical. School density is the highest in SE Asia kite community.
+    Resort-managed beach-zone allocation between kite, swim, and resort
+    activities. Failure mode is a downwind drift along the resort
+    shore — recoverable, resort kite staff and lifeguards present.
+
+display_name:
+  en: Kitesurfing — Mui Ne Main Beach
+  it: Kitesurf — Mui Ne Spiaggia Principale
+  es: Kitesurf — Playa Principal Mui Ne
+  fr: Kitesurf — Mui Ne Plage Principale
+  de: Kitesurfen — Mui Ne Hauptstrand
+
+description:
+  en: |
+    The kite-resort hub of South-East Asia. Mui Ne's modern kite scene
+    was built in the 2010s on European wintering kiters seeking
+    reliable wind during Mediterranean off-season. Peak January–March.
+    Crowded at the main school zone, less so further along the
+    resort strip.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "VKA Mui Ne main-beach venue notes"
+    - "Bình Thuận provincial tourism beach-use regulations"
+    - "Vietnam GDOM Phan Thiết station wind records"
+  notes: |
+    Sub-spot of kitesurfing-spot-mui-ne cluster. Tier 2: sand bottom,
+    side-onshore monsoon, dense school and resort coverage.

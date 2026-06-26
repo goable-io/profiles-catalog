@@ -1,0 +1,150 @@
+slug: kitesurfing-spot-mui-ne
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-pacific
+region: pacific
+sub_spots:
+  - kitesurfing-spot-mui-ne-main-beach
+  - kitesurfing-spot-mui-ne-malibu
+display_name:
+  en: Kitesurfing — Mui Ne (Vietnam)
+  it: Kitesurf — Mui Ne (Vietnam)
+  es: Kitesurf — Mui Ne (Vietnam)
+  fr: Kitesurf — Mui Ne (Vietnam)
+  de: Kitesurfen — Mui Ne (Vietnam)
+description:
+  en: |
+    Mui Ne (Bình Thuận province, south-central Vietnam coast) is the
+    SE Asia winter kite destination — the NE monsoon delivers reliable
+    15–25 knot side-onshore wind November–April, with peak strength
+    January–March. Warm water (24–28°C), tropical air (22–32°C). Two
+    sub-zones: the long main beach in front of the resort strip (the
+    school zone), and Malibu Beach 3 km east where the wind is cleaner
+    and the kite community spreads out.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.20 }
+      - { x: 14, s: 0.60 }
+      - { x: 20, s: 1.00 }
+      - { x: 26, s: 0.85 }
+      - { x: 32, s: 0.45 }
+      - { x: 40, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.30
+        penalty_coefficient: 0.15
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 30,  to: 110, multiplier: 1.0 }
+        - { from: 110, to: 180, multiplier: 0.7 }
+        - { from: 0,   to: 30,  multiplier: 0.6 }
+        - { from: 180, to: 360, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.75 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 2.0, s: 0.25 }
+      - { x: 3.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 18, s: 0.7 }
+      - { x: 24, s: 1.0 }
+      - { x: 30, s: 0.95 }
+      - { x: 36, s: 0.6 }
+      - { x: 42, s: 0.2 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 22, s: 0.7 }
+      - { x: 25, s: 0.95 }
+      - { x: 27, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: STORM_FORCE_MONSOON
+    description: NE monsoon above 40 knots — rare even in peak — gates Mui Ne operations.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: WET_MONSOON_SQUALL
+    description: SW monsoon convective squalls (May–October off-season) bring rapid wind shifts; the kite season runs around them.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km, possible during squall passages, is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Mui Ne resort strip is a regulated coastal-development area;
+    motor-vehicle access to the kite zones is via resort-perimeter
+    roads. International-flight transport (typically via Ho Chi Minh
+    City SGN, then 200 km road transfer) drives the bulk of per-trip
+    footprint.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Vietnam Kitesurfing Association (VKA) Mui Ne site documentation"
+    - "Vietnam General Department of Meteorology Mui Ne wind records"
+    - "Wang & Wu 2018, South China Sea NE monsoon kitesurfing season"
+  notes: |
+    Cluster aggregates Mui Ne main beach (resort strip) + Malibu Beach
+    3 km east. Region tag `pacific` covers the South China Sea via the
+    broader Pacific basin convention (a `south-china-sea` enum value
+    is on the schema v2.2 roadmap).

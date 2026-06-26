@@ -19,18 +19,32 @@ const collect = async (): Promise<Array<{ file: string; parsed: Profile }>> => {
 // declared in region "alpine" must have coordinates somewhere broadly Alpine,
 // not in the Indian Ocean. Loose tolerances on purpose (the resolver doesn't
 // rely on these for routing).
+//
+// For regions that span the antimeridian (Pacific), lngMin > lngMax signals
+// wraparound: the predicate becomes "lng >= lngMin OR lng <= lngMax".
 const regionBbox: Record<string, { latMin: number; latMax: number; lngMin: number; lngMax: number }> = {
   mediterranean: { latMin: 28, latMax: 48, lngMin: -10, lngMax: 38 },
-  // Atlantic includes Iberian + Moroccan coast + the Nazaré canyon area;
-  // very loose because Atlantic region spans both hemispheres in our schema.
-  atlantic: { latMin: -45, latMax: 70, lngMin: -85, lngMax: 5 },
-  pacific: { latMin: -50, latMax: 65, lngMin: 100, lngMax: 180 },
+  // Atlantic covers W Atlantic (Caribbean, US East Coast, Brazil NE coast)
+  // plus E Atlantic (Iberian peninsula, NW + S Africa down to Cape Town).
+  atlantic: { latMin: -45, latMax: 70, lngMin: -85, lngMax: 25 },
+  // Pacific spans the antimeridian: SE Asia (~100°E) through New Zealand
+  // and the open ocean to the American west coast (~-70°W). lngMin > lngMax
+  // signals wraparound — see check below.
+  pacific: { latMin: -50, latMax: 65, lngMin: 100, lngMax: -70 },
   // Indian Ocean basin including Red Sea (our schema places Red Sea under
   // region: indian as the closest of the six available enum values).
   indian: { latMin: -45, latMax: 32, lngMin: 25, lngMax: 110 },
   alpine: { latMin: 42, latMax: 51, lngMin: 5, lngMax: 18 },
   global: { latMin: -90, latMax: 90, lngMin: -180, lngMax: 180 },
 }
+
+const lngInBbox = (
+  lng: number,
+  bbox: { lngMin: number; lngMax: number },
+): boolean =>
+  bbox.lngMin <= bbox.lngMax
+    ? lng >= bbox.lngMin && lng <= bbox.lngMax
+    : lng >= bbox.lngMin || lng <= bbox.lngMax
 
 describe("v2 hierarchical integrity", () => {
   it("every cluster.sub_spots[] reference resolves to an existing sub-spot slug", async () => {
@@ -118,7 +132,7 @@ describe("v2 hierarchical integrity", () => {
         `${file}: coordinates.lat=${lat} outside region ${region} bbox [${bbox.latMin}, ${bbox.latMax}]`,
       ).toBe(true)
       expect(
-        lng >= bbox.lngMin && lng <= bbox.lngMax,
+        lngInBbox(lng, bbox),
         `${file}: coordinates.lng=${lng} outside region ${region} bbox [${bbox.lngMin}, ${bbox.lngMax}]`,
       ).toBe(true)
     }

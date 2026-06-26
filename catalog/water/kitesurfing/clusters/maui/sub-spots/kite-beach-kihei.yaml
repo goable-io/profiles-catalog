@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-maui-kite-beach-kihei
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-maui
+parent_cluster: kitesurfing-spot-maui
+region: pacific
+
+coordinates:
+  center: { lat: 20.7872, lng: -156.4756 }
+  radius_m: 700
+
+tier: 2
+tier_rationale:
+  en: |
+    South-shore Maui kite zone at the end of Sugar Beach in Kihei. The
+    NE trade clears the Iao Valley and continues across the Maalaea
+    bight, delivering lighter and cleaner wind than Kanaha (typically
+    15–22 kn vs Kanaha's 18–28 kn). Side-on, sand bottom, deep water
+    from 30 m offshore. Lower swell exposure than the north shore
+    (north-shore swell wraps around partially). School coverage is
+    moderate. Failure mode is a downwind drift across the bay —
+    recoverable.
+
+display_name:
+  en: Kitesurfing — Kite Beach Kihei (Maui)
+  it: Kitesurf — Kite Beach Kihei (Maui)
+  es: Kitesurf — Kite Beach Kihei (Maui)
+  fr: Kitesurf — Kite Beach Kihei (Maui)
+  de: Kitesurfen — Kite Beach Kihei (Maui)
+
+description:
+  en: |
+    The lighter-wind, school-friendly Maui sub-spot. Best for
+    intermediate-and-below visitors who find Kanaha's wind strength
+    too much. Same NE trade as Kanaha but attenuated by the Iao
+    Valley clearance. Local kite community uses it primarily as the
+    light-day alternative.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Maui County south-shore beach use plan"
+    - "NOAA south-Maui trade-wind attenuation analysis"
+  notes: |
+    Sub-spot of kitesurfing-spot-maui cluster. Tier 2: sand bottom,
+    side-on trade, lighter wind than Kanaha, school presence. The
+    intermediate-friendly Maui option.

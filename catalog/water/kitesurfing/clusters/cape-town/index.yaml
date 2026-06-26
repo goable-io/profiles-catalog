@@ -1,0 +1,162 @@
+slug: kitesurfing-spot-cape-town
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-atlantic
+region: atlantic
+sub_spots:
+  - kitesurfing-spot-cape-town-bloubergstrand
+  - kitesurfing-spot-cape-town-sunset-beach
+  - kitesurfing-spot-cape-town-langebaan
+display_name:
+  en: Kitesurfing — Cape Town
+  it: Kitesurf — Città del Capo
+  es: Kitesurf — Ciudad del Cabo
+  fr: Kitesurf — Le Cap
+  de: Kitesurfen — Kapstadt
+description:
+  en: |
+    Cape Town sits in the path of the Southern Hemisphere "Cape Doctor"
+    SE summer wind — a thermal pump driven by the Atlantic cold-water
+    upwelling and the Cape Peninsula interior heating. Reliable
+    25-40 knot afternoons November–March. Three sub-zones: the iconic
+    Bloubergstrand (Big Bay) with Table Mountain backdrop, the cleaner
+    side-on Sunset Beach 5 km south, and the Langebaan lagoon 120 km
+    north for flatwater. Cold Atlantic water (10-17°C) requires
+    full 4/3 mm wetsuit even in summer.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.20 }
+      - { x: 18, s: 0.60 }
+      - { x: 25, s: 1.00 }
+      - { x: 33, s: 0.95 }
+      - { x: 40, s: 0.60 }
+      - { x: 48, s: 0.10 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.40
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 120, to: 180, multiplier: 1.0 }
+        - { from: 180, to: 240, multiplier: 0.7 }
+        - { from: 90,  to: 120, multiplier: 0.6 }
+        - { from: 240, to: 360, multiplier: 0.3 }
+        - { from: 0,   to: 90,  multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.50 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.2, s: 1.00 }
+      - { x: 2.5, s: 0.85 }
+      - { x: 4.0, s: 0.40 }
+      - { x: 5.5, s: 0.10 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.2 }
+      - { x: 10, s: 0.7 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 0.95 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 8,  s: 0.1 }
+      - { x: 12, s: 0.4 }
+      - { x: 16, s: 0.85 }
+      - { x: 19, s: 1.0 }
+      - { x: 23, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 48
+    reason_code: STORM_FORCE_CAPE_DOCTOR
+    description: Cape Doctor above 48 knots — rare even during peak — gates all Cape Town kite operations.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: WINTER_FRONT
+    description: Heavy rain on the Cape signals winter cold-front passage with associated unstable gusty wind and lightning risk.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km — Atlantic fog can drop it sharply on early-morning calm days — is unsafe.
+
+  - metric: water_temperature_c
+    condition: lt
+    value: 9
+    reason_code: COLD_WATER_HYPOTHERMIA
+    description: Cape Atlantic water below 9°C (rare but possible during winter cold-front passages) requires 5/4 mm with hood, beyond standard summer wetsuit stock.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Cape Town kite zones intersect protected coastal areas: West Coast
+    National Park borders Langebaan, and Robben Island World Heritage
+    Site is visible from Bloubergstrand. Cold Atlantic water + wave
+    energy + great white shark presence (rare incidents but documented
+    in the Cape kite community) add to operational risk profile.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "South African Sailing Federation (SAS) Cape Town site documentation"
+    - "South African Weather Service (SAWS) Cape Doctor climatology"
+    - "Reason & Jagadheesha 2005, South Atlantic Anticyclone summer-circulation analysis"
+  notes: |
+    Cluster aggregates Bloubergstrand and Sunset Beach (Cape Peninsula
+    Atlantic shore) plus Langebaan lagoon 120 km north. All share the
+    Cape Doctor SE thermal regime. Sweet-spot wind shifted higher
+    (25 kn) vs Atlantic parent (22 kn) reflecting the stronger thermal
+    funnel from the Cape upwelling.

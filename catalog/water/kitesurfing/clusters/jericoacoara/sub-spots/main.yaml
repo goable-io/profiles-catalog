@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-jericoacoara-main
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-jericoacoara
+parent_cluster: kitesurfing-spot-jericoacoara
+region: atlantic
+
+coordinates:
+  center: { lat: -2.7933, lng: -40.5128 }
+  radius_m: 900
+
+tier: 2
+tier_rationale:
+  en: |
+    Jericoacoara village bay — the iconic Brazilian kite postcard with
+    the Pedra Furada arch and the Pôr do Sol dune backdrop. Side-on
+    E/SE alísio blows the bay parallel to shore. Sand bottom for the
+    full bay, gradual deepening. Wave 0.5–1.2 m typical with occasional
+    larger days. Multiple kite-camps operate from the village shore;
+    rescue coverage is dense within the bay but the village's remote
+    location adds friction for off-bay incidents.
+
+display_name:
+  en: Kitesurfing — Jericoacoara Main
+  it: Kitesurf — Jericoacoara Centro
+  es: Kitesurf — Jericoacoara Principal
+  fr: Kitesurf — Jericoacoara Principal
+  de: Kitesurfen — Jericoacoara Hauptstrand
+
+description:
+  en: |
+    Brazil's flagship kite destination. The trade-wind reliability is
+    among the world's best; combined with the dune-park backdrop and
+    the village's pedestrian car-free streets, Jeri has been a global
+    kite trip target since the 2000s. Peak August–November.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CBKite Jericoacoara venue dossier"
+    - "ICMBio Parque Nacional de Jericoacoara use plan"
+    - "INMET northern-Ceará trade-wind records"
+  notes: |
+    Sub-spot of kitesurfing-spot-jericoacoara cluster. Tier 2: open
+    Atlantic, sand bottom, side-on trade, dense school coverage in the
+    bay.

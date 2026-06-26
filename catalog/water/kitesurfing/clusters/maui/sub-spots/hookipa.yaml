@@ -1,0 +1,52 @@
+slug: kitesurfing-spot-maui-hookipa
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-maui
+parent_cluster: kitesurfing-spot-maui
+region: pacific
+
+coordinates:
+  center: { lat: 20.9342, lng: -156.3567 }
+  radius_m: 600
+
+tier: 3
+tier_rationale:
+  en: |
+    Hoʻokipa Beach Park — primarily Maui's windsurf/surf shrine, the
+    home reef of the Pe'ahi big-wave community for training. Kite use
+    is restricted by county regulation to specific late-afternoon hours
+    and is strongly discouraged for visiting riders. Reef bottom for the
+    full break, no sand entry at the break itself, sharp coral. Wave
+    height routinely 2–4 m with up to 6 m on winter NW swells. Used
+    only by experienced local kite riders on selected windows when the
+    surf is small enough and the wind is clean.
+
+display_name:
+  en: Kitesurfing — Hoʻokipa (advanced kite use only)
+  it: Kitesurf — Hoʻokipa (solo per esperti)
+  es: Kitesurf — Hoʻokipa (solo expertos)
+  fr: Kitesurf — Hoʻokipa (réservé aux experts)
+  de: Kitesurfen — Hoʻokipa (nur für Fortgeschrittene)
+
+description:
+  en: |
+    The reef-and-wave end of the Maui cluster. Primary identity is the
+    surf and windsurf venue; kite use is the minority practice and
+    formally restricted. Only included as a sub-spot because (a) it's
+    Maui's iconic kite-able reef break and (b) the spatial resolver
+    needs an entry for the Pa'ia coast within the cluster. Visitors
+    must not kite here without local guidance.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Maui County Hoʻokipa Beach Park use regulations"
+    - "Surfrider Foundation Maui Hoʻokipa community management notes"
+    - "NOAA north-Maui swell and trade-wind records"
+  notes: |
+    Sub-spot of kitesurfing-spot-maui cluster. Tier 3: reef bottom,
+    sharp coral entry, no rescue infrastructure for kite, regulatory
+    restrictions. Domain-expert review essential before using this
+    sub-spot in any user-facing routing.

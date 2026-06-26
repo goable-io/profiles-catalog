@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-jericoacoara-prea
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-jericoacoara
+parent_cluster: kitesurfing-spot-jericoacoara
+region: atlantic
+
+coordinates:
+  center: { lat: -2.8147, lng: -40.5722 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    15 km east of Jeri (downwind on the dominant alísio), Preá is the
+    extended-bay zone often used as the start of the long downwind run
+    back to Jericoacoara village. Cleaner trade than the village
+    funnel (~2 kn lighter on average), sand bottom, smaller wave. Lower
+    school density than the village bay; most kite-camps offer Preá as
+    the day-trip alternative. Failure mode is a downwind drift toward
+    Jericoacoara — operators run buggy retrievals.
+
+display_name:
+  en: Kitesurfing — Preá (Jericoacoara)
+  it: Kitesurf — Preá (Jericoacoara)
+  es: Kitesurf — Preá (Jericoacoara)
+  fr: Kitesurf — Preá (Jericoacoara)
+  de: Kitesurfen — Preá (Jericoacoara)
+
+description:
+  en: |
+    Sister spot to Jericoacoara village, less crowded with slightly
+    lighter trade. The standard starting point for the iconic Preá–Jeri
+    downwinder (a 15 km point-to-point shore-parallel run). Camps offer
+    organized downwinders with buggy support. Best for intermediate
+    cruising and downwinder progression.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Preá kite-camp cooperative documentation"
+    - "Comune de Cruz beach-use plan"
+  notes: |
+    Sub-spot of kitesurfing-spot-jericoacoara cluster. Tier 2: sand
+    bottom, side-on trade slightly lighter than main bay, organized
+    buggy retrievals. The classic Brazilian downwinder starting venue.

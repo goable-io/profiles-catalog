@@ -1,0 +1,155 @@
+slug: kitesurfing-spot-cabarete
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-atlantic
+region: atlantic
+sub_spots:
+  - kitesurfing-spot-cabarete-kite-beach
+  - kitesurfing-spot-cabarete-la-boca
+  - kitesurfing-spot-cabarete-encuentro
+display_name:
+  en: Kitesurfing — Cabarete
+  it: Kitesurf — Cabarete
+  es: Kitesurf — Cabarete
+  fr: Kitesurf — Cabarete
+  de: Kitesurfen — Cabarete
+description:
+  en: |
+    Cabarete (Dominican Republic, north coast) is the founding modern
+    kitesurf destination — the 1990s pioneers stuck flags on this beach.
+    Daily 18-25 knot side-onshore E/NE trade-and-thermal mix, 280+ wind
+    days/year, warm Caribbean water 26-28°C. Three sub-zones in a 5 km
+    arc: the iconic Kite Beach proper, the cleaner-wind La Boca river-mouth
+    section, and the more wave-exposed Encuentro point on the east side
+    (kitable on selected swells, primarily a surf spot). NB region is
+    tagged `atlantic` until the schema adds `caribbean` — see catalog
+    notes for the planned v2.2 region-enum expansion.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.25 }
+      - { x: 15, s: 0.70 }
+      - { x: 20, s: 1.00 }
+      - { x: 28, s: 0.85 }
+      - { x: 35, s: 0.40 }
+      - { x: 42, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.30
+        penalty_coefficient: 0.15
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 30,  to: 110, multiplier: 1.0 }
+        - { from: 110, to: 180, multiplier: 0.7 }
+        - { from: 0,   to: 30,  multiplier: 0.6 }
+        - { from: 180, to: 360, multiplier: 0.2 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.60 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
+      - { x: 2.0, s: 0.80 }
+      - { x: 3.5, s: 0.40 }
+      - { x: 5.0, s: 0.10 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 18, s: 0.7 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.95 }
+      - { x: 38, s: 0.65 }
+      - { x: 42, s: 0.25 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 22, s: 0.5 }
+      - { x: 25, s: 0.9 }
+      - { x: 27, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: TROPICAL_STORM_OUTFLOW
+    description: Sustained wind above 42 knots at Cabarete usually signals a passing tropical system; commercial operations close.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: TROPICAL_SQUALL
+    description: Heavy tropical squalls in Caribbean summer bring associated gusty wind spikes and lightning risk.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: SQUALL_VISIBILITY
+    description: Visibility below 1 km during a tropical squall makes the bay's in-water density unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Cabarete bay hosts ≥30 kite schools across a 3 km beach, the highest
+    school density of any single bay in the Caribbean. Local
+    municipality has progressively zoned the bay (kite, windsurf, surf,
+    swim) since the 2000s. Peak January–March tourist season can have
+    400+ kites concurrently across the bay.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cabarete kite-school cooperative (Asociación de Escuelas de Kiteboard de Cabarete) zoning documentation"
+    - "ONAMET (Dominican meteorological office) Cabarete trade wind climatology"
+    - "Bowden et al. 2014, Hispaniola northeast-trade wind regime"
+  notes: |
+    region tag `atlantic` is a placeholder for `caribbean` (planned in
+    the schema's v2.2 region-enum expansion). The Cabarete climate is
+    trade-wind tropical, distinct from the synoptic-driven European/
+    African Atlantic regime — operators should treat this cluster's
+    forecast pool separately from northern-Atlantic clusters.
