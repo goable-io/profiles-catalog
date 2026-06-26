@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-cabarete-la-boca
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cabarete
+parent_cluster: kitesurfing-spot-cabarete
+region: atlantic
+
+coordinates:
+  center: { lat: 19.7619, lng: -70.4794 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Western end of the Cabarete bay where the Rio Yasica meets the sea —
+    the local "La Boca" (the mouth). Outflow from the river creates a
+    fan of slightly shallower, flatter water at the river mouth proper
+    that works as a learning zone. East of the mouth the geometry is
+    similar to Kite Beach but with lower kite density (most schools
+    operate from Kite Beach proper). Sand bottom. Cleaner E trade
+    delivery because the bay's western point of land partially
+    shelters the in-water collision pressure from the central Kite
+    Beach zone.
+
+display_name:
+  en: Kitesurfing — Cabarete La Boca
+  it: Kitesurf — Cabarete La Boca
+  es: Kitesurf — Cabarete La Boca
+  fr: Kitesurf — Cabarete La Boca
+  de: Kitesurfen — Cabarete La Boca
+
+description:
+  en: |
+    The school-and-beginner end of the Cabarete cluster, near the river
+    mouth. Lower-density alternative to the central Kite Beach. The
+    river-mouth fan at low tide functions as a quasi-lagoon for first-
+    lesson body-drag work.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cabarete kite-school cooperative zoning documentation"
+    - "ONAMET local thermal-trade regime notes"
+  notes: |
+    Sub-spot of kitesurfing-spot-cabarete cluster. Tier 2 with low-tide
+    modifier toward tier 1 in the river-mouth fan. Best beginner option
+    within the Cabarete cluster.

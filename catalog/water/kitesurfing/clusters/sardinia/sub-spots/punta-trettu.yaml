@@ -1,0 +1,51 @@
+slug: kitesurfing-spot-sardinia-punta-trettu
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-sardinia
+parent_cluster: kitesurfing-spot-sardinia
+region: mediterranean
+
+coordinates:
+  center: { lat: 39.1072, lng: 8.4861 }
+  radius_m: 600
+
+tier: 1
+tier_rationale:
+  en: |
+    Tidal lagoon in the Saline di San Giovanni Suergiu, sheltered by the
+    Sant'Antioco isthmus from the open sea. Water depth is knee- to
+    waist-high (0.8–1.4 m) for 200+ m offshore — body-draggable distance
+    with zero deep-water exposure. Sand-and-silt bottom, no rocks, no
+    reef. Side-on Maestrale (NW) and Mistral channelled through the
+    isthmus give predictable 14–22 kn afternoon thermals. Multiple
+    on-beach kite schools provide concurrent rescue boats. Failure mode
+    is a wet walk back to shore.
+
+display_name:
+  en: Kitesurfing — Punta Trettu
+  it: Kitesurf — Punta Trettu
+  es: Kitesurf — Punta Trettu
+  fr: Kitesurf — Punta Trettu
+  de: Kitesurfen — Punta Trettu
+
+description:
+  en: |
+    Europe's poster lagoon for kite learning. Knee-deep flat water,
+    consistent thermal Maestrale May–October, school density that makes
+    rescue near-instant. Has hosted multiple IKO instructor-training
+    weeks. Crowd-managed by the Punta Trettu Kite Center consortium —
+    peak July–August weekends can have 200+ kites concurrently across
+    the lagoon.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Punta Trettu Kite Center site documentation (multiple operators)"
+    - "FIKW (Federazione Italiana Kiteboarding & Wakeboarding) site classification"
+  notes: |
+    Sub-spot of kitesurfing-spot-sardinia cluster. Tier 1 with high
+    confidence: shallow lagoon, sand bottom, dense school coverage,
+    side-on thermal wind. Coordinates approximate per published spot
+    documentation; verify before consuming in production routing.

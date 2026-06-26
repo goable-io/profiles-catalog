@@ -1,0 +1,155 @@
+slug: kitesurfing-pacific
+spot_kind: region
+version: "1.0.0"
+category: water
+extends: kitesurfing
+region: pacific
+display_name:
+  en: Kitesurfing — Pacific
+  it: Kitesurf — Pacifico
+  es: Kitesurf — Pacífico
+  fr: Kitesurf — Pacifique
+  de: Kitesurfen — Pazifik
+description:
+  en: |
+    Pacific-basin kitesurfing is dominated by trade-wind regimes: the
+    Hawaiian NE trade (the most consistent kite wind on Earth, blowing
+    80%+ of days April–October at 18–28 kn), the SE trade band of the
+    South Pacific, and the Asian monsoon delivery to the South China Sea
+    (Mui Ne, Boracay, Bintan) November–March. Groundswell is the
+    distinguishing feature vs the Mediterranean: 1.5–4 m long-period
+    swells reach most Pacific kite zones. Water is warmer than the
+    Atlantic (22–28°C across the kite-relevant latitudes); wetsuits
+    optional in summer at most spots.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.20 }
+      - { x: 15, s: 0.65 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 0.85 }
+      - { x: 35, s: 0.40 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.30
+        penalty_coefficient: 0.15
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 0,   to: 90,  multiplier: 1.0 }
+        - { from: 90,  to: 180, multiplier: 0.6 }
+        - { from: 270, to: 360, multiplier: 0.7 }
+        - { from: 180, to: 270, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.55 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.0, s: 1.00 }
+      - { x: 2.0, s: 0.90 }
+      - { x: 3.5, s: 0.50 }
+      - { x: 5.0, s: 0.15 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 5,  s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 24, s: 1.0 }
+      - { x: 32, s: 0.95 }
+      - { x: 38, s: 0.6 }
+      - { x: 42, s: 0.2 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 18, s: 0.4 }
+      - { x: 22, s: 0.85 }
+      - { x: 25, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: STORM_FORCE_TRADE
+    description: Sustained trade wind above 45 knots (rare except during winter passing cold fronts and tropical-cyclone outflows) is unsafe Pacific-wide.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN
+    description: Tropical squalls and monsoon convective cells drop visibility and bring associated gusty wind spikes.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe; tropical squalls are the main driver in the Pacific basin.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Pacific kite destinations are typically remote (Hawaii, French
+    Polynesia, Mauritius via the wider Pacific–Indian basin convention),
+    so international-flight transport drives the bulk of per-trip
+    carbon footprint. Reef ecosystems at most spots (Hawaii especially)
+    are sensitive — operator codes of practice (no chemical sunscreen,
+    distance from coral on launch and landing) are standard.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "International Kiteboarding Association (IKA) Pacific-region site guidance"
+    - "NOAA Hawaiian Islands trade-wind climatology 1990-2020"
+    - "Wang & Wu 2018, South China Sea monsoon kitesurfing season analysis"
+  notes: |
+    Regional overrides vs global kitesurfing: NE-trade preference
+    (direction_preference shifted to 0-90° as primary); higher wave
+    tolerance (1.0 m sweet spot, 3.5 m still rideable) reflecting
+    groundswell-dominated basin; tighter gust threshold (1.30 vs
+    Atlantic 1.35) because Pacific trade is steadier and any gust
+    spike usually signals squall ingress; water-temp curve shifted
+    warmer (sweet spot 25°C vs Atlantic 20°C).

@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-cumbuco-cauipe-lagoon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cumbuco
+parent_cluster: kitesurfing-spot-cumbuco
+region: atlantic
+
+coordinates:
+  center: { lat: -3.6444, lng: -38.7892 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Freshwater coastal lagoon 8 km west of Cumbuco, formed where the
+    Rio Cauipe meets the dunes. Depth knee-to-waist (0.5–1.2 m) for
+    most of the lagoon, sand bottom, no rocks. Side-on E trade clears
+    the dunes and blows down the lagoon's long axis. Daily kite-camp
+    shuttle drops riders for half-day sessions; rescue is by buggy from
+    the dune access. Butter-flat — preferred freestyle and foil
+    training venue.
+
+display_name:
+  en: Kitesurfing — Lagoa do Cauipe
+  it: Kitesurf — Lagoa do Cauipe
+  es: Kitesurf — Lagoa do Cauipe
+  fr: Kitesurf — Lagoa do Cauipe
+  de: Kitesurfen — Lagoa do Cauipe
+
+description:
+  en: |
+    Brazil's flagship freestyle-and-foil flatwater venue. Hosts King of
+    the Air freestyle qualifier rounds and various Brazilian national
+    events. Lagoon size makes overcrowding rare even at peak. Camps
+    shuttle riders from Cumbuco village (15-20 min by buggy).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CBKite Lagoa do Cauipe venue dossier"
+    - "Ceará state coastal-and-lagoon conservation area management plan"
+  notes: |
+    Sub-spot of kitesurfing-spot-cumbuco cluster. Tier 1: shallow
+    freshwater lagoon, sand bottom, side-on trade, organized camp
+    shuttle and rescue. The destination Cumbuco sub-spot for freestyle
+    and foil training.

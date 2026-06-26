@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-essaouira-bay
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-essaouira
+parent_cluster: kitesurfing-spot-essaouira
+region: atlantic
+
+coordinates:
+  center: { lat: 31.5147, lng: -9.7747 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    The main Essaouira bay, sheltered from open-Atlantic swell by the
+    Mogador peninsula and the offshore Île de Mogador. Side-on Alizé
+    (N/NE) blows clean across the bay parallel to shore. Sand bottom,
+    chest-deep at 30 m offshore. Wave smaller than the open-coast
+    sub-spots (1.2 m typical summer). High kite-school density on
+    Plage d'Essaouira — Ocean Vagabond and Explora are the local
+    cooperative anchor schools with concurrent rescue-boat coverage.
+    Failure mode is a downwind drift toward the harbour entrance.
+
+display_name:
+  en: Kitesurfing — Essaouira Bay
+  it: Kitesurf — Baia di Essaouira
+  es: Kitesurf — Bahía de Esauira
+  fr: Kitesurf — Baie d'Essaouira
+  de: Kitesurfen — Bucht von Essaouira
+
+description:
+  en: |
+    The school-and-beginner end of the Essaouira cluster. Plage
+    d'Essaouira fronts the medina and Mogador peninsula. Reliable Alizé
+    delivery June–September. Local kite-school cooperative manages
+    beach-zone allocation between kite, windsurf, surf, and bathers.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ocean Vagabond Essaouira operational documentation"
+    - "Comune d'Essaouira beach-zone allocation plan"
+    - "FRMK Essaouira spot notes"
+  notes: |
+    Sub-spot of kitesurfing-spot-essaouira cluster. Tier 2: bay-
+    sheltered, sand bottom, high school density. The learning entry
+    point for the Essaouira cluster.

@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-essaouira-sidi-kaouki
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-essaouira
+parent_cluster: kitesurfing-spot-essaouira
+region: atlantic
+
+coordinates:
+  center: { lat: 31.3472, lng: -9.8022 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Long open beach 25 km south of Essaouira town, exposed to full
+    Atlantic swell. Side-on Alizé delivery similar to the main bay but
+    with 0.5–1.5 m larger wave content from the un-sheltered geometry.
+    Sand bottom for the kite zone, with rocky sections at the southern
+    end. Two on-beach kite schools (much lower density than the main
+    bay), so rescue response is slower. Wider beach allows more
+    spacious launches; downwind drift on shifted Alizé pushes riders
+    south toward the rock section — manageable for intermediates with
+    awareness.
+
+display_name:
+  en: Kitesurfing — Sidi Kaouki
+  it: Kitesurf — Sidi Kaouki
+  es: Kitesurf — Sidi Kaouki
+  fr: Kitesurf — Sidi Kaouki
+  de: Kitesurfen — Sidi Kaouki
+
+description:
+  en: |
+    The freeride/wave-intermediate option in the Essaouira cluster.
+    Less crowded than the main bay, more wave content for the
+    strapless/surfboard riders. Best for self-organising intermediate
+    groups with their own gear and experience. Surf shops in the
+    village provide rentals.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Sidi Kaouki kite community documentation"
+    - "FRMK southern-Essaouira regional notes"
+  notes: |
+    Sub-spot of kitesurfing-spot-essaouira cluster. Tier 2: open
+    Atlantic, sand bottom, lower rescue density than the main bay.

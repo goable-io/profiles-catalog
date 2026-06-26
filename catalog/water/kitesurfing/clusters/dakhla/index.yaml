@@ -1,0 +1,152 @@
+slug: kitesurfing-spot-dakhla
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-atlantic
+region: atlantic
+sub_spots:
+  - kitesurfing-spot-dakhla-lagoon
+  - kitesurfing-spot-dakhla-speed-spot
+  - kitesurfing-spot-dakhla-foum-labouir
+display_name:
+  en: Kitesurfing — Dakhla
+  it: Kitesurf — Dakhla
+  es: Kitesurf — Dajla
+  fr: Kitesurf — Dakhla
+  de: Kitesurfen — Dakhla
+description:
+  en: |
+    Dakhla (Western Sahara coast) sits inside a 40 km×10 km Atlantic
+    lagoon shielded from open-ocean swell by a desert peninsula. The NNE
+    trade is the most reliable and strongest in the African Atlantic
+    band — 280+ wind days per year averaging 20-25 knots. Three distinct
+    sub-zones: the main lagoon (the world's largest flat-water kite
+    venue), the famous Speed Spot strip at PK25, and Foum Labouir on the
+    open-Atlantic side for advanced wave kiters. Peak season March–November.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.20 }
+      - { x: 15, s: 0.65 }
+      - { x: 22, s: 1.00 }
+      - { x: 30, s: 0.85 }
+      - { x: 38, s: 0.40 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.35
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 0,   to: 60,  multiplier: 1.0 }
+        - { from: 60,  to: 120, multiplier: 0.6 }
+        - { from: 300, to: 360, multiplier: 0.7 }
+        - { from: 120, to: 300, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.8, s: 0.85 }
+      - { x: 1.5, s: 0.55 }
+      - { x: 2.5, s: 0.20 }
+      - { x: 4.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 17, s: 0.4 }
+      - { x: 19, s: 0.75 }
+      - { x: 21, s: 0.95 }
+      - { x: 24, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: STORM_FORCE_WIND
+    description: Wind above 45 knots — uncommon at Dakhla — is unsafe across all sub-zones.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_RAIN
+    description: Heavy rain is extremely rare in the Western Sahara coastal band; when it occurs it indicates a Saharan front passage with associated dust and gusty conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: SAHARAN_DUST_LOW_VIS
+    description: Visibility below 1 km — usually from Calima (Saharan dust) — is unsafe and routinely closes Dakhla camps for the day.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Dakhla camps are remote desert kite resorts. International flight
+    access from Casablanca / Paris drives most of the per-trip carbon
+    footprint. Lagoon ecosystem includes a Ramsar-designated wetland
+    further south (Cintra Bay); the kite zone proper is outside but
+    adjacent to it.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Dakhla kite-camp consortium operational documentation"
+    - "Direction de la Météorologie Nationale (Morocco) Dakhla wind records"
+    - "Stefanidis et al. 2019, Atlantic NW African trade-wind climatology"
+  notes: |
+    Cluster aggregates the lagoon (main flatwater), Speed Spot (the
+    famous 1km flatwater strip at PK25), and Foum Labouir (open Atlantic
+    wave). All within 30 km of each other on the Dakhla peninsula.

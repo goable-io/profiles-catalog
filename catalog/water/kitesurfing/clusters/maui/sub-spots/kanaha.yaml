@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-maui-kanaha
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-maui
+parent_cluster: kitesurfing-spot-maui
+region: pacific
+
+coordinates:
+  center: { lat: 20.9006, lng: -156.4431 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Kanaha Beach Park on Maui's north shore east of Kahului airport —
+    the historical home of competitive kitesurfing. Side-on NE trade
+    blows 18–28 knots most afternoons. Outer reef break ~300 m offshore
+    serves as a swell breakwater for the inner kite zone; the inner
+    section is chest-deep on sand with occasional reef rocks. Multiple
+    kite schools operate from the park, providing concurrent rescue
+    coverage. Failure mode is a downwind drift across the reef toward
+    Kahului harbour entrance — recoverable for prepared intermediates.
+
+display_name:
+  en: Kitesurfing — Kanaha (Maui)
+  it: Kitesurf — Kanaha (Maui)
+  es: Kitesurf — Kanaha (Maui)
+  fr: Kitesurf — Kanaha (Maui)
+  de: Kitesurfen — Kanaha (Maui)
+
+description:
+  en: |
+    The competition venue for kitesurfing's modern era. Hosts the IKA
+    Hydrofoil World Tour stops most years. Strong-trade, big-air
+    specialist destination. Local etiquette and the formal county
+    kite-zone hours (typically 11:00–17:30) are strict.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Maui County Kanaha Beach Park kite-zone regulations"
+    - "IKA Hydrofoil World Tour Maui venue dossier"
+    - "NOAA Kahului station trade-wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-maui cluster. Tier 2: open Pacific
+    but reef-protected inner zone, school coverage, side-on trade.
+    Coordinate places centre at Kanaha kite-zone entry.

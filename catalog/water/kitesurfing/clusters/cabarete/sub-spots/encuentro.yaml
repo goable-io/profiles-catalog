@@ -1,0 +1,46 @@
+slug: kitesurfing-spot-cabarete-encuentro
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cabarete
+parent_cluster: kitesurfing-spot-cabarete
+region: atlantic
+
+coordinates:
+  center: { lat: 19.7758, lng: -70.4953 }
+  radius_m: 700
+
+tier: 3
+tier_rationale:
+  en: |
+    Reef-break point west of Cabarete town that primarily functions as
+    the regional surf venue, occasionally kiteable on selected NE/E
+    trade days when surf is sub-2 m. Reef bottom in the lineup area, no
+    sand entry near the break — downwind drift puts a kite-with-failure
+    onto rocks. No rescue infrastructure at the spot. Used only by the
+    advanced local wave-kite community on selected windows.
+
+display_name:
+  en: Kitesurfing — Encuentro (kite-on-wave)
+  it: Kitesurf — Encuentro (kite-on-wave)
+  es: Kitesurf — Encuentro (kite-on-wave)
+  fr: Kitesurf — Encuentro (kite-on-wave)
+  de: Kitesurfen — Encuentro (kite-on-wave)
+
+description:
+  en: |
+    Primary identity is Cabarete's surf reef. Kite use is opportunistic
+    on calm-surf days when the trade still blows — typically December
+    and shoulder months when groundswell is smaller. Visiting kiters
+    should consult local surf-and-kite operators before attempting.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cabarete surf-and-kite community documentation"
+    - "ASA Dominican Republic reef-break safety guidance"
+  notes: |
+    Sub-spot of kitesurfing-spot-cabarete cluster. Tier 3: reef bottom,
+    no sand entry near break, no rescue infrastructure. Domain-expert
+    review recommended for the kite-vs-surf window boundary.

@@ -1,0 +1,46 @@
+slug: kitesurfing-spot-cape-town-sunset-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cape-town
+parent_cluster: kitesurfing-spot-cape-town
+region: atlantic
+
+coordinates:
+  center: { lat: -33.8444, lng: 18.4900 }
+  radius_m: 700
+
+tier: 2
+tier_rationale:
+  en: |
+    Quieter sister spot 5 km south of Bloubergstrand, slightly cleaner
+    SE Cape Doctor as the wind clears the Bloubergstrand peninsula's
+    minor lee. Sand bottom, similar swell exposure and water-temperature
+    profile to Bloubergstrand. Lower school density — better for
+    advanced riders who want space and cleaner wind, slightly higher
+    consequence on rescue response.
+
+display_name:
+  en: Kitesurfing — Sunset Beach (Cape Town)
+  it: Kitesurf — Sunset Beach (Città del Capo)
+  es: Kitesurf — Sunset Beach (Ciudad del Cabo)
+  fr: Kitesurf — Sunset Beach (Le Cap)
+  de: Kitesurfen — Sunset Beach (Kapstadt)
+
+description:
+  en: |
+    The local-rider alternative to busier Bloubergstrand. Often
+    preferred by Cape Town's competitive freestyle community when the
+    Big Bay crowd is too dense. Same Cape Doctor delivery, longer
+    beach length, cleaner SE flow.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cape Town freestyle community documentation"
+    - "SAS Cape Town venue notes"
+  notes: |
+    Sub-spot of kitesurfing-spot-cape-town cluster. Tier 2: same as
+    Bloubergstrand on the physical profile, slightly lower school
+    density.

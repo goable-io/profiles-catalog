@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-sicily-san-vito-lo-capo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-sicily
+parent_cluster: kitesurfing-spot-sicily
+region: mediterranean
+
+coordinates:
+  center: { lat: 38.1814, lng: 12.7381 }
+  radius_m: 700
+
+tier: 2
+tier_rationale:
+  en: |
+    Open Tyrrhenian bay on the NW Sicilian headland, exposed to Maestrale
+    (NW) and Libeccio (SW) thermals. Sand bottom for the full bay; depth
+    transitions from ankle to chest at ~40 m offshore. Beach-launched
+    with on-shore Maestrale dominant in the summer thermal window — the
+    Monte Monaco massif behind the village funnels wind cleanly. Less
+    school density than Lo Stagnone (fewer schools, fewer rescue boats),
+    so consequence of a kite failure is a longer swim. Sirocco days
+    bring 1–1.5 m wave for advanced wave riders.
+
+display_name:
+  en: Kitesurfing — San Vito Lo Capo
+  it: Kitesurf — San Vito Lo Capo
+  es: Kitesurf — San Vito Lo Capo
+  fr: Kitesurf — San Vito Lo Capo
+  de: Kitesurfen — San Vito Lo Capo
+
+description:
+  en: |
+    The wave/freeride counterpart to Lo Stagnone within the Sicily
+    cluster. Lower crowd density and bigger water than the lagoon, with
+    the famous white-sand crescent beach and the Zingaro nature reserve
+    immediately east. Best May–September. Compatible with the cluster's
+    Tyrrhenian thermal regime; not a beginner destination.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIKW Sicilia spot classification"
+    - "Comune di San Vito Lo Capo beach use plan"
+    - "ARPA Sicilia thermal wind climatology, Trapani province"
+  notes: |
+    Sub-spot of kitesurfing-spot-sicily cluster. Tier 2: open water,
+    sand bottom, school presence but lower density than Stagnone, longer
+    swim back on dominant on-shore Maestrale.

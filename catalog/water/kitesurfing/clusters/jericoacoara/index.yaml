@@ -1,0 +1,148 @@
+slug: kitesurfing-spot-jericoacoara
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-atlantic
+region: atlantic
+sub_spots:
+  - kitesurfing-spot-jericoacoara-main
+  - kitesurfing-spot-jericoacoara-prea
+display_name:
+  en: Kitesurfing — Jericoacoara (Ceará)
+  it: Kitesurf — Jericoacoara (Ceará)
+  es: Kitesurf — Jericoacoara (Ceará)
+  fr: Kitesurf — Jericoacoara (Ceará)
+  de: Kitesurfen — Jericoacoara (Ceará)
+description:
+  en: |
+    Jericoacoara (national park, NE Brazil, ~300 km NW of Fortaleza)
+    sits inside a coastal dune-and-lagoon system, accessed only via 4x4
+    track or boat. Same Ceará trade-wind regime as Cumbuco but with
+    stronger acceleration in the village bay and even more reliability
+    (310+ wind days per year). Two sub-spots: the main Jeri bay
+    (village frontage) and Preá 15 km east (the freestyle-and-downwind
+    starting venue).
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.25 }
+      - { x: 15, s: 0.70 }
+      - { x: 23, s: 1.00 }
+      - { x: 30, s: 0.85 }
+      - { x: 38, s: 0.40 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.30
+        penalty_coefficient: 0.15
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 90,  to: 160, multiplier: 1.0 }
+        - { from: 60,  to: 90,  multiplier: 0.75 }
+        - { from: 160, to: 220, multiplier: 0.5 }
+        - { from: 0,   to: 60,  multiplier: 0.3 }
+        - { from: 220, to: 360, multiplier: 0.2 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.85 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.5, s: 0.70 }
+      - { x: 2.5, s: 0.30 }
+      - { x: 4.0, s: 0.05 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 20, s: 0.8 }
+      - { x: 26, s: 1.0 }
+      - { x: 32, s: 0.9 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: 22, s: 0.6 }
+      - { x: 26, s: 1.0 }
+      - { x: 29, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: STORM_FORCE_TRADE
+    description: Sustained trade above 45 kn at Jericoacoara — rare even in peak — gates operations.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: WET_SEASON_RAIN
+    description: NE Brazil wet season (Feb–May) interrupts the kite season.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km, rare on the Ceará trade coast, is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Jericoacoara is inside the Parque Nacional de Jericoacoara — vehicle
+    access is restricted, kite use is concentrated in designated zones,
+    and concurrent kite-count caps are enforced at peak. Access is via
+    4x4 from Jijoca de Jericoacoara; the carbon footprint includes both
+    international flight to Fortaleza + the off-road shuttle.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ICMBio Parque Nacional de Jericoacoara management plan"
+    - "CBKite Jericoacoara spot documentation"
+    - "INMET northern-Ceará wind frequency records"
+  notes: |
+    Cluster aggregates Jeri main bay and Preá 15 km east. Trade
+    sweet-spot shifted slightly stronger (23 kn vs Cumbuco's 22) to
+    reflect the village-bay funnel acceleration.

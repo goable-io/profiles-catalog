@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-naxos-plaka
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-naxos
+parent_cluster: kitesurfing-spot-naxos
+region: mediterranean
+
+coordinates:
+  center: { lat: 37.0419, lng: 25.3789 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Long sand beach south of Mikri Vigla, the more spread-out and
+    less-crowded Naxos kite zone. Side-on Meltemi (cross from the N),
+    sand bottom for the full beach length, no significant downwind
+    hazards in the kite zone. Lower school density than Mikri Vigla
+    means longer rescue-boat response time, but also fewer in-water
+    collisions. Beginner-friendly section near the north end; the
+    south end gets cleaner Meltemi acceleration as it leaves the
+    Mikri Vigla headland.
+
+display_name:
+  en: Kitesurfing — Naxos Plaka
+  it: Kitesurf — Naxos Plaka
+  es: Kitesurf — Naxos Plaka
+  fr: Kitesurf — Naxos Plaka
+  de: Kitesurfen — Naxos Plaka
+
+description:
+  en: |
+    The escape valve for the Naxos cluster. Long, wide, lower kite
+    density. Best for cruising and freestyle on stable Meltemi mornings.
+    Plaka is also a popular general-tourism beach so kite zones are
+    designated and seasonally enforced.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Naxos kite-school cooperative beach-zone documentation"
+    - "HNMS Naxos summer wind data"
+  notes: |
+    Sub-spot of kitesurfing-spot-naxos cluster. Tier 2: side-on
+    Meltemi, sand bottom, fewer hazards than Mikri Vigla but also
+    lower rescue density. Best beginner option within the Naxos
+    cluster despite the lower rescue coverage.

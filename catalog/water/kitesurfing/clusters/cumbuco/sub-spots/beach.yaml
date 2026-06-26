@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-cumbuco-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cumbuco
+parent_cluster: kitesurfing-spot-cumbuco
+region: atlantic
+
+coordinates:
+  center: { lat: -3.6231, lng: -38.7333 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Open Atlantic beach in front of Cumbuco village, the main kite-zone
+    for the Brazilian alísio trade. Side-on E/SE wind blows the full
+    beach parallel to shore. Sand bottom, gradual deepening (knee-to-
+    chest at 50 m offshore). Wave 0.5–1.5 m typical, occasionally larger
+    on enhanced trade events. Multiple kite-camp operators provide
+    rescue coverage; the bay is large enough that overcrowding is rare.
+    Failure mode is a downwind drift along the coast — recoverable.
+
+display_name:
+  en: Kitesurfing — Cumbuco Beach
+  it: Kitesurf — Spiaggia di Cumbuco
+  es: Kitesurf — Playa de Cumbuco
+  fr: Kitesurf — Plage de Cumbuco
+  de: Kitesurfen — Cumbuco Beach
+
+description:
+  en: |
+    The original Brazilian kitesurf destination beach. Trade-wind
+    delivery is the most consistent in the Atlantic basin. Kite-camp
+    density is high but bay is long enough to spread out. Best
+    August–November for peak trade strength.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cumbuco kite-camp cooperative operational documentation"
+    - "INMET Fortaleza wind frequency records"
+    - "CBKite Cumbuco venue notes"
+  notes: |
+    Sub-spot of kitesurfing-spot-cumbuco cluster. Tier 2: open Atlantic,
+    sand bottom, side-on trade, school coverage. The freeride/cruising
+    entry to the Cumbuco cluster.

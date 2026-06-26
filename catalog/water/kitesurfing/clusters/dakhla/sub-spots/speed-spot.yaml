@@ -1,0 +1,51 @@
+slug: kitesurfing-spot-dakhla-speed-spot
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-dakhla
+parent_cluster: kitesurfing-spot-dakhla
+region: atlantic
+
+coordinates:
+  center: { lat: 23.6097, lng: -15.9097 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    The famous "Speed Spot" or PK25 — a 1 km tidal flatwater strip on
+    the south end of the lagoon that becomes glass-still slick at low
+    tide with the trade blowing dead side-shore. Hosts several world
+    kite-speed records (over 50 knots GPS). At low tide it functions as
+    a tier-1 lagoon; at high tide the strip submerges and becomes
+    open-water connecting to the main lagoon. Tier 2 captures the
+    high-tide profile: open water, slightly farther from rescue camps
+    than the main lagoon zone.
+
+display_name:
+  en: Kitesurfing — Dakhla Speed Spot (PK25)
+  it: Kitesurf — Speed Spot Dakhla (PK25)
+  es: Kitesurf — Speed Spot Dajla (PK25)
+  fr: Kitesurf — Speed Spot Dakhla (PK25)
+  de: Kitesurfen — Dakhla Speed Spot (PK25)
+
+description:
+  en: |
+    The speed-running specialist destination within Dakhla. Optimal on
+    the late-afternoon-low-tide window when the slick forms and the
+    trade peaks. Used by GPS-speed competitors during the annual record
+    weeks. Lower camp density than the main lagoon — most operations
+    shuttle riders out from the camps for half-day sessions.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WGPSSA (World Sailing Speed Records Council via WSSRC) venue documentation"
+    - "Dakhla kite-camp consortium PK25 protocols"
+  notes: |
+    Sub-spot of kitesurfing-spot-dakhla cluster. Tier 2 captures
+    high-tide profile; at low tide functionally tier 1 (the slick
+    flatwater conditions). Coordinate places the centre on the
+    historically-published Speed Spot strip; verify before consuming
+    in production routing.

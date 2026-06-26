@@ -1,0 +1,155 @@
+slug: kitesurfing-spot-essaouira
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-atlantic
+region: atlantic
+sub_spots:
+  - kitesurfing-spot-essaouira-bay
+  - kitesurfing-spot-essaouira-sidi-kaouki
+  - kitesurfing-spot-essaouira-moulay
+display_name:
+  en: Kitesurfing — Essaouira
+  it: Kitesurf — Essaouira
+  es: Kitesurf — Esauira
+  fr: Kitesurf — Essaouira
+  de: Kitesurfen — Essaouira
+description:
+  en: |
+    Essaouira (Morocco's Atlantic coast) gets the strongest summer-thermal
+    NE/N wind in Morocco, locally called "Alizé" — a sea-breeze
+    acceleration in the funnel between the Anti-Atlas mountains and the
+    Atlantic Ocean. Daily 20-30+ knot afternoons June–September, with
+    May and October as good shoulder months. Three sub-zones span 50 km
+    of coast: the main town bay (the school zone), Sidi Kaouki to the
+    south (more wave, lower density), and Moulay Bouzerktoun to the
+    north (the wave-specialist destination).
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.20 }
+      - { x: 15, s: 0.65 }
+      - { x: 22, s: 1.00 }
+      - { x: 30, s: 0.85 }
+      - { x: 38, s: 0.40 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.35
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 350, to: 360, multiplier: 1.0 }
+        - { from: 0,   to: 50,  multiplier: 1.0 }
+        - { from: 50,  to: 120, multiplier: 0.6 }
+        - { from: 250, to: 350, multiplier: 0.6 }
+        - { from: 120, to: 250, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.50 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.2, s: 1.00 }
+      - { x: 2.0, s: 0.85 }
+      - { x: 3.0, s: 0.50 }
+      - { x: 4.5, s: 0.15 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 17, s: 0.5 }
+      - { x: 19, s: 0.85 }
+      - { x: 21, s: 1.0 }
+      - { x: 24, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: STORM_ALIZE
+    description: Sustained Alizé above 42 knots forces all Essaouira camps to close — direction is acceptable but pure strength exceeds rig safety margins.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_RAIN
+    description: Rare on the central Moroccan coast during summer Alizé; when it occurs it signals Atlantic-front passage.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km — usually from Atlantic fog (low cloud) on calm winter mornings — is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Essaouira coast is partly within the Réserve Biologique de Souss-Massa
+    buffer for migratory shorebirds. Moulay Bouzerktoun is uncrowded
+    and depends on small village-side kite-school operations. The main
+    bay is mass-tourism dense in summer (Essaouira festival weeks
+    overlap with peak Alizé).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Direction de la Météorologie Nationale (Morocco) Essaouira wind records"
+    - "Fédération Royale Marocaine de Kitesurfing (FRMK) spot documentation"
+    - "Morocco Atlantic coast Alizé climatology (Stefanidis et al. 2019)"
+  notes: |
+    Cluster aggregates main Essaouira bay, Sidi Kaouki (25 km S), and
+    Moulay Bouzerktoun (15 km N) — all sharing the Alizé thermal-funnel
+    summer regime.

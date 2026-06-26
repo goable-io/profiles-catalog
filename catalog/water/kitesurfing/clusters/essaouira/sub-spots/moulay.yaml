@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-essaouira-moulay
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-essaouira
+parent_cluster: kitesurfing-spot-essaouira
+region: atlantic
+
+coordinates:
+  center: { lat: 31.6253, lng: -9.6681 }
+  radius_m: 900
+
+tier: 3
+tier_rationale:
+  en: |
+    Wave-specialist village 15 km north of Essaouira. Side-shore Alizé
+    blows along a coast with full Atlantic swell exposure, a reef
+    section that produces a left-hand point wave, and rocky downwind
+    geography. Wave heights regularly 2–3.5 m on classic NW swell days
+    combined with N Alizé. The wave kite zone is in the bay between
+    the point and the village; downwind drift exits onto rocks. Used
+    by experienced wave kiters who know the rocks and the rescue plan.
+    No commercial rescue boat in the immediate area — village-based
+    operators run wave-day trips with personal-safety briefings.
+
+display_name:
+  en: Kitesurfing — Moulay Bouzerktoun
+  it: Kitesurf — Moulay Bouzerktoun
+  es: Kitesurf — Moulay Bouzerktoun
+  fr: Kitesurf — Moulay Bouzerktoun
+  de: Kitesurfen — Moulay Bouzerktoun
+
+description:
+  en: |
+    The wave end of the Essaouira cluster. Moulay is one of Morocco's
+    classic wave-kitesurf destinations alongside Boujdour and Dakhla's
+    Foum Labouir. Best September–April for swell, with summer Alizé
+    sometimes overpowering the wave shape. Strapless surfboard is the
+    dominant local style.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Moulay wave-kite community documentation (local operators)"
+    - "Morocco Atlantic swell climatology (Stefanidis et al. 2019)"
+  notes: |
+    Sub-spot of kitesurfing-spot-essaouira cluster. Tier 3: side-shore
+    Alizé on a wave-exposed reef-and-rock coastline, sparse rescue.
+    Coordinate places centre at the village launch area.

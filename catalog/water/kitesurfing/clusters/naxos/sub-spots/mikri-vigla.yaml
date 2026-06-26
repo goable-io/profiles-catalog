@@ -1,0 +1,51 @@
+slug: kitesurfing-spot-naxos-mikri-vigla
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-naxos
+parent_cluster: kitesurfing-spot-naxos
+region: mediterranean
+
+coordinates:
+  center: { lat: 37.0572, lng: 25.3961 }
+  radius_m: 600
+
+tier: 2
+tier_rationale:
+  en: |
+    Headland separating two bays — Limanaki (north, flatter, shallower)
+    and Parthena (south, more wave). Side-on cross Meltemi (N/NNE) blows
+    parallel to the headland keeping kiters running along the coast.
+    Sand bottom on both bays, with a small rocky outcrop at the headland
+    tip itself that is the recurring hazard for downwind drift. Depth
+    transitions from ankle to chest at 30-50 m offshore. Two on-beach
+    kite schools provide rescue but coverage is thinner than Tarifa or
+    Stagnone. Failure mode is a downwind drift onto the rocky outcrop —
+    recoverable but consequential.
+
+display_name:
+  en: Kitesurfing — Naxos Mikri Vigla
+  it: Kitesurf — Naxos Mikri Vigla
+  es: Kitesurf — Naxos Mikri Vigla
+  fr: Kitesurf — Naxos Mikri Vigla
+  de: Kitesurfen — Naxos Mikri Vigla
+
+description:
+  en: |
+    The iconic Naxos kite headland. Twin bays let riders pick flat
+    (Limanaki) or chop (Parthena) based on wind strength and personal
+    preference. The Flisvos and Mikri Vigla Kite-PRO schools operate
+    here. Strong-Meltemi specialist destination — gear sizing is
+    typically one step smaller than Lo Stagnone for the same forecast.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mikri Vigla Kite-PRO Greece operational documentation"
+    - "Flisvos Sport Club Naxos site notes"
+    - "HNMS Naxos summer wind frequency tables"
+  notes: |
+    Sub-spot of kitesurfing-spot-naxos cluster. Tier 2: side-on
+    Meltemi, sand bottom, small rocky-outcrop hazard at the headland
+    tip, moderate school density.

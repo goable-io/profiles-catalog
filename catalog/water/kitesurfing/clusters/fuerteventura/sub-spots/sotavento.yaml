@@ -1,0 +1,51 @@
+slug: kitesurfing-spot-fuerteventura-sotavento
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-fuerteventura
+parent_cluster: kitesurfing-spot-fuerteventura
+region: atlantic
+
+coordinates:
+  center: { lat: 28.1311, lng: -14.2306 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Long 5+ km sand beach on the SE coast at Costa Calma–Jandía. The
+    inshore tidal lagoon at low tide is shallow (knee-to-waist) for
+    100–200 m, giving an effective lagoon for body-drag and learning
+    sessions. At high tide the lagoon submerges and the spot becomes
+    open-ocean with chest-deep water from the shore. Side-on NE trade
+    delivers 18–28 kn afternoons consistently. Sand bottom, no rocks.
+    Multiple on-beach kite schools provide rescue boats. PWA Windsurf
+    World Cup venue. Failure-mode profile shifts with the tide — tier 2
+    at high tide, closer to tier 1 at low tide.
+
+display_name:
+  en: Kitesurfing — Sotavento (Fuerteventura)
+  it: Kitesurf — Sotavento (Fuerteventura)
+  es: Kitesurf — Sotavento (Fuerteventura)
+  fr: Kitesurf — Sotavento (Fuerteventura)
+  de: Kitesurfen — Sotavento (Fuerteventura)
+
+description:
+  en: |
+    The flagship Fuerteventura wind venue. Hosts the PWA Windsurf World
+    Cup most years. NE trade wind reliability across the full
+    April-October window plus 70% reliability in winter. Tidal-lagoon
+    effect at low tide is unique to the Canaries within Europe.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "PWA Windsurf World Cup Sotavento Fuerteventura venue dossier"
+    - "RFEV spot documentation, Costa Calma–Jandía"
+    - "AEMET Fuerteventura Sotavento wind records"
+  notes: |
+    Sub-spot of kitesurfing-spot-fuerteventura cluster. Tier 2 with
+    tidal modifier: shallow at low tide (effective tier 1), open ocean
+    at high tide (tier 2). Sand bottom, school density, NE trade
+    reliability.

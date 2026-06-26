@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-dakhla-foum-labouir
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-dakhla
+parent_cluster: kitesurfing-spot-dakhla
+region: atlantic
+
+coordinates:
+  center: { lat: 23.6944, lng: -16.0139 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    Open-Atlantic wave kitesurfing on the western (ocean) side of the
+    Dakhla peninsula — distinct from the lagoon. Side-shore NNE trade
+    blows parallel to a long sand-and-occasional-rock beach with full
+    Atlantic swell exposure (1.5–4 m typical). Rescue from the
+    peninsula side is logistically slow — camps shuttle wave-day groups
+    with on-vehicle support but in-water rescue boats don't operate
+    here. Reserved for experienced wave kiters; the lagoon is the
+    learning venue, this is the destination for the wave specialist.
+
+display_name:
+  en: Kitesurfing — Foum Labouir
+  it: Kitesurf — Foum Labouir
+  es: Kitesurf — Foum Labouir
+  fr: Kitesurf — Foum Labouir
+  de: Kitesurfen — Foum Labouir
+
+description:
+  en: |
+    The wave end of the Dakhla cluster. Atlantic-facing beach on the
+    ocean side of the peninsula, accessed by a 20-30 min camp shuttle
+    from the lagoon camps. Best October–April for swell consistency;
+    summer reliability is lower but trade still delivers. Strapless
+    surfboard-style kiting is the dominant local style.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Dakhla wave-kite community documentation (camp wave-day notes)"
+    - "Atlantic NW African swell climatology, Stefanidis et al. 2019"
+  notes: |
+    Sub-spot of kitesurfing-spot-dakhla cluster. Tier 3: full Atlantic
+    wave exposure, sparse rescue infrastructure, side-shore trade.
+    Coordinate is approximate (the precise launch point varies with the
+    swell-of-the-day among 3-4 access tracks).

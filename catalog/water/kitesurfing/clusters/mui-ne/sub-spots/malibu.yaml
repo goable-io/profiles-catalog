@@ -1,0 +1,46 @@
+slug: kitesurfing-spot-mui-ne-malibu
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-mui-ne
+parent_cluster: kitesurfing-spot-mui-ne
+region: pacific
+
+coordinates:
+  center: { lat: 10.9719, lng: 108.2458 }
+  radius_m: 700
+
+tier: 2
+tier_rationale:
+  en: |
+    Malibu Beach 3 km east of Mui Ne main strip — a lower-density
+    alternative for the local kite community. Cleaner NE monsoon (a
+    minor headland upwind smooths the airflow), shore-parallel side-on
+    direction. Sand bottom. Lower school density than the main beach —
+    fewer rescue boats but also lower in-water collision pressure.
+    Used by intermediates and downwinder-trip starters.
+
+display_name:
+  en: Kitesurfing — Mui Ne Malibu
+  it: Kitesurf — Mui Ne Malibu
+  es: Kitesurf — Mui Ne Malibu
+  fr: Kitesurf — Mui Ne Malibu
+  de: Kitesurfen — Mui Ne Malibu
+
+description:
+  en: |
+    The escape valve for the Mui Ne kite cluster. Less crowded, cleaner
+    wind, slightly fewer schools. Best for intermediate progression
+    and freestyle. Often the starting point for Mui Ne → Hòa Thắng
+    downwinder runs along the coast.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "VKA Malibu Beach site notes"
+    - "Mui Ne kite-community downwinder route documentation"
+  notes: |
+    Sub-spot of kitesurfing-spot-mui-ne cluster. Tier 2: sand bottom,
+    side-on monsoon, lower school density than main beach. Better
+    physical-risk profile per unit kite-density.

@@ -1,0 +1,153 @@
+slug: kitesurfing-spot-fuerteventura
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-atlantic
+region: atlantic
+sub_spots:
+  - kitesurfing-spot-fuerteventura-sotavento
+  - kitesurfing-spot-fuerteventura-flag-beach
+  - kitesurfing-spot-fuerteventura-el-cotillo
+display_name:
+  en: Kitesurfing — Fuerteventura
+  it: Kitesurf — Fuerteventura
+  es: Kitesurf — Fuerteventura
+  fr: Kitesurf — Fuerteventura
+  de: Kitesurfen — Fuerteventura
+description:
+  en: |
+    Fuerteventura (Canary Islands) gets the NE trade wind 280+ days a year,
+    Spain's most reliable kite-and-windsurf delivery system. The island
+    has three distinct kite zones: Sotavento on the SE coast (the
+    long shallow lagoon-and-bay that hosts the PWA Windsurf World Cup),
+    Flag Beach at Corralejo in the N (the school-density beginner zone),
+    and El Cotillo on the NW (the wave specialist's option). All three
+    work on the same NE trade but with different bottom, exposure, and
+    wave profiles.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.40
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.20 }
+      - { x: 15, s: 0.65 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 0.85 }
+      - { x: 35, s: 0.40 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.35
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 0,   to: 90,  multiplier: 1.0 }
+        - { from: 270, to: 360, multiplier: 0.7 }
+        - { from: 90,  to: 180, multiplier: 0.4 }
+        - { from: 180, to: 270, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.50 }
+      - { x: 0.5, s: 0.75 }
+      - { x: 1.0, s: 1.00 }
+      - { x: 2.0, s: 0.90 }
+      - { x: 3.5, s: 0.45 }
+      - { x: 5.0, s: 0.10 }
+      - { x: 6.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 17, s: 0.4 }
+      - { x: 19, s: 0.7 }
+      - { x: 21, s: 0.95 }
+      - { x: 24, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: STORM_FORCE_WIND
+    description: Wind above 45 knots — rare but possible during winter front passages — is unsafe across all Fuerteventura kite zones.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain on Fuerteventura indicates Atlantic-front passage with associated gusty unstable wind.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe; Calima (Saharan dust) events can drop it sharply.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 48
+  carrying_capacity_sensitivity: high
+  notes: |
+    Fuerteventura coastal zones are mostly within the Parque Natural de
+    Corralejo (north) and protected dune systems behind Sotavento
+    (south). Access to dune zones is restricted to designated launch
+    paths. Trade-wind year-round season (essentially 48 weeks).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Real Federación Española de Vela (RFEV) Fuerteventura site documentation"
+    - "AEMET Fuerteventura station historical wind records"
+    - "Parque Natural de Corralejo management plan"
+  notes: |
+    Cluster aggregates Sotavento (SE), Flag Beach Corralejo (N), and
+    El Cotillo (NW). All share the NE trade-wind regime but with
+    different swell exposure and bottom characteristics.

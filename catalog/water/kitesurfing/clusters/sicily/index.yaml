@@ -1,0 +1,148 @@
+slug: kitesurfing-spot-sicily
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-mediterranean
+region: mediterranean
+sub_spots:
+  - kitesurfing-spot-sicily-lo-stagnone
+  - kitesurfing-spot-sicily-san-vito-lo-capo
+display_name:
+  en: Kitesurfing — Sicily
+  it: Kitesurf — Sicilia
+  es: Kitesurf — Sicilia
+  fr: Kitesurf — Sicile
+  de: Kitesurfen — Sizilien
+description:
+  en: |
+    Sicily offers two opposite kite profiles: the Stagnone lagoon at
+    Marsala — Europe's largest and shallowest kite lagoon, the closest
+    competitor to Punta Trettu and Le Morne for beginner-friendly flat
+    water — and San Vito Lo Capo on the NW headland, an open Tyrrhenian
+    bay with thermal Ostro/Libeccio breezes and chest-deep entry.
+    Mediterranean thermal regime, peaking April–October.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.45
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.20 }
+      - { x: 12, s: 0.65 }
+      - { x: 18, s: 1.00 }
+      - { x: 24, s: 0.80 }
+      - { x: 32, s: 0.30 }
+      - { x: 38, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.35
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 270, to: 360, multiplier: 1.0 }
+        - { from: 180, to: 270, multiplier: 0.85 }
+        - { from: 90,  to: 180, multiplier: 0.5 }
+        - { from: 0,   to: 90,  multiplier: 0.4 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.80 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.55 }
+      - { x: 2.0, s: 0.20 }
+      - { x: 3.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 18, s: 0.9 }
+      - { x: 28, s: 1.0 }
+      - { x: 38, s: 0.6 }
+      - { x: 42, s: 0.2 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 18, s: 0.5 }
+      - { x: 22, s: 0.9 }
+      - { x: 26, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: STORM_FORCE_WIND
+    description: Sustained wind above 38 knots gates Sicilian kite operations; Stagnone schools cap at 35.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain indicates storm conditions over Sicily — typically late-autumn Atlantic-front passage.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    Lo Stagnone lagoon is a Riserva Naturale Orientata (the Saline di
+    Trapani-Marsala) with seasonal limits on kite-school operations to
+    protect the salt-pan ecosystems and migratory bird habitat. San Vito
+    Lo Capo sits inside the Riserva dello Zingaro buffer zone.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIKW Sicilia regional spot classification"
+    - "Riserva Naturale Orientata Saline di Trapani-Marsala management plan"
+    - "ARPA Sicilia coastal wind climatology"
+  notes: |
+    Cluster aggregates Lo Stagnone (W Sicily) and San Vito Lo Capo
+    (NW Sicily), ~50 km apart sharing the Trapani-province thermal regime.

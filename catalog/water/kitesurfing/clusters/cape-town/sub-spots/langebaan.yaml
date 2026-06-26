@@ -1,0 +1,53 @@
+slug: kitesurfing-spot-cape-town-langebaan
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cape-town
+parent_cluster: kitesurfing-spot-cape-town
+region: atlantic
+
+coordinates:
+  center: { lat: -33.0867, lng: 18.0378 }
+  radius_m: 2000
+
+tier: 1
+tier_rationale:
+  en: |
+    16 km-long tidal lagoon 120 km north of Cape Town inside the West
+    Coast National Park. Side-on Cape Doctor SE blows clean down the
+    lagoon's main axis. Shallow (knee-to-waist for the kite zones,
+    deepening at the north end), sand-and-shell bottom, no rocks, no
+    open-ocean swell. Cape Sport Center and other operators provide
+    school coverage at the lagoon entry. Water temperature 15–20°C —
+    warmer than the Cape Town Atlantic shore by 3–5°C because the
+    lagoon is shallow and partially isolated from upwelling. Failure
+    mode is a wet walk to the nearest shore segment.
+
+display_name:
+  en: Kitesurfing — Langebaan Lagoon
+  it: Kitesurf — Laguna di Langebaan
+  es: Kitesurf — Laguna de Langebaan
+  fr: Kitesurf — Lagune de Langebaan
+  de: Kitesurfen — Langebaan-Lagune
+
+description:
+  en: |
+    The flatwater complement to the Cape Town wave coast. Langebaan is
+    a destination in its own right — many international kite holidays
+    base here for the November–March season. Inside the West Coast
+    National Park, so beach access is regulated and motor-vehicle
+    intrusion is limited.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cape Sport Center Langebaan operational documentation"
+    - "South African National Parks (SANParks) West Coast NP management plan"
+    - "Branch et al. 2006, Langebaan Lagoon hydrography and ecology"
+  notes: |
+    Sub-spot of kitesurfing-spot-cape-town cluster (despite the 120 km
+    distance — shared Cape Doctor regime + same general operational
+    season). Tier 1: shallow lagoon, sand bottom, school coverage,
+    side-on wind. Coordinate places centre at the main kite-zone
+    entry on the east shore.

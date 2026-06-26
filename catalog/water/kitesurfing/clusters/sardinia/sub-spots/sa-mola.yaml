@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-sardinia-sa-mola
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-sardinia
+parent_cluster: kitesurfing-spot-sardinia
+region: mediterranean
+
+coordinates:
+  center: { lat: 40.0414, lng: 8.3711 }
+  radius_m: 700
+
+tier: 3
+tier_rationale:
+  en: |
+    Exposed point break on the west coast of Sardinia between Capo Mannu
+    and Su Pallosu, with the Atlantic-shifted Maestrale pushing direct
+    overhead swell onto a rocky-and-reef bottom in the inner section.
+    Wave height routinely reaches 2–3 m on classic Maestrale days, with
+    period 7–10 s — beyond the parent profile's standard kite wave
+    tolerance. Wind is side-offshore in dominant Maestrale, meaning a
+    failed kite or rope-loss puts the rider drifting downwind into the
+    open Mar di Sardegna with no immediate rescue infrastructure. Used
+    by experienced wave kiters who know the rocks and the rescue plan.
+
+display_name:
+  en: Kitesurfing — Sa Mola (Capo Mannu)
+  it: Kitesurf — Sa Mola (Capo Mannu)
+  es: Kitesurf — Sa Mola (Capo Mannu)
+  fr: Kitesurf — Sa Mola (Capo Mannu)
+  de: Kitesurfen — Sa Mola (Capo Mannu)
+
+description:
+  en: |
+    The wave end of Sardinian kitesurfing. Sa Mola is the kite-friendly
+    section of the broader Capo Mannu / Putzu Idu surf-and-wave zone.
+    Works April–November on consistent Maestrale Atlantic shifts.
+    Reserved for advanced wave kiters; not a learning venue.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Capo Mannu surf and wave community documentation"
+    - "ARPAS Sinis coastal wave climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-sardinia cluster. Tier 3: side-offshore
+    Maestrale wind on a reef-bottomed wave point with no rescue
+    infrastructure. Coordinate places the centre at the kite-entry beach,
+    not the main outer break. Domain-expert review recommended.

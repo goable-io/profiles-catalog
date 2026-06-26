@@ -1,0 +1,154 @@
+slug: kitesurfing-spot-sardinia
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-mediterranean
+region: mediterranean
+sub_spots:
+  - kitesurfing-spot-sardinia-punta-trettu
+  - kitesurfing-spot-sardinia-porto-pollo
+  - kitesurfing-spot-sardinia-sa-mola
+  - kitesurfing-spot-sardinia-chia
+display_name:
+  en: Kitesurfing — Sardinia
+  it: Kitesurf — Sardegna
+  es: Kitesurf — Cerdeña
+  fr: Kitesurf — Sardaigne
+  de: Kitesurfen — Sardinien
+description:
+  en: |
+    Sardinia hosts four geographically distinct kite zones spread around the
+    island, sharing the same Mediterranean wind regime (Maestrale NW,
+    Tramontana N, Scirocco SE) but with very different physical risk
+    profiles: a shallow lagoon for first-week riders (Punta Trettu), a
+    consistent flat-bay channel (Porto Pollo), an exposed wave point
+    (Sa Mola/Capo Mannu), and a beach-break south-coast spot (Chia). The
+    Maestrale season runs roughly May–October, peaking in July–August.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.45
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.20 }
+      - { x: 12, s: 0.65 }
+      - { x: 18, s: 1.00 }
+      - { x: 24, s: 0.80 }
+      - { x: 32, s: 0.30 }
+      - { x: 38, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.35
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 270, to: 360, multiplier: 1.0 }
+        - { from: 180, to: 270, multiplier: 0.8 }
+        - { from: 90,  to: 180, multiplier: 0.5 }
+        - { from: 0,   to: 90,  multiplier: 0.4 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.75 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 2.0, s: 0.25 }
+      - { x: 3.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 18, s: 0.9 }
+      - { x: 28, s: 1.0 }
+      - { x: 38, s: 0.6 }
+      - { x: 42, s: 0.2 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 18, s: 0.5 }
+      - { x: 22, s: 0.9 }
+      - { x: 26, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: GALE_FORCE_WIND
+    description: Maestrale or Tramontana above 40 knots makes Sardinian coasts unsafe even at sheltered lagoon spots.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm conditions; on Sardinia these are typically the early-season passage of NW fronts.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: high
+  notes: |
+    Punta Trettu lagoon sits inside the Saline di San Giovanni Suergiu
+    coastal-wetland conservation area; entry density is monitored by local
+    kite schools and regional authorities. Capo Mannu and parts of Chia
+    are within the Parco Naturale Regionale di Porto Conte / Sinis area
+    with seabird nesting restrictions in spring.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Italian Kitesurf Federation (FIKW) spot classification, Sardinia region"
+    - "Obermann et al. 2018, Mediterranean sea breeze and thermal wind regimes"
+    - "ARPAS Sardegna coastal wind climatology 1990-2020"
+  notes: |
+    Cluster aggregates four sub-spots that are 50-250 km apart but share
+    the Mediterranean weather basin. Spatial-resolver matching happens at
+    the sub-spot level (per radius_m); the cluster aggregation is for
+    operational forecast pooling and seasonal-summary reporting.

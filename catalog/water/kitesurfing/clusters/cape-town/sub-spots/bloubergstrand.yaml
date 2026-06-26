@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-cape-town-bloubergstrand
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-cape-town
+parent_cluster: kitesurfing-spot-cape-town
+region: atlantic
+
+coordinates:
+  center: { lat: -33.7894, lng: 18.4642 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Iconic Cape Town kite venue — Big Bay / Bloubergstrand on Table Bay
+    with full Table Mountain backdrop. Side-on Cape Doctor (SE) blows
+    the full bay parallel to shore. Sand bottom, deep water from 30 m
+    offshore, full Atlantic swell exposure (1.5–3 m typical summer).
+    Multiple on-beach kite schools provide rescue boats. Cold water
+    (12–17°C) is the recurring physical hazard — failures-with-gear-loss
+    become hypothermia risk in 30–60 min in 4/3 mm wetsuit, faster in
+    cold-front conditions.
+
+display_name:
+  en: Kitesurfing — Bloubergstrand (Big Bay)
+  it: Kitesurf — Bloubergstrand (Big Bay)
+  es: Kitesurf — Bloubergstrand (Big Bay)
+  fr: Kitesurf — Bloubergstrand (Big Bay)
+  de: Kitesurfen — Bloubergstrand (Big Bay)
+
+description:
+  en: |
+    The Instagram-postcard Cape Town kite spot. Hosts the annual Red
+    Bull King of the Air big-air event most Decembers. Strong-wind
+    specialist venue — gear sizing one step smaller than European
+    parent regions for the same forecast.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Red Bull King of the Air Bloubergstrand venue dossier"
+    - "Cape Town kite-school cooperative documentation"
+    - "SAWS Cape Doctor wind frequency records"
+  notes: |
+    Sub-spot of kitesurfing-spot-cape-town cluster. Tier 2: open
+    Atlantic but sand bottom and dense school coverage. Cold water
+    elevates consequence vs equivalent European tier-2 spots — see
+    cluster water_temperature_c gate at 9°C.
