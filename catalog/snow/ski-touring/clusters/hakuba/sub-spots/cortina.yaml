@@ -1,0 +1,46 @@
+slug: ski-touring-spot-hakuba-cortina
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-hakuba
+parent_cluster: ski-touring-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.8014, lng: 137.7972 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    Hakuba Cortina resort + its adjacent Norikura side-country zone.
+    Cortina is the northernmost Hakuba resort and consistently
+    records the deepest snow (130-150 m annual peak depths in the
+    typical season). Backcountry touring zones via the resort
+    gates lead to open tree skiing + Norikura-side approaches.
+    Same HAN-coordinated avalanche risk profile as Tsugaike.
+
+display_name:
+  en: Ski Touring — Cortina Backcountry
+  it: Sci alpinismo — Cortina Backcountry
+  es: Esquí de travesía — Cortina Backcountry
+  fr: Ski de randonnée — Cortina Backcountry
+  de: Skitourengehen — Cortina Backcountry
+
+description:
+  en: |
+    The deepest-snow Hakuba sub-spot. Cortina's lake-effect snow
+    delivery makes it the touring base for powder-week trips. Best
+    January-February.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HAN Cortina backcountry zone documentation"
+    - "Hakuba Cortina International Hotel & Resort operational dossier"
+  notes: |
+    Sub-spot of ski-touring-spot-hakuba cluster. Tier 3: BC-proper
+    terrain, deepest-snow zone of the cluster, lake-effect-driven
+    avalanche risk.

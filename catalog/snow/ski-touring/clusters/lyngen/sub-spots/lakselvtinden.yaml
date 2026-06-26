@@ -1,0 +1,47 @@
+slug: ski-touring-spot-lyngen-lakselvtinden
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-lyngen
+parent_cluster: ski-touring-spot-lyngen
+region: arctic
+country_code: NO
+
+coordinates:
+  center: { lat: 69.5333, lng: 20.0500 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Lakselvtinden (1100 m) is the southern-Lyngen alternative — a
+    rounded summit with open north and east faces 30-40°. Non-
+    glaciated, established route from Furuflaten trailhead, 4-5
+    hours to the summit. Less iconic than Ullstinden but lower
+    crowd density and a friendlier descent angle. Boat or road
+    return depending on the chosen exit.
+
+display_name:
+  en: Ski Touring — Lakselvtinden
+  it: Sci alpinismo — Lakselvtinden
+  es: Esquí de travesía — Lakselvtinden
+  fr: Ski de randonnée — Lakselvtinden
+  de: Skitourengehen — Lakselvtinden
+
+description:
+  en: |
+    The southern Lyngen alternative. Lakselvtinden's rounded summit
+    + open bowls give a friendlier arctic-touring descent for
+    intermediates who want sea-to-summit-style without Stortinden's
+    committing terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Lyngen southern-region documentation"
+    - "Furuflaten trailhead route inventory (local guide cooperative)"
+  notes: |
+    Sub-spot of ski-touring-spot-lyngen cluster. Tier 2: non-
+    glaciated, established route, intermediate-friendly slope angles.
+    The Lyngen learning option.

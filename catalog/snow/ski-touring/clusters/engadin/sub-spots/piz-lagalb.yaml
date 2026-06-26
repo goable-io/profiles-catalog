@@ -1,0 +1,47 @@
+slug: ski-touring-spot-engadin-piz-lagalb
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-engadin
+parent_cluster: ski-touring-spot-engadin
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.4014, lng: 10.0017 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Piz Lagalb (2959 m) is the third Bernina-area lift-served
+    touring base, opposite Diavolezza across the Bernina Pass road.
+    The summit gives access to non-glaciated south-and-east faces
+    suitable for touring without crevasse-rescue kit. Open slopes
+    30-40°, avalanche-managed by standard SLF observations. The
+    cluster's intermediate-friendly base.
+
+display_name:
+  en: Ski Touring — Piz Lagalb
+  it: Sci alpinismo — Piz Lagalb
+  es: Esquí de travesía — Piz Lagalb
+  fr: Ski de randonnée — Piz Lagalb
+  de: Skitourengehen — Piz Lagalb
+
+description:
+  en: |
+    The non-glaciated Bernina-area touring base. Lagalb's south and
+    east faces give intermediate-friendly Engadin touring without
+    glacier-kit commitment. Less iconic than Diavolezza or Corvatsch
+    but easier-access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SBV Pontresina Piz Lagalb touring notes"
+    - "Engadin Mountains Bergbahnen operational map"
+  notes: |
+    Sub-spot of ski-touring-spot-engadin cluster. Tier 2: no
+    glaciated terrain on standard descents, intermediate-friendly.
+    The least-committing entry to the cluster.

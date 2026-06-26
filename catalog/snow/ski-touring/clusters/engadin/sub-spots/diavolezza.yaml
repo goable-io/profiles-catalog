@@ -1,0 +1,49 @@
+slug: ski-touring-spot-engadin-diavolezza
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-engadin
+parent_cluster: ski-touring-spot-engadin
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.4111, lng: 9.9722 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Diavolezza (2978 m) is the eastern Engadin touring base, with
+    direct access to the Bernina massif glacier system —
+    Piz Palü standard route, Bellavista, Vedretta di Morteratsch
+    descent. Heavily-glaciated terrain with serac-fall hazard on the
+    upper Pers glacier sections. The classic "Diavolezza glacier
+    descent" (Morteratsch glacier, 1100 m vertical) is the cluster's
+    poster route — usually skied roped-up due to crevasses below
+    Bellavista.
+
+display_name:
+  en: Ski Touring — Diavolezza (Bernina)
+  it: Sci alpinismo — Diavolezza
+  es: Esquí de travesía — Diavolezza
+  fr: Ski de randonnée — Diavolezza
+  de: Skitourengehen — Diavolezza
+
+description:
+  en: |
+    The Bernina-massif gateway. Diavolezza is the access point for
+    the iconic Morteratsch glacier descent (one of the longest
+    glaciated ski descents in the Alps) and for Piz Palü +
+    Bellavista summit days.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SBV Pontresina Diavolezza touring documentation"
+    - "Bernina massif Swiss Alpine Club guidebook"
+  notes: |
+    Sub-spot of ski-touring-spot-engadin cluster. Tier 3: heavily
+    glaciated, serac-fall hazard, long descent commits to glacier
+    travel. The Bernina-massif reference of the cluster.

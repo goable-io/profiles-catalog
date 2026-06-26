@@ -1,0 +1,47 @@
+slug: ski-touring-spot-hakuba-happo-one
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-hakuba
+parent_cluster: ski-touring-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.7000, lng: 137.7950 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Happo-One resort's backcountry zone — the most-skied BC area
+    in the Hakuba valley, accessed from the top of the Happo
+    gondola via the formal sign-out gate. Routes climb to the
+    Karamatsu-dake + Mt. Goryu side-country (2700-2800 m). Mixed
+    open above-treeline bowls + glaciated remnants on the highest
+    Karamatsu approach. Wind-loaded slab is the dominant
+    avalanche-risk character of the zone.
+
+display_name:
+  en: Ski Touring — Happo-One Backcountry
+  it: Sci alpinismo — Happo-One Backcountry
+  es: Esquí de travesía — Happo-One Backcountry
+  fr: Ski de randonnée — Happo-One Backcountry
+  de: Skitourengehen — Happo-One Backcountry
+
+description:
+  en: |
+    The Hakuba mainstage BC zone. Happo-One backcountry hosts the
+    most international BC skier traffic in Japan; multiple guided
+    operators run daily out of the resort's BC gate.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HAN Happo backcountry zone documentation"
+    - "Happo-One Resort backcountry gate operational map"
+    - "HMGA Karamatsu-dake route inventory"
+  notes: |
+    Sub-spot of ski-touring-spot-hakuba cluster. Tier 3: BC-proper,
+    above-treeline bowls, wind-slab-dominant avalanche risk.

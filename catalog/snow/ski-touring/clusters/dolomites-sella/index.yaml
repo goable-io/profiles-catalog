@@ -1,0 +1,140 @@
+slug: ski-touring-spot-dolomites-sella
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - ski-touring-spot-dolomites-sella-sella-ronda
+  - ski-touring-spot-dolomites-sella-marmolada-north
+  - ski-touring-spot-dolomites-sella-lagazuoi
+  - ski-touring-spot-dolomites-sella-tofane
+display_name:
+  en: Ski Touring — Dolomites (Sella + Alta Badia)
+  it: Sci alpinismo — Dolomiti (Sella + Alta Badia)
+  es: Esquí de travesía — Dolomitas
+  fr: Ski de randonnée — Dolomites
+  de: Skitourengehen — Dolomiten
+description:
+  en: |
+    The Sella + Alta Badia Dolomites cluster covers the Sella
+    Ronda lift-circuit area + adjacent classic descents (Marmolada
+    north face, Lagazuoi, Tofane). Distinct from Western Alps ski
+    touring: lower-altitude peaks (2500-3300 m), drier southern-
+    Alpine snowpack, dramatic vertical-walled rock scenery, mature
+    lift infrastructure that supports the famous Sella Ronda
+    one-day touring traverse. Avalanche risk consult: Meteomont
+    AINEVA bulletin for Dolomiti province.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.05 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 2,   s: 0.85 }
+      - { x: 8,   s: 0.40 }
+      - { x: 14,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: DOLOMITES_WHITEOUT
+    description: Visibility below 400m in Dolomiti touring terrain makes route-finding through the iconic vertical-rock landscape unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_DOLOMITES_RIDGE
+    description: Sustained wind above 42 knots on Dolomiti ridges (especially Marmolada and Tofane summits) accelerates wind-slab formation on the leeward bowls.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: COLD_DOLOMITES
+    description: Apparent temperature below -25°C is rare in the southern Alps but does occur during continental cold-air outbreaks.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult Meteomont AINEVA Dolomiti bulletin.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    Dolomiti cluster heavily lift-dependent (Sella Ronda is a lift-
+    circuit by design). Italian grid mix powers the lifts. UNESCO
+    World Heritage status across most of the cluster's terrain
+    drives strict no-helicopter / no-off-road rules. Marmolada
+    glacier is in documented retreat; touring routes change
+    year-to-year.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Club Alpino Italiano (CAI) Dolomiti ski-touring guidebook (Cordoba, 2018)"
+    - "Meteomont AINEVA Dolomiti bulletin standards"
+    - "UNESCO Dolomiti World Heritage management plan"
+  notes: |
+    Cluster aggregates Sella Ronda (the lift-circuit traverse),
+    Marmolada north face (classic glaciated descent), Lagazuoi
+    (Cinque Torri-area touring), Tofane BC. All within 30 km of
+    each other in the Belluno + Bolzano provincial border. Region
+    tag: alpine.

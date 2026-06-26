@@ -1,0 +1,48 @@
+slug: ski-touring-spot-tromso-senja-sukkertoppen
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-tromso
+parent_cluster: ski-touring-spot-tromso
+region: arctic
+country_code: NO
+
+coordinates:
+  center: { lat: 69.4833, lng: 17.5167 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Senja island (90 min + ferry from Tromsø) hosts Sukkertoppen
+    (961 m) — one of Norway's most photographed sea-to-summit ski
+    descents. Steep east-facing 40-50° bowls drop 900 m directly
+    into the fjord. Snow stability variable due to coastal climate
+    + strong solar exposure. Cornice + wind-loaded slab hazard on
+    the summit ridge. Reserved for advanced ski-tourers; full
+    arctic kit + glacier-rescue redundancy recommended.
+
+display_name:
+  en: Ski Touring — Sukkertoppen (Senja)
+  it: Sci alpinismo — Sukkertoppen (Senja)
+  es: Esquí de travesía — Sukkertoppen (Senja)
+  fr: Ski de randonnée — Sukkertoppen (Senja)
+  de: Skitourengehen — Sukkertoppen (Senja)
+
+description:
+  en: |
+    The Senja island showpiece. Sukkertoppen's east-facing steep
+    descent into the fjord is one of the iconic arctic-touring
+    images. Multi-day trip from Tromsø recommended (ferry + lodge
+    + 2-day window).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Senja region documentation"
+    - "Senja Lodge (commercial operator) Sukkertoppen route notes"
+  notes: |
+    Sub-spot of ski-touring-spot-tromso cluster. Tier 3: steep
+    east-facing bowls, cornice + slab exposure, ferry-only access,
+    advanced kit required.

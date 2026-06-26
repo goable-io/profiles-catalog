@@ -1,0 +1,47 @@
+slug: ski-touring-spot-tromso-tromsdalstind
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-tromso
+parent_cluster: ski-touring-spot-tromso
+region: arctic
+country_code: NO
+
+coordinates:
+  center: { lat: 69.6500, lng: 19.0833 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Tromsdalstind (1238 m) rises directly above Tromsø city — the
+    "city peak" that gives the town its iconic backdrop. Standard
+    ascent: 4-5 hours from the Tromsdalen trailhead (15 min from
+    the airport). Open above-treeline slopes 30-40°, no glaciated
+    terrain, well-established route with local guide presence
+    daily. The standard first-day acclimatisation peak for Tromsø-
+    based touring parties.
+
+display_name:
+  en: Ski Touring — Tromsdalstind
+  it: Sci alpinismo — Tromsdalstind
+  es: Esquí de travesía — Tromsdalstind
+  fr: Ski de randonnée — Tromsdalstind
+  de: Skitourengehen — Tromsdalstind
+
+description:
+  en: |
+    The Tromsø city peak. Most visiting touring parties do
+    Tromsdalstind on their first day as an acclimatisation + light-
+    window test before committing to multi-day Lyngen / Senja trips.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Tromsdalstind route documentation"
+    - "Tromsø Outdoor Festival ski-touring guide directory"
+  notes: |
+    Sub-spot of ski-touring-spot-tromso cluster. Tier 2: non-
+    glaciated, established route, town-adjacent. The cluster's
+    acclimatisation peak.

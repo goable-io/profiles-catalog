@@ -1,0 +1,48 @@
+slug: ski-touring-spot-tromso-kvaloya-stortinden
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-tromso
+parent_cluster: ski-touring-spot-tromso
+region: arctic
+country_code: NO
+
+coordinates:
+  center: { lat: 69.6722, lng: 18.7556 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Kvaløya island (15 min by road from Tromsø) hosts the local
+    Stortinden peak (843 m) — a sea-to-summit-to-sea descent of
+    800 m vertical. Open coastal terrain with direct fjord
+    backdrop, steeper north faces (35-45°) on the descent route.
+    Non-glaciated. Lower-altitude peaks of the Tromsø cluster
+    typically have warmer base temperatures and faster melt-out in
+    late April. Boat-and-road accessible.
+
+display_name:
+  en: Ski Touring — Stortinden (Kvaløya)
+  it: Sci alpinismo — Stortinden (Kvaløya)
+  es: Esquí de travesía — Stortinden (Kvaløya)
+  fr: Ski de randonnée — Stortinden (Kvaløya)
+  de: Skitourengehen — Stortinden (Kvaløya)
+
+description:
+  en: |
+    The Kvaløya island sub-area of the Tromsø cluster. Stortinden's
+    sea-to-summit profile is a Lyngen-style descent with shorter
+    approach + lower commitment. Best mid-March to mid-April.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Kvaløya region route inventory"
+    - "Tromsø Friluftsråd (outdoor council) Kvaløya documentation"
+  notes: |
+    Sub-spot of ski-touring-spot-tromso cluster. Tier 2: non-
+    glaciated, steeper-than-Tromsdalstind, road-accessible. Same
+    name "Stortinden" as the Lyngen peak — different summit, both
+    common in Norwegian peak-naming.

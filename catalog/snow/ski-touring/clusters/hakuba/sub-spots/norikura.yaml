@@ -1,0 +1,46 @@
+slug: ski-touring-spot-hakuba-norikura
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-hakuba
+parent_cluster: ski-touring-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.8200, lng: 137.7833 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Hakuba Norikura Onsen resort's adjacent backcountry — small
+    quiet resort with a low-density BC gate that gives access to
+    tree-skiing zones on the lower flanks of Norikura-dake. Lower-
+    altitude touring (1500-1900 m) with shorter routes, more
+    forgiving avalanche character than the higher Tsugaike / Happo
+    zones. The Hakuba cluster's intermediate-friendly BC option.
+
+display_name:
+  en: Ski Touring — Hakuba Norikura BC
+  it: Sci alpinismo — Hakuba Norikura BC
+  es: Esquí de travesía — Hakuba Norikura BC
+  fr: Ski de randonnée — Hakuba Norikura BC
+  de: Skitourengehen — Hakuba Norikura BC
+
+description:
+  en: |
+    The intermediate-friendly Hakuba BC option. Norikura side-
+    country is the lower-commitment alternative to the high-
+    altitude Happo / Tsugaike zones. Tree-skiing dominant.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HAN Hakuba Norikura backcountry documentation"
+    - "Hakuba Norikura Onsen Resort operational map"
+  notes: |
+    Sub-spot of ski-touring-spot-hakuba cluster. Tier 2: lower
+    altitude, tree-skiing, more forgiving avalanche character.
+    The intermediate-friendly BC entry to the cluster.

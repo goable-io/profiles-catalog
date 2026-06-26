@@ -1,0 +1,49 @@
+slug: ski-touring-spot-dolomites-sella-tofane
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-dolomites-sella
+parent_cluster: ski-touring-spot-dolomites-sella
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5564, lng: 12.0481 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Tofane massif (Tofana di Mezzo 3244 m) above Cortina
+    d'Ampezzo is the touring base for several classic 1000+ m
+    descents — Cinque Torri area, Tofana North-East face, Bus
+    de Tofana couloir. Mixed glaciated + non-glaciated terrain
+    depending on the line. Cortina lift system gives access from
+    the valley. Avalanche risk consult Meteomont AINEVA Dolomiti
+    daily. Reserved for advanced ski-tourers — the Tofana classics
+    are technical descents.
+
+display_name:
+  en: Ski Touring — Tofane (Cortina)
+  it: Sci alpinismo — Tofane (Cortina)
+  es: Esquí de travesía — Tofane
+  fr: Ski de randonnée — Tofane
+  de: Skitourengehen — Tofane
+
+description:
+  en: |
+    The Cortina-side touring reference. Tofane delivers technical
+    1000+ m descents in the Dolomiti's most photogenic scenery.
+    Hosts the FIS Audi Ski World Cup women's downhill at Olympia
+    delle Tofane piste, giving the area its World-Cup-skiing
+    profile.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Tofane massif ski-touring documentation"
+    - "Cortina d'Ampezzo Tourist Office winter sport guidelines"
+  notes: |
+    Sub-spot of ski-touring-spot-dolomites-sella cluster. Tier 3:
+    mixed glaciated terrain, steep technical descents, advanced-only.

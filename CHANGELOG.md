@@ -18,7 +18,55 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.3.1
+## [Unreleased] — lands as 2.3.2
+
+### Added — ski-touring sub-spots bootstrap (7 clusters, 26 sub-spots)
+
+PR3 of the 5-PR bootstrap roadmap. Brings ski-touring from 0
+sub-spots to **26 sub-spots across 7 clusters worldwide**. Activity
+status flips `empty → seeded`.
+
+**7 new clusters** (region tag in parentheses):
+
+| Cluster | Country | Sub-spots × tiers | Region |
+|---|---|---|---|
+| `ski-touring-spot-verbier` | CH | mont-fort(T3), tortin(T2), mont-gele(T3), bec-des-rosses(T3) | alpine |
+| `ski-touring-spot-zermatt` | CH | theodul-glacier(T3), stockhorn(T3), schwarzsee(T2), klein-matterhorn(T3) | alpine |
+| `ski-touring-spot-engadin` | CH | corvatsch(T3), diavolezza(T3), piz-lagalb(T2) | alpine |
+| `ski-touring-spot-dolomites-sella` | IT | sella-ronda(T1), marmolada-north(T3), lagazuoi(T2), tofane(T3) | alpine |
+| `ski-touring-spot-lyngen` | NO | ullstinden(T2), stortinden(T3), lakselvtinden(T2), tafeltinden(T3) | arctic |
+| `ski-touring-spot-tromso` | NO | tromsdalstind(T2), kvaloya-stortinden(T2), senja-sukkertoppen(T3) | arctic |
+| `ski-touring-spot-hakuba` | JP | tsugaike(T3), cortina(T3), happo-one(T3), norikura(T2) | sea-of-japan |
+
+= 7 new clusters + 26 new sub-spots. 3 new countries (CH, NO, JP) —
+Switzerland is new to the catalog despite the previously-shipped
+freeride Chamonix being French; this PR is the first Swiss-soil
+content.
+
+### Added — 2 ski-touring region variants
+
+- **`ski-touring-arctic`**: high-latitude touring (Lyngen, Tromsø,
+  Lofoten, Iceland). Polar-twilight sun-weight 0.25, -32°C frostbite
+  gate, references Norwegian Snøskredvarsel + Sápmi reindeer-husbandry
+  seasonal-zone coordination.
+- **`ski-touring-sea-of-japan`**: lake-effect snow regime (Hakuba,
+  Niseko, Myoko, Nozawa Onsen). Precip-peak shifted to 0.5 mm/h,
+  15 mm/h dump gate, references Hakuba Avalanche Network + Japan
+  Avalanche Network bulletins.
+
+### Stats impact (live via `getCatalogStats()`)
+
+- Total sub-spots: 91 → 117 (+26)
+- Total clusters: 32 → 39 (+7)
+- Total countries: 15 → 18 (+CH, +NO, +JP)
+- Total regions: 17 → 19 (+ski-touring-arctic, +ski-touring-sea-of-japan)
+- Ski-touring status: empty → seeded (26 sub-spots, 4 countries)
+
+### Versioning
+- package.json 2.3.1 → 2.3.2 (data-only patch; schema unchanged).
+- dist/catalog.json schemaVersion stays at 2.3.0.
+
+## [2.3.1] — published 2026-06-26
 
 ### Added — surfing sub-spots bootstrap (12 clusters, 33 sub-spots)
 
