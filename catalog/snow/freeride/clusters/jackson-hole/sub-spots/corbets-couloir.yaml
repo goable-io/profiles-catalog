@@ -1,0 +1,49 @@
+slug: freeride-spot-jackson-hole-corbets-couloir
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-jackson-hole
+parent_cluster: freeride-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.5972, lng: -110.8714 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Corbet's Couloir is the American in-bounds steep-skiing
+    reference — accessed by 3-min walk from the Aerial Tram exit.
+    A 3-5 m mandatory cliff drop entry into a 40° couloir,
+    landing on a steep apron. The Corbet's Couloir Contest hosted
+    annually pushes the line difficulty further. Reserved for
+    advanced steep skiers with documented mandatory-cliff
+    experience — videoed wipeouts illustrate the consequence
+    profile.
+
+display_name:
+  en: Freeride — Corbet's Couloir
+  it: Freeride — Corbet's Couloir
+  es: Freeride — Corbet's Couloir
+  fr: Freeride — Corbet's Couloir
+  de: Freeride — Corbet's Couloir
+
+description:
+  en: |
+    "America's scariest in-bounds run." Corbet's Couloir's
+    mandatory-cliff entry has been the freeride-difficulty
+    reference for the American resort scene for 5 decades.
+    Hosts the Corbet's Couloir Contest in mid-winter.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort Corbet's Couloir documentation"
+    - "Corbet's Couloir Contest annual venue dossier"
+  notes: |
+    Sub-spot of freeride-spot-jackson-hole cluster. Tier 3 with
+    extreme confidence: mandatory cliff drop, 40° couloir, no-fall
+    landing zone. The American in-bounds steep-skiing reference.

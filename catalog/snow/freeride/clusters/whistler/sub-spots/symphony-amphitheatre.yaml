@@ -1,0 +1,47 @@
+slug: freeride-spot-whistler-symphony-amphitheatre
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-whistler
+parent_cluster: freeride-spot-whistler
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.0900, lng: -122.9650 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Symphony Amphitheatre is Whistler mountain's iconic in-bounds
+    freeride bowl — accessed via the Symphony Express chair. Open
+    above-treeline 30-40° bowls with multiple sub-features (Symphony
+    Bowl proper, Adit, Saddle, Bagel Bowl variations). Avalanche-
+    controlled by ski patrol within ropes, so consequence is
+    bounded by patrol-managed terrain. The cluster's most-skied
+    freeride zone.
+
+display_name:
+  en: Freeride — Whistler Symphony Amphitheatre
+  it: Freeride — Whistler Symphony Amphitheatre
+  es: Freeride — Whistler Symphony Amphitheatre
+  fr: Freeride — Whistler Symphony Amphitheatre
+  de: Freeride — Whistler Symphony Amphitheatre
+
+description:
+  en: |
+    Whistler's in-bounds freeride poster zone. Symphony delivers
+    1500 m vertical of patrolled alpine freeride — high lap rate,
+    consistent powder cycles, all the photo opportunities.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Mountain Operations Symphony zone documentation"
+    - "Avalanche Canada Whistler in-bounds avalanche control reports"
+  notes: |
+    Sub-spot of freeride-spot-whistler cluster. Tier 2: in-bounds
+    patrolled, avalanche-controlled terrain, alpine bowls, lift
+    return. Approachable for intermediate-and-above freeriders.

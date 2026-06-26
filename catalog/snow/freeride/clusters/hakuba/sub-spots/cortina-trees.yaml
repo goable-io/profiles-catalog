@@ -1,0 +1,49 @@
+slug: freeride-spot-hakuba-cortina-trees
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-hakuba
+parent_cluster: freeride-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.8014, lng: 137.7972 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Hakuba Cortina's lift-served "Inner Trees" zone — accessible
+    from the resort lifts without crossing a formal BC gate (a
+    notable Cortina feature). Tree skiing at 1500-1900 m in dense
+    Japanese forest. Lake-effect snow concentration is highest at
+    Cortina (it sits at the northern end of the Hakuba valley,
+    receiving the maximum lake-effect dump from the Sea of Japan
+    direction). Lower avalanche-risk character than open-bowl
+    zones. The cluster's deepest-snow venue.
+
+display_name:
+  en: Freeride — Hakuba Cortina Trees
+  it: Freeride — Hakuba Cortina Trees
+  es: Freeride — Hakuba Cortina Trees
+  fr: Freeride — Hakuba Cortina Trees
+  de: Freeride — Hakuba Cortina Trees
+
+description:
+  en: |
+    The deepest-snow Hakuba sub-spot. Cortina's in-bounds tree
+    skiing receives the densest lake-effect accumulation in the
+    valley — daily 30-60 cm overnight cycles are normal in peak
+    January.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hakuba Cortina International Hotel + Resort operational dossier"
+    - "Iwasaka & Hyodo 2017, Hakuba valley lake-effect snowfall analysis"
+  notes: |
+    Sub-spot of freeride-spot-hakuba cluster. Tier 2: in-bounds
+    tree skiing, deepest-snow zone of the cluster, lower
+    avalanche risk than open bowls.

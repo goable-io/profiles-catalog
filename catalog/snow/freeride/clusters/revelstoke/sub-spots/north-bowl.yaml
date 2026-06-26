@@ -1,0 +1,47 @@
+slug: freeride-spot-revelstoke-north-bowl
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-revelstoke
+parent_cluster: freeride-spot-revelstoke
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.9300, lng: -118.1500 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    North Bowl is Revelstoke's east-facing alpine bowl + adjacent
+    glades — the resort's "other-half" freeride zone. Accessed
+    from the Ripper Chair + traverse. Mixed alpine and treeline
+    skiing, 30-40° sustained, in-bounds patrol coverage. Cleaner
+    powder than Sub-Peak (less skied) but with longer return
+    laps to the lift. The cluster's lower-crowd freeride
+    alternative.
+
+display_name:
+  en: Freeride — Revelstoke North Bowl
+  it: Freeride — Revelstoke North Bowl
+  es: Freeride — Revelstoke North Bowl
+  fr: Freeride — Revelstoke North Bowl
+  de: Freeride — Revelstoke North Bowl
+
+description:
+  en: |
+    The Revelstoke "other half" — North Bowl gives the cluster's
+    second resort flagship with lower crowd density and longer
+    runs back to the lift.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Revelstoke Mountain Resort North Bowl zone documentation"
+    - "Avalanche Canada Columbia Mountains reports"
+  notes: |
+    Sub-spot of freeride-spot-revelstoke cluster. Tier 3: in-
+    bounds patrolled alpine bowl + glades, sustained pitch,
+    longer return.

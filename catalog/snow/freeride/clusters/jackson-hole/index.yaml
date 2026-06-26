@@ -1,0 +1,138 @@
+slug: freeride-spot-jackson-hole
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: freeride-rockies
+region: rockies
+country_code: US
+sub_spots:
+  - freeride-spot-jackson-hole-corbets-couloir
+  - freeride-spot-jackson-hole-casper-bowl
+  - freeride-spot-jackson-hole-granite-canyon
+display_name:
+  en: Freeride — Jackson Hole (Wyoming)
+  it: Freeride — Jackson Hole (Wyoming)
+  es: Freeride — Jackson Hole (Wyoming)
+  fr: Freeride — Jackson Hole (Wyoming)
+  de: Freeride — Jackson Hole (Wyoming)
+description:
+  en: |
+    Jackson Hole Mountain Resort (Teton Range, Wyoming) is the
+    American freeride benchmark — Rendezvous Mountain (3185 m
+    summit) features the tram-served Corbet's Couloir + Casper
+    Bowl + Headwall lines, with extensive Granite Canyon BC
+    accessible via the resort gates. Continental Teton climate:
+    cold dry powder, 10-12 m annual snowfall, frequent arctic-
+    outflow days (-25 to -30°C). Avalanche risk consult Bridger-
+    Teton Avalanche Center (BTAC) bulletin daily.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -32, s: 0.05 }
+      - { x: -22, s: 0.45 }
+      - { x: -12, s: 0.90 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.80 }
+      - { x: 5,   s: 0.30 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.18
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 4,   s: 0.55 }
+      - { x: 8,   s: 0.20 }
+      - { x: 12,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: TETON_WHITEOUT
+    description: Visibility below 400m on Jackson Hole alpine terrain makes route-finding through cliff-banded faces unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RENDEZVOUS
+    description: Sustained wind above 42 knots on Rendezvous Mountain accelerates wind-slab formation; the tram stops at this threshold.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: TETON_DEEP_COLD
+    description: Apparent temperature below -32°C is common in Wyoming arctic-outflow events; tram operations sometimes restrict.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult BTAC daily.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    Jackson Hole sits in the gateway zone of Grand Teton National
+    Park — Granite Canyon BC exits into NPS-managed wilderness.
+    Wyoming grid is coal-heavy, giving the resort's lift operations
+    higher carbon character than BC counterparts. International-
+    flight transport via JAC (Jackson Hole Airport) drives the
+    bulk of per-trip carbon for non-local visitors.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bridger-Teton Avalanche Center (BTAC) bulletin standards"
+    - "Jackson Hole Mountain Resort Operations freeride documentation"
+    - "Grand Teton National Park backcountry access plan"
+  notes: |
+    Cluster aggregates 3 freeride zones at Jackson Hole — the
+    iconic in-resort Corbet's Couloir, the Casper Bowl alpine
+    line, and the Granite Canyon BC corridor. Region tag: rockies.

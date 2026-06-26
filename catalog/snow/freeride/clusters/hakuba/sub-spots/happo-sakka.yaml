@@ -1,0 +1,48 @@
+slug: freeride-spot-hakuba-happo-sakka
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-hakuba
+parent_cluster: freeride-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.7028, lng: 137.7964 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Happo-One Sakka sidecountry zone — accessed from the Sakka
+    chairlift via Gate 1, this is the lower-elevation tree-skiing
+    BC zone of Happo (vs the higher Karamatsu touring zone of the
+    ski-touring-spot-hakuba cluster). Forest skiing in dense
+    Japanese white birch at 1400-1700 m elevation. Lower
+    avalanche-risk character than the summit-cone zones, formal
+    HAN-checked gate. The cluster's quick-lap-and-tree-skiing
+    venue.
+
+display_name:
+  en: Freeride — Happo Sakka (Hakuba sidecountry)
+  it: Freeride — Happo Sakka
+  es: Freeride — Happo Sakka
+  fr: Freeride — Happo Sakka
+  de: Freeride — Happo Sakka
+
+description:
+  en: |
+    The Happo lift-served sidecountry tree-skiing reference. Sakka
+    is the lower elevation zone — quick laps via the Sakka
+    chairlift + Gate 1.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HAN Happo Sakka zone documentation"
+    - "Happo-One Resort sidecountry-gate operational map"
+  notes: |
+    Sub-spot of freeride-spot-hakuba cluster. Tier 2: tree skiing
+    at lower elevation, lower avalanche risk than summit bowls,
+    formal kit-checked gate.

@@ -1,0 +1,50 @@
+slug: freeride-spot-jackson-hole-granite-canyon
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-jackson-hole
+parent_cluster: freeride-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.6200, lng: -110.9100 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Granite Canyon is Jackson Hole's south-side BC corridor —
+    accessed via the Sublette chair sidecountry gate, then a
+    boot-pack to the canyon entrance. The descent drops into
+    Grand Teton National Park BC territory — out-of-resort patrol
+    coverage, NPS-administered terrain, glaciated upper sections,
+    multiple line variants. Mandatory: full BC kit, BTAC bulletin
+    check, NPS BC permit on certain routes. Reserved for BC-
+    competent skiers; the canyon's annual avalanche-fatality
+    record is sobering.
+
+display_name:
+  en: Freeride — Granite Canyon BC (Jackson)
+  it: Freeride — Granite Canyon BC
+  es: Freeride — Granite Canyon BC
+  fr: Freeride — Granite Canyon BC
+  de: Freeride — Granite Canyon BC
+
+description:
+  en: |
+    The Jackson Hole BC corridor. Granite Canyon takes the
+    resort freerider into Grand Teton NP backcountry — real
+    BC terrain with all the commitment that implies.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort sidecountry gate documentation"
+    - "BTAC Granite Canyon bulletin standards"
+    - "Grand Teton National Park BC access plan"
+  notes: |
+    Sub-spot of freeride-spot-jackson-hole cluster. Tier 3: out-of-
+    resort BC, NPS-administered terrain, glaciated upper, annual
+    fatality record. The cluster's BC commitment reference.

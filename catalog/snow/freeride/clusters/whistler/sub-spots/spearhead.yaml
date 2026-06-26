@@ -1,0 +1,52 @@
+slug: freeride-spot-whistler-spearhead
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-whistler
+parent_cluster: freeride-spot-whistler
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.0900, lng: -122.8900 }
+  radius_m: 3000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Spearhead Traverse — a 35-km horseshoe BC tour from
+    Blackcomb glacier (back of Blackcomb) to Whistler peak,
+    passing the Trorey, Decker, and Spearhead glaciers. Real
+    backcountry — out of resort patrol coverage, glaciated terrain
+    with crevasse exposure, avalanche-bulletin-dependent. Multi-
+    day variant with the new Kees + Claire huts. Reserved for
+    BC-competent skiers with glacier kit + ACMG guide for first
+    visits.
+
+display_name:
+  en: Freeride — Spearhead Range BC (Whistler)
+  it: Freeride — Spearhead Range BC
+  es: Freeride — Spearhead Range BC
+  fr: Freeride — Spearhead Range BC
+  de: Freeride — Spearhead Range BC
+
+description:
+  en: |
+    The Whistler BC corridor. Spearhead Traverse takes the
+    Whistler-Blackcomb freerider into real backcountry —
+    glaciated, multi-day, hut-supported. The 2019-opened Kees +
+    Claire huts give the route its modern operational standard.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ACMG Spearhead Traverse documentation"
+    - "BC Parks Garibaldi Provincial Park Spearhead Range plan"
+    - "Spearhead Huts Society operational dossier (Kees + Claire huts)"
+  notes: |
+    Sub-spot of freeride-spot-whistler cluster. Tier 3: out-of-
+    bounds BC, glaciated, multi-day commitment, crevasse exposure.
+    radius_m intentionally large (3000) — the traverse spans
+    35 km but most operations cluster within a ~3 km radius of
+    each hut.

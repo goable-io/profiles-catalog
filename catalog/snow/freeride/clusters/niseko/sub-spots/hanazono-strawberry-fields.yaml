@@ -1,0 +1,50 @@
+slug: freeride-spot-niseko-hanazono-strawberry-fields
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-niseko
+parent_cluster: freeride-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8700, lng: 140.7200 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Hanazono Resort sidecountry — the "Strawberry Fields" zone is
+    the cluster's tree-skiing reference, accessed from the
+    Hanazono Gate at the top of the resort. Tree skiing in dense
+    Japanese white birch + maple forest below 1100 m. Lower-angle
+    terrain than the Annupuri summit cone (25-35° slopes), forest
+    geometry partially compensates for whiteout days. Most-
+    photographed Niseko tree-skiing zone — the cluster's
+    intermediate-friendly BC option.
+
+display_name:
+  en: Freeride — Niseko Strawberry Fields (Hanazono)
+  it: Freeride — Niseko Strawberry Fields
+  es: Freeride — Niseko Strawberry Fields
+  fr: Freeride — Niseko Strawberry Fields
+  de: Freeride — Niseko Strawberry Fields
+
+description:
+  en: |
+    The Niseko tree-skiing reference. Strawberry Fields delivers
+    perfect Japanese-forest powder runs at lower commitment than
+    the summit bowls. Best for intermediate BC days when wind or
+    visibility close the upper resort.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko Avalanche Center Hanazono zone documentation"
+    - "Hanazono Resort BC gate operational map"
+  notes: |
+    Sub-spot of freeride-spot-niseko cluster. Tier 2: tree-skiing
+    in protected forest, lower slope angles, forest geometry
+    compensates for whiteout. The intermediate-friendly entry to
+    the cluster.
