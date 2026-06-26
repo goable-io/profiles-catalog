@@ -1,0 +1,49 @@
+slug: ski-touring-spot-verbier-mont-fort
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-verbier
+parent_cluster: ski-touring-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0586, lng: 7.3014 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Mont Fort summit zone (3328 m) and the descents to Verbier or
+    to the Tortin basin. North-facing 35-45° slopes with crevassed
+    sections in the upper bowls, exposed cornices on the summit
+    ridge. Glacier travel kit (rope, harness, crevasse rescue)
+    required for the off-piste lines. Avalanche risk is the dominant
+    hazard — consult SLF Valais West bulletin daily. Reserved for
+    advanced ski-tourers with full kit and a guide on first visits.
+
+display_name:
+  en: Ski Touring — Mont Fort
+  it: Sci alpinismo — Mont Fort
+  es: Esquí de travesía — Mont Fort
+  fr: Ski de randonnée — Mont Fort
+  de: Skitourengehen — Mont Fort
+
+description:
+  en: |
+    The flagship summit of the Verbier touring zone. Mont Fort
+    delivers high-altitude north-face descents accessed via the
+    Mont Fort cable car. The standard descent (Mont Fort glacier
+    to Tortin) is 1200 m vertical of off-piste.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SBV Mont Fort touring guide"
+    - "Verbier Sport+ Mont Fort glacier descent dossier"
+    - "SLF Valais West historic avalanche records"
+  notes: |
+    Sub-spot of ski-touring-spot-verbier cluster. Tier 3: glaciated,
+    crevassed, steep north faces, cornice exposure. The cluster's
+    high-altitude reference.

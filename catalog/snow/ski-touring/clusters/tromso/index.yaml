@@ -1,0 +1,139 @@
+slug: ski-touring-spot-tromso
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-arctic
+region: arctic
+country_code: NO
+sub_spots:
+  - ski-touring-spot-tromso-tromsdalstind
+  - ski-touring-spot-tromso-kvaloya-stortinden
+  - ski-touring-spot-tromso-senja-sukkertoppen
+display_name:
+  en: Ski Touring — Tromsø
+  it: Sci alpinismo — Tromsø
+  es: Esquí de travesía — Tromsø
+  fr: Ski de randonnée — Tromsø
+  de: Skitourengehen — Tromsø
+description:
+  en: |
+    The Tromsø area (Troms, northern Norway, 69.6°N) is the
+    operational hub for arctic ski-touring in Scandinavia. From
+    Tromsø town you access three distinct sub-areas: Tromsdalstind
+    + the immediate Tromsø Alps, Kvaløya island peaks (15 min by
+    road), and Senja island (90 min + ferry). All within the
+    arctic-touring season window (mid-March to mid-May). The town
+    is the airport hub for Lyngen + Lofoten visiting parties as
+    well, so peak weeks see significant guide-and-client volume.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -35, s: 0.00 }
+      - { x: -22, s: 0.40 }
+      - { x: -12, s: 0.85 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 5,   s: 0.30 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.55 }
+      - { x: 25, s: 0.20 }
+      - { x: 35, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.25
+    curve:
+      - { x: -6, s: 0.00 }
+      - { x: 0,  s: 0.40 }
+      - { x: 5,  s: 0.75 }
+      - { x: 12, s: 0.95 }
+      - { x: 20, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ARCTIC_WHITEOUT
+    description: Visibility below 400m makes Tromsø-area route-finding unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: HIGH_WIND_ARCTIC
+    description: Sustained wind above 38 knots accelerates wind-slab formation; coastal arctic wind events are frequent.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: EXTREME_COLD_ARCTIC
+    description: Apparent temperature below -32°C creates immediate frostbite risk.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult Snøskredvarsel Tromsø + Lofoten/Vesterålen bulletins.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 10
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Tromsø is the international gateway for arctic ski touring —
+    Tromsø Airport handles 100k+ ski-touring visitors per spring
+    season. Car-and-ferry access drives the bulk of intra-area
+    transport. Reindeer-husbandry zones cross most touring valleys;
+    operators coordinate with Tromsø + Karesuvanto Sámi pastoral
+    districts.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Tromsø + Senja region documentation"
+    - "Snøskredvarsel Tromsø + Lofoten/Vesterålen bulletin standards"
+    - "Tromsø Outdoor Festival ski-touring program documentation"
+  notes: |
+    Cluster aggregates 3 sub-spots covering the Tromsø Alps,
+    Kvaløya island, and Senja island. Region tag: arctic. Sister
+    cluster to ski-touring-spot-lyngen — many parties combine the
+    two over a multi-week trip.

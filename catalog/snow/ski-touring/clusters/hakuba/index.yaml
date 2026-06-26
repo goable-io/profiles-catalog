@@ -1,0 +1,140 @@
+slug: ski-touring-spot-hakuba
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-sea-of-japan
+region: sea-of-japan
+country_code: JP
+sub_spots:
+  - ski-touring-spot-hakuba-tsugaike
+  - ski-touring-spot-hakuba-cortina
+  - ski-touring-spot-hakuba-happo-one
+  - ski-touring-spot-hakuba-norikura
+display_name:
+  en: Ski Touring — Hakuba
+  it: Sci alpinismo — Hakuba
+  es: Esquí de travesía — Hakuba
+  fr: Ski de randonnée — Hakuba
+  de: Skitourengehen — Hakuba
+description:
+  en: |
+    Hakuba (Nagano, Japanese Northern Alps) is Japan's flagship
+    ski-touring destination, sitting in the western lake-effect
+    snowfall belt that delivers 10-15 m annual snowfall to its
+    peaks. Five resorts (Happo-One, Hakuba 47, Goryu, Iwatake,
+    Tsugaike, Cortina) cluster along a 15 km valley, with backcountry
+    touring zones accessed from each. Peak season January-March
+    (deepest powder window). Avalanche risk consult Hakuba
+    Avalanche Network (HAN) bulletin daily.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 4,   s: 0.45 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.20 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 4,   s: 0.55 }
+      - { x: 8,   s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.50 }
+      - { x: 20, s: 0.90 }
+      - { x: 32, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: JAPOW_WHITEOUT
+    description: Visibility below 400m during a lake-effect dump makes Hakuba terrain selection unsafe; storms drop visibility to <50m for hours.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on the Northern Alps ridges accelerates wind-slab formation on the leeward bowls.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD
+    description: Apparent temperature below -28°C is rare in Hakuba but does occur during continental cold-air outbreaks; same kit-failure risks as Alpine.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: LAKE_EFFECT_DUMP
+    description: Lake-effect snowfall above 15 mm/h water equivalent loads slopes acutely; HAN bulletin gates touring during these storms.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 12
+  carrying_capacity_sensitivity: high
+  notes: |
+    Hakuba peak January-February tourist season is dominated by
+    international skiers (Australian + Singaporean visitor base
+    historically + growing North American + European presence
+    post-2020). International-flight transport drives the per-trip
+    carbon footprint. Backcountry-access gates at each resort are
+    HAN-coordinated; sign-out + transceiver-check required at most.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hakuba Avalanche Network (HAN) bulletin standards"
+    - "Hakuba Mountain Guide Association (HMGA) resort backcountry inventory"
+    - "Iwasaka & Hyodo 2017, Sea of Japan effect snowfall climatology"
+  notes: |
+    Cluster aggregates 4 resort-adjacent backcountry zones in the
+    Hakuba valley. Region tag: sea-of-japan. Inherits the lake-
+    effect-snow-favoring curves of the ski-touring-sea-of-japan
+    region variant.

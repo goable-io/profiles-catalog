@@ -1,0 +1,51 @@
+slug: ski-touring-spot-dolomites-sella-sella-ronda
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-dolomites-sella
+parent_cluster: ski-touring-spot-dolomites-sella
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5097, lng: 11.7714 }
+  radius_m: 4000
+
+tier: 1
+tier_rationale:
+  en: |
+    The Sella Ronda alpine-touring variant of the famous lift-
+    circuit. Mostly lift-served piste with off-piste touring add-ons
+    at each col (Pordoi, Sella, Gardena, Campolongo). Standard day
+    is 6-8 hours covering 25 km of the Sella massif circumference.
+    No glaciated terrain on the standard route, avalanche-managed
+    by lift-service infrastructure. The most beginner-friendly
+    "epic-touring-day" in the Dolomiti — a forgiving introduction
+    to multi-pass alpine touring.
+
+display_name:
+  en: Ski Touring — Sella Ronda
+  it: Sci alpinismo — Sella Ronda
+  es: Esquí de travesía — Sella Ronda
+  fr: Ski de randonnée — Sella Ronda
+  de: Skitourengehen — Sella Ronda
+
+description:
+  en: |
+    The lift-circuit-meets-touring classic. Sella Ronda traverses
+    the Sella massif via 4 mountain passes with optional touring
+    skin-ups at each col. Best for intermediate-and-above touring
+    groups wanting an "epic-feeling" day with manageable consequence.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Dolomiti Superski Sella Ronda operational map"
+    - "CAI Dolomiti ski-touring Sella Ronda traverse documentation"
+  notes: |
+    Sub-spot of ski-touring-spot-dolomites-sella cluster. Tier 1:
+    lift-served, no glaciers, avalanche-managed infrastructure. The
+    most-forgiving "big-day" touring venue in the catalog.
+    radius_m intentionally large (4000) — the traverse covers a
+    multi-km circumference.

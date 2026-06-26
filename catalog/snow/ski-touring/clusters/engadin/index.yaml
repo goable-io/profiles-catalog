@@ -1,0 +1,136 @@
+slug: ski-touring-spot-engadin
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-alpine
+region: alpine
+country_code: CH
+sub_spots:
+  - ski-touring-spot-engadin-corvatsch
+  - ski-touring-spot-engadin-diavolezza
+  - ski-touring-spot-engadin-piz-lagalb
+display_name:
+  en: Ski Touring — Engadin
+  it: Sci alpinismo — Engadina
+  es: Esquí de travesía — Engadina
+  fr: Ski de randonnée — Engadine
+  de: Skitourengehen — Engadin
+description:
+  en: |
+    The Upper Engadin (Graubünden, eastern Swiss Alps) — St. Moritz +
+    Pontresina + Sils — is the dry-continental-climate ski-touring
+    region of Switzerland. Lower snowfall but more stable snowpack
+    than the western Alps; cold-and-clear winter regime gives long
+    visibility windows ideal for high-altitude touring. The Bernina
+    massif (Piz Bernina, Piz Palü) is the touring focus, accessed
+    from Corvatsch, Diavolezza, and Piz Lagalb lift bases.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -30, s: 0.00 }
+      - { x: -22, s: 0.40 }
+      - { x: -12, s: 0.85 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.80 }
+      - { x: 5,   s: 0.30 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.12
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.23
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m in Engadin alpine touring terrain makes route-finding unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: BERNINA_HIGH_WIND
+    description: Sustained wind above 38 knots at Bernina massif altitudes accelerates wind-slab formation.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -30
+    reason_code: ENGADIN_DEEP_COLD
+    description: Apparent temperature below -30°C is routine in the Upper Engadin winter (the basin records the lowest temperatures in the Alps).
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult SLF Graubünden bulletin.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Engadin season runs December-May; the high-altitude lifts
+    (Corvatsch, Diavolezza) operate the full window. Rhaetian
+    Railway is the standard low-emission access. The Pontresina-
+    based Swiss Mountain Guides Association office is the regional
+    hub.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Swiss Mountain Guides Association (SBV) Engadin / Pontresina office"
+    - "SLF Graubünden avalanche bulletin standards"
+    - "Bernina massif touring guidebook (CAS / Swiss Alpine Club, 2015)"
+  notes: |
+    Cluster aggregates 3 lift-served touring bases in the Upper
+    Engadin / Pontresina area, all within 15 km of each other.
+    Region tag: alpine. Cold-gate at -30°C reflects the basin's
+    documented winter cold records.

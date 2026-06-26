@@ -1,0 +1,47 @@
+slug: ski-touring-spot-zermatt-stockhorn
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-zermatt
+parent_cluster: ski-touring-spot-zermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 45.9772, lng: 7.7858 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    Stockhorn (3405 m) and the adjacent Findelgletscher zone,
+    accessed via the Gornergrat railway + Stockhorn cable car.
+    North-facing high-altitude bowls with serac-fall hazard on the
+    upper Findel glacier sections, exposure to crevassed terrain.
+    Classic descent: Stockhorn summit to Findeln (1500 m vertical).
+    Best for advanced ski-tourers with glacier travel experience.
+
+display_name:
+  en: Ski Touring — Stockhorn (Gornergrat)
+  it: Sci alpinismo — Stockhorn
+  es: Esquí de travesía — Stockhorn
+  fr: Ski de randonnée — Stockhorn
+  de: Skitourengehen — Stockhorn
+
+description:
+  en: |
+    The Gornergrat-side ski-touring base. Stockhorn delivers
+    high-altitude north-bowl skiing with the iconic Monte Rosa
+    backdrop. The Findelgletscher descent is one of Zermatt's
+    long-day touring classics.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ZMG Stockhorn / Findel touring guide"
+    - "Gornergrat-Bahn operational map"
+  notes: |
+    Sub-spot of ski-touring-spot-zermatt cluster. Tier 3: glaciated,
+    serac-fall exposure, high altitude. Coordinate places centre at
+    the Stockhorn summit zone.

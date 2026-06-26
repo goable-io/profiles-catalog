@@ -1,0 +1,49 @@
+slug: ski-touring-spot-lyngen-ullstinden
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-lyngen
+parent_cluster: ski-touring-spot-lyngen
+region: arctic
+country_code: NO
+
+coordinates:
+  center: { lat: 69.5650, lng: 19.8050 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Ullstinden (1175 m) is one of the most-photographed Lyngen
+    peaks — direct sea-to-summit-to-sea descent off the western
+    side. Open above-treeline slopes 30-40°, no glacier crossing
+    on the standard route. Standard ascent: 4-5 hours from Lyseidet
+    trailhead. Standard descent: 1100 m vertical to the fjord with
+    boat pickup at the shore. The cluster's poster route — most-
+    photographed Lyngen line and the standard first-day for visiting
+    parties.
+
+display_name:
+  en: Ski Touring — Ullstinden
+  it: Sci alpinismo — Ullstinden
+  es: Esquí de travesía — Ullstinden
+  fr: Ski de randonnée — Ullstinden
+  de: Skitourengehen — Ullstinden
+
+description:
+  en: |
+    The Lyngen poster peak. Ullstinden delivers the classic arctic
+    sea-to-summit-to-sea descent with the Lyngen Alps + fjord
+    backdrop. Best March-April.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Lyngen Ullstinden route documentation"
+    - "Lyngen Alpine Guides Ullstinden classic ascent dossier"
+  notes: |
+    Sub-spot of ski-touring-spot-lyngen cluster. Tier 2: open
+    above-treeline, no glacier, established route, boat pickup at
+    the shore. The cluster's introductory peak despite its
+    iconic status.

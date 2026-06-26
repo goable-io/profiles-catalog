@@ -1,0 +1,48 @@
+slug: ski-touring-spot-dolomites-sella-lagazuoi
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-dolomites-sella
+parent_cluster: ski-touring-spot-dolomites-sella
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5247, lng: 12.0083 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Lagazuoi (2778 m) sits above the Passo Falzarego, accessed by
+    cable car from the pass. Touring routes from the summit
+    descend the Armentarola long-piste-and-off-piste run (one of
+    the most-skied off-piste runs in Italy, 8 km vertical drop).
+    Non-glaciated terrain, exposure to standard alpine avalanche
+    risk on the open bowls below the summit, returnable to lift
+    service at the base. WWI museum on the summit ridge gives the
+    area its tourist-and-historic character.
+
+display_name:
+  en: Ski Touring — Lagazuoi (Falzarego)
+  it: Sci alpinismo — Lagazuoi
+  es: Esquí de travesía — Lagazuoi
+  fr: Ski de randonnée — Lagazuoi
+  de: Skitourengehen — Lagazuoi
+
+description:
+  en: |
+    The non-glaciated Dolomiti touring reference. Lagazuoi descent
+    via the Armentarola long-run is one of Italy's classic
+    end-of-day-skiing-with-touring-character routes.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Lagazuoi-Armentarola route documentation"
+    - "Dolomiti Superski Lagazuoi operational notes"
+  notes: |
+    Sub-spot of ski-touring-spot-dolomites-sella cluster. Tier 2:
+    no glaciated terrain, intermediate-friendly, lift return at
+    base.

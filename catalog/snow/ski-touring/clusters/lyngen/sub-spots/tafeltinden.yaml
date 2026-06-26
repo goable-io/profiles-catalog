@@ -1,0 +1,48 @@
+slug: ski-touring-spot-lyngen-tafeltinden
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-lyngen
+parent_cluster: ski-touring-spot-lyngen
+region: arctic
+country_code: NO
+
+coordinates:
+  center: { lat: 69.7167, lng: 20.2167 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Tafeltinden (1395 m) is the northernmost Lyngen Alps summit
+    in the standard tour-guide rotation. North-facing 40-45° bowls
+    with cornice + wind-loaded slab exposure on the summit ridge.
+    Boat-only access from Tromsø (no road approach). Glacier kit
+    required for the upper section (small permanent snowfield with
+    occasional crevasses). Reserved for advanced parties booking
+    multi-day Lyngen tours.
+
+display_name:
+  en: Ski Touring — Tafeltinden
+  it: Sci alpinismo — Tafeltinden
+  es: Esquí de travesía — Tafeltinden
+  fr: Ski de randonnée — Tafeltinden
+  de: Skitourengehen — Tafeltinden
+
+description:
+  en: |
+    The northern Lyngen extension. Tafeltinden is the most
+    committing of the standard rotation — boat-only access, steep
+    north faces, exposed summit ridge. Best on stable spring
+    snowpack.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Lyngen northern-region documentation"
+    - "Lyngen Alpine Guides boat-access route inventory"
+  notes: |
+    Sub-spot of ski-touring-spot-lyngen cluster. Tier 3: boat-only
+    access, steep north faces, cornice exposure, small glaciated
+    summit section. Domain-expert review recommended.

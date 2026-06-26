@@ -1,0 +1,49 @@
+slug: ski-touring-spot-hakuba-tsugaike
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-hakuba
+parent_cluster: ski-touring-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.7400, lng: 137.8147 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Tsugaike Kogen resort's backcountry zone — accessed via a
+    formal HAN-coordinated sign-out gate at the top of the resort
+    lift system. Touring routes climb to the Tsugaike Norikura
+    + Otenjo summits (2100-2300 m). Mixed open bowls + treeline
+    descents. Avalanche risk is the dominant hazard, especially
+    on lee bowls below the ridge after lake-effect storms.
+    Reserved for advanced backcountry skiers with HAN-checked
+    avalanche kit.
+
+display_name:
+  en: Ski Touring — Tsugaike Backcountry
+  it: Sci alpinismo — Tsugaike Backcountry
+  es: Esquí de travesía — Tsugaike Backcountry
+  fr: Ski de randonnée — Tsugaike Backcountry
+  de: Skitourengehen — Tsugaike Backcountry
+
+description:
+  en: |
+    The Hakuba valley's primary backcountry-touring base. Tsugaike
+    BC has the most-developed resort-adjacent touring infrastructure
+    in Japan — formal sign-out gates, kit checks, and HAN bulletin
+    coordination.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "HAN Tsugaike backcountry zone documentation"
+    - "Tsugaike Kogen resort backcountry-gate operational map"
+  notes: |
+    Sub-spot of ski-touring-spot-hakuba cluster. Tier 3: backcountry-
+    proper terrain, lake-effect-driven avalanche risk, formal kit
+    sign-out at the gate.

@@ -1,0 +1,51 @@
+slug: ski-touring-spot-dolomites-sella-marmolada-north
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-dolomites-sella
+parent_cluster: ski-touring-spot-dolomites-sella
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.4350, lng: 11.8519 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Marmolada (3343 m) is the highest peak in the Dolomites and
+    home to one of the most committing north-face descents in the
+    Italian Alps. The north face drops 1200 m at sustained 40-50°
+    angles over the Marmolada glacier (in active retreat). Glacier
+    travel kit + ice-axe + crampons mandatory; rock-fall hazard
+    documented during warmer-spring windows. Reserved for advanced
+    ski-tourers with full alpine kit; the 2022 Marmolada serac
+    collapse fatalities are a recent reminder of the glacier's
+    instability.
+
+display_name:
+  en: Ski Touring — Marmolada North Face
+  it: Sci alpinismo — Marmolada parete nord
+  es: Esquí de travesía — Marmolada cara norte
+  fr: Ski de randonnée — Marmolada face nord
+  de: Skitourengehen — Marmolada Nordwand
+
+description:
+  en: |
+    The big-descent reference of the Dolomites. Marmolada's north
+    face delivers 1200 m of glaciated steep skiing in dramatic
+    Dolomiti rock-spire scenery. Best March-April after spring
+    snowpack stabilises; the glacier-collapse history makes
+    timing-with-temperature critical.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Marmolada north-face touring documentation"
+    - "Meteomont Marmolada glacier-stability records (post-2022 serac collapse)"
+  notes: |
+    Sub-spot of ski-touring-spot-dolomites-sella cluster. Tier 3:
+    glaciated, steep, recent fatal serac collapse history. Domain-
+    expert review essential before consuming in production routing.

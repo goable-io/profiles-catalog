@@ -1,0 +1,137 @@
+slug: ski-touring-spot-verbier
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-alpine
+region: alpine
+country_code: CH
+sub_spots:
+  - ski-touring-spot-verbier-mont-fort
+  - ski-touring-spot-verbier-tortin
+  - ski-touring-spot-verbier-mont-gele
+  - ski-touring-spot-verbier-bec-des-rosses
+display_name:
+  en: Ski Touring — Verbier
+  it: Sci alpinismo — Verbier
+  es: Esquí de travesía — Verbier
+  fr: Ski de randonnée — Verbier
+  de: Skitourengehen — Verbier
+description:
+  en: |
+    Verbier (Valais, Swiss Alps) is one of the founding venues of
+    competitive freeride and a flagship alpine ski-touring base in
+    the Western Alps. The Quatre Vallées lift system delivers 200+ m
+    of vertical to the high-alpine zones where the classic touring
+    runs start: Mont Fort (3328 m) with FWT venue Bec des Rosses,
+    Mont Gelé (3023 m), Tortin (the iconic off-piste descent). Peak
+    season January-April; spring corn snow window April-May. Avalanche
+    risk consult: Swiss SLF avalanche bulletin (Valais West region).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -28, s: 0.00 }
+      - { x: -18, s: 0.45 }
+      - { x: -10, s: 0.90 }
+      - { x: -4,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 5,   s: 0.35 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m in Verbier alpine touring terrain makes route-finding and slope-judgment unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on the Mont Fort / Bec des Rosses ridges accelerates wind-slab formation.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD_ALPINE
+    description: Below -28°C creates immediate frostbite risk; equipment failure rates rise.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult SLF Valais West bulletin before any descent.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Verbier touring depends on lift-assist from the Quatre Vallées
+    network (electric — Swiss grid mix, partly hydro-renewable).
+    Bec des Rosses + Mont Fort hosts the FWT World Tour finale
+    annually, which concentrates international visitors into a
+    1-week window with significant event-related logistical footprint.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Freeride World Tour Verbier venue dossier (annual finale)"
+    - "Swiss Mountain Guides Association (SBV) Verbier touring guide"
+    - "SLF Valais West avalanche bulletin standards"
+  notes: |
+    Cluster aggregates 4 sub-zones on the Verbier mountain — all
+    accessed from the Mont Fort cable car or the Tortin chairlift.
+    Region tag: alpine.

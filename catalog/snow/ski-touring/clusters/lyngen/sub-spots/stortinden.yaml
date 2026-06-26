@@ -1,0 +1,47 @@
+slug: ski-touring-spot-lyngen-stortinden
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-lyngen
+parent_cluster: ski-touring-spot-lyngen
+region: arctic
+country_code: NO
+
+coordinates:
+  center: { lat: 69.6017, lng: 19.9367 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Stortinden (1538 m) is the highest peak in the central Lyngen
+    Alps. Glaciated upper section (small remnant glacier in the
+    summit bowl), 1400 m vertical descent to the Lyngenfjord
+    shore. Slope angles 35-45° on the standard north-east face
+    descent, exposed cornice on the summit ridge. Glacier travel
+    kit required. Reserved for advanced ski-tourers with full
+    arctic + alpine kit.
+
+display_name:
+  en: Ski Touring — Stortinden (Lyngen)
+  it: Sci alpinismo — Stortinden
+  es: Esquí de travesía — Stortinden
+  fr: Ski de randonnée — Stortinden
+  de: Skitourengehen — Stortinden
+
+description:
+  en: |
+    The highest Lyngen Alps summit. Stortinden delivers the
+    cluster's most committing line — glaciated upper bowl, steep
+    north-east face, 1400 m vertical to the fjord.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOTF Lyngen Stortinden route documentation"
+    - "Snøskredvarsel Lyngenfjorden Stortinden zone observations"
+  notes: |
+    Sub-spot of ski-touring-spot-lyngen cluster. Tier 3: glaciated
+    upper, steep north-east face, cornice exposure. The cluster's
+    high-altitude reference.

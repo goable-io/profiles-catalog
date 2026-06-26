@@ -1,0 +1,47 @@
+slug: ski-touring-spot-engadin-corvatsch
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-engadin
+parent_cluster: ski-touring-spot-engadin
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.4119, lng: 9.8136 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Corvatsch (3303 m summit, 2702 m mid-station start for touring)
+    is the western Engadin's main touring base. Access to Piz
+    Murtèl, Piz Corvatsch summit, and the Roseg / Tschierva glacier
+    approaches. North-facing 35-45° slopes, glacier travel kit
+    required for the upper sections. Avalanche risk consult SLF
+    Graubünden daily.
+
+display_name:
+  en: Ski Touring — Corvatsch (Engadin)
+  it: Sci alpinismo — Corvatsch
+  es: Esquí de travesía — Corvatsch
+  fr: Ski de randonnée — Corvatsch
+  de: Skitourengehen — Corvatsch
+
+description:
+  en: |
+    The western Engadin touring hub. Corvatsch lift access opens
+    the Murtèl + Tschierva glacier zones for the half-day touring
+    classic. Hosts the Engadin Snow Patrouille endurance event in
+    early March.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SBV Pontresina Corvatsch touring guide"
+    - "Corvatsch Bergbahnen operational map"
+  notes: |
+    Sub-spot of ski-touring-spot-engadin cluster. Tier 3: glaciated,
+    steep north faces, alpine standard. The western-Engadin
+    touring reference.

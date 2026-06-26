@@ -1,0 +1,143 @@
+slug: ski-touring-spot-lyngen
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-arctic
+region: arctic
+country_code: NO
+sub_spots:
+  - ski-touring-spot-lyngen-ullstinden
+  - ski-touring-spot-lyngen-stortinden
+  - ski-touring-spot-lyngen-lakselvtinden
+  - ski-touring-spot-lyngen-tafeltinden
+display_name:
+  en: Ski Touring — Lyngen Alps
+  it: Sci alpinismo — Alpi di Lyngen
+  es: Esquí de travesía — Alpes de Lyngen
+  fr: Ski de randonnée — Alpes de Lyngen
+  de: Skitourengehen — Lyngen-Alpen
+description:
+  en: |
+    The Lyngen Alps (Troms, northern Norway, 69°N) are the
+    European reference for "ski-the-line-from-sea-to-summit" arctic
+    touring. Peaks 1200-1800 m rise directly from the Lyngenfjord
+    fjord, giving 1500+ m vertical descents that end at the shore.
+    Boat-supported access from Tromsø, with mid-March to mid-May
+    as the standard season (light return + spring snowpack
+    stabilisation). Avalanche risk consult Snøskredvarsel daily.
+    Reindeer-husbandry zones across most valleys — operators
+    coordinate with Sápmi pastoral districts.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -35, s: 0.00 }
+      - { x: -22, s: 0.40 }
+      - { x: -12, s: 0.85 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 5,   s: 0.30 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.55 }
+      - { x: 25, s: 0.20 }
+      - { x: 35, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.25
+    curve:
+      - { x: -6, s: 0.00 }
+      - { x: 0,  s: 0.40 }
+      - { x: 5,  s: 0.75 }
+      - { x: 12, s: 0.95 }
+      - { x: 20, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ARCTIC_WHITEOUT
+    description: Visibility below 400m in Lyngen terrain — common during incoming Atlantic fronts — makes route-finding unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: HIGH_WIND_LYNGEN_RIDGE
+    description: Sustained wind above 38 knots on Lyngen ridges accelerates wind-slab formation; Atlantic-front passages routinely exceed this.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: EXTREME_COLD_ARCTIC
+    description: Apparent temperature below -32°C creates immediate frostbite risk; standard arctic touring kit is rated to this band.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult Snøskredvarsel Lyngenfjorden bulletin.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 10
+  carrying_capacity_sensitivity: low
+  notes: |
+    Lyngen touring is boat-supported (small marine-diesel vessels;
+    growing electric-boat alternatives operate from Tromsø).
+    Reindeer-husbandry-zone seasonal restrictions apply to most
+    valleys — operators coordinate with Lyngen + Karesuvanto Sámi
+    pastoral districts. International-flight access (Tromsø Airport)
+    dominates per-trip carbon footprint.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Norwegian Ski Touring Federation (NOTF) Lyngen region documentation"
+    - "Snøskredvarsel Lyngenfjorden bulletin standards"
+    - "Lyngen Alpine Guides (lokal-tilbyder consortium) operational documentation"
+    - "Hagen et al. 2018, snow climatology of the Lyngen Alps"
+  notes: |
+    Cluster aggregates 4 iconic Lyngen Alps summits — all accessed
+    by boat from Tromsø or by road to Lyseidet / Furuflaten /
+    Storfjorden trailheads. Region tag: arctic. Sun-weight 0.25
+    reflects the light-window scheduling constraint of arctic
+    touring.
