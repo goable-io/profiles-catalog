@@ -1,0 +1,144 @@
+slug: freeride-rockies
+spot_kind: region
+version: "1.0.0"
+category: snow
+extends: freeride
+region: rockies
+display_name:
+  en: Freeride — North American Rockies
+  it: Freeride — Rocciose Nord-Americane
+  es: Freeride — Rocosas Norteamericanas
+  fr: Freeride — Rocheuses Nord-Américaines
+  de: Freeride — Nordamerikanische Rocky Mountains
+display_name_short:
+  en: Freeride — Rockies
+description:
+  en: |
+    The North American Rocky-Mountain freeride belt spans the Coast
+    Range (Whistler-Blackcomb), Selkirks + Monashees (Revelstoke,
+    Roger's Pass, Kicking Horse), Wasatch + Tetons (Snowbird,
+    Jackson Hole), and continues south to the Sierra Nevada (Squaw,
+    Mammoth). Continental dry-snow climate with cold-air drainage
+    + storm-cycle pattern — typical 30-60 cm overnight cycles
+    January-February. Resort-anchored sidecountry is the standard
+    mode in Canada; US resorts have more in-bounds patrolled freeride
+    on average (notable: Jackson Hole's tram service to Corbet's).
+    Avalanche risk consult CAA (Canada) + AAIC + UAC (US) bulletins
+    daily.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -30, s: 0.05 }
+      - { x: -20, s: 0.45 }
+      - { x: -12, s: 0.90 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.80 }
+      - { x: 5,   s: 0.30 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.18
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 4,   s: 0.55 }
+      - { x: 8,   s: 0.20 }
+      - { x: 12,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ROCKIES_WHITEOUT
+    description: Visibility below 400m in Rockies-freeride terrain makes route-finding through above-treeline bowls unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on Rockies ridges accelerates wind-slab formation; cross-loading on the lee bowls is the classic North-American avalanche-bulletin warning.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: ROCKIES_DEEP_COLD
+    description: Apparent temperature below -32°C is common during arctic-air mass intrusions in the northern Rockies — kit-failure rates rise sharply.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult CAA / UAC / AAIC daily.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    Rockies freeride resorts are heavy energy consumers (snow-making,
+    grooming, lift operations) and the regional grid mix varies
+    sharply (BC hydro very low-carbon, Wyoming coal-heavy). Air-
+    access from coastal metros + Western flight hubs drives the bulk
+    of per-trip carbon. Heli-ski operations in BC interior add a
+    significant per-day footprint that is separate from this
+    catalog's resort-anchored freeride profile.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Canadian Avalanche Association (CAA) Avalanche Canada bulletin standards"
+    - "American Avalanche Association (AAA) US zonal bulletin coordination"
+    - "Utah Avalanche Center (UAC) + Bridger-Teton Avalanche Center bulletin standards"
+    - "Mountain Snow Climatology of the Western US (Western Regional Climate Center)"
+  notes: |
+    Regional overrides vs global freeride: cold gate at -32°C (vs
+    alpine -28) reflects routine continental arctic-air mass winters;
+    precipitation peak shifted to 0.5 mm/h (powder cycle is the
+    expected operating mode); precip-dump gate at 12 mm/h (cycles
+    above this load slopes acutely). Tree-skiing weighting tilts
+    visibility tolerance slightly more forgiving than open-bowl
+    alpine.

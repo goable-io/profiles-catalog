@@ -1,0 +1,133 @@
+slug: freeride-spot-verbier
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: freeride-alpine
+region: alpine
+country_code: CH
+sub_spots:
+  - freeride-spot-verbier-mont-fort
+  - freeride-spot-verbier-tortin
+  - freeride-spot-verbier-bec-des-rosses
+display_name:
+  en: Freeride — Verbier
+  it: Freeride — Verbier
+  es: Freeride — Verbier
+  fr: Freeride — Verbier
+  de: Freeride — Verbier
+description:
+  en: |
+    Verbier (Valais, Swiss Alps) is the home of competitive freeride —
+    the Freeride World Tour finale on the Bec des Rosses runs here
+    every spring. The Quatre Vallées lift system delivers 200+ m of
+    vertical to the high-alpine zones with most lift-served freeride
+    in the Western Alps. Distinct from the ski-touring cluster at
+    the same location: freeride context is lift-anchored, single-day,
+    high-throughput rather than touring-day glacier travel. Avalanche
+    risk consult SLF Valais West bulletin daily.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 2,   s: 0.75 }
+      - { x: 6,   s: 0.30 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 20, s: 0.55 }
+      - { x: 30, s: 0.15 }
+      - { x: 40, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.45 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m in Verbier alpine freeride terrain makes slope-judgment unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on the Mont Fort + Bec ridges accelerates wind-slab formation downwind.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: ACTIVE_HEAVY_SNOWFALL
+    description: Active heavy snowfall during freeride sessions acutely loads slopes; consult SLF Valais West bulletin.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    Verbier freeride relies on the Quatre Vallées lift system
+    (Swiss-grid electricity, partly hydro-renewable). FWT finale
+    week concentrates international visitors into a single 7-day
+    window with significant event-logistics footprint. The shared
+    Mont Fort + Bec geography with the ski-touring-spot-verbier
+    cluster means freeride days routinely cross paths with touring
+    parties — local etiquette respected.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Freeride World Tour Verbier Xtreme venue dossier (annual finale)"
+    - "Swiss Mountain Guides Association (SBV) Verbier freeride guide"
+    - "SLF Valais West avalanche bulletin standards"
+  notes: |
+    Cluster aggregates 3 freeride zones on the Verbier mountain.
+    Region tag: alpine. Sister to ski-touring-spot-verbier; some
+    sub-spots overlap physically (Mont Fort, Bec des Rosses) but
+    have activity-specific tier rationale.

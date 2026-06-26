@@ -1,0 +1,139 @@
+slug: freeride-spot-la-grave
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: freeride-alpine
+region: alpine
+country_code: FR
+sub_spots:
+  - freeride-spot-la-grave-trifides
+  - freeride-spot-la-grave-banane
+  - freeride-spot-la-grave-vallons-meije
+display_name:
+  en: Freeride — La Grave (La Meije)
+  it: Freeride — La Grave
+  es: Freeride — La Grave
+  fr: Freeride — La Grave
+  de: Freeride — La Grave
+description:
+  en: |
+    La Grave (Hautes-Alpes, French Alps) is the world's most-storied
+    uncontrolled-off-piste resort. A single 2300-m vertical lift
+    rises from the village (1450 m) to the Glacier de la Girose
+    (3550 m); from there, EVERY descent is unmarked, unpatrolled,
+    and entirely freeride. Multiple ungroomed line systems —
+    Trifides + Banane couloirs, the open Vallons de la Meije, the
+    classic Chancel + Y Chute lines. Mandatory: full avalanche kit,
+    glacier-travel competence, IFMGA guide for first-timers.
+    Avalanche risk consult Météo-France BERA Hautes-Alpes daily.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -28, s: 0.05 }
+      - { x: -18, s: 0.50 }
+      - { x: -10, s: 0.95 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.80 }
+      - { x: 4,   s: 0.35 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 0.90 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.75 }
+      - { x: 5,   s: 0.40 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: LA_GRAVE_WHITEOUT
+    description: Visibility below 400m on La Grave's uncontrolled terrain makes route-finding through glaciated, crevassed, cliff-banded faces unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: HIGH_WIND_LA_MEIJE_RIDGE
+    description: Sustained wind above 38 knots on La Meije's high ridges accelerates wind-slab formation; lift operations stop at this threshold.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD
+    description: Apparent temperature below -28°C is common at 3500m in La Grave winter — kit-failure rates rise sharply.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: ACTIVE_HEAVY_SNOWFALL
+    description: Active heavy snowfall on La Grave's faces loads slopes acutely; consult Météo-France BERA Hautes-Alpes.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: low
+  notes: |
+    La Grave's single 2300-m lift is the lowest-throughput major
+    freeride lift in the Alps — by design, to preserve the
+    uncontrolled-off-piste character. Visitor cap is implicit in
+    lift capacity (~1200 skiers/day max). Adjacent Romanche valley
+    village + commune actively resists ski-resort-style development.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie des Guides La Grave operational guide"
+    - "Téléphérique des Glaciers de la Meije operational dossier"
+    - "Météo-France BERA Hautes-Alpes bulletin standards"
+  notes: |
+    Cluster aggregates 3 line systems on La Meije / Girose glacier.
+    Region tag: alpine. Cold-gate at -28°C reflects routine 3500-m
+    operation. Sun weight 0.18 (vs alpine parent 0.20) because
+    La Grave's north-facing main faces are partially insulated
+    from late-afternoon sun by Meije summit ridge.
