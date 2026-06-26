@@ -1,0 +1,46 @@
+slug: surfing-spot-taghazout-hash-point
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-taghazout
+parent_cluster: surfing-spot-taghazout
+region: atlantic
+country_code: MA
+
+coordinates:
+  center: { lat: 30.5444, lng: -9.7128 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Taghazout village wave — small reef point directly in front
+    of the village (named after the resin-trade nickname of the area,
+    not coffee). Softer than Anchor or Killers; works on smaller swell
+    when both upper points are too small or too crowded. Reef bottom
+    but with sand channels on either side. Most surf schools in the
+    village use this point for intermediate lessons.
+
+display_name:
+  en: Surfing — Hash Point (Taghazout village)
+  it: Surf — Hash Point (Taghazout)
+  es: Surf — Hash Point (Taghazout)
+  fr: Surf — Hash Point (Taghazout)
+  de: Surfen — Hash Point (Taghazout)
+
+description:
+  en: |
+    The intermediate-friendly Taghazout option, in front of the village
+    centre. Works on small-to-medium swell and is the standard surf-
+    school session spot.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FRMS Hash Point spot classification"
+    - "Taghazout village surf-school cooperative documentation"
+  notes: |
+    Sub-spot of surfing-spot-taghazout cluster. Tier 2: reef bottom
+    with sand channels, school presence, smaller-swell venue. The
+    intermediate side of the cluster.

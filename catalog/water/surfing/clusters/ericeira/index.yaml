@@ -1,0 +1,147 @@
+slug: surfing-spot-ericeira
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-atlantic
+region: atlantic
+country_code: PT
+sub_spots:
+  - surfing-spot-ericeira-coxos
+  - surfing-spot-ericeira-ribeira-dilhas
+  - surfing-spot-ericeira-pedra-branca
+display_name:
+  en: Surfing — Ericeira
+  it: Surf — Ericeira
+  es: Surf — Ericeira
+  fr: Surf — Ericeira
+  de: Surfen — Ericeira
+description:
+  en: |
+    Ericeira (Estremadura coast, Portugal) was declared a World Surfing
+    Reserve in 2011 — one of only 11 worldwide. Concentrates ~10 km of
+    high-quality reef-and-point breaks fed by consistent N Atlantic
+    groundswell. Three flagship sub-spots: Coxos (the right-hand reef
+    point, often called "Portugal's best wave"), Ribeira d'Ilhas (the
+    WSL Pro venue), and Pedra Branca (the punchy outer reef). Peak
+    season October-March with shoulder windows in April-May and
+    September.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.35 }
+      - { x: 0.7, s: 0.75 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.8, s: 1.00 }
+      - { x: 2.5, s: 0.90 }
+      - { x: 4.0, s: 0.55 }
+      - { x: 6.0, s: 0.20 }
+      - { x: 8.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.15 }
+      - { x: 8,  s: 0.55 }
+      - { x: 12, s: 0.90 }
+      - { x: 14, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 10, s: 0.80 }
+      - { x: 15, s: 0.50 }
+      - { x: 22, s: 0.15 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 32, s: 0.7 }
+      - { x: 38, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 10, s: 0.2 }
+      - { x: 14, s: 0.5 }
+      - { x: 17, s: 0.85 }
+      - { x: 20, s: 1.0 }
+      - { x: 24, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 8
+    reason_code: EXTREME_SURF
+    description: Wave height above 8m closes Ericeira's reef breaks; serious sets push the WSL venue to its operational limits.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_ONSHORE_WIND
+    description: Sustained onshore wind above 30 knots destroys wave shape at the Ericeira reefs.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe; Atlantic fog drops it occasionally on summer mornings.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: high
+  notes: |
+    Ericeira World Surfing Reserve is the second WSR designated in
+    Europe (after Mundaka in 2011 only Madeira matches). Operates under
+    a formal stewardship framework managed by Save the Waves + Ericeira
+    Surf Clube; peak winter weekends see crowd density that elders
+    consider near-saturation at the main spots. Surf-tourism is the
+    primary economic driver of the town outside the lobster season.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Save the Waves / WSR Ericeira management plan"
+    - "Federação Portuguesa de Surf (FPS) Ericeira spot classification"
+    - "WSL Championship Tour Ericeira Pro venue dossier"
+    - "Mendes & Cascão 2023, Portuguese coast wave amplification"
+  notes: |
+    Cluster aggregates three iconic reef-and-point breaks within 5 km of
+    Ericeira town. Region tag: atlantic. Sweet-spot wave height 1.8m
+    matches surfing-atlantic parent.

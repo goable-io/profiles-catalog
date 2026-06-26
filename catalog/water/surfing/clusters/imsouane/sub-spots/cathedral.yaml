@@ -1,0 +1,44 @@
+slug: surfing-spot-imsouane-cathedral
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-imsouane
+parent_cluster: surfing-spot-imsouane
+region: atlantic
+country_code: MA
+
+coordinates:
+  center: { lat: 30.8281, lng: -9.8281 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Outer reef point ~1 km south of The Bay. Reef-and-rock bottom,
+    faster and steeper than The Bay, used by experienced surfers when
+    The Bay is too small. Channel paddle around the south side of the
+    reef. Smaller community presence than at The Bay.
+
+display_name:
+  en: Surfing — Imsouane Cathedral
+  it: Surf — Imsouane Cathedral
+  es: Surf — Imsouane Cathedral
+  fr: Surf — Imsouane Cathedral
+  de: Surfen — Imsouane Cathedral
+
+description:
+  en: |
+    The "advanced" Imsouane option for days when The Bay is too small
+    or too crowded. Cathedral works on the same swell window but
+    delivers steeper, faster waves over a reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FRMS Imsouane region spot inventory"
+    - "Stormrider Guide Africa Cathedral entry"
+  notes: |
+    Sub-spot of surfing-spot-imsouane cluster. Tier 2: reef bottom,
+    steeper wave, lower school density. The intermediate-advanced
+    side of the cluster.

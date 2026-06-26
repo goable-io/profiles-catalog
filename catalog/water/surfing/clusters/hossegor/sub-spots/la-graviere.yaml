@@ -1,0 +1,50 @@
+slug: surfing-spot-hossegor-la-graviere
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-hossegor
+parent_cluster: surfing-spot-hossegor
+region: bay-of-biscay
+country_code: FR
+
+coordinates:
+  center: { lat: 43.6700, lng: -1.4475 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    The centrepiece of the Hossegor cluster — sits directly over the
+    head of the Capbreton submarine canyon, which focuses N Atlantic
+    swell into one of the heaviest beach-break tubes on the planet.
+    Sand bottom but very fast, very hollow, with a shifting take-off
+    that demands knowledge of the day's bank. Snaps boards regularly;
+    snapped a CT competitor's board on the first wave of a heat in
+    2018 (notable as a venue feature, not an anomaly).
+
+display_name:
+  en: Surfing — La Gravière (Hossegor)
+  it: Surf — La Gravière (Hossegor)
+  es: Surf — La Gravière (Hossegor)
+  fr: Surf — La Gravière (Hossegor)
+  de: Surfen — La Gravière (Hossegor)
+
+description:
+  en: |
+    The European reference for heavy beach-break barrels. La Gravière
+    activates with NW swell + offshore E wind on the right tide
+    (mid-tide push). Highly territorial local lineup — visitors are
+    expected to earn waves on the shoulder before sitting deep.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Quiksilver Pro France La Gravière venue specification"
+    - "FFS Hossegor competition documentation"
+    - "Stormrider Guide Europe La Gravière entry"
+  notes: |
+    Sub-spot of surfing-spot-hossegor cluster. Tier 3: heavy beach-
+    break, fast take-off, board-snap consequence routine. Sand bottom
+    keeps absolute consequence below a reef break but the wave's
+    energy is unforgiving for under-prepared surfers.

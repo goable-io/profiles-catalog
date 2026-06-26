@@ -1,0 +1,50 @@
+slug: surfing-spot-peniche-supertubos
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-peniche
+parent_cluster: surfing-spot-peniche
+region: atlantic
+country_code: PT
+
+coordinates:
+  center: { lat: 39.3536, lng: -9.3850 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Heavy beach-break on the south face of the Peniche peninsula. Sand
+    bottom but very hollow and powerful — Portugal's premier tube ride.
+    Take-off zone shifts with swell direction and the sandbar of the
+    season. Strong rip currents to the north and south of the peak,
+    used by experienced surfers as channel paddles. No reef bottom
+    but the wave's energy + occasional shallow inside section makes
+    this a hospital-day spot for under-prepared visitors.
+
+display_name:
+  en: Surfing — Supertubos (Peniche)
+  it: Surf — Supertubos (Peniche)
+  es: Surf — Supertubos (Peniche)
+  fr: Surf — Supertubos (Peniche)
+  de: Surfen — Supertubos (Peniche)
+
+description:
+  en: |
+    The barrel spot of Portugal. Supertubos works on N-NW swell with
+    SE-E offshore (morning offshore is the typical operational
+    window). Host venue of the MEO Rip Curl Pro Portugal CT event.
+    Wave is short but extremely hollow — a classic beach-break tube
+    by global standards.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL MEO Rip Curl Pro Portugal Supertubos venue specification"
+    - "FPS Peniche South competition documentation"
+  notes: |
+    Sub-spot of surfing-spot-peniche cluster. Tier 3: heavy beach-break
+    barrel, rip-current driven channel exits, advanced lineup. Sand
+    bottom keeps consequence below a reef spot but the wave's energy
+    is unforgiving.

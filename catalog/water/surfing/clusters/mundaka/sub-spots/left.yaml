@@ -1,0 +1,51 @@
+slug: surfing-spot-mundaka-left
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-mundaka
+parent_cluster: surfing-spot-mundaka
+region: bay-of-biscay
+country_code: ES
+
+coordinates:
+  center: { lat: 43.4072, lng: -2.6975 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Left-hand river-mouth sandbar wave at the entrance to the Urdaibai
+    estuary. Sand bottom but very fast and very hollow — Mundaka is
+    on a short list of breaks that can deliver 300+ m rideable
+    barrels. Strong outgoing-tide current at the take-off zone (the
+    wave only works on outgoing tide), local lineup priority strictly
+    enforced, peak crowds during the few annual swells that pulse
+    the bar properly. Recorded fatality history makes this a hard
+    intermediate-not-yet spot for visitors. Best September-March.
+
+display_name:
+  en: Surfing — Mundaka (the wave)
+  it: Surf — Mundaka (la sinistra)
+  es: Surf — Mundaka (la izquierda)
+  fr: Surf — Mundaka (la gauche)
+  de: Surfen — Mundaka (die Linke)
+
+description:
+  en: |
+    One of the most photographed surf waves in the world. Mundaka left
+    is the European reference for hollow long-walls. Crowds peak when
+    a properly-aligned long-period N swell hits with offshore SE wind
+    on outgoing tide — those alignments happen 10-25 days per season.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Save the Waves WSR Mundaka spot dossier"
+    - "FVS Mundaka competition + lineup priority documentation"
+    - "Stormrider Guide Europe Mundaka entry (2017)"
+  notes: |
+    Sub-spot of surfing-spot-mundaka cluster. Tier 3: very heavy
+    long-wall, fast take-off, strong currents, hostile lineup. Sand
+    bottom slightly reduces consequence vs reef-bottom spots, but the
+    wave's energy makes it advanced-only.

@@ -1,0 +1,47 @@
+slug: surfing-spot-hossegor-la-sud
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-hossegor
+parent_cluster: surfing-spot-hossegor
+region: bay-of-biscay
+country_code: FR
+
+coordinates:
+  center: { lat: 43.6611, lng: -1.4503 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Capbreton south end of the Hossegor stretch. Sits south of the
+    canyon focus zone — receives a softer, smaller version of the
+    same swell that lights up La Gravière. Often the only rideable
+    Hossegor spot in mid-summer when the canyon over-focuses small
+    fetches. Sand bottom, beach-break peaks shift with the season,
+    several active surf schools.
+
+display_name:
+  en: Surfing — La Sud (Capbreton)
+  it: Surf — La Sud (Capbreton)
+  es: Surf — La Sud (Capbreton)
+  fr: Surf — La Sud (Capbreton)
+  de: Surfen — La Sud (Capbreton)
+
+description:
+  en: |
+    The smallest-and-cleanest side of the cluster. La Sud is the
+    school-and-summer alternative when La Gravière is firing too
+    heavy or too closed-out. Capbreton's longshore drift creates
+    seasonal sandbars that shift the peak.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFS Capbreton spot classification"
+    - "Capbreton Office du Tourisme bathing-and-surf beach plan"
+  notes: |
+    Sub-spot of surfing-spot-hossegor cluster. Tier 2: sand bottom,
+    softer wave, school presence. The summer/learning alternative
+    in the cluster.

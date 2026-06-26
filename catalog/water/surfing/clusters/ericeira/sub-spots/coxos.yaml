@@ -1,0 +1,48 @@
+slug: surfing-spot-ericeira-coxos
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-ericeira
+parent_cluster: surfing-spot-ericeira
+region: atlantic
+country_code: PT
+
+coordinates:
+  center: { lat: 38.9750, lng: -9.4197 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Right-hand reef point at the northern end of the Ericeira WSR.
+    Sharp basalt reef bottom under the lineup with a fast take-off
+    and a hollow second section over a shallow exposed reef shelf.
+    Wave height 1.5–3 m typical; on big days 4–6 m sets close out
+    the inside section. No paddle channel — the only exit is back
+    across the reef. Reserved for advanced surfers comfortable on
+    a slab-style right.
+
+display_name:
+  en: Surfing — Coxos (Ericeira)
+  it: Surf — Coxos (Ericeira)
+  es: Surf — Coxos (Ericeira)
+  fr: Surf — Coxos (Ericeira)
+  de: Surfen — Coxos (Ericeira)
+
+description:
+  en: |
+    "Portugal's best wave" by community consensus. Coxos breaks on
+    NW swell with E/SE light off-shore. Highly territorial local
+    community — visitors are expected to sit deep only after earning
+    waves on the shoulder. Best September-April.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Save the Waves / WSR Ericeira spot dossier"
+    - "Stormrider Guide Europe (Low Pressure, 2017) Coxos entry"
+  notes: |
+    Sub-spot of surfing-spot-ericeira cluster. Tier 3: sharp reef
+    bottom, no channel, advanced lineup. Coordinate places centre at
+    the standard take-off zone.

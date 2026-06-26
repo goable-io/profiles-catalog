@@ -1,0 +1,146 @@
+slug: surfing-spot-hossegor
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-atlantic
+region: bay-of-biscay
+country_code: FR
+sub_spots:
+  - surfing-spot-hossegor-la-graviere
+  - surfing-spot-hossegor-la-nord
+  - surfing-spot-hossegor-la-sud
+display_name:
+  en: Surfing — Hossegor
+  it: Surf — Hossegor
+  es: Surf — Hossegor
+  fr: Surf — Hossegor
+  de: Surfen — Hossegor
+description:
+  en: |
+    Hossegor (Landes coast, SW France) is Europe's heaviest beach-break
+    consortium — three world-class banks within 4 km of each other, fed
+    by the deep Capbreton submarine canyon that focuses N Atlantic
+    groundswell. Host venue of the Quiksilver Pro France WSL CT event
+    (autumn slot in the CT calendar). La Gravière is the canyon-fed
+    centrepiece; La Nord (Seignosse) catches cleaner mid-tide;
+    La Sud (Capbreton) is the more forgiving option south of the canyon.
+    Peak swell September-November.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.42
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.30 }
+      - { x: 0.7, s: 0.65 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.8, s: 1.00 }
+      - { x: 2.5, s: 0.90 }
+      - { x: 3.5, s: 0.55 }
+      - { x: 5.0, s: 0.15 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.50 }
+      - { x: 12, s: 0.95 }
+      - { x: 14, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.75 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 32, s: 0.7 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.06
+    curve:
+      - { x: 8,  s: 0.0 }
+      - { x: 12, s: 0.35 }
+      - { x: 16, s: 0.8 }
+      - { x: 20, s: 1.0 }
+      - { x: 22, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 7
+    reason_code: HEAVY_BEACH_CLOSEOUT
+    description: Above 7m the Hossegor beach breaks close out; even La Gravière is unsurfable above this size.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_WIND
+    description: Onshore wind above 30 knots — common in autumn fronts — destroys beach-break shape.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Hossegor + Seignosse + Capbreton form Europe's largest dedicated
+    surf-tourism cluster (estimated 800k surf-related visitor-days/year
+    per Landes département). CT-event week saturates the bay; the
+    Capbreton submarine canyon is a Natura 2000 marine habitat under
+    France's Parc Naturel Marin governance.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Quiksilver Pro France venue dossier (Hossegor)"
+    - "Fédération Française de Surf (FFS) Hossegor competition site"
+    - "Stormrider Guide Europe (Low Pressure, 2017) Hossegor entry"
+    - "Mendes et al. 2019, Capbreton submarine canyon swell focusing"
+  notes: |
+    Cluster aggregates La Gravière (Hossegor centre), La Nord (Seignosse,
+    2 km north), La Sud (Capbreton, 2 km south). Region tag:
+    bay-of-biscay. Long-period swell weighted 0.22 (Capbreton-canyon
+    focusing requires period to manifest); upper wave gate 7m vs
+    Atlantic parent 8m — beach-break closes out earlier than reef.
