@@ -32,7 +32,10 @@ const regionBbox: Record<string, { latMin: number; latMax: number; lngMin: numbe
   // signals wraparound — see check below.
   pacific: { latMin: -50, latMax: 65, lngMin: 100, lngMax: -70 },
   // Indian Ocean basin (Red Sea has its own entry below since v2.2).
-  indian: { latMin: -45, latMax: 32, lngMin: 25, lngMax: 110 },
+  // East boundary extends to ~120° to include the Sumatra + Java + Bali
+  // SE coasts, whose surf draws from Southern-Ocean swell entering the
+  // Indian Ocean basin (the convention followed by surfing-indian).
+  indian: { latMin: -45, latMax: 32, lngMin: 25, lngMax: 120 },
   alpine: { latMin: 42, latMax: 51, lngMin: 5, lngMax: 18 },
   global: { latMin: -90, latMax: 90, lngMin: -180, lngMax: 180 },
 

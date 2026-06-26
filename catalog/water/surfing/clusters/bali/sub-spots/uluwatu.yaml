@@ -1,0 +1,49 @@
+slug: surfing-spot-bali-uluwatu
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-bali
+parent_cluster: surfing-spot-bali
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.8164, lng: 115.0867 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Bukit peninsula's flagship left-hand reef break — actually
+    five distinct take-off zones along a 500 m reef ledge (the
+    Peak, Racetracks, Outside Corner, Temples, Outside Outside).
+    Coral reef bottom, very shallow at low tide, access via the
+    cave entrance from the cliffs. Closed at low tide; mid-to-high
+    is the operational window. International crowd density is the
+    highest of any Bali break — collision risk is the dominant
+    practical hazard, not the wave's energy.
+
+display_name:
+  en: Surfing — Uluwatu
+  it: Surf — Uluwatu
+  es: Surf — Uluwatu
+  fr: Surf — Uluwatu
+  de: Surfen — Uluwatu
+
+description:
+  en: |
+    The Indian Ocean's most iconic reef break. Uluwatu has hosted
+    the Rip Curl Cup big-wave invitational and various international
+    contests since the 1970s. Best on SE trade + 1.5-3 m S swell.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfline Uluwatu venue specification"
+    - "Rip Curl Cup Padang big-wave invitational dossier (often relocates to Ulus)"
+    - "Indonesian Surfing Federation Bukit peninsula spot inventory"
+  notes: |
+    Sub-spot of surfing-spot-bali cluster. Tier 3: coral reef bottom,
+    shallow at low tide, cave access, peak-season crowd density.
+    The flagship Indian-Ocean left.

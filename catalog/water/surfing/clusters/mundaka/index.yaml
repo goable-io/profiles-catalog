@@ -1,0 +1,146 @@
+slug: surfing-spot-mundaka
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-atlantic
+region: bay-of-biscay
+country_code: ES
+sub_spots:
+  - surfing-spot-mundaka-left
+  - surfing-spot-mundaka-bakio
+display_name:
+  en: Surfing — Mundaka (Basque Country)
+  it: Surf — Mundaka (Paesi Baschi)
+  es: Surf — Mundaka (País Vasco)
+  fr: Surf — Mundaka (Pays Basque)
+  de: Surfen — Mundaka (Baskenland)
+description:
+  en: |
+    Mundaka (Bizkaia, Basque Country) was Europe's first World Surfing
+    Reserve and hosts one of the most celebrated waves in the world:
+    a left-hand river-mouth sandbar that produces 300+ m rideable
+    barrels on the right Cantabrian swell. The cluster also includes
+    Bakio (20 km west, beach break) as the intermediate option when
+    Mundaka is closed-out or too fickle. Cantabrian Bay-of-Biscay
+    Atlantic regime: long-period N/NW groundswell September-April,
+    cold water (12-18°C), full wetsuit year-round.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.30 }
+      - { x: 0.7, s: 0.65 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.8, s: 1.00 }
+      - { x: 2.5, s: 0.90 }
+      - { x: 3.5, s: 0.55 }
+      - { x: 5.0, s: 0.15 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.45 }
+      - { x: 12, s: 0.90 }
+      - { x: 14, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 0.70 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.75 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.08
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 0.75 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 8,  s: 0.0 }
+      - { x: 12, s: 0.35 }
+      - { x: 16, s: 0.8 }
+      - { x: 20, s: 1.0 }
+      - { x: 22, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 7
+    reason_code: EXTREME_RIVERMOUTH
+    description: Mundaka closes out above 6 m; sustained 7+ m sets push the venue past safe paddle operations.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_WIND
+    description: Strong onshore wind destroys the wave's left-tube shape.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Mundaka WSR governance is managed by the Mundaka Surf Club +
+    Save the Waves under Bizkaia provincial oversight. The river-mouth
+    sandbar is a Natura 2000 estuarine habitat — dredging is
+    prohibited because it would change the wave's geometry, and the
+    surf community is the primary protective constituency for the
+    sandbar.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Save the Waves / WSR Mundaka management plan (first WSR designated globally)"
+    - "Federación Vasca de Surf (FVS) Mundaka spot documentation"
+    - "González-Pérez et al. 2014, Mundaka rivermouth sediment dynamics"
+  notes: |
+    Cluster aggregates the iconic Mundaka left + Bakio (20 km W) as
+    the intermediate alternative. Region tag: bay-of-biscay
+    (Cantabrian sub-basin, distinct climatology from broader NE
+    Atlantic). Long-period swell weighted higher (0.25) than the
+    Atlantic parent (0.20) because Mundaka's wave only works on
+    long-period N/NW swell.

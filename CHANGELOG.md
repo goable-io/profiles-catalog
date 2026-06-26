@@ -18,7 +18,56 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.3.0
+## [Unreleased] — lands as 2.3.1
+
+### Added — surfing sub-spots bootstrap (12 clusters, 33 sub-spots)
+
+Catalog grows from 3 surfing sub-spots (Nazaré only) to **36 sub-spots
+across 13 clusters worldwide**, in commercially priority order
+matching PR roadmap step 2.
+
+**12 new clusters** (region tag in parentheses):
+
+| Cluster | Country | Sub-spots × tiers | Region |
+|---|---|---|---|
+| `surfing-spot-ericeira` | PT | coxos(T3), ribeira-dilhas(T2), pedra-branca(T3) | atlantic |
+| `surfing-spot-peniche` | PT | supertubos(T3), praia-do-norte(T2) | atlantic |
+| `surfing-spot-mundaka` | ES | left(T3), bakio(T2) | bay-of-biscay |
+| `surfing-spot-hossegor` | FR | la-graviere(T3), la-nord(T2), la-sud(T2) | bay-of-biscay |
+| `surfing-spot-taghazout` | MA | anchor-point(T2), killers(T3), hash-point(T2) | atlantic |
+| `surfing-spot-imsouane` | MA | the-bay(T1), cathedral(T2) | atlantic |
+| `surfing-spot-bali` | ID | uluwatu(T3), padang-padang(T3), canggu(T2) | indian |
+| `surfing-spot-gold-coast` | AU | snapper-rocks(T2), kirra(T2), burleigh-heads(T2) | pacific |
+| `surfing-spot-bells-victoria` | AU | bells-beach(T3), winkipop(T3) | pacific |
+| `surfing-spot-oahu-north-shore` | US | pipeline(T3), sunset(T3), waimea(T3), off-the-wall(T3) | pacific |
+| `surfing-spot-trestles` | US | lower-trestles(T2), upper-trestles(T2), cottons(T2) | pacific |
+| `surfing-spot-norcal` | US | mavericks(T3), steamer-lane(T3), pleasure-point(T2) | pacific |
+
+= 12 new clusters + 33 new sub-spots. 11 distinct countries added/
+reinforced; 3 new to the surfing dataset (ID, AU, US).
+
+### Added — `surfing-pacific` + `surfing-indian` region variants
+
+Two new region YAMLs to host the Pacific (Hawaii / Australia /
+California) and Indian Ocean (Bali) clusters with consistent
+base → region → cluster → sub-spot inheritance. Curves tuned for
+basin-specific norms (Pacific 2.0m sweet spot + 10m gate; Indian
+1.2m sweet spot + 7m reef gate + warmer water curve).
+
+### Stats impact (live via `getCatalogStats()`)
+
+- Total sub-spots: 58 → 91 (+33)
+- Total clusters: 20 → 32 (+12)
+- Total countries: 13 → 15 (+AU, +ID)
+- Surfing activity status: empty → seeded (36 sub-spots, 9 countries:
+  PT, ES, FR, MA, ID, AU, US, ...)
+
+### Versioning
+- package.json 2.3.0 → 2.3.1 (data-only patch, schema unchanged).
+- `dist/catalog.json` schemaVersion stays at 2.3.0 — no schema fields
+  added or modified.
+
+## [2.3.0] — published 2026-06-26
 
 ### Added — live coverage stats via `/stats` subpath export
 

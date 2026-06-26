@@ -1,0 +1,49 @@
+slug: surfing-spot-gold-coast-snapper-rocks
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-gold-coast
+parent_cluster: surfing-spot-gold-coast
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -28.1631, lng: 153.5500 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The northern entry to the Superbank — a sand-and-rock point at
+    the Queensland / NSW border. Sand bottom (engineered daily by
+    the Tweed Sand Bypass), reef-rock on the inside, side-shore
+    SE trade. The take-off is the most-watched 50 m of water in
+    surfing — lineup density at the WSL event regularly exceeds
+    100 surfers competing for the same wave. Errors here typically
+    cost gear (board hits another surfer) rather than personal injury,
+    but in-water collision is the dominant practical hazard.
+
+display_name:
+  en: Surfing — Snapper Rocks
+  it: Surf — Snapper Rocks
+  es: Surf — Snapper Rocks
+  fr: Surf — Snapper Rocks
+  de: Surfen — Snapper Rocks
+
+description:
+  en: |
+    Gold Coast's flagship point break. Hosts the WSL Quiksilver Pro
+    season opener annually. The wave-of-the-day from Snapper can
+    connect through Greenmount + Rainbow Bay + Kirra for 1.5 km
+    of rideable wall.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Snapper Rocks venue specification"
+    - "Surfing Queensland Snapper Rocks competition documentation"
+  notes: |
+    Sub-spot of surfing-spot-gold-coast cluster. Tier 2: engineered
+    sandbar, school + competition density, side-shore wind. Crowd-
+    collision is the dominant practical hazard.

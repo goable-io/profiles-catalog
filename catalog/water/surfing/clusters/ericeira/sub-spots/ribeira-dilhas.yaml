@@ -1,0 +1,49 @@
+slug: surfing-spot-ericeira-ribeira-dilhas
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-ericeira
+parent_cluster: surfing-spot-ericeira
+region: atlantic
+country_code: PT
+
+coordinates:
+  center: { lat: 38.9831, lng: -9.4194 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Right-hand point break with a sand-and-rock bottom and a long
+    rippable wall. The competition venue of the Ericeira Pro
+    (WQS / former CT) since 1985. More forgiving than Coxos: paddle
+    channel on the inside, sand sections at low tide, and a wider
+    take-off zone. Wave height 1.2–3 m typical; works on NW swell
+    similar to Coxos. Crowded at all swell sizes — the most-surfed
+    spot in the cluster.
+
+display_name:
+  en: Surfing — Ribeira d'Ilhas (Ericeira)
+  it: Surf — Ribeira d'Ilhas (Ericeira)
+  es: Surf — Ribeira d'Ilhas (Ericeira)
+  fr: Surf — Ribeira d'Ilhas (Ericeira)
+  de: Surfen — Ribeira d'Ilhas (Ericeira)
+
+description:
+  en: |
+    The "main" Ericeira wave — accessible, photogenic, host to
+    decades of WQS events. Best for intermediate-and-up surfers
+    with full Atlantic kit. Less hostile lineup than Coxos because
+    the wide take-off spreads the crowd.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Ericeira Pro venue specification 2018-2023"
+    - "Save the Waves WSR Ericeira public dossier"
+    - "FPS Ericeira competition site documentation"
+  notes: |
+    Sub-spot of surfing-spot-ericeira cluster. Tier 2: paddle channel,
+    sand sections, organised crowd. The intermediate / WQS lineup
+    of the cluster.

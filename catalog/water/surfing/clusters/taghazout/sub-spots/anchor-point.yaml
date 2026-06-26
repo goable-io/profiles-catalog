@@ -1,0 +1,47 @@
+slug: surfing-spot-taghazout-anchor-point
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-taghazout
+parent_cluster: surfing-spot-taghazout
+region: atlantic
+country_code: MA
+
+coordinates:
+  center: { lat: 30.5408, lng: -9.7250 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The classic long-walling right-hand point break of the cluster.
+    Rocky / boulder bottom that becomes shallow at low tide — most
+    sessions ride mid-to-high tide. 200-400 m rideable walls in good
+    conditions. Channel paddle on the inside makes lineup access
+    relatively forgiving. Local lineup priority enforced but lower
+    intensity than Mundaka or Coxos.
+
+display_name:
+  en: Surfing — Anchor Point (Taghazout)
+  it: Surf — Anchor Point (Taghazout)
+  es: Surf — Anchor Point (Taghazout)
+  fr: Surf — Anchor Point (Taghazout)
+  de: Surfen — Anchor Point (Taghazout)
+
+description:
+  en: |
+    The most-photographed wave in Morocco. Anchor Point activates
+    with NW swell + E offshore, works on a wide swell window
+    (October-April). One of the longest rideable point-break walls
+    in the African Atlantic.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FRMS Anchor Point spot dossier"
+    - "Stormrider Guide Africa Anchor Point entry"
+  notes: |
+    Sub-spot of surfing-spot-taghazout cluster. Tier 2: rocky/boulder
+    bottom (consequence-elevated vs sand) but channel paddle + community
+    lineup. The cluster's signature wave.

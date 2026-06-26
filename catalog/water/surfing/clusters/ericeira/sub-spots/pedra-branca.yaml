@@ -1,0 +1,48 @@
+slug: surfing-spot-ericeira-pedra-branca
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-ericeira
+parent_cluster: surfing-spot-ericeira
+region: atlantic
+country_code: PT
+
+coordinates:
+  center: { lat: 38.9978, lng: -9.4136 }
+  radius_m: 350
+
+tier: 3
+tier_rationale:
+  en: |
+    Outer reef break north of Ribeira d'Ilhas. Big-wave-of-the-day
+    spot for the local community when swell exceeds 2.5 m and
+    closes out the inner reefs. Reef bottom with a deep channel
+    on the outside but a shallow inside-section drop — the wave
+    breaks twice. Used by experienced big-wave Ericeira surfers
+    only; no school presence, no paddle assistance, exposure to
+    open Atlantic swell.
+
+display_name:
+  en: Surfing — Pedra Branca (Ericeira)
+  it: Surf — Pedra Branca (Ericeira)
+  es: Surf — Pedra Branca (Ericeira)
+  fr: Surf — Pedra Branca (Ericeira)
+  de: Surfen — Pedra Branca (Ericeira)
+
+description:
+  en: |
+    The big-day option in the Ericeira cluster. Pedra Branca breaks
+    over an outer reef shelf that only activates with adequate
+    period (12+s) and direction (NW-N). Tow-in occasionally on the
+    biggest days though the community typically paddles.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Stormrider Guide Europe (Low Pressure, 2017) Pedra Branca entry"
+    - "Save the Waves WSR Ericeira spot inventory"
+  notes: |
+    Sub-spot of surfing-spot-ericeira cluster. Tier 3: outer reef,
+    inside-section close-out hazard, no rescue infrastructure. Domain-
+    expert review recommended for tier boundary verification.

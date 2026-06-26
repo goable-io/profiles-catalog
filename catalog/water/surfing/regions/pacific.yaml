@@ -1,0 +1,149 @@
+slug: surfing-pacific
+spot_kind: region
+version: "1.0.0"
+category: water
+extends: surfing
+region: pacific
+display_name:
+  en: Surfing — Pacific
+  it: Surf — Pacifico
+  es: Surf — Pacífico
+  fr: Surf — Pacifique
+  de: Surfen — Pazifik
+description:
+  en: |
+    Pacific-basin surfing is the global benchmark — Hawaii's North Shore is
+    the modern home of high-performance surfing and the WSL Championship
+    Tour winter finale; the Australian east coast (Gold Coast, Bells)
+    delivers the southern-hemisphere CT stops; California's reef and point
+    breaks (Trestles, Mavericks, NorCal) round out the seasonal calendar.
+    Long-period North Pacific groundswell (12-22s typical, 8-14 m possible
+    at Waimea / Mavericks) sets the volume reference; trade-wind off-shore
+    delivery is the consistency reference. Water 18-28°C across the
+    productive latitudes — no wetsuit needed in summer at most spots
+    except NorCal (cold California Current upwelling).
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.30 }
+      - { x: 0.7, s: 0.70 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 2.0, s: 1.00 }
+      - { x: 3.5, s: 0.95 }
+      - { x: 5.0, s: 0.70 }
+      - { x: 7.0, s: 0.30 }
+      - { x: 10.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.40 }
+      - { x: 12, s: 0.80 }
+      - { x: 15, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.80 }
+      - { x: 18, s: 0.45 }
+      - { x: 25, s: 0.15 }
+      - { x: 35, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 8,  s: 0.4 }
+      - { x: 16, s: 0.85 }
+      - { x: 23, s: 1.00 }
+      - { x: 32, s: 0.95 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.08
+    curve:
+      - { x: 10, s: 0.2 }
+      - { x: 14, s: 0.5 }
+      - { x: 18, s: 0.85 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 10
+    reason_code: EXTREME_PACIFIC_SURF
+    description: Wave height above 10m is unsafe for recreational surfing; Pacific big-wave spots (Waimea, Mavericks, Jaws) operate via tow-in only.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND
+    description: Strong wind above 35 knots — typically squall or front passage — destroys wave shape and creates dangerous conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe; Pacific squalls can drop it sharply.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 38
+  carrying_capacity_sensitivity: high
+  notes: |
+    Pacific surf venues include some of the most heavily-trafficked breaks
+    on Earth (Pipeline, Snapper Rocks, Lower Trestles). Local crowd-pressure
+    management is by community etiquette rather than formal zoning, with
+    notable exceptions: Pipeline's lifeguard-enforced winter rotation,
+    Bells Beach reserve protected status, Trestles state-park access
+    cap. International-flight transport drives the bulk of per-trip
+    footprint for most Pacific destinations.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Championship Tour Pacific-leg venue dossier (Hawaii / Australia / California)"
+    - "NOAA North Pacific swell climatology"
+    - "Caldwell & Aucan 2007, Hawaiian swell forecasting"
+    - "Australian Bureau of Meteorology east-coast surf forecast methodology"
+  notes: |
+    Regional overrides vs global surfing: wave_height optimal shifted to 2.0m
+    (vs 1.2m global, reflecting Pacific groundswell norms); wave_period weight
+    raised from 0.15 to 0.22 (long-period North Pacific swell is the
+    defining quality factor); upper wave gate raised to 10m (advanced
+    pacific big-wave reef breaks routinely surfed at 5-8 m by elite
+    paddle-in community); water temp sweet-spot warmer (22°C) reflecting
+    Hawaii / Australian / SoCal latitudes. NorCal sub-spots will fall
+    below this comfort band — their cluster YAML overrides locally.

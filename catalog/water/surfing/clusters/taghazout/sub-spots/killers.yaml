@@ -1,0 +1,47 @@
+slug: surfing-spot-taghazout-killers
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-taghazout
+parent_cluster: surfing-spot-taghazout
+region: atlantic
+country_code: MA
+
+coordinates:
+  center: { lat: 30.5478, lng: -9.7250 }
+  radius_m: 350
+
+tier: 3
+tier_rationale:
+  en: |
+    Reef point ~700 m north of Anchor Point, named "Killer Point" for
+    the resident orca-sized sea creatures (now rare — the name is
+    historical). Heavier and faster than Anchor — handles bigger swell
+    and produces hollow second-section barrels over a shallow reef.
+    Required mid-tide window narrower than Anchor. Strong rip on the
+    inside used by experienced surfers as paddle channel.
+
+display_name:
+  en: Surfing — Killers (Taghazout)
+  it: Surf — Killers (Taghazout)
+  es: Surf — Killers (Taghazout)
+  fr: Surf — Killers (Taghazout)
+  de: Surfen — Killers (Taghazout)
+
+description:
+  en: |
+    The big-day spot in the cluster. Killers takes the swell when
+    Anchor Point is overhead and produces clean tubes on the
+    inside-section reef. Used by visiting pros during the WQS Taghazout
+    Pro and by the local advanced community.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FRMS Killers spot dossier"
+    - "Stormrider Guide Africa Killers entry"
+  notes: |
+    Sub-spot of surfing-spot-taghazout cluster. Tier 3: shallow reef,
+    fast inside section, narrower mid-tide window than Anchor. The
+    advanced end of the cluster.

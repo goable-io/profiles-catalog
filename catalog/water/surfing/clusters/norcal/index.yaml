@@ -1,0 +1,161 @@
+slug: surfing-spot-norcal
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-pacific
+region: pacific
+country_code: US
+sub_spots:
+  - surfing-spot-norcal-mavericks
+  - surfing-spot-norcal-steamer-lane
+  - surfing-spot-norcal-pleasure-point
+display_name:
+  en: Surfing — Northern California
+  it: Surf — California del Nord
+  es: Surf — California del Norte
+  fr: Surf — Californie du Nord
+  de: Surfen — Nordkalifornien
+description:
+  en: |
+    Northern California (Half Moon Bay to Santa Cruz) is the
+    cold-water reef-break belt of the US Pacific — Mavericks (the
+    paddle big-wave reference), Steamer Lane (the WSL QS venue),
+    Pleasure Point (the local longboard hub). Cold California
+    Current upwelling keeps water 9-15°C year-round; 5/4 mm with
+    hood and boots is the year-round wetsuit. North-Pacific
+    November-March swell window delivers the heaviest paddles;
+    the cluster activates on storm-Pacific groundswell that often
+    closes-out the SoCal coast.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.30 }
+      - { x: 0.7, s: 0.65 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 2.0, s: 1.00 }
+      - { x: 3.5, s: 0.90 }
+      - { x: 5.0, s: 0.70 }
+      - { x: 7.0, s: 0.40 }
+      - { x: 10.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.40 }
+      - { x: 12, s: 0.85 }
+      - { x: 15, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.75 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.06
+    curve:
+      - { x: 0,  s: 0.3 }
+      - { x: 10, s: 0.7 }
+      - { x: 18, s: 1.0 }
+      - { x: 26, s: 0.9 }
+      - { x: 32, s: 0.5 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.08
+    curve:
+      - { x: 7,  s: 0.1 }
+      - { x: 11, s: 0.5 }
+      - { x: 14, s: 0.85 }
+      - { x: 17, s: 1.0 }
+      - { x: 20, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.65 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 10
+    reason_code: MAVERICKS_PADDLE_LIMIT
+    description: Above 10m the cluster shifts to tow-in only at Mavericks; Steamer Lane and Pleasure Point close out.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_WIND
+    description: Onshore wind above 30 knots destroys wave shape.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: COASTAL_FOG
+    description: Visibility below 1 km — common in NorCal summer marine layer — is unsafe.
+
+  - metric: water_temperature_c
+    condition: lt
+    value: 6
+    reason_code: COLD_WATER_HYPOTHERMIA
+    description: Water below 6°C (rare but possible during cold-front upwelling spikes) requires hooded 6/5 mm beyond standard NorCal stock.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Mavericks Beach Park (Pillar Point) is San Mateo County managed
+    with strict winter parking caps when the surf is on. Steamer
+    Lane is West Cliff Drive (Santa Cruz) with public lighthouse
+    parking. The Mavericks Surf Foundation has formalised the local
+    paddle-in big-wave community since 1999.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mavericks Surf Foundation operational documentation"
+    - "Surfing Santa Cruz spot inventory (Steamer Lane + Pleasure Point)"
+    - "NOAA NWS San Francisco / Monterey marine forecast methodology"
+  notes: |
+    Cluster aggregates Mavericks (Half Moon Bay, paddle big-wave),
+    Steamer Lane (Santa Cruz, WSL QS), Pleasure Point (Santa Cruz,
+    local longboard hub). The three are 50-100 km apart but share
+    the cold-Pacific upwelling regime + North-Pacific winter swell
+    window. Water-temp curve and gates are cluster-overridden to
+    reflect the colder NorCal water vs the surfing-pacific parent.

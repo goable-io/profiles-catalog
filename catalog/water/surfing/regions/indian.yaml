@@ -1,0 +1,153 @@
+slug: surfing-indian
+spot_kind: region
+version: "1.0.0"
+category: water
+extends: surfing
+region: indian
+display_name:
+  en: Surfing — Indian Ocean
+  it: Surf — Oceano Indiano
+  es: Surf — Océano Índico
+  fr: Surf — Océan Indien
+  de: Surfen — Indischer Ozean
+description:
+  en: |
+    Indian-Ocean surfing is dominated by Southern Ocean groundswell
+    travelling north into the trade-wind belt, producing the world's most
+    consistent reef-break setups: Bali (Bukit peninsula and west coast),
+    Mentawai Islands (chartered boat-based surf), Maldives (atoll passes),
+    Sri Lanka (Arugam Bay). The defining season is the SE trade window
+    April-October (Australian and Indian Ocean winter) when reef breaks
+    work daily for 6 months straight. Warm tropical water (26-29°C) — no
+    wetsuit required. Reef-bottom hazards and tropical-disease exposure
+    (staph infections from coral cuts in wet season) are the dominant
+    physical risks.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.38
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.35 }
+      - { x: 0.7, s: 0.80 }
+      - { x: 1.2, s: 1.00 }
+      - { x: 2.0, s: 0.95 }
+      - { x: 3.5, s: 0.65 }
+      - { x: 5.0, s: 0.25 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.40 }
+      - { x: 12, s: 0.80 }
+      - { x: 16, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 4,  s: 1.00 }
+      - { x: 10, s: 0.85 }
+      - { x: 16, s: 0.45 }
+      - { x: 22, s: 0.15 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.07
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.08
+    curve:
+      - { x: 18, s: 0.7 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.95 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 22, s: 0.6 }
+      - { x: 25, s: 0.95 }
+      - { x: 27, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 7
+    reason_code: EXTREME_REEF_SURF
+    description: Wave height above 7m on Indian-Ocean reef breaks creates closeout sections and severe hold-down risk over shallow coral; Bali big-day spots gate operations here.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: SW_MONSOON_ONSHORE
+    description: SW monsoon onshore wind above 30 knots — typical wet-season afternoons — destroys wave shape on most Bali / Mentawai reef breaks.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe; tropical squalls drive most low-vis events.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    Indian-Ocean surf destinations are highly crowd-sensitive: iconic
+    Bali reef breaks (Uluwatu, Padang) routinely see 100+ surfers
+    simultaneously in peak season, leading to in-water collision
+    documented as a fatality factor. Reef ecosystems are stressed by
+    surfer density, sunscreen chemistry, and adjacent tourism
+    infrastructure. Long-haul flight is the dominant per-trip carbon
+    footprint for most international visitors.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surf Resource Sustainability Index (SRSI) Indian Ocean regional analysis"
+    - "Surfline Indonesia + Maldives swell-forecast methodology"
+    - "Mentawai Islands tourism + community management plans (Padang district)"
+    - "Australian Bureau of Meteorology Indian Ocean swell propagation models"
+  notes: |
+    Regional overrides vs global surfing: wave_height optimal shifted to 1.2m
+    (vs 1.2m global — coincidence; reef breaks like clean 1-2 m more than
+    big), wave_period weight raised to 0.25 (Southern-Ocean long-period
+    groundswell is the defining quality factor); wind weight slightly
+    raised to 0.12 (clean SE trade is the season's deliverable, dirty
+    SW monsoon is the season's killer); water temp sweet-spot 27°C; upper
+    wave gate at 7m (reef-bottom severity).

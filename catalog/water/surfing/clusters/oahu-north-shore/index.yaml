@@ -1,0 +1,156 @@
+slug: surfing-spot-oahu-north-shore
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-pacific
+region: pacific
+country_code: US
+sub_spots:
+  - surfing-spot-oahu-north-shore-pipeline
+  - surfing-spot-oahu-north-shore-sunset
+  - surfing-spot-oahu-north-shore-waimea
+  - surfing-spot-oahu-north-shore-off-the-wall
+display_name:
+  en: Surfing — Oahu North Shore
+  it: Surf — Oahu North Shore
+  es: Surf — Oahu North Shore
+  fr: Surf — Côte Nord d'Oahu
+  de: Surfen — Oahu Nordküste
+description:
+  en: |
+    The 11 km Oahu North Shore is the modern home of high-performance
+    surfing — the WSL Championship Tour winter finale (Pipe Pro, Vans
+    Triple Crown) and the global stage for tube riding, big-wave
+    paddle, and the world's strongest competitive lineup. Pipeline +
+    Off-the-Wall (the heaviest tubes in surfing), Sunset Beach (the
+    classic outer reef big-wave point), Waimea Bay (the original
+    big-wave paddle venue, ~6-10 m operational range). North-Pacific
+    November-February swell window delivers 2-8 m sets daily for
+    months. Warm water 24-26°C — trunks for everything except sub-3 m
+    days in February.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.20 }
+      - { x: 0.7, s: 0.55 }
+      - { x: 1.2, s: 0.85 }
+      - { x: 2.0, s: 1.00 }
+      - { x: 3.5, s: 1.00 }
+      - { x: 5.0, s: 0.80 }
+      - { x: 7.0, s: 0.40 }
+      - { x: 10.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.35 }
+      - { x: 12, s: 0.80 }
+      - { x: 15, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.80 }
+      - { x: 18, s: 0.45 }
+      - { x: 25, s: 0.15 }
+      - { x: 35, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.08
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 15, s: 0.7 }
+      - { x: 22, s: 1.0 }
+      - { x: 28, s: 1.0 }
+      - { x: 34, s: 0.85 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.07
+    curve:
+      - { x: 20, s: 0.75 }
+      - { x: 24, s: 1.0 }
+      - { x: 28, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.65 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 10
+    reason_code: WAIMEA_LIMIT
+    description: Above 10m the cluster shifts to tow-in only; Waimea closes out, Pipeline becomes Outer Reefs.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_TRADE_OUTFLOW
+    description: Trade-wind blowout above 35 knots destroys wave shape across the cluster.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km — squall-driven — is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    North Shore winter season operates under formal Hawaii Water
+    Safety + lifeguard coverage that is the global benchmark for
+    big-wave-spot risk management. Pipeline lineup is locally
+    self-governed by the Wolfpak and the elder lineup hierarchy.
+    Visitor crowd management at Sunset + Waimea is via county-
+    enforced parking and access cap.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Pipe Pro / Pipeline Masters venue dossier"
+    - "Hawaii Water Safety lifeguard operational standards"
+    - "Eddie Aikau Big Wave Invitational venue specification (Waimea Bay)"
+    - "NOAA Hawaiian Islands north-shore swell forecast methodology"
+  notes: |
+    Cluster aggregates the 4 most iconic North Shore breaks within
+    4 km of each other. Region tag: pacific. Sweet-spot wave height
+    pulled higher (2-3.5m) than surfing-pacific parent (2m) reflecting
+    North Shore's bigger operational baseline. Upper gate raised to 10m
+    (paddle ceiling at Waimea / Outer Reefs).

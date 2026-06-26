@@ -1,0 +1,47 @@
+slug: surfing-spot-mundaka-bakio
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-mundaka
+parent_cluster: surfing-spot-mundaka
+region: bay-of-biscay
+country_code: ES
+
+coordinates:
+  center: { lat: 43.4344, lng: -2.8056 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Long sand beach 20 km west of Mundaka, the standard intermediate
+    alternative when Mundaka is closed-out, too small, or too
+    crowded. Beach-break peaks shift with the sandbar of the season.
+    Sand bottom, paddle channels at high tide, several active surf
+    schools using the bay. Cantabrian cold water — full 4/3 mm
+    year-round.
+
+display_name:
+  en: Surfing — Bakio
+  it: Surf — Bakio
+  es: Surf — Bakio
+  fr: Surf — Bakio
+  de: Surfen — Bakio
+
+description:
+  en: |
+    The intermediate alternative within the Mundaka cluster.
+    Bakio beach-break is the Basque coast's most reliable
+    "always-something" venue. Best for self-organising
+    intermediate trips and schools.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FVS Bakio spot classification"
+    - "Bakio surf school cooperative documentation"
+  notes: |
+    Sub-spot of surfing-spot-mundaka cluster. Tier 2: sand bottom,
+    school presence, paddle channels. The fallback / learning side
+    of the cluster.

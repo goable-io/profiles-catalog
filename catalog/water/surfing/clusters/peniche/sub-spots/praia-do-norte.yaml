@@ -1,0 +1,47 @@
+slug: surfing-spot-peniche-praia-do-norte
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-peniche
+parent_cluster: surfing-spot-peniche
+region: atlantic
+country_code: PT
+
+coordinates:
+  center: { lat: 39.3700, lng: -9.3739 }
+  radius_m: 600
+
+tier: 2
+tier_rationale:
+  en: |
+    North-face Peniche beach (the local "Praia do Norte" — not to be
+    confused with the famous big-wave beach at Nazaré, ~60 km north).
+    Sand bottom, softer wave than Supertubos, works on smaller W-NW
+    swell when Supertubos is too small. Cleaner mid-morning
+    offshore from the peninsula. Lifeguarded in summer. The intermediate
+    learning side of the cluster — most local surf schools operate here.
+
+display_name:
+  en: Surfing — Praia do Norte (Peniche)
+  it: Surf — Praia do Norte (Peniche)
+  es: Surf — Praia do Norte (Peniche)
+  fr: Surf — Praia do Norte (Peniche)
+  de: Surfen — Praia do Norte (Peniche)
+
+description:
+  en: |
+    The intermediate face of the Peniche peninsula. Faces north so it
+    catches swell when Supertubos is flat, and is shaded from S/SW
+    fronts in the summer. Best for intermediate surfers and surf-
+    school sessions.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FPS Peniche North spot classification"
+    - "Município de Peniche bathing season lifeguard map"
+  notes: |
+    Sub-spot of surfing-spot-peniche cluster. Tier 2: sand bottom,
+    softer wave, lifeguard presence in summer. The learning side of
+    the cluster.

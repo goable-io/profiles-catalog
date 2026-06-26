@@ -1,0 +1,49 @@
+slug: surfing-spot-norcal-steamer-lane
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-norcal
+parent_cluster: surfing-spot-norcal
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 36.9542, lng: -122.0269 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Right-hand reef-and-point break at the West Cliff Drive
+    lighthouse in Santa Cruz. Cobblestone reef bottom, urban
+    coastline, the bay's most-watched wave — the lighthouse cliff
+    is a 200 m vantage with hundreds of spectators on big days.
+    Wave height 1.2-3 m typical, 4-5 m possible on storm-Pacific
+    swell. Strong cold-water current, full hood-and-boots 4/3 mm
+    year-round. Multiple reef sub-peaks (Middle Peak, The Slot, the
+    Point) each with their own lineup priority.
+
+display_name:
+  en: Surfing — Steamer Lane
+  it: Surf — Steamer Lane
+  es: Surf — Steamer Lane
+  fr: Surf — Steamer Lane
+  de: Surfen — Steamer Lane
+
+description:
+  en: |
+    Santa Cruz's iconic urban-cliff wave. Hosts the O'Neill Cold
+    Water Classic WSL QS / Coldwater Surf Series. Cobble-reef
+    high-performance lineup.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL O'Neill Cold Water Classic venue dossier"
+    - "Surfing Santa Cruz Steamer Lane spot inventory"
+    - "Surfline Steamer Lane spot specification"
+  notes: |
+    Sub-spot of surfing-spot-norcal cluster. Tier 3: cold water,
+    cobble reef, urban-cliff exposure, hostile competitive lineup.
+    The QS-event reference of NorCal.

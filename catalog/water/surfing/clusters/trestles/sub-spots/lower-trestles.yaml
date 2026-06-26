@@ -1,0 +1,47 @@
+slug: surfing-spot-trestles-lower-trestles
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-trestles
+parent_cluster: surfing-spot-trestles
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 33.3825, lng: -117.5908 }
+  radius_m: 350
+
+tier: 2
+tier_rationale:
+  en: |
+    The WSL CT Finals venue. Cobblestone reef bottom, A-frame peak
+    with rideable both ways but better right. Mid-tide is the
+    operational window. Crowd density at CT Finals week is the
+    highest of any California break. Outside of event weeks, the
+    1 km trail walk-in keeps casual surfers manageable. Cobblestone
+    bottom is forgiving compared to lava or coral reef.
+
+display_name:
+  en: Surfing — Lower Trestles
+  it: Surf — Lower Trestles
+  es: Surf — Lower Trestles
+  fr: Surf — Lower Trestles
+  de: Surfen — Lower Trestles
+
+description:
+  en: |
+    The California high-performance reference. Lower Trestles hosts
+    the WSL CT season finale — the venue where the world champion
+    is crowned. Best on summer S/SW swell with light W offshore.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Rip Curl WSL Finals venue specification"
+    - "Surfline Lower Trestles spot dossier"
+    - "California State Parks Lower Trestles use plan"
+  notes: |
+    Sub-spot of surfing-spot-trestles cluster. Tier 2: cobblestone
+    reef bottom, intermediate consequence, organised lineup. The
+    high-performance reference.

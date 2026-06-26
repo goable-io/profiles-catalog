@@ -1,0 +1,148 @@
+slug: surfing-spot-imsouane
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-atlantic
+region: atlantic
+country_code: MA
+sub_spots:
+  - surfing-spot-imsouane-the-bay
+  - surfing-spot-imsouane-cathedral
+display_name:
+  en: Surfing — Imsouane
+  it: Surf — Imsouane
+  es: Surf — Imsouane
+  fr: Surf — Imsouane
+  de: Surfen — Imsouane
+description:
+  en: |
+    Imsouane (Atlantic Morocco, 75 km N of Taghazout) is known for "The
+    Bay" — one of the longest right-hand point waves in Africa,
+    producing 600+ m rideable walls on the right swell. Cathedral, the
+    cluster's outer reef, is the big-day option. Slower season than
+    Taghazout (mid-October to March) but with characteristically
+    cleaner, longer waves on smaller swell. Mountains shelter the bay
+    from offshore wind for most of the surfable morning window.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.38
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.40 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 1.00 }
+      - { x: 1.8, s: 0.95 }
+      - { x: 2.5, s: 0.70 }
+      - { x: 4.0, s: 0.25 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.15 }
+      - { x: 8,  s: 0.55 }
+      - { x: 12, s: 0.95 }
+      - { x: 14, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.75 }
+      - { x: 18, s: 0.35 }
+      - { x: 25, s: 0.10 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.2 }
+      - { x: 12, s: 0.7 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 0.95 }
+      - { x: 38, s: 0.55 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.4 }
+      - { x: 17, s: 0.85 }
+      - { x: 20, s: 1.0 }
+      - { x: 24, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.6 }
+      - { x: 25, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 6
+    reason_code: BAY_CLOSEOUT
+    description: The Bay closes out above 6m; on bigger swells the cluster shifts to Cathedral for the advanced community.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_WIND
+    description: Onshore wind above 30 knots destroys the long-wall shape.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Imsouane is the longboard / mid-length destination of the Moroccan
+    Atlantic. Quieter than Taghazout, with fewer schools and a small
+    fishing-village core. Local crowd-management is community
+    self-regulation rather than formal zoning.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FRMS Imsouane spot classification"
+    - "Stormrider Guide Africa Imsouane entry"
+  notes: |
+    Cluster aggregates The Bay (long classic right point) and
+    Cathedral (outer reef big-day option). Region tag: atlantic.
+    Sweet-spot wave height shifted slightly smaller (1.2m) vs
+    Atlantic parent (1.8m) — the cluster shines on smaller cleaner
+    swell, not on the biggest days (where Taghazout takes over).

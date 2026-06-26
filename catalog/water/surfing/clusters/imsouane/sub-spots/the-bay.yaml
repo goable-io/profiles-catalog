@@ -1,0 +1,49 @@
+slug: surfing-spot-imsouane-the-bay
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-imsouane
+parent_cluster: surfing-spot-imsouane
+region: atlantic
+country_code: MA
+
+coordinates:
+  center: { lat: 30.8408, lng: -9.8331 }
+  radius_m: 600
+
+tier: 1
+tier_rationale:
+  en: |
+    The Bay — Imsouane's signature long-walling right point break. Sand
+    bottom for the full wave length, soft and slow-breaking, with a
+    rideable wall that runs 600-800 m on the right swell. Lifeguarded
+    in the morning, the village's primary tourism asset. Standard
+    learning venue for surf schools across Morocco's Atlantic coast
+    — possibly the most forgiving "epic-wave" spot in the African
+    Atlantic. Failure mode is a long swim back to the take-off, fully
+    recoverable for any reasonably-fit surfer.
+
+display_name:
+  en: Surfing — Imsouane The Bay
+  it: Surf — Imsouane The Bay
+  es: Surf — Imsouane The Bay
+  fr: Surf — Imsouane The Bay
+  de: Surfen — Imsouane The Bay
+
+description:
+  en: |
+    "The longest right in Africa." Imsouane Bay's right-hand point is
+    a longboarder's dream and a perfect intermediate progression
+    venue. Lower swell threshold than Taghazout — works on 0.6m+
+    where Anchor Point needs 1m+ minimum.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FRMS Imsouane Bay spot dossier"
+    - "Stormrider Guide Africa Imsouane Bay entry"
+  notes: |
+    Sub-spot of surfing-spot-imsouane cluster. Tier 1: sand bottom,
+    soft wave, lifeguard presence, school-density. The most beginner-
+    friendly classic surf wave in the catalog.

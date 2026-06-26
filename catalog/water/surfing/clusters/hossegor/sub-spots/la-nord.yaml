@@ -1,0 +1,48 @@
+slug: surfing-spot-hossegor-la-nord
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-hossegor
+parent_cluster: surfing-spot-hossegor
+region: bay-of-biscay
+country_code: FR
+
+coordinates:
+  center: { lat: 43.6856, lng: -1.4500 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Seignosse north end of the Hossegor stretch. Cleaner wave than
+    La Gravière at the same swell because it sits past the immediate
+    canyon focus zone — longer walls, less hollow, more rideable for
+    intermediates. Sand bottom, paddle channels at high tide, multiple
+    surf schools operate here. Crowd density is high in summer (the
+    town's bathing beach) but the surf lineup spreads along 1+ km of
+    beach.
+
+display_name:
+  en: Surfing — La Nord (Seignosse)
+  it: Surf — La Nord (Seignosse)
+  es: Surf — La Nord (Seignosse)
+  fr: Surf — La Nord (Seignosse)
+  de: Surfen — La Nord (Seignosse)
+
+description:
+  en: |
+    The intermediate-friendly Hossegor option. La Nord works the same
+    swell as La Gravière but produces longer, cleaner walls suited to
+    progression rather than barrel-only riding. Most surf-school
+    sessions in the cluster happen here.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFS Seignosse-La Nord spot classification"
+    - "Stormrider Guide Europe La Nord entry"
+  notes: |
+    Sub-spot of surfing-spot-hossegor cluster. Tier 2: sand bottom,
+    cleaner wave, school presence. The intermediate/learning side of
+    the cluster.

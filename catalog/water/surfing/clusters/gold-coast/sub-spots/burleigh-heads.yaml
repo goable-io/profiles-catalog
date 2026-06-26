@@ -1,0 +1,48 @@
+slug: surfing-spot-gold-coast-burleigh-heads
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-gold-coast
+parent_cluster: surfing-spot-gold-coast
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -28.0972, lng: 153.4503 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Burleigh Heads point — a separate point break 12 km north of the
+    Superbank, in front of Burleigh Heads National Park. Rocky reef
+    bottom on the take-off, sand-and-rock through the wall. Less
+    crowded than Snapper / Kirra (locals are protective but not
+    aggressive), and works on a slightly different swell window
+    (E rather than SE).
+
+display_name:
+  en: Surfing — Burleigh Heads
+  it: Surf — Burleigh Heads
+  es: Surf — Burleigh Heads
+  fr: Surf — Burleigh Heads
+  de: Surfen — Burleigh Heads
+
+description:
+  en: |
+    A separate point break from the Superbank, with its own swell
+    window and crowd dynamic. Burleigh is the GC's classic
+    longboard-and-mid-length venue (the wave's medium-to-long-wall
+    geometry favours those styles). Hosts the Burleigh Boardriders
+    Pro stops.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Burleigh Boardriders Club venue documentation"
+    - "Surfing Queensland Burleigh Heads spot classification"
+  notes: |
+    Sub-spot of surfing-spot-gold-coast cluster. Tier 2: rocky reef
+    bottom, lower crowd density than Superbank, separate swell
+    window. The longboard / mid-length side of the cluster.

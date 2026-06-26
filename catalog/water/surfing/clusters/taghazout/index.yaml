@@ -1,0 +1,153 @@
+slug: surfing-spot-taghazout
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-atlantic
+region: atlantic
+country_code: MA
+sub_spots:
+  - surfing-spot-taghazout-anchor-point
+  - surfing-spot-taghazout-killers
+  - surfing-spot-taghazout-hash-point
+display_name:
+  en: Surfing — Taghazout
+  it: Surf — Taghazout
+  es: Surf — Taghazout
+  fr: Surf — Taghazout
+  de: Surfen — Taghazout
+description:
+  en: |
+    Taghazout (Atlantic Morocco, 20 km N of Agadir) is North Africa's
+    flagship surf destination — a 4 km stretch of right-hand point
+    breaks fed by long-period North Atlantic groundswell, surfable
+    October-April. The Atlas mountains shelter the coast from W winds
+    most mornings (E offshore is the standard window). Three flagship
+    points: Anchor Point (the long classic right), Killers (heaviest
+    of the cluster), Hash Point (the village wave, softer). Warmer
+    water than Portuguese / French Atlantic — typically 17-21°C, full
+    3/2 mm winter or summer trunks.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.30 }
+      - { x: 0.7, s: 0.70 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.8, s: 1.00 }
+      - { x: 2.5, s: 0.92 }
+      - { x: 4.0, s: 0.55 }
+      - { x: 6.0, s: 0.15 }
+      - { x: 8.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.50 }
+      - { x: 12, s: 0.95 }
+      - { x: 14, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.80 }
+      - { x: 18, s: 0.40 }
+      - { x: 25, s: 0.10 }
+      - { x: 32, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.2 }
+      - { x: 12, s: 0.7 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 0.95 }
+      - { x: 38, s: 0.55 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.4 }
+      - { x: 17, s: 0.85 }
+      - { x: 20, s: 1.0 }
+      - { x: 24, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.6 }
+      - { x: 25, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 8
+    reason_code: EXTREME_POINT_SURF
+    description: Above 8m, Taghazout's reef points produce closeout sections beyond paddle-in capability.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 32
+    reason_code: ATLAS_RAIN_FRONT
+    description: Strong onshore wind, usually associated with the rare Atlas-mountain front passage, destroys the points' shape.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km — Saharan-dust Calima or Atlantic fog — is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Taghazout has scaled from a fishing village to Morocco's primary
+    surf-tourism cluster in the 2010s-2020s (estimated 150k surf
+    visitors/year). Local kingdom-led "Taghazout Bay" development
+    introduces resort capacity that the surf community is mixed about.
+    Reef-bottom points are sensitive to surfer density on big swells.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Royale Marocaine de Surf (FRMS) Taghazout spot classification"
+    - "Direction de la Météorologie Nationale Morocco swell records"
+    - "Stormrider Guide Africa (Low Pressure, 2014) Taghazout entry"
+  notes: |
+    Cluster aggregates three right-hand reef points within 2 km of
+    Taghazout village. Region tag: atlantic. Sweet-spot air temp
+    shifted warmer (22°C) reflecting Moroccan-coast climate vs N
+    European Atlantic parent.
