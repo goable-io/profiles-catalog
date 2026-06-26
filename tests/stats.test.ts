@@ -5,13 +5,15 @@ import { z } from "zod"
 
 const exec = promisify(execFile)
 
-// Vitest can't import from "@goable-io/profiles-catalog/stats" within the
-// package itself (subpath exports are for downstream consumers). Instead we
-// import the compiled dist module directly, after ensuring it's built.
+// Import from source so that `pnpm typecheck` works even before
+// `pnpm build` has produced dist/. The source-side schema/stats.ts has a
+// robust path-resolution that finds dist/catalog-stats.json from either
+// source or dist context. The bundle script in beforeAll guarantees the
+// JSON exists by the time tests execute.
 import {
   getCatalogStats,
   getActivityCoverage,
-} from "../dist/schema/stats.js"
+} from "../schema/stats.js"
 
 const ClusterCoverageSchema = z.object({
   slug: z.string().min(1),

@@ -7,7 +7,7 @@
 //
 // Subpath: import { getCatalogStats } from "@goable-io/profiles-catalog/stats"
 
-import { readFileSync } from "node:fs"
+import { existsSync, readFileSync } from "node:fs"
 import { dirname, join } from "node:path"
 import { fileURLToPath } from "node:url"
 
@@ -44,16 +44,41 @@ export interface ClusterCoverage {
   subSpotCount: number
 }
 
-// Locate the JSON relative to this compiled module. After `tsc -p tsconfig.build.json`
-// this file ends up at dist/schema/stats.js, so the JSON is one directory up.
+// Lazy-load the stats JSON. Doing the read at module top-level would race
+// with test fixtures that regenerate dist/ in beforeAll — and would prevent
+// consumers from importing the type definitions without dist/ on disk.
+//
+// We check two candidate paths so the module works in both contexts:
+//   - As published / compiled: this file is at dist/schema/stats.js, so
+//     dist/catalog-stats.json is at "../catalog-stats.json".
+//   - When running the source via tsx (tests, scripts): this file is at
+//     schema/stats.ts, so dist/catalog-stats.json is at "../dist/catalog-stats.json".
 const __dirname = dirname(fileURLToPath(import.meta.url))
-const statsPath = join(__dirname, "..", "catalog-stats.json")
-const stats = JSON.parse(readFileSync(statsPath, "utf8")) as CatalogStats
+const candidatePaths = [
+  join(__dirname, "..", "catalog-stats.json"),
+  join(__dirname, "..", "dist", "catalog-stats.json"),
+]
+
+let cached: CatalogStats | null = null
+
+const loadStats = (): CatalogStats => {
+  if (cached) return cached
+  const statsPath = candidatePaths.find((p) => existsSync(p))
+  if (!statsPath) {
+    throw new Error(
+      `[@goable-io/profiles-catalog/stats] catalog-stats.json not found. ` +
+        `Looked in: ${candidatePaths.join(", ")}. ` +
+        `Run \`pnpm bundle\` to generate it.`,
+    )
+  }
+  cached = JSON.parse(readFileSync(statsPath, "utf8")) as CatalogStats
+  return cached
+}
 
 export function getCatalogStats(): CatalogStats {
-  return stats
+  return loadStats()
 }
 
 export function getActivityCoverage(slug: string): ActivityCoverage | null {
-  return stats.byActivity.find((a) => a.slug === slug) ?? null
+  return loadStats().byActivity.find((a) => a.slug === slug) ?? null
 }
