@@ -98,6 +98,22 @@ profile = yaml.safe_load(open("my-profile.yaml"))
 jsonschema.validate(profile, schema)
 ```
 
+### Live coverage stats (v2.3+)
+
+Pre-computed coverage counts shipped with the package — sub-spots per
+activity, country counts, last-updated timestamps. Zero YAML parsing on
+the consumer side.
+
+```ts
+import { getCatalogStats, getActivityCoverage } from "@goable-io/profiles-catalog/stats"
+
+const { totals, byActivity } = getCatalogStats()
+console.log(`${totals.subSpots} sub-spots across ${totals.countries} countries`)
+
+const kite = getActivityCoverage("kitesurfing")
+console.log(`${kite?.subSpotCount} kite sub-spots, status: ${kite?.status}`)
+```
+
 See `schema/profile.schema.ts` for the canonical Zod definition and
 `catalog/<family>/<activity>/index.yaml` for examples.
 

@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-mediterranean
 region: mediterranean
+country_code: IT
 sub_spots:
   - kitesurfing-spot-sardinia-punta-trettu
   - kitesurfing-spot-sardinia-porto-pollo

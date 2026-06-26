@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-tarifa
 parent_cluster: kitesurfing-spot-tarifa
 region: atlantic
+country_code: ES
 
 coordinates:
   center: { lat: 36.0133, lng: -5.6044 }

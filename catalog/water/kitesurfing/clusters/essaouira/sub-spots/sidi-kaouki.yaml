@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-essaouira
 parent_cluster: kitesurfing-spot-essaouira
 region: atlantic
+country_code: MA
 
 coordinates:
   center: { lat: 31.3472, lng: -9.8022 }

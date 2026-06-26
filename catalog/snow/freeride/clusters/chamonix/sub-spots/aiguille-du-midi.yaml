@@ -5,6 +5,7 @@ category: snow
 extends: freeride-spot-chamonix
 parent_cluster: freeride-spot-chamonix
 region: alpine
+country_code: FR
 
 coordinates:
   center: { lat: 45.8786, lng: 6.8869 }

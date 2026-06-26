@@ -5,6 +5,7 @@ category: land
 extends: trekking-spot-dolomites-tre-cime
 parent_cluster: trekking-spot-dolomites-tre-cime
 region: alpine
+country_code: IT
 
 coordinates:
   center: { lat: 46.6175, lng: 12.3050 }

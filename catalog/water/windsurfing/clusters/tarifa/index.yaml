@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: windsurfing-atlantic
 region: atlantic
+country_code: ES
 sub_spots:
   - windsurfing-spot-tarifa-balneario
   - windsurfing-spot-tarifa-los-lances-nord

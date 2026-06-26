@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-cumbuco
 parent_cluster: kitesurfing-spot-cumbuco
 region: atlantic
+country_code: BR
 
 coordinates:
   center: { lat: -3.6444, lng: -38.7892 }

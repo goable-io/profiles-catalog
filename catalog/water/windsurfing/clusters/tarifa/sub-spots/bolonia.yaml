@@ -5,6 +5,7 @@ category: water
 extends: windsurfing-spot-tarifa
 parent_cluster: windsurfing-spot-tarifa
 region: atlantic
+country_code: ES
 
 coordinates:
   center: { lat: 36.0858, lng: -5.7711 }

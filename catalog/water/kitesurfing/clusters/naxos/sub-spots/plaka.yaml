@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-naxos
 parent_cluster: kitesurfing-spot-naxos
 region: aegean
+country_code: GR
 
 coordinates:
   center: { lat: 37.0419, lng: 25.3789 }

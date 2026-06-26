@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-sardinia
 parent_cluster: kitesurfing-spot-sardinia
 region: mediterranean
+country_code: IT
 
 coordinates:
   center: { lat: 41.1869, lng: 9.3417 }

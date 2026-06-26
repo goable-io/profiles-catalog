@@ -5,6 +5,7 @@ category: land
 extends: climbing-spot-el-chorro
 parent_cluster: climbing-spot-el-chorro
 region: mediterranean
+country_code: ES
 
 coordinates:
   center: { lat: 36.9128, lng: -4.7625 }

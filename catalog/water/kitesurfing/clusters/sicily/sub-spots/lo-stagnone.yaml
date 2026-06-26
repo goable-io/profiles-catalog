@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-sicily
 parent_cluster: kitesurfing-spot-sicily
 region: mediterranean
+country_code: IT
 
 coordinates:
   center: { lat: 37.8722, lng: 12.4711 }

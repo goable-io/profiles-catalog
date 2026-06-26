@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-jericoacoara
 parent_cluster: kitesurfing-spot-jericoacoara
 region: atlantic
+country_code: BR
 
 coordinates:
   center: { lat: -2.8147, lng: -40.5722 }

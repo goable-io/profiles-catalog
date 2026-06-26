@@ -5,6 +5,7 @@ category: water
 extends: kitesurfing-spot-cabarete
 parent_cluster: kitesurfing-spot-cabarete
 region: caribbean
+country_code: DO
 
 coordinates:
   center: { lat: 19.7647, lng: -70.4339 }

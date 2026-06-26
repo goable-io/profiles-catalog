@@ -188,4 +188,33 @@ describe("v2 hierarchical integrity", () => {
       }
     }
   })
+
+  it("every sub-spot carries country_code (v2.3+ contract enforced)", async () => {
+    const all = await collect()
+    for (const { file, parsed } of all) {
+      if (parsed.spot_kind === "sub-spot") {
+        expect(
+          parsed.country_code,
+          `${file}: sub-spot must carry country_code (ISO 3166-1 alpha-2). Schema makes it optional for back-compat, but the bundle pipeline fails without it.`,
+        ).toBeDefined()
+      }
+    }
+  })
+
+  it("sub-spot country_code matches parent cluster's country_code when both are set", async () => {
+    const all = await collect()
+    const clusterByslug = new Map<string, { country_code?: string }>()
+    for (const { parsed } of all) {
+      if (parsed.spot_kind === "cluster") clusterByslug.set(parsed.slug, parsed)
+    }
+    for (const { file, parsed } of all) {
+      if (parsed.spot_kind !== "sub-spot") continue
+      const cluster = clusterByslug.get(parsed.parent_cluster)
+      if (!cluster?.country_code || !parsed.country_code) continue
+      expect(
+        parsed.country_code,
+        `${file}: country_code "${parsed.country_code}" disagrees with cluster "${parsed.parent_cluster}"'s "${cluster.country_code}"`,
+      ).toBe(cluster.country_code)
+    }
+  })
 })

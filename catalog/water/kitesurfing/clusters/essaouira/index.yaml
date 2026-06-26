@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
 region: atlantic
+country_code: MA
 sub_spots:
   - kitesurfing-spot-essaouira-bay
   - kitesurfing-spot-essaouira-sidi-kaouki

@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
 region: atlantic
+country_code: ZA
 sub_spots:
   - kitesurfing-spot-cape-town-bloubergstrand
   - kitesurfing-spot-cape-town-sunset-beach

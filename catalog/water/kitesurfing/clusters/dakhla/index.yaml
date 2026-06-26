@@ -4,6 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
 region: atlantic
+country_code: MA
 sub_spots:
   - kitesurfing-spot-dakhla-lagoon
   - kitesurfing-spot-dakhla-speed-spot

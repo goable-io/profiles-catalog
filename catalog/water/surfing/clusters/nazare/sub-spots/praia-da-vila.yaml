@@ -5,6 +5,7 @@ category: water
 extends: surfing-spot-nazare
 parent_cluster: surfing-spot-nazare
 region: atlantic
+country_code: PT
 
 coordinates:
   center: { lat: 39.6011, lng: -9.0744 }
