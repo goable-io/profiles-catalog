@@ -144,7 +144,32 @@ const SustainabilitySchema = z
   })
   .optional()
 
-export const RegionEnum = z.enum(["mediterranean", "atlantic", "pacific", "indian", "alpine", "global"])
+export const RegionEnum = z.enum([
+  // v1 core basins
+  "mediterranean",
+  "atlantic",
+  "pacific",
+  "indian",
+  "alpine",
+  "global",
+  // v2.2 — finer-grained sub-basins (additive)
+  "caribbean",       // tropical W Atlantic — Caribbean Sea + adjacent islands
+  "red-sea",         // separates from "indian" — distinct hydrography and use case
+  "aegean",          // Mediterranean sub-basin with the dominant Meltemi regime
+  "south-china-sea", // Pacific sub-basin with the SE Asia NE-monsoon regime
+  // v2.2 — additional sub-basins added pre-emptively for forthcoming
+  // bootstrap PRs (surf, ski-touring, freeride, paragliding)
+  "north-sea",       // NW European coast (NL, DE, DK) — N-Atlantic synoptic regime
+  "baltic",          // NE European semi-enclosed sea — distinct cold-water regime
+  "bay-of-biscay",   // FR/ES Atlantic coast — Hossegor / Mundaka surf zone
+  "gulf-of-mexico",  // US Gulf coast (South Padre, FL panhandle) — distinct from Caribbean
+  "adriatic",        // Italian NE / Croatia — Bora regime is climatologically distinct
+  "arctic",          // High latitude (Lofoten, Lyngen, Iceland) — polar-influenced
+  "sea-of-japan",    // Japanese W coast (Hokkaido, Niseko, Hakuba) — lake-effect snow
+  "rockies",         // North American Rocky Mountains (Whistler, Revelstoke, Jackson)
+  "andes",           // South American Andes (Iquique, Roldanillo, Patagonia)
+  "himalayas",       // Himalayan range (Bir-Billing, Annapurna, Karakoram)
+])
 export type Region = z.infer<typeof RegionEnum>
 
 // v2.0.0 additions ────────────────────────────────────────────────────────────

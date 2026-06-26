@@ -4,7 +4,7 @@ version: "1.0.0"
 category: water
 extends: scuba-spot-red-sea
 parent_cluster: scuba-spot-red-sea
-region: indian
+region: red-sea
 
 coordinates:
   center: { lat: 27.8133, lng: 33.9211 }

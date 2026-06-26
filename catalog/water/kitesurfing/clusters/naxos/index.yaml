@@ -3,7 +3,7 @@ spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: kitesurfing-mediterranean
-region: mediterranean
+region: aegean
 sub_spots:
   - kitesurfing-spot-naxos-mikri-vigla
   - kitesurfing-spot-naxos-plaka

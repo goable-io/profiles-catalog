@@ -3,7 +3,7 @@ spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: scuba
-region: indian
+region: red-sea
 sub_spots:
   - scuba-spot-red-sea-ras-mohammed
   - scuba-spot-red-sea-thistlegorm
@@ -161,8 +161,7 @@ meta:
     enforced for safari-route operations; visibility weight slightly
     reduced (0.25 vs base 0.30) because Red Sea baseline visibility is
     so consistently excellent that diminishing-returns saturation makes
-    other factors more discriminating. region tag = indian (Red Sea is
-    catalogued with Indian Ocean basin in the catalog's six-region
-    schema — closest match given absence of a dedicated middle-eastern
-    designation). Season is 50 weeks/year — among the longest in the
-    catalog.
+    other factors more discriminating. Cluster tagged `region: red-sea`
+    (added to RegionEnum in schema v2.2; previously tagged `indian` as
+    a least-bad fit). Season is 50 weeks/year — among the longest in
+    the catalog.

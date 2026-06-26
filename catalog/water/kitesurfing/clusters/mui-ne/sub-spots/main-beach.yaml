@@ -4,7 +4,7 @@ version: "1.0.0"
 category: water
 extends: kitesurfing-spot-mui-ne
 parent_cluster: kitesurfing-spot-mui-ne
-region: pacific
+region: south-china-sea
 
 coordinates:
   center: { lat: 10.9447, lng: 108.2811 }

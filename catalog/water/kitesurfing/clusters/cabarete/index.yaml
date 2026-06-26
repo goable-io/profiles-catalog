@@ -3,7 +3,7 @@ spot_kind: cluster
 version: "1.0.0"
 category: water
 extends: kitesurfing-atlantic
-region: atlantic
+region: caribbean
 sub_spots:
   - kitesurfing-spot-cabarete-kite-beach
   - kitesurfing-spot-cabarete-la-boca
@@ -22,9 +22,7 @@ description:
     days/year, warm Caribbean water 26-28°C. Three sub-zones in a 5 km
     arc: the iconic Kite Beach proper, the cleaner-wind La Boca river-mouth
     section, and the more wave-exposed Encuentro point on the east side
-    (kitable on selected swells, primarily a surf spot). NB region is
-    tagged `atlantic` until the schema adds `caribbean` — see catalog
-    notes for the planned v2.2 region-enum expansion.
+    (kitable on selected swells, primarily a surf spot).
 
 dimensions:
   - name: wind_speed
@@ -148,8 +146,6 @@ meta:
     - "ONAMET (Dominican meteorological office) Cabarete trade wind climatology"
     - "Bowden et al. 2014, Hispaniola northeast-trade wind regime"
   notes: |
-    region tag `atlantic` is a placeholder for `caribbean` (planned in
-    the schema's v2.2 region-enum expansion). The Cabarete climate is
-    trade-wind tropical, distinct from the synoptic-driven European/
-    African Atlantic regime — operators should treat this cluster's
-    forecast pool separately from northern-Atlantic clusters.
+    Cluster tagged `region: caribbean` (Caribbean tropical trade-wind
+    regime, distinct from the synoptic-driven northern-Atlantic regime).
+    `caribbean` was added to RegionEnum in schema v2.2.

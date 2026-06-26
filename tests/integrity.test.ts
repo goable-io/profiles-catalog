@@ -31,11 +31,28 @@ const regionBbox: Record<string, { latMin: number; latMax: number; lngMin: numbe
   // and the open ocean to the American west coast (~-70°W). lngMin > lngMax
   // signals wraparound — see check below.
   pacific: { latMin: -50, latMax: 65, lngMin: 100, lngMax: -70 },
-  // Indian Ocean basin including Red Sea (our schema places Red Sea under
-  // region: indian as the closest of the six available enum values).
+  // Indian Ocean basin (Red Sea has its own entry below since v2.2).
   indian: { latMin: -45, latMax: 32, lngMin: 25, lngMax: 110 },
   alpine: { latMin: 42, latMax: 51, lngMin: 5, lngMax: 18 },
   global: { latMin: -90, latMax: 90, lngMin: -180, lngMax: 180 },
+
+  // v2.2 — finer-grained sub-basins
+  caribbean: { latMin: 8, latMax: 28, lngMin: -90, lngMax: -58 },
+  "red-sea": { latMin: 12, latMax: 30, lngMin: 32, lngMax: 44 },
+  aegean: { latMin: 34, latMax: 41, lngMin: 22, lngMax: 31 },
+  "south-china-sea": { latMin: -3, latMax: 25, lngMin: 99, lngMax: 122 },
+  // v2.2 — additional sub-basins (no catalog entries yet but bbox declared
+  // so the integrity test catches any future mistags immediately)
+  "north-sea": { latMin: 51, latMax: 62, lngMin: -4, lngMax: 9 },
+  baltic: { latMin: 53, latMax: 66, lngMin: 9, lngMax: 30 },
+  "bay-of-biscay": { latMin: 43, latMax: 49, lngMin: -10, lngMax: -1 },
+  "gulf-of-mexico": { latMin: 18, latMax: 31, lngMin: -98, lngMax: -80 },
+  adriatic: { latMin: 39, latMax: 46, lngMin: 12, lngMax: 20 },
+  arctic: { latMin: 66, latMax: 85, lngMin: -180, lngMax: 180 },
+  "sea-of-japan": { latMin: 33, latMax: 52, lngMin: 127, lngMax: 142 },
+  rockies: { latMin: 32, latMax: 65, lngMin: -125, lngMax: -103 },
+  andes: { latMin: -56, latMax: 12, lngMin: -82, lngMax: -62 },
+  himalayas: { latMin: 26, latMax: 38, lngMin: 70, lngMax: 98 },
 }
 
 const lngInBbox = (
