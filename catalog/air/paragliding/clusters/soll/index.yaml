@@ -1,0 +1,158 @@
+slug: paragliding-spot-soll
+spot_kind: cluster
+version: "0.1.0"
+category: air
+extends: paragliding-alpine
+region: alpine
+country_code: AT
+sub_spots:
+  - paragliding-spot-soll-hohe-salve-launch
+  - paragliding-spot-soll-village-lz
+display_name:
+  en: Paragliding — Söll (Tyrolean Alps)
+  it: Parapendio — Söll
+  es: Parapente — Söll
+  fr: Parapente — Söll
+  de: Gleitschirmfliegen — Söll
+description:
+  en: |
+    Söll in the Tyrolean Wilder Kaiser-Brixental area hosts an
+    intermediate-grade alpine paragliding cluster on the Hohe Salve
+    (1828 m) — accessible by gondola from Söll village (700 m).
+    South-east-facing launch with the Wilder Kaiser as backdrop
+    and the village LZ at the gondola base in glide range. Less
+    high-volume than Interlaken, less XC-intensive than Annecy,
+    serves as a school + recreational reference for the eastern
+    Austrian Alps with year-round tandem operations under
+    Österreichischer Aero-Club permit. Sustained anabatic summer
+    cycles + Salzach-valley breeze convergence on north-flow days
+    drive the standard flight pattern.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 18, s: 0.35 }
+      - { x: 22, s: 0.10 }
+      - { x: 26, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.25 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.30 }
+      - { x: 8,  s: 0.85 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.40 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -10, s: 0.20 }
+      - { x: 5,   s: 0.70 }
+      - { x: 18,  s: 1.00 }
+      - { x: 28,  s: 0.85 }
+      - { x: 38,  s: 0.30 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 26
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 26 knots on the Hohe Salve creates significant rotor on the Wilder Kaiser lee; operators stand down.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: ALPINE_TURBULENT_AIR
+    description: Gust factor above 1.8x on the Hohe Salve ramp indicates Salzach-Inn convergence turbulence; canopy collapse risk in rotor zones.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ALPINE_LOW_VISIBILITY
+    description: Söll cluster requires visibility above 3 km — terrain awareness on glide to village LZ and Salzach valley alternate.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in the Wilder Kaiser area correlates with front passage and end of session.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Söll cluster operations close at sunset by ÖAeC permit conditions.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: low
+  notes: |
+    Söll paragliding is carbon-neutral free-flight per session.
+    Hohe Salve gondola access carries infrastructure emissions out
+    of session scope. Carrying capacity is low — Söll is not a
+    high-volume tandem destination on the scale of Interlaken or
+    Annecy, primarily school + recreational + intermediate XC.
+    Wilder Kaiser nature-protection zone applies to high-altitude
+    flight; pilots respect ÖAeC + park-coordinated routings.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Österreichischer Aero-Club (ÖAeC) paragliding cluster permit standards"
+    - "Wilder Kaiser-Brixental SkiWelt + paragliding-school operator SOP"
+    - "Tyrolean Free-Flight Federation site directory"
+  notes: |
+    Spot overrides vs paragliding-alpine: matches regional baseline
+    (Söll is canonical-alpine in dimension and gate behaviour).
+    Season set to 30 weeks (Söll operates Mar-Oct routinely with
+    winter on warm anticyclone days). Wilder Kaiser as the dominant
+    terrain feature drives both the thermal-cycle reliability and
+    the cross-flow rotor sensitivity — once L1d's thermal_lift_index
+    ships, the Salzach-Inn convergence becomes scoring-grade.

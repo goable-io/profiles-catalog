@@ -1,0 +1,159 @@
+slug: paragliding-spot-interlaken
+spot_kind: cluster
+version: "0.1.0"
+category: air
+extends: paragliding-alpine
+region: alpine
+country_code: CH
+sub_spots:
+  - paragliding-spot-interlaken-beatenberg-launch
+  - paragliding-spot-interlaken-hohematte-lz
+display_name:
+  en: Paragliding — Interlaken (Berner Oberland)
+  it: Parapendio — Interlaken
+  es: Parapente — Interlaken
+  fr: Parapente — Interlaken
+  de: Gleitschirmfliegen — Interlaken
+description:
+  en: |
+    Interlaken in the Berner Oberland is Switzerland's paragliding
+    tandem capital — between Lake Thun and Lake Brienz with the
+    Jungfrau-Eiger-Mönch massif as backdrop. Launch sites at
+    Beatenberg (1600 m) and Amisbühl (1100 m) on the north flank
+    feed the Hohematte LZ in central Interlaken (560 m). The site
+    runs year-round tandem operations on the Swiss Air-Sports
+    Federation operating permit and concentrates the highest tandem
+    volumes in the country (estimated 200-400+ tandems/day in peak
+    summer with multiple operators including Skywings, Paragliding
+    Interlaken, AlpinAir). Tourist-tandem-heavy traffic pattern
+    differs from XC-oriented sites like Annecy or Chamonix.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.70 }
+      - { x: 18, s: 0.25 }
+      - { x: 22, s: 0.05 }
+      - { x: 26, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.25 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.30 }
+      - { x: 8,  s: 0.85 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.40 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -10, s: 0.20 }
+      - { x: 5,   s: 0.70 }
+      - { x: 18,  s: 1.00 }
+      - { x: 28,  s: 0.85 }
+      - { x: 38,  s: 0.30 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 26
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 26 knots in the Berner Oberland valley creates significant rotor on the Niederhorn lee; operators stand down.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: ALPINE_TURBULENT_AIR
+    description: Gust factor above 1.8x on the Beatenberg ramp indicates Berner-Oberland thermal-frontal turbulence; tandem operators rotate launches.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ALPINE_LOW_VISIBILITY
+    description: Interlaken Hohematte LZ approach requires visibility above 3 km — town centre LZ with rail-station + hotel overflight corridors.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in the Berner Oberland correlates with rapid Jungfrau-massif front transit; immediate land-out required.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Interlaken tandem operations close at sunset by SHV permit conditions.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: high
+  notes: |
+    Interlaken paragliding is carbon-neutral free-flight per session.
+    Beatenberg launch is reached by funicular + bus (low-emission
+    vehicle access). Carrying capacity sensitivity is high — Hohematte
+    LZ in central Interlaken absorbs 200-400+ tandems/day in peak
+    summer plus tourist + transit foot-traffic. Multiple operators
+    coordinate launch and LZ rotation under SHV permit conditions.
+    Jungfrau-Aletsch UNESCO site protections apply to high-flight
+    routes; no-fly bands around raptor nesting cliffs in spring.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Swiss Hang Gliding Federation (SHV) Interlaken commercial-operator permit standards"
+    - "Berner Oberland paragliding operators consolidated daily SOP"
+    - "Hohematte LZ municipal-coordination protocol"
+  notes: |
+    Spot overrides vs paragliding-alpine: matches regional baseline
+    closely (Berner Oberland is canonical for the alpine variant).
+    Season set to 36 weeks reflecting year-round tandem operations
+    under SHV permit. Tandem-volume scoring will refine once a
+    `carrying_capacity_index` dimension lands in a future schema
+    revision — Interlaken is the canonical high-volume tandem site
+    in the catalog.

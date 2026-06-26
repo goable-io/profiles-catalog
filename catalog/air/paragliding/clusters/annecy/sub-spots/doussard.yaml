@@ -1,0 +1,49 @@
+slug: paragliding-spot-annecy-doussard
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-annecy
+parent_cluster: paragliding-spot-annecy
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.7783, lng: 6.2167 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    The Doussard / Verthier LZ is a large designated grass landing
+    field at the south end of Lac d'Annecy, the standard target for
+    every flight from Planfait and Forclaz. Open approach corridor
+    from the north over the lake, no obstacles in the final 1 km, and
+    LZ wind-sock infrastructure managed by the FFVL site committee.
+    LZ-specific consequence profile is the lowest in the cluster —
+    students and tandems land here by default. The site's only
+    failure mode is over-shoot into the road or canal at the southern
+    perimeter on tailwind approaches.
+
+display_name:
+  en: Paragliding — Doussard LZ (Annecy)
+  it: Parapendio — Doussard (Annecy)
+  es: Parapente — Doussard (Annecy)
+  fr: Parapente — Doussard (Annecy)
+  de: Gleitschirmfliegen — Doussard (Annecy)
+
+description:
+  en: |
+    The official Annecy paragliding LZ at Doussard / Verthier.
+    Large designated grass field with open approach corridor over
+    the lake. Standard target for Planfait + Forclaz flights.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Doussard LZ field-management documentation"
+    - "Annecy Vol Libre Club site-rules + LZ rotation"
+  notes: |
+    Sub-spot of paragliding-spot-annecy cluster. Tier 1: dedicated
+    LZ, open approach, FFVL-managed. Cluster's safety reference
+    for landing-side operations.

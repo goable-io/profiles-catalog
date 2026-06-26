@@ -1,0 +1,51 @@
+slug: paragliding-spot-interlaken-hohematte-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-interlaken
+parent_cluster: paragliding-spot-interlaken
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.6852, lng: 7.8580 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    The Hohematte LZ is the large grass park in central Interlaken
+    at 560 m, between Interlaken West and Ost rail stations. The
+    most-used commercial-tandem LZ in Switzerland, with multiple
+    operators landing simultaneously through municipally-coordinated
+    rotation. Wide open approach from the north and west, no
+    significant terrain obstruction in the final 1 km. LZ-side
+    coordination is intense (200-400 tandems/day in peak summer +
+    tourist foot-traffic + rail-station throughput) but managed by
+    the SHV permit + municipal protocol. LZ-specific risk is low
+    on the canopy side; the operational complexity is volume + LZ
+    sharing.
+
+display_name:
+  en: Paragliding — Hohematte LZ (Interlaken)
+  it: Parapendio — Hohematte (Interlaken)
+  es: Parapente — Hohematte (Interlaken)
+  fr: Parapente — Hohematte (Interlaken)
+  de: Gleitschirmfliegen — Hohematte (Interlaken)
+
+description:
+  en: |
+    The Interlaken Hohematte central LZ — the highest-volume
+    tandem-paragliding LZ in Switzerland. Large grass park between
+    Interlaken West and Ost.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SHV Hohematte LZ permit documentation"
+    - "Interlaken municipal coordination protocol for paragliding LZ"
+  notes: |
+    Sub-spot of paragliding-spot-interlaken cluster. Tier 1:
+    dedicated central LZ, SHV-permit-managed, low LZ-specific
+    canopy risk but high operational coordination intensity.

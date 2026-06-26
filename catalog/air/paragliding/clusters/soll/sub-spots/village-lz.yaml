@@ -1,0 +1,47 @@
+slug: paragliding-spot-soll-village-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-soll
+parent_cluster: paragliding-spot-soll
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.5050, lng: 12.1900 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    The Söll village LZ at the Hohe-Salve gondola base (~700 m) —
+    designated grass field with open approach from the south,
+    standard target for every Hohe-Salve flight. The cluster's
+    safety reference for landing-side operations: no terrain
+    obstruction in the final 1 km, wind-sock managed by local
+    schools, low LZ-specific risk. Operational coordination is
+    limited to school + tandem rotation during peak windows; LZ
+    failure modes are limited to over-shoot toward the perimeter
+    road on tailwind approaches.
+
+display_name:
+  en: Paragliding — Söll Village LZ
+  it: Parapendio — Söll (LZ)
+  es: Parapente — Söll (LZ)
+  fr: Parapente — Söll (LZ)
+  de: Gleitschirmfliegen — Söll (LZ)
+
+description:
+  en: |
+    The official Söll paragliding LZ at the Hohe-Salve gondola
+    base. Designated grass field with open approach from south.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ÖAeC Söll-Village LZ documentation"
+    - "Tyrolean Free-Flight Federation LZ rules"
+  notes: |
+    Sub-spot of paragliding-spot-soll cluster. Tier 1: dedicated
+    valley LZ, ÖAeC-managed, low LZ-specific risk.

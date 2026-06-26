@@ -1,0 +1,160 @@
+slug: paragliding-spot-roldanillo
+spot_kind: cluster
+version: "0.1.0"
+category: air
+extends: paragliding-andes
+region: andes
+country_code: CO
+sub_spots:
+  - paragliding-spot-roldanillo-los-tanques
+  - paragliding-spot-roldanillo-town-lz
+display_name:
+  en: Paragliding — Roldanillo (Valle del Cauca)
+  it: Parapendio — Roldanillo
+  es: Parapente — Roldanillo
+  fr: Parapente — Roldanillo
+  de: Gleitschirmfliegen — Roldanillo
+description:
+  en: |
+    Roldanillo in the Valle del Cauca is the South American XC
+    paragliding capital and the host of multiple PWC + World Cup
+    Superfinal events. The launch site "Los Tanques" at 1500 m
+    overlooks the Cauca valley; the LZ on the Roldanillo town
+    edge sits at 950 m. The site's signature is the dry-season
+    (Dec-Mar) "magic" cloud-base at 2500-3500 m with thermal
+    streets running parallel to the Cordillera Occidental — 100-
+    200 km daily XC tasks are routine, and the venue holds
+    multiple world-record open-distance flights. The convergence
+    line between the Cauca and Cordillera Occidental drives
+    consistent thermal cycles between ~10:30 and 17:00 local. Less
+    wind-gated than alpine sites; more sun and convergence driven.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.45 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 14, s: 1.00 }
+      - { x: 18, s: 0.70 }
+      - { x: 22, s: 0.30 }
+      - { x: 28, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.20
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.4, s: 0.70 }
+      - { x: 1.6, s: 0.30 }
+      - { x: 1.9, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.55 }
+      - { x: 30, s: 0.90 }
+      - { x: 55, s: 1.00 }
+      - { x: 75, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.40 }
+      - { x: 10, s: 0.90 }
+      - { x: 20, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.35 }
+      - { x: 0.5, s: 0.05 }
+      - { x: 1.0, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 0,   s: 0.40 }
+      - { x: 12,  s: 0.85 }
+      - { x: 24,  s: 1.00 }
+      - { x: 34,  s: 0.80 }
+      - { x: 42,  s: 0.25 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: ANDES_HIGH_WIND
+    description: Sustained wind above 28 knots on the Los Tanques ramp degrades thermal-flying technique and risks asymmetric collapse on stack release.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.9
+    reason_code: ANDES_TURBULENT_AIR
+    description: Gust factor above 1.9x on the Cauca-Cordillera convergence indicates convective overdevelopment; competition pilots wait for cycle smoothing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ANDES_LOW_VISIBILITY
+    description: Roldanillo XC requires visibility above 3 km — Cauca valley open-distance task lines depend on long-range cloud-street recognition.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 1.0
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in the Cauca valley indicates cu-nimb formation; immediate land-out required.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Roldanillo operations close at sunset; equatorial twilight is short.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: low
+  notes: |
+    Roldanillo paragliding is carbon-neutral free-flight per session.
+    4WD launch access to Los Tanques carries vehicle emissions out of
+    session scope. Carrying capacity is low in the XC arena (pilots
+    routinely cover 100-200 km) and medium at the town LZ during
+    PWC season. The Roldanillo paragliding community has built local
+    operator coordination with town authorities for LZ field
+    rotation and PWC-week logistics.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FAI PWC Roldanillo annual venue meteorological dossier"
+    - "Federación Colombiana de Vuelo Libre (FCVL) Roldanillo site standards"
+    - "Roldanillo paragliding operators consolidated dry-season SOP"
+  notes: |
+    Spot overrides vs paragliding-andes: sun weight raised to 0.30
+    (thermal-quality proxy until L1d ships — Roldanillo is the most
+    sun-correlated paragliding regime in the catalog); wind sweet-
+    spot kept wide (6-14kn matching regional baseline). Once L1d's
+    thermal_lift_index, convective_cloud_base_m, and xc_condition_score
+    are wired in, this venue's PWC-grade XC scoring decouples from
+    sun-altitude approximation.

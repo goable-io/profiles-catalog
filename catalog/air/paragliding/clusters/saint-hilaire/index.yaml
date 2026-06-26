@@ -1,0 +1,162 @@
+slug: paragliding-spot-saint-hilaire
+spot_kind: cluster
+version: "0.1.0"
+category: air
+extends: paragliding-alpine
+region: alpine
+country_code: FR
+sub_spots:
+  - paragliding-spot-saint-hilaire-launch
+  - paragliding-spot-saint-hilaire-lumbin-lz
+display_name:
+  en: Paragliding — Saint-Hilaire-du-Touvet
+  it: Parapendio — Saint-Hilaire
+  es: Parapente — Saint-Hilaire
+  fr: Parapente — Saint-Hilaire
+  de: Gleitschirmfliegen — Saint-Hilaire
+description:
+  en: |
+    Saint-Hilaire-du-Touvet on the Chartreuse plateau hosts the
+    Coupe Icare — the world's largest paragliding festival, held
+    annually since 1973. The launch sits at 950 m on the dramatic
+    plateau-edge overlooking the Grésivaudan valley; the LZ at
+    Lumbin sits 500 m below at 215 m. The "funiculaire" rack
+    railway from Grenoble valley to the plateau gives unique car-
+    free launch access. Site is the French historical reference
+    for paragliding development and remains a recreational + XC
+    bench-mark — early-morning Grésivaudan valley flow is reliable,
+    afternoon convergence cycles couple Chartreuse + Belledonne
+    massifs, and the W-NW prevailing flow drives a textbook face-
+    perpendicular soaring regime. School + tandem operations
+    operate year-round.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 18, s: 0.35 }
+      - { x: 22, s: 0.10 }
+      - { x: 26, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.25 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.30 }
+      - { x: 8,  s: 0.85 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.40 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -10, s: 0.25 }
+      - { x: 5,   s: 0.70 }
+      - { x: 18,  s: 1.00 }
+      - { x: 28,  s: 0.85 }
+      - { x: 38,  s: 0.30 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 26
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 26 knots on the Saint-Hilaire launch creates significant rotor on the Chartreuse plateau back-side; site committee gates take-off above 22 kn W-NW.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: ALPINE_TURBULENT_AIR
+    description: Gust factor above 1.8x on the Saint-Hilaire ramp indicates plateau-edge rotor on cross-flow; site committee enforces stand-down.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ALPINE_LOW_VISIBILITY
+    description: Saint-Hilaire requires visibility above 3 km — the Lumbin LZ approach traverses the Grésivaudan valley with overhead Grenoble-Le-Versoud airport corridor.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in the Grésivaudan valley correlates with downdraft and end of session.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Saint-Hilaire site operations close at sunset.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Saint-Hilaire paragliding is carbon-neutral free-flight per
+    session, with the funiculaire (historical rack railway) providing
+    car-free launch access. Carrying capacity is medium-to-high in
+    peak summer and during the Coupe Icare weekend (last weekend of
+    September — tens of thousands of spectators and concentrated
+    flight volume). Raptor protection bands apply on the plateau
+    cliff (typically Mar-Jul). The Lumbin LZ is shared with the
+    Grenoble-Le-Versoud light-aviation circuit; site committee
+    coordinates with the airport for airspace integration.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Saint-Hilaire-du-Touvet site committee operational standards"
+    - "Coupe Icare annual venue weather criteria 1973-2023"
+    - "Comité Régional Auvergne-Rhône-Alpes Free Flight site directory"
+  notes: |
+    Spot overrides vs paragliding-alpine: matches regional baseline
+    closely (Saint-Hilaire is the historical reference site for the
+    alpine variant). Season set to 36 weeks (Saint-Hilaire is unusually
+    long-season due to year-round school operations + south-facing
+    plateau-edge orientation favourable in winter anticyclone). Once
+    L1d's thermal_lift_index ships, the Grésivaudan-Chartreuse
+    convergence couples cleanly to scoring.

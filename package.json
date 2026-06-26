@@ -1,6 +1,6 @@
 {
   "name": "@goable-io/profiles-catalog",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Open catalog of outdoor activity profiles (water, snow, air, land) that define how weather inputs combine into a 0-100 suitability score. CC BY 4.0.",
   "license": "CC-BY-4.0",
   "author": "Fabio Carucci <contact@fabio-carucci.com>",

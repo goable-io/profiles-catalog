@@ -1,0 +1,162 @@
+slug: paragliding-spot-annecy
+spot_kind: cluster
+version: "0.1.0"
+category: air
+extends: paragliding-alpine
+region: alpine
+country_code: FR
+sub_spots:
+  - paragliding-spot-annecy-planfait
+  - paragliding-spot-annecy-forclaz
+  - paragliding-spot-annecy-doussard
+display_name:
+  en: Paragliding — Annecy (Lac d'Annecy)
+  it: Parapendio — Annecy
+  es: Parapente — Annecy
+  fr: Parapente — Annecy
+  de: Gleitschirmfliegen — Annecy
+description:
+  en: |
+    Lac d'Annecy is the French paragliding training and recreational
+    capital — a lakeside basin bracketed by the Forclaz (1500 m) and
+    Planfait (1000 m) launches on the east bank, with the standard
+    Doussard (Verthier) landing field on the south end. The 'lac
+    aerologie' — a 14 km long alpine lake — gives reliable thermo-
+    dynamic cycles: morning katabatic, mid-morning anabatic, midday
+    convective coupling between the Tournette massif and the lake,
+    and afternoon convergence with the Albanais valley breeze. Volume
+    is enormous (FFVL lists Annecy as the highest-traffic free-flight
+    site in France with tens of thousands of flights per season);
+    site management rotates launches by direction and prohibits flight
+    in S/SW > 15 kn on Forclaz. School + tandem operations dominate
+    the morning window.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.35
+    curve:
+      - { x: 0,  s: 0.30 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.70 }
+      - { x: 18, s: 0.25 }
+      - { x: 22, s: 0.05 }
+      - { x: 26, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.25 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.30 }
+      - { x: 8,  s: 0.85 }
+      - { x: 15, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.40 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: -10, s: 0.20 }
+      - { x: 5,   s: 0.70 }
+      - { x: 18,  s: 1.00 }
+      - { x: 28,  s: 0.85 }
+      - { x: 38,  s: 0.30 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 26
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 26 knots on the Annecy launches creates significant rotor on the Tournette lee side; Forclaz is gated by site management above 22 kn S/SW.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: ALPINE_TURBULENT_AIR
+    description: Gust factor above 1.8x on the Annecy basin indicates lee turbulence from the Tournette ridge; canopy collapse risk in rotor zones.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ALPINE_LOW_VISIBILITY
+    description: Annecy basin paragliding requires visibility above 3 km — terrain awareness on glides over the lake and Verthier landing approach.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation on the lake basin signals frontal passage and end of session.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Annecy site operations close at sunset.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Lac d'Annecy paragliding is carbon-neutral free-flight per session.
+    Vehicle shuttle to Forclaz / Planfait adds out-of-session emissions.
+    Carrying capacity is medium-to-high in peak summer (June-August)
+    with 1000+ tandems on busy days; site management rotates launches
+    and the FFVL imposes minimum-distance separations between schools.
+    Raptor nesting protections apply on the Tournette face (typically
+    Mar-Jul); pilots respect no-fly bands marked on the site map.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Annecy site management committee operational standards"
+    - "Annecy Vol Libre Club site directory"
+    - "Ligue Auvergne-Rhône-Alpes Free Flight operational guidance"
+  notes: |
+    Spot overrides vs paragliding-alpine: wind sweet-spot kept at 6-10kn
+    (same as region) with slightly steeper degradation 14kn → 22kn
+    (Tournette lee-rotor sensitivity); gust factor curve and gate kept
+    at alpine baseline (1.8x); season set to 32 weeks (Annecy operates
+    Mar-Oct routinely, with Nov-Feb on warm anticyclone days). Once
+    L1d's thermal_lift_index ships, the Tournette south face's
+    afternoon convergence becomes scoring-grade rather than the current
+    sun-altitude approximation.

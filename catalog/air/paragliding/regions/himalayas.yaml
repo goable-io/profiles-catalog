@@ -1,0 +1,158 @@
+slug: paragliding-himalayas
+spot_kind: region
+version: "0.1.0"
+category: air
+extends: paragliding
+region: himalayas
+display_name:
+  en: Paragliding — Himalayas
+  it: Parapendio — Himalaya
+  es: Parapente — Himalaya
+  fr: Parapente — Himalaya
+  de: Gleitschirmfliegen — Himalaya
+description:
+  en: |
+    Himalayan paragliding (Bir-Billing, Manali, Annapurna foothills,
+    Pokhara) is a distinct regime from the Alps: launch altitudes of
+    2000-4500 m put pilots routinely into thin-air canopy behaviour
+    (higher trim speed, longer flare timing), thermal columns are
+    deeper and stronger (cloud-base routinely 5000-6000 m vs alpine
+    3500-4500 m), and post-monsoon (Oct-Nov) plus pre-monsoon (Mar-
+    May) are the only safe XC windows — monsoon (Jun-Sep) is hard-
+    closed by cu-nimb development. Lee-side rotor on the Dhauladhar
+    backbone is severe and unforgiving; westerly synoptic flow
+    routinely shuts sites at midday. Density-altitude effects matter
+    here in a way they don't in the Alps.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.35 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 16, s: 0.70 }
+      - { x: 20, s: 0.30 }
+      - { x: 24, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.25
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.15, s: 0.95 }
+      - { x: 1.3,  s: 0.70 }
+      - { x: 1.5,  s: 0.20 }
+      - { x: 1.8,  s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.65 }
+      - { x: 30, s: 1.00 }
+      - { x: 55, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.40 }
+      - { x: 10, s: 0.90 }
+      - { x: 20, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.30 }
+      - { x: 0.5, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -15, s: 0.10 }
+      - { x: -5,  s: 0.50 }
+      - { x: 5,   s: 0.85 }
+      - { x: 18,  s: 1.00 }
+      - { x: 30,  s: 0.65 }
+      - { x: 40,  s: 0.20 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 24
+    reason_code: HIMALAYAN_HIGH_WIND
+    description: Sustained wind above 24 knots on Himalayan launches creates extreme lee-rotor on the Dhauladhar / pre-Himalaya backbone; tighter than alpine due to amplified terrain effect.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.8
+    reason_code: HIMALAYAN_TURBULENT_AIR
+    description: Gust factor above 1.8x in Himalayan terrain indicates severe convective/rotor turbulence; canopy collapse risk is elevated at altitude where flare recovery is slower.
+
+  - metric: visibility_km
+    condition: lt
+    value: 4
+    reason_code: HIMALAYAN_LOW_VISIBILITY
+    description: Himalayan paragliding requires visibility above 4 km — terrain features are large and pilots routinely fly multi-valley XC where mid-flight orographic cloud-in is the biggest landout risk.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in the Himalayas correlates with cu-nimb development and severe downdraft; immediate land-out required.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Himalayan paragliding requires daylight; valley katabatic at sunset is the standard close-of-day signal.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: low
+  notes: |
+    Per-flight Himalayan paragliding is carbon-neutral free-flight.
+    Access to launches (Billing road, Pokhara cable / 4WD) adds
+    infrastructure-dependent emissions out of session scope. Carrying
+    capacity is genuinely low in the post-monsoon XC window — pilots
+    disperse across 100+ km of Dhauladhar ridge from Billing. Local
+    LZ restrictions (Bir landing field rotation, Pokhara lake-edge
+    seasonal closure) are operator-managed and not part of the
+    physical scoring model.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Billing Paragliding Association (BPA) seasonal SOP"
+    - "Indian Pre-Monsoon / Post-Monsoon paragliding window guidance — DGCA general aviation bulletin"
+    - "PWC Bir-Billing 2015 venue meteorological dossier"
+  notes: |
+    Regional overrides vs global paragliding: wind sweet-spot extended
+    (6-12kn vs 6-10kn) to reflect strong consistent thermal-driven
+    valley flow at sites like Billing; gate tightened from 28 to 24 kn
+    (lee-rotor amplification on continental-scale terrain); visibility
+    floor raised from 2 to 4 km (mid-XC orographic cloud-in risk);
+    typical season reduced to 16 weeks (post-monsoon Oct-Nov + pre-
+    monsoon Mar-May only). Density-altitude effects pending L1f's
+    `air_density_kg_m3` and `density_altitude_m` dimensions — these
+    are the missing physics that distinguish Himalayan flight from
+    Alpine flight.

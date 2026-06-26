@@ -1,0 +1,48 @@
+slug: paragliding-spot-chamonix-plan-praz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-chamonix
+parent_cluster: paragliding-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.9333, lng: 6.8536 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Plan-Praz (2000 m) is the intermediate Chamonix launch — first
+    stage of the Brévent cable-car, reached from town in ~10 minutes.
+    Grass + scree ramp, sustained southerly anabatic in summer,
+    short glide to the Les Bossons LZ. The standard tandem and
+    intermediate-pilot launch for Chamonix: significantly less
+    committing than Brévent (lower altitude, shorter glide-out,
+    bail-out options on the south flank) but still high-alpine in
+    character. Site management imposes wind-direction restrictions
+    in cross-flow above 18 kn due to the Aiguilles-Rouges lee.
+
+display_name:
+  en: Paragliding — Plan-Praz (Chamonix)
+  it: Parapendio — Plan-Praz (Chamonix)
+  es: Parapente — Plan-Praz (Chamonix)
+  fr: Parapente — Plan-Praz (Chamonix)
+  de: Gleitschirmfliegen — Plan-Praz (Chamonix)
+
+description:
+  en: |
+    The 2000 m intermediate Chamonix launch. Standard tandem and
+    intermediate-pilot ramp with sustained southerly anabatic and
+    short glide to Les Bossons LZ.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chamonix Parapente Plan-Praz launch documentation"
+    - "FFVL Plan-Praz operational standards"
+  notes: |
+    Sub-spot of paragliding-spot-chamonix cluster. Tier 2: alpine
+    intermediate launch with site-managed wind-direction restrictions.

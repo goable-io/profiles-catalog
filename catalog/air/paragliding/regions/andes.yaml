@@ -1,0 +1,154 @@
+slug: paragliding-andes
+spot_kind: region
+version: "0.1.0"
+category: air
+extends: paragliding
+region: andes
+display_name:
+  en: Paragliding — Andes
+  it: Parapendio — Ande
+  es: Parapente — Andes
+  fr: Parapente — Andes
+  de: Gleitschirmfliegen — Anden
+description:
+  en: |
+    Andean paragliding (Roldanillo, Piedechinche, Iquique, Sopó) is
+    a high-XC regime: convergence-driven thermal streets, very
+    consistent flow patterns, and one of the most reliable cloud-
+    base ceilings on the planet (Roldanillo's "magic" 2500-3500 m
+    base 6 days/week in dry season). The Pacific-influenced Iquique
+    coastal flow is distinct from the inland Roldanillo valley
+    regime but both are scored here. Dry season (Dec-Mar in
+    Colombia, year-round in Iquique) defines competition windows.
+    Less wind-gated than European alpine sites, more sun- and
+    thermal-driven.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.45 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 14, s: 1.00 }
+      - { x: 18, s: 0.75 }
+      - { x: 22, s: 0.35 }
+      - { x: 28, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.20
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.4, s: 0.70 }
+      - { x: 1.6, s: 0.30 }
+      - { x: 1.9, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.25
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 12, s: 0.55 }
+      - { x: 30, s: 0.90 }
+      - { x: 50, s: 1.00 }
+      - { x: 75, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 3,  s: 0.40 }
+      - { x: 10, s: 0.90 }
+      - { x: 20, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.35 }
+      - { x: 0.5, s: 0.05 }
+      - { x: 1.0, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 0.40 }
+      - { x: 12,  s: 0.85 }
+      - { x: 22,  s: 1.00 }
+      - { x: 32,  s: 0.85 }
+      - { x: 40,  s: 0.30 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: ANDES_HIGH_WIND
+    description: Sustained wind above 28 knots on Andean ridge sites compromises thermal-flying technique and forces premature top-of-stack escape; competition pilots stand down.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 1.9
+    reason_code: ANDES_TURBULENT_AIR
+    description: Gust factor above 1.9x in Andean convective terrain risks asymmetric collapse on glide; pilots wait for cycle smoothing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 3
+    reason_code: ANDES_LOW_VISIBILITY
+    description: Andean XC paragliding requires visibility above 3 km — multi-100 km flights routinely traverse open valley with sparse landing options.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 1.0
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation in Andean afternoon convection indicates cu-nimb formation; immediate land-out required.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Andean paragliding requires daylight; equatorial sites have short twilight and pilots respect strict end-of-day cycles.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: low
+  notes: |
+    Andean paragliding is free-flight with zero direct emissions per
+    session. 4WD launch access (Los Tanques, Pico Sin Nombre) adds
+    out-of-session infrastructure emissions. Carrying capacity is low
+    in the XC arena (pilots cover 100-200 km daily during PWC season).
+    LZ pressure at Roldanillo town fields is operator-managed during
+    competitions.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FAI PWC Colombia (Roldanillo) annual venue dossier"
+    - "Federación Colombiana de Vuelo Libre (FCVL) site-rating standards"
+    - "Iquique paragliding operators consolidated daily-window practice"
+  notes: |
+    Regional overrides vs global paragliding: wind sweet-spot extended
+    (6-14kn vs 6-10kn) to reflect Andean valley flow and Iquique sea-
+    breeze; sun weighting raised to 0.25 (thermal-quality proxy until
+    L1d ships); gust gate kept loose (1.9x — convective cycles are
+    natural and dampen quickly in dry air); 16-week season covers the
+    Dec-Mar Colombian dry window plus the year-round Iquique flat
+    coastal season. The Andean regime is best described as "thermal-
+    plus-low-wind" — the inverse weighting from alpine.

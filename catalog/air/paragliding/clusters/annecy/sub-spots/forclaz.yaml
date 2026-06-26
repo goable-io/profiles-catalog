@@ -1,0 +1,50 @@
+slug: paragliding-spot-annecy-forclaz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-annecy
+parent_cluster: paragliding-spot-annecy
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.8350, lng: 6.2700 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    The Forclaz upper launch at ~1500 m above the Col de la Forclaz
+    is the Annecy cluster's serious thermal launch — south-facing
+    slope, sustained convective cycles in summer, classic 800 m
+    glide to the Doussard LZ. Site management imposes wind-direction
+    restrictions (closed in S/SW > 22 kn) due to lee-rotor on the
+    Tournette backbone. XC pilots routinely set off from here for
+    100+ km flights toward the Bauges or Aravis ranges. The launch
+    is a steeper grass face than Planfait; pilot rating expectations
+    are intermediate XC and above, with tandems requiring documented
+    site briefing.
+
+display_name:
+  en: Paragliding — Forclaz (Annecy upper)
+  it: Parapendio — Forclaz (Annecy)
+  es: Parapente — Forclaz (Annecy)
+  fr: Parapente — Forclaz (Annecy)
+  de: Gleitschirmfliegen — Forclaz (Annecy)
+
+description:
+  en: |
+    The 1500 m upper launch above the Col de la Forclaz. Annecy's
+    XC departure point with reliable summer thermal cycles and
+    classic 800 m glide-out to Doussard.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Forclaz launch site documentation"
+    - "Annecy Vol Libre Club Forclaz operational rules"
+  notes: |
+    Sub-spot of paragliding-spot-annecy cluster. Tier 2: serious XC
+    launch, site-managed wind-direction restrictions, intermediate-
+    and-above pilot rating expected.

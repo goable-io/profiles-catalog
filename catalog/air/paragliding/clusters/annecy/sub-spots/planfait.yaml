@@ -1,0 +1,49 @@
+slug: paragliding-spot-annecy-planfait
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-annecy
+parent_cluster: paragliding-spot-annecy
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.8200, lng: 6.2200 }
+  radius_m: 600
+
+tier: 1
+tier_rationale:
+  en: |
+    Planfait is the lower school launch at 1000 m above Talloires,
+    served by paved road access and a wide grass take-off. Stable
+    morning thermal cycles + low ridge profile + the standard
+    Doussard LZ in glide range make this the canonical first-XC
+    launch in France. The site is the home venue of multiple
+    paragliding schools and tandem operators with daily volumes in
+    the hundreds during peak season. Mid-day cycles can build cores
+    of 2-3 m/s but never reach the strength of the Forclaz upper
+    launch — appropriate for new XC pilots, intermediate-rated
+    tandems, and SIV preparation.
+
+display_name:
+  en: Paragliding — Planfait (Annecy lower)
+  it: Parapendio — Planfait (Annecy)
+  es: Parapente — Planfait (Annecy)
+  fr: Parapente — Planfait (Annecy)
+  de: Gleitschirmfliegen — Planfait (Annecy)
+
+description:
+  en: |
+    The 1000 m school launch on the east bank of Lac d'Annecy.
+    Reliable morning + early-afternoon flying with low ridge
+    commitment. Standard pairing with the Doussard / Verthier LZ.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFVL Planfait launch site description"
+    - "Annecy Vol Libre Club launch documentation"
+  notes: |
+    Sub-spot of paragliding-spot-annecy cluster. Tier 1: school /
+    training-grade launch, reliable LZ, dominant tandem traffic.
