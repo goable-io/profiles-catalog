@@ -131,8 +131,7 @@ verdict_buckets:
 
 meta:
   maturity: provisional
-  reviewed_by:
-    - "Marco Rossi (kite instructor, IKO L3, 12 years experience, Sardinia)"
+  reviewed_by: []
   sources:
     - "International Kiteboarding Organization (IKO) condition guidelines"
     - "Pereira da Silva et al. 2018, Guincho wind study"

@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-fuerteventura-flag-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-fuerteventura
+parent_cluster: kitesurfing-spot-fuerteventura
+region: atlantic
+
+coordinates:
+  center: { lat: 28.7494, lng: -13.8569 }
+  radius_m: 700
+
+tier: 2
+tier_rationale:
+  en: |
+    The Corralejo school-cluster beach, locally known as Flag Beach
+    (Playa Bajo Negro / Bajos del Río). Side-on NE trade with cleaner
+    wind than the Sotavento section because the Lobos and Lanzarote
+    channel creates a quasi-Venturi acceleration. Sand bottom for the
+    full 800 m of beach length. Six-plus IKO schools operate from the
+    car-park area providing high rescue coverage and concurrent boat
+    presence. Wave is smaller than Sotavento (channel-protected) but
+    occasional N-swell wraps around Lobos and produces 1 m+ days.
+
+display_name:
+  en: Kitesurfing — Flag Beach (Corralejo)
+  it: Kitesurf — Flag Beach (Corralejo)
+  es: Kitesurf — Flag Beach (Corralejo)
+  fr: Kitesurf — Flag Beach (Corralejo)
+  de: Kitesurfen — Flag Beach (Corralejo)
+
+description:
+  en: |
+    The school-and-beginner end of the Fuerteventura cluster. Northern
+    Corralejo dune-park frontage with very high school density. Best
+    for first-week riders and intermediate freestyle. Note seasonally:
+    summer trade-wind is cleaner here than at Sotavento because the
+    Lobos channel funnels and smooths the airflow.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Flag Beach kite-school cooperative documentation"
+    - "Parque Natural de Corralejo management plan"
+    - "RFEV Canarias spot documentation"
+  notes: |
+    Sub-spot of kitesurfing-spot-fuerteventura cluster. Tier 2: open
+    water but sand bottom, high school density, side-on trade. Best
+    learning option in the Fuerteventura cluster despite being tier 2.

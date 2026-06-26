@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-sardinia-chia
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-sardinia
+parent_cluster: kitesurfing-spot-sardinia
+region: mediterranean
+
+coordinates:
+  center: { lat: 38.8814, lng: 8.8758 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    South-coast beach kitesurfing at the long sandy Spiaggia di Su Giudeu
+    and adjacent Cala Cipolla. Onshore-component Maestrale (NW funnelled
+    south of the Sulcis hills) plus Scirocco (SE) give bidirectional
+    side-on options across the year. Sand bottom, shallow water for the
+    first 30 m, then a steady deepening — failures are recoverable as a
+    swim back if the rider doesn't lose the kite to the breaking wave
+    line. Lifeguards in summer; sparse rescue in shoulder season. Wave
+    heights 0.5–1.5 m typical, occasionally 2 m+ on Scirocco storms.
+
+display_name:
+  en: Kitesurfing — Chia (Su Giudeu)
+  it: Kitesurf — Chia (Su Giudeu)
+  es: Kitesurf — Chia (Su Giudeu)
+  fr: Kitesurf — Chia (Su Giudeu)
+  de: Kitesurfen — Chia (Su Giudeu)
+
+description:
+  en: |
+    The south-Sardinia counterpart to Porto Pollo: open beach with two
+    wind regimes (Maestrale NW funnelled south, Scirocco SE). Less
+    crowded than the north, popular with intermediates and freestyle.
+    Best March–November with peak reliability May–September.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chia kite school operational documentation (multiple)"
+    - "Domus de Maria coastal classification, Comune di Domus de Maria"
+    - "FIKW spot classification, Sardinia south"
+  notes: |
+    Sub-spot of kitesurfing-spot-sardinia cluster. Tier 2: sand bottom,
+    side-on bidirectional wind, seasonal lifeguard cover. Slightly
+    higher consequence than Porto Pollo because of the longer swim back
+    when the offshore-component wind on Maestrale pushes riders out.

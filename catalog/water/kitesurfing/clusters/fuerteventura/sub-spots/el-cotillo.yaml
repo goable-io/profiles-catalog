@@ -1,0 +1,52 @@
+slug: kitesurfing-spot-fuerteventura-el-cotillo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-fuerteventura
+parent_cluster: kitesurfing-spot-fuerteventura
+region: atlantic
+
+coordinates:
+  center: { lat: 28.6833, lng: -14.0139 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    NW coast wave-specialist destination — Playa del Castillo and the
+    surrounding beach-and-reef section. NE trade is side-offshore here
+    (blowing from the island toward the open Atlantic), meaning kite
+    failures put riders drifting downwind into 1000+ m of open ocean
+    with no immediate rescue. Wave is the largest of the three
+    Fuerteventura sub-spots, regularly 1.5–3 m on winter swells. Rock
+    and reef sections along parts of the coast — the kite zone proper
+    is the long sand beach, but downwind drift exits onto cliff-and-reef
+    geography. Reserved for advanced wave kiters.
+
+display_name:
+  en: Kitesurfing — El Cotillo
+  it: Kitesurf — El Cotillo
+  es: Kitesurf — El Cotillo
+  fr: Kitesurf — El Cotillo
+  de: Kitesurfen — El Cotillo
+
+description:
+  en: |
+    The wave end of the Fuerteventura cluster. Big-day specialist's spot
+    when N or NW swell hits the island. Best October–March for swell
+    consistency; the rest of the year delivers smaller but kiteable
+    waves with the same trade-wind reliability. Low school density,
+    expert local community.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "El Cotillo wave-community documentation (local kite + surf school operators)"
+    - "RFEV Canarias wave-spot classification"
+    - "AEMET El Cotillo wind and swell records"
+  notes: |
+    Sub-spot of kitesurfing-spot-fuerteventura cluster. Tier 3: side-
+    offshore NE trade, wave-exposed, sparse rescue, rock-and-reef
+    downwind hazards. Domain-expert review recommended for the boundary
+    between safe kite zone and downwind hazard.

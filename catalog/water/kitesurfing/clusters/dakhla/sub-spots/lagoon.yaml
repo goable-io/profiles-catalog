@@ -1,0 +1,51 @@
+slug: kitesurfing-spot-dakhla-lagoon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-dakhla
+parent_cluster: kitesurfing-spot-dakhla
+region: atlantic
+
+coordinates:
+  center: { lat: 23.8194, lng: -15.8761 }
+  radius_m: 3000
+
+tier: 1
+tier_rationale:
+  en: |
+    Main Dakhla lagoon — the world's largest sheltered flat-water kite
+    venue, ~40 km long and 10 km wide. Depth knee-to-waist (0.5–1.4 m)
+    for the kite zones, sand-and-shell bottom, no rocks or reef. Side-on
+    NNE trade blows the full length of the lagoon. Dakhla kite-camp
+    consortium (≥15 operators) provides continuous rescue boat
+    coverage. The peninsula desert blocks open-ocean swell entirely —
+    the lagoon is a glass-flat venue even on 25 kn afternoons. Failure
+    mode is a wet walk through ankle-deep tidal-flat water back to the
+    camp dock.
+
+display_name:
+  en: Kitesurfing — Dakhla Lagoon
+  it: Kitesurf — Laguna di Dakhla
+  es: Kitesurf — Laguna de Dajla
+  fr: Kitesurf — Lagune de Dakhla
+  de: Kitesurfen — Dakhla-Lagune
+
+description:
+  en: |
+    The destination kite-resort of West Africa. Camps on the lagoon
+    shore offer all-inclusive packages with on-site boards/kites.
+    Operates March–November with peak July–August (strongest trade,
+    hottest air). Lagoon size makes overcrowding rare even at peak.
+    Most-camp-density zone is the west shore opposite Dakhla city.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Dakhla kite-camp consortium documentation (Dakhla Attitude, Ocean Vagabond, etc.)"
+    - "Moroccan Royal Federation of Kitesurfing (FRMK) site notes"
+  notes: |
+    Sub-spot of kitesurfing-spot-dakhla cluster. Tier 1 with high
+    confidence: shallow flatwater, sand bottom, dense camp/rescue
+    coverage, side-on trade. radius_m large (3000) — the active kite
+    zone of the lagoon spans several km, single pin matches all of it.

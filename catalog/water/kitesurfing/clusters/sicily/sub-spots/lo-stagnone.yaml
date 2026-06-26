@@ -1,0 +1,52 @@
+slug: kitesurfing-spot-sicily-lo-stagnone
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-sicily
+parent_cluster: kitesurfing-spot-sicily
+region: mediterranean
+
+coordinates:
+  center: { lat: 37.8722, lng: 12.4711 }
+  radius_m: 2000
+
+tier: 1
+tier_rationale:
+  en: |
+    Europe's largest kitesurf lagoon: 2,000 hectares of knee-to-waist deep
+    water (0.5–1.5 m) between Marsala and the four Egadi-direction salt
+    islands (Mozia, San Pantaleo, Santa Maria, La Schola). Sandy
+    flat-stable bottom with eel-grass patches. Side-on thermal Maestrale
+    (NW) blows clean across the lagoon June–September with daily 14–22
+    kn afternoons. ≥15 IKO-registered kite schools operate from the
+    Birgi shore providing continuous rescue boat coverage. Failure mode
+    is a wet walk back through ankle-deep salt-pan water.
+
+display_name:
+  en: Kitesurfing — Lo Stagnone (Marsala)
+  it: Kitesurf — Lo Stagnone (Marsala)
+  es: Kitesurf — Lo Stagnone (Marsala)
+  fr: Kitesurf — Lo Stagnone (Marsala)
+  de: Kitesurfen — Lo Stagnone (Marsala)
+
+description:
+  en: |
+    The Mediterranean's flagship kite-school destination. Lo Stagnone
+    overtook Le Morne and Punta Trettu in instructor-training volume
+    during the 2020s. Best May–October with peak reliability July–August.
+    Highly crowded in peak; book the smaller schools or come October for
+    space. Lagoon ringed by Marsala saltpans, windmills, and the ruins
+    of Phoenician Mozia.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIKW Lo Stagnone site documentation"
+    - "Riserva Naturale Orientata Saline di Trapani-Marsala management plan"
+    - "Bertolini et al. 2021, Stagnone di Marsala lagoon hydrology"
+  notes: |
+    Sub-spot of kitesurfing-spot-sicily cluster. Tier 1 with high
+    confidence: largest sheltered shallow-lagoon kitesurf venue in Europe.
+    radius_m intentionally large (2000) — the usable lagoon area is
+    ~2 km across so a single sub-spot pin matches all entry zones.

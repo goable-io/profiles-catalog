@@ -1,0 +1,151 @@
+slug: kitesurfing-spot-naxos
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing-mediterranean
+region: mediterranean
+sub_spots:
+  - kitesurfing-spot-naxos-mikri-vigla
+  - kitesurfing-spot-naxos-plaka
+display_name:
+  en: Kitesurfing — Naxos (Cyclades)
+  it: Kitesurf — Naxos (Cicladi)
+  es: Kitesurf — Naxos (Cíclades)
+  fr: Kitesurf — Naxos (Cyclades)
+  de: Kitesurfen — Naxos (Kykladen)
+description:
+  en: |
+    Naxos sits in the Aegean Meltemi corridor and gets one of the most
+    reliable summer wind regimes in Europe: 15–30 kn N/NNE Meltemi
+    blowing 80–90% of July–August afternoons. Two main kite zones on the
+    SW coast: Mikri Vigla (the classic kite headland separating two
+    bays) and Plaka (the long sandy beach south of it). Side-on cross
+    Meltemi at both. Limited rescue infrastructure compared to Lo Stagnone
+    or Tarifa — a few schools, no commercial coast-guard boats stationed
+    at the beach.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.45
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.20 }
+      - { x: 12, s: 0.65 }
+      - { x: 18, s: 1.00 }
+      - { x: 26, s: 0.90 }
+      - { x: 33, s: 0.40 }
+      - { x: 40, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.35
+        penalty_coefficient: 0.18
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 340, to: 360, multiplier: 1.0 }
+        - { from: 0,   to: 30,  multiplier: 1.0 }
+        - { from: 30,  to: 90,  multiplier: 0.5 }
+        - { from: 90,  to: 270, multiplier: 0.3 }
+        - { from: 270, to: 340, multiplier: 0.6 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.70 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 0.9, s: 0.85 }
+      - { x: 1.5, s: 0.55 }
+      - { x: 2.5, s: 0.20 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5,  s: 0.3 }
+      - { x: 18, s: 0.9 }
+      - { x: 28, s: 1.0 }
+      - { x: 38, s: 0.6 }
+      - { x: 42, s: 0.2 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 14, s: 0.0 }
+      - { x: 18, s: 0.5 }
+      - { x: 22, s: 0.9 }
+      - { x: 26, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: GALE_FORCE_MELTEMI
+    description: Sustained Meltemi above 40 knots gates kite operations on Naxos; local schools cap at 35.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Rare on Naxos during the Meltemi season, but indicates Atlantic-front passage and storm conditions when it occurs.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Naxos kite season is short and intense (mid-June to mid-September with
+    peak July–August). Mikri Vigla headland is a Natura 2000 site;
+    motorised vehicle access to the dunes behind the launch is restricted.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hellenic Sailing Federation Cyclades spot classification"
+    - "Papanastasiou et al. 2010, Meltemi wind climatology, Int. J. Climatology"
+    - "HNMS Naxos meteorological station historical records"
+  notes: |
+    Cluster aggregates Mikri Vigla and Plaka (~3 km apart) on the SW
+    coast. Meltemi sweet-spot shifted to 18–26 kn vs the Mediterranean
+    parent 18–24 to reflect typical Cycladic afternoon wind strength.

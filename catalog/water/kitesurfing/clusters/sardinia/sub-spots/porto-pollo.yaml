@@ -1,0 +1,53 @@
+slug: kitesurfing-spot-sardinia-porto-pollo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-sardinia
+parent_cluster: kitesurfing-spot-sardinia
+region: mediterranean
+
+coordinates:
+  center: { lat: 41.1869, lng: 9.3417 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Twin bays separated by the sand isthmus of Isola dei Gabbiani in the
+    Bocche di Bonifacio strait between Sardinia and Corsica. The western
+    bay (Porto Liscia) is the kitesurf zone and is open to the strong
+    Mistral funnelling through the strait — wind regularly exceeds 25 kn
+    and gust factor in afternoon thermal-peak can reach 1.4. Sand bottom,
+    open deep water past 50 m offshore. School presence and rescue
+    coverage from the on-beach centers. Failure mode is a downwind drift
+    into the channel; recoverable for prepared intermediates but a
+    consequential swim for beginners.
+
+display_name:
+  en: Kitesurfing — Porto Pollo
+  it: Kitesurf — Porto Pollo
+  es: Kitesurf — Porto Pollo
+  fr: Kitesurf — Porto Pollo
+  de: Kitesurfen — Porto Pollo
+
+description:
+  en: |
+    Northern Sardinia's flagship wind venue, regularly hosting PWA and
+    IKA event stops. Best on Mistral (NW) when the strait acceleration
+    delivers 20–30 kn for hours; lighter Levante and Scirocco days too.
+    Eastern bay (La Sciumara) is the windsurf zone, western Porto Liscia
+    is the kite zone — separated by Isola dei Gabbiani to prevent
+    in-water traffic conflicts.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "MB Pro Center Porto Pollo operational documentation"
+    - "PWA / IKA event venue dossier, Porto Pollo Sardinia"
+    - "ARPAS Bonifacio strait wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-sardinia cluster. Tier 2: open deep
+    water but well-managed with separated kite/windsurf zones and
+    school-fleet rescue. Mistral-driven gust factor warrants the gust
+    penalty from the parent profile.
