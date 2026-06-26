@@ -20,21 +20,42 @@ The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased] — lands as 2.2.0
 
-### Added — 4 new RegionEnum values (additive)
+### Added — 14 new RegionEnum values (additive)
 
 `RegionEnum` was undersized at 6 values for v1 and v2; this release adds
-4 finer-grained sub-basin tags so clusters can declare a region that
+14 finer-grained sub-basin tags so clusters can declare a region that
 matches their actual climatology + forecast pool. Existing 6 values
-unchanged.
+unchanged. Total enum goes from 6 → 20.
 
-| New value | Migrated clusters | Reason |
+**Migrated catalog entries (4 regions, 14 YAML files)**
+
+| Value | Migrated clusters | Reason |
 |---|---|---|
 | `caribbean` | `kitesurfing-spot-cabarete` (cluster + 3 sub-spots) | Trade-wind tropical, distinct from northern-Atlantic synoptic regime. |
 | `red-sea` | `scuba-spot-red-sea` (cluster + 3 sub-spots) | Distinct hydrography from the Indian Ocean basin; warmer mean SST + reef ecosystem. |
 | `aegean` | `kitesurfing-spot-naxos` (cluster + 2 sub-spots) | Meltemi summer regime is climatologically distinct from the broader Mediterranean. |
 | `south-china-sea` | `kitesurfing-spot-mui-ne` (cluster + 2 sub-spots) | NE monsoon delivery (Nov–Apr) is climatologically distinct from the broader Pacific. |
 
-= 14 YAML files migrated.
+**Added pre-emptively for forthcoming bootstrap PRs (10 regions, no current catalog entries)**
+
+| Value | Will host | Reason |
+|---|---|---|
+| `north-sea` | NL/DE/DK kite + windsurf | Northern Atlantic synoptic regime with cold-water + tidal-range characteristics. |
+| `baltic` | Sweden/Estonia/Polish-coast kite + sailing | Semi-enclosed cold-water sea with distinct ice-season dynamics. |
+| `bay-of-biscay` | Hossegor / Mundaka surf (PR2) | Atlantic coast with W-Europe groundswell + summer thermal. |
+| `gulf-of-mexico` | South Padre TX, FL panhandle | Tropical-but-not-Caribbean Gulf with own seasonal pattern. |
+| `adriatic` | Italian NE coast, Croatia kite + windsurf | Bora regime is climatologically distinct from the broader Mediterranean. |
+| `arctic` | Lofoten, Lyngen, Tromsø, Iceland (PR3 ski-touring) | High-latitude polar-influenced climatology. |
+| `sea-of-japan` | Niseko, Hakuba (PR4 freeride) | Lake-effect snowfall regime is the *reason* Japanese west-coast snow exists. |
+| `rockies` | Whistler, Revelstoke, Jackson Hole (PR4 freeride) | North American continental mountain range. |
+| `andes` | Iquique, Roldanillo paragliding (PR5), Patagonia ski | South American continental mountain range. |
+| `himalayas` | Bir-Billing paragliding (PR5), Annapurna trek | Asian mountain range with monsoon-influenced climate. |
+
+**Not added in this PR** (defer to when catalog coverage requires them):
+`black-sea`, `andaman-sea`, `persian-gulf`, `gulf-of-california`,
+`caspian`, `pyrenees`, `atlas`, `southern-alps`, `tasman`, `celtic-sea`,
+`caucasus`, `carpathians`. Adding values is additive and non-breaking,
+so future PRs can extend at low cost.
 
 ### Changed
 - `dist/catalog.json` `schemaVersion` bumped 2.1.0 → 2.2.0 (additive

@@ -41,6 +41,18 @@ const regionBbox: Record<string, { latMin: number; latMax: number; lngMin: numbe
   "red-sea": { latMin: 12, latMax: 30, lngMin: 32, lngMax: 44 },
   aegean: { latMin: 34, latMax: 41, lngMin: 22, lngMax: 31 },
   "south-china-sea": { latMin: -3, latMax: 25, lngMin: 99, lngMax: 122 },
+  // v2.2 — additional sub-basins (no catalog entries yet but bbox declared
+  // so the integrity test catches any future mistags immediately)
+  "north-sea": { latMin: 51, latMax: 62, lngMin: -4, lngMax: 9 },
+  baltic: { latMin: 53, latMax: 66, lngMin: 9, lngMax: 30 },
+  "bay-of-biscay": { latMin: 43, latMax: 49, lngMin: -10, lngMax: -1 },
+  "gulf-of-mexico": { latMin: 18, latMax: 31, lngMin: -98, lngMax: -80 },
+  adriatic: { latMin: 39, latMax: 46, lngMin: 12, lngMax: 20 },
+  arctic: { latMin: 66, latMax: 85, lngMin: -180, lngMax: 180 },
+  "sea-of-japan": { latMin: 33, latMax: 52, lngMin: 127, lngMax: 142 },
+  rockies: { latMin: 32, latMax: 65, lngMin: -125, lngMax: -103 },
+  andes: { latMin: -56, latMax: 12, lngMin: -82, lngMax: -62 },
+  himalayas: { latMin: 26, latMax: 38, lngMin: 70, lngMax: 98 },
 }
 
 const lngInBbox = (
