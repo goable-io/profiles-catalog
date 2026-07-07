@@ -1,6 +1,6 @@
 slug: alpine-skiing
 spot_kind: base
-version: "1.0.0"
+version: "1.1.0"
 category: snow
 display_name:
   en: Alpine Skiing (Resort)
@@ -78,16 +78,14 @@ dimensions:
       - { x: 6,  s: 0.80 }
       - { x: 9,  s: 0.50 }
 
-  - name: snow_quality_proxy
-    metric: water_temperature_c
+  - name: snow_surface
+    metric: snow_surface_quality
     weight: 0.10
     curve:
-      - { x: -25, s: 0.80 }
-      - { x: -10, s: 1.00 }
-      - { x: -3,  s: 1.00 }
-      - { x: 0,   s: 0.85 }
-      - { x: 4,   s: 0.55 }
-      - { x: 10,  s: 0.20 }
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
 
 gates:
   - metric: wind_speed_kn
@@ -143,7 +141,11 @@ meta:
   notes: |
     Resort context inverts several risk priorities vs ski-touring: ski
     patrol manages avalanche risk on-piste, so precipitation is a quality
-    factor (fresh snow over groomed) rather than a safety gate.
-    snow_quality_proxy via water_temperature_c is a coarse stand-in for
-    snow surface quality; L1d will introduce snow_surface_quality and
-    snow_density_estimate_kg_m3 as direct metrics.
+    factor (fresh snow over groomed) rather than a safety gate. As of
+    v1.1.0, snow_surface_quality is modelled directly (0.10 weight) in
+    place of the former water_temperature_c proxy, which mapped to
+    sea/ocean temperature and had no physical relevance to piste snow
+    condition. The curve floor is set higher (0.15 at x=0) than in the
+    backcountry profiles, reflecting that grooming can still deliver an
+    acceptable resort day even when natural surface quality is poor.
+    Future work: snow_density_estimate_kg_m3 as an additional metric.
