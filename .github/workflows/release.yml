@@ -32,11 +32,13 @@ jobs:
       #   - If package.json version is strictly greater than the latest version
       #     on npm, publish package.json's version exactly (manual major/minor
       #     bump path — used for v2.0.0 and similar planned releases).
-      #   - If package.json version equals npm latest, auto-bump the patch
-      #     component (routine merge path — most merges to main land here).
-      #   - If package.json version is less than npm latest, fail loudly:
-      #     someone forgot to bump after a release, or the repo and npm have
-      #     drifted in an unsafe way.
+      #   - Otherwise (package.json equals OR is behind npm latest), auto-bump
+      #     the patch component off npm latest (routine merge path — most
+      #     merges to main land here). package.json is never the source of
+      #     truth for the patch version: this step's own auto-bump is never
+      #     committed back to main by design (see "Create and push tag"
+      #     below), so package.json trails npm latest after every routine
+      #     merge — that is expected, not drift, and must not fail the build.
       - name: Resolve next version
         id: bump
         run: |
@@ -65,17 +67,13 @@ jobs:
               NEXT="$REPO_VERSION"
               echo "Using package.json version (manual bump): $NEXT"
               ;;
-            eq)
+            eq|lt)
               MAJOR=$(echo "$NPM_LATEST" | cut -d. -f1)
               MINOR=$(echo "$NPM_LATEST" | cut -d. -f2)
               PATCH=$(echo "$NPM_LATEST" | cut -d. -f3)
               NEXT="${MAJOR}.${MINOR}.$((PATCH + 1))"
-              echo "Auto-bumping patch: $NEXT"
+              echo "Auto-bumping patch off npm latest: $NEXT"
               npm version "$NEXT" --no-git-tag-version --allow-same-version
-              ;;
-            lt)
-              echo "::error::package.json ($REPO_VERSION) is BEHIND npm latest ($NPM_LATEST). Manual intervention required." >&2
-              exit 1
               ;;
             *)
               echo "::error::Could not compare versions" >&2
