@@ -1,6 +1,6 @@
 slug: snowboarding
 spot_kind: base
-version: "1.0.0"
+version: "1.1.0"
 category: snow
 display_name:
   en: Snowboarding (Resort)
@@ -79,16 +79,14 @@ dimensions:
       - { x: 6,  s: 0.80 }
       - { x: 9,  s: 0.50 }
 
-  - name: snow_quality_proxy
-    metric: water_temperature_c
+  - name: snow_surface
+    metric: snow_surface_quality
     weight: 0.10
     curve:
-      - { x: -25, s: 0.80 }
-      - { x: -10, s: 1.00 }
-      - { x: -3,  s: 1.00 }
-      - { x: 0,   s: 0.85 }
-      - { x: 4,   s: 0.50 }
-      - { x: 10,  s: 0.15 }
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
 
 gates:
   - metric: wind_speed_kn
@@ -143,5 +141,7 @@ meta:
     faster above freezing — board-pressing in slush degrades technique
     and damages base material more rapidly than ski edges; (b)
     precipitation peak shifted from 'no precip' to '0.5 mm/h' because
-    powder is more central to snowboarding's quality model. L1d will
-    add snow_surface_quality (powder/packed/crust/ice) as direct metric.
+    powder is more central to snowboarding's quality model. As of
+    v1.1.0, snow_surface_quality (powder/packed/crust/ice) is modelled
+    directly (0.10 weight), replacing the former water_temperature_c
+    proxy — a sea/ocean metric with no bearing on piste snow condition.

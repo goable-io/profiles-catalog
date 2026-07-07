@@ -1,6 +1,6 @@
 slug: freeride
 spot_kind: base
-version: "0.1.0"
+version: "0.2.0"
 category: snow
 display_name:
   en: Freeride Skiing / Snowboarding
@@ -19,9 +19,27 @@ description:
     output is operational guidance only.
 
 dimensions:
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.35 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: snow_depth
+    metric: swe_mm
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 0.00 }
+      - { x: 100, s: 0.40 }
+      - { x: 300, s: 0.90 }
+      - { x: 600, s: 1.00 }
+
   - name: temperature
     metric: apparent_temp_c
-    weight: 0.20
+    weight: 0.15
     curve:
       - { x: -25, s: 0.00 }
       - { x: -15, s: 0.50 }
@@ -33,7 +51,7 @@ dimensions:
 
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.20
+    weight: 0.15
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 10, s: 1.00 }
@@ -43,7 +61,7 @@ dimensions:
 
   - name: precipitation
     metric: precipitation_mm_h
-    weight: 0.20
+    weight: 0.10
     curve:
       - { x: 0,   s: 0.85 }
       - { x: 0.5, s: 1.00 }
@@ -53,7 +71,7 @@ dimensions:
 
   - name: visibility
     metric: visibility_km
-    weight: 0.20
+    weight: 0.10
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 1,  s: 0.20 }
@@ -62,7 +80,7 @@ dimensions:
 
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.20
+    weight: 0.05
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 10, s: 0.60 }
@@ -117,7 +135,11 @@ meta:
     - "Federation Internationale de Ski (FIS) freeride safety guidance"
   maturity: provisional
   notes: |
-    Profile uses currently-implemented MetricEnum. L1d additions will
-    refine via snow_surface_quality (powder/packed/crust), snow_density
-    (favours <100 kg/m³), snowpack_stability_class advisory. L1e adds
-    aqi_composite and freezing_level_m.
+    Profile uses currently-implemented MetricEnum. As of v0.2.0, snow
+    quality is now modelled directly: snow_surface_quality (powder/pack
+    condition, 0.30 weight — the dominant factor, since fresh powder is
+    freeride's core value proposition) and swe_mm (snow water equivalent,
+    a base-depth proxy, 0.15 weight) join the five atmospheric dimensions.
+    Future work: snow_density_estimate_kg_m3 (favours <100 kg/m³) and
+    snowpack_stability_class advisory once surfaced as gates rather than
+    weighted dimensions. L1e adds aqi_composite and freezing_level_m.
