@@ -1,6 +1,6 @@
 slug: freeride-spot-whistler
 spot_kind: cluster
-version: "1.0.0"
+version: "1.1.0"
 category: snow
 extends: freeride-rockies
 region: rockies
@@ -29,9 +29,27 @@ description:
     (CAA) Sea-to-Sky bulletin daily.
 
 dimensions:
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.35 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: snow_depth
+    metric: swe_mm
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 0.00 }
+      - { x: 100, s: 0.40 }
+      - { x: 300, s: 0.90 }
+      - { x: 600, s: 1.00 }
+
   - name: temperature
     metric: apparent_temp_c
-    weight: 0.20
+    weight: 0.110
     curve:
       - { x: -25, s: 0.20 }
       - { x: -15, s: 0.60 }
@@ -43,7 +61,7 @@ dimensions:
 
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.20
+    weight: 0.110
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 10, s: 0.90 }
@@ -53,7 +71,7 @@ dimensions:
 
   - name: precipitation
     metric: precipitation_mm_h
-    weight: 0.18
+    weight: 0.099
     curve:
       - { x: 0,   s: 0.85 }
       - { x: 0.5, s: 1.00 }
@@ -64,7 +82,7 @@ dimensions:
 
   - name: visibility
     metric: visibility_km
-    weight: 0.22
+    weight: 0.121
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 1,  s: 0.20 }
@@ -74,7 +92,7 @@ dimensions:
 
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.20
+    weight: 0.110
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 5,  s: 0.45 }
@@ -138,4 +156,7 @@ meta:
     (Symphony), sidecountry classic (Spanky's Ladder), and
     multi-day BC corridor (Spearhead). Region tag: rockies. Cold
     gate at -28°C (vs rockies parent -32°C) reflects the maritime
-    Coast Range climate.
+    Coast Range climate. v1.1.0: snow_surface_quality (0.30) and
+    swe_mm (0.15) added, matching the base freeride profile; the five
+    atmospheric weights above are scaled by 0.55 to preserve their
+    original relative emphasis.
