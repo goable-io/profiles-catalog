@@ -1,6 +1,6 @@
 slug: ski-touring-spot-zermatt
 spot_kind: cluster
-version: "1.0.0"
+version: "1.1.0"
 category: snow
 extends: ski-touring-alpine
 region: alpine
@@ -27,9 +27,27 @@ description:
     service runs year-round.
 
 dimensions:
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.35 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: snow_depth
+    metric: swe_mm
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 0.00 }
+      - { x: 100, s: 0.40 }
+      - { x: 300, s: 0.90 }
+      - { x: 600, s: 1.00 }
+
   - name: temperature
     metric: apparent_temp_c
-    weight: 0.20
+    weight: 0.130
     curve:
       - { x: -30, s: 0.00 }
       - { x: -20, s: 0.40 }
@@ -41,7 +59,7 @@ dimensions:
 
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.22
+    weight: 0.143
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 10, s: 0.90 }
@@ -51,7 +69,7 @@ dimensions:
 
   - name: precipitation
     metric: precipitation_mm_h
-    weight: 0.13
+    weight: 0.085
     curve:
       - { x: 0,   s: 1.00 }
       - { x: 0.5, s: 0.85 }
@@ -61,7 +79,7 @@ dimensions:
 
   - name: visibility
     metric: visibility_km
-    weight: 0.25
+    weight: 0.162
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 1,  s: 0.20 }
@@ -71,7 +89,7 @@ dimensions:
 
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.20
+    weight: 0.130
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 5,  s: 0.45 }
@@ -134,3 +152,6 @@ meta:
     Cluster aggregates 4 high-altitude touring zones accessed from
     Zermatt's lift system. Region tag: alpine. Cold-gate at -30°C
     (vs alpine parent -28°C) reflects routine 4000-m peak operation.
+    v1.1.0: snow_surface_quality (0.25) and swe_mm (0.10) added,
+    atmospheric weights rescaled by 0.65 to preserve their relative
+    split.
