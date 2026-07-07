@@ -156,8 +156,8 @@ meta:
   notes: |
     Cluster aggregates 4 iconic Lyngen Alps summits — all accessed
     by boat from Tromsø or by road to Lyseidet / Furuflaten /
-    Storfjorden trailheads. Region tag: arctic. Sun-weight
-    reflects the light-window scheduling constraint of arctic
-    touring. v1.1.0: snow_surface_quality (0.25) and swe_mm (0.10)
-    added, atmospheric weights rescaled by 0.65 to preserve their
-    relative split.
+    Storfjorden trailheads. Region tag: arctic. Sun-weight 0.162
+    (highest among the atmospheric dimensions) reflects the
+    light-window scheduling constraint of arctic touring. v1.1.0:
+    snow_surface_quality (0.25) and swe_mm (0.10) added, atmospheric
+    weights rescaled by 0.65 to preserve their relative split.
