@@ -1,6 +1,6 @@
 slug: ski-touring
 spot_kind: base
-version: "0.1.0"
+version: "0.2.0"
 category: snow
 display_name:
   en: Ski Touring
@@ -20,9 +20,27 @@ description:
     for an avalanche forecast.
 
 dimensions:
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.35 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: snow_depth
+    metric: swe_mm
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 0.00 }
+      - { x: 100, s: 0.40 }
+      - { x: 300, s: 0.90 }
+      - { x: 600, s: 1.00 }
+
   - name: temperature
     metric: apparent_temp_c
-    weight: 0.25
+    weight: 0.20
     curve:
       - { x: -25, s: 0.00 }
       - { x: -15, s: 0.40 }
@@ -34,7 +52,7 @@ dimensions:
 
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.20
+    weight: 0.15
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 10, s: 0.95 }
@@ -44,7 +62,7 @@ dimensions:
 
   - name: precipitation
     metric: precipitation_mm_h
-    weight: 0.15
+    weight: 0.10
     curve:
       - { x: 0,   s: 1.00 }
       - { x: 0.5, s: 0.90 }
@@ -54,7 +72,7 @@ dimensions:
 
   - name: visibility
     metric: visibility_km
-    weight: 0.20
+    weight: 0.15
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 1,  s: 0.30 }
@@ -63,7 +81,7 @@ dimensions:
 
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.20
+    weight: 0.05
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 10, s: 0.70 }
@@ -124,9 +142,15 @@ meta:
     - "European Avalanche Warning Services (EAWS) bulletin standards"
   maturity: provisional
   notes: |
-    Profile uses currently-implemented MetricEnum. Once L1d ships, will
-    extend with snow_surface_quality, snowpack_stability_class, and
-    snow_density_estimate_kg_m3 as additional weighted dimensions and
-    gates. Once L1e ships, will add freezing_level_m and aqi_composite.
-    Avalanche stability proxy (L1d) will provide an advisory tier, NEVER
-    replacing professional avalanche bulletins.
+    Profile uses currently-implemented MetricEnum. As of v0.2.0, snow
+    quality is now modelled directly: snow_surface_quality (powder/pack
+    condition, 0.25 weight) and swe_mm (snow water equivalent, a
+    base-depth proxy, 0.10 weight) join the five atmospheric dimensions,
+    re-balanced accordingly. snow_surface_quality carries more weight
+    than swe_mm since moment-to-moment surface quality matters more for
+    ski-touring turns than accumulated base depth. Future work:
+    snowpack_stability_class and snow_density_estimate_kg_m3 as
+    additional gates/dimensions. Once L1e ships, will add
+    freezing_level_m and aqi_composite. Avalanche stability proxy will
+    provide an advisory tier, NEVER replacing professional avalanche
+    bulletins.
