@@ -98,6 +98,14 @@ dimensions:
       - { x: 30, s: 1.00 }
 
 gates:
+  # Feasibility floor (auto): no natural snowpack -> physically
+  # impossible at any skill level. Hard PREREQUISITE (Gate.kind='feasibility').
+  - metric: swe_mm
+    condition: lt
+    value: 20
+    kind: feasibility
+    reason_code: NO_SNOWPACK
+    description: Below ~20 mm snow water equivalent there is no natural snowpack, so ski touring is not feasible regardless of the other conditions.
   - metric: visibility_km
     condition: lt
     value: 0.4

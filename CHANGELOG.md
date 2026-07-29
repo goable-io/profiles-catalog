@@ -49,13 +49,23 @@ impossible; the ideal range stays a weighted curve):
 | sailing | `wind_speed_kn` | `< 2` | `BECALMED` |
 | surfing | `wave_height_m` | `< 0.3` | `FLAT_NO_SURF` |
 | bodyboarding | `wave_height_m` | `< 0.3` | `FLAT_NO_SURF` |
+| freeride | `swe_mm` | `< 20` | `NO_SNOWPACK` |
+| ski-touring | `swe_mm` | `< 20` | `NO_SNOWPACK` |
 
 Applied to every base/region/cluster profile that declares gates (shallow
-override means each resolved profile needs its own). Sports with no
-physical minimum (SUP, swimming, snorkeling, trekking, paragliding, …)
-deliberately get **no** feasibility gate — flat/calm conditions are fine or
-ideal for them. Snow sports (need snow cover) are intentionally deferred
-pending a metric-scale review of `snow_surface_quality`/`swe_mm`.
+override means each resolved profile needs its own).
+
+**Deliberately NOT gated:**
+
+- Sports with no physical minimum — SUP, swimming, snorkeling, kayak,
+  wakeboarding, trekking, cycling, paragliding, … — get no feasibility
+  gate; flat/calm conditions are fine or ideal for them.
+- **alpine-skiing / snowboarding** — these are *resort* profiles (groomed,
+  patrolled, snowmaking). Their own `snow_surface_quality` curve floors at
+  suitability 0.15 (not 0) precisely because a resort still operates on
+  artificial snow, so a natural-snowpack feasibility gate would be wrong.
+  Only the *backcountry* profiles (freeride, ski-touring), which the
+  descriptions define as "natural, ungroomed snow", gate on `swe_mm`.
 
 Also realigns `package.json` version with the published npm line (the repo
 had drifted to 2.3.4 while npm was at 2.3.6).
