@@ -18,6 +18,48 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.4.0]
+
+### Added — feasibility gates (hard prerequisites) + `Gate.kind`
+
+Gates gain an optional `kind: "safety" | "feasibility"` field (default
+`"safety"`, so every existing gate keeps its meaning):
+
+- `"safety"` — the conditions are **dangerous** (gale, lightning, low
+  visibility). The existing gates.
+- `"feasibility"` — the activity is **impossible at any skill level**, not
+  dangerous, just can't be done. Lets a go/no-go client tell "unsafe"
+  apart from "not feasible", and marks the metric as a hard **prerequisite**
+  rather than a weighted dimension.
+
+**Why:** a weighted aggregate can be propped up by good secondary
+dimensions even when the defining resource is absent — e.g. a no-wind day
+for kitesurfing scored ~48/100 "marginal" because good waves/temp masked
+`wind_speed` suitability of 0.17. A prerequisite gate collapses the score
+instead, which is the correct go/no-go semantics.
+
+**Feasibility gates added** (below the floor the sport is physically
+impossible; the ideal range stays a weighted curve):
+
+| Sport | Metric | Floor | reason_code |
+|---|---|---|---|
+| kitesurfing | `wind_speed_kn` | `< 6` | `NO_RIDABLE_WIND` |
+| windsurfing | `wind_speed_kn` | `< 5` | `NO_RIDABLE_WIND` |
+| wing-foiling | `wind_speed_kn` | `< 8` | `NO_RIDABLE_WIND` |
+| sailing | `wind_speed_kn` | `< 2` | `BECALMED` |
+| surfing | `wave_height_m` | `< 0.3` | `FLAT_NO_SURF` |
+| bodyboarding | `wave_height_m` | `< 0.3` | `FLAT_NO_SURF` |
+
+Applied to every base/region/cluster profile that declares gates (shallow
+override means each resolved profile needs its own). Sports with no
+physical minimum (SUP, swimming, snorkeling, trekking, paragliding, …)
+deliberately get **no** feasibility gate — flat/calm conditions are fine or
+ideal for them. Snow sports (need snow cover) are intentionally deferred
+pending a metric-scale review of `snow_surface_quality`/`swe_mm`.
+
+Also realigns `package.json` version with the published npm line (the repo
+had drifted to 2.3.4 while npm was at 2.3.6).
+
 ## [Unreleased] — lands as 2.3.4
 
 ### Added — paragliding sub-spots bootstrap (7 clusters, 16 sub-spots)

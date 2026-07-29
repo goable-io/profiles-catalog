@@ -107,6 +107,15 @@ dimensions:
       - { x: 30, s: 1.0 }
 
 gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wind_speed_kn
+    condition: lt
+    value: 5
+    kind: feasibility
+    reason_code: NO_RIDABLE_WIND
+    description: Below ~5 knots the sail cannot drive the board, so windsurfing is not feasible regardless of the other conditions.
   - metric: wind_speed_kn
     condition: lt
     value: 10

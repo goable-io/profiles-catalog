@@ -97,6 +97,15 @@ dimensions:
       - { x: 25, s: 1.0 }
 
 gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wave_height_m
+    condition: lt
+    value: 0.3
+    kind: feasibility
+    reason_code: FLAT_NO_SURF
+    description: Below ~0.3 m the sea is flat with no rideable waves, so surfing is not feasible regardless of the other conditions.
   - metric: wave_height_m
     condition: gt
     value: 6

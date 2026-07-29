@@ -96,6 +96,15 @@ dimensions:
       - { x: 30, s: 1.0 }
 
 gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wind_speed_kn
+    condition: lt
+    value: 6
+    kind: feasibility
+    reason_code: NO_RIDABLE_WIND
+    description: Below ~6 knots there is not enough wind to generate power on any kite, so kitesurfing is not feasible regardless of the other conditions.
   - metric: wind_speed_kn
     condition: gt
     value: 40
