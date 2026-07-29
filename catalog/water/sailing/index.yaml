@@ -86,6 +86,15 @@ dimensions:
       - { x: 30, s: 1.0 }
 
 gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wind_speed_kn
+    condition: lt
+    value: 2
+    kind: feasibility
+    reason_code: BECALMED
+    description: Below ~2 knots the boat has no steerage way (becalmed), so sailing is not feasible regardless of the other conditions.
   - metric: wind_speed_kn
     condition: gt
     value: 35

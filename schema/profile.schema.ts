@@ -102,6 +102,19 @@ export const GateSchema = z.object({
   value: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]),
   reason_code: z.string(),
   description: z.string(),
+  /**
+   * Why the activity is a no-go when this gate trips.
+   *   - "safety"      → the conditions are DANGEROUS (gale, lightning,
+   *                     hazardous AQI, low visibility). The default.
+   *   - "feasibility" → the activity is IMPOSSIBLE regardless of skill
+   *                     (e.g. no rideable wind for kite/windsurf). Not
+   *                     dangerous — just can't be done. Lets a go/no-go
+   *                     client tell "unsafe" apart from "not feasible",
+   *                     and marks the metric as a hard PREREQUISITE
+   *                     rather than a weighted dimension.
+   * Defaults to "safety" so every existing gate keeps its meaning.
+   */
+  kind: z.enum(["safety", "feasibility"]).default("safety"),
 })
 
 export type Gate = z.infer<typeof GateSchema>

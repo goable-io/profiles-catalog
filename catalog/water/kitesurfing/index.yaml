@@ -91,6 +91,17 @@ dimensions:
       - { x: 30, s: 1.0 }
 
 gates:
+  # Feasibility floor: below ~6 kn no kite (any size) generates enough
+  # power to ride, at any skill level. Kitesurfing is simply not possible
+  # — not dangerous, just impossible — so the aggregate must collapse
+  # instead of being propped up by good waves/temp/visibility. This is a
+  # PREREQUISITE, not a weighted dimension (kind: feasibility).
+  - metric: wind_speed_kn
+    condition: lt
+    value: 6
+    kind: feasibility
+    reason_code: NO_RIDABLE_WIND
+    description: Below ~6 knots there is not enough wind to generate power on any kite, so kitesurfing is not feasible regardless of the other conditions.
   - metric: wind_speed_kn
     condition: gt
     value: 45
