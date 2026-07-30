@@ -220,4 +220,46 @@ describe("v2 hierarchical integrity", () => {
       ).toBe(cluster.country_code)
     }
   })
+
+  // Guard for the specific class of bug that reshaped the swe_mm curves:
+  // `swe_mm` carries a `kind: feasibility` FLOOR gate, so in the scoring
+  // engine it is a PREREQUISITE whose suitability curve MULTIPLIES the whole
+  // score (go/no-go), not just an additive weighted term. Snow-water-
+  // equivalent DECOUPLES from ski quality — a perfect low-density powder day
+  // is only ~90 mm SWE — so the curve must plateau at ~1.0 once there's an
+  // ADEQUATE base (it must not keep climbing to reward ever-deeper snowpack,
+  // or the multiplier craters powder to "marginal"). This is specific to
+  // swe_mm: for wind_speed_kn / wave_height_m the resource magnitude DOES
+  // track day quality (a big-wave spot like Nazaré rightly rates a small
+  // swell low), so no equivalent plateau rule applies to them.
+  it("swe_mm suitability curves plateau near an adequate base (feasibility multiplier must not crater powder)", async () => {
+    const suitabilityAt = (curve: Array<{ x: number; s: number }>, x: number): number => {
+      const pts = [...curve].sort((a, b) => a.x - b.x)
+      if (x <= pts[0]!.x) return pts[0]!.s
+      const last = pts[pts.length - 1]!
+      if (x >= last.x) return last.s
+      for (let i = 0; i < pts.length - 1; i++) {
+        const a = pts[i]!
+        const b = pts[i + 1]!
+        if (x >= a.x && x <= b.x) return b.x === a.x ? a.s : a.s + (b.s - a.s) * ((x - a.x) / (b.x - a.x))
+      }
+      return last.s
+    }
+    const all = await collect()
+    let checked = 0
+    for (const { file, parsed } of all) {
+      const dims = (parsed as { dimensions?: Array<{ metric: string; curve?: Array<{ x: number; s: number }> }> }).dimensions
+      const swe = dims?.find((d) => d.metric === "swe_mm" && d.curve && d.curve.length > 0)
+      if (!swe?.curve) continue
+      checked++
+      // A realistic powder base (1.2 m at ~75 kg/m³ ≈ 90 mm SWE) is an
+      // excellent day — its suitability must be high so the go/no-go
+      // multiplier does not drag it down.
+      expect(
+        suitabilityAt(swe.curve, 90),
+        `${file}: swe_mm suitability at 90 mm SWE (a fine ~1.2 m powder base) is too low — the feasibility multiplier will crater powder days. Reshape the curve to plateau at ~1.0 once the base is adequate.`,
+      ).toBeGreaterThanOrEqual(0.85)
+    }
+    expect(checked).toBeGreaterThan(0)
+  })
 })
