@@ -41,9 +41,9 @@ dimensions:
     weight: 0.10
     curve:
       - { x: 0,   s: 0.00 }
-      - { x: 100, s: 0.40 }
-      - { x: 300, s: 0.90 }
-      - { x: 600, s: 1.00 }
+      - { x: 20,  s: 0.15 }
+      - { x: 55,  s: 0.70 }
+      - { x: 100, s: 1.00 }
 
   - name: temperature
     metric: apparent_temp_c
