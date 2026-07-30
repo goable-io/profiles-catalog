@@ -84,49 +84,212 @@ const ModifiersSchema = z
   })
   .optional()
 
-export const DimensionSchema = z.object({
-  name: z.string(),
-  metric: MetricEnum,
-  weight: z.number().min(0).max(1),
-  curve: z.array(CurvePointSchema).optional(),
-  preferred_phases: z.array(z.string()).optional(),
-  comfort_range: z.tuple([z.number(), z.number()]).optional(),
-  modifiers: ModifiersSchema,
-})
+// FIX #19: a dimension must declare at least one of `curve` or
+// `modifiers.direction_preference` — with neither, there is nothing for a
+// scoring engine to evaluate the metric against. Verified against the
+// current catalog: every dimension carries a non-empty `curve`, except
+// wind-direction dimensions which instead carry a non-empty
+// `modifiers.direction_preference` (e.g. paragliding, wing-foiling,
+// sailing, windsurfing).
+const dimensionScorableOk = (d: {
+  curve?: Array<unknown>
+  modifiers?: { direction_preference?: Array<unknown> }
+}): boolean =>
+  (Array.isArray(d.curve) && d.curve.length > 0) ||
+  (Array.isArray(d.modifiers?.direction_preference) && (d.modifiers?.direction_preference?.length ?? 0) > 0)
+
+const dimensionScorableMessage = {
+  message:
+    "Dimension must declare at least one of `curve` or `modifiers.direction_preference` — a dimension with neither cannot be scored.",
+  path: ["curve"],
+}
+
+export const DimensionSchema = z
+  .object({
+    name: z.string(),
+    metric: MetricEnum,
+    weight: z.number().min(0).max(1),
+    curve: z.array(CurvePointSchema).optional(),
+    preferred_phases: z.array(z.string()).optional(),
+    comfort_range: z.tuple([z.number(), z.number()]).optional(),
+    modifiers: ModifiersSchema,
+  })
+  .refine(dimensionScorableOk, dimensionScorableMessage)
 
 export type Dimension = z.infer<typeof DimensionSchema>
 
-export const GateSchema = z.object({
-  metric: z.string(),
-  condition: z.enum(["lt", "gt", "in", "not_in", "between"]),
-  value: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]),
-  reason_code: z.string(),
-  description: z.string(),
-  /**
-   * Why the activity is a no-go when this gate trips.
-   *   - "safety"      → the conditions are DANGEROUS (gale, lightning,
-   *                     hazardous AQI, low visibility). The default.
-   *   - "feasibility" → the activity is IMPOSSIBLE regardless of skill
-   *                     (e.g. no rideable wind for kite/windsurf). Not
-   *                     dangerous — just can't be done. Lets a go/no-go
-   *                     client tell "unsafe" apart from "not feasible",
-   *                     and marks the metric as a hard PREREQUISITE
-   *                     rather than a weighted dimension.
-   * Defaults to "safety" so every existing gate keeps its meaning.
-   */
-  kind: z.enum(["safety", "feasibility"]).default("safety"),
-})
+// FIX #7 / #17: couple Gate.condition to Gate.value's TYPE/SHAPE.
+//   - gt / lt          → value must be a plain number.
+//   - between          → value must be a 2-element number tuple [lo, hi],
+//                         with lo <= hi (reversed bounds are unsatisfiable,
+//                         FIX #17).
+//   - in / not_in       → value must be an array of string|number.
+// Verified against the current catalog: every existing gate uses only
+// gt/lt with a numeric value, so this refinement is satisfied by all 257
+// files without any data changes.
+export const GateSchema = z
+  .object({
+    metric: z.string(),
+    condition: z.enum(["lt", "gt", "in", "not_in", "between"]),
+    value: z.union([z.number(), z.string(), z.array(z.union([z.number(), z.string()]))]),
+    reason_code: z.string(),
+    description: z.string(),
+    /**
+     * Why the activity is a no-go when this gate trips.
+     *   - "safety"      → the conditions are DANGEROUS (gale, lightning,
+     *                     hazardous AQI, low visibility). The default.
+     *   - "feasibility" → the activity is IMPOSSIBLE regardless of skill
+     *                     (e.g. no rideable wind for kite/windsurf). Not
+     *                     dangerous — just can't be done. Lets a go/no-go
+     *                     client tell "unsafe" apart from "not feasible",
+     *                     and marks the metric as a hard PREREQUISITE
+     *                     rather than a weighted dimension.
+     * Defaults to "safety" so every existing gate keeps its meaning.
+     */
+    kind: z.enum(["safety", "feasibility"]).default("safety"),
+  })
+  .superRefine((data, ctx) => {
+    const { condition, value } = data
+    switch (condition) {
+      case "gt":
+      case "lt": {
+        if (typeof value !== "number") {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: `Gate condition '${condition}' requires a numeric value; got ${typeof value === "string" ? `string "${value}"` : JSON.stringify(value)}`,
+            path: ["value"],
+          })
+        }
+        break
+      }
+      case "between": {
+        const isNumberPair =
+          Array.isArray(value) && value.length === 2 && typeof value[0] === "number" && typeof value[1] === "number"
+        if (!isNumberPair) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message:
+              "Gate condition 'between' requires value to be a 2-element number array [lo, hi]",
+            path: ["value"],
+          })
+        } else {
+          const [lo, hi] = value as [number, number]
+          if (lo > hi) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: `Gate condition 'between' requires lo <= hi; got [${lo}, ${hi}] (reversed bounds are unsatisfiable)`,
+              path: ["value"],
+            })
+          }
+        }
+        break
+      }
+      case "in":
+      case "not_in": {
+        if (!Array.isArray(value)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: `Gate condition '${condition}' requires value to be an array of string|number`,
+            path: ["value"],
+          })
+        }
+        break
+      }
+    }
+  })
 
 export type Gate = z.infer<typeof GateSchema>
 
-const VerdictBucketsSchema = z.object({
-  unsafe: z.literal(0),
-  poor: z.tuple([z.number(), z.number()]),
-  marginal: z.tuple([z.number(), z.number()]),
-  fair: z.tuple([z.number(), z.number()]),
-  favorable: z.tuple([z.number(), z.number()]),
-  excellent: z.tuple([z.number(), z.number()]),
-})
+// FIX #21: verdict_buckets must be CONTIGUOUS and cover the integer score
+// range [1, 100] with no gaps or overlaps. `unsafe` is the fixed literal 0
+// (a score of exactly 0 means a safety/feasibility gate tripped, handled
+// outside this 1-100 range). The five named bands — poor, marginal, fair,
+// favorable, excellent — are fixed in that low-to-high order (the field
+// names themselves encode the ordering; there is no `order` field to sort
+// by), so contiguity is checked band-by-band in declaration order:
+//   poor[0] === 1
+//   marginal[0] === poor[1] + 1
+//   fair[0] === marginal[1] + 1
+//   favorable[0] === fair[1] + 1
+//   excellent[0] === favorable[1] + 1
+//   excellent[1] === 100
+// Verified against the current catalog: all 104 verdict_buckets blocks use
+// the identical tiling poor:[1,30] marginal:[31,50] fair:[51,70]
+// favorable:[71,85] excellent:[86,100], which satisfies this exactly.
+const VerdictBucketsSchema = z
+  .object({
+    unsafe: z.literal(0),
+    poor: z.tuple([z.number(), z.number()]),
+    marginal: z.tuple([z.number(), z.number()]),
+    fair: z.tuple([z.number(), z.number()]),
+    favorable: z.tuple([z.number(), z.number()]),
+    excellent: z.tuple([z.number(), z.number()]),
+  })
+  .superRefine((data, ctx) => {
+    const bands: Array<[string, [number, number]]> = [
+      ["poor", data.poor],
+      ["marginal", data.marginal],
+      ["fair", data.fair],
+      ["favorable", data.favorable],
+      ["excellent", data.excellent],
+    ]
+
+    let bandsValid = true
+    for (const [name, [lo, hi]] of bands) {
+      if (!Number.isInteger(lo) || !Number.isInteger(hi)) {
+        bandsValid = false
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: `verdict_buckets.${name} bounds must be integers; got [${lo}, ${hi}]`,
+          path: [name],
+        })
+        continue
+      }
+      if (lo > hi) {
+        bandsValid = false
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: `verdict_buckets.${name} has reversed bounds [${lo}, ${hi}] (lo must be <= hi)`,
+          path: [name],
+        })
+      }
+    }
+
+    // Only check contiguity/coverage once every band is internally sane —
+    // otherwise the gap messages would just restate the malformed-band issue.
+    if (!bandsValid) return
+
+    const [firstName, firstRange] = bands[0] as [string, [number, number]]
+    if (firstRange[0] !== 1) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `verdict_buckets must start coverage at score 1 (${firstName}[0] === 1); got ${firstRange[0]}`,
+        path: [firstName],
+      })
+    }
+
+    for (let i = 1; i < bands.length; i++) {
+      const [prevName, prevRange] = bands[i - 1] as [string, [number, number]]
+      const [name, range] = bands[i] as [string, [number, number]]
+      const expectedLo = prevRange[1] + 1
+      if (range[0] !== expectedLo) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: `verdict_buckets bands must be contiguous with no gaps or overlaps: ${name}[0] (${range[0]}) must equal ${prevName}[1] + 1 (${expectedLo})`,
+          path: [name],
+        })
+      }
+    }
+
+    const [lastName, lastRange] = bands[bands.length - 1] as [string, [number, number]]
+    if (lastRange[1] !== 100) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: `verdict_buckets must cover up to score 100 (${lastName}[1] === 100); got ${lastRange[1]}`,
+        path: [lastName],
+      })
+    }
+  })
 
 const CalibrationSchema = z.object({
   datasetVersion: z.string().min(1),
