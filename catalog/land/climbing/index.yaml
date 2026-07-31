@@ -1,6 +1,6 @@
 slug: climbing
 spot_kind: base
-version: "0.1.0"
+version: "0.2.0"
 category: land
 display_name:
   en: Rock Climbing
@@ -16,14 +16,17 @@ description:
     low humidity for friction, low wind on exposed routes, and full
     daylight. Wet rock dramatically increases injury risk; freezing
     temperatures degrade tendons and rope handling. Lightning on alpine
-    rock is an absolute no-go. Profile uses currently-implemented
-    MetricEnum; L1d adds lightning_proximity and L1e adds rockfall_risk
-    (freeze-thaw cycle proxy for via ferrata and alpine multipitch).
+    rock is an absolute no-go. A freeze-thaw rockfall signal
+    (rockfall_risk_index) is now scored as a low-weight hazard dimension,
+    modestly lowering suitability when recent freeze-thaw cycling and
+    precipitation raise the odds of loose rock on via ferrata and alpine
+    multipitch. It is deliberately light so it never dominates a dry,
+    stable day.
 
 dimensions:
   - name: temperature
     metric: apparent_temp_c
-    weight: 0.25
+    weight: 0.21
     curve:
       - { x: -5, s: 0.05 }
       - { x: 2,  s: 0.40 }
@@ -35,7 +38,7 @@ dimensions:
 
   - name: precipitation
     metric: precipitation_mm_h
-    weight: 0.25
+    weight: 0.21
     curve:
       - { x: 0,   s: 1.00 }
       - { x: 0.1, s: 0.50 }
@@ -78,6 +81,22 @@ dimensions:
       - { x: 6,  s: 0.85 }
       - { x: 9,  s: 0.55 }
       - { x: 11, s: 0.30 }
+
+  # Freeze-thaw rockfall hazard. metric rockfall_risk_index is 0..1 (0 = no
+  # freeze-thaw driver, 1 = strong recent cycling + precipitation). Low weight
+  # by design: it nudges a marginal day, it does not overrule the primary
+  # dry-rock / temperature signal. Consumers that do not compute the metric
+  # (no freeze-thaw history source) simply drop this dimension; at 0.08 it is
+  # below the missing-dimension alert threshold, so its absence is silent.
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
 
 gates:
   - metric: precipitation_mm_h
@@ -134,8 +153,9 @@ meta:
     - "ENSA (École nationale de ski et d'alpinisme) outdoor climbing weather criteria"
   maturity: provisional
   notes: |
-    Profile uses currently-implemented MetricEnum. L1d will add
-    lightning_proximity (hard-gated for alpine multipitch),
+    v0.2.0 scores rockfall_risk_index as a low-weight (0.08) freeze-thaw
+    hazard dimension; consumers without a freeze-thaw history source drop
+    it silently (below the missing-dimension alert threshold). Still to
+    come: lightning_proximity (hard-gated for alpine multipitch),
     precipitation_form (snow gates differently than rain), wbgt_c for
-    summer heat stress. L1e adds rockfall_risk_index (freeze-thaw cycle
-    count, critical for via ferrata and alpine climbing).
+    summer heat stress.
