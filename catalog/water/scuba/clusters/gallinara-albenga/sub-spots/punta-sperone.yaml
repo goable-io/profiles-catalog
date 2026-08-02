@@ -1,0 +1,49 @@
+slug: scuba-spot-gallinara-albenga-punta-sperone
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-gallinara-albenga
+parent_cluster: scuba-spot-gallinara-albenga
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.0180, lng: 8.2210 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Punta Sperone is the SE-facing outer point of Gallinara, a
+    vertical wall dropping to 45 m+ with dense Paramuricea gorgonian
+    fields and the offshore Roman-era amphorae field at 30-35 m in
+    the sand-shelf between the point and the mainland (Republican-era
+    wine-amphorae cargo scattered pattern, under Soprintendenza
+    protection — look-only, no contact). Depth + current + off-shore
+    exposure make advanced-open-water rating baseline. Site is
+    guide-led by default with amphorae-field briefing mandatory to
+    prevent artefact disturbance.
+
+display_name:
+  en: Scuba — Punta Sperone + amphorae field
+  it: Immersione — Punta Sperone (Gallinara)
+  es: Buceo — Punta Sperone (Gallinara)
+  fr: Plongée — Punta Sperone (Gallinara)
+  de: Tauchen — Punta Sperone (Gallinara)
+
+description:
+  en: |
+    The SE Gallinara wall + Roman amphorae field. Deep-recreational
+    gorgonian wall combined with the cluster's archaeological
+    reference dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Soprintendenza per i Beni Archeologici della Liguria Gallinara amphorae field 1950s-2000s surveys"
+    - "AMP Isola Gallinara guided-dive protocol"
+  notes: |
+    Sub-spot of scuba-spot-gallinara-albenga cluster. Tier 3: deep
+    wall + protected-archaeology overlay, guide-led with strict
+    look-only enforcement.

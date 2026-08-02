@@ -1,0 +1,46 @@
+slug: scuba-spot-bergeggi-noli-punta-predani
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-bergeggi-noli
+parent_cluster: scuba-spot-bergeggi-noli
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.2350, lng: 8.4470 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Predani is the SW-facing exposed point of Bergeggi island,
+    a wall + boulder-field descending from 12 m to 40 m+ with
+    Paramuricea clavata + Eunicella cavolini gorgonian in the 25-35 m
+    range and dense coralligenous encrustation. Site is exposed to
+    Libeccio swell and current; on-current dives can reach 0.5-1.0 kn
+    on the outer point, requiring drift-diving discipline. Standard
+    intermediate wall dive for the cluster with straightforward buoyed
+    descent line and clear anchor-line ascent on the sheltered side.
+
+display_name:
+  en: Scuba — Punta Predani (Bergeggi)
+  it: Immersione — Punta Predani
+  es: Buceo — Punta Predani
+  fr: Plongée — Punta Predani
+  de: Tauchen — Punta Predani
+
+description:
+  en: |
+    The SW-facing exposed wall of Bergeggi island. Intermediate
+    gorgonian-wall dive with drift-current character.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Isola di Bergeggi Punta Predani site documentation"
+    - "FIPSAS Bergeggi wall + drift dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-bergeggi-noli cluster. Tier 2: SW wall +
+    drift, intermediate recreational grade, exposed to Libeccio.

@@ -1,0 +1,156 @@
+slug: scuba-spot-cinque-terre-portovenere
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-cinque-terre-portovenere-torre-scola
+  - scuba-spot-cinque-terre-portovenere-palmaria
+  - scuba-spot-cinque-terre-portovenere-scoglio-ferale
+display_name:
+  en: Scuba Diving — Cinque Terre / Portovenere AMP
+  it: Immersione — AMP Cinque Terre / Portovenere
+  es: Buceo — AMP Cinque Terre / Portovenere
+  fr: Plongée — AMP Cinque Terre / Portovenere
+  de: Tauchen — MPA Cinque Terre / Portovenere
+description:
+  en: |
+    The Portovenere + Palmaria + Tino + Cinque Terre AMP complex
+    covers the Ligurian coast from La Spezia gulf to Monterosso. Walls,
+    caves, and the 16th-century Torre Scola artillery-tower wreck at
+    3-15 m. Sheltered on the Portovenere / Palmaria side against
+    Libeccio; exposed on the Riomaggiore / Vernazza cliffs. Coral-
+    ligenous biocoenosis + Paramuricea gorgonian at 25-40 m. Water
+    14-24°C seasonal, visibility 10-25 m. AMP zone-managed with
+    permit-only mooring and daily-cap enforcement.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m at the Cinque Terre exposed cliffs (Libeccio) makes shore + boat entry unsafe; Palmaria sheltered alternates remain workable up to 2.5 m.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze makes navigation to Palmaria and Scoglio Ferale unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain triggers Magra + Vara river runoff into the La Spezia gulf; underwater visibility drops for 24-72 h.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Libeccio storm sediment destroys wall diving on Ferale and Torre Scola sites.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: medium
+  notes: |
+    AMP Cinque Terre (D.M. 12/12/1997) + AMP Portovenere-Palmaria-Tino-
+    Tinetto (Regional Reserve, LR 15/1985) manage daily-cap enforcement
+    and mooring permits. Cinque Terre National Park terrestrial
+    protection covers shore access via numbered footpaths; boat access
+    from Portovenere / La Spezia dominates operator logistics.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Cinque Terre management authority documentation"
+    - "Regione Liguria Palmaria-Tino-Tinetto Regional Reserve rules"
+    - "FIPSAS La Spezia gulf diving site classification"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline
+    for the W-Ligurian sector. 28-week season with Nov-March closed
+    for shore-entry and Libeccio storm windows. La Spezia gulf
+    river-plume runoff is a materially larger visibility-hit factor
+    than at Portofino — the runoff gate is the practical difference.

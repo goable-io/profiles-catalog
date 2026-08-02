@@ -1,0 +1,50 @@
+slug: scuba-spot-portofino-punta-chiappa
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-portofino
+parent_cluster: scuba-spot-portofino
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.3170, lng: 9.1560 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Chiappa is the exposed W-facing point of the Portofino
+    promontory, delivering multi-tier wall diving from 6 m to 40 m+
+    with Paramuricea clavata red gorgonian fields concentrated at
+    25-35 m. Sustained current on Libeccio + Mistral days makes drift
+    diving standard practice; buoyed mooring lines are AMP-managed.
+    The classic Portofino wall route: descent along the point,
+    circumnavigate the gorgonian face at 30 m, return via 18-15 m
+    safety-stop shelf. Site is exposed to Libeccio swell decay in the
+    24-48 h following storms; wall face is best-scored in flat
+    post-storm calm.
+
+display_name:
+  en: Scuba — Punta Chiappa
+  it: Immersione — Punta Chiappa
+  es: Buceo — Punta Chiappa
+  fr: Plongée — Punta Chiappa
+  de: Tauchen — Punta Chiappa
+
+description:
+  en: |
+    The Portofino W-face gorgonian wall. Punta Chiappa delivers
+    30-35 m Paramuricea clavata fields, the reference Ligurian
+    coralligenous wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Portofino Punta Chiappa mooring-permit documentation"
+    - "Cerrano et al. Paramuricea clavata AMP Portofino monitoring"
+  notes: |
+    Sub-spot of scuba-spot-portofino cluster. Tier 2: wall dive with
+    current + depth, permit-managed mooring, Ligurian coralligenous
+    reference site.

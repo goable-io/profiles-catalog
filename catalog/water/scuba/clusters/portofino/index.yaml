@@ -1,0 +1,163 @@
+slug: scuba-spot-portofino
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-portofino-cristo-degli-abissi
+  - scuba-spot-portofino-punta-chiappa
+  - scuba-spot-portofino-colombara
+  - scuba-spot-portofino-punta-del-faro
+display_name:
+  en: Scuba Diving — Portofino AMP
+  it: Immersione — AMP Portofino
+  es: Buceo — AMP Portofino
+  fr: Plongée — AMP Portofino
+  de: Tauchen — MPA Portofino
+description:
+  en: |
+    The Portofino AMP promontory (Riviera di Levante, Genova) is the
+    reference Ligurian diving cluster. Sheltered on the east flank
+    from the prevailing SW Libeccio, exposed on the west (Camogli,
+    San Fruttuoso) to the same wind on longer fetch. Walls, gorgonian
+    fields (Paramuricea clavata endemic red gorgonian), coralligenous
+    biocoenosis, and the iconic Cristo degli Abissi bronze statue
+    submerged at 15 m off San Fruttuoso since 1954. Water 14-24°C
+    seasonal. Site is intensely managed — AMP daily visitor caps and
+    permit-required boat mooring at Punta Chiappa. Winter closures
+    for storm windows.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave height above 2.3 m at Portofino (Libeccio events) makes boat mooring at Punta Chiappa and San Fruttuoso unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze events makes site-finding unsafe on the Portofino promontory.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy active rain triggers runoff from the Portofino hinterland into San Fruttuoso and Camogli sites; drops underwater visibility from 15-20 m to 3-5 m for 24-48 h.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Libeccio storm sediment stirring destroys wall-diving quality at Colombara and Punta del Faro.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    AMP Portofino (D.M. 26/04/1999) enforces zone-based daily diver
+    caps at Cristo degli Abissi, Punta Chiappa, and Colombara. Boat
+    mooring is permit-only and rotated among licensed dive operators.
+    Paramuricea clavata gorgonian mortality events (2003, 2018, 2022
+    marine heatwave summers) are documented; site managers restrict
+    diver contact and enforce trim training. Boat transport from
+    Camogli, Portofino harbour, or Rapallo dominates per-session
+    footprint.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Portofino management authority (Comune di Camogli / Portofino / Santa Margherita Ligure)"
+    - "FIPSAS Portofino site classification and daily-diver-cap documentation"
+    - "Cerrano et al. 2013 Paramuricea clavata mortality studies AMP Portofino"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline
+    (Portofino is a canonical W-Mediterranean site). Season 28 weeks
+    (April-October core, with Nov-March mostly closed by shore-entry
+    storm windows and lower water_temp). Once L1f's rockfall_risk_index
+    ships, the San Fruttuoso overhang exit zone gains a physical proxy
+    for post-rain runoff hazard on shore-approaches.

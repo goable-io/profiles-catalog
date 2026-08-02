@@ -1,0 +1,45 @@
+slug: scuba-spot-gallinara-albenga-punta-nord
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-gallinara-albenga
+parent_cluster: scuba-spot-gallinara-albenga
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.0250, lng: 8.2280 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Nord of Gallinara is the N-facing wall + boulder-slope
+    descending from 15 m to 40 m+, with Paramuricea + Eunicella
+    cavolini gorgonian at 25-35 m and moray + conger + occasional
+    dentex on the plateau. Site is sheltered from Libeccio by the
+    island itself, exposed to Tramontane on the N flank. Standard
+    intermediate wall dive with buoyed mooring line and clear
+    ascent-line profile. Boat access from Alassio in 10-15 min.
+
+display_name:
+  en: Scuba — Punta Nord Gallinara
+  it: Immersione — Punta Nord Gallinara
+  es: Buceo — Punta Nord Gallinara
+  fr: Plongée — Punta Nord Gallinara
+  de: Tauchen — Punta Nord Gallinara
+
+description:
+  en: |
+    The N-facing sheltered wall of Gallinara island. Standard
+    Ponente intermediate gorgonian wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Gallinara Punta Nord site briefing"
+    - "AMP Isola Gallinara dive operator SOP"
+  notes: |
+    Sub-spot of scuba-spot-gallinara-albenga cluster. Tier 2:
+    intermediate wall, Libeccio-sheltered, gorgonian-rich.

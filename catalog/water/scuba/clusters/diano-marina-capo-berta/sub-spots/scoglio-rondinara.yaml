@@ -1,0 +1,45 @@
+slug: scuba-spot-diano-marina-capo-berta-scoglio-rondinara
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-diano-marina-capo-berta
+parent_cluster: scuba-spot-diano-marina-capo-berta
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 43.9200, lng: 8.1200 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Scoglio della Rondinara is the offshore rock reef between Cervo
+    and Diano Marina — a shallow-topped seamount (top at 8 m,
+    plateau at 20-25 m, drop-off to 35 m+) with Eunicella cavolini
+    gorgonian, dense encrusting biocoenosis, and resident dentex,
+    conger, moray. Exposed to Libeccio; the site is dive-shop-
+    weather-window-selected. Standard intermediate all-round dive
+    when W-wind is calm.
+
+display_name:
+  en: Scuba — Scoglio della Rondinara (Cervo)
+  it: Immersione — Scoglio della Rondinara
+  es: Buceo — Scoglio della Rondinara
+  fr: Plongée — Scoglio della Rondinara
+  de: Tauchen — Scoglio della Rondinara
+
+description:
+  en: |
+    The offshore Rondinara seamount between Cervo and Diano Marina.
+    Intermediate reef + drop-off dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Cervo Scoglio della Rondinara site briefing"
+    - "Comune di Cervo dive operator site guide"
+  notes: |
+    Sub-spot of scuba-spot-diano-marina-capo-berta cluster. Tier 2:
+    offshore seamount, intermediate multi-tier reef + drop-off.

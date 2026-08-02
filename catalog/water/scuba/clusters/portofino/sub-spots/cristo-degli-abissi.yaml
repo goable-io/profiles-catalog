@@ -1,0 +1,48 @@
+slug: scuba-spot-portofino-cristo-degli-abissi
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-portofino
+parent_cluster: scuba-spot-portofino
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.3167, lng: 9.1770 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    The Cristo degli Abissi bronze statue submerged at 15 m in the
+    San Fruttuoso bay since 22 August 1954 — a memorial to Dario
+    Gonzatti (first Italian scuba diver, died 1947) and to all divers.
+    The site is one of the shallowest and best-known dive locations
+    in Italy. Bay is well-sheltered from prevailing Libeccio, sand +
+    posidonia bottom, easy anchor-line descent for training and
+    tourist dives. Depth 15-18 m keeps NDL long. AMP-managed daily
+    visitor cap and permit-required boat mooring; boat traffic is the
+    main hazard on surface at the buoyed entry line.
+
+display_name:
+  en: Scuba — Cristo degli Abissi
+  it: Immersione — Cristo degli Abissi
+  es: Buceo — Cristo del Abismo
+  fr: Plongée — Christ des Abîmes
+  de: Tauchen — Christus der Abgründe
+
+description:
+  en: |
+    The 1954 bronze Cristo submerged at 15 m in San Fruttuoso bay,
+    Portofino AMP. Italy's most iconic dive site.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Portofino Cristo degli Abissi site history and permit documentation"
+    - "FIPSAS Cristo degli Abissi dive-site briefing"
+  notes: |
+    Sub-spot of scuba-spot-portofino cluster. Tier 1: shallow, permit-
+    managed, training-and-tourist grade. The Italian scuba iconic
+    reference.

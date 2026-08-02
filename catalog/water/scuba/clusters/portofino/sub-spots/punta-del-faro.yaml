@@ -1,0 +1,49 @@
+slug: scuba-spot-portofino-punta-del-faro
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-portofino
+parent_cluster: scuba-spot-portofino
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.2967, lng: 9.2150 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta del Faro (Portofino lighthouse tip) is the SE-facing
+    exposed extreme of the promontory. Wall + boulder-field with
+    dense Paramuricea + Eunicella cavolini gorgonian on the 18-40 m
+    range, plus a shallow reef plateau ideal for extended-NDL dives.
+    Site is exposed to E-facing swell from Sirocco and to sustained
+    current on Libeccio release — dive shops shuffle to sheltered
+    Cristo / Cala degli Inglesi in strong SE flow. When conditions
+    are favourable, this is the reference "Portofino wall" experience
+    without Colombara's depth commitment.
+
+display_name:
+  en: Scuba — Punta del Faro (Portofino)
+  it: Immersione — Punta del Faro
+  es: Buceo — Punta del Faro
+  fr: Plongée — Punta del Faro
+  de: Tauchen — Punta del Faro
+
+description:
+  en: |
+    The Portofino lighthouse-point wall. Sub-40 m gorgonian face
+    without Colombara's depth exposure — the intermediate wall dive
+    of the cluster.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Portofino Punta del Faro site documentation"
+    - "FIPSAS Portofino promontory diving guide"
+  notes: |
+    Sub-spot of scuba-spot-portofino cluster. Tier 2: intermediate
+    wall depth, SE-facing exposure, gorgonian-rich; the sheltered
+    alternative to Colombara for deep-recreational grade.

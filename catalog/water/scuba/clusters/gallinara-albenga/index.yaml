@@ -1,0 +1,154 @@
+slug: scuba-spot-gallinara-albenga
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-gallinara-albenga-punta-nord
+  - scuba-spot-gallinara-albenga-punta-sperone
+display_name:
+  en: Scuba Diving — Gallinara / Albenga AMP
+  it: Immersione — AMP Isola Gallinara
+  es: Buceo — AMP Isla Gallinara
+  fr: Plongée — AMP Isola Gallinara
+  de: Tauchen — MPA Isola Gallinara
+description:
+  en: |
+    The AMP Isola Gallinara (Riviera di Ponente, Savona, D.M.
+    01/06/1989 restricted-access island reserve; diving activity
+    permit-managed via Comune di Albenga + Regione Liguria) is a
+    tombolo-connected island offshore Albenga. Wall diving down to
+    35 m+, dense Paramuricea + Eunicella gorgonian on the outer
+    circumnavigation, and the Roman-era Roman-Republic-shipwreck
+    amphorae field documented at 30 m offshore. Water 14-24°C.
+    Exposed to Libeccio on the W flank; the E flank between the
+    island and Albenga mainland provides Libeccio shelter.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m at Gallinara (Libeccio) makes W-flank wall dives and offshore amphorae-field boat mooring unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze makes site-finding unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain triggers Centa river runoff from Albenga; underwater visibility drops for 24-72 h at Gallinara.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Libeccio storm sediment stirring destroys wall + amphorae-field diving quality.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Gallinara island is restricted-access nature reserve on land
+    (no landing); diving is permit-managed by Comune di Albenga +
+    Regione Liguria. Roman-era amphorae field is under archaeological
+    protection — no artefact contact or removal. Boat operators from
+    Alassio, Albenga, or Laigueglia dominate site logistics.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Regione Liguria Isola Gallinara Riserva Naturale Regionale (L.R. 12/1985)"
+    - "Soprintendenza per i Beni Archeologici della Liguria — Gallinara amphorae field survey"
+    - "FIPSAS Alassio + Albenga diving site classification"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline
+    for the Ponente sector. Season 28 weeks. Roman amphorae-field
+    archaeological overlay is captured at sub-spot level.
