@@ -1,0 +1,36 @@
+slug: snorkeling-spot-red-sea-ras-mohammed-shark-reef-shallow
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-red-sea-ras-mohammed
+parent_cluster: snorkeling-spot-red-sea-ras-mohammed
+region: red-sea
+country_code: EG
+
+coordinates:
+  center: { lat: 27.7333, lng: 34.25 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Shark Reef's shallow crest sits at 3-8 m directly above one of the Red Sea's most famous vertical walls, so snorkelers swim close above open-water drop-offs and need comfort with depth perception and occasional current pulses funneling around the promontory. Access is boat-only from Sharm El-Sheikh with a guided briefing, and the site sits inside a national park with strict no-touch enforcement. The wall exposure and boat-drop logistics place it at tier 2 rather than a beginner shore-entry site.
+
+display_name:
+  en: Snorkeling — Shark Reef Shallow (Ras Mohammed)
+  it: Snorkeling — Shark Reef
+  es: Snorkel — Shark Reef
+  fr: Snorkeling — Shark Reef
+  de: Schnorcheln — Shark Reef
+
+description:
+  en: |
+    Iconic Ras Mohammed reef-top snorkel at 3-8 m above the Shark Reef wall, boat-access, with vivid Red Sea coral and reef fish.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Egyptian Nature Conservation Sector Ras Mohammed National Park (1983) management documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-red-sea-ras-mohammed. Tier 2: boat-drop reef-top over a wall, current possible.

@@ -1,0 +1,47 @@
+slug: snowboarding-spot-verbier-mont-fort
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-verbier
+parent_cluster: snowboarding-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.09, lng: 7.2892 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mont Fort's 3330 m summit, reached via the Jumbo cable car, delivers
+    Verbier's highest lift-served snowboarding with in-bounds black pistes
+    plus patrolled hike-to variants directly adjacent to the freeride-
+    famous Bec des Rosses. Steep sustained pitches, minimal grooming at the
+    highest sections. Glacier avalanche-control operations before most
+    morning openings place this firmly in expert territory — a freeride-
+    adjacent zone distinct from Verbier's intermediate mid-mountain
+    terrain, warranting Tier 3.
+
+display_name:
+  en: Snowboarding — Mont Fort (Verbier)
+  it: Snowboard — Mont Fort
+  es: Snowboard — Mont Fort
+  fr: Snowboard — Mont Fort
+  de: Snowboarden — Mont Fort
+
+description:
+  en: |
+    Verbier's 3330 m summit sector via the
+    Jumbo cable car — iconic freeride-adjacent snowboarding terrain with
+    hike-to variants and steep in-bounds off-piste.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Téléverbier SA Mont Fort cable car operational dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-verbier cluster.
+    Tier 3: black in-bounds pistes plus patrolled hike-to variants from
+    the 3330 m summit, adjacent to the Bec des Rosses freeride venue.

@@ -1,0 +1,43 @@
+slug: snorkeling-spot-zanzibar-mnemba-kizimkazi-dolphin
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-zanzibar-mnemba
+parent_cluster: snorkeling-spot-zanzibar-mnemba
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -6.4283, lng: 39.4767 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Kizimkazi's dolphin snorkel involves boat-tracked open-water swims in
+    pursuit of wild, fast-moving bottlenose and humpback dolphins rather
+    than a fixed reef. Demanding stronger swim fitness and quick in-water
+    positioning under guide direction and strict distance protocols
+    designed to limit disturbance to the animals. The open-water, moving-
+    target nature of the encounter and the larger operating radius needed
+    to track dolphin pods place this above a shallow fixed-reef lagoon, at
+    tier 2.
+
+display_name:
+  en: Snorkeling — Kizimkazi Dolphin Encounter
+  it: Snorkeling — Delfini di Kizimkazi
+  es: Snorkel — Delfines de Kizimkazi
+  fr: Snorkeling — Dauphins de Kizimkazi
+  de: Schnorcheln — Kizimkazi-Delfine
+
+description:
+  en: |
+    Wild bottlenose and humpback dolphin encounter snorkel off Kizimkazi, boat-tracked with strict swimmer and distance protocol.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Stensland & Berggren dolphin-tourism impact research, Zanzibar (Kizimkazi)"
+  notes: |
+    Sub-spot of snorkeling-spot-zanzibar-mnemba. Tier 2: open-water wild-dolphin encounter, boat-tracked, larger radius.

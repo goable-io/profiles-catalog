@@ -1,0 +1,37 @@
+slug: snorkeling-spot-maldive-ari-south-manta-point-snorkel
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-maldive-ari-south
+parent_cluster: snorkeling-spot-maldive-ari-south
+region: indian
+country_code: MV
+
+coordinates:
+  center: { lat: 3.6, lng: 72.72 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Manta Point (Madivaru) is a boat-drop reef-manta cleaning station where snorkelers hold position at the surface over 8-15 m of water while mantas circle below, requiring calm-water positioning discipline and adherence to the Manta Trust no-touch, no-flash, keep-distance protocol to avoid disturbing feeding or cleaning behavior. It is not a shore-entry beginner site — access is boat-only with a guide who briefs manta etiquette before every drop, and current can be present depending on tide. These factors place it at tier 2, a step above shore-entry lagoon snorkeling.
+
+display_name:
+  en: Snorkeling — Manta Point (Madivaru)
+  it: Snorkeling — Manta Point
+  es: Snorkel — Manta Point
+  fr: Snorkeling — Manta Point
+  de: Schnorcheln — Manta Point
+
+description:
+  en: |
+    Boat-drop reef-manta snorkel at the Madivaru cleaning station, 8-15 m depth beneath the surface, guided under Manta Trust no-touch protocol.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Manta Trust South Ari Marine Protected Area monitoring documentation"
+    - "Maldives Manta Point (Madivaru) resort dive-briefing standards"
+  notes: |
+    Sub-spot of snorkeling-spot-maldive-ari-south. Tier 2: boat-access manta encounter with guided no-touch protocol.

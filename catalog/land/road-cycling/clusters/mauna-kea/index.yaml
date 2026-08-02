@@ -1,0 +1,159 @@
+slug: road-cycling-spot-mauna-kea
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: road-cycling
+region: pacific
+country_code: US
+sub_spots:
+  - road-cycling-spot-mauna-kea-mauna-kea-summit-road
+  - road-cycling-spot-mauna-kea-saddle-road-approach
+display_name:
+  en: Road Cycling — Mauna Kea
+  it: Ciclismo su Strada — Mauna Kea
+  es: Ciclismo de Ruta — Mauna Kea
+  fr: Cyclisme sur Route — Mauna Kea
+  de: Rennradfahren — Mauna Kea
+description:
+  en: |
+    A singular high-altitude challenge on Hawai'i Island: the Mauna
+    Kea Summit Road climbs from sea level in Hilo to the 4207m
+    summit over roughly 68 km, the longest continuous climb by
+    vertical gain on Earth, though its final ~12 km above the
+    visitor centre are unpaved and effectively off-limits to road
+    bikes. The Saddle Road approach reaches the paved Visitor
+    Information Station at ~2800m, the practical paved ceiling for
+    road cyclists. Conditions here are unlike any European climb:
+    tropical heat and humidity at sea level transition to near-
+    freezing, oxygen-thin, UV-intense high-altitude exposure within a
+    few hours' ride.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -5,  s: 0.10 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.95 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 38,  s: 0.15 }
+      - { x: 42,  s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.75 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 5,   s: 0.10 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 8,  s: 0.50 }
+      - { x: 11, s: 0.15 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.80 }
+      - { x: 1.6, s: 0.40 }
+      - { x: 2.0, s: 0.05 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_RAIN_TRAFFIC
+    description: Heavy active rain reduces tyre grip on painted lines and metal covers, halves braking distance, and impairs driver visibility around cyclists.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: GALE_FORCE_WIND
+    description: Sustained wind above 45 knots makes high-speed descents and shoulder-of-road riding unsafe, particularly in crosswind orientations.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: TRAFFIC_VISIBILITY
+    description: Visibility below 500m makes road cyclists invisible to drivers at safe stopping distance.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 42
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 42°C creates immediate heat-illness risk over multi-hour rides.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Year-round rideable given Hawai'i's tropical climate, though the
+    summit road above the visitor centre is snow-affected in winter
+    and access is periodically restricted around the observatory
+    complex out of respect for the mountain's cultural significance
+    to Native Hawaiians. Traffic is light — this is a niche endurance
+    objective rather than a mass cyclotourism destination.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mauna Kea Visitor Information Station road and elevation documentation"
+    - "University of Hawai'i Institute for Astronomy access and altitude guidance"
+    - "PJAMM Cycling climb database — Mauna Kea Summit Road profile"
+  notes: |
+    Cluster inherits base road-cycling scoring unchanged. Region
+    pacific (bbox spans the antimeridian; Hawai'i at ~19.8N/-155.5W
+    satisfies lng <= -70), country US. No deviations from base
+    weights or gates.

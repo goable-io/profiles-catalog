@@ -1,0 +1,36 @@
+slug: snorkeling-spot-fernando-de-noronha-baia-do-sancho
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-fernando-de-noronha
+parent_cluster: snorkeling-spot-fernando-de-noronha
+region: atlantic
+country_code: BR
+
+coordinates:
+  center: { lat: -3.8367, lng: -32.455 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Baía do Sancho is a sheltered, cliff-enclosed bay repeatedly ranked among the world's best beaches, with calm shallow water entered directly from the sand and reliable turtle and tropical-fish sightings close to shore. The bay's protected geometry keeps swell and current low even though the approach itself involves a steep access stairway/ladder through a cliff crevice before reaching the beach. Once in the water, the snorkel itself demands no special skill, placing it at tier 1.
+
+display_name:
+  en: Snorkeling — Baía do Sancho
+  it: Snorkeling — Baía do Sancho
+  es: Snorkel — Baía do Sancho
+  fr: Snorkeling — Baía do Sancho
+  de: Schnorcheln — Baía do Sancho
+
+description:
+  en: |
+    Shore-entry snorkel in a protected bay repeatedly voted the world's best beach, with turtles and tropical fish close to shore.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "UNESCO Brazilian Atlantic Islands (Fernando de Noronha, 2001) World Heritage documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-fernando-de-noronha. Tier 1: sheltered bay, shore entry, calm water.

@@ -1,0 +1,46 @@
+slug: snowboarding-spot-laax-vorab-glacier
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-laax
+parent_cluster: snowboarding-spot-laax
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.9017, lng: 9.1817 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Vorab glacier sector extends Laax's skiable terrain to its highest
+    altitude, providing consistent snow surface quality across the full
+    season including shoulder-season weeks when lower sectors soften. The
+    terrain is red-piste cruising oriented — wide, groomed. Glacier-safe
+    marked corridors rather than technical or hike-to terrain — making it a
+    solid intermediate snowboarding sector whose main value proposition is
+    reliability of snow surface rather than technical difficulty.
+
+display_name:
+  en: Snowboarding — Vorab Glacier (Laax)
+  it: Snowboard — Ghiacciaio Vorab
+  es: Snowboard — Glaciar Vorab
+  fr: Snowboard — Glacier du Vorab
+  de: Snowboarden — Vorab-Gletscher
+
+description:
+  en: |
+    High-altitude glacier sector of Laax
+    offering consistent red-piste snowboarding cruising through the full
+    season.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Weisse Arena Bergbahnen AG Vorab glacier sector piste dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-laax cluster.
+    Tier 2: red-piste glacier cruising, valued for season-long snow
+    reliability rather than technical difficulty.

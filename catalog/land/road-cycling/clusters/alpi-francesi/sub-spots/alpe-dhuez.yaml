@@ -1,0 +1,50 @@
+slug: road-cycling-spot-alpi-francesi-alpe-dhuez
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-alpi-francesi
+parent_cluster: road-cycling-spot-alpi-francesi
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.0917, lng: 6.0700 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Alpe d'Huez from Bourg d'Oisans is 13.8 km at an average 8.1%
+    gradient across 21 numbered hairpins, and is the single most-
+    visited mountain-top finish in Tour de France history. Its lower
+    hairpins are among the steepest sections of any Tour climb, and
+    the huge cyclotourism crowds that pack the road on peak summer
+    weekends add a real congestion and line-choice hazard on top of
+    the physical difficulty. The combination of sustained high
+    gradient, unmatched cycling-culture significance, and genuinely
+    heavy on-road traffic density places this climb at tier 3.
+
+display_name:
+  en: Road Cycling — Alpe d'Huez
+  it: Ciclismo su Strada — Alpe d'Huez
+  es: Ciclismo de Ruta — Alpe d'Huez
+  fr: Cyclisme sur Route — Alpe d'Huez
+  de: Rennradfahren — Alpe d'Huez
+
+description:
+  en: |
+    Alpe d'Huez climbed from Bourg d'Oisans: 13.8 km at an average
+    8.1% gradient across the famous 21 numbered hairpins. The most-
+    visited mountain finish in Tour de France history and one of
+    cycling's true pilgrimage climbs.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Alpe d'Huez climb archive"
+    - "ProCyclingStats climb database — Alpe d'Huez profile"
+  notes: |
+    Sub-spot of road-cycling-spot-alpi-francesi cluster. Tier 3:
+    most-used Tour de France mountain finish, steep lower hairpins,
+    heavy peak-season traffic congestion.

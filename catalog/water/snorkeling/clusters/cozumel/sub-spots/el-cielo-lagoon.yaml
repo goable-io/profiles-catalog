@@ -1,0 +1,36 @@
+slug: snorkeling-spot-cozumel-el-cielo-lagoon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-cozumel
+parent_cluster: snorkeling-spot-cozumel
+region: caribbean
+country_code: MX
+
+coordinates:
+  center: { lat: 20.38, lng: -86.97 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    El Cielo is a shallow, calm, sand-bottom lagoon south of Cozumel with a soft reef edge, reached by a short low-current boat hop and entered by simply floating over the sandbar — no drift technique or depth exposure is involved. It is one of the most-visited beginner and family snorkel stops in the region precisely because of its shallow, sheltered profile, protected under a no-touch starfish-sanctuary rule. This makes it a clear tier 1 site.
+
+display_name:
+  en: Snorkeling — El Cielo Lagoon
+  it: Snorkeling — Laguna El Cielo
+  es: Snorkel — Laguna El Cielo
+  fr: Snorkeling — Lagon El Cielo
+  de: Schnorcheln — El-Cielo-Lagune
+
+description:
+  en: |
+    Beginner-friendly sand-bottom shallow lagoon with a soft reef edge and a protected starfish sanctuary under a strict no-touch policy.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CONANP (Comisión Nacional de Áreas Naturales Protegidas) Cozumel operational rules"
+  notes: |
+    Sub-spot of snorkeling-spot-cozumel. Tier 1: calm shallow sandbar lagoon, no current, guide-enforced no-touch.

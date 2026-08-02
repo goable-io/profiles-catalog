@@ -1,0 +1,51 @@
+slug: road-cycling-spot-angliru-covadonga-angliru-la-vega
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-angliru-covadonga
+parent_cluster: road-cycling-spot-angliru-covadonga
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 43.2367, lng: -5.9350 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Alto de l'Angliru from La Vega is 12.5 km at an average 10.1%
+    gradient, including the Cueña les Cabres ramp that touches 23.5%,
+    making it the hardest climb regularly used by the Vuelta a
+    España. The narrow, poorly surfaced road offers no recovery
+    section and combines with Asturias' frequently wet Atlantic
+    climate to create genuinely treacherous traction conditions on
+    the steepest pitches. This extreme sustained gradient, minimal
+    margin for mechanical or traction error, and its reputation as
+    the Vuelta's single hardest summit finish place it unambiguously
+    at tier 3.
+
+display_name:
+  en: Road Cycling — Alto de l'Angliru (La Vega side)
+  it: Ciclismo su Strada — Alto de l'Angliru (versante La Vega)
+  es: Ciclismo de Ruta — Alto de l'Angliru (vertiente La Vega)
+  fr: Cyclisme sur Route — Alto de l'Angliru (versant La Vega)
+  de: Rennradfahren — Alto de l'Angliru (La-Vega-Seite)
+
+description:
+  en: |
+    The Alto de l'Angliru climbed from La Vega: 12.5 km at an
+    average 10.1% gradient with the Cueña les Cabres ramp touching
+    23.5%. Widely rated the hardest climb in the Vuelta a España's
+    modern history.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Vuelta a España official race documentation, Alto de l'Angliru climb archive"
+    - "ProCyclingStats climb database — Alto de l'Angliru (La Vega) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-angliru-covadonga cluster. Tier 3:
+    hardest regularly-used Vuelta climb, extreme 23.5% ramps, poor
+    narrow surface.

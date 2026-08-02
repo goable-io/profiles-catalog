@@ -1,0 +1,153 @@
+slug: snowboarding-spot-verbier
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: snowboarding
+region: alpine
+country_code: CH
+sub_spots:
+  - snowboarding-spot-verbier-mont-fort
+  - snowboarding-spot-verbier-attelas-park
+display_name:
+  en: Snowboarding — Verbier
+  it: Snowboard — Verbier
+  es: Snowboard — Verbier
+  fr: Snowboard — Verbier
+  de: Snowboarden — Verbier
+description:
+  en: |
+    Verbier (Valais, Swiss Alps) shares its lift
+    network and piste geography with the resort's alpine-skiing catalog
+    entry — the Quatre Vallées system spans over 400 km of marked terrain
+    from the mid-mountain Attelas/Ruinettes bowls up to the Mont Fort
+    glacier at 3330 m. For snowboarding, Verbier's reputation rests on its
+    freeride-adjacent steep terrain (the Freeride World Tour finale runs
+    on the neighbouring Bec des Rosses) combined with mid-mountain park
+    and cruising infrastructure suited to progression riders. Lift
+    operator is Téléverbier SA. Season late-Nov to early-May on the
+    glaciated upper sector.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.80 }
+      - { x: 4,   s: 0.45 }
+      - { x: 8,   s: 0.15 }
+      - { x: 14,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.20 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 0.95 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts and gondolas; flat-traverse exits become unmanageable on a snowboard.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200m makes piste navigation unsafe — snowboarders rely on visual feedback for edge transitions at speed.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: FROSTBITE_RISK
+    description: Apparent temperature below -28°C creates immediate frostbite risk on exposed skin.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    Verbier's piste network is operated by
+    Téléverbier SA under Seilbahnen Schweiz coordinated environmental
+    protocols shared with the wider Quatre Vallées consortium. Snowmaking
+    is standard below 2200 m; the Mont Fort glacier sector runs on
+    Swiss-grid electricity with significant hydro share. Peak-week
+    crowding on the Attelas/Ruinettes lift line is a recognised
+    carrying-capacity pressure point, shared identically with the
+    alpine-skiing catalog entry for this resort.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Téléverbier SA piste map and lift operational dossier"
+    - "Quatre Vallées ski area network documentation"
+    - "Freeride World Tour Verbier / Bec des Rosses venue documentation"
+  notes: |
+    Cluster extends the snowboarding base directly (no
+    alpine region variant exists yet for snowboarding); dimensions and
+    gates are copied verbatim from the base profile per catalog
+    convention. Coordinates piggyback the alpine-skiing-spot-verbier
+    cluster geography.

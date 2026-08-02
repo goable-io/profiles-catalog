@@ -1,0 +1,36 @@
+slug: snorkeling-spot-zanzibar-mnemba-mnemba-atoll
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-zanzibar-mnemba
+parent_cluster: snorkeling-spot-zanzibar-mnemba
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -5.8167, lng: 39.3833 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Mnemba Atoll's lagoon is shallow, sheltered by the surrounding reef, and reached by a short calm boat ride from Matemwe on Zanzibar's mainland coast, with turtles and reef fish visible close to the surface in low-current conditions. It is a standard first-timer and honeymoon-resort snorkel excursion requiring no special skill or equipment beyond mask and fins. The calm, shallow, guide-light nature of the site places it at tier 1.
+
+display_name:
+  en: Snorkeling — Mnemba Atoll
+  it: Snorkeling — Atollo di Mnemba
+  es: Snorkel — Atolón de Mnemba
+  fr: Snorkeling — Atoll de Mnemba
+  de: Schnorcheln — Mnemba-Atoll
+
+description:
+  en: |
+    Beginner-friendly shallow lagoon snorkel at Mnemba Atoll with turtles and tropical fish, boat access from Matemwe.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mnemba Island conservation-area management documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-zanzibar-mnemba. Tier 1: sheltered shallow lagoon, low current, standard resort excursion.

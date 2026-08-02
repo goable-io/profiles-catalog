@@ -1,0 +1,51 @@
+slug: road-cycling-spot-stelvio-mortirolo-gavia-mortirolo-mazzo
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-stelvio-mortirolo-gavia
+parent_cluster: road-cycling-spot-stelvio-mortirolo-gavia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.2617, lng: 10.3033 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Mortirolo from Mazzo di Valtellina is 12.4 km at an average
+    10.5% gradient with sustained ramps up to 18%, a profile so
+    severe that Marco Pantani's Giro d'Italia attacks here made it
+    synonymous with "the hardest climb in Europe." Unlike the high-
+    altitude Stelvio or Gavia, its difficulty comes purely from
+    relentless steep gradient on a narrow forest road rather than
+    altitude, so sustained-power output and heat management under
+    tree cover dominate the risk profile. The combination of extreme
+    average gradient, narrow unguarded surface, and its iconic status
+    in Grand Tour history justifies tier 3.
+
+display_name:
+  en: Road Cycling — Passo del Mortirolo (Mazzo side)
+  it: Ciclismo su Strada — Passo del Mortirolo (versante Mazzo)
+  es: Ciclismo de Ruta — Passo del Mortirolo (vertiente Mazzo)
+  fr: Cyclisme sur Route — Passo del Mortirolo (versant Mazzo)
+  de: Rennradfahren — Mortirolo-Pass (Mazzo-Seite)
+
+description:
+  en: |
+    The Mortirolo climbed from Mazzo di Valtellina: 12.4 km averaging
+    10.5% with ramps touching 18%, widely cited — including by Marco
+    Pantani himself — as the hardest sustained climb in European
+    professional racing. A narrow, tree-lined road with no let-up
+    from base to summit.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Giro d'Italia official race documentation, Passo del Mortirolo climb archive"
+    - "ProCyclingStats climb database — Mortirolo (Mazzo) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-stelvio-mortirolo-gavia cluster.
+    Tier 3: extreme sustained gradient, legendary Giro status.

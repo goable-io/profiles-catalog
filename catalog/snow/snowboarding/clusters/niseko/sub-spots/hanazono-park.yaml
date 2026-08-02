@@ -1,0 +1,45 @@
+slug: snowboarding-spot-niseko-hanazono-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-niseko
+parent_cluster: snowboarding-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8656, lng: 140.7256 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Hanazono's snowpark is Japan's top-tier freestyle facility, hosting
+    World Snow Awards events and drawing international park riders. Feature
+    progression spans beginner to advanced lines rather than exclusively
+    pro-scale big-air, and the sector's terrain outside the park itself
+    remains groomed and approachable. Consistent with a Tier 2
+    classification.
+
+display_name:
+  en: Snowboarding — Hanazono Park (Niseko)
+  it: Snowboard — Hanazono Snowpark
+  es: Snowboard — Hanazono Snowpark
+  fr: Snowboard — Hanazono Snowpark
+  de: Snowboarden — Hanazono Snowpark
+
+description:
+  en: |
+    Japan's top-tier snowpark hosting World
+    Snow Awards events at Niseko.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hanazono Snowpark official feature inventory"
+    - "World Snow Awards Hanazono event documentation"
+  notes: |
+    Sub-spot of snowboarding-spot-niseko
+    cluster. Tier 2: multi-line park progression from beginner to
+    advanced features.

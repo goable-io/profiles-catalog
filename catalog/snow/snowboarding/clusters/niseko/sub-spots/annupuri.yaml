@@ -1,0 +1,45 @@
+slug: snowboarding-spot-niseko-annupuri
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-niseko
+parent_cluster: snowboarding-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.85, lng: 140.6772 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Annupuri, on Niseko's western flank, is the quietest of the four
+    linked Niseko United sectors. It offers extensive tree-run
+    snowboarding with lower crowd density than Grand Hirafu or
+    Hanazono. Terrain difficulty is comparable to the other linked
+    sectors — groomed runs plus moderate tree-lined descents without
+    requiring backcountry equipment — supporting the same Tier 2
+    classification.
+
+display_name:
+  en: Snowboarding — Annupuri (Niseko)
+  it: Snowboard — Annupuri
+  es: Snowboard — Annupuri
+  fr: Snowboard — Annupuri
+  de: Snowboarden — Annupuri
+
+description:
+  en: |
+    Quieter tree-run snowboarding sector on
+    Niseko's west flank.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko United / Annupuri piste map and lift operational dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-niseko
+    cluster. Tier 2: tree-run terrain, lower crowd density than the
+    resort's eastern sectors.

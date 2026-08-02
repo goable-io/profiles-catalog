@@ -1,0 +1,52 @@
+slug: road-cycling-spot-ventoux-ventoux-bedoin
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-ventoux
+parent_cluster: road-cycling-spot-ventoux
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 44.1750, lng: 5.2783 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mont Ventoux from Bédoin is 21.4 km at an average 7.5% gradient,
+    the iconic Tour de France approach whose final 6 km cross the
+    bare limestone "lunar" summit zone with zero shade and full
+    exposure to the Vaucluse's violent Mistral winds. This is the
+    site of the Tom Simpson memorial, a stark reminder that heat and
+    exhaustion on the exposed upper slopes carry real medical
+    consequence, and sustained tailwind or crosswind gusts here can
+    make the final kilometres genuinely hazardous. The combination of
+    a long, physically demanding ascent, extreme upper-slope wind
+    exposure, and documented historical tragedy places this climb
+    firmly at tier 3.
+
+display_name:
+  en: Road Cycling — Mont Ventoux (Bédoin side)
+  it: Ciclismo su Strada — Mont Ventoux (versante Bédoin)
+  es: Ciclismo de Ruta — Mont Ventoux (vertiente Bédoin)
+  fr: Cyclisme sur Route — Mont Ventoux (versant Bédoin)
+  de: Rennradfahren — Mont Ventoux (Bédoin-Seite)
+
+description:
+  en: |
+    Mont Ventoux climbed from Bédoin: 21.4 km at an average 7.5%
+    gradient, the classic Tour de France approach with a shadeless,
+    lunar-landscape final 6 km. Site of the Tom Simpson memorial near
+    the summit.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Mont Ventoux (Bédoin) climb archive"
+    - "ProCyclingStats climb database — Mont Ventoux (Bédoin) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-ventoux cluster. Tier 3: iconic Tour
+    approach, extreme upper-slope wind and heat exposure, documented
+    fatality history.

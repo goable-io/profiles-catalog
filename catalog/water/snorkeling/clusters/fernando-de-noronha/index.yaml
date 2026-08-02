@@ -1,0 +1,126 @@
+slug: snorkeling-spot-fernando-de-noronha
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: snorkeling
+region: atlantic
+country_code: BR
+sub_spots:
+  - snorkeling-spot-fernando-de-noronha-baia-do-sancho
+  - snorkeling-spot-fernando-de-noronha-atalaia-natural-pool
+  - snorkeling-spot-fernando-de-noronha-buraco-do-galego
+display_name:
+  en: Snorkeling — Fernando de Noronha
+  it: Snorkeling — Fernando de Noronha
+  es: Snorkel — Fernando de Noronha
+  fr: Snorkeling — Fernando de Noronha
+  de: Schnorcheln — Fernando de Noronha
+description:
+  en: |
+    Fernando de Noronha is a Brazilian volcanic archipelago 545 km off the NE coast, inscribed as a UNESCO World Heritage Site (Brazilian Atlantic Islands, 2001) for its marine biodiversity and resident spinner-dolphin population. Baía do Sancho, repeatedly voted among the world's best beaches, offers protected-bay shore-entry snorkeling with turtles and reef fish; Atalaia is a tide-formed natural pool under a strict daily visitor quota; Buraco do Galego is a deeper boat-drop site over a dramatic underwater canyon. Water 26-28C, calm inside the bays, best visibility Aug-Dec.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.2, s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 0.8, s: 0.50 }
+      - { x: 1.2, s: 0.20 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.3 }
+      - { x: 20, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 15, s: 0.30 }
+      - { x: 20, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.4 }
+      - { x: 22, s: 0.9 }
+      - { x: 30, s: 1.0 }
+      - { x: 40, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 15, s: 0.5 }
+      - { x: 30, s: 0.9 }
+      - { x: 45, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 1.5
+    reason_code: CHOPPY_SEA
+    description: Waves above 1.5m make snorkeling unsafe, especially for beginners.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 15
+    reason_code: HIGH_WIND
+    description: Wind above 15 knots creates surface chop and current that is dangerous for snorkelers.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Fernando de Noronha is jointly managed under a Marine National Park (Parque Nacional Marinho) and an APA (Área de Proteção Ambiental) by ICMBio (Instituto Chico Mendes de Conservação da Biodiversidade), which caps daily visitor numbers island-wide via an environmental preservation tax and additionally limits Atalaia's tide-pool visits to roughly 100 people per day on a guided-tour, no-sunscreen basis to protect a documented turtle-nursery zone.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "UNESCO Brazilian Atlantic Islands (Fernando de Noronha, 2001) World Heritage documentation"
+    - "ICMBio Parque Nacional Marinho de Fernando de Noronha visitor-quota regulations"
+    - "Atalaia natural-pool guided-tour daily-limit documentation"
+  notes: |
+    Extends snorkeling base directly; dimensions/gates copied verbatim from base. Dedicated cluster (not piggybacked scuba geography) — coordinates reflect Baía do Sancho, Atalaia, and Buraco do Galego, Noronha's principal snorkel sites.

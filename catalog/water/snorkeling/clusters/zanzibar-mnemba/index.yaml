@@ -1,0 +1,125 @@
+slug: snorkeling-spot-zanzibar-mnemba
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: snorkeling
+region: indian
+country_code: TZ
+sub_spots:
+  - snorkeling-spot-zanzibar-mnemba-mnemba-atoll
+  - snorkeling-spot-zanzibar-mnemba-kizimkazi-dolphin
+display_name:
+  en: Snorkeling — Zanzibar Mnemba
+  it: Snorkeling — Zanzibar Mnemba
+  es: Snorkel — Zanzíbar Mnemba
+  fr: Snorkeling — Zanzibar Mnemba
+  de: Schnorcheln — Sansibar Mnemba
+description:
+  en: |
+    Mnemba Atoll, a small privately-managed island off Zanzibar's NE coast surrounded by a protected conservation area, offers calm shallow-lagoon snorkeling with green and hawksbill turtles and dense tropical-reef fish. Kizimkazi, on Zanzibar's south coast, is known instead for wild bottlenose and humpback dolphin encounter tours under strict swimmer and boat-distance protocols. Water 26-29C; the Kaskazi monsoon (Dec-Mar) brings the calmest conditions, while the Kusi monsoon (Jun-Sep) is rougher.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.2, s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 0.8, s: 0.50 }
+      - { x: 1.2, s: 0.20 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.3 }
+      - { x: 20, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 15, s: 0.30 }
+      - { x: 20, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.4 }
+      - { x: 22, s: 0.9 }
+      - { x: 30, s: 1.0 }
+      - { x: 40, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 15, s: 0.5 }
+      - { x: 30, s: 0.9 }
+      - { x: 45, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 1.5
+    reason_code: CHOPPY_SEA
+    description: Waves above 1.5m make snorkeling unsafe, especially for beginners.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 15
+    reason_code: HIGH_WIND
+    description: Wind above 15 knots creates surface chop and current that is dangerous for snorkelers.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Mnemba Atoll sits inside a designated conservation area with entry fees funding reef patrols and a no-anchor mooring-buoy system. Kizimkazi's dolphin-tourism sector has been the subject of published marine-biology studies (e.g. Stensland & Berggren, dolphin-tourism impact research in Zanzibar) documenting boat-crowding stress on the resident dolphin population, prompting swimmer-number and boat-distance limits that operators are required to follow.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mnemba Island conservation-area management documentation"
+    - "Stensland & Berggren dolphin-tourism impact research, Zanzibar (Kizimkazi)"
+    - "PADI Zanzibar regional snorkel condition briefing"
+  notes: |
+    Extends snorkeling base directly; dimensions/gates copied verbatim from base. Dedicated cluster (no existing scuba cluster at this exact geography) — coordinates reflect Mnemba Atoll and Kizimkazi, Zanzibar's two best-known snorkel/encounter sites.

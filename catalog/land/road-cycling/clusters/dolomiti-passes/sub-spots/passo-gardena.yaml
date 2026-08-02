@@ -1,0 +1,49 @@
+slug: road-cycling-spot-dolomiti-passes-passo-gardena
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-dolomiti-passes
+parent_cluster: road-cycling-spot-dolomiti-passes
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5525, lng: 11.8114 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    Passo Gardena (2137m) from the Alta Badia side is 5.5 km at a
+    moderate average 4.3% gradient, the gentlest of the Sella Ronda's
+    four passes and well within reach of intermediate cyclosportive
+    riders. It still sits above 2100m on an exposed alpine road, so
+    afternoon storm risk and rapid temperature swings remain a real
+    consideration despite the easy gradient. Its accessible but
+    genuinely high-altitude profile, plus its role as a linking climb
+    in the historic Sella Ronda loop, places it at tier 2 rather than
+    tier 1.
+
+display_name:
+  en: Road Cycling — Passo Gardena (Alta Badia side)
+  it: Ciclismo su Strada — Passo Gardena (versante Alta Badia)
+  es: Ciclismo de Ruta — Passo Gardena (vertiente Alta Badia)
+  fr: Cyclisme sur Route — Passo Gardena (versant Alta Badia)
+  de: Rennradfahren — Grödner Joch (Alta-Badia-Seite)
+
+description:
+  en: |
+    Passo Gardena (2137m) climbed from Alta Badia: 5.5 km at a
+    moderate average 4.3% gradient, the easiest leg of the classic
+    Sella Ronda circuit but still a genuine high-alpine pass above
+    2100m.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ProCyclingStats climb database — Passo Gardena (Alta Badia) profile"
+    - "Maratona dles Dolomites official route documentation"
+  notes: |
+    Sub-spot of road-cycling-spot-dolomiti-passes cluster. Tier 2:
+    moderate-gradient but genuinely high-altitude Sella Ronda climb.

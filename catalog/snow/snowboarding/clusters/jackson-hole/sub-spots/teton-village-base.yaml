@@ -1,0 +1,44 @@
+slug: snowboarding-spot-jackson-hole-teton-village-base
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-jackson-hole
+parent_cluster: snowboarding-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.5867, lng: -110.8283 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    The Teton Village base sector is Jackson Hole's dedicated beginner
+    learning zone. Comprising wide flat pistes suited to first-time riders
+    and lesson groups well away from the resort's expert big-mountain
+    terrain higher up. Gentle, consistent grades and dense beginner-lift
+    coverage support a Tier 1 classification, matching the green-groomer
+    beginner definition used elsewhere in this catalog.
+
+display_name:
+  en: Snowboarding — Teton Village Base (Jackson Hole)
+  it: Snowboard — Teton Village Base
+  es: Snowboard — Teton Village Base
+  fr: Snowboard — Teton Village Base
+  de: Snowboarden — Teton Village Base
+
+description:
+  en: |
+    Teton Village base — beginner snowboard
+    learning zone with wide flat pistes.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort Teton Village base operational dossier"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-jackson-hole cluster. Tier 1: beginner learning
+    zone with wide flat pistes.

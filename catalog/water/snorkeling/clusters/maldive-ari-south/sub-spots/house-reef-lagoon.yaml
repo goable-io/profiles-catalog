@@ -1,0 +1,36 @@
+slug: snorkeling-spot-maldive-ari-south-house-reef-lagoon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-maldive-ari-south
+parent_cluster: snorkeling-spot-maldive-ari-south
+region: indian
+country_code: MV
+
+coordinates:
+  center: { lat: 3.6017, lng: 72.7233 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Resort house-reef lagoons in South Ari sit in 2-5 m of calm, shallow, sand-and-coral lagoon water directly off the beach, with no current or boat requirement — guests routinely walk or swim in directly from the shoreline. The shallow depth, warm still water, and abundant reef-fish and coral life make it a standard first-timer and family snorkel site across Maldivian resort islands. This beginner-safe, zero-logistics profile is a clear tier 1.
+
+display_name:
+  en: Snorkeling — House Reef Lagoon (Ari South)
+  it: Snorkeling — Laguna House Reef
+  es: Snorkel — Laguna House Reef
+  fr: Snorkeling — Lagon House Reef
+  de: Schnorcheln — House-Reef-Lagune
+
+description:
+  en: |
+    Beginner-friendly resort house-reef lagoon, 2-5 m, with tropical fish and coral directly accessible from the beach.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Maldives Ari Atoll resort house-reef snorkel documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-maldive-ari-south. Tier 1: shallow shore-access lagoon, no current, family-standard.

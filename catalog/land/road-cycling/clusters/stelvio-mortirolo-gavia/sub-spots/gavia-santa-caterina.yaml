@@ -1,0 +1,51 @@
+slug: road-cycling-spot-stelvio-mortirolo-gavia-gavia-santa-caterina
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-stelvio-mortirolo-gavia
+parent_cluster: road-cycling-spot-stelvio-mortirolo-gavia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.3417, lng: 10.4917 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Passo di Gavia from Santa Caterina Valfurva is 16.5 km at an
+    average 8% gradient, historically famous as the venue of the
+    1988 Giro d'Italia's snow-stage epic where riders descended
+    through a blizzard in freezing conditions. Its high 2618m summit
+    sits well above treeline on a narrow, partly unguarded road,
+    making it acutely sensitive to sudden alpine weather deterioration
+    even outside of that historic extreme. The combination of
+    sustained high-altitude effort, real cold-weather and whiteout
+    risk, and its status as a defining Giro mountain summit places
+    this climb at tier 3.
+
+display_name:
+  en: Road Cycling — Passo di Gavia (Santa Caterina side)
+  it: Ciclismo su Strada — Passo di Gavia (versante Santa Caterina)
+  es: Ciclismo de Ruta — Passo di Gavia (vertiente Santa Caterina)
+  fr: Cyclisme sur Route — Passo di Gavia (versant Santa Caterina)
+  de: Rennradfahren — Gaviapass (Santa-Caterina-Seite)
+
+description:
+  en: |
+    The Passo di Gavia climbed from Santa Caterina Valfurva: 16.5 km
+    averaging 8% to a 2618m summit above treeline. Site of the
+    legendary 1988 Giro d'Italia snow stage, and still one of the
+    most exposed and weather-sensitive high passes in the Alps.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Giro d'Italia official race documentation, 1988 Passo di Gavia stage archive"
+    - "ProCyclingStats climb database — Passo di Gavia (Santa Caterina) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-stelvio-mortirolo-gavia cluster.
+    Tier 3: historic Giro venue, high-altitude exposure, real whiteout
+    risk above treeline.

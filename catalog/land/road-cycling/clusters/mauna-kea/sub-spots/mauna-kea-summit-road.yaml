@@ -1,0 +1,52 @@
+slug: road-cycling-spot-mauna-kea-mauna-kea-summit-road
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-mauna-kea
+parent_cluster: road-cycling-spot-mauna-kea
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 19.8206, lng: -155.4681 }
+  radius_m: 3000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Mauna Kea Summit Road from Hilo climbs roughly 68 km from
+    sea level to the 4207m summit, the longest continuous climb by
+    vertical gain in the world, though the paved section ends near
+    the 2800m visitor centre with the final ~12 km to the true
+    summit unpaved and generally impassable to road bikes. Riders
+    transition from tropical sea-level heat and humidity to near-
+    freezing, oxygen-thin, high-UV conditions over a single ride,
+    creating acute altitude and thermoregulation risk unmatched by
+    any European climb in this catalog. This extreme combination of
+    sustained vertical gain, severe environmental transition, and
+    partially unpaved/high-altitude terrain justifies tier 3.
+
+display_name:
+  en: Road Cycling — Mauna Kea Summit Road
+  it: Ciclismo su Strada — Mauna Kea Summit Road
+  es: Ciclismo de Ruta — Mauna Kea Summit Road
+  fr: Cyclisme sur Route — Mauna Kea Summit Road
+  de: Rennradfahren — Mauna Kea Summit Road
+
+description:
+  en: |
+    The Mauna Kea Summit Road from Hilo: roughly 68 km climbing from
+    sea level to the 4207m summit, the longest continuous climb by
+    vertical gain on Earth. The final ~12 km above the visitor centre
+    are unpaved and generally off-limits to road bikes.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mauna Kea Visitor Information Station road and elevation documentation"
+    - "PJAMM Cycling climb database — Mauna Kea Summit Road profile"
+  notes: |
+    Sub-spot of road-cycling-spot-mauna-kea cluster. Tier 3: longest
+    continuous vertical-gain climb in the world, extreme sea-level-to-
+    alpine environmental transition.

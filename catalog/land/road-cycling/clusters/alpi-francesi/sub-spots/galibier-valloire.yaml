@@ -1,0 +1,51 @@
+slug: road-cycling-spot-alpi-francesi-galibier-valloire
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-alpi-francesi
+parent_cluster: road-cycling-spot-alpi-francesi
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.0644, lng: 6.4083 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Col du Galibier from Valloire is 18.1 km at an average 6.9%
+    gradient to a 2645m summit, one of the Tour de France's oldest
+    and most iconic high-mountain crossings, first climbed by the
+    race in 1911. The long sustained effort at increasing altitude
+    combines with a summit plateau notorious for sudden wind and
+    temperature drops even in July, and the descent's length and
+    exposure raise real consequence for any mechanical or weather-
+    driven mistake. Its unbroken Tour de France pedigree across more
+    than a century, paired with genuine high-altitude and weather
+    exposure, earns tier 3.
+
+display_name:
+  en: Road Cycling — Col du Galibier (Valloire side)
+  it: Ciclismo su Strada — Col du Galibier (versante Valloire)
+  es: Ciclismo de Ruta — Col du Galibier (vertiente Valloire)
+  fr: Cyclisme sur Route — Col du Galibier (versant Valloire)
+  de: Rennradfahren — Col du Galibier (Valloire-Seite)
+
+description:
+  en: |
+    The Col du Galibier climbed from Valloire: 18.1 km at an average
+    6.9% gradient to a 2645m summit. First crossed by the Tour de
+    France in 1911 and one of the race's most enduring high-mountain
+    tests ever since.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Col du Galibier climb archive"
+    - "ProCyclingStats climb database — Col du Galibier (Valloire) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-alpi-francesi cluster. Tier 3:
+    historic Tour de France HC climb since 1911, high-altitude summit
+    plateau exposure.

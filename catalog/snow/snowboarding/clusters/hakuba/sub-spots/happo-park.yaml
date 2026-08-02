@@ -1,0 +1,45 @@
+slug: snowboarding-spot-hakuba-happo-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-hakuba
+parent_cluster: snowboarding-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.6942, lng: 137.8306 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Happo-One is Hakuba Valley's largest and best-known resort, combining a
+    resort-standard snowpark with tree-run terrain that borders
+    backcountry-adjacent zones without itself requiring beacon-and-shovel
+    equipment on the marked runs. As the former 1998 Nagano Olympic alpine
+    venue, grooming and lift infrastructure are well developed. And terrain
+    difficulty spans beginner through advanced tree lines, supporting a
+    Tier 2 classification for the marked in-bounds product.
+
+display_name:
+  en: Snowboarding — Happo-One Park (Hakuba)
+  it: Snowboard — Happo-One
+  es: Snowboard — Happo-One
+  fr: Snowboard — Happo-One
+  de: Snowboarden — Happo-One
+
+description:
+  en: |
+    Happo-One snowpark plus tree-run
+    backcountry-adjacent snowboarding terrain at Hakuba.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Happo-One snowpark and piste operational dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-hakuba
+    cluster. Tier 2: resort-standard park plus in-bounds tree runs
+    bordering backcountry-adjacent zones.

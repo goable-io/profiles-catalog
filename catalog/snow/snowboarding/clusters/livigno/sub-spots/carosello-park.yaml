@@ -1,0 +1,45 @@
+slug: snowboarding-spot-livigno-carosello-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-livigno
+parent_cluster: snowboarding-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5217, lng: 10.1281 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Carosello 3000 sector complements Mottolino with its own snowpark
+    plus substantial red-piste cruising terrain and family-friendly base-
+    area connections. Terrain is groomed and moderately pitched with
+    structured park progression rather than pro-line-only features.
+    Consistent with a Tier 2 classification shared with the resort's other
+    park sector.
+
+display_name:
+  en: Snowboarding — Carosello Park (Livigno)
+  it: Snowboard — Carosello 3000
+  es: Snowboard — Carosello 3000
+  fr: Snowboard — Carosello 3000
+  de: Snowboarden — Carosello 3000
+
+description:
+  en: |
+    Carosello 3000 side of Livigno —
+    snowpark plus red-piste cruising with family-friendly base
+    connection.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Carosello 3000 SpA piste map and lift operational dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-livigno
+    cluster. Tier 2: red-piste cruising plus snowpark, family-friendly
+    base access.

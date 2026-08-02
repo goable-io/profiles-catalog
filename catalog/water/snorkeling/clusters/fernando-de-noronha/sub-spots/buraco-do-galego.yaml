@@ -1,0 +1,36 @@
+slug: snorkeling-spot-fernando-de-noronha-buraco-do-galego
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-fernando-de-noronha
+parent_cluster: snorkeling-spot-fernando-de-noronha
+region: atlantic
+country_code: BR
+
+coordinates:
+  center: { lat: -3.85, lng: -32.44 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Buraco do Galego is a boat-drop site over a dramatic underwater canyon with greater depth exposure and open-water swell than the sheltered bays elsewhere in the cluster, requiring snorkelers to be comfortable swimming over sudden depth changes away from a beach or pool boundary. Access is boat-only rather than shore-entry, and the canyon topography produces more localized current than Sancho or Atalaia. This places it at tier 2.
+
+display_name:
+  en: Snorkeling — Buraco do Galego
+  it: Snorkeling — Buraco do Galego
+  es: Snorkel — Buraco do Galego
+  fr: Snorkeling — Buraco do Galego
+  de: Schnorcheln — Buraco do Galego
+
+description:
+  en: |
+    Boat-drop snorkel over a dramatic underwater canyon, deeper and more open-water than Noronha's sheltered bay sites.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "UNESCO Brazilian Atlantic Islands (Fernando de Noronha, 2001) World Heritage documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-fernando-de-noronha. Tier 2: boat-drop canyon site, more open-water exposure.

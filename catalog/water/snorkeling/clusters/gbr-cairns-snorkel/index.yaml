@@ -1,0 +1,126 @@
+slug: snorkeling-spot-gbr-cairns-snorkel
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: snorkeling
+region: pacific
+country_code: AU
+sub_spots:
+  - snorkeling-spot-gbr-cairns-snorkel-agincourt-reef
+  - snorkeling-spot-gbr-cairns-snorkel-hastings-reef
+  - snorkeling-spot-gbr-cairns-snorkel-michaelmas-cay
+display_name:
+  en: Snorkeling — Great Barrier Reef (Cairns)
+  it: Snorkeling — Grande Barriera Corallina (Cairns)
+  es: Snorkel — Gran Barrera de Coral (Cairns)
+  fr: Snorkeling — Grande Barrière de Corail (Cairns)
+  de: Schnorcheln — Great Barrier Reef (Cairns)
+description:
+  en: |
+    The Cairns / Port Douglas day-boat sector of the Great Barrier Reef offers the most accessible outer-reef snorkeling in Australia, spanning Agincourt Reef's outer ribbon-reef pontoon, Hastings Reef's sandy-bottom coral bommies, and Michaelmas Cay's protected sand-cay lagoon. Water 24-29C with best conditions Jun-Nov (dry season); the region is under Great Barrier Reef Marine Park Authority (GBRMPA) zoning and faces documented climate-driven bleaching pressure. Access is by day-boat from Cairns or Port Douglas.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.2, s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 0.8, s: 0.50 }
+      - { x: 1.2, s: 0.20 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.3 }
+      - { x: 20, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 15, s: 0.30 }
+      - { x: 20, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.4 }
+      - { x: 22, s: 0.9 }
+      - { x: 30, s: 1.0 }
+      - { x: 40, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 15, s: 0.5 }
+      - { x: 30, s: 0.9 }
+      - { x: 45, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 1.5
+    reason_code: CHOPPY_SEA
+    description: Waves above 1.5m make snorkeling unsafe, especially for beginners.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 15
+    reason_code: HIGH_WIND
+    description: Wind above 15 knots creates surface chop and current that is dangerous for snorkelers.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    GBRMPA zoning governs visitor access across all three sites; Michaelmas Cay is additionally a gazetted bird sanctuary with seasonal nesting-season access restrictions (roughly Oct-Mar) to protect breeding seabird colonies. The Great Barrier Reef has experienced repeated mass coral-bleaching events (2016, 2017, 2020, 2022), and operators run strict no-touch, no-fin-contact briefings across the cluster.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Great Barrier Reef Marine Park Authority (GBRMPA) zoning and tourism guidelines"
+    - "Michaelmas Cay bird-sanctuary seasonal-access documentation"
+    - "NOAA CoralReefWatch Great Barrier Reef bleaching thermal-stress bulletins"
+  notes: |
+    Extends snorkeling base directly; dimensions/gates copied verbatim from base. Coordinates piggyback the existing scuba-spot-gbr-cairns cluster geography, restricted to shallow reef-top / lagoon sections snorkelers reach from day-boat pontoons.

@@ -1,0 +1,47 @@
+slug: snowboarding-spot-livigno-mottolino-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-livigno
+parent_cluster: snowboarding-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5325, lng: 10.1642 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Mottolino Snowpark is one of Europe's largest and longest parks, with
+    60+ features spanning beginner lines to pro-scale kickers, and has
+    hosted the Nitro Superpark event series. Feature progression is
+    structured across multiple difficulty lines rather than being
+    exclusively pro-line, and the sector includes substantial intermediate
+    cruising terrain alongside the park itself. Placing the overall sector
+    at Tier 2 rather than an exclusively expert classification.
+
+display_name:
+  en: Snowboarding — Mottolino Park (Livigno)
+  it: Snowboard — Mottolino Snowpark
+  es: Snowboard — Mottolino Snowpark
+  fr: Snowboard — Mottolino Snowpark
+  de: Snowboarden — Mottolino Snowpark
+
+description:
+  en: |
+    One of Europe's biggest and longest
+    snowparks with 60+ features, iconic venue for the Nitro Superpark
+    event series.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mottolino SpA snowpark official feature inventory"
+    - "Nitro Superpark Livigno event documentation"
+  notes: |
+    Sub-spot of snowboarding-spot-livigno
+    cluster. Tier 2: multi-line park progression from beginner to
+    pro-scale features, plus adjacent cruising terrain.

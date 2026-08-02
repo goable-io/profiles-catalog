@@ -1,0 +1,44 @@
+slug: snowboarding-spot-jackson-hole-stash-park-solitude
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-jackson-hole
+parent_cluster: snowboarding-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.6117, lng: -110.8481 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    The Stash plus Solitude Station Park sector offers Jackson Hole's
+    family-friendly freestyle terrain. With feature progression scaled for
+    learning and intermediate riders rather than pro-line commitment.
+    Moderate terrain pitch and structured park lines make this an
+    accessible complement to the resort's expert-terrain reputation,
+    consistent with a Tier 2 classification.
+
+display_name:
+  en: Snowboarding — Stash Park + Solitude (Jackson Hole)
+  it: Snowboard — Stash Park + Solitude
+  es: Snowboard — Stash Park + Solitude
+  fr: Snowboard — Stash Park + Solitude
+  de: Snowboarden — Stash Park + Solitude
+
+description:
+  en: |
+    The Stash + Solitude Station Park —
+    Jackson's family-friendly freestyle terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort terrain park feature inventory"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-jackson-hole cluster. Tier 2: family-friendly
+    freestyle terrain, moderate feature progression.

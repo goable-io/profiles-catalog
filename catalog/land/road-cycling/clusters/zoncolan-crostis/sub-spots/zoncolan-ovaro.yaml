@@ -1,0 +1,51 @@
+slug: road-cycling-spot-zoncolan-crostis-zoncolan-ovaro
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-zoncolan-crostis
+parent_cluster: road-cycling-spot-zoncolan-crostis
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5000, lng: 12.9700 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Monte Zoncolan from Ovaro is 10.1 km at an average 11.9%
+    gradient with ramps reaching 22%, nicknamed "the Kaiser" and
+    arguably the hardest paved climb regularly used in professional
+    road racing anywhere in the world. The narrow single-lane road
+    offers essentially no recovery section from base to summit, so
+    sustained anaerobic effort and precise pacing are mandatory, and
+    a mechanical or crash on the steepest ramps carries serious
+    consequence given the confined width. This combination of extreme
+    sustained gradient, minimal margin for error, and its status as a
+    Giro d'Italia signature summit finish firmly places it at tier 3.
+
+display_name:
+  en: Road Cycling — Monte Zoncolan (Ovaro side)
+  it: Ciclismo su Strada — Monte Zoncolan (versante Ovaro)
+  es: Ciclismo de Ruta — Monte Zoncolan (vertiente Ovaro)
+  fr: Cyclisme sur Route — Monte Zoncolan (versant Ovaro)
+  de: Rennradfahren — Monte Zoncolan (Ovaro-Seite)
+
+description:
+  en: |
+    Monte Zoncolan climbed from Ovaro: 10.1 km at an average 11.9%
+    gradient with ramps up to 22%. Nicknamed "the Kaiser," this is
+    arguably the hardest paved climb in world professional cycling
+    and a signature Giro d'Italia summit finish.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Giro d'Italia official race documentation, Monte Zoncolan climb archive"
+    - "ProCyclingStats climb database — Monte Zoncolan (Ovaro) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-zoncolan-crostis cluster. Tier 3:
+    extreme sustained gradient, narrow single-lane road, Giro
+    signature summit finish.

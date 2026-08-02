@@ -1,0 +1,45 @@
+slug: snowboarding-spot-niseko-grand-hirafu
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-niseko
+parent_cluster: snowboarding-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8578, lng: 140.7025 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    Grand Hirafu is Niseko's flagship snowboarding sector. Combining
+    extensive tree-run terrain with night-snowboarding availability under
+    resort lighting — a rare feature among world resorts that extends the
+    daily riding window. Terrain spans beginner-friendly groomed runs
+    through moderate tree-lined descents, without requiring backcountry
+    gear or hike-to access, placing the overall sector at Tier 2 despite
+    its JAPOW-driven powder reputation.
+
+display_name:
+  en: Snowboarding — Grand Hirafu (Niseko)
+  it: Snowboard — Grand Hirafu
+  es: Snowboard — Grand Hirafu
+  fr: Snowboard — Grand Hirafu
+  de: Snowboarden — Grand Hirafu
+
+description:
+  en: |
+    Niseko's snowboard flagship sector with
+    tree-run terrain and night-snowboarding availability.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko United / Grand Hirafu piste and night-riding operational dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-niseko
+    cluster. Tier 2: tree-run terrain with in-bounds access, no
+    hike-to or beacon-required backcountry component.
