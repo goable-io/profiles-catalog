@@ -43,9 +43,9 @@ meta:
   maturity: provisional
   reviewed_by: []
   sources:
-    - "Mendes & Cascão 2023, Nazaré wave amplification, Ocean Engineering"
-    - "WSL Big Wave Tour Nazaré Challenge venue specification 2023"
+    - "WSL Big Wave Tour Nazaré Challenge venue documentation"
     - "Câmara Municipal de Nazaré big-swell day operational protocol"
+    - "Instituto Hidrográfico Português nearshore bathymetry / Nazaré canyon studies"
   notes: |
     Sub-spot of surfing-spot-nazare cluster. Tier 3: extreme consequence,
     jet-ski rescue required, recorded fatalities. Inherits cluster's
