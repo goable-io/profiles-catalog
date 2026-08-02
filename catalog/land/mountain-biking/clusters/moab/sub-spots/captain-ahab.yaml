@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-moab-captain-ahab
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-moab
+parent_cluster: mountain-biking-spot-moab
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 38.5300, lng: -109.6000 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Captain Ahab is a technical, shuttle-served expert descent on the
+    Amasa Back trail system combining exposed slickrock slabs with tight
+    rock gardens and ledgy drops that demand precise line choice at
+    speed. Sustained technical riding leaves little recovery terrain
+    between features, and several sections traverse close to canyon-rim
+    exposure above the Colorado River corridor. The trail's reputation as
+    one of Moab's must-ride expert lines comes from this combination of
+    committing rock-garden technicality and consequence rather than raw
+    length. Full suspension and strong technical-descending skill are
+    treated as prerequisites by local shuttle operators.
+
+display_name:
+  en: Mountain Biking — Moab Captain Ahab
+description:
+  en: |
+    Technical shuttle-served expert descent on the Amasa Back trail
+    system — exposed slickrock slabs, tight rock gardens, and ledgy
+    drops above the Colorado River corridor, one of Moab's signature
+    hard lines.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Trailforks Captain Ahab trail listing"
+    - "Singletracks Amasa Back / Captain Ahab trail guide"
+  notes: |
+    Sub-spot of mountain-biking-spot-moab cluster. Tier 3: expert-only
+    technical rock gardens, canyon-rim exposure, shuttle-served descent
+    requiring strong technical-descending skill.

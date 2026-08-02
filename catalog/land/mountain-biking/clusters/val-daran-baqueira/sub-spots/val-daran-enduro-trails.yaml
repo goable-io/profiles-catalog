@@ -1,0 +1,45 @@
+slug: mountain-biking-spot-val-daran-baqueira-val-daran-enduro-trails
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-val-daran-baqueira
+parent_cluster: mountain-biking-spot-val-daran-baqueira
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.7167, lng: 0.8000 }
+  radius_m: 2500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Val d'Aran valley enduro trail network runs technical singletrack
+    through dense Pyrenean alpine forest, largely accessed via local
+    shuttle services such as Rider Bike rather than lift infrastructure.
+    Trails combine root-laced, loamy forest surfaces with rockier sections
+    lower in the valley, giving a moderate. Intermediate-to-advanced enduro
+    character comparable to other shuttle-served Pyrenean networks.
+
+display_name:
+  en: Mountain Biking — Val d'Aran Enduro Trails
+  it: Mountain Bike — Trail Enduro Val d'Aran
+  es: Ciclismo de Montaña — Senderos Enduro Val d'Aran
+  fr: VTT — Sentiers Enduro Val d'Aran
+  de: Mountainbiken — Val d'Aran Enduro Trails
+
+description:
+  en: |
+    Shuttle-accessed enduro trail network through the Val d'Aran valley,
+    with technical singletrack in dense Pyrenean alpine forest and
+    local shuttle services supporting repeat descents.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Val d'Aran enduro trail network / Rider Bike shuttle documentation"
+    - "Trailforks Val d'Aran trail database"
+  notes: |
+    Sub-spot of mountain-biking-spot-val-daran-baqueira cluster. Tier 2:
+    shuttle-served technical forest enduro singletrack.

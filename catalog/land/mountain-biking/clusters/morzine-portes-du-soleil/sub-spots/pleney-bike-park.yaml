@@ -1,0 +1,47 @@
+slug: mountain-biking-spot-morzine-portes-du-soleil-pleney-bike-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-morzine-portes-du-soleil
+parent_cluster: mountain-biking-spot-morzine-portes-du-soleil
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 46.1889, lng: 6.7047 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Le Pleney is Morzine's main chairlift-served bike park, hosting a
+    dense set of DH and flow-trail lines directly above the town and
+    serving as an Enduro World Series venue. Trail grading spans blue
+    flow through red enduro and black DH, with berms, jumps, and
+    technical root/rock sections on the harder lines. The lift-served,
+    signed-trail format keeps overall consequence moderate for
+    intermediate riders while still offering real technical terrain for
+    advanced riders on the black lines.
+
+display_name:
+  en: Mountain Biking — Le Pleney Bike Park
+  it: Mountain Bike — Le Pleney Bike Park
+  es: Ciclismo de Montaña — Le Pleney Bike Park
+  fr: VTT — Bike Park du Pleney
+  de: Mountainbiken — Le Pleney Bike Park
+
+description:
+  en: |
+    Morzine's principal chairlift-served bike park on Le Pleney, mixing
+    DH and flow trails directly above town. An Enduro World Series
+    venue with grading from blue flow to black DH.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Portes du Soleil Le Pleney bike park trail map"
+    - "Enduro World Series Morzine round race notes"
+  notes: |
+    Sub-spot of mountain-biking-spot-morzine-portes-du-soleil cluster.
+    Tier 2: lift-served DH + flow park, moderate consequence overall.

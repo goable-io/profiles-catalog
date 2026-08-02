@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-moab-whole-enchilada
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-moab
+parent_cluster: mountain-biking-spot-moab
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 38.4750, lng: -109.3000 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Whole Enchilada is a 42km shuttle-served point-to-point descent
+    chaining five trails (Burro Pass, Hazard County, UPS, Kokopelli, and
+    Porcupine Rim) from the subalpine La Sal Mountains (roughly 3300m)
+    down to the Colorado River at Moab (roughly 1200m). The ride crosses
+    four distinct ecosystems — alpine tundra, aspen/conifer forest, high
+    desert, and slickrock canyon rim — with technical demand and exposure
+    escalating through Porcupine Rim's exposed cliff-edge singletrack near
+    the finish. Sustained descending at altitude with long remoteness
+    between bailout points makes this an expert-only committing objective
+    requiring a shuttle service and full-day fitness reserve.
+
+display_name:
+  en: Mountain Biking — Moab Whole Enchilada
+description:
+  en: |
+    A 42km shuttle-served descent chaining five trails from the La Sal
+    Mountains (3300m) to the Colorado River at Moab (1200m), crossing
+    alpine, forest, desert, and slickrock-canyon terrain in a single
+    ride — one of North America's classic long descents.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Trailforks Whole Enchilada trail-chain listing"
+    - "Singletracks Whole Enchilada trail guide"
+  notes: |
+    Sub-spot of mountain-biking-spot-moab cluster. Tier 3: expert-only,
+    42km sustained descent across four ecosystems, exposed cliff-edge
+    Porcupine Rim finish, shuttle-dependent remote objective.

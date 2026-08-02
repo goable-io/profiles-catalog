@@ -1,0 +1,48 @@
+slug: mountain-biking-spot-finale-ligure-madonna-della-guardia
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-finale-ligure
+parent_cluster: mountain-biking-spot-finale-ligure
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.1783, lng: 8.3222 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Finale Ligure's enduro flagship: a long, technical descent linking
+    the Madonna della Guardia ridge above the hinterland down to the sea,
+    through sustained rocky steps, exposed limestone slabs, and root-
+    laced singletrack. It is the annual Enduro World Series stage venue,
+    demanding sustained concentration, strong braking technique, and
+    full-suspension enduro or DH-capable geometry. Consequence is high
+    on the exposed rocky sections — off-line mistakes at speed carry
+    real injury risk, so this is expert-only terrain.
+
+display_name:
+  en: Mountain Biking — Madonna della Guardia
+  it: Mountain Bike — Madonna della Guardia
+  es: Ciclismo de Montaña — Madonna della Guardia
+  fr: VTT — Madonna della Guardia
+  de: Mountainbiken — Madonna della Guardia
+
+description:
+  en: |
+    The signature enduro descent of Finale Ligure, running from the
+    hinterland ridge above Madonna della Guardia down toward the coast
+    through technical rocky and rooty singletrack. Hosts an annual
+    Enduro World Series round and draws expert riders from across Europe.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Enduro World Series Finale Ligure race notes"
+    - "Trailforks Madonna della Guardia trail documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-finale-ligure cluster. Tier 3:
+    EWS-calibre technical descent, high consequence, expert-only.

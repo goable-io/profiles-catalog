@@ -1,0 +1,45 @@
+slug: mountain-biking-spot-val-daran-baqueira-baqueira-bike-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-val-daran-baqueira
+parent_cluster: mountain-biking-spot-val-daran-baqueira
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.7025, lng: 0.9333 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Baqueira Beret's summer bike park uses the ski resort's chairlift
+    infrastructure to serve a mix of flow and enduro trails through
+    Pyrenean alpine-ridge terrain, with sweeping high-altitude scenery
+    above the tree line. Grading spans intermediate flow through more
+    technical enduro sections with loose rock and root features typical of
+    Pyrenean granite terrain. Placing the zone at moderate overall
+    consequence for competent intermediate riders.
+
+display_name:
+  en: Mountain Biking — Baqueira Bike Park
+  it: Mountain Bike — Baqueira Bike Park
+  es: Ciclismo de Montaña — Baqueira Bike Park
+  fr: VTT — Baqueira Bike Park
+  de: Mountainbiken — Baqueira Bike Park
+
+description:
+  en: |
+    Chairlift-served summer bike park at Baqueira Beret, mixing flow
+    and enduro trails through open Pyrenean alpine-ridge scenery above
+    the tree line.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Baqueira Beret summer bike park trail documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-val-daran-baqueira cluster. Tier 2:
+    lift-served flow + enduro, Pyrenean alpine-ridge terrain.

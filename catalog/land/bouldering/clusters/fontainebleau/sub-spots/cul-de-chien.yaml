@@ -1,0 +1,44 @@
+slug: bouldering-spot-fontainebleau-cul-de-chien
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-fontainebleau
+parent_cluster: bouldering-spot-fontainebleau
+country_code: FR
+
+coordinates:
+  center: { lat: 48.4544, lng: 2.5675 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Cul de Chien is one of Fontainebleau's most iconic intermediate
+    sectors, with sandstone problems from V3 to V8 spread through a
+    scenic pine-and-boulder amphitheatre. Boulder heights are moderate
+    and landings are mostly flat sand, but the varied problem heights
+    and occasional sloping topouts call for 2-3 stacked pads and an
+    attentive spotter on the taller lines. The sector requires a longer
+    forest walk-in than the roadside areas, which keeps crowding lower
+    than at Bas Cuvier while still drawing a steady stream of visiting
+    climbers for its classic testpieces.
+
+display_name:
+  en: Bouldering — Fontainebleau Cul de Chien
+
+description:
+  en: |
+    Scenic, iconic Fontainebleau sector with intermediate V3-V8 sandstone
+    problems set among pine trees and sand dunes. A forest walk-in from
+    the parking area keeps it quieter than the roadside circuits.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Française de la Montagne et de l'Escalade (FFME) Fontainebleau sector guidance"
+    - "Vertical Life Fontainebleau sector database"
+  notes: |
+    Sub-spot of bouldering-spot-fontainebleau cluster. Tier 2:
+    intermediate V3-V8 grades, mixed boulder heights, standard
+    pad-and-spotter Fontainebleau problems.

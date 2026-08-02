@@ -1,0 +1,40 @@
+slug: bouldering-spot-cresciano-cresciano-easy-forest
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-cresciano
+parent_cluster: bouldering-spot-cresciano
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.2950, lng: 9.0450 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    This sector holds Cresciano's beginner-friendly forest problems, graded
+    V0 to V5 on low granite boulders with flat, forgiving forest- floor
+    landings. Low boulder heights keep fall consequence minimal, a single
+    pad is generally sufficient. And the sector's proximity to the main
+    parking makes it a convenient warm-up before venturing to the valley's
+    harder overhang testpieces.
+
+display_name:
+  en: Bouldering — Cresciano Easy Forest
+
+description:
+  en: |
+    Beginner-friendly Cresciano forest sector with low, flat-landing
+    V0-V5 warm-up boulders on granite.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Ticino bouldering guidance"
+    - "Vertical Life Cresciano sector database"
+  notes: |
+    Sub-spot of bouldering-spot-cresciano cluster. Tier 1: easy V0-V5
+    grades, flat forest-floor landings, low-consequence warm-up sector.

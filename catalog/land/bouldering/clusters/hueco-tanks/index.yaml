@@ -1,0 +1,151 @@
+slug: bouldering-spot-hueco-tanks
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: bouldering
+country_code: US
+sub_spots:
+  - bouldering-spot-hueco-tanks-north-mountain
+  - bouldering-spot-hueco-tanks-east-mountain
+display_name:
+  en: Bouldering — Hueco Tanks
+  it: Boulder — Hueco Tanks
+  es: Bulder — Hueco Tanks
+  fr: Bloc — Hueco Tanks
+  de: Bouldern — Hueco Tanks
+description:
+  en: |
+    Hueco Tanks (near El Paso, Texas) is a historic North American
+    bouldering destination named for the water-holding pockets (huecos)
+    weathered into its syenite rock. The rock forms steep, pocketed
+    problems from moderate grades to some of the hardest bouldering in
+    the world. Winter (Oct-Mar) is the primary season: cool, dry desert
+    air maximizes friction, while summer heat makes the dark syenite
+    unbearably hot to touch by midday. Since 1998, Texas Parks and
+    Wildlife has managed access through a reservation and guided-tour
+    system to protect the park's Native American pictographs and fragile
+    desert ecology, which caps daily visitor numbers and restricts
+    unguided access to designated zones.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.35
+    curve:
+      - { x: -5, s: 0.30 }
+      - { x: 2,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 24, s: 0.50 }
+      - { x: 30, s: 0.20 }
+      - { x: 36, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.30 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.85 }
+      - { x: 25, s: 0.50 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.20 }
+      - { x: 0.5, s: 0.50 }
+      - { x: 2,  s: 0.85 }
+      - { x: 5,  s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: humidity_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.80 }
+      - { x: 22, s: 0.55 }
+      - { x: 28, s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: WET_ROCK_RISK
+    description: Active precipitation makes rock holds slippery and weakens certain rock types (sandstone, conglomerate) — both unsafe and damaging to the resource.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: SPOTTER_HAZARD
+    description: Sustained wind above 45 knots makes spotting falls and predicting fall direction unsafe, particularly on highballs.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 38
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 38°C makes finger grip on holds unsustainable and creates heat exposure for ground belayers.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: high
+  notes: |
+    Texas Parks and Wildlife has capped daily visitor numbers at Hueco
+    Tanks State Park and Historic Site since 1998, requiring reservations
+    and guided tours for access to North Mountain and other pictograph-
+    bearing zones. Carrying capacity sensitivity is high: the park
+    protects both fragile desert ecology and Native American pictograph
+    sites, and chalk use is restricted to reduce impact on the rock
+    surface.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Texas Parks and Wildlife Hueco Tanks State Park access and reservation policy"
+    - "Rockfax Hueco Tanks bouldering guidebook"
+  notes: |
+    Cluster inherits base bouldering scoring unchanged. The permit and
+    guided-tour access regime (post-1998, Texas Parks and Wildlife) is
+    the defining strategic factor for this cluster, documented in
+    sustainability.notes rather than in the scoring dimensions.

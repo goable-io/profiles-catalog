@@ -1,0 +1,48 @@
+slug: mountain-biking-spot-morzine-portes-du-soleil-avoriaz-cross-border
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-morzine-portes-du-soleil
+parent_cluster: mountain-biking-spot-morzine-portes-du-soleil
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 46.1917, lng: 6.7708 }
+  radius_m: 2500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Avoriaz side and its cross-border trail links into Champéry
+    (Switzerland) via the Portes du Soleil lift network give riders
+    access to a wide spread of red-graded flow-enduro terrain across
+    two countries on a single lift pass. Trail character is
+    predominantly moderate flow with intermittent technical sections.
+    The zone is well suited to intermediate riders comfortable with
+    sustained lift-served descending across a large, high-traffic
+    network.
+
+display_name:
+  en: Mountain Biking — Avoriaz Cross-Border Trails
+  it: Mountain Bike — Trail Transfrontalieri Avoriaz
+  es: Ciclismo de Montaña — Senderos Transfronterizos Avoriaz
+  fr: VTT — Sentiers Transfrontaliers Avoriaz
+  de: Mountainbiken — Avoriaz Grenzüberschreitende Trails
+
+description:
+  en: |
+    Avoriaz side of the Portes du Soleil bike network, linking across
+    the France-Switzerland border into Champéry via lift-served
+    red-flow enduro trails.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Portes du Soleil cross-border bike network trail map"
+    - "Trailforks Avoriaz / Champéry trail documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-morzine-portes-du-soleil cluster.
+    Tier 2: red-flow enduro coverage across the cross-border lift
+    network.

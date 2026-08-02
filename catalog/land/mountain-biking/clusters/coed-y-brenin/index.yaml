@@ -1,0 +1,161 @@
+slug: mountain-biking-spot-coed-y-brenin
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: mountain-biking
+country_code: GB
+sub_spots:
+  - mountain-biking-spot-coed-y-brenin-beast-of-brenin-loop
+  - mountain-biking-spot-coed-y-brenin-mbr-trail
+display_name:
+  en: Mountain Biking — Coed y Brenin
+  it: Mountain Bike — Coed y Brenin
+  es: Ciclismo de Montaña — Coed y Brenin
+  fr: VTT — Coed y Brenin
+  de: Mountainbiken — Coed y Brenin
+description:
+  en: |
+    Coed y Brenin (Gwynedd, Wales) is the UK's first purpose-built
+    mountain-bike trail centre, opened by Forestry England (then Forest
+    Enterprise) in 1996 and the template for the trail-centre model now
+    common across the UK. Trails wind through dense conifer forest in
+    Snowdonia at moderate elevation (150-450m), with waymarked red and
+    black-graded loops on mixed natural singletrack and constructed
+    rock/root features. Britain's oceanic climate means persistent damp
+    conditions are normal rather than exceptional: trail surfaces are
+    engineered with free-draining aggregate to stay rideable in
+    conditions that would close unmanaged trails, but sustained heavy
+    rain still degrades traction on exposed rock sections and reduces
+    visibility on the forest's higher, more open stretches.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8,  s: 0.10 }
+      - { x: 2,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 16,  s: 1.00 }
+      - { x: 22,  s: 0.95 }
+      - { x: 28,  s: 0.70 }
+      - { x: 35,  s: 0.30 }
+      - { x: 40,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.20 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.85 }
+      - { x: 1.6, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_TRAIL_DAMAGE
+    description: Heavy active rain overwhelms even Coed y Brenin's free-draining aggregate tread, creating dangerous traction loss and accelerating erosion — Forestry England trail-stewardship guidance discourages riding above this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on the forest's more open upper sections destabilises riders and raises fallen-branch risk in mature conifer stands.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: LOW_VISIBILITY_DESCENT
+    description: Visibility below 200m, common in Welsh hill fog, makes descending technical rock and root sections at speed unsafe.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 40°C creates immediate heat-illness risk under sustained effort with helmet and pads, though rare in this climate.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 50
+  carrying_capacity_sensitivity: high
+  notes: |
+    Forestry England manages Coed y Brenin as a year-round trail centre
+    with a visitor-centre car-park charge funding trail maintenance;
+    free-draining constructed tread keeps the network rideable through
+    Wales's wet oceanic climate almost year-round. As the UK's original
+    trail centre it carries high crowding and carrying-capacity
+    sensitivity, particularly on weekends and school holidays, and
+    Forestry England periodically closes sections for forestry operations
+    or storm-damage clearance.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Forestry England Coed y Brenin trail centre guidance"
+    - "Trailforks Coed y Brenin trail database"
+    - "MBR (Mountain Bike Rider) Coed y Brenin trail guides"
+  notes: |
+    Cluster inherits base mountain-biking scoring unchanged. Region
+    omitted: Wales (~52.8°N/-3.9°W) falls outside all defined RegionEnum
+    bounding boxes in this catalog. Season is the longest of the five
+    extra-European clusters (50 weeks) reflecting Forestry England's
+    year-round, engineered-tread trail-centre model.

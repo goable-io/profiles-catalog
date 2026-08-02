@@ -1,0 +1,43 @@
+slug: bouldering-spot-rocklands-plateau-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-rocklands
+parent_cluster: bouldering-spot-rocklands
+country_code: ZA
+
+coordinates:
+  center: { lat: -32.2500, lng: 19.0800 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Plateau sector sits atop the Cederberg escarpment, offering a
+    V4-V8 mix of technical sandstone problems on generally moderate-
+    height boulders with sandy landings suited to a standard 3-5 pad
+    setup and single spotter. The approach involves a longer walk-in
+    across open plateau terrain, exposed to wind and sun, with dramatic
+    views over the Cederberg range. Problems are less concentrated than
+    at De Pakhuys, spreading climbers out and reducing crowding at
+    individual boulders.
+
+display_name:
+  en: Bouldering — Rocklands Plateau Boulders
+
+description:
+  en: |
+    Plateau sector — V4-V8 sandstone problems spread across the
+    Cederberg escarpment top, with dramatic mountain views and a
+    longer, more exposed approach walk than the valley sectors.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Rocklands guidebook"
+    - "Vertical Life Rocklands sector guide"
+  notes: |
+    Sub-spot of bouldering-spot-rocklands cluster. Tier 2: moderate
+    plateau-top sandstone problems, standard pad setup, longer exposed
+    approach walk.

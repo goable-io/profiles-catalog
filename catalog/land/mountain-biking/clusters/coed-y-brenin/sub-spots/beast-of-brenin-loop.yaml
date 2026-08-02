@@ -1,0 +1,45 @@
+slug: mountain-biking-spot-coed-y-brenin-beast-of-brenin-loop
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-coed-y-brenin
+parent_cluster: mountain-biking-spot-coed-y-brenin
+country_code: GB
+
+coordinates:
+  center: { lat: 52.8200, lng: -3.9333 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Beast is Coed y Brenin's flagship 40km waymarked red trail
+    through Snowdonia forest, the original signature route of the UK's
+    first purpose-built MTB trail centre (Forestry England). Surface is
+    engineered singletrack and forest fire-road on free-draining
+    aggregate, with red-grade technical features (rock gardens, root
+    sections, moderate climbs) that require intermediate skill and
+    sustained fitness given the distance. Waymarking and mapped bail-out
+    points keep navigation and rescue access straightforward relative to
+    remote alpine trails, but the length and cumulative climbing make it
+    a full-day commitment for most intermediate riders.
+
+display_name:
+  en: Mountain Biking — Coed y Brenin The Beast
+description:
+  en: |
+    Coed y Brenin's flagship 40km waymarked red trail through Snowdonia
+    forest — the original signature route of the UK's first purpose-built
+    MTB trail centre, mixing engineered singletrack and fire-road with
+    red-grade technical features.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Forestry England Coed y Brenin trail centre guidance"
+    - "Trailforks The Beast trail listing"
+  notes: |
+    Sub-spot of mountain-biking-spot-coed-y-brenin cluster. Tier 2:
+    red-graded intermediate trail centre loop, waymarked, moderate
+    technical features, long distance (40km).

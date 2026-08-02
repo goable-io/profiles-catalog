@@ -1,0 +1,47 @@
+slug: mountain-biking-spot-whistler-bike-park-top-of-the-world
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-whistler-bike-park
+parent_cluster: mountain-biking-spot-whistler-bike-park
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.0603, lng: -122.9500 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Top of the World starts at the Whistler Peak Chair (2181m) and
+    descends roughly 20km to the village base (approximately 700m),
+    making it the bike park's signature alpine-to-forest expert descent.
+    The upper alpine section is fully exposed above the treeline with
+    loose rock, roots, and rapidly changing wind and visibility; a single
+    unroped rock traverse near the top is the trail's defining
+    consequence feature. Below the alpine the trail transitions into
+    steep, rooty forest singletrack requiring sustained technical riding
+    over a long descent. Access requires a special guided/permit booking
+    through Whistler Blackcomb given the alpine exposure and traffic
+    management on the narrow start.
+
+display_name:
+  en: Mountain Biking — Whistler Top of the World
+description:
+  en: |
+    Alpine-to-forest expert descent starting at Whistler Peak Chair
+    (2181m) and dropping roughly 20km to the village base — exposed
+    ridge singletrack transitioning to steep, rooty forest trail, one of
+    the park's most iconic and consequential rides.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Bike Park trail map"
+    - "Trailforks Top of the World trail listing"
+  notes: |
+    Sub-spot of mountain-biking-spot-whistler-bike-park cluster. Tier 3:
+    alpine exposure, loose rock traverse, sustained technical descent
+    over 20km, booking/guiding requirement.

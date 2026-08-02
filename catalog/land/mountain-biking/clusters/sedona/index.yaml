@@ -1,0 +1,157 @@
+slug: mountain-biking-spot-sedona
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: mountain-biking
+region: rockies
+country_code: US
+sub_spots:
+  - mountain-biking-spot-sedona-hangover-trail
+  - mountain-biking-spot-sedona-hiline-slaughterhouse
+display_name:
+  en: Mountain Biking — Sedona
+  it: Mountain Bike — Sedona
+  es: Ciclismo de Montaña — Sedona
+  fr: VTT — Sedona
+  de: Mountainbiken — Sedona
+description:
+  en: |
+    Sedona (Arizona, USA) is a red-rock desert mountain-biking destination
+    on Coconino National Forest land, known for technical slickrock
+    exposure trails carved through Permian sandstone formations around
+    1300-1400m elevation. As at Moab, trail-surface friction depends on
+    the sandstone staying dry — wet red rock loses grip fast and the
+    Forest Service discourages riding on damaged, saturated tread. Heat is
+    the primary seasonal hazard: Sedona's low-desert exposure regularly
+    exceeds 35°C apparent temperature June-August, while winter riding is
+    comfortable and the area's dominant riding season shifts toward
+    October-April relative to higher-elevation Rockies destinations.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8,  s: 0.10 }
+      - { x: 2,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 16,  s: 1.00 }
+      - { x: 22,  s: 0.95 }
+      - { x: 28,  s: 0.70 }
+      - { x: 35,  s: 0.30 }
+      - { x: 40,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.20 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.85 }
+      - { x: 1.6, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_TRAIL_DAMAGE
+    description: Heavy active rain makes Sedona's red-rock slickrock hazardously slick and damages saturated dirt tread — Coconino National Forest guidance discourages riding above this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on the Hangover Trail's exposed cliff-edge traverse destabilises riders near unprotected drops.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: LOW_VISIBILITY_DESCENT
+    description: Visibility below 200m on exposed red-rock traverses makes navigating cliff-edge sections unsafe.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 40°C on exposed low-desert red rock creates immediate heat-illness risk, common June-August at Sedona.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 42
+  carrying_capacity_sensitivity: high
+  notes: |
+    Trails sit on Coconino National Forest and City of Sedona land; the
+    Red Rock Pass fee system manages visitor access to trailheads and
+    parking. Peak riding season runs October-April as summer desert heat
+    limits use; the US Forest Service and Verde Valley Cyclists Coalition
+    coordinate trail maintenance and closures on erosion-sensitive
+    sandstone-and-dirt tread, keeping carrying-capacity sensitivity high.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Coconino National Forest trail and Red Rock Pass guidance"
+    - "Trailforks Sedona trail database"
+    - "Verde Valley Cyclists Coalition trail information"
+  notes: |
+    Cluster inherits base mountain-biking scoring unchanged. Season
+    (42 weeks) is longer than Moab and Whistler since Sedona's low-desert
+    riding is comfortable most of the year, with only peak summer heat
+    routinely gating midday rides.

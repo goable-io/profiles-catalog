@@ -1,0 +1,41 @@
+slug: bouldering-spot-chironico-chironico-forest-easy
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-chironico
+parent_cluster: bouldering-spot-chironico
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.4400, lng: 8.7950 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    This forest sector offers Chironico's beginner-friendly warm-up
+    problems, graded V0 to V5 on low granite and gneiss boulders with
+    flat forest-floor landings. Fall consequences are low given the
+    modest boulder heights, making the sector suitable for newer
+    climbers and casual sessions with a single pad. In clear contrast
+    to the valley's world-class hard testpieces nearby, the atmosphere
+    is relaxed and family-friendly.
+
+display_name:
+  en: Bouldering — Chironico Forest Easy
+
+description:
+  en: |
+    Beginner-friendly Chironico forest sector with low, flat-landing
+    V0-V5 warm-up boulders on granite and gneiss.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Ticino bouldering guidance"
+    - "Vertical Life Chironico sector database"
+  notes: |
+    Sub-spot of bouldering-spot-chironico cluster. Tier 1: easy V0-V5
+    grades, flat forest-floor landings, low-consequence warm-up sector.

@@ -1,0 +1,43 @@
+slug: mountain-biking-spot-sedona-hangover-trail
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-sedona
+parent_cluster: mountain-biking-spot-sedona
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 34.9333, lng: -111.7333 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Hangover Trail is Sedona's iconic exposure test-piece: a slickrock
+    traverse along a roughly 200 ft cliff edge where a single mistake has
+    severe consequences and there is no meaningful runoff or margin for
+    error on the exposed shelf sections. Technical difficulty on the rock
+    itself is moderate compared to the exposure, meaning the trail's
+    tier-3 rating is driven primarily by consequence rather than raw
+    technicality. Riders are expected to dismount and walk sections they
+    are not fully confident on; the trail is committing, remote from
+    quick rescue access, and unrideable when the sandstone is wet.
+
+display_name:
+  en: Mountain Biking — Sedona Hangover Trail
+description:
+  en: |
+    Sedona's signature exposure trail — a red-rock slickrock traverse
+    along a roughly 200 ft cliff edge with minimal margin for error,
+    committing and expert-only despite moderate raw technical difficulty.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Coconino National Forest trail information"
+    - "Trailforks Hangover Trail listing"
+  notes: |
+    Sub-spot of mountain-biking-spot-sedona cluster. Tier 3: cliff-edge
+    exposure trail, committing, expert-only, unrideable when wet.

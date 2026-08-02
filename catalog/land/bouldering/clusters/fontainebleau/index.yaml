@@ -1,0 +1,154 @@
+slug: bouldering-spot-fontainebleau
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: bouldering
+country_code: FR
+sub_spots:
+  - bouldering-spot-fontainebleau-bas-cuvier
+  - bouldering-spot-fontainebleau-cul-de-chien
+  - bouldering-spot-fontainebleau-franchard-cuisiniere
+display_name:
+  en: Bouldering — Fontainebleau
+  it: Boulder — Fontainebleau
+  es: Bulder — Fontainebleau
+  fr: Bloc — Fontainebleau
+  de: Bouldern — Fontainebleau
+description:
+  en: |
+    Fontainebleau (Seine-et-Marne, France) is the global birthplace and
+    reference of bouldering, with orange sandstone boulders scattered
+    across the forest floor for tens of kilometres. Thousands of problems
+    from V0 to V17 sit on fine-grained "grès" sandstone whose friction is
+    exceptionally sensitive to moisture: the rock is soft and porous, so
+    climbing on damp sandstone both risks holds breaking off and is
+    prohibited by local etiquette. Cool, dry autumn and winter conditions
+    give the best friction ("Fonte" conditions), while summer humidity
+    and heat make the rock greasy. Landings are mostly flat sand, but
+    stray roots and rock rubble under pads still require careful spotting.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.35
+    curve:
+      - { x: -5, s: 0.30 }
+      - { x: 2,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 24, s: 0.50 }
+      - { x: 30, s: 0.20 }
+      - { x: 36, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.30 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.85 }
+      - { x: 25, s: 0.50 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.20 }
+      - { x: 0.5, s: 0.50 }
+      - { x: 2,  s: 0.85 }
+      - { x: 5,  s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: humidity_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.80 }
+      - { x: 22, s: 0.55 }
+      - { x: 28, s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: WET_ROCK_RISK
+    description: Active precipitation makes rock holds slippery and weakens certain rock types (sandstone, conglomerate) — both unsafe and damaging to the resource.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: SPOTTER_HAZARD
+    description: Sustained wind above 45 knots makes spotting falls and predicting fall direction unsafe, particularly on highballs.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 38
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 38°C makes finger grip on holds unsustainable and creates heat exposure for ground belayers.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Fontainebleau is the most heavily visited bouldering forest in the
+    world, managed by ONF (Office National des Forêts) together with the
+    Fédération Française de la Montagne et de l'Escalade (FFME). Chalk
+    wash, brush-cleaning of holds, and soil compaction at popular
+    boulders (Bas Cuvier, Cul de Chien) are actively monitored; some
+    sectors carry seasonal or permanent access restrictions to protect
+    rare flora and nesting birds.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Française de la Montagne et de l'Escalade (FFME) Fontainebleau bouldering access guidance"
+    - "Office National des Forêts (ONF) Fontainebleau massif management notes"
+    - "Vertical Life Fontainebleau sector database"
+  notes: |
+    Cluster inherits base scoring unchanged. Precipitation gate is
+    materially important here: Fontainebleau's fine sandstone ("grès")
+    is softer and more moisture-sensitive than granite or gneiss, so the
+    0.5 mm/h wet-rock gate is treated strictly by local etiquette
+    (climbing on damp sandstone is considered unacceptable, not just
+    inadvisable).

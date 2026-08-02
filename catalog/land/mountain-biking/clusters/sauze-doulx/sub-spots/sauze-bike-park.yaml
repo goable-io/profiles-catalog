@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-sauze-doulx-sauze-bike-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-sauze-doulx
+parent_cluster: mountain-biking-spot-sauze-doulx
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 45.0269, lng: 6.8583 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Sauze d'Oulx's chairlift-served bike park comprises 20+ signed trails
+    connected through the Sportinia lift network, spanning red-graded flow
+    lines through to black technical descents with rock gardens and roots.
+    The lift-served access and graded trail signage make it approachable
+    for intermediate riders while still offering genuine technical
+    challenge on the black lines. Placing the overall zone at moderate-to-
+    advanced consequence.
+
+display_name:
+  en: Mountain Biking — Sauze Bike Park
+  it: Mountain Bike — Sauze Bike Park
+  es: Ciclismo de Montaña — Sauze Bike Park
+  fr: VTT — Sauze Bike Park
+  de: Mountainbiken — Sauze Bike Park
+
+description:
+  en: |
+    Chairlift-served bike park at Sauze d'Oulx with 20+ signed trails
+    connected via the Sportinia lift network, mixing red flow with
+    black technical descents.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Via Lattea Sauze d'Oulx bike park trail map"
+    - "Trailforks Sauze d'Oulx trail documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-sauze-doulx cluster. Tier 2:
+    lift-served red flow + black technical trail network.

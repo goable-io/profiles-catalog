@@ -1,0 +1,42 @@
+slug: bouldering-spot-magic-wood-new-base-camp
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-magic-wood
+parent_cluster: bouldering-spot-magic-wood
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.5183, lng: 9.5217 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    New Base Camp is Magic Wood's main sector and social hub, with
+    granite-gneiss forest boulders spanning V4 to V9. Boulder heights
+    and landings vary problem to problem, requiring standard 3-6 pad
+    coverage and attentive spotting on the taller lines, but nothing
+    here demands the highball-specific pad stacking of the valley's
+    hardest sectors. Its central position near the main parking and
+    camping area makes it the busiest and most sociable part of the
+    forest.
+
+display_name:
+  en: Bouldering — Magic Wood New Base Camp
+
+description:
+  en: |
+    The central, most-visited sector of Magic Wood, with granite-gneiss
+    forest boulders from V4 to V9 and the valley's main social hub.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Averstal / Magic Wood bouldering guidance"
+    - "Vertical Life Magic Wood sector database"
+  notes: |
+    Sub-spot of bouldering-spot-magic-wood cluster. Tier 2: intermediate
+    V4-V9 grades, standard pad-and-spotter needs, cluster's main sector.

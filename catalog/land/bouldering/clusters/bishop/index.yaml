@@ -1,0 +1,152 @@
+slug: bouldering-spot-bishop
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: bouldering
+region: rockies
+country_code: US
+sub_spots:
+  - bouldering-spot-bishop-buttermilks
+  - bouldering-spot-bishop-happy-boulders
+  - bouldering-spot-bishop-sad-boulders
+display_name:
+  en: Bouldering — Bishop
+  it: Boulder — Bishop
+  es: Bulder — Bishop
+  fr: Bloc — Bishop
+  de: Bouldern — Bishop
+description:
+  en: |
+    Bishop (Owens Valley, Eastern Sierra, California) is one of North
+    America's premier bouldering destinations, split between two distinct
+    rock types: granite boulders scattered across the Buttermilk Country
+    at the base of the Sierra, and volcanic ignimbrite (welded tuff)
+    pockets in the Volcanic Tableland canyons north of town. Winter (Nov-
+    Mar) is the primary season — cold, dry desert air at 1,200-2,300m
+    elevation gives excellent friction, while summer heat makes most
+    problems unclimbable except at dawn. The Buttermilks in particular
+    are known for committing highball lines requiring large pad stacks;
+    the Tableland canyons offer more moderate, accessible pocket-pulling.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.35
+    curve:
+      - { x: -5, s: 0.30 }
+      - { x: 2,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 24, s: 0.50 }
+      - { x: 30, s: 0.20 }
+      - { x: 36, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.30 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.85 }
+      - { x: 25, s: 0.50 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.20 }
+      - { x: 0.5, s: 0.50 }
+      - { x: 2,  s: 0.85 }
+      - { x: 5,  s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: humidity_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.80 }
+      - { x: 22, s: 0.55 }
+      - { x: 28, s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: WET_ROCK_RISK
+    description: Active precipitation makes rock holds slippery and weakens certain rock types (sandstone, conglomerate) — both unsafe and damaging to the resource.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: SPOTTER_HAZARD
+    description: Sustained wind above 45 knots makes spotting falls and predicting fall direction unsafe, particularly on highballs.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 38
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 38°C makes finger grip on holds unsustainable and creates heat exposure for ground belayers.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: high
+  notes: |
+    Bishop bouldering is managed jointly by the Bureau of Land Management
+    and the City of Bishop; the Buttermilks and Volcanic Tableland see
+    heavy winter-season crowding from climbers escaping colder or wetter
+    regions. Carrying capacity sensitivity is high: dispersed camping
+    areas and boulder-base vegetation show trampling, and local
+    organizations (Bishop Area Climbers Coalition) coordinate trail and
+    parking maintenance.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Bishop Area Bouldering guidebook"
+    - "Bishop Area Climbers Coalition access information"
+  notes: |
+    Cluster inherits base bouldering scoring unchanged. Winter-season
+    (Nov-Mar) desert climate is the defining strategic factor, distinct
+    from the summer-season European alpine bouldering clusters in this
+    catalog.

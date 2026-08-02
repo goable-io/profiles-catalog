@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-livigno-carosello-3000-trails
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-livigno
+parent_cluster: mountain-biking-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5217, lng: 10.1281 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Carosello 3000 side of Livigno's lift network offers a broad spread
+    of flow and enduro trails crossing multiple gradients. With family-
+    friendly green/blue lines lower down and genuine black expert lines
+    higher on the mountain. The lift-served access and wide grade spread
+    makes it a moderate, intermediate-anchored zone overall, with technical
+    sections requiring solid bike-handling but not extreme commitment.
+
+display_name:
+  en: Mountain Biking — Carosello 3000 Trails
+  it: Mountain Bike — Trail Carosello 3000
+  es: Ciclismo de Montaña — Senderos Carosello 3000
+  fr: VTT — Sentiers Carosello 3000
+  de: Mountainbiken — Carosello 3000 Trails
+
+description:
+  en: |
+    Lift-served trail network on Livigno's Carosello 3000 side, spanning
+    family-friendly flow lines through to black expert descents across
+    a cross-cluster trail set.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Livigno Turismo Carosello 3000 bike park trail map"
+    - "Trailforks Livigno regional trail database"
+  notes: |
+    Sub-spot of mountain-biking-spot-livigno cluster. Tier 2: mixed
+    flow-to-black lift-served network, family-friendly base with expert
+    upper lines.

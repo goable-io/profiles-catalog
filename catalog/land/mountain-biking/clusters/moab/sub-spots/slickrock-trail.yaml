@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-moab-slickrock-trail
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-moab
+parent_cluster: mountain-biking-spot-moab
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 38.5758, lng: -109.5100 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Slickrock Practice Loop and Main Loop on BLM's Sand Flats
+    Recreation Area are the iconic Moab riding grounds, following painted
+    dashed lines across exposed Navajo Sandstone domes and slabs. Grip on
+    dry sandstone is exceptional, letting riders climb and descend
+    surprisingly steep pitches, but there is minimal defined tread — route
+    finding across open rock is part of the ride and inattentive riders
+    can wander toward exposed drop-offs. Technical demand is intermediate
+    (steep rollers, short ledges) but consequence rises with terrain
+    exposure near canyon rims. Fully unrideable and dangerously slick when
+    wet, so trail status depends entirely on recent precipitation.
+
+display_name:
+  en: Mountain Biking — Moab Slickrock Trail
+description:
+  en: |
+    The trail that put Moab on the map — Practice and Main Loops painted
+    across exposed Navajo Sandstone on the Sand Flats Recreation Area.
+    Self-navigated slickrock riding with exceptional dry-rock grip and
+    steep rollers, unrideable when wet.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "BLM Sand Flats Recreation Area trail guidance"
+    - "Trailforks Slickrock Trail listing"
+  notes: |
+    Sub-spot of mountain-biking-spot-moab cluster. Tier 2: intermediate
+    technical demand, self-navigation across open rock, exposure near
+    canyon rims, wet-rock riding hazard.

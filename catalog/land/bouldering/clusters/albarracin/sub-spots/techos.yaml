@@ -1,0 +1,43 @@
+slug: bouldering-spot-albarracin-techos
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-albarracin
+parent_cluster: bouldering-spot-albarracin
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 40.4200, lng: -1.4400 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    Techos is Albarracín's dedicated roof-and-overhang sector, with red
+    sandstone testpieces from V6 to V9 and harder that demand powerful,
+    committing moves above uneven, rocky landings. The steep overhanging
+    lines are highball-adjacent in consequence even where not tall,
+    since awkward roof-exit falls are hard to spot cleanly, mandating a
+    full pad stack and an experienced multi-person spotting team.
+    Approach requires leaving the main marked trails, adding to the
+    sector's remote, expert-only character.
+
+display_name:
+  en: Bouldering — Albarracín Techos
+
+description:
+  en: |
+    Overhanging red-sandstone roof sector in Albarracín, with committing
+    V6-V9+ testpieces requiring a full pad stack and experienced
+    spotting.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Aragonesa de Montañismo (FAM) Albarracín sector documentation"
+    - "Vertical Life Albarracín sector database"
+  notes: |
+    Sub-spot of bouldering-spot-albarracin cluster. Tier 3: overhanging
+    V6-V9+ testpieces, uneven landings, mandatory full-team spotting.

@@ -1,0 +1,49 @@
+slug: mountain-biking-spot-finale-ligure-nato-base-trails
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-finale-ligure
+parent_cluster: mountain-biking-spot-finale-ligure
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.1650, lng: 8.2833 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The NATO Base trail network occupies the plateau of a disused
+    military installation in the Finale hinterland, and is one of the
+    area's original enduro zones. Trails mix red-graded flow with
+    technical rocky and root sections, generally at a moderate,
+    intermediate-friendly consequence level compared to the steeper
+    ridge descents. Access is via a well-established shuttle and fire-
+    road network, making it the mid-mountain workhorse zone riders
+    session repeatedly through a day.
+
+display_name:
+  en: Mountain Biking — NATO Base Trails
+  it: Mountain Bike — Trail NATO Base
+  es: Ciclismo de Montaña — Senderos NATO Base
+  fr: VTT — Sentiers NATO Base
+  de: Mountainbiken — NATO Base Trails
+
+description:
+  en: |
+    Historic enduro trail cluster on the plateau of Finale's disused
+    NATO military base, mixing flow and technical singletrack across a
+    wide intermediate-to-advanced trail network reached by fire-road
+    shuttle from the hinterland villages.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Trailforks NATO Base Finale Ligure trail documentation"
+    - "Finale Outdoor Region trail network documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-finale-ligure cluster. Tier 2:
+    intermediate red-graded enduro/flow zone, shuttle-accessed, Finale's
+    mid-mountain workhorse network.

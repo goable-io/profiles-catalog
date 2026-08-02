@@ -1,0 +1,44 @@
+slug: bouldering-spot-bishop-sad-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-bishop
+parent_cluster: bouldering-spot-bishop
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.4800, lng: -118.5992 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Sad Boulders sit in a deeper, narrower canyon of the Volcanic
+    Tableland just north of the Happy Boulders, with sustained V3-V10
+    ignimbrite pocket and edge problems on generally flat sandy floor
+    landings. The steeper canyon walls create more shade and a cooler
+    microclimate than the Happy Boulders, extending the climbable window
+    on warm days, though the narrower approach trail and canyon
+    topography make pad-hauling slightly more awkward. A standard
+    2-4 pad, single-spotter setup covers the majority of lines here.
+
+display_name:
+  en: Bouldering — Bishop Sad Boulders
+
+description:
+  en: |
+    Sad Boulders sector — a deeper, cooler canyon adjacent to the Happy
+    Boulders, with sustained V3-V10 ignimbrite problems on sandy
+    landings.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Bishop Area Bouldering guidebook"
+    - "Bishop Area Climbers Coalition access information"
+  notes: |
+    Sub-spot of bouldering-spot-bishop cluster. Tier 2: sustained
+    volcanic-tuff problems, standard pad setup, deeper shaded canyon
+    setting than neighboring Happy Boulders.

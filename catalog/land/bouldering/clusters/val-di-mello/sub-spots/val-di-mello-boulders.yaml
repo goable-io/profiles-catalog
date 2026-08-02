@@ -1,0 +1,46 @@
+slug: bouldering-spot-val-di-mello-val-di-mello-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-val-di-mello
+parent_cluster: bouldering-spot-val-di-mello
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.2680, lng: 9.6650 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    This sub-spot covers the distributed scatter of granite boulders
+    across the Val di Mello valley floor, with problems from V2 to V8 on
+    rough Val Masino granite. The wide 800 m radius reflects that
+    problems are spread along the meadow and riverside rather than
+    concentrated at a single crag, requiring a short walk between
+    boulders but generally flat, grassy landings. Note this sub-spot
+    shares its physical footprint with a rope-climbing sub-spot in the
+    catalog's climbing category — the two are distinct sport-mode
+    entries at the same location.
+
+display_name:
+  en: Bouldering — Val di Mello Valley Boulders
+
+description:
+  en: |
+    Distributed field of granite boulders scattered along the Val di
+    Mello valley floor, offering V2-V8 problems on Val Masino granite in
+    a scenic meadow setting.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Val Masino granite bouldering guidance"
+    - "Vertical Life Val di Mello sector database"
+  notes: |
+    Sub-spot of bouldering-spot-val-di-mello cluster. Tier 2: mixed V2-V8
+    grades, dispersed valley-floor boulders, standard pad-and-spotter
+    approach. Coincides geographically with a distinct climbing-category
+    sub-spot; intentional, as sport mode differs.

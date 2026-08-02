@@ -1,0 +1,152 @@
+slug: bouldering-spot-cresciano
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: bouldering
+region: alpine
+country_code: CH
+sub_spots:
+  - bouldering-spot-cresciano-cresciano-boulder-valley
+  - bouldering-spot-cresciano-cresciano-easy-forest
+display_name:
+  en: Bouldering — Cresciano
+  it: Boulder — Cresciano
+  es: Bulder — Cresciano
+  fr: Bloc — Cresciano
+  de: Bouldern — Cresciano
+description:
+  en: |
+    Cresciano (Ticino, Switzerland) is a granite boulder valley in the
+    lower Leventina, world-renowned for its steep, rain-shelter
+    overhangs and some of the sport's most-repeated hard testpieces. The
+    valley sits at low alpine elevation (roughly 400-500 m), which gives
+    it one of the longer seasons among Ticino bouldering areas, usable
+    from spring through late autumn and even into mild winter spells
+    thanks to overhanging boulders that stay dry in light rain. Compact
+    granite friction is excellent when dry but the steep landings
+    beneath the overhangs demand careful pad placement regardless of
+    conditions.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.35
+    curve:
+      - { x: -5, s: 0.30 }
+      - { x: 2,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 24, s: 0.50 }
+      - { x: 30, s: 0.20 }
+      - { x: 36, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.30 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.85 }
+      - { x: 25, s: 0.50 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.20 }
+      - { x: 0.5, s: 0.50 }
+      - { x: 2,  s: 0.85 }
+      - { x: 5,  s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: humidity_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.80 }
+      - { x: 22, s: 0.55 }
+      - { x: 28, s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: WET_ROCK_RISK
+    description: Active precipitation makes rock holds slippery and weakens certain rock types (sandstone, conglomerate) — both unsafe and damaging to the resource.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: SPOTTER_HAZARD
+    description: Sustained wind above 45 knots makes spotting falls and predicting fall direction unsafe, particularly on highballs.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 38
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 38°C makes finger grip on holds unsustainable and creates heat exposure for ground belayers.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: high
+  notes: |
+    Cresciano's boulders sit in a chestnut-and-oak forest managed with
+    input from the local Ticino climbing community and the comune of
+    Cresciano; established approach paths concentrate foot traffic
+    between the overhang boulders. The valley's low elevation and long
+    season draw heavy year-round visitor numbers, making chalk buildup
+    and understory trampling around the classic overhangs an ongoing
+    stewardship focus.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Ticino bouldering guidance"
+    - "Vertical Life Cresciano sector database"
+  notes: |
+    Cluster inherits base scoring unchanged. Cresciano's low elevation
+    and abundance of rain-sheltering overhangs give it a longer usable
+    season than higher alpine bouldering areas, but the base dimension
+    curves and gates are kept unchanged since the underlying friction
+    physics of dry granite are the same.

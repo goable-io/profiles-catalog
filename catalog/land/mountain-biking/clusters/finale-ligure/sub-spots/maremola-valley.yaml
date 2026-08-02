@@ -1,0 +1,49 @@
+slug: mountain-biking-spot-finale-ligure-maremola-valley
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-finale-ligure
+parent_cluster: mountain-biking-spot-finale-ligure
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.1900, lng: 8.3400 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Maremola Valley cluster around Cerisola and Rocchetta covers a
+    dense set of red-graded flow-enduro trails cut through the valley's
+    forest and limestone outcrops. Technical sections are shorter and
+    less consequential than at Madonna della Guardia, but exposed
+    limestone slabs and loose-over-hard sections still demand solid
+    braking and line choice. Popular with intermediate-to-advanced
+    riders using it as a warm-up or lower-commitment alternative to the
+    flagship descents.
+
+display_name:
+  en: Mountain Biking — Maremola Valley
+  it: Mountain Bike — Val Maremola
+  es: Ciclismo de Montaña — Valle Maremola
+  fr: VTT — Vallée de la Maremola
+  de: Mountainbiken — Maremola-Tal
+
+description:
+  en: |
+    Red-flow enduro trail cluster through the Maremola Valley near
+    Cerisola and Rocchetta, combining forested singletrack with
+    limestone technical sections — a popular intermediate-to-advanced
+    complement to Finale's flagship descents.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Trailforks Maremola Valley trail documentation"
+    - "Finale Outdoor Region trail network documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-finale-ligure cluster. Tier 2:
+    red-flow enduro with limestone technical sections, intermediate-to-
+    advanced.

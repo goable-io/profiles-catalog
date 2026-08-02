@@ -1,0 +1,44 @@
+slug: bouldering-spot-squamish-boulders-north-walls-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-squamish-boulders
+parent_cluster: bouldering-spot-squamish-boulders
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 49.7000, lng: -123.1400 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The North Walls area lies adjacent to the Chief's climbing crags,
+    offering sustained V4-V8 granite forest boulders on generally flat
+    to gently sloped landings under dense tree cover. A standard 3-5 pad
+    setup with a single spotter covers the majority of lines, and the
+    forest canopy provides consistent shade that keeps friction good
+    through warmer parts of the day. The approach trail shares access
+    with rope-climbing parties heading to the North Walls crags, keeping
+    the trail well maintained but occasionally busy.
+
+display_name:
+  en: Bouldering — Squamish North Walls Boulders
+
+description:
+  en: |
+    North Walls area — sustained V4-V8 granite forest boulders adjacent
+    to the North Walls climbing crags, with consistent tree-canopy
+    shade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Squamish Bouldering guidebook (Marc Bourguignon)"
+    - "Squamish Access Society trail and access information"
+  notes: |
+    Sub-spot of bouldering-spot-squamish-boulders cluster. Tier 2:
+    sustained shaded granite forest problems, standard pad setup,
+    shared trail access with rope-climbing crags.

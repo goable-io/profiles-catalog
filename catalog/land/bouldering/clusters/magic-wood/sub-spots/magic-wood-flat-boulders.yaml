@@ -1,0 +1,41 @@
+slug: bouldering-spot-magic-wood-magic-wood-flat-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-magic-wood
+parent_cluster: bouldering-spot-magic-wood
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.5200, lng: 9.5300 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    This sector holds Magic Wood's beginner-friendly warm-up problems,
+    graded V0 to V5 on low, forgiving gneiss boulders with flat forest-
+    floor landings. Consequences of falls are minimal given the low
+    boulder heights, making it suitable for newer boulderers and family
+    groups with a single pad. Its gentle grading contrasts sharply with
+    the valley's reputation for hard testpieces, offering an easy
+    warm-up or rest-day circuit.
+
+display_name:
+  en: Bouldering — Magic Wood Flat Boulders
+
+description:
+  en: |
+    Beginner-friendly Magic Wood sector with low, flat-landing V0-V5
+    warm-up boulders on gneiss, ideal for newer climbers.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Averstal / Magic Wood bouldering guidance"
+    - "Vertical Life Magic Wood sector database"
+  notes: |
+    Sub-spot of bouldering-spot-magic-wood cluster. Tier 1: easy V0-V5
+    grades, flat forest-floor landings, low-consequence warm-up sector.

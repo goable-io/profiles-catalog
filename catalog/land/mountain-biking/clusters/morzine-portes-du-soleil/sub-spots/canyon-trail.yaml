@@ -1,0 +1,47 @@
+slug: mountain-biking-spot-morzine-portes-du-soleil-canyon-trail
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-morzine-portes-du-soleil
+parent_cluster: mountain-biking-spot-morzine-portes-du-soleil
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 46.2000, lng: 6.7300 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Canyon (accessed via the Nyon lift) is Morzine's signature enduro
+    descent, renowned across the enduro racing scene for its sustained
+    rocky and rooty technical sections, off-camber traverses, and
+    committing drops. Consequence is high throughout — mistakes on the
+    rock-garden. Root sections at speed carry real injury risk — making
+    this expert-only terrain requiring full-suspension enduro geometry and
+    strong technical bike-handling.
+
+display_name:
+  en: Mountain Biking — The Canyon Trail
+  it: Mountain Bike — The Canyon Trail
+  es: Ciclismo de Montaña — The Canyon Trail
+  fr: VTT — Sentier du Canyon
+  de: Mountainbiken — The Canyon Trail
+
+description:
+  en: |
+    Morzine's signature enduro descent from the Nyon lift, famed for
+    sustained rocky and rooty technical sections and committing drops
+    — a benchmark expert-level trail in the enduro racing scene.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Enduro World Series Morzine round race notes"
+    - "Trailforks The Canyon trail documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-morzine-portes-du-soleil cluster.
+    Tier 3: signature technical enduro descent, high consequence,
+    expert-only.

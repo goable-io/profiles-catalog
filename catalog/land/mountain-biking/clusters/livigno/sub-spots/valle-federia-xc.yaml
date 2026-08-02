@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-livigno-valle-federia-xc
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-livigno
+parent_cluster: mountain-biking-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5500, lng: 10.1000 }
+  radius_m: 2000
+
+tier: 1
+tier_rationale:
+  en: |
+    The Valle Federia and Val di Livigno cross-country trails run along
+    wide gravel valley-floor tracks and easy singletrack through open
+    alpine meadow scenery. With minimal elevation gain and no technical
+    features. This is Livigno's beginner-friendly and family zone,
+    accessible without lift assistance and well suited to riders new to
+    mountain terrain or seeking a low-consequence, scenic ride.
+
+display_name:
+  en: Mountain Biking — Valle Federia XC
+  it: Mountain Bike — Valle Federia XC
+  es: Ciclismo de Montaña — Valle Federia XC
+  fr: VTT — Vallée Federia XC
+  de: Mountainbiken — Valle Federia XC
+
+description:
+  en: |
+    Beginner-friendly cross-country network through the Valle Federia
+    and Val di Livigno, on wide gravel tracks and easy singletrack
+    through open alpine meadows — Livigno's low-consequence, scenic
+    riding zone.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Livigno Turismo cross-country trail map"
+    - "Trailforks Livigno regional trail database"
+  notes: |
+    Sub-spot of mountain-biking-spot-livigno cluster. Tier 1: beginner
+    gravel/singletrack XC zone, no lift required, family-friendly.

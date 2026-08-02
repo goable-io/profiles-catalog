@@ -1,0 +1,43 @@
+slug: bouldering-spot-chironico-chironico-classic-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-chironico
+parent_cluster: bouldering-spot-chironico
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.4392, lng: 8.7906 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Chironico classic boulder field is one of the world's benchmark
+    hard-bouldering venues, home to testpieces such as Radja (V14) and
+    Never Ending Story (V13) on compact, technical granite and gneiss.
+    Grades here run V7 to V13+ and several of the valley's iconic lines
+    are highball with uneven boulder-strewn landings, mandating a full
+    multi-pad stack and an experienced, coordinated spotting team. The
+    combination of hard technical movement and real fall consequence
+    places this sector firmly in expert-only territory.
+
+display_name:
+  en: Bouldering — Chironico Classic Boulders
+
+description:
+  en: |
+    Chironico's main granite-gneiss boulder valley, a world-benchmark
+    hard-bouldering venue with V7-V13+ testpieces including Radja (V14)
+    and Never Ending Story (V13).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Ticino bouldering guidance"
+    - "Vertical Life Chironico sector database"
+  notes: |
+    Sub-spot of bouldering-spot-chironico cluster. Tier 3: hard
+    V7-V13+ testpieces, highball lines, mandatory full-team spotting.

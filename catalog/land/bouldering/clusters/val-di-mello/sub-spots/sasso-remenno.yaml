@@ -1,0 +1,44 @@
+slug: bouldering-spot-val-di-mello-sasso-remenno
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-val-di-mello
+parent_cluster: bouldering-spot-val-di-mello
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.2600, lng: 9.6350 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    Sasso Remenno is one of the largest single glacial-erratic boulders
+    in Europe, offering granite problems from V3 up to V10 across its
+    faces and roofs. Its size means several lines are tall enough to
+    need a multi-pad, multi-spotter setup even though the overall grade
+    range is standard intermediate-to-advanced bouldering, not
+    exclusively highball. The rough Val Masino granite gives excellent
+    friction when dry, and the meadow-flat approach makes it one of the
+    valley's most accessible landmark boulders.
+
+display_name:
+  en: Bouldering — Val di Mello Sasso Remenno
+
+description:
+  en: |
+    Giant glacial-erratic granite boulder, among the largest freestanding
+    boulders in Europe, with problems from V3 to V10 on rough,
+    high-friction Val Masino granite.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Val Masino granite bouldering guidance"
+    - "Vertical Life Val di Mello sector database"
+  notes: |
+    Sub-spot of bouldering-spot-val-di-mello cluster. Tier 2: standard
+    3-6 pad granite problems V3-V10, moderate spotting needs, flat
+    meadow approach.
