@@ -1,0 +1,45 @@
+slug: scuba-spot-elba-punta-enfola
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-elba
+parent_cluster: scuba-spot-elba
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.8100, lng: 10.2350 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Enfola is the promontory west of Portoferraio delivering
+    N-facing wall dive from 10 m to 35 m+ with Paramuricea gorgonian
+    at 25-30 m and dense coralligenous encrustation. Sheltered from
+    Libeccio + Sirocco by the promontory geometry, exposed to
+    Tramontane on the N flank. Standard intermediate wall dive with
+    short boat access from Portoferraio (5-10 min). Common as the
+    first dive of a two-tank day paired with a deeper afternoon site.
+
+display_name:
+  en: Scuba — Punta Enfola
+  it: Immersione — Punta Enfola
+  es: Buceo — Punta Enfola
+  fr: Plongée — Punta Enfola
+  de: Tauchen — Punta Enfola
+
+description:
+  en: |
+    The N-facing Punta Enfola wall west of Portoferraio. Intermediate
+    gorgonian wall + coralligenous reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "PNAT Punta Enfola site documentation"
+    - "FIPSAS Portoferraio dive-briefing"
+  notes: |
+    Sub-spot of scuba-spot-elba cluster. Tier 2: sheltered N-face
+    wall, intermediate recreational grade.

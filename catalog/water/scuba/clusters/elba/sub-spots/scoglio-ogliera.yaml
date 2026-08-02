@@ -1,0 +1,46 @@
+slug: scuba-spot-elba-scoglio-ogliera
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-elba
+parent_cluster: scuba-spot-elba
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.7550, lng: 10.1350 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Lo Scoglio dell'Ogliera is a submerged pinnacle just offshore
+    Pomonte, close to the Elviscot wreck but distinct as a natural-
+    reef site. Pinnacle top at 5-8 m, drop-off to 40 m+ on the outer
+    face with dense Eunicella cavolini gorgonian and coralligenous
+    encrustation. Sheltered from Libeccio by adjacent coastline,
+    exposed on Sirocco. Multi-tier dive well-suited to intermediate
+    training and refresher sessions with the Elviscot wreck 5 min away
+    by boat as combination-dive option.
+
+display_name:
+  en: Scuba — Scoglio dell'Ogliera
+  it: Immersione — Scoglio dell'Ogliera
+  es: Buceo — Scoglio dell'Ogliera
+  fr: Plongée — Scoglio dell'Ogliera
+  de: Tauchen — Scoglio dell'Ogliera
+
+description:
+  en: |
+    Submerged pinnacle off Pomonte, near the Elviscot wreck. Multi-
+    tier gorgonian reef ideal for combination-dive with the wreck.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "PNAT Scoglio dell'Ogliera site documentation"
+    - "FIPSAS Pomonte cluster dive-briefing"
+  notes: |
+    Sub-spot of scuba-spot-elba cluster. Tier 2: pinnacle + wall,
+    intermediate multi-tier, common combination dive with Elviscot.

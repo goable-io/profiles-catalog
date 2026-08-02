@@ -1,0 +1,44 @@
+slug: scuba-spot-ischia-secca-pilar
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ischia
+parent_cluster: scuba-spot-ischia
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.7000, lng: 13.9200 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    La Secca del Pilar is a submerged pinnacle S of Ischia rising
+    from a 45 m sand-rock bottom to a top at 18-22 m. Vertical wall
+    with dense Paramuricea gorgonian, dense encrusting sponges, and
+    frequent pelagic passages (dentex, barracuda schooling). Site is
+    exposed to Sirocco + Libeccio and requires calm surface for boat
+    mooring on the reduced-footprint plateau top. Advanced-open-water
+    rating baseline given depth + exposure profile.
+
+display_name:
+  en: Scuba — Secca del Pilar (Ischia)
+  it: Immersione — Secca del Pilar
+  es: Buceo — Secca del Pilar
+  fr: Plongée — Secca del Pilar
+  de: Tauchen — Secca del Pilar
+
+description:
+  en: |
+    The offshore Secca del Pilar pinnacle S of Ischia. Advanced-
+    open-water deep pinnacle dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Ischia Secca del Pilar site briefing"
+  notes: |
+    Sub-spot of scuba-spot-ischia cluster. Tier 3: offshore pinnacle,
+    advanced-open-water baseline.

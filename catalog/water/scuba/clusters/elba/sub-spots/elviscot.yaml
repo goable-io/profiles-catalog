@@ -1,0 +1,49 @@
+slug: scuba-spot-elba-elviscot
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-elba
+parent_cluster: scuba-spot-elba
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.7500, lng: 10.1400 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    The Elviscot is an Italian merchantman (~63 m LOA) sunk 10 January
+    1972 off Pomonte on the S-W Elba coast. Wreck sits upright on
+    sandy bottom at 8-12 m — the shallowest recreational wreck in
+    Italy's central Tirreno. Depth keeps NDL essentially unlimited;
+    the wreck's superstructure is broken but the hull outline + engine
+    room + cargo hold are penetration-mapped for open-water divers
+    (short-swim, single-exit overheads). Site is sheltered by the
+    coastal geometry from Libeccio. Boat access from Pomonte in 5 min
+    or shore-entry from the Pomonte pebble beach for stronger
+    swimmers.
+
+display_name:
+  en: Scuba — Elviscot wreck (Pomonte, Elba)
+  it: Immersione — Relitto Elviscot (Pomonte)
+  es: Buceo — Pecio Elviscot
+  fr: Plongée — Épave Elviscot
+  de: Tauchen — Wrack Elviscot
+
+description:
+  en: |
+    The 1972 Elviscot merchantman wreck off Pomonte. Shallowest
+    Italian recreational wreck — training-and-tourist grade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Elviscot 1972 sinking history (RINA + Registro Italiano Navale documentation)"
+    - "PNAT Elviscot look-only protocol"
+  notes: |
+    Sub-spot of scuba-spot-elba cluster. Tier 1: shallow wreck, short
+    overheads, training-and-tourist grade. Italy's shallowest
+    recreational wreck.

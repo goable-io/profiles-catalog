@@ -1,0 +1,44 @@
+slug: scuba-spot-ventotene-punta-arco
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ventotene
+parent_cluster: scuba-spot-ventotene
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.7900, lng: 13.4400 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta dell'Arco is the S-facing headland of Ventotene delivering
+    wall + boulder-field diving from 10 m to 35 m+ with dense
+    Paramuricea gorgonian at 25-30 m and coralligenous biocoenosis
+    on the vertical face. Adjacent Santo Stefano islet forms the
+    outer boat-transit landmark for combination-dive day. Exposed to
+    Libeccio on outer approaches; standard intermediate wall dive
+    with clear ascent-line profile.
+
+display_name:
+  en: Scuba — Punta dell'Arco (Ventotene)
+  it: Immersione — Punta dell'Arco
+  es: Buceo — Punta dell'Arco
+  fr: Plongée — Punta dell'Arco
+  de: Tauchen — Punta dell'Arco
+
+description:
+  en: |
+    The S-facing Punta dell'Arco headland wall on Ventotene.
+    Intermediate gorgonian-wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Ventotene Punta dell'Arco site briefing"
+  notes: |
+    Sub-spot of scuba-spot-ventotene cluster. Tier 2: intermediate
+    S-face wall.

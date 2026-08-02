@@ -1,0 +1,147 @@
+slug: scuba-spot-punta-campanella
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-punta-campanella-vervece
+  - scuba-spot-punta-campanella-vetara
+display_name:
+  en: Scuba Diving — AMP Punta Campanella
+  it: Immersione — AMP Punta Campanella
+  es: Buceo — AMP Punta Campanella
+  fr: Plongée — AMP Punta Campanella
+  de: Tauchen — MPA Punta Campanella
+description:
+  en: |
+    AMP Punta Campanella (D.M. 12/12/1997) protects the Sorrentine
+    peninsula between Positano and Punta Campanella tip, including
+    offshore islets (Vervece, Vetara, Isca) and the coastal walls
+    between Massa Lubrense and Marina del Cantone. Rich Paramuricea
+    + Eunicella cavolini gorgonian fields and coralligenous
+    biocoenosis; Vervece hosts the "Madonnina di Vervece" bronze
+    statue at 12 m (memorial + iconic Sorrentine dive). Boat access
+    from Marina del Cantone, Massa Lubrense, or Sorrento.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m makes offshore Vervece + Vetara islets boat mooring unsafe.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze makes navigation unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain in the Sorrentine peninsula triggers coastal runoff; visibility drops for 24 h.
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Libeccio storm sediment destroys wall dive quality.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: medium
+  notes: |
+    AMP Punta Campanella enforces zone-based diving permits and daily
+    visitor caps at Vervece + Vetara. Coordination with Amalfi Coast
+    tourist-boat traffic on Positano-side transit routes is standard.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Punta Campanella management authority documentation"
+    - "D.M. 12/12/1997 istitutivo dell'AMP Punta Campanella"
+    - "FIPSAS Sorrentine peninsula site classification"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline.
+    30-week season.

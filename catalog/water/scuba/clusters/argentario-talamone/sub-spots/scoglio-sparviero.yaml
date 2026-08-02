@@ -1,0 +1,44 @@
+slug: scuba-spot-argentario-talamone-scoglio-sparviero
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-argentario-talamone
+parent_cluster: scuba-spot-argentario-talamone
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.5900, lng: 11.0800 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Lo Scoglio dello Sparviero is a coastal offshore rock N of
+    Talamone, close to the Parco Regionale della Maremma coastline.
+    Reef + wall descending from 10 m to 30 m+ with Paramuricea +
+    Eunicella cavolini gorgonian and dense encrusting biocoenosis.
+    Boat access from Talamone or Porto Santo Stefano in 20 min.
+    Standard intermediate coastal reef dive with clear ascent-line
+    profile and no depth commitment beyond 30 m.
+
+display_name:
+  en: Scuba — Scoglio dello Sparviero (Talamone)
+  it: Immersione — Scoglio dello Sparviero
+  es: Buceo — Scoglio dello Sparviero
+  fr: Plongée — Scoglio dello Sparviero
+  de: Tauchen — Scoglio dello Sparviero
+
+description:
+  en: |
+    The coastal Scoglio dello Sparviero rock N of Talamone.
+    Intermediate no-depth-commitment reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Talamone Scoglio dello Sparviero site briefing"
+  notes: |
+    Sub-spot of scuba-spot-argentario-talamone cluster. Tier 2:
+    coastal reef, no depth commitment.

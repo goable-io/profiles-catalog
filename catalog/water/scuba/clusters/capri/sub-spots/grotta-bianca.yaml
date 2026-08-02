@@ -1,0 +1,45 @@
+slug: scuba-spot-capri-grotta-bianca
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-capri
+parent_cluster: scuba-spot-capri
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.5450, lng: 14.2600 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    La Grotta Bianca is a coastal sea cave on Capri's SE flank —
+    partially submerged entry at 8-12 m opening into a chamber with
+    calcite-white walls (the source of the name). Cavern-diving grade
+    with strict guide-led penetration; short, single-buddy-team,
+    single-exit route. Silt-out risk low compared to karst caves but
+    line management standard. Depth kept in 12-18 m recreational
+    range. The cluster's overhead-environment reference dive.
+
+display_name:
+  en: Scuba — Grotta Bianca (Capri)
+  it: Immersione — Grotta Bianca
+  es: Buceo — Grotta Bianca
+  fr: Plongée — Grotta Bianca
+  de: Tauchen — Grotta Bianca
+
+description:
+  en: |
+    The SE-coast Capri submerged white-walled sea cave. Guided
+    cavern dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Comune di Capri sea-cave documentation"
+    - "FIPSAS Grotta Bianca dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-capri cluster. Tier 2: cavern-diving grade,
+    guide-led.

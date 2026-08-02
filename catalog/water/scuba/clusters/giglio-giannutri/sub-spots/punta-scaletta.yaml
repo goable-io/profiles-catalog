@@ -1,0 +1,45 @@
+slug: scuba-spot-giglio-giannutri-punta-scaletta
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-giglio-giannutri
+parent_cluster: scuba-spot-giglio-giannutri
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.3600, lng: 10.8900 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Scaletta is the W-facing outer point of Isola del Giglio,
+    a wall + boulder-slope descending from 12 m to 40 m+ with dense
+    Paramuricea + Eunicella cavolini gorgonian in the 25-35 m range.
+    Sheltered from Libeccio by island geometry on some approaches,
+    exposed on others. Standard intermediate wall dive for the
+    cluster with straightforward buoyed descent and clear ascent
+    profile. Boat access from Giglio Porto in 10 min.
+
+display_name:
+  en: Scuba — Punta Scaletta (Giglio)
+  it: Immersione — Punta Scaletta (Giglio)
+  es: Buceo — Punta Scaletta (Giglio)
+  fr: Plongée — Punta Scaletta (Giglio)
+  de: Tauchen — Punta Scaletta (Giglio)
+
+description:
+  en: |
+    The W-facing Punta Scaletta wall on Giglio. Intermediate
+    gorgonian wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "PNAT Giglio Punta Scaletta site documentation"
+    - "FIPSAS Giglio dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-giglio-giannutri cluster. Tier 2:
+    intermediate wall.

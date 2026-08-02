@@ -1,0 +1,47 @@
+slug: scuba-spot-giglio-giannutri-nasim-ii
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-giglio-giannutri
+parent_cluster: scuba-spot-giglio-giannutri
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.2500, lng: 11.0900 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    The Nasim II is a 65 m Lebanese bulk carrier sunk 6 December 1976
+    off Giannutri's E flank. Wreck sits upright on a sand + rock
+    bottom at 55-65 m depth — beyond recreational limits, in the
+    technical-diving range. Trimix rating baseline; the wreck's
+    superstructure + hull outline are intact and swim-through
+    penetration is possible for cave/wreck-certified divers with
+    appropriate gear. Site is guide-led by default with strict
+    briefing on decompression + gas planning; boat transit from
+    Porto Santo Stefano is 45-60 min.
+
+display_name:
+  en: Scuba — Nasim II wreck (Giannutri)
+  it: Immersione — Relitto Nasim II
+  es: Buceo — Pecio Nasim II
+  fr: Plongée — Épave Nasim II
+  de: Tauchen — Wrack Nasim II
+
+description:
+  en: |
+    The 1976 Nasim II bulk-carrier wreck off Giannutri at 55-65 m.
+    Technical-diving grade — trimix baseline.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Nasim II 1976 loss + wreck documentation (Soprintendenza + Guardia Costiera records)"
+    - "Italian technical-diving associations (SSI, TDI) Nasim II site protocol"
+  notes: |
+    Sub-spot of scuba-spot-giglio-giannutri cluster. Tier 3:
+    technical-diving depth (55-65 m), trimix baseline, guide-led.
