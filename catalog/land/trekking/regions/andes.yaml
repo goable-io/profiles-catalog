@@ -1,0 +1,159 @@
+slug: trekking-andes
+spot_kind: region
+version: "0.1.0"
+category: land
+extends: trekking
+region: andes
+display_name:
+  en: Trekking — Andes
+  it: Trekking — Ande
+  es: Senderismo — Andes
+  fr: Randonnée — Andes
+  de: Wandern — Anden
+description:
+  en: |
+    Andean trekking spans Peruvian Cordillera Blanca (Santa Cruz,
+    Choquequirao, Salkantay), Cusco region (Inca Trail, Ausangate),
+    Chilean Patagonia (Torres del Paine W + O circuits), Argentinean
+    Patagonia (Fitz Roy, Cerro Torre, Huemul), and Colombia + Ecuador
+    high-country. Distinct regime from Himalayan trekking: altitudes
+    3500-5000 m routine but pass geometries are shorter (single-day
+    passes vs multi-day approaches), season is austral summer
+    (Nov-Mar) with dry-anticyclone dominance, Patagonian W-wind is
+    the dominant safety variable (routinely 60+ knots on exposed
+    Torres del Paine ridges), and coca-leaf-mediated altitude
+    tradition + local guide culture support acclimatization on 4000
+    m+ passes. Water sources are generally clear but treatment
+    remains recommended.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -3,  s: 0.55 }
+      - { x: 5,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 22,  s: 0.90 }
+      - { x: 30,  s: 0.55 }
+      - { x: 38,  s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 2,   s: 0.40 }
+      - { x: 5,   s: 0.10 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 20, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 55, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.60 }
+      - { x: 9,  s: 0.25 }
+      - { x: 11, s: 0.05 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.35 }
+      - { x: 2000, s: 0.65 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.80 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: PATAGONIAN_WIND
+    description: Sustained wind above 55 knots on Patagonian ridges (Torres del Paine W circuit, Fitz Roy Huemul) exceeds safe trekking threshold — trekkers are blown off feet, tent damage is standard.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: ANDEAN_STORM
+    description: Precipitation above 5 mm/h in Andean high-country signals convective storm activity with lightning + trail-washout + river-crossing failure risk on granite-schist Patagonian and Peruvian trails.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_ANDES
+    description: Visibility below 500 m on Andean high passes and Patagonian mirador viewpoints prevents cairn + trail navigation; hypothermia risk elevated in Patagonian W-flow context.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -12
+    reason_code: ANDEAN_HYPOTHERMIA
+    description: Apparent temperature below -12°C on Andean high-altitude camps creates frostbite risk during trekking-tent overnight exposure.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    Andean trekking has documented visitor footprint (arriero + porter
+    logistics, tea-house / refugio energy, air access to Cusco / El
+    Calafate / Puerto Natales). Machu Picchu Inca Trail enforces a
+    strict 500 daily-visitor cap (incl. porters) via SERNANP permit;
+    Torres del Paine caps 80 tents/night per campamento via CONAF;
+    Chalten Fitz Roy area has open access under APN oversight.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SERNANP (Peru) Machu Picchu + Cusco region permit standards"
+    - "CONAF (Chile) Parque Nacional Torres del Paine campamento allocation"
+    - "APN (Argentina) Parque Nacional Los Glaciares Chalten sector rules"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+  notes: |
+    Regional overrides vs trekking base: wind weight raised to 0.22
+    (Patagonian W-flow is the dominant safety variable, tighter than
+    Alpine); Patagonian wind gate at 55 kn (vs 40 kn Himalayan +
+    35 kn Alpine); uv_safety weight raised to 0.08 (Andean high-
+    altitude UV is exceptionally strong given clear sky + altitude);
+    freezing_level_m added at 0.05 weight. 20-week austral summer
+    season (Nov-Mar core + April/October shoulder).

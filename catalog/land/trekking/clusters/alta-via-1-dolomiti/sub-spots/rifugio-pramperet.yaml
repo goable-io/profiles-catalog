@@ -1,0 +1,54 @@
+slug: trekking-spot-alta-via-1-dolomiti-rifugio-pramperet
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-alta-via-1-dolomiti
+parent_cluster: trekking-spot-alta-via-1-dolomiti
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.2903, lng: 12.2892 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Rifugio Pramperet (1857 m) is the AV1 stage 10 waypoint in the
+    southern Dolomiti Bellunesi, reached by a roughly 900 m descent from
+    the higher central stages on rocky, well-marked forest and scree
+    trail with several short exposed rock steps near Forcella Cadin. The
+    staffed refuge offers food, water, and radio contact before the
+    final descent toward Belluno. Evacuation from this section requires
+    a multi-hour walk down forested valley trail to the nearest road
+    access at Pralongo, as the surrounding Dolomiti Bellunesi National
+    Park sector has no cable-car or vehicle shortcut; the principal
+    hazard is afternoon thunderstorm exposure on the rocky approach
+    ridges before the tree line resumes.
+
+display_name:
+  en: Trekking — Rifugio Pramperet
+  it: Trekking — Rifugio Pramperet
+  es: Trekking — Rifugio Pramperet
+  fr: Trekking — Rifugio Pramperet
+  de: Wandern — Rifugio Pramperet
+
+description:
+  en: |
+    A southern AV1 waypoint at 1857 m in the Dolomiti Bellunesi National
+    Park, the last major staffed refuge before the route's final descent
+    toward Belluno through quieter, less-crowded terrain than the
+    northern stages.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Club Alpino Italiano (CAI) Alta Via 1 trail classification"
+    - "Parco Nazionale Dolomiti Bellunesi trail guidance"
+  notes: |
+    Sub-spot of trekking-spot-alta-via-1-dolomiti cluster. Tier 2:
+    established multi-day trail, moderate elevation change, staffed
+    refuge, some rocky exposed steps, longer on-foot evacuation than
+    northern sub-spots but standard intermediate difficulty.

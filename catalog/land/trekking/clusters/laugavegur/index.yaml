@@ -1,0 +1,149 @@
+slug: trekking-spot-laugavegur
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+region: atlantic
+country_code: IS
+sub_spots:
+  - trekking-spot-laugavegur-landmannalaugar
+  - trekking-spot-laugavegur-hrafntinnusker-hut
+  - trekking-spot-laugavegur-thorsmork
+display_name:
+  en: Trekking — Laugavegur Trail (Iceland)
+  it: Trekking — Sentiero Laugavegur (Islanda)
+  es: Senderismo — Sendero Laugavegur (Islandia)
+  fr: Randonnée — Sentier Laugavegur (Islande)
+  de: Wandern — Laugavegur-Weg (Island)
+description:
+  en: |
+    The Laugavegur Trail is Iceland's most iconic multi-day trek, running
+    roughly 55 km from the geothermal Landmannalaugar highlands south to
+    the birch-forested Þórsmörk valley. The route crosses a volcanic
+    landscape of rhyolite mountains, obsidian lava fields, black-sand
+    deserts, and glacier-fed river fords, with altitude ranging from
+    about 200 m at Þórsmörk to over 1000 m at the Hrafntinnusker plateau.
+    Most trekkers complete the trail in 3-4 days, overnighting at the
+    Ferðafélag Íslands (Icelandic Touring Association) hut network at
+    Landmannalaugar, Hrafntinnusker, Álftavatn, and Emstrur before
+    finishing at Þórsmörk (often continuing on to Skógar via the
+    Fimmvörðuháls extension). Huts require advance booking in peak
+    season and camping is permitted alongside them. The season window is
+    short — reliably open only late June through early September — with
+    unmarked snow patches, sub-zero overnight temperatures, and abrupt
+    weather shifts possible even in summer. River crossings (notably at
+    Álftavatn/Bratthálskvísl and near Emstrur) are unbridged and can
+    become impassable after heavy rain or rapid snowmelt.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m makes off-trail navigation unsafe across the unmarked volcanic desert sections between huts.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain creates slippery trails, raises glacial rivers to un-fordable levels, and elevates hypothermia exposure.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on the exposed Hrafntinnusker plateau and Fjallabak highlands creates fall and hypothermia risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 10
+  carrying_capacity_sensitivity: high
+  notes: |
+    Human-powered trek with zero direct emissions per session, though
+    international flight access to Iceland is a material indirect
+    footprint for most trekkers. Ferðafélag Íslands operates a capped
+    hut-bed reservation system at Landmannalaugar, Hrafntinnusker,
+    Álftavatn, and Emstrur; peak-season demand routinely exceeds hut
+    capacity, pushing overflow into designated tent areas.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ferðafélag Íslands (Icelandic Touring Association) Laugavegur hut and trail guidance"
+    - "Umhverfisstofnun (Icelandic Environment Agency) Fjallabak Nature Reserve visitor guidelines"
+    - "Cicerone Trekking in Iceland guidebook"
+  notes: |
+    Cluster inherits trekking base scoring unmodified (no matching
+    alpine-family region variant exists for Iceland's volcanic-highland
+    regime). Short 10-week reliable season vs 36-week base default,
+    reflecting Fjallabak Nature Reserve road/hut opening dates.

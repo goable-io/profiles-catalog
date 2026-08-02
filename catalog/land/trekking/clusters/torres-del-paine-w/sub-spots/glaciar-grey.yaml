@@ -1,0 +1,51 @@
+slug: trekking-spot-torres-del-paine-w-glaciar-grey
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-torres-del-paine-w
+parent_cluster: trekking-spot-torres-del-paine-w
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -51.0567, lng: -73.1917 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Glaciar Grey mirador and Refugio Grey area, 500 m, sit at the
+    western end of the W Circuit, reached via an undulating ~11 km,
+    3-4 hour lakeshore-and-forest trail from Refugio Paine Grande
+    with modest elevation change (under 300 m gain). The trail is
+    well-marked dirt with some rooty and rocky sections and passes
+    two suspension bridges over ravines. Refugio Grey offers full
+    services (food, water, emergency communication) at the ice-face
+    viewpoint, and boat/catamaran access on Lago Grey provides an
+    alternative evacuation route independent of the trail itself,
+    making this the most logistically forgiving of the W's three
+    signature viewpoints despite persistent lake-corridor wind.
+
+display_name:
+  en: Trekking — Glaciar Grey Mirador
+  it: Trekking — Mirador Glaciar Grey
+  es: Senderismo — Mirador Glaciar Grey
+  fr: Randonnée — Mirador Glaciar Grey
+  de: Wandern — Mirador Glaciar Grey
+
+description:
+  en: |
+    The W Circuit's western terminus at 500 m, facing the calving ice
+    face of Glaciar Grey across Lago Grey, with refuge services and
+    optional catamaran access at Refugio Grey.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CONAF (Chile) Parque Nacional Torres del Paine Sendero Grey trail profile"
+    - "Vertice Patagonia Refugio Grey / Lago Grey catamaran route information"
+  notes: |
+    Sub-spot of trekking-spot-torres-del-paine-w cluster. Tier 2:
+    lakeshore-forest trail with suspension bridges, full refuge
+    services, alternative boat evacuation route via Lago Grey.

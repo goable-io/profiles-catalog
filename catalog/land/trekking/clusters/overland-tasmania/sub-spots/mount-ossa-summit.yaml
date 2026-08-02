@@ -1,0 +1,52 @@
+slug: trekking-spot-overland-tasmania-mount-ossa-summit
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-overland-tasmania
+parent_cluster: trekking-spot-overland-tasmania
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -41.8583, lng: 146.0303 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mount Ossa (1617 m) is Tasmania's highest peak, reached by an
+    optional side-trip of roughly 8.5 km return from Pelion Gap with
+    around 500 m of ascent on stage three of the Overland Track. The
+    upper section leaves the maintained gravel track for a rough,
+    unmaintained scree-and-rock scramble with route-finding required
+    in poor visibility and no fixed protection. There is no shelter on
+    the summit approach, and weather on exposed dolerite terrain can
+    turn abruptly with snow possible in any month; the only evacuation
+    route is retracing the scramble back to Pelion Gap and onward to
+    Kia Ora or Pelion Hut, a multi-hour walk with no vehicle access.
+
+display_name:
+  en: Trekking — Mount Ossa Summit
+  it: Trekking — Vetta del Monte Ossa
+  es: Trekking — Cumbre del Monte Ossa
+  fr: Trekking — Sommet du Mont Ossa
+  de: Wandern — Mount-Ossa-Gipfel
+
+description:
+  en: |
+    Mount Ossa (1617 m) is Tasmania's highest peak, an optional
+    side-trip from Pelion Gap on stage three of the Overland Track.
+    The unmaintained scree-and-rock scramble rewards with panoramic
+    views but is exposed to fast-changing alpine weather.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tasmania Parks and Wildlife Service (PWS) — Overland Track side-trip and route notes"
+    - "Cradle Mountain-Lake St Clair National Park alpine safety guidance"
+  notes: |
+    Sub-spot of trekking-spot-overland-tasmania cluster. Tier 3:
+    unmaintained scree/rock scramble to Tasmania's highest summit,
+    no shelter, rapid weather deterioration risk, multi-hour
+    evacuation back to Pelion Gap huts.

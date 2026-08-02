@@ -1,0 +1,51 @@
+slug: trekking-spot-inca-trail-machu-picchu-gate
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-inca-trail
+parent_cluster: trekking-spot-inca-trail
+region: andes
+country_code: PE
+
+coordinates:
+  center: { lat: -13.1631, lng: -72.5450 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Sun Gate (Intipunku), 2720 m, is reached on stage 4 via a
+    pre-dawn 5-6 km, ~2 hour walk from Phuyupatamarca/Wiñay Wayna
+    camp along a narrow but well-trodden stone path with a short
+    steep stairway ("gringo killer" steps) just before the gate.
+    Terrain is dirt and Inca stonework through cloud-forest with
+    some exposed drop-offs; the descent onward into Machu Picchu
+    itself (2430 m) is gentle. Cell coverage improves near the
+    Machu Picchu site and the Aguas Calientes evacuation route
+    (train + road) is within a few hours' walk, making this a more
+    forgiving stage than Warmiwañusca despite the pre-dawn timing
+    pressure to reach the gate for sunrise.
+
+display_name:
+  en: Trekking — Machu Picchu Sun Gate (Intipunku)
+  it: Trekking — Porta del Sole di Machu Picchu (Intipunku)
+  es: Senderismo — Puerta del Sol de Machu Picchu (Intipunku)
+  fr: Randonnée — Porte du Soleil du Machu Picchu (Intipunku)
+  de: Wandern — Sonnentor von Machu Picchu (Intipunku)
+
+description:
+  en: |
+    The ceremonial Inca gateway at 2720 m offering the trail's iconic
+    first sunrise view of Machu Picchu below, reached on the final
+    pre-dawn stretch of stage 4 from Wiñay Wayna camp.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ministerio de Cultura del Perú Santuario Histórico de Machu Picchu regulations"
+    - "SERNANP (Peru) Camino Inca stage-4 trail profile"
+  notes: |
+    Sub-spot of trekking-spot-inca-trail cluster. Tier 2: narrow
+    stone path with drop-offs and a steep stairway section, improving
+    cell coverage and evacuation access near the archaeological site.

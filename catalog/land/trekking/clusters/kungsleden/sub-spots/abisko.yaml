@@ -1,0 +1,54 @@
+slug: trekking-spot-kungsleden-abisko
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-kungsleden
+parent_cluster: trekking-spot-kungsleden
+region: arctic
+country_code: SE
+
+coordinates:
+  center: { lat: 68.3494, lng: 18.8300 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Abisko (385 m) is the northern trailhead of Kungsleden, sitting
+    inside Abisko National Park and directly served by the E10 road
+    and the Abisko Östra/Turiststation railway station, making it the
+    most accessible point on the whole trail. The surrounding terrain
+    is gentle lakeside and birch-forest path around Torneträsk lake,
+    well-marked and maintained, with the STF (Svenska Turistföreningen)
+    Abisko Turiststation offering staffed accommodation, a shop,
+    restaurant, and mountain-safety desk with daily condition reports.
+    Mobile coverage is reliable in the village, and road/rail access
+    gives straightforward evacuation, making Abisko a low-risk starting
+    point regardless of a trekker's onward ambitions south into the
+    high-mountain sections.
+
+display_name:
+  en: Trekking — Abisko Trailhead
+  it: Trekking — Testa del sentiero di Abisko
+  es: Senderismo — Cabecera de sendero de Abisko
+  fr: Randonnée — Départ du sentier d'Abisko
+  de: Wandern — Trailhead Abisko
+
+description:
+  en: |
+    The northern gateway to Kungsleden, inside Abisko National Park on
+    the shore of Torneträsk lake. STF's Abisko Turiststation anchors
+    the start of the hut network that runs the length of the trail
+    south into the high mountains.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Svenska Turistföreningen (STF) Abisko Turiststation trail and safety guidance"
+    - "Naturvårdsverket (Swedish Environmental Protection Agency) Abisko National Park visitor information"
+  notes: |
+    Sub-spot of trekking-spot-kungsleden cluster. Tier 1: road and
+    rail access, staffed tourist station with daily condition reports,
+    well-marked lakeside/forest terrain — the most accessible point
+    on the trail.

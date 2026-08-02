@@ -1,0 +1,51 @@
+slug: trekking-spot-fitz-roy-huemul-laguna-de-los-tres
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-fitz-roy-huemul
+parent_cluster: trekking-spot-fitz-roy-huemul
+region: andes
+country_code: AR
+
+coordinates:
+  center: { lat: -49.2822, lng: -73.0164 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Laguna de los Tres, 1200 m, is El Chaltén's signature day-hike:
+    roughly 10 km one-way, 4 hours, on well-marked dirt trail through
+    lenga forest with a steep, exposed final ~400 m ascent on loose
+    rocky switchbacks directly beneath the sheer granite north face
+    of Monte Fitz Roy. The final pitch is unshaded and windswept with
+    no shelter; wind gusts here are notably amplified by the glacial
+    cirque topography. Free Campamento Poincenot below the ascent
+    offers a tent base with river water; cell coverage is intermittent
+    above the forest line. Evacuation from the lake is entirely on
+    foot back down the same trail — no vehicle or heli access above
+    Poincenot in routine conditions.
+
+display_name:
+  en: Trekking — Laguna de los Tres
+  it: Trekking — Laguna de los Tres
+  es: Senderismo — Laguna de los Tres
+  fr: Randonnée — Laguna de los Tres
+  de: Wandern — Laguna de los Tres
+
+description:
+  en: |
+    El Chaltén's most iconic day-hike, climbing a steep switchback
+    ascent to a glacial lake at 1200 m directly beneath the sheer
+    granite spires of Monte Fitz Roy.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "APN (Argentina) Parque Nacional Los Glaciares Laguna de los Tres trail profile"
+    - "Club Andino El Chaltén trail conditions and safety bulletins"
+  notes: |
+    Sub-spot of trekking-spot-fitz-roy-huemul cluster. Tier 2: steep
+    exposed final ascent, wind-amplified cirque topography, foot-only
+    evacuation, free campamento base below the climb.

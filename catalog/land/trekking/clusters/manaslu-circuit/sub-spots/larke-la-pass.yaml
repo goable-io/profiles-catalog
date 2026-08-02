@@ -1,0 +1,56 @@
+slug: trekking-spot-manaslu-circuit-larke-la-pass
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-manaslu-circuit
+parent_cluster: trekking-spot-manaslu-circuit
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 28.6483, lng: 84.6367 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Larke La (5106 m) is the Manaslu Circuit's high-point pass
+    crossing, connecting the Dharmasala high camp (4460 m) to Bimtang
+    (3720 m) in a single committing 8-10 hour, roughly 15-19 km day
+    with no shelter and minimal retreat options once past the
+    midpoint. The route climbs over glacial moraine and can hold
+    significant snow cover into shoulder season, with the descent to
+    Bimtang losing over 1300 m on loose talus and occasionally icy
+    terrain. A pre-dawn start is standard given the length of the day
+    and afternoon wind/cloud risk. Full AMS exposure applies given the
+    accumulated altitude from Samagaon, a guide is mandatory under the
+    Restricted Area permit rules, and evacuation once committed is
+    helicopter-only or a multi-hour walk to either end — this is the
+    circuit's most remote and physiologically demanding stage.
+
+display_name:
+  en: Trekking — Larke La Pass
+  it: Trekking — Passo di Larke La
+  es: Senderismo — Paso de Larke La
+  fr: Randonnée — Col du Larke La
+  de: Wandern — Larke-La-Pass
+
+description:
+  en: |
+    Larke La (5106 m) is the Manaslu Circuit's committing high-pass
+    crossing, linking Dharmasala to Bimtang over glaciated moraine on
+    a single long, remote day. It is the trek's defining and highest
+    stage.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Manaslu Conservation Area Project (MCAP) Larke La crossing guidance"
+    - "Nepal Department of Immigration Restricted Area Permit (RAP) regulations"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+  notes: |
+    Sub-spot of trekking-spot-manaslu-circuit cluster. Tier 3: 5106 m
+    committing pass crossing, glaciated moraine terrain, no overnight
+    shelter mid-route, full AMS exposure, and helicopter-only complex
+    evacuation once committed.

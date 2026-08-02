@@ -1,0 +1,171 @@
+slug: trekking-spot-manaslu-circuit
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-himalayas
+region: himalayas
+country_code: NP
+sub_spots:
+  - trekking-spot-manaslu-circuit-soti-khola-start
+  - trekking-spot-manaslu-circuit-samagaon
+  - trekking-spot-manaslu-circuit-larke-la-pass
+display_name:
+  en: Trekking — Manaslu Circuit
+  it: Trekking — Circuito del Manaslu
+  es: Senderismo — Circuito del Manaslu
+  fr: Randonnée — Tour du Manaslu
+  de: Wandern — Manaslu-Rundweg
+description:
+  en: |
+    The Manaslu Circuit is a restricted-area trek that loops around the
+    eighth-highest mountain in the world, Mount Manaslu (8163 m), in
+    west-central Nepal. The route runs roughly 150-180 km over 14-18
+    days, from the Budhi Gandaki river lowlands near Soti Khola (700 m)
+    up through the Nubri and Tsum valleys to the Larke La pass (5106 m)
+    before descending into the Manang region to link with the Annapurna
+    trail network. Terrain progresses from subtropical terraced
+    farmland and dense forest through narrow gorge sections with
+    exposed cliffside trail to high alpine moraine and glaciated pass
+    terrain near Larke La. A growing but less dense tea-house network
+    covers most of the route compared to Everest or Annapurna, and the
+    upper Nubri valley remains a Restricted Area requiring a Manaslu
+    Restricted Area Permit (RAP), a Manaslu Conservation Area Permit
+    (MCAP), and an Annapurna Conservation Area Permit (ACAP) for the
+    Larke La descent side — all of which mandate trekking with a
+    licensed guide and in a minimum group of two. Safe trekking windows
+    are the post-monsoon Sep-Nov and pre-monsoon Mar-May seasons, with
+    Samagaon and the Larke La crossing forming the trek's signature
+    high-altitude stages.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -20, s: 0.05 }
+      - { x: -10, s: 0.35 }
+      - { x: -2,  s: 0.75 }
+      - { x: 8,   s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 25,  s: 0.70 }
+      - { x: 32,  s: 0.30 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.75 }
+      - { x: 2,   s: 0.30 }
+      - { x: 5,   s: 0.05 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.60 }
+      - { x: 28, s: 0.20 }
+      - { x: 40, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.65 }
+      - { x: 9,  s: 0.30 }
+      - { x: 11, s: 0.10 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.30 }
+      - { x: 2000, s: 0.60 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.85 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: HIMALAYAN_MONSOON_DELUGE
+    description: Precipitation above 5 mm/h on the Manaslu Circuit signals monsoon-band arrival with rapid trail-washout + landslide risk in the narrow Budhi Gandaki gorge sections — trek closes immediately.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: HIGH_ALTITUDE_WIND
+    description: Sustained wind above 40 knots forces closure of the Larke La crossing — hypothermia + wind-chill risk exceeds safe pass-crossing threshold.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_PASS
+    description: Visibility below 500 m on the Larke La approach prevents cairn + trail navigation across the glaciated high-pass terrain between Dharmasala and Bimtang.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: HIMALAYAN_HYPOTHERMIA
+    description: Apparent temperature below -20°C at Dharmasala high camp or on the pass creates immediate frostbite + hypothermia risk during the committing Dharmasala-to-Bimtang crossing.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Manaslu Conservation Area and the upper Nubri Restricted Area
+    enforce mandatory guide + minimum-group-of-two rules that function
+    as a direct carrying-capacity control, keeping visitor volume far
+    below Everest or Annapurna levels. Tea-house diesel/kerosene
+    heating and porter/mule logistics still drive a documented
+    per-visitor footprint in the narrow gorge villages. The Manaslu
+    Conservation Area Project (MCAP) and Nepal's Department of
+    Immigration jointly administer the Restricted Area Permit system
+    that caps and tracks entries.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Manaslu Conservation Area Project (MCAP) permit + management authority"
+    - "Nepal Department of Immigration Restricted Area Permit (RAP) regulations"
+    - "Nepal TAAN (Trekking Agencies' Association of Nepal) SOP"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+  notes: |
+    Cluster inherits trekking-himalayas dimensions, gates, and curves
+    unchanged — no material deviation identified for the Manaslu
+    Circuit. Carrying-capacity notes reflect the Restricted Area permit
+    system's role as an explicit visitor-volume control not present on
+    the Everest or Annapurna corridors.

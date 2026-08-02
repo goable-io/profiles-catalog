@@ -1,0 +1,50 @@
+slug: trekking-spot-overland-tasmania-narcissus-lake-st-clair
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-overland-tasmania
+parent_cluster: trekking-spot-overland-tasmania
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -42.1128, lng: 146.1642 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Narcissus Hut, at 750 m, is the southern terminus of the Overland
+    Track on the shore of Lake St Clair, reached by flat, well-formed
+    forest track on the final stage from Pine Valley Hut junction.
+    There is no elevation gain and no technical terrain at the hut
+    itself. Walkers can either continue on the two-day walk-out track
+    to Cynthia Bay or take the scheduled ferry across the lake,
+    providing a fast, low-effort evacuation route in the event of
+    injury or fatigue earlier on the trek; PWS ranger presence and
+    radio contact are available at the hut.
+
+display_name:
+  en: Trekking — Narcissus Hut / Lake St Clair
+  it: Trekking — Narcissus Hut / Lake St Clair
+  es: Trekking — Narcissus Hut / Lake St Clair
+  fr: Trekking — Narcissus Hut / Lake St Clair
+  de: Wandern — Narcissus Hut / Lake St Clair
+
+description:
+  en: |
+    Narcissus Hut (750 m) is the southern boat-terminus of the
+    Overland Track on Lake St Clair, where walkers take a scheduled
+    ferry to Cynthia Bay or continue the two-day walk-out through
+    lakeside forest.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tasmania Parks and Wildlife Service (PWS) — Overland Track ferry and transport information"
+    - "Lake St Clair visitor centre trail notes"
+  notes: |
+    Sub-spot of trekking-spot-overland-tasmania cluster. Tier 1: flat
+    lakeside terminus, scheduled ferry evacuation, ranger presence,
+    no technical hazard.

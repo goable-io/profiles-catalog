@@ -1,0 +1,51 @@
+slug: trekking-spot-fitz-roy-huemul-laguna-torre
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-fitz-roy-huemul
+parent_cluster: trekking-spot-fitz-roy-huemul
+region: andes
+country_code: AR
+
+coordinates:
+  center: { lat: -49.3489, lng: -73.0517 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Laguna Torre, 620 m, is reached via an approximately 9-10 km
+    one-way, 3-3.5 hour walk from El Chaltén on a well-graded dirt
+    and gravel trail through lenga forest with far gentler elevation
+    gain (under 250 m) than the Laguna de los Tres approach, making
+    it the easier-gradient of the two classic day-hikes. The lake
+    faces Cerro Torre's needle spire across floating glacial ice.
+    Free Campamento De Agostini sits near the lakeshore with river
+    water; cell coverage is intermittent. Wind funnels strongly
+    across the open lake basin. Evacuation is on foot along the same
+    valley trail back to El Chaltén, generally straightforward given
+    the gentle grade.
+
+display_name:
+  en: Trekking — Laguna Torre
+  it: Trekking — Laguna Torre
+  es: Senderismo — Laguna Torre
+  fr: Randonnée — Laguna Torre
+  de: Wandern — Laguna Torre
+
+description:
+  en: |
+    A gentler-gradient classic day-hike to a glacial lake at 620 m
+    facing the needle spire of Cerro Torre, with floating ice on the
+    lake and Campamento De Agostini nearby.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "APN (Argentina) Parque Nacional Los Glaciares Laguna Torre trail profile"
+    - "Club Andino El Chaltén trail conditions and safety bulletins"
+  notes: |
+    Sub-spot of trekking-spot-fitz-roy-huemul cluster. Tier 2: gentler
+    gradient than Laguna de los Tres, open wind-exposed lake basin,
+    straightforward foot evacuation on well-graded trail.

@@ -1,0 +1,161 @@
+slug: trekking-spot-gr20-corsica
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+region: mediterranean
+country_code: FR
+sub_spots:
+  - trekking-spot-gr20-corsica-cirque-de-la-solitude
+  - trekking-spot-gr20-corsica-col-de-bavella
+display_name:
+  en: Trekking — GR20 Corsica
+  it: Trekking — GR20 Corsica
+  es: Senderismo — GR20 Córcega
+  fr: Randonnée — GR20 Corse
+  de: Wandern — GR20 Korsika
+description:
+  en: |
+    The GR20 crosses the granite spine of Corsica from Calenzana in the
+    north to Conca in the south over roughly 180 km and 15-16 stages,
+    widely regarded as one of Europe's most physically demanding
+    long-distance treks. Altitude ranges from around 600 m at the
+    southern trailheads to over 2200 m on the northern high stages,
+    with terrain switching between exposed granite slabs, boulder
+    fields, and short chain- and ladder-protected scramble sections
+    (particularly north of Vizzavona). The route is served by Parc
+    Naturel Régional de Corse (PNRC) refuges and designated camping
+    platforms; wild camping outside these sites is prohibited. No
+    permit is required for day access, but overnight camping on refuge
+    platforms must be booked through the PNRC reservation system.
+    Optimal season is mid-June to early October, with snow persisting
+    at altitude into June some years; the historic Cirque de la
+    Solitude scramble and the granite towers above Col de Bavella are
+    the trek's signature landmarks.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -15, s: 0.05 }
+      - { x: -5,  s: 0.40 }
+      - { x: 5,   s: 0.85 }
+      - { x: 14,  s: 1.00 }
+      - { x: 22,  s: 0.85 }
+      - { x: 30,  s: 0.40 }
+      - { x: 38,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 4,   s: 0.10 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 35, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 1.00 }
+      - { x: 7,  s: 0.80 }
+      - { x: 10, s: 0.50 }
+      - { x: 13, s: 0.20 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 300m in alpine terrain creates immediate route-finding hazard; high-altitude rescue often impossible.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_PRECIPITATION_ALPINE
+    description: Heavy active precipitation in alpine terrain triggers flash floods in gullies and rapidly degrades trail surface.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 50 knots at alpine altitude makes ridge traverses and exposed sections dangerous.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: EXTREME_COLD_ALPINE
+    description: Apparent temperature below -20°C in alpine terrain creates immediate frostbite risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: high
+  notes: |
+    The GR20 is human-powered with zero direct emissions per session.
+    The Parc Naturel Régional de Corse operates a mandatory refuge and
+    camping-platform reservation system precisely because carrying
+    capacity is a documented concern — northern stages around the
+    Cirque de la Solitude and Monte Cinto sector see severe bottlenecks
+    in peak July-August weeks. Following the fatal 2015 rockfall, PNRC
+    closed and permanently rerouted the historic Cirque de la Solitude
+    scramble via a via-ferrata-equipped bypass, an explicit carrying-
+    capacity and safety intervention.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — GR20 Corsica: The High Level Route"
+    - "Parc Naturel Régional de Corse (PNRC) GR20 refuge reservation system"
+    - "Fédération Française de la Randonnée Pédestre GR20 trail guidance"
+  notes: |
+    Cluster inherits trekking-alpine scoring unchanged (weights, gates,
+    curves copied exactly — no material deviation identified for this
+    route relative to the regional baseline). typical_season_weeks
+    raised slightly to 16 given Corsica's Mediterranean-influenced
+    shoulder seasons extending the walkable window at the southern,
+    lower-altitude stages relative to the 14-week regional baseline.

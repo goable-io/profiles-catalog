@@ -1,0 +1,56 @@
+slug: trekking-spot-fitz-roy-huemul-huemul-circuit-paso-viento
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-fitz-roy-huemul
+parent_cluster: trekking-spot-fitz-roy-huemul
+region: andes
+country_code: AR
+
+coordinates:
+  center: { lat: -49.4083, lng: -72.9017 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Paso del Viento, 1550 m, is the high point of the ~64 km, 4-day
+    Huemul Circuit, a committing loop over two glaciated mountain
+    passes with sweeping views across the Southern Patagonian Ice
+    Field. The route requires an unassisted Tyrolean-traverse
+    crossing of both the Río Túnel and Río Fernández using rope,
+    harness, and pulley carried by the trekker — a mandatory
+    technical skill checked by APN before permit issuance. Terrain
+    includes loose talus, glacial ice margins, and sections with no
+    marked trail, navigated by cairn and map. There is no hut system;
+    trekkers carry full camping kit and cross entirely exposed,
+    wind-scoured terrain with no cell coverage and no realistic
+    evacuation short of a multi-day walk-out or helicopter rescue in
+    a genuine emergency, making this by far the most remote and
+    consequential sub-spot in the cluster.
+
+display_name:
+  en: Trekking — Huemul Circuit, Paso del Viento
+  it: Trekking — Circuito Huemul, Paso del Viento
+  es: Senderismo — Circuito Huemul, Paso del Viento
+  fr: Randonnée — Circuit Huemul, Paso del Viento
+  de: Wandern — Huemul-Rundweg, Paso del Viento
+
+description:
+  en: |
+    The remote high point of the 4-day Huemul Circuit at 1550 m,
+    overlooking the Southern Patagonian Ice Field, reached only via
+    two glaciated pass crossings and mandatory Tyrolean-traverse
+    river crossings.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "APN (Argentina) Huemul Circuit registration and equipment-check requirements"
+    - "Club Andino El Chaltén Huemul Circuit route description and hazard bulletin"
+  notes: |
+    Sub-spot of trekking-spot-fitz-roy-huemul cluster. Tier 3: 1550 m
+    glaciated pass, mandatory rope-assisted Tyrolean river crossings,
+    no marked trail or hut system, no cell coverage, multi-day or
+    heli-only evacuation.

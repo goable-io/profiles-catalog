@@ -1,0 +1,53 @@
+slug: trekking-spot-wonderland-rainier-spray-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-wonderland-rainier
+parent_cluster: trekking-spot-wonderland-rainier
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 46.9250, lng: -121.8267 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Spray Park, 1900 m, is a subalpine meadow section on the northern
+    Wonderland Trail near Mowich Lake, reached via a moderate ~5-6 km
+    approach with roughly 500 m of elevation gain on dirt-and-root
+    trail through old-growth forest before opening onto exposed
+    meadow with close views of Mount Rainier's Mowich Face and Flett
+    and Russell glaciers. The meadow terrain is fragile alpine
+    vegetation with marked-trail requirements to prevent trampling;
+    weather can change quickly with the meadow fully exposed to wind
+    and sudden Cascades precipitation. No hut exists on this section;
+    the nearest ranger presence and cell coverage are limited, and
+    evacuation is on foot back to the Mowich Lake trailhead, a
+    multi-hour proposition in poor conditions.
+
+display_name:
+  en: Trekking — Spray Park
+  it: Trekking — Spray Park
+  es: Senderismo — Spray Park
+  fr: Randonnée — Spray Park
+  de: Wandern — Spray Park
+
+description:
+  en: |
+    A subalpine meadow waypoint at 1900 m on the Wonderland Trail's
+    northern arc, offering close views of Mount Rainier's Mowich Face
+    and glaciers above old-growth forest near Mowich Lake.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "National Park Service Mount Rainier Spray Park / Mowich Lake trail information"
+    - "Washington Trails Association Spray Park route guidance"
+  notes: |
+    Sub-spot of trekking-spot-wonderland-rainier cluster. Tier 2:
+    moderate forest-to-meadow ascent, fragile exposed alpine
+    vegetation, limited cell coverage, multi-hour foot-only
+    evacuation to Mowich Lake trailhead.

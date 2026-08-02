@@ -1,0 +1,51 @@
+slug: trekking-spot-inca-trail-km-82-piscacucho
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-inca-trail
+parent_cluster: trekking-spot-inca-trail
+region: andes
+country_code: PE
+
+coordinates:
+  center: { lat: -13.5658, lng: -72.4394 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    Km 82 (Piscacucho), 2600 m, is the official permit-controlled
+    trailhead of the Classic Inca Trail beside the Urubamba river,
+    reached by a short drive from Ollantaytambo. SERNANP checks
+    permits and passports here (500 pax/day cap, guide mandatory)
+    before the first day's gentle 11 km, ~4-5 hour walk along the
+    river valley with modest elevation gain (~350 m) on a wide dirt
+    and stone path. Multiple villages (Miskay, Llactapata viewpoint)
+    lie en route with basic services and cell coverage. Consequence
+    of a mishap is low: vehicle evacuation to Ollantaytambo remains
+    possible along the valley road for most of the stage.
+
+display_name:
+  en: Trekking — Inca Trail Km 82 Trailhead (Piscacucho)
+  it: Trekking — Km 82 Piscacucho (Cammino Inca)
+  es: Senderismo — Km 82 Piscacucho (Camino Inca)
+  fr: Randonnée — Km 82 Piscacucho (Chemin de l'Inca)
+  de: Wandern — Km 82 Piscacucho (Inka-Pfad)
+
+description:
+  en: |
+    The official Km 82 checkpoint at Piscacucho (2600 m) where SERNANP
+    verifies the 500-person daily permit before trekkers cross the
+    Urubamba river and begin the Classic Inca Trail's gentle first
+    stage toward Wayllabamba.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SERNANP (Peru) Camino Inca permit checkpoint procedures"
+    - "Ministerio de Cultura del Perú Santuario Histórico de Machu Picchu regulations"
+  notes: |
+    Sub-spot of trekking-spot-inca-trail cluster. Tier 1: gentle
+    valley-floor trailhead stage, wide path, vehicle evacuation
+    largely available, permit-controlled entry point.

@@ -1,0 +1,51 @@
+slug: trekking-spot-torres-del-paine-w-mirador-base-torres
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-torres-del-paine-w
+parent_cluster: trekking-spot-torres-del-paine-w
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -50.9433, lng: -72.9500 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Mirador Base de las Torres, 900 m, is reached by an ~8.5 km, 4-5
+    hour one-way day-hike from Refugio Chileno, gaining roughly 450 m
+    on well-marked lenga-forest dirt trail before a final ~45 minute
+    boulder-field scramble over glacial moraine to the lake beneath
+    the three granite towers. The talus final section is unshaded,
+    frequently windswept, and slippery when wet, raising this
+    sub-spot's difficulty above the forested approach. Refugio Chileno
+    and Refugio Torres provide water, food, and emergency shelter
+    below the mirador; cell coverage is patchy above the tree line.
+    Evacuation from the mirador itself requires the full descent on
+    foot, as no vehicle or helicopter landing zone exists at altitude.
+
+display_name:
+  en: Trekking — Mirador Base de las Torres
+  it: Trekking — Mirador Base de las Torres
+  es: Senderismo — Mirador Base de las Torres
+  fr: Randonnée — Mirador Base de las Torres
+  de: Wandern — Mirador Base de las Torres
+
+description:
+  en: |
+    The W Circuit's iconic eastern-arm viewpoint at 900 m, facing the
+    three granite Torres del Paine towers across a glacial lake,
+    reached via a boulder-field scramble above Refugio Chileno.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CONAF (Chile) Parque Nacional Torres del Paine Sendero Torres trail profile"
+    - "Fantástico Sur Refugio Chileno / Refugio Torres route information"
+  notes: |
+    Sub-spot of trekking-spot-torres-del-paine-w cluster. Tier 2:
+    boulder-field final ascent, exposed and windswept, refuge support
+    below the mirador, foot-only evacuation from the viewpoint itself.

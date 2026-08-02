@@ -1,0 +1,51 @@
+slug: trekking-spot-torres-del-paine-w-valle-frances
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-torres-del-paine-w
+parent_cluster: trekking-spot-torres-del-paine-w
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -51.0350, lng: -73.0217 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Valle del Francés, the W Circuit's middle arm, climbs from
+    Refugio/Campamento Italiano (roughly 200 m) to the mirador at
+    850 m over about 7.5 km one-way, 3-4 hours, on a well-defined
+    dirt-and-root forest trail with a moraine-scree final approach.
+    The hanging valley offers close views of Paine Grande's hanging
+    glacier, with periodic audible/visible ice-avalanche activity
+    across the valley — a known but generally distant hazard.
+    Campamento Italiano and Campamento Francés provide basic camping
+    with river water sources; cell coverage is limited within the
+    valley. Wind funnels strongly through the valley corridor, and
+    evacuation from the upper mirador is on foot back to Italiano.
+
+display_name:
+  en: Trekking — Valle del Francés
+  it: Trekking — Valle del Francés
+  es: Senderismo — Valle del Francés
+  fr: Randonnée — Valle del Francés
+  de: Wandern — Valle del Francés
+
+description:
+  en: |
+    The W Circuit's central hanging valley, climbing from Campamento
+    Italiano to a mirador at 850 m facing the Paine Grande hanging
+    glacier, with periodic ice-fall visible across the valley.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CONAF (Chile) Parque Nacional Torres del Paine Valle del Francés trail profile"
+    - "Vertice Patagonia Campamento Italiano / Francés route information"
+  notes: |
+    Sub-spot of trekking-spot-torres-del-paine-w cluster. Tier 2:
+    forest-and-moraine ascent, wind-funneled valley, distant hanging-
+    glacier ice-fall hazard, foot-only evacuation to Italiano.

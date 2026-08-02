@@ -1,0 +1,55 @@
+slug: trekking-spot-sarek-rapadalen-delta
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-sarek
+parent_cluster: trekking-spot-sarek
+region: arctic
+country_code: SE
+
+coordinates:
+  center: { lat: 67.3183, lng: 17.7167 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Rapadalen (the Rapa Valley delta), at roughly 500 m, is the iconic
+    wilderness sector of Sarek National Park — Europe's oldest
+    protected wilderness area — and carries no marked trail, no huts,
+    and no bridges of any kind. Reaching it requires multiple days of
+    off-trail travel over rock, marsh, and tundra from any road access,
+    with the delta's braided glacial river channels themselves
+    presenting the crux hazard: crossings shift daily with meltwater
+    volume and can be genuinely impassable after rain, forcing long
+    detours. Navigation is entirely map/compass or GPS based, mobile
+    coverage is absent, and evacuation from the valley floor is
+    realistically helicopter-only, coordinated through Swedish Mountain
+    Rescue — this is a mandatory-experience, self-sufficient
+    wilderness zone rather than a maintained trekking route.
+
+display_name:
+  en: Trekking — Rapadalen Delta
+  it: Trekking — Delta di Rapadalen
+  es: Senderismo — Delta de Rapadalen
+  fr: Randonnée — Delta de la Rapadalen
+  de: Wandern — Rapadalen-Delta
+
+description:
+  en: |
+    The vast braided delta of the Rapa River at the heart of Sarek
+    National Park — one of Europe's most iconic wilderness landscapes,
+    with no trails, no huts, and no bridges. Off-trail navigation and
+    full self-sufficiency are mandatory.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Naturvårdsverket (Swedish Environmental Protection Agency) Sarek National Park management plan"
+    - "Länsstyrelsen Norrbotten Rapadalen wilderness safety guidance"
+  notes: |
+    Sub-spot of trekking-spot-sarek cluster. Tier 3: no marked trail,
+    no huts, no bridges, unpredictable glacial-river fords, GPS/compass
+    navigation mandatory, helicopter-only evacuation — the most
+    committing sub-spot in this batch.

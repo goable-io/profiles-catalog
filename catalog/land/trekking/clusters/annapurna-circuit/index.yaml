@@ -1,0 +1,169 @@
+slug: trekking-spot-annapurna-circuit
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-himalayas
+region: himalayas
+country_code: NP
+sub_spots:
+  - trekking-spot-annapurna-circuit-besisahar-start
+  - trekking-spot-annapurna-circuit-manang
+  - trekking-spot-annapurna-circuit-thorong-la-pass
+display_name:
+  en: Trekking — Annapurna Circuit
+  it: Trekking — Circuito dell'Annapurna
+  es: Senderismo — Circuito del Annapurna
+  fr: Randonnée — Tour des Annapurnas
+  de: Wandern — Annapurna-Rundweg
+description:
+  en: |
+    The Annapurna Circuit is one of the world's classic long-distance
+    treks, looping around the Annapurna massif through the Annapurna
+    Conservation Area in central Nepal. The full route runs roughly
+    160-230 km depending on start/end points and road-encroachment
+    shortcuts, over 12-18 days, with an altitude range from about 760 m
+    at Besisahar to 5416 m at the Thorong La pass. Terrain shifts
+    dramatically from subtropical river valleys and rice terraces in
+    the lowlands to high alpine desert in the rain-shadow Manang valley
+    and glaciated high pass terrain near Thorong La. A dense tea-house
+    network covers the entire route, so tents are not required on the
+    standard itinerary. An Annapurna Conservation Area Permit (ACAP) and
+    a TIMS (Trekkers' Information Management System) card are both
+    required, and while independent trekking is legal, a guide is
+    strongly recommended for the pass crossing. Safe trekking windows
+    are the post-monsoon Oct-Nov and pre-monsoon Mar-May seasons; road
+    construction has shortened some lower sections in recent years,
+    with Manang and the Thorong La crossing remaining the trek's
+    signature stages.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -20, s: 0.05 }
+      - { x: -10, s: 0.35 }
+      - { x: -2,  s: 0.75 }
+      - { x: 8,   s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 25,  s: 0.70 }
+      - { x: 32,  s: 0.30 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.75 }
+      - { x: 2,   s: 0.30 }
+      - { x: 5,   s: 0.05 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.60 }
+      - { x: 28, s: 0.20 }
+      - { x: 40, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.65 }
+      - { x: 9,  s: 0.30 }
+      - { x: 11, s: 0.10 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.30 }
+      - { x: 2000, s: 0.60 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.85 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: HIMALAYAN_MONSOON_DELUGE
+    description: Precipitation above 5 mm/h on the Annapurna Circuit signals monsoon-band arrival with rapid trail-washout + landslide + river-crossing failure risk — trek closes immediately.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: HIGH_ALTITUDE_WIND
+    description: Sustained wind above 40 knots forces closure of the Thorong La crossing — hypothermia + wind-chill risk exceeds safe pass-crossing threshold.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_PASS
+    description: Visibility below 500 m on the Thorong La approach prevents cairn + trail navigation and has historically been implicated in fatal whiteout incidents on this pass.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: HIMALAYAN_HYPOTHERMIA
+    description: Apparent temperature below -20°C at Thorong Phedi high camp or on the pass creates immediate frostbite + hypothermia risk during the committing Phedi-to-Muktinath crossing.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Annapurna Conservation Area is Nepal's largest protected area
+    and its highest-visitor-volume trekking region, with ACAP recording
+    tens of thousands of permit entries per peak season. Tea-house
+    diesel/kerosene heating, porter and mule-train logistics, and road
+    encroachment into former trail sections have altered the route's
+    footprint over the past decade. The Annapurna Conservation Area
+    Project (ACAP) enforces permit-tracked visitor caps and coordinates
+    with Nepal TAAN on operator SOP, particularly around Thorong La
+    crossing-day traffic management.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Annapurna Conservation Area Project (ACAP) permit + management authority"
+    - "Nepal TAAN (Trekking Agencies' Association of Nepal) SOP"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+    - "Trailblazer Annapurna Circuit guidebook"
+  notes: |
+    Cluster inherits trekking-himalayas dimensions, gates, and curves
+    unchanged — no material deviation identified for the Annapurna
+    Circuit. Carrying-capacity notes reflect ACAP's status as Nepal's
+    largest and highest-traffic protected trekking area.

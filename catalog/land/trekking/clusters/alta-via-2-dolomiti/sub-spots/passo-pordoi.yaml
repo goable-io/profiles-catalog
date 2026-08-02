@@ -1,0 +1,51 @@
+slug: trekking-spot-alta-via-2-dolomiti-passo-pordoi
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-alta-via-2-dolomiti
+parent_cluster: trekking-spot-alta-via-2-dolomiti
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.4881, lng: 11.8117 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Passo Pordoi (2239 m) is the AV2 stage 4-5 crossing of the Sella
+    massif, reached by roughly 600-800 m of ascent on rocky, well-marked
+    trail from either adjoining stage, with talus and scree sections
+    near the pass itself. A cable car from the pass road to Sass Pordoi
+    (2950 m) provides an alternate high-altitude viewpoint and a fast
+    evacuation option independent of the walking route, and the pass
+    itself sits on a paved road with restaurants and mobile coverage.
+    Hazards are afternoon thunderstorm exposure on the open saddle and
+    loose talus underfoot on the steeper approach sections.
+
+display_name:
+  en: Trekking — Passo Pordoi
+  it: Trekking — Passo Pordoi
+  es: Trekking — Passo Pordoi
+  fr: Trekking — Passo Pordoi
+  de: Wandern — Pordoijoch
+
+description:
+  en: |
+    The iconic Sella-massif crossing on AV2 stages 4-5, at 2239 m on a
+    paved alpine road with cable-car access to Sass Pordoi above.
+    One of the most recognizable passes in the Dolomites.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Club Alpino Italiano (CAI) Alta Via 2 trail classification"
+    - "Rother Wanderführer — Dolomiten Höhenwege"
+  notes: |
+    Sub-spot of trekking-spot-alta-via-2-dolomiti cluster. Tier 2:
+    established multi-day trail, moderate altitude gain, talus/scree
+    sections, road and cable-car evacuation options nearby — standard
+    intermediate difficulty.

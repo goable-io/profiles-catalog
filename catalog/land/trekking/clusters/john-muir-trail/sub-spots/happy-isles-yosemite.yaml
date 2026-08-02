@@ -1,0 +1,51 @@
+slug: trekking-spot-john-muir-trail-happy-isles-yosemite
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-john-muir-trail
+parent_cluster: trekking-spot-john-muir-trail
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.7328, lng: -119.5583 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Happy Isles, 1250 m, is the northern trailhead of the John Muir
+    Trail in Yosemite Valley — a paved, shuttle-accessible location
+    with restrooms, ranger station, and full cell coverage. The
+    immediate trail (shared with the Mist Trail / Vernal-Nevada Falls
+    route) is a wide, well-maintained granite-paved and stepped path
+    with heavy day-visitor traffic and benign gradient for its first
+    stretch. Water, food, and emergency services are available in
+    Yosemite Valley within minutes. Wilderness permit required only
+    once continuing past the day-use zone. Worst-case consequence at
+    the trailhead itself is low: full vehicle and medical evacuation
+    access exists year-round.
+
+display_name:
+  en: Trekking — Happy Isles Trailhead (Yosemite)
+  it: Trekking — Happy Isles (Yosemite)
+  es: Senderismo — Happy Isles (Yosemite)
+  fr: Randonnée — Happy Isles (Yosemite)
+  de: Wandern — Happy Isles (Yosemite)
+
+description:
+  en: |
+    The northern terminus of the John Muir Trail in Yosemite Valley
+    at 1250 m, a paved, shuttle-served trailhead shared with the
+    popular Mist Trail before the JMT climbs into the high Sierra.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "National Park Service Yosemite Happy Isles trailhead and wilderness permit information"
+    - "John Muir Trail Association trailhead guidance"
+  notes: |
+    Sub-spot of trekking-spot-john-muir-trail cluster. Tier 1: paved
+    shuttle-accessible trailhead, full valley services, year-round
+    vehicle evacuation access.

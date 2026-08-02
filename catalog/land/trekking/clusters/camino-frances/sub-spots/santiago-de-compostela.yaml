@@ -1,0 +1,50 @@
+slug: trekking-spot-camino-frances-santiago-de-compostela
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-camino-frances
+parent_cluster: trekking-spot-camino-frances
+country_code: ES
+
+coordinates:
+  center: { lat: 42.8806, lng: -8.5450 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Praza do Obradoiro, the cathedral square in Santiago de Compostela
+    (260 m), is the terminus of the Camino Francés and a fully urban
+    environment — paved city streets, complete infrastructure, and no
+    trekking-specific hazard whatsoever. Pilgrims arrive here after
+    roughly 780 km and 30-35 days from Saint-Jean-Pied-de-Port, with
+    the final approach through Galician hill country and Santiago's
+    outskirts being low-altitude, well-marked, and heavily trafficked.
+    The city offers full services: the Pilgrim's Office for Compostela
+    certificates, hotels and albergues, rail and air connections, and
+    emergency services on par with any European city, making this the
+    lowest-risk point in the entire cluster.
+
+display_name:
+  en: Trekking — Santiago de Compostela Cathedral
+  it: Trekking — Cattedrale di Santiago de Compostela
+  es: Senderismo — Catedral de Santiago de Compostela
+  fr: Randonnée — Cathédrale de Saint-Jacques-de-Compostelle
+  de: Wandern — Kathedrale von Santiago de Compostela
+
+description:
+  en: |
+    Praza do Obradoiro and the Cathedral of Santiago de Compostela
+    (260 m) — the historic terminus of the Camino Francés, where
+    pilgrims arrive after 780 km on foot from the French Pyrenees.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Oficina del Peregrino (Pilgrim's Office), Santiago de Compostela — arrival and Compostela certificate guidance"
+    - "Xunta de Galicia Camino de Santiago route management"
+  notes: |
+    Sub-spot of trekking-spot-camino-frances cluster. Tier 1: fully
+    urban cathedral-square terminus with complete city infrastructure
+    and services — the lowest-risk point on the Camino Francés.

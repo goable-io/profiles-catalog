@@ -1,0 +1,52 @@
+slug: trekking-spot-gr20-corsica-col-de-bavella
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-gr20-corsica
+parent_cluster: trekking-spot-gr20-corsica
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 41.7972, lng: 9.2314 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Col de Bavella (1218 m) sits in the GR20's gentler southern sector,
+    approached by well-marked, established trail through Corsican pine
+    forest transitioning to open granite terrain beneath the Aiguilles
+    de Bavella spires, with moderate elevation change of a few hundred
+    metres between stages. The pass sits directly on a paved road (D268)
+    with restaurants and mobile coverage, giving straightforward vehicle
+    evacuation unlike most GR20 sections, and Refuge de Paliri and
+    Refuge d'Asinau bracket the surrounding stages with staffed shelter
+    and water. Hazards are limited to standard afternoon thunderstorm
+    exposure on the open granite sections and loose rock underfoot near
+    the spires.
+
+display_name:
+  en: Trekking — Col de Bavella
+  it: Trekking — Col de Bavella
+  es: Trekking — Col de Bavella
+  fr: Trekking — Col de Bavella
+  de: Wandern — Col de Bavella
+
+description:
+  en: |
+    A road-accessible pass at 1218 m in the GR20's southern sector,
+    beneath the granite spires of the Aiguilles de Bavella, marking the
+    transition between high alpine terrain and Corsican pine forest.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — GR20 Corsica: The High Level Route"
+    - "Parc Naturel Régional de Corse (PNRC) GR20 refuge reservation system"
+  notes: |
+    Sub-spot of trekking-spot-gr20-corsica cluster. Tier 2: established
+    multi-day trail, moderate elevation change, road-accessible with
+    mobile coverage, staffed refuges bracket the section — standard
+    intermediate difficulty, gentler than the GR20's northern half.

@@ -1,0 +1,51 @@
+slug: trekking-spot-alta-via-2-dolomiti-rifugio-passo-cereda
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-alta-via-2-dolomiti
+parent_cluster: trekking-spot-alta-via-2-dolomiti
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.1958, lng: 11.9611 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Rifugio Passo Cereda (1361 m) is a southern AV2 waypoint on the
+    stages descending toward Feltre, reached by several hundred metres
+    of descent on well-marked forest and rocky trail from the higher
+    Pale di San Martino sector. The staffed refuge sits directly on a
+    minor paved road (SP347), giving straightforward vehicle-based
+    evacuation unlike most AV2 huts, and offers food, water, and mobile
+    coverage. The principal hazard on the approach stages is loose rock
+    on the descent from the higher Pale di San Martino terrain rather
+    than any risk at the refuge itself.
+
+display_name:
+  en: Trekking — Rifugio Passo Cereda
+  it: Trekking — Rifugio Passo Cereda
+  es: Trekking — Rifugio Passo Cereda
+  fr: Trekking — Rifugio Passo Cereda
+  de: Wandern — Rifugio Passo Cereda
+
+description:
+  en: |
+    A southern AV2 waypoint at 1361 m on the descent from the Pale di
+    San Martino group toward Feltre, with direct road access that makes
+    it a convenient resupply or exit point on the trek's later stages.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Club Alpino Italiano (CAI) Alta Via 2 trail classification"
+    - "Rother Wanderführer — Dolomiten Höhenwege"
+  notes: |
+    Sub-spot of trekking-spot-alta-via-2-dolomiti cluster. Tier 2:
+    established multi-day trail, moderate elevation change, staffed
+    road-accessible refuge, loose rock on higher approach sections —
+    standard intermediate difficulty.

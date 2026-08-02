@@ -1,0 +1,56 @@
+slug: trekking-spot-annapurna-circuit-thorong-la-pass
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-annapurna-circuit
+parent_cluster: trekking-spot-annapurna-circuit
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 28.7947, lng: 83.9375 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Thorong La (5416 m) is the world's most-crossed high mountain pass
+    on a trekking itinerary, connecting Thorong Phedi (4450 m) to
+    Muktinath (3760 m) in a single committing 8-9 hour, roughly 15 km
+    day with no viable overnight shelter or easy retreat once past the
+    midpoint. The route climbs steep switchback scree and can carry
+    snow cover into shoulder season, with the descent to Muktinath
+    losing over 1600 m on loose talus and moraine. A pre-dawn start is
+    standard to avoid afternoon wind and cloud buildup, and full AMS
+    exposure applies given the rapid ascent from Phedi. A guide is
+    strongly recommended and the crossing has a documented history of
+    weather-related fatalities (notably the October 2014 blizzard);
+    evacuation once committed to the pass is helicopter-only or a
+    multi-hour walk to either end.
+
+display_name:
+  en: Trekking — Thorong La Pass
+  it: Trekking — Passo di Thorong La
+  es: Senderismo — Paso de Thorong La
+  fr: Randonnée — Col du Thorong La
+  de: Wandern — Thorong-La-Pass
+
+description:
+  en: |
+    Thorong La (5416 m) is the Annapurna Circuit's committing high-pass
+    crossing, linking Thorong Phedi to Muktinath in a single long,
+    exposed day over scree and moraine. It is the most-crossed 5000+ m
+    trekking pass in the world and the circuit's defining stage.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Annapurna Conservation Area Project (ACAP) Thorong La crossing guidance"
+    - "Himalayan Rescue Association AMS/HACE/HAPE field guidance"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+  notes: |
+    Sub-spot of trekking-spot-annapurna-circuit cluster. Tier 3:
+    5416 m committing pass crossing, no overnight shelter mid-route,
+    full AMS exposure, documented weather-fatality history, and
+    helicopter-only complex evacuation once committed.

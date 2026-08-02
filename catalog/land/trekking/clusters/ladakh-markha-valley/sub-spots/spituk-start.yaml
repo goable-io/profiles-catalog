@@ -1,0 +1,52 @@
+slug: trekking-spot-ladakh-markha-valley-spituk-start
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-ladakh-markha-valley
+parent_cluster: trekking-spot-ladakh-markha-valley
+region: himalayas
+country_code: IN
+
+coordinates:
+  center: { lat: 34.1200, lng: 77.4667 }
+  radius_m: 1200
+
+tier: 1
+tier_rationale:
+  en: |
+    The Spituk monastery trailhead (3300 m) sits a short drive from Leh
+    and marks the western start of the Markha Valley trek. The
+    opening stages follow the Indus and Zanskar river confluence area
+    and the Jingchan/Rumbak side valley on a wide, well-trodden gravel
+    track with gentle grade, passing through the Hemis National Park
+    buffer zone with regular blue-sheep and occasional snow-leopard
+    habitat. Homestays and basic camping are available at Rumbak;
+    river crossings here are minor and seasonal cell coverage exists
+    near Leh's outskirts. Road-based evacuation back to Leh is same-day
+    given the trailhead's proximity to the city, making this the most
+    accessible and forgiving stage of the trek.
+
+display_name:
+  en: Trekking — Spituk Start
+  it: Trekking — Partenza da Spituk
+  es: Senderismo — Inicio en Spituk
+  fr: Randonnée — Départ de Spituk
+  de: Wandern — Start ab Spituk
+
+description:
+  en: |
+    The Spituk monastery trailhead (3300 m), just outside Leh, marks
+    the western start of the Markha Valley trek through Hemis National
+    Park. The opening stages follow gentle river-valley gravel tracks
+    with easy access back to Leh.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hemis National Park entry permit checkpoint"
+    - "Cicerone Trekking in Ladakh guidebook"
+  notes: |
+    Sub-spot of trekking-spot-ladakh-markha-valley cluster. Tier 1:
+    wide low-altitude-relative gravel trail near Leh, minor river
+    crossings, same-day road evacuation.

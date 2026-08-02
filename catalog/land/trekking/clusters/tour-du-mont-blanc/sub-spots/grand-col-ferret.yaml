@@ -1,0 +1,53 @@
+slug: trekking-spot-tour-du-mont-blanc-grand-col-ferret
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-tour-du-mont-blanc
+parent_cluster: trekking-spot-tour-du-mont-blanc
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 45.8850, lng: 7.0783 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Grand Col Ferret (2537 m), the highest standard point on the TMB, is
+    the Italy/Switzerland border crossing on stage 8 — a roughly 18-19 km,
+    6-7 hour day climbing about 800 m from Rifugio Elena (2062 m) on
+    broad, well-marked grassy switchbacks before descending into
+    Switzerland's Val Ferret toward Ferret village. Rifugio Elena offers
+    staffed food, water, and radio contact on the Italian approach; on
+    the Swiss side the Val Ferret road provides a straightforward vehicle
+    evacuation route within 2-3 hours of the pass. Signature hazards are
+    afternoon thunderstorm exposure on the broad open saddle and rapid
+    temperature drop at this, the route's highest elevation.
+
+display_name:
+  en: Trekking — Grand Col Ferret
+  it: Trekking — Grand Col Ferret
+  es: Trekking — Grand Col Ferret
+  fr: Trekking — Grand Col Ferret
+  de: Wandern — Grand Col Ferret
+
+description:
+  en: |
+    The Italy-Switzerland border pass on TMB stage 8, crossed between
+    Rifugio Elena and the Swiss Val Ferret. At 2537 m it is the highest
+    standard point on the route, with sweeping views back toward the
+    Mont Blanc massif and forward into the Swiss Alps.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Tour of Mont Blanc (Kev Reynolds)"
+    - "Club Alpino Italiano (CAI) Val Ferret section trail notes"
+    - "Club Alpin Suisse (CAS) Val Ferret hut network"
+  notes: |
+    Sub-spot of trekking-spot-tour-du-mont-blanc cluster. Tier 2:
+    established multi-day trail, moderate-high altitude gain to the
+    route's highest col, refuge on the approach, well-marked throughout,
+    standard intermediate difficulty.

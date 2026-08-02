@@ -1,0 +1,50 @@
+slug: trekking-spot-routeburn-track-routeburn-shelter
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-routeburn-track
+parent_cluster: trekking-spot-routeburn-track
+region: pacific
+country_code: NZ
+
+coordinates:
+  center: { lat: -44.7833, lng: 168.3167 }
+  radius_m: 1200
+
+tier: 1
+tier_rationale:
+  en: |
+    Routeburn Shelter, at 460 m, is the road-accessible trailhead on
+    the Glenorchy side of the track and the start of the DOC Great
+    Walk season (late October to April). The first stage to Routeburn
+    Flats and Routeburn Falls Hut is a well-formed, graded valley path
+    through beech forest with modest elevation gain and no exposure.
+    Car park access at the shelter itself means evacuation is
+    immediate for anyone who needs to turn back before committing to
+    the trail, and DOC ranger presence at the nearby huts provides
+    additional safety infrastructure during the booked season.
+
+display_name:
+  en: Trekking — Routeburn Shelter Trailhead
+  it: Trekking — Sentiero di partenza Routeburn Shelter
+  es: Trekking — Cabecera de sendero Routeburn Shelter
+  fr: Trekking — Départ du sentier Routeburn Shelter
+  de: Wandern — Trailhead Routeburn Shelter
+
+description:
+  en: |
+    Routeburn Shelter (460 m) is the road-accessible trailhead at the
+    Glenorchy end of the track, marking the start of the DOC Great Walk
+    season from November to April. A well-graded valley path leads
+    into Routeburn Flats and the beech-forest lower stages.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Department of Conservation (DOC) New Zealand — Routeburn Track access and booking information"
+    - "Mount Aspiring National Park visitor centre trail notes"
+  notes: |
+    Sub-spot of trekking-spot-routeburn-track cluster. Tier 1: road
+    access, graded valley trail, immediate car-park evacuation,
+    DOC-serviced Great Walk season.

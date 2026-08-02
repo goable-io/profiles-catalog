@@ -1,0 +1,164 @@
+slug: trekking-spot-torres-del-paine-w
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-andes
+region: andes
+country_code: CL
+sub_spots:
+  - trekking-spot-torres-del-paine-w-mirador-base-torres
+  - trekking-spot-torres-del-paine-w-valle-frances
+  - trekking-spot-torres-del-paine-w-glaciar-grey
+display_name:
+  en: Trekking — Torres del Paine W Circuit (Chile)
+  it: Trekking — Circuito W Torres del Paine (Cile)
+  es: Senderismo — Circuito W Torres del Paine (Chile)
+  fr: Randonnée — Circuit W Torres del Paine (Chili)
+  de: Wandern — W-Rundweg Torres del Paine (Chile)
+description:
+  en: |
+    The W Circuit is a roughly 71-80 km, 4-5 day trek through Parque
+    Nacional Torres del Paine in Chilean Patagonia, tracing a W-shaped
+    route between three signature arms: the granite Torres viewpoint
+    in the east, the hanging Valle del Francés in the middle, and the
+    Glaciar Grey ice-face in the west. Altitude is modest by Andean
+    standards (500-900 m) but the defining hazard is the relentless
+    Patagonian westerly wind, routinely exceeding 60 knots on exposed
+    ridges and lakeshores. Terrain mixes lenga-forest dirt trail,
+    glacial moraine, and a final boulder-field scramble to the Torres
+    mirador. Accommodation runs through CONAF-regulated refugio and
+    campamento concessions (Fantástico Sur, Vertice) that cap nightly
+    tent numbers per site and require advance booking — wild camping
+    is prohibited. Season runs the austral summer (November-March),
+    with December-February the peak-wind, peak-crowd window; wind and
+    river conditions can close sections without notice.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -3,  s: 0.55 }
+      - { x: 5,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 22,  s: 0.90 }
+      - { x: 30,  s: 0.55 }
+      - { x: 38,  s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 2,   s: 0.40 }
+      - { x: 5,   s: 0.10 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 20, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 55, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.60 }
+      - { x: 9,  s: 0.25 }
+      - { x: 11, s: 0.05 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.35 }
+      - { x: 2000, s: 0.65 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.80 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: PATAGONIAN_WIND
+    description: Sustained wind above 55 knots on Torres del Paine's exposed W circuit ridges and lakeshores exceeds safe trekking threshold — trekkers are routinely blown off feet, tent damage is standard.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: ANDEAN_STORM
+    description: Precipitation above 5 mm/h combined with Patagonian wind signals dangerous storm conditions with trail-washout and hypothermia risk on exposed W circuit sections.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_ANDES
+    description: Visibility below 500 m at the Torres mirador and Valle del Francés prevents cairn navigation and removes the principal reason for the trek (the granite-tower and glacier views).
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -12
+    reason_code: ANDEAN_HYPOTHERMIA
+    description: Apparent temperature below -12°C at Patagonian campamentos creates frostbite risk during trekking-tent overnight exposure, compounded by wind chill.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    CONAF (Corporación Nacional Forestal) caps nightly tent and bed
+    numbers per campamento/refugio at roughly 80 spaces through
+    concessionaires Fantástico Sur and Vertice Patagonia; all
+    overnight stays require pre-booked reservations and wild camping
+    is prohibited park-wide following a major 2011-2012 wildfire
+    caused by an unattended trekker stove. Peak-season (Dec-Feb)
+    demand regularly exceeds capacity, driving a shoulder-season
+    booking rush.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CONAF (Chile) Parque Nacional Torres del Paine campamento allocation and booking rules"
+    - "Fantástico Sur / Vertice Patagonia official refugio concession information"
+    - "Cicerone Trekking in the Patagonian Andes guidebook"
+  notes: |
+    Cluster inherits trekking-andes regional scoring exactly (no
+    dimension/gate overrides). Chile-specific carrying-capacity note:
+    mandatory pre-booked refugio/campamento system post-2012 wildfire
+    closure, ~80 tent-space cap per site.

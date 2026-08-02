@@ -1,0 +1,50 @@
+slug: trekking-spot-wonderland-rainier-paradise-visitor-center
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-wonderland-rainier
+parent_cluster: trekking-spot-wonderland-rainier
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 46.7863, lng: -121.7358 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Paradise Visitor Center, 1647 m, is Mount Rainier National Park's
+    principal hub and a Wonderland Trail junction, with paved parking,
+    restrooms, ranger station, and full cell coverage. The immediate
+    surrounding trail network is a wide, well-maintained paved and
+    gravel path through subalpine wildflower meadow with benign
+    gradient on its lower loops (Skyline Trail lower section), heavily
+    used by day visitors. Water, food, and NPS emergency services are
+    on-site. Worst-case consequence at this location is low given
+    year-round vehicle and medical evacuation access via the paved
+    park road.
+
+display_name:
+  en: Trekking — Paradise Visitor Center (Wonderland Trail)
+  it: Trekking — Paradise Visitor Center (Wonderland Trail)
+  es: Senderismo — Paradise Visitor Center (Wonderland Trail)
+  fr: Randonnée — Paradise Visitor Center (Wonderland Trail)
+  de: Wandern — Paradise Visitor Center (Wonderland Trail)
+
+description:
+  en: |
+    Mount Rainier's iconic alpine-meadow trailhead and Wonderland
+    Trail junction at 1647 m, famed for summer wildflower bloom and
+    close views of the mountain's south face.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "National Park Service Mount Rainier Paradise area trail and visitor information"
+    - "Washington Trails Association Skyline Trail / Paradise route guidance"
+  notes: |
+    Sub-spot of trekking-spot-wonderland-rainier cluster. Tier 1:
+    paved-access visitor hub, full services, year-round vehicle
+    evacuation, benign lower-meadow trail gradient.

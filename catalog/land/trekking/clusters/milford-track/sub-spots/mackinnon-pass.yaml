@@ -1,0 +1,55 @@
+slug: trekking-spot-milford-track-mackinnon-pass
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-milford-track
+parent_cluster: trekking-spot-milford-track
+region: pacific
+country_code: NZ
+
+coordinates:
+  center: { lat: -44.7900, lng: 167.7842 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mackinnon Pass sits at 1154 m and is the crux of the Milford
+    Track's third stage, a roughly 14 km day from Mintaro Hut to
+    Dumpling Hut with around 500 m of ascent and descent on rocky,
+    exposed alpine tussock and scree above tree-line. The crossing has
+    no shelter for several hours of exposed walking, passes sub-alpine
+    tarns and a memorial cairn, and offers views of Mount Balloon and
+    the Clinton Canyon, but weather can close in rapidly with sleet,
+    snow, or gale-force wind even in midsummer. DOC closes or reroutes
+    the pass in poor conditions; the only evacuation options are
+    retreat to Mintaro Hut or continuation to the Quintin Shelter, both
+    multi-hour walks with no vehicle or road access, making this the
+    most committing and weather-sensitive stage of the whole track.
+
+display_name:
+  en: Trekking — Mackinnon Pass
+  it: Trekking — Passo Mackinnon
+  es: Trekking — Paso Mackinnon
+  fr: Trekking — Col de Mackinnon
+  de: Wandern — Mackinnon Pass
+
+description:
+  en: |
+    Mackinnon Pass (1154 m) is the Milford Track's high point and only
+    true alpine crossing, an exposed saddle with sub-alpine tarns and
+    panoramic views of Mount Balloon. Reached on stage three between
+    Mintaro and Dumpling huts, it is fully exposed to weather with no
+    shelter along the crossing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Department of Conservation (DOC) New Zealand — Milford Track stage notes and weather closure protocol"
+    - "Fiordland National Park alpine crossing safety guidance"
+  notes: |
+    Sub-spot of trekking-spot-milford-track cluster. Tier 3: exposed
+    1154 m alpine saddle, no shelter for hours of walking, rapid
+    weather deterioration risk, multi-hour evacuation to nearest hut
+    on either side, DOC-monitored closure conditions.

@@ -1,0 +1,149 @@
+slug: trekking-spot-west-highland-way
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+country_code: GB
+sub_spots:
+  - trekking-spot-west-highland-way-loch-lomond-shore
+  - trekking-spot-west-highland-way-kingshouse-glencoe
+display_name:
+  en: Trekking — West Highland Way (Scotland)
+  it: Trekking — West Highland Way (Scozia)
+  es: Senderismo — West Highland Way (Escocia)
+  fr: Randonnée — West Highland Way (Écosse)
+  de: Wandern — West Highland Way (Schottland)
+description:
+  en: |
+    The West Highland Way is Scotland's original long-distance trail,
+    running 154 km (96 miles) from Milngavie near Glasgow north to
+    Fort William, at the foot of Ben Nevis. The route typically takes
+    6-8 days, tracing the eastern shore of Loch Lomond, crossing
+    Rannoch Moor, and descending into Glencoe before the final climb
+    over the Devil's Staircase to Kinlochleven and on to Fort William.
+    Altitude is modest by Alpine standards — from near sea level at
+    Loch Lomond to about 550 m at the Devil's Staircase — but terrain
+    is varied: lochside path, open moorland, forestry track, and
+    stony drove roads, with well-established waymarking throughout.
+    Accommodation is a mix of bunkhouses, B&Bs, hotels, and
+    wild-camping (permitted under Scottish access law in most
+    sections), with no formal permit required. The trail is walkable
+    April to October, though Scottish Highland weather is notoriously
+    changeable in any month — wind-driven rain and low cloud can arrive
+    with little warning even in summer, and the route is largely
+    unsheltered across Rannoch Moor and the higher Glencoe approaches.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m over open, unsheltered Rannoch Moor and the higher Glencoe approaches makes waymark-to-waymark navigation unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain, common in the Highlands, saturates peaty moorland sections and elevates hypothermia risk on exposed stretches.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on Rannoch Moor and the Devil's Staircase approach to Glencoe creates fall and wind-chill risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: high
+  notes: |
+    Human-powered trek with zero direct emissions per session and low
+    equipment dependency given the well-served accommodation network.
+    Carrying capacity sensitivity is high: the West Highland Way is
+    Scotland's busiest long-distance trail (roughly 40,000+ walkers per
+    year per NatureScot/Loch Lomond and The Trossachs National Park
+    Authority estimates), with wild-camping byelaws in force around
+    Loch Lomond during peak season to manage visitor pressure.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Loch Lomond and The Trossachs National Park Authority West Highland Way visitor guidance"
+    - "NatureScot Scottish Outdoor Access Code"
+    - "Cicerone The West Highland Way guidebook"
+  notes: |
+    Cluster inherits trekking base scoring unmodified (no matching
+    alpine-family region variant exists for the low-altitude Scottish
+    Highlands maritime regime). 26-week season reflects the long
+    April-October walking window relative to higher-altitude Nordic and
+    Alpine clusters.

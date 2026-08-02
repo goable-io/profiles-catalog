@@ -1,0 +1,158 @@
+slug: trekking-spot-alta-via-2-dolomiti
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - trekking-spot-alta-via-2-dolomiti-rifugio-plose
+  - trekking-spot-alta-via-2-dolomiti-passo-pordoi
+  - trekking-spot-alta-via-2-dolomiti-rifugio-passo-cereda
+display_name:
+  en: Trekking — Alta Via 2 (Dolomites)
+  it: Trekking — Alta Via 2 (Dolomiti)
+  es: Senderismo — Alta Via 2 (Dolomitas)
+  fr: Randonnée — Alta Via 2 (Dolomites)
+  de: Wandern — Alta Via 2 (Dolomiten)
+description:
+  en: |
+    Alta Via 2 is the longer and more technical sibling of Alta Via 1,
+    running roughly 160-180 km over 13-16 days from Rifugio Plose above
+    Bressanone south to Feltre. Altitude ranges from around 1200 m in the
+    forested approach valleys to nearly 2930 m near the Marmolada massif,
+    with terrain including rocky ridgelines, scree traverses, and several
+    short via-ferrata-protected sections that require a harness and
+    lanyard set. The route is served by CAI staffed refuges spaced along
+    each stage, with cable-car access available at a handful of points
+    (notably Passo Pordoi) for resupply or bail-out. No permit is
+    required, though guide engagement is commonly recommended for the
+    Marmolada-area via-ferrata stages. Optimal season is early July to
+    mid-September given later snow-melt on the higher passes; the
+    Sella massif crossing at Passo Pordoi and the Marmolada glacier
+    approach are the route's signature landmarks.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -15, s: 0.05 }
+      - { x: -5,  s: 0.40 }
+      - { x: 5,   s: 0.85 }
+      - { x: 14,  s: 1.00 }
+      - { x: 22,  s: 0.85 }
+      - { x: 30,  s: 0.40 }
+      - { x: 38,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 4,   s: 0.10 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 35, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 1.00 }
+      - { x: 7,  s: 0.80 }
+      - { x: 10, s: 0.50 }
+      - { x: 13, s: 0.20 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 300m in alpine terrain creates immediate route-finding hazard; high-altitude rescue often impossible.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_PRECIPITATION_ALPINE
+    description: Heavy active precipitation in alpine terrain triggers flash floods in gullies and rapidly degrades trail surface.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 50 knots at alpine altitude makes ridge traverses and exposed sections dangerous.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: EXTREME_COLD_ALPINE
+    description: Apparent temperature below -20°C in alpine terrain creates immediate frostbite risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 12
+  carrying_capacity_sensitivity: high
+  notes: |
+    Alta Via 2 is human-powered with zero direct emissions per session,
+    but has a shorter reliable weather window than Alta Via 1 due to
+    later snow-melt on the Marmolada-area high passes. Passo Pordoi's
+    cable-car station adds indirect emissions and concentrated day-
+    visitor footfall that the trekking route shares briefly. Carrying-
+    capacity sensitivity is high on the technical central stages where
+    trail erosion around via-ferrata anchor points is actively monitored
+    by CAI section maintenance teams.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Club Alpino Italiano (CAI) Alta Via 2 trail classification"
+    - "Rother Wanderführer — Dolomiten Höhenwege"
+  notes: |
+    Cluster inherits trekking-alpine scoring unchanged (weights, gates,
+    curves copied exactly — no material deviation identified for this
+    route relative to the regional baseline). typical_season_weeks
+    lowered to 12 vs the 14-week regional baseline to reflect the later
+    snow-clearance on AV2's higher central stages.

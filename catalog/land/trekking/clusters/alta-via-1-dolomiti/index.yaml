@@ -1,0 +1,157 @@
+slug: trekking-spot-alta-via-1-dolomiti
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - trekking-spot-alta-via-1-dolomiti-lago-di-braies
+  - trekking-spot-alta-via-1-dolomiti-rifugio-lagazuoi
+  - trekking-spot-alta-via-1-dolomiti-rifugio-pramperet
+display_name:
+  en: Trekking — Alta Via 1 (Dolomites)
+  it: Trekking — Alta Via 1 (Dolomiti)
+  es: Senderismo — Alta Via 1 (Dolomitas)
+  fr: Randonnée — Alta Via 1 (Dolomites)
+  de: Wandern — Alta Via 1 (Dolomiten)
+description:
+  en: |
+    Alta Via 1 is the classic and most-walked of the Dolomites' long
+    high-altitude routes, running roughly 120 km over 10-12 days from
+    Lago di Braies (1496 m) south to Belluno via La Pissa. Altitude
+    ranges from the trailhead lake up to around 2752 m near Rifugio
+    Lagazuoi, with terrain moving through karst plateau, mixed forest,
+    and rocky high passes on well-cairned trail; a handful of short
+    fixed-cable sections require basic scrambling confidence but no
+    technical gear. The route is served by CAI (Club Alpino Italiano)
+    staffed refuges spaced roughly one day's walk apart, and booking
+    ahead is strongly recommended in July-August. No permit is required,
+    though the northern stages pass through the Fanes-Sennes-Braies
+    Nature Park where camping is restricted to designated sites. Optimal
+    season is late June to late September; the emerald waters of Lago di
+    Braies and the WWI open-air museum around Rifugio Lagazuoi are the
+    route's best-known landmarks.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -15, s: 0.05 }
+      - { x: -5,  s: 0.40 }
+      - { x: 5,   s: 0.85 }
+      - { x: 14,  s: 1.00 }
+      - { x: 22,  s: 0.85 }
+      - { x: 30,  s: 0.40 }
+      - { x: 38,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 4,   s: 0.10 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 35, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 1.00 }
+      - { x: 7,  s: 0.80 }
+      - { x: 10, s: 0.50 }
+      - { x: 13, s: 0.20 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 300m in alpine terrain creates immediate route-finding hazard; high-altitude rescue often impossible.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_PRECIPITATION_ALPINE
+    description: Heavy active precipitation in alpine terrain triggers flash floods in gullies and rapidly degrades trail surface.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 50 knots at alpine altitude makes ridge traverses and exposed sections dangerous.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: EXTREME_COLD_ALPINE
+    description: Apparent temperature below -20°C in alpine terrain creates immediate frostbite risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    Alta Via 1 is human-powered with zero direct emissions per session,
+    but Lago di Braies itself suffers severe overcrowding — the Provincia
+    di Bolzano introduced a mandatory paid parking and shuttle-bus
+    reservation system in summer 2023 to cap daily vehicle arrivals.
+    CAI refuges along the route operate a first-come booking system with
+    helicopter resupply in the more remote southern huts, an indirect
+    emissions source. Carrying-capacity sensitivity is high on the
+    Braies-to-Fanes northern stages during July-August peak weeks.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Club Alpino Italiano (CAI) Alta Via 1 trail classification"
+    - "Parco Naturale Fanes-Senes-Braies visitor management plan"
+  notes: |
+    Cluster inherits trekking-alpine scoring unchanged (weights, gates,
+    curves copied exactly — no material deviation identified for this
+    route relative to the regional baseline).

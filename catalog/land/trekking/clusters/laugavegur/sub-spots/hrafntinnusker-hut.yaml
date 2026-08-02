@@ -1,0 +1,54 @@
+slug: trekking-spot-laugavegur-hrafntinnusker-hut
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-laugavegur
+parent_cluster: trekking-spot-laugavegur
+region: atlantic
+country_code: IS
+
+coordinates:
+  center: { lat: 63.9317, lng: -19.1667 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    The first stage out of Landmannalaugar climbs roughly 12 km and
+    400 m of ascent to the Hrafntinnusker hut at 1027 m, the highest
+    and most exposed point on the entire Laugavegur trail, typically
+    taking 4-6 hours. The path crosses obsidian (hrafntinna) lava
+    fields, geothermal steam vents, and semi-permanent snow patches
+    that persist into midsummer, with poor cairn visibility possible
+    in fog. A staffed Ferðafélag Íslands hut provides overnight
+    shelter and emergency contact, but the surrounding plateau is
+    fully exposed to wind and sudden temperature drops, and the
+    nearest vehicle access is a multi-hour walk back to
+    Landmannalaugar or onward to Álftavatn — making this a genuine
+    multi-day-trek waypoint rather than a day-hike destination.
+
+display_name:
+  en: Trekking — Hrafntinnusker Hut
+  it: Trekking — Rifugio di Hrafntinnusker
+  es: Senderismo — Refugio de Hrafntinnusker
+  fr: Randonnée — Refuge de Hrafntinnusker
+  de: Wandern — Hütte Hrafntinnusker
+
+description:
+  en: |
+    The trail's highest overnight stop at 1027 m, set among obsidian
+    lava fields and lingering snowfields with sweeping glacier vistas.
+    The stage-1 overnight for most Laugavegur trekkers, and the most
+    weather-exposed hut on the route.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ferðafélag Íslands (Icelandic Touring Association) Hrafntinnusker hut guidance"
+    - "Umhverfisstofnun (Icelandic Environment Agency) Fjallabak Nature Reserve visitor information"
+  notes: |
+    Sub-spot of trekking-spot-laugavegur cluster. Tier 2: staffed hut
+    on established multi-day trail, meaningful elevation gain, snow
+    and fog exposure at the trail's high point, moderate evacuation
+    distance to the nearest road access.

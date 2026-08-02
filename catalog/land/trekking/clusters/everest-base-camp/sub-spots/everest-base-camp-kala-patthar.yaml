@@ -1,0 +1,59 @@
+slug: trekking-spot-everest-base-camp-everest-base-camp-kala-patthar
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-everest-base-camp
+parent_cluster: trekking-spot-everest-base-camp
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 28.0069, lng: 86.8528 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    This sub-spot covers the terminal high-altitude objective of the
+    trek: Everest Base Camp itself (5364 m), reached across the Khumbu
+    Glacier's shifting lateral moraine from Gorak Shep, and the Kala
+    Patthar viewpoint (5644 m) — the world's highest 5000+ m point
+    routinely accessible to trekkers without technical climbing gear.
+    Both stages are typically done from Gorak Shep on summit-style
+    pre-dawn starts of 4-6 hours round trip, over loose talus and
+    glacial rubble with no marked path in places. Full AMS/HACE/HAPE
+    exposure applies at this elevation; a guide and Sagarmatha NP permit
+    are mandatory, tea-house beds exist only at Gorak Shep (5164 m) —
+    there is no overnight shelter at Base Camp or Kala Patthar
+    themselves — and evacuation beyond basic first aid requires
+    helicopter extraction, which is itself weather- and altitude-
+    limited. This is the most committing, remote, and physiologically
+    demanding stage of the entire EBC trek.
+
+display_name:
+  en: Trekking — Everest Base Camp & Kala Patthar
+  it: Trekking — Campo Base Everest e Kala Patthar
+  es: Senderismo — Campamento Base Everest y Kala Patthar
+  fr: Randonnée — Camp de Base Everest et Kala Patthar
+  de: Wandern — Everest-Basislager und Kala Patthar
+
+description:
+  en: |
+    The trek's terminal high-altitude objectives: Everest Base Camp
+    (5364 m) on the Khumbu Glacier moraine, and the Kala Patthar
+    viewpoint (5644 m) above Gorak Shep, offering the classic close-up
+    view of Everest's summit pyramid. Both are reached on exposed,
+    high-altitude, guide-led pre-dawn pushes from Gorak Shep.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Sagarmatha National Park high-altitude zone permit authority"
+    - "Himalayan Rescue Association AMS/HACE/HAPE field guidance"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+  notes: |
+    Sub-spot of trekking-spot-everest-base-camp cluster. Tier 3:
+    5000+ m terminal camp/viewpoint stage, loose glacial moraine and
+    talus terrain, no fixed overnight shelter on-site, full AMS
+    exposure, and helicopter-only complex evacuation.

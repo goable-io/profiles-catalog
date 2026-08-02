@@ -1,0 +1,53 @@
+slug: trekking-spot-manaslu-circuit-soti-khola-start
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-manaslu-circuit
+parent_cluster: trekking-spot-manaslu-circuit
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 28.2333, lng: 84.8500 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Soti Khola (700 m) is the road-head trailhead of the Manaslu
+    Circuit, reached by a 7-9 hour jeep or bus ride from Kathmandu, and
+    marks the point where the Manaslu Restricted Area Permit zone
+    begins. The initial trail stages follow the Budhi Gandaki river on
+    a well-trodden, moderately-graded path through subtropical
+    farmland and forest, with permanent suspension bridges over the
+    river's main crossings. Tea-houses are available though less dense
+    than on Everest or Annapurna, cell coverage is intermittent but
+    present in villages, and road-based evacuation back toward
+    Arughat/Kathmandu is feasible within a day. This is the most
+    accessible and forgiving stage of the circuit, before the trail
+    narrows into exposed gorge sections further up-valley.
+
+display_name:
+  en: Trekking — Soti Khola Start
+  it: Trekking — Partenza da Soti Khola
+  es: Senderismo — Inicio en Soti Khola
+  fr: Randonnée — Départ de Soti Khola
+  de: Wandern — Start ab Soti Khola
+
+description:
+  en: |
+    Soti Khola (700 m) is the Manaslu Circuit's road-head trailhead
+    along the Budhi Gandaki river, and the point where the Restricted
+    Area permit zone begins. The lower valley trail here is wide and
+    forested, with tea-houses at each stage.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Manaslu Conservation Area Project (MCAP) Soti Khola checkpoint"
+    - "Nepal Department of Immigration Restricted Area Permit (RAP) regulations"
+  notes: |
+    Sub-spot of trekking-spot-manaslu-circuit cluster. Tier 1: wide
+    low-altitude valley trail, permanent bridges, road-based
+    evacuation, moderate tea-house coverage.

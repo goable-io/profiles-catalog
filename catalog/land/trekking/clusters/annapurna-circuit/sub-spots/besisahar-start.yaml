@@ -1,0 +1,53 @@
+slug: trekking-spot-annapurna-circuit-besisahar-start
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-annapurna-circuit
+parent_cluster: trekking-spot-annapurna-circuit
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 28.2333, lng: 84.3833 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Besisahar (760 m) is the traditional road-head start of the
+    Annapurna Circuit, reached by a 5-6 hour bus or jeep ride from
+    Kathmandu or Pokhara. The trail from here follows the Marsyangdi
+    river valley on a wide, well-marked, gently-graded path through
+    subtropical rice-terrace villages, and although a motorable road
+    now extends jeep access well beyond Besisahar toward Chame and even
+    Manang, the trailhead retains its role as the circuit's low-
+    altitude starting gate. Tea-houses are dense and inexpensive at
+    this stage, river crossings are on permanent bridges, cell coverage
+    is reliable, and road-based evacuation to Pokhara is same-day. This
+    is the most benign and accessible stage of the entire circuit.
+
+display_name:
+  en: Trekking — Besisahar Start
+  it: Trekking — Partenza da Besisahar
+  es: Senderismo — Inicio en Besisahar
+  fr: Randonnée — Départ de Besisahar
+  de: Wandern — Start ab Besisahar
+
+description:
+  en: |
+    Besisahar (760 m) is the traditional trailhead of the Annapurna
+    Circuit, gateway to the Marsyangdi valley. Though a jeep road now
+    extends much further up-valley toward Manang, Besisahar remains
+    the circuit's low-altitude starting point, with dense budget
+    tea-houses and easy road access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Annapurna Conservation Area Project (ACAP) permit checkpoint at Besisahar"
+    - "Trailblazer Annapurna Circuit guidebook"
+  notes: |
+    Sub-spot of trekking-spot-annapurna-circuit cluster. Tier 1: wide
+    low-altitude valley trail, permanent bridges, dense tea-houses,
+    reliable cell coverage, same-day road evacuation.

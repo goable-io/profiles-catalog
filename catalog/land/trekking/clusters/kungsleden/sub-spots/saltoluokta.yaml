@@ -1,0 +1,52 @@
+slug: trekking-spot-kungsleden-saltoluokta
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-kungsleden
+parent_cluster: trekking-spot-kungsleden
+region: arctic
+country_code: SE
+
+coordinates:
+  center: { lat: 67.3789, lng: 18.5375 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Saltoluokta STF mountain station marks the ferry-crossing waypoint
+    in the southern sector of the Kungsleden cluster, reached from
+    Vakkotavare via a short boat crossing of Langas lake in summer.
+    The bus-and-boat combination replaces a multi-day walk-around when
+    the ferry runs, then a roughly 4-hour, 500 m ascent through birch
+    forest leads to the station itself. The staffed STF facility
+    offers full-service accommodation, meals, and a mountain guide
+    desk, but the boat-dependent access point introduces schedule and
+    weather-dependent logistics not present on purely trail-based
+    sections.
+
+display_name:
+  en: Trekking — Saltoluokta Mountain Station
+  it: Trekking — Stazione di montagna di Saltoluokta
+  es: Senderismo — Estación de montaña de Saltoluokta
+  fr: Randonnée — Station de montagne de Saltoluokta
+  de: Wandern — Bergstation Saltoluokta
+
+description:
+  en: |
+    A staffed STF mountain station in the southern Kungsleden sector,
+    reached by a scenic boat crossing of Langas lake followed by a
+    forested ascent. A key waypoint linking the trail toward Sarek and
+    the southern Lapland high country.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Svenska Turistföreningen (STF) Saltoluokta mountain station guidance"
+    - "Naturvårdsverket (Swedish Environmental Protection Agency) southern Kungsleden sector information"
+  notes: |
+    Sub-spot of trekking-spot-kungsleden cluster. Tier 2: staffed
+    full-service station, established forested ascent path, but
+    ferry-dependent access introduces schedule/weather logistics not
+    present at the road-accessible Abisko trailhead.
