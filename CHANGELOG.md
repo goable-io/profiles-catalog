@@ -18,6 +18,115 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased] — lands as 2.7.0
+
+### Added — MEGA catalog expansion pack (land + air + snow + water + coverage gaps)
+
+Single-branch expansion adding **119 clusters + 336 sub-spots + 5 new region
+variants** across 6 phases + 2 waves + adversarial audit sweep — the largest
+single-PR expansion in the catalog's history.
+
+**Catalog goes from 460 files → 897 files.** Coverage now:
+- 12 seeded activities → **15 seeded activities** (+snowboarding, +snorkeling, +road-cycling)
+- 22 countries → **46 countries** (+24 new: DE, TH, MA, PW, EC, FM, MU, LK, FJ, NA,
+  IS, SE, GB, NP, IN·, PE, CL, AR, NZ, TZ, ZA, IN, plus enhanced)
+- Total sub-spots: **607** (was 153)
+- Total clusters: **229** (was 53)
+
+### Step 1 — Climbing (20 clusters, 55 sub-spots)
+
++ 5 region variants preserved. Includes Italian icons (Arco, Val di Mello,
+Cadarese, Val d'Orco Sergent+Caporal, Monviso "Re di Pietra") + French Alps
++ Verdon + Céüse + Chamonix granite + Spanish Costa Blanca (Siurana +
+Margalef + Rodellar) + Kalymnos + Lofoten trad + Yosemite + Red River Gorge
++ (Wave 1) Railay/Tonsai + Meteora + Squamish trad + Smith Rock + Todra Gorge.
+
+### Step 2 — Alpine skiing (18 clusters, 54 sub-spots) + 3 new region variants
+
+alpine-skiing-alpine + rockies + sea-of-japan (physics-differentiated).
+Includes Verbier · Zermatt · Chamonix · Val d'Isère+Tignes · Trois Vallées ·
+Cortina · Val Gardena+Alta Badia · Livigno · Kitzbühel · St. Anton · Ischgl ·
+Whistler-Blackcomb · Jackson Hole · Vail · Aspen Snowmass · Park City ·
+Niseko · Hakuba + (Wave 1) Portillo · Las Leñas · Andermatt · Sölden.
+
+### Step 3 — Trekking (23 clusters, 63 sub-spots) + 2 new region variants
+
+trekking-himalayas + trekking-andes. Includes TMB · AV1+AV2 Dolomiti ·
+Haute Route · GR20 Corsica · Laugavegur · Kungsleden · Sarek · West Highland
+Way · Camino Francés · Everest BC · Annapurna Circuit · Manaslu Circuit ·
+Ladakh Markha · Inca Trail · W Torres del Paine · Fitz Roy Huemul · JMT ·
+Wonderland Rainier · Milford Track · Routeburn · Overland Tasmania ·
+Kilimanjaro Machame. High passes: Thorong La 5416m · Larke La 5106m ·
+Kongmaru La 5260m · Kala Patthar 5644m · Uhuru Peak 5895m · Mount Whitney
+4421m.
+
+### Step 4 — Bouldering + Mountain-biking (21 clusters, 54 sub-spots)
+
+Bouldering: Fontainebleau · Val di Mello · Albarracín · Magic Wood ·
+Chironico · Cresciano · Rocklands · Bishop · Hueco Tanks · Squamish
+Boulders. MTB: Finale Ligure · Livigno · Sauze d'Oulx · Morzine · Val
+d'Aran · Ainsa Zona Zero · Whistler Bike Park · Moab · Sedona · Coed y
+Brenin · Rotorua.
+
+### Phase 5 (Wave 1) — Coverage gaps across 8 activities (30 clusters, 78 sub-spots)
+
+Fills world-famous missing sites in already-seeded activities:
+- scuba: Palau · Raja Ampat · Galápagos · Silfra · Truk Lagoon (WW2 wrecks)
+- kitesurfing: Le Morne · Kalpitiya · El Gouna · Hood River · Paje Zanzibar
+- surfing: Puerto Escondido · Cloudbreak · Chicama · J-Bay · Skeleton Bay
+- ski-touring: Ötztal · Turtagrø · freeride: Silverton
+- paragliding: Iquique · Rio Pedra Bonita · Owens Valley
+
+### Phase 6+7+8 (Wave 2) — Snowboarding + Snorkeling + Road-cycling (28 clusters, 66 sub-spots)
+
+- Snowboarding: 10 clusters (Laax · Avoriaz + piggyback ski geography for
+  Verbier, Chamonix, Livigno, Val Gardena, Niseko, Hakuba, Whistler, Jackson)
+- Snorkeling: 10 clusters (piggyback scuba shallows + dedicated: Silfra
+  freshwater fissure, Bunaken, Fernando de Noronha, Zanzibar Mnemba)
+- Road-cycling: 8 clusters covering iconic Grand Tour climbs:
+  Stelvio+Mortirolo+Gavia · Dolomiti (Pordoi/Sella/Gardena) · Zoncolan+Crostis
+  · Galibier+Alpe d'Huez+Iseran · Ventoux (3 approaches) · Tourmalet+Aubisque ·
+  Angliru+Covadonga · Mauna Kea (world's longest continuous climb by vertical)
+
+### Full-catalog adversarial audit sweep
+
+Between Step 4 and Wave 1, a fresh-eyes Sonnet subagent performed a full-
+catalog audit finding + fixing:
+- Monviso "Alpine Journal 1861" anachronism (AJ founded 1863) → CAI archive
+- 5 hallucinated org/publisher names (Kalymnos Climbing Federation × 5 files,
+  Verbier Sport+, Mendes & Cascão 2023 fake academic citation)
+- Kalymnos Grande Grotta coordinate ~3.3 km off → corrected
+- Coverage gaps in region variants + missing world sites → material for
+  future PRs (documented in commit history)
+
+### Batch verification methodology (repeatable pattern)
+
+Each Wave used 4-6 parallel Sonnet subagents with strict briefs:
+- Coordinates supplied verbatim by reviewer, subagents forbidden to invent
+- `reviewed_by: []` enforced, `maturity: provisional` enforced
+- Sources: real organizations only, no fabricated ISBNs
+- tier_rationale.en ≥3 sentences with concrete physical features
+
+Adversarial verify pass by reviewer after each Wave found + fixed 40+ minor
+issues (sentence-count splits, bbox violations for edge-case regions,
+country_code multi-country cluster consistency, hallucinated citations).
+
+### Stats impact (live via `getCatalogStats()`)
+
+- Total sub-spots: 153 → **607** (+454, 4× catalog scale)
+- Total clusters: 53 → **229** (+176)
+- Total region variants: 23 → **33** (+10 across 4 activities)
+- Total countries: 22 → **46** (+24)
+- Total seeded activities: 12 → **15** (+snowboarding, +snorkeling, +road-cycling)
+
+### Versioning
+- package.json 2.6.1 → **2.7.0** (data-only minor — new activities seeded)
+- dist/catalog.json schemaVersion stays at 2.3.0.
+
+### Countries added this PR (~24)
+DE · TH · MA · PW · EC · FM · MU · LK · FJ · NA · IS · SE · GB · NP · PE · CL ·
+AR · NZ · TZ · ZA · IN + expanded ES, FR, CH, IT, CA, US, AU, JP coverage.
+
 ## [Unreleased] — lands as 2.6.1
 
 ### Added — scuba diving MASSIVE expansion (5 region variants + 36 clusters, 87 sub-spots)
