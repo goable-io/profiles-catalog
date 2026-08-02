@@ -1,0 +1,50 @@
+slug: alpine-skiing-spot-park-city-park-city-village
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-park-city
+parent_cluster: alpine-skiing-spot-park-city
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 40.6514, lng: -111.5081 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    Park City Village is the historic original side of the resort,
+    offering red and blue-piste cruising close to Park City's downtown
+    Main Street, served by a network of high-speed chairs including
+    the Silverlode and Payday lifts. Piste marking runs predominantly
+    blue-and-red with select black terrain on the upper mountain, and
+    grooming coverage is comprehensive daily. A terrain park is present
+    near the base area, and snowmaking secures the lower-mountain runs.
+    Ski patrol and lodge services concentrate at this historic base,
+    making it a well-supported intermediate cruising zone with
+    convenient town access.
+
+display_name:
+  en: Alpine Skiing — Park City Village (Base)
+  it: Sci Alpino — Park City Village (Base)
+  es: Esquí Alpino — Park City Village (Base)
+  fr: Ski Alpin — Park City Village (Base)
+  de: Alpiner Skilauf — Park City Village (Basis)
+
+description:
+  en: |
+    Park City Village base sector, the historic original side of the
+    resort — red and blue-piste cruising with a terrain park and
+    snowmaking-secured base.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Park City Mountain (Vail Resorts) Park City Village trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-park-city cluster. Tier 2: red and
+    blue-piste cruising, terrain park + snowmaking base, historic
+    original side of the resort.

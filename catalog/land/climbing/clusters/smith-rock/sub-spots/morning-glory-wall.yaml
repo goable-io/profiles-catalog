@@ -1,0 +1,50 @@
+slug: climbing-spot-smith-rock-morning-glory-wall
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-smith-rock
+parent_cluster: climbing-spot-smith-rock
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 44.3700, lng: -121.1400 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Morning Glory Wall, along the Crooked River on Smith Rock's popular
+    east-facing sectors, offers a broad spread of moderate sport routes
+    from roughly F6a to F7c on welded tuff, making it one of the park's most
+    approachable and heavily visited walls. Bolting is well-maintained
+    given consistent local climbing-coalition attention, and the routes'
+    single-pitch length keeps falls clean and easily managed for climbers
+    working through the intermediate grades. The short, flat approach from
+    the main river trail and the wall's status as a standard guided-tour
+    venue make it a reliable, family-friendly introduction to Smith Rock's
+    tuff climbing.
+
+display_name:
+  en: Climbing — Smith Rock Morning Glory Wall
+  it: Arrampicata — Smith Rock Morning Glory Wall
+  es: Escalada — Smith Rock Morning Glory Wall
+  fr: Escalade — Smith Rock Morning Glory Wall
+  de: Klettern — Smith Rock Morning Glory Wall
+
+description:
+  en: |
+    A popular, approachable river-side wall at Smith Rock with well-bolted
+    F6a-F7c welded-tuff sport routes — the standard introduction for
+    intermediate climbers and guided groups.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Oregon State Parks — Smith Rock State Park climbing guidance"
+    - "Smith Rock climbing guidebook (Alan Watts)"
+  notes: |
+    Sub-spot of climbing-spot-smith-rock cluster. Tier 2: well-bolted
+    intermediate single-pitch sport climbing with a short, flat river-trail
+    approach.

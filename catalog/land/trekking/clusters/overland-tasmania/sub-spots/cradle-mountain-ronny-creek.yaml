@@ -1,0 +1,51 @@
+slug: trekking-spot-overland-tasmania-cradle-mountain-ronny-creek
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-overland-tasmania
+parent_cluster: trekking-spot-overland-tasmania
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -41.6389, lng: 145.9542 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Ronny Creek, at 940 m, is the road-accessible northern trailhead
+    of the Overland Track below Cradle Mountain, reached via a wide,
+    duckboarded button-grass moorland path with negligible elevation
+    gain. PWS-permit-controlled access caps independent walkers at 60
+    per day during the peak season (1 October-31 May), with a shuttle
+    bus and visitor centre at the car park providing immediate
+    evacuation options for anyone turning back before committing to
+    the six-day traverse. Waldheim huts and PWS ranger presence are a
+    short walk away, making this the most accessible and forgiving
+    point on the whole track.
+
+display_name:
+  en: Trekking — Cradle Mountain / Ronny Creek Trailhead
+  it: Trekking — Sentiero di partenza Cradle Mountain / Ronny Creek
+  es: Trekking — Cabecera de sendero Cradle Mountain / Ronny Creek
+  fr: Trekking — Départ du sentier Cradle Mountain / Ronny Creek
+  de: Wandern — Trailhead Cradle Mountain / Ronny Creek
+
+description:
+  en: |
+    Ronny Creek (940 m) is the road-accessible northern trailhead of
+    the Overland Track, at the foot of Cradle Mountain. A duckboarded
+    moorland path leads from the shuttle-bus car park into the six-day
+    traverse, with PWS booking required 1 October-31 May.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tasmania Parks and Wildlife Service (PWS) — Overland Track booking and access information"
+    - "Cradle Mountain visitor centre trail notes"
+  notes: |
+    Sub-spot of trekking-spot-overland-tasmania cluster. Tier 1: road
+    and shuttle access, duckboarded flat moorland, capped low-density
+    permit system, ranger and shuttle nearby.

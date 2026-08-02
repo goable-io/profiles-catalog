@@ -1,0 +1,168 @@
+slug: trekking-spot-everest-base-camp
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-himalayas
+region: himalayas
+country_code: NP
+sub_spots:
+  - trekking-spot-everest-base-camp-lukla-airport
+  - trekking-spot-everest-base-camp-namche-bazaar
+  - trekking-spot-everest-base-camp-everest-base-camp-kala-patthar
+display_name:
+  en: Trekking — Everest Base Camp
+  it: Trekking — Campo Base dell'Everest
+  es: Senderismo — Campamento Base del Everest
+  fr: Randonnée — Camp de Base de l'Everest
+  de: Wandern — Everest-Basislager
+description:
+  en: |
+    The Everest Base Camp (EBC) trek is the flagship high-altitude trek of
+    the Khumbu region in Sagarmatha National Park, Nepal. The classic
+    round-trip route from Lukla (2860 m) to Everest Base Camp (5364 m) and
+    the Kala Patthar viewpoint (5644 m) covers roughly 130 km over 12-14
+    days, with a mandatory fly-in/fly-out at the short mountain airstrip
+    of Lukla. Terrain progresses from forested river valleys through
+    Sherpa villages to glacial moraine and high-altitude scree above
+    5000 m, with the Khumbu Glacier's lateral moraine forming the final
+    approach to Base Camp itself. The trail is served by a dense
+    tea-house network offering food, beds, and basic warmth at every
+    overnight stop, so no tents are required on the standard itinerary.
+    A Sagarmatha National Park entry permit and a Khumbu Pasang Lhamu
+    Rural Municipality entry permit are both required; independent
+    trekking is legal but most visitors travel with a licensed guide
+    given altitude risk. The safe trekking windows are the post-monsoon
+    Oct-Nov and pre-monsoon Mar-May seasons; the route is defined by its
+    signature landmarks — Namche Bazaar, Tengboche Monastery, Dingboche,
+    Gorak Shep, and the Base Camp icefall itself.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -20, s: 0.05 }
+      - { x: -10, s: 0.35 }
+      - { x: -2,  s: 0.75 }
+      - { x: 8,   s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 25,  s: 0.70 }
+      - { x: 32,  s: 0.30 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.75 }
+      - { x: 2,   s: 0.30 }
+      - { x: 5,   s: 0.05 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.60 }
+      - { x: 28, s: 0.20 }
+      - { x: 40, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.65 }
+      - { x: 9,  s: 0.30 }
+      - { x: 11, s: 0.10 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.30 }
+      - { x: 2000, s: 0.60 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.85 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: HIMALAYAN_MONSOON_DELUGE
+    description: Precipitation above 5 mm/h in the Khumbu signals monsoon-band arrival with rapid trail-washout + landslide + river-crossing failure risk — trek closes immediately.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: HIGH_ALTITUDE_WIND
+    description: Sustained wind above 40 knots grounds Lukla STOL flights and forces closure of the Kala Patthar / Base Camp high-altitude sections — hypothermia + wind-chill risk exceeds safe threshold.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_PASS
+    description: Visibility below 500 m at Lukla or on the Kala Patthar / Base Camp approach prevents fixed-wing STOL operations and safe glacial-moraine navigation.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: HIMALAYAN_HYPOTHERMIA
+    description: Apparent temperature below -20°C at Gorak Shep / Kala Patthar creates immediate frostbite + hypothermia risk during standard tea-house overnight exposure.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    The EBC corridor is the busiest high-altitude trekking route in
+    Nepal — Sagarmatha National Park recorded 45,000+ trekker entries in
+    peak spring seasons. Lukla flights, tea-house kerosene heating, and
+    porter/yak logistics drive a documented per-visitor carbon and
+    waste footprint. Sagarmatha Pollution Control Committee and the
+    Nepal Tourism Board (via TIMS-successor local permits) coordinate
+    waste-carry-out rules and visitor caps at Base Camp itself, where
+    overnight camping is limited to expedition season.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Sagarmatha National Park management + entry permit authority"
+    - "Nepal TAAN (Trekking Agencies' Association of Nepal) SOP"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+    - "Cicerone Trekking in the Everest Region guidebook"
+  notes: |
+    Cluster inherits trekking-himalayas dimensions, gates, and curves
+    unchanged — no material deviation identified for the EBC corridor.
+    Carrying-capacity notes reflect the route's status as Nepal's
+    highest-traffic high-altitude trek.

@@ -1,0 +1,48 @@
+slug: scuba-spot-galapagos-darwin-arch
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-galapagos
+parent_cluster: scuba-spot-galapagos
+region: pacific
+country_code: EC
+
+coordinates:
+  center: { lat: 1.6789, lng: -91.9944 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Darwin (the above-water arch itself collapsed in May 2021, but the
+    submerged pinnacle and dive site retain the name and structure) is
+    widely regarded as the world's premier hammerhead- and whale-shark
+    encounter site. With schooling scalloped hammerheads and seasonal whale
+    sharks (Jun-Nov) passing the offshore pinnacle in strong, unpredictable
+    current up to 2-3 kn. The site is liveaboard-only, reached after an
+    open-ocean crossing, and demands advanced open-water skill in blue-
+    water drift conditions — the cluster's most committing dive.
+
+display_name:
+  en: Scuba — Darwin Arch (Galápagos)
+  it: Immersione — Darwin Arch
+  es: Buceo — Arco de Darwin
+  fr: Plongée — Arche de Darwin
+  de: Tauchen — Darwin Arch
+
+description:
+  en: |
+    The world's top hammerhead- and whale-shark encounter pinnacle,
+    liveaboard-only with strong offshore drift current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Galápagos National Park Directorate Darwin/Wolf dive-site documentation"
+    - "Charles Darwin Foundation hammerhead shark aggregation reports"
+  notes: |
+    Sub-spot of scuba-spot-galapagos cluster. Tier 3: liveaboard-
+    only offshore pinnacle, cluster's flagship pelagic-encounter
+    site. The above-water Darwin Arch rock formation collapsed in
+    May 2021; the submerged dive site and pinnacle structure remain.

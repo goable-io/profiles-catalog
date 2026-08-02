@@ -1,0 +1,45 @@
+slug: snowboarding-spot-val-gardena-alta-badia-ciampinoi
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-val-gardena-alta-badia
+parent_cluster: snowboarding-spot-val-gardena-alta-badia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5525, lng: 11.7719 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Ciampinoi is Val Gardena's principal red-piste cruising sector. Home to
+    the famous Saslong World Cup downhill course's lower sections but
+    predominantly groomed for wide intermediate cruising rather than
+    technical racing lines outside competition weeks. Terrain width and
+    consistent grooming make it snowboarding-friendly across most
+    conditions, placing it at Tier 2 consistent with comparable red-piste
+    cruising sectors elsewhere in this catalog.
+
+display_name:
+  en: Snowboarding — Ciampinoi (Val Gardena)
+  it: Snowboard — Ciampinoi
+  es: Snowboard — Ciampinoi
+  fr: Snowboard — Ciampinoi
+  de: Snowboarden — Ciampinoi
+
+description:
+  en: |
+    Ciampinoi red-piste cruising sector in
+    Val Gardena — wide, snowboarding-friendly groomed runs.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Val Gardena Ciampinoi sector piste dossier"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-val-gardena-alta-badia cluster. Tier 2: wide
+    red-piste cruising terrain.

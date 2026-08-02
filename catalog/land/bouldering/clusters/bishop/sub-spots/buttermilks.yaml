@@ -1,0 +1,45 @@
+slug: bouldering-spot-bishop-buttermilks
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-bishop
+parent_cluster: bouldering-spot-bishop
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.3800, lng: -118.5892 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Buttermilks is a Sierra granite highball zone scattered across
+    open sagebrush terrain at the base of the range, featuring hueco- and
+    pocket-studded boulders with world-class hard testpieces such as
+    Evilution and Ambrosia, both graded V11 and both climbed well above
+    typical bouldering fall heights. Landings are uneven, rocky, and
+    sloped in places, demanding a full-pad-army setup (six or more pads)
+    and a coordinated multi-person spotter team on the taller lines.
+    Cell coverage is patchy and the nearest help is a drive from the
+    trailhead, adding real consequence to any fall gone wrong.
+
+display_name:
+  en: Bouldering — Bishop Buttermilks
+
+description:
+  en: |
+    The Buttermilks — Sierra granite hueco and pocket boulders at the
+    base of the range, home to world-class highball testpieces including
+    Evilution and Ambrosia (both V11). Full-pad-army, spotter-team zone.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Bishop Area Bouldering guidebook"
+    - "Bishop Area Climbers Coalition access information"
+  notes: |
+    Sub-spot of bouldering-spot-bishop cluster. Tier 3: granite highball
+    zone, uneven rocky landings, mandatory multi-pad and spotter team,
+    limited cell coverage.

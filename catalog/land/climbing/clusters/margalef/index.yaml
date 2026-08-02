@@ -1,0 +1,81 @@
+slug: climbing-spot-margalef
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: ES
+sub_spots:
+  - climbing-spot-margalef-la-finestra
+  - climbing-spot-margalef-espadelles
+  - climbing-spot-margalef-raco-de-la-finestra
+display_name:
+  en: Climbing — Margalef
+  it: Arrampicata — Margalef
+  es: Escalada — Margalef
+  fr: Escalade — Margalef
+  de: Klettern — Margalef
+description:
+  en: |
+    Margalef (Tarragona province, Catalonia, near Siurana) is a
+    conglomerate sport-climbing destination distinctive for its rounded
+    pocket and cobble-studded rock, offering steep, powerful, technical
+    climbing quite different in texture from the limestone at nearby
+    Siurana. Grades span roughly F5 to F9a+, with a concentration of
+    hard testpieces on overhanging orange-grey conglomerate walls.
+    Aspect and sector variety allow sun/shade rotation, and the
+    Mediterranean climate gives a long season, primarily October through
+    May, with summer climbable at altitude or in shade. Approach is via
+    short walks from village and roadside parking. The main physical
+    constraint is heat in summer and, since conglomerate can be more
+    friable than limestone in spots, occasional loose cobbles on
+    less-traveled or newer lines.
+
+dimensions:
+  - { name: temperature,   metric: apparent_temp_c,     weight: 0.29, curve: [ { x: -5, s: 0.05 }, { x: 2, s: 0.40 }, { x: 8, s: 0.85 }, { x: 14, s: 1.00 }, { x: 22, s: 0.95 }, { x: 30, s: 0.55 }, { x: 38, s: 0.15 } ] }
+  - { name: precipitation, metric: precipitation_mm_h,  weight: 0.23, curve: [ { x: 0, s: 1.00 }, { x: 0.1, s: 0.50 }, { x: 0.5, s: 0.15 }, { x: 2, s: 0.00 } ] }
+  - { name: wind_speed,    metric: wind_speed_kn,       weight: 0.13, curve: [ { x: 0, s: 1.00 }, { x: 8, s: 0.95 }, { x: 16, s: 0.70 }, { x: 25, s: 0.30 }, { x: 35, s: 0.00 } ] }
+  - { name: sun,           metric: sun_altitude_deg,    weight: 0.10, curve: [ { x: 0, s: 0.00 }, { x: 10, s: 0.65 }, { x: 25, s: 1.00 } ] }
+  - { name: uv_safety,     metric: uv_index,            weight: 0.08, curve: [ { x: 0, s: 1.00 }, { x: 3, s: 1.00 }, { x: 6, s: 0.85 }, { x: 9, s: 0.55 }, { x: 11, s: 0.30 } ] }
+  - { name: visibility,    metric: visibility_km,       weight: 0.08, curve: [ { x: 0, s: 0.00 }, { x: 1, s: 0.30 }, { x: 3, s: 0.75 }, { x: 10, s: 1.00 } ] }
+  - { name: rockfall,      metric: rockfall_risk_index, weight: 0.09, curve: [ { x: 0.0, s: 1.00 }, { x: 0.2, s: 0.95 }, { x: 0.45, s: 0.80 }, { x: 0.7, s: 0.55 }, { x: 1.0, s: 0.30 } ] }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation makes Margalef conglomerate slick and can loosen embedded cobbles on the pocketed rock. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Fog or low cloud below 500m obscures approach trails and sector route-finding. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained wind above 35 knots makes rope handling and communication unsafe on the exposed overhanging walls. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Below -5°C apparent, tendons stiffen and pocket-pulling grip deteriorates sharply. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: high
+  notes: |
+    Margalef sees growing international traffic as an alternative to
+    the more crowded Siurana, with local associations (FEEC) and the
+    village community coordinating bolting and trail maintenance.
+    Conglomerate rock is more susceptible to cobble loosening than
+    limestone, so climbers are advised to test holds before committing
+    weight, particularly on newer or less-traveled lines. Some sectors
+    have seasonal raptor nesting closures.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Margalef-region guidebook coverage"
+    - "FEEC (Federació d'Entitats Excursionistes de Catalunya) Margalef access documentation"
+  notes: |
+    Cluster overrides vs global climbing: rockfall weight raised
+    slightly (0.09) reflecting conglomerate's cobble-loosening tendency
+    relative to solid limestone; long season (36 weeks) reflecting the
+    mild Mediterranean climate similar to neighbouring Siurana.

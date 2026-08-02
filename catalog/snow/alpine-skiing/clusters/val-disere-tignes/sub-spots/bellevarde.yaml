@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-val-disere-tignes-bellevarde
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-val-disere-tignes
+parent_cluster: alpine-skiing-spot-val-disere-tignes
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.4467, lng: 6.9836 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Bellevarde (2827 m) is Val d'Isère's iconic sector and home to
+    the Face de Bellevarde, the World Cup downhill piste that hosted
+    the men's downhill at the 1992 Albertville Olympics and remains
+    an FIS race venue. Black and red pistes dominate the marked
+    network, with sustained steep pitch on the race face and full
+    ski-patrol coverage across the sector. Cable-car access from the
+    village delivers skiers directly to the top of the race piste,
+    and grooming is race-grade on the Bellevarde face itself outside
+    competition windows.
+
+display_name:
+  en: Alpine Skiing — Bellevarde (Val d'Isère)
+  it: Sci Alpino — Bellevarde
+  es: Esquí Alpino — Bellevarde
+  fr: Ski Alpin — Bellevarde
+  de: Alpiner Skilauf — Bellevarde
+
+description:
+  en: |
+    Val d'Isère's iconic sector at 2827 m, home to the Face de
+    Bellevarde Olympic and World Cup downhill piste. Black and red
+    pistes, cable-car access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIS Val d'Isère Bellevarde World Cup downhill venue documentation"
+    - "STVI Bellevarde piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-val-disere-tignes cluster. Tier 3:
+    black/red piste dominant race sector, 1992 Albertville Olympic
+    downhill venue.

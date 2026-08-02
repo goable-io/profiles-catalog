@@ -1,0 +1,154 @@
+slug: trekking-spot-camino-frances
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+country_code: ES
+sub_spots:
+  - trekking-spot-camino-frances-roncesvalles
+  - trekking-spot-camino-frances-cruz-de-ferro
+  - trekking-spot-camino-frances-santiago-de-compostela
+display_name:
+  en: Trekking — Camino Francés (Spain)
+  it: Trekking — Cammino Francese (Spagna)
+  es: Senderismo — Camino Francés (España)
+  fr: Randonnée — Chemin Français (Espagne)
+  de: Wandern — Camino Francés (Spanien)
+description:
+  en: |
+    The Camino Francés is the classic and most-walked route of the
+    Camino de Santiago pilgrimage network, running approximately 780 km
+    from Saint-Jean-Pied-de-Port on the French side of the Pyrenees to
+    Santiago de Compostela in Galicia. Most pilgrims complete it in
+    30-35 days, crossing the Pyrenees into Roncesvalles at 950 m, the
+    high meseta plateau of Castile, the symbolic Cruz de Ferro at
+    1504 m (the route's highest point) in the Montes de León, and the
+    green hills of Galicia before the cathedral square finish in
+    Santiago. Terrain is overwhelmingly well-marked dirt track, farm
+    road, and paved village street, with altitude ranging from near
+    sea level to just over 1500 m — physically demanding through sheer
+    distance and daily accumulation rather than technical difficulty.
+    An extensive network of albergues (pilgrim hostels) along the
+    entire route provides low-cost overnight lodging, and the
+    Pilgrim's Credential is required to access them and to receive the
+    Compostela certificate on arrival. The route is walkable
+    year-round, though summer (June-August) is hottest and most
+    crowded on the meseta, and spring/autumn shoulder seasons are
+    generally preferred for milder temperatures.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m makes route-finding hazardous on the exposed Pyrenean crossing into Roncesvalles and the Montes de León high sections.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain creates slippery farm-track and dirt-path sections and elevates hypothermia exposure on the unsheltered meseta and mountain passes.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on the Pyrenean crossing and the open Cruz de Ferro plateau creates fall and wind-chill risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Human-powered pilgrimage trek with zero direct emissions per session
+    and low equipment dependency given the extensive albergue network.
+    Carrying capacity sensitivity is high: the Camino Francés is by far
+    the most-walked Camino route (Oficina del Peregrino Santiago
+    reports well over 200,000 Compostela certificates issued annually
+    on this route alone), with albergue overcrowding and trail erosion
+    concentrated in peak summer months and around Sarria (the shortest
+    qualifying start point for the Compostela).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Oficina del Peregrino (Pilgrim's Office), Santiago de Compostela — Compostela statistics and Credential guidance"
+    - "Xunta de Galicia Camino de Santiago route management"
+    - "John Brierley, A Pilgrim's Guide to the Camino de Santiago (Camino Guides)"
+  notes: |
+    Cluster inherits trekking base scoring unmodified. Region field
+    omitted — the route crosses France and Spain, low meseta plateau,
+    and Galician hill country, none of which fits a single RegionEnum
+    cleanly. 40-week near-year-round season reflects the low-altitude,
+    village-supported nature of the pilgrimage relative to Nordic and
+    Alpine wilderness clusters.

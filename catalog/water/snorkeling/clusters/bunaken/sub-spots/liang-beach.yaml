@@ -1,0 +1,36 @@
+slug: snorkeling-spot-bunaken-liang-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-bunaken
+parent_cluster: snorkeling-spot-bunaken
+region: pacific
+country_code: ID
+
+coordinates:
+  center: { lat: 1.6167, lng: 124.75 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Liang Beach is Bunaken's main shore-entry snorkel point, a short swim from the sand directly onto the top of the barrier-reef wall at 3-6 m, with calm, sheltered water and no boat or current-handling requirement. It is the standard first-visit entry used by island homestays and day-trip operators for guests without dive experience. The simple, shore-based, low-skill access places it at tier 1 despite the wall's dramatic drop-off just beyond the reef crest.
+
+display_name:
+  en: Snorkeling — Liang Beach (Bunaken)
+  it: Snorkeling — Liang Beach
+  es: Snorkel — Liang Beach
+  fr: Snorkeling — Liang Beach
+  de: Schnorcheln — Liang Beach
+
+description:
+  en: |
+    Shore-swim entry to the top of the Bunaken barrier-reef wall at 3-6 m, calm and beginner-friendly.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bunaken National Marine Park (1991) management documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-bunaken. Tier 1: shore-entry reef-top, calm water, standard first-visit site.

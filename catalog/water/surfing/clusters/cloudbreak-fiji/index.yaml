@@ -1,0 +1,159 @@
+slug: surfing-spot-cloudbreak-fiji
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-pacific
+region: pacific
+country_code: FJ
+sub_spots:
+  - surfing-spot-cloudbreak-fiji-cloudbreak-main-reef
+  - surfing-spot-cloudbreak-fiji-restaurants
+display_name:
+  en: Surfing — Cloudbreak (Tavarua, Fiji)
+  it: Surf — Cloudbreak (Tavarua, Fiji)
+  es: Surf — Cloudbreak (Tavarua, Fiji)
+  fr: Surf — Cloudbreak (Tavarua, Fiji)
+  de: Surfen — Cloudbreak (Tavarua, Fidschi)
+
+description:
+  en: |
+    Cloudbreak is a left-hand reef pass off Tavarua Island in Fiji's
+    Mamanuca group, widely rated one of the best waves in the world for
+    its combination of size, power, and mechanical perfection. South
+    Pacific groundswell wraps onto a shallow coral reef pass to produce
+    long, hollow, rifling lefts from 1 m fun-size to 6 m+ tow-in
+    conditions, hosting the WSL Championship Tour's Fiji stop. The
+    adjacent reef of Restaurants offers a shorter, more forgiving right
+    and left at the same swells, giving the cluster an intermediate
+    reef-break alternative alongside the world-class main event. The
+    main South Pacific groundswell season runs March-October.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.30 }
+      - { x: 0.7, s: 0.70 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 2.0, s: 1.00 }
+      - { x: 3.5, s: 0.95 }
+      - { x: 5.0, s: 0.70 }
+      - { x: 7.0, s: 0.30 }
+      - { x: 10.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.40 }
+      - { x: 12, s: 0.80 }
+      - { x: 15, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.80 }
+      - { x: 18, s: 0.45 }
+      - { x: 25, s: 0.15 }
+      - { x: 35, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 8,  s: 0.4 }
+      - { x: 16, s: 0.85 }
+      - { x: 23, s: 1.00 }
+      - { x: 32, s: 0.95 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.08
+    curve:
+      - { x: 10, s: 0.2 }
+      - { x: 14, s: 0.5 }
+      - { x: 18, s: 0.85 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 1.00 }
+
+gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wave_height_m
+    condition: lt
+    value: 0.3
+    kind: feasibility
+    reason_code: FLAT_NO_SURF
+    description: Below ~0.3 m the sea is flat with no rideable waves, so surfing is not feasible regardless of the other conditions.
+  - metric: wave_height_m
+    condition: gt
+    value: 10
+    reason_code: EXTREME_PACIFIC_SURF
+    description: Wave height above 10m is unsafe for recreational surfing; Cloudbreak's biggest days are tow-in only over shallow reef.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND
+    description: Strong wind above 35 knots destroys wave shape and creates dangerous conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Cloudbreak is boat-access only from Tavarua or Namotu island resorts,
+    concentrating surfer numbers into a managed lineup with historically
+    limited daily capacity agreements between the resorts and local
+    villages. Shallow coral reef beneath the break makes the site
+    ecologically sensitive to board/fin strikes and anchor damage;
+    international-flight transport dominates the per-trip carbon
+    footprint for most visiting surfers.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Championship Tour Fiji venue documentation (Cloudbreak)"
+    - "Fiji Islands Surfing Association reef-break classification"
+    - "NOAA South Pacific groundswell climatology"
+  notes: |
+    Provisional cluster v1.0. Dimensions/gates copied verbatim from
+    surfing-pacific region variant (weights sum to 1.000). Expert review
+    pending. Sub-spots differentiate by tier: Cloudbreak main reef (T3,
+    world-class heavy left reef pass), Restaurants (T2, cleaner
+    intermediate reef alternative nearby).

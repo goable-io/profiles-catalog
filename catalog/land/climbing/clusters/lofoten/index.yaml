@@ -1,0 +1,160 @@
+slug: climbing-spot-lofoten
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+region: arctic
+country_code: "NO"
+sub_spots:
+  - climbing-spot-lofoten-presten
+  - climbing-spot-lofoten-vagakallen
+  - climbing-spot-lofoten-store-kalstind
+display_name:
+  en: Climbing — Lofoten
+  it: Arrampicata — Lofoten
+  es: Escalada — Lofoten
+  fr: Escalade — Lofoten
+  de: Klettern — Lofoten
+description:
+  en: |
+    The Lofoten archipelago (Nordland, Norway) offers Arctic granite
+    climbing rising directly from fjords and sea, with peaks and walls up
+    to 600-1000 m reaching from near sea level. Rock is generally solid,
+    clean granite with good friction, split by cracks suited to trad
+    protection alongside select bolted sport lines. The defining feature of
+    the season is the midnight sun: from roughly late May to late July,
+    continuous daylight allows climbing at any hour, extending the
+    practical climbing day well beyond temperate-latitude norms. Weather is
+    maritime-Arctic and can change rapidly — wind and precipitation off the
+    Norwegian Sea are the dominant hazards, and temperatures stay cool even
+    in summer. Season runs roughly June-August; snow and short daylight
+    close most objectives outside this window.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8, s: 0.05 }
+      - { x: -2, s: 0.30 }
+      - { x: 4,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+      - { x: 16, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 28, s: 0.25 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.65 }
+      - { x: 25, s: 0.25 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.06
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.10
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 1.5
+    reason_code: WET_ROCK
+    description: Active precipitation on Lofoten granite makes crack and friction climbing slick and signals rapidly deteriorating maritime-Arctic weather.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 500m on committing multipitch granite faces above the fjords creates serious route-finding and descent risk.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 32
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 32 knots off the Norwegian Sea creates fall and communication risk on exposed ridgelines and open faces.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -5
+    reason_code: EXTREME_COLD
+    description: Below -5°C apparent temperature, tendons stiffen and grip deteriorates dramatically; frostbite risk on exposed belay stances.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 12
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Lofoten climbing season is short (roughly June-August) and
+    concentrated around the midnight-sun window, producing sharp seasonal
+    crowding peaks on classic lines like Presten and Vågakallen. Access is
+    via small fishing villages with limited infrastructure; local
+    guidebook authors and the Norwegian Trekking Association (DNT)
+    encourage minimal-impact camping and respect for reindeer grazing land
+    near approach trails.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chris Craggs / Thomas Rennfeldt Lofoten climbing guidebook"
+    - "Norwegian Trekking Association (DNT) Lofoten route and access notes"
+  notes: |
+    Cluster overrides vs global climbing: temperature curve shifted several
+    degrees cooler than the base template (optimum ~10°C vs 14°C) to
+    reflect Arctic ambient conditions; wind weight raised to 0.22 given
+    Norwegian Sea exposure; season set to a short 12 weeks reflecting the
+    narrow June-August/midnight-sun climbing window.

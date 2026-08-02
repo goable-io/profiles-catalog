@@ -1,0 +1,162 @@
+slug: surfing-spot-chicama
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing
+region: pacific
+country_code: PE
+sub_spots:
+  - surfing-spot-chicama-chicama-main-point
+  - surfing-spot-chicama-el-hombre
+display_name:
+  en: Surfing — Chicama
+  it: Surf — Chicama
+  es: Surf — Chicama
+  fr: Surf — Chicama
+  de: Surfen — Chicama
+
+description:
+  en: |
+    Chicama (La Libertad, Peru) is home to the longest ridable wave on
+    Earth, a Guinness World Record left-hand point break that can run
+    for nearly 2 km on the best days. A rare combination of a straight,
+    shallow, boulder-and-sand-covered coastline and consistent Pacific
+    groundswell lets a single wave hold its shape across four connected
+    sections — Malpaso, Keys, El Point, and the Main Point — with El
+    Hombre marking the outer section that links up with the main point
+    at bigger swell. The wave is long but forgiving in steepness,
+    favoured by longboarders and cruising shortboarders rather than
+    barrel hunters. Season is year-round with the most consistent
+    groundswell March-November.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.45
+    curve:
+      - { x: 0.0, s: 0.20 }
+      - { x: 0.3, s: 0.60 }
+      - { x: 0.7, s: 0.95 }
+      - { x: 1.2, s: 1.00 }
+      - { x: 2.0, s: 0.90 }
+      - { x: 3.0, s: 0.60 }
+      - { x: 5.0, s: 0.20 }
+      - { x: 7.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.00 }
+      - { x: 4, s: 0.20 }
+      - { x: 7, s: 0.60 }
+      - { x: 10, s: 0.90 }
+      - { x: 12, s: 1.00 }
+      - { x: 20, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.80 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.80 }
+      - { x: 15, s: 0.55 }
+      - { x: 20, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 18, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wave_height_m
+    condition: lt
+    value: 0.3
+    kind: feasibility
+    reason_code: FLAT_NO_SURF
+    description: Below ~0.3 m the sea is flat with no rideable waves, so surfing is not feasible regardless of the other conditions.
+  - metric: wave_height_m
+    condition: gt
+    value: 6
+    reason_code: EXTREME_SURF
+    description: Wave height above 6m is unsafe for recreational surfing.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HIGH_WIND
+    description: Strong onshore wind above 30 knots creates disorganised, dangerous conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 44
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Chicama's fishing village economy has partially shifted toward surf
+    tourism, with lodges and board rentals concentrated near the main
+    point. The wave's exceptional length spreads surfers out across
+    nearly 2 km of point rather than concentrating them in a single
+    peak, reducing crowd pressure per linear metre of wave compared to
+    reef or beach-break clusters of similar fame. International-flight
+    transport dominates the per-trip footprint for most visiting
+    surfers.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Guinness World Records, longest rideable wave, Chicama, Peru"
+    - "Federación Deportiva Peruana de Tabla (surfing federation) spot classification"
+    - "International Surfing Association (ISA) wave classification guidelines"
+  notes: |
+    Provisional cluster v1.0. Dimensions/gates copied verbatim from base
+    surfing profile (weights sum to 1.000); no Pacific-specific region
+    variant override applied. Expert review pending. Sub-spots
+    differentiate by section: Chicama main point (T2, the long
+    intermediate-friendly point) and El Hombre (T2, outer connecting
+    section).

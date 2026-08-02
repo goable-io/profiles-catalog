@@ -1,0 +1,166 @@
+slug: kitesurfing-spot-paje-zanzibar
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing
+region: indian
+country_code: TZ
+sub_spots:
+  - kitesurfing-spot-paje-zanzibar-paje-reef
+  - kitesurfing-spot-paje-zanzibar-jambiani
+  - kitesurfing-spot-paje-zanzibar-kizimkazi
+display_name:
+  en: Kitesurfing — Paje (Zanzibar, Tanzania)
+  it: Kitesurf — Paje (Zanzibar, Tanzania)
+  es: Kitesurf — Paje (Zanzíbar, Tanzania)
+  fr: Kitesurf — Paje (Zanzibar, Tanzanie)
+  de: Kitesurfen — Paje (Sansibar, Tansania)
+description:
+  en: |
+    Paje, on Zanzibar's southeast coast, anchors East Africa's best-known
+    kitesurfing stretch — a long reef-flat lagoon system running south
+    through Jambiani to Kizimkazi, protected by a barrier reef roughly
+    1-2 km offshore. Two monsoon winds give it two seasons: kaskazi, the
+    NE monsoon (December-March), and kusi, the SE monsoon (June-September),
+    the stronger and more reliable of the two at 15-25 knots. Zanzibar's
+    large tidal range (up to 4 m) is a defining local factor — much of the
+    reef flat empties at low tide, so rideable water and wind window shift
+    through the day with the tide table. Warm water year-round (26-29°C).
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.45
+    curve:
+      - { x: 0, s: 0.00 }
+      - { x: 8, s: 0.20 }
+      - { x: 12, s: 0.60 }
+      - { x: 15, s: 0.95 }
+      - { x: 22, s: 1.00 }
+      - { x: 30, s: 0.70 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.4
+        penalty_coefficient: 0.15
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 180, to: 270, multiplier: 1.0 }
+        - { from: 90, to: 180, multiplier: 0.7 }
+        - { from: 0, to: 90, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.80 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 1.5, s: 0.85 }
+      - { x: 2.5, s: 0.55 }
+      - { x: 4.0, s: 0.20 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 18, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wind_speed_kn
+    condition: lt
+    value: 6
+    kind: feasibility
+    reason_code: NO_RIDABLE_WIND
+    description: Below ~6 knots there is not enough wind to generate power on any kite, so kitesurfing is not feasible regardless of the other conditions.
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: GALE_FORCE_WIND
+    description: Wind above 45 knots is unsafe for kitesurfing.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates monsoon squall conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: high
+  notes: |
+    Wind-powered activity with zero direct emissions per session. The
+    Paje-Jambiani-Kizimkazi reef flat is a shared artisanal fishing and
+    seaweed-farming zone as well as a kite destination; local carrying
+    capacity is sensitive to reef-flat crowding at low tide when
+    rideable water is confined to narrower channels. International-
+    flight transport to Zanzibar dominates per-trip footprint.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "International Kiteboarding Organization (IKO) condition guidelines"
+    - "Tanzania Meteorological Authority monsoon wind climatology"
+  notes: |
+    Cluster aggregates Paje's reef-flat lagoon, Jambiani to the south
+    (quieter beach, intermediate freeride), and Kizimkazi further south
+    (wave-riding and open-water freeride near the reef edge). Dimensions
+    and gates copied verbatim from the base kitesurfing profile (no
+    Indian-Ocean region variant exists yet).

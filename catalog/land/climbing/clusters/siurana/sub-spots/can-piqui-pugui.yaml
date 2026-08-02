@@ -1,0 +1,52 @@
+slug: climbing-spot-siurana-can-piqui-pugui
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-siurana
+parent_cluster: climbing-spot-siurana
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 41.2620, lng: 0.9270 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Can Piqui Pugui and its adjacent sectors form Siurana's world-class
+    hard-climbing showcase, home to routes such as La Rambla and the
+    Golpe de Estado area in the F8a-F9a+ range on steep, pocketed and
+    tufa-featured orange limestone. Bolting is modern stainless with
+    chain lower-offs, maintained given the sector's international
+    profile, but the routes are steep and powerful with technical
+    sequences between bolts by design. Approach is a short walk from
+    village-adjacent parking, with the cliff sitting above significant
+    exposure over the Siurana reservoir valley. Falls are generally
+    clean and air-y on the overhanging terrain; the tier reflects grade
+    severity and the sustained power-endurance demands rather than
+    hardware or approach hazards.
+
+display_name:
+  en: Climbing — Siurana Can Piqui Pugui
+  it: Arrampicata — Siurana Can Piqui Pugui
+  es: Escalada — Siurana Can Piqui Pugui
+  fr: Escalade — Siurana Can Piqui Pugui
+  de: Klettern — Siurana Can Piqui Pugui
+
+description:
+  en: |
+    Can Piqui Pugui and its adjacent sectors are Siurana's world-class
+    showcase, home to F8a-F9a+ testpieces including La Rambla on steep,
+    pocketed limestone.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Siurana-region guidebook coverage"
+    - "FEEC Siurana access documentation"
+  notes: |
+    Sub-spot of climbing-spot-siurana cluster. Tier 3: world-class hard
+    sport climbing, steep pocketed/tufa limestone, sustained
+    power-endurance grade band.

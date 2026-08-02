@@ -1,0 +1,50 @@
+slug: surfing-spot-cloudbreak-fiji-restaurants
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-cloudbreak-fiji
+parent_cluster: surfing-spot-cloudbreak-fiji
+region: pacific
+country_code: FJ
+
+coordinates:
+  center: { lat: -17.8567, lng: 177.1683 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Restaurants sits on the reef system adjacent to Cloudbreak, closer
+    to Tavarua Island, where the same South Pacific groundswell arrives
+    with less exposure and breaks over a reef shelf that produces a
+    shorter, cleaner-shaped wave than the main Cloudbreak peak. It
+    offers both left and right options and a defined channel for
+    paddling out, giving intermediate reef surfers a manageable
+    introduction to Fijian reef breaks at swell sizes where Cloudbreak
+    itself would be overwhelming. Coral bottom hazards remain present at
+    low tide, so it is not a true beginner wave.
+
+display_name:
+  en: Surfing — Cloudbreak Restaurants
+  it: Surf — Cloudbreak Restaurants
+  es: Surf — Cloudbreak Restaurants
+  fr: Surf — Cloudbreak Restaurants
+  de: Surfen — Cloudbreak Restaurants
+
+description:
+  en: |
+    A reef break adjacent to Cloudbreak, closer to Tavarua Island,
+    offering shorter and cleaner left and right options at swell sizes
+    where the main Cloudbreak peak is too heavy for all but experts. A
+    defined paddle-out channel and more moderate power make it the
+    intermediate reef-break stop in the cluster.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fiji Islands Surfing Association reef-break classification"
+  notes: |
+    Sub-spot of surfing-spot-cloudbreak-fiji cluster. Tier 2: cleaner,
+    shorter reef alternative to Cloudbreak with a defined channel, coral
+    bottom hazard remains at low tide.

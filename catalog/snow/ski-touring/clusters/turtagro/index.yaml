@@ -1,0 +1,175 @@
+slug: ski-touring-spot-turtagro
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-arctic
+region: arctic
+country_code: "NO"
+sub_spots:
+  - ski-touring-spot-turtagro-store-skagastolstind
+  - ski-touring-spot-turtagro-fannaraken
+display_name:
+  en: Ski Touring — Turtagrø / Hurrungane
+  it: Sci alpinismo — Turtagrø / Hurrungane
+  es: Esquí de travesía — Turtagrø / Hurrungane
+  fr: Ski de randonnée — Turtagrø / Hurrungane
+  de: Skitourengehen — Turtagrø / Hurrungane
+description:
+  en: |
+    Turtagrø, in Sogn og Fjordane's inner Jotunheimen, is the historic
+    mountaineering base for the Hurrungane range — Norway's steepest
+    and most alpine massif, and the springboard for the country's
+    classic high-alpine ski-touring objectives. Store Skagastølstind
+    (2405 m) and Fannaråken (2068 m, with a DNT hut on the summit)
+    define the range's spring-touring season, which runs roughly
+    March-June once the snowpack stabilises and daylight lengthens.
+    Unlike the coastal Arctic ranges (Lyngen, Lofoten), Hurrungane
+    is an inland continental-alpine massif at a lower latitude but
+    shares the same short-window spring-touring regime and DNT hut
+    infrastructure. Avalanche risk consult: Snøskredvarsel
+    (varsom.no), Sogn region.
+
+dimensions:
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.35 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: snow_depth
+    metric: swe_mm
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 0.00 }
+      - { x: 20,  s: 0.15 }
+      - { x: 55,  s: 0.70 }
+      - { x: 100, s: 1.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.117
+    curve:
+      - { x: -35, s: 0.00 }
+      - { x: -22, s: 0.40 }
+      - { x: -12, s: 0.85 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 5,   s: 0.30 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.143
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.55 }
+      - { x: 25, s: 0.20 }
+      - { x: 35, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.098
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.130
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.162
+    curve:
+      - { x: -6, s: 0.00 }
+      - { x: 0,  s: 0.40 }
+      - { x: 5,  s: 0.75 }
+      - { x: 12, s: 0.95 }
+      - { x: 20, s: 1.00 }
+
+gates:
+  # Feasibility floor (auto): no natural snowpack -> physically
+  # impossible at any skill level. Hard PREREQUISITE (Gate.kind='feasibility').
+  - metric: swe_mm
+    condition: lt
+    value: 20
+    kind: feasibility
+    reason_code: NO_SNOWPACK
+    description: Below ~20 mm snow water equivalent there is no natural snowpack, so ski touring is not feasible regardless of the other conditions.
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ARCTIC_WHITEOUT
+    description: Visibility below 400m in the Hurrungane's steep, complex terrain makes route-finding around Store Skagastølstind and Fannaråken unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: HIGH_WIND_ARCTIC
+    description: Sustained wind above 38 knots on the Hurrungane ridgelines makes exposed sections dangerous; wind-loaded slab forms aggressively.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: EXTREME_COLD_ARCTIC
+    description: Apparent temperature below -32°C creates immediate frostbite risk; standard Norwegian spring-touring kit is rated to this band.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely; consult Snøskredvarsel (varsom.no) Sogn-region bulletin before any ascent.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: low
+  notes: |
+    Turtagrø touring is human-powered with zero direct session
+    emissions. Equipment footprint is moderate-to-high (touring skis
+    + skins + boots + safety kit; glacier kit recommended on the
+    Skagastølstind approach). The Fannaråken and Skagastøl DNT huts
+    concentrate overnight traffic during the short spring window;
+    Jotunheimen National Park regulations apply to camping and
+    wildlife (wild reindeer calving zones) outside the immediate
+    Turtagrø/Hurrungane touring corridor.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Norges Snøskredvarsling (Snøskredvarsel) avalanche bulletin standards (varsom.no)"
+    - "Den Norske Turistforening (DNT) Hurrungane / Fannaråken hut documentation"
+    - "Norwegian Ski Touring Federation (NOTF) Jotunheimen site documentation"
+  notes: |
+    Cluster aggregates the two flagship Hurrungane spring-touring
+    summits, both based from Turtagrø. Dimensions/gates copied
+    verbatim from ski-touring-arctic region variant to preserve the
+    Norwegian spring-touring scoring regime, though Hurrungane
+    (~61.5°N) sits south of the strict arctic latitude bbox used
+    for coastal ranges like Lyngen/Lofoten/Tromsø (~69-70°N) — the
+    two sub-spots therefore omit the `region` tag rather than
+    mistag a bbox check, while the cluster keeps `region: arctic`
+    to reflect the shared scoring profile.

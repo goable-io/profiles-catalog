@@ -1,0 +1,50 @@
+slug: climbing-spot-siurana-ca-lonso
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-siurana
+parent_cluster: climbing-spot-siurana
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 41.2600, lng: 0.9200 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Ca l'Onso is a sustained sport sector on Siurana limestone offering
+    routes from F6b to F7c, well bolted with stainless hardware and
+    chain lower-offs maintained by the local climbing community. The
+    rock is characteristic Siurana orange-grey limestone with pocket and
+    edge features, less extreme in steepness than the plateau's hardest
+    sectors, giving a more moderate but still sustained sport-climbing
+    experience. Approach is a short walk from village-adjacent parking.
+    Falls are clean onto bolts on most lines; standard bolted-sport-route
+    residual risks apply, without the extreme run-outs or grade severity
+    of the cluster's flagship hard sector.
+
+display_name:
+  en: Climbing — Siurana Ca l'Onso
+  it: Arrampicata — Siurana Ca l'Onso
+  es: Escalada — Siurana Ca l'Onso
+  fr: Escalade — Siurana Ca l'Onso
+  de: Klettern — Siurana Ca l'Onso
+
+description:
+  en: |
+    Ca l'Onso offers sustained sport climbing from F6b to F7c on
+    stainless-bolted Siurana limestone — a moderate, well-equipped
+    sector for intermediate climbers.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Siurana-region guidebook coverage"
+    - "FEEC Siurana access documentation"
+  notes: |
+    Sub-spot of climbing-spot-siurana cluster. Tier 2: sustained
+    single-pitch sport, stainless hardware, moderate grade band, short
+    walk-in.

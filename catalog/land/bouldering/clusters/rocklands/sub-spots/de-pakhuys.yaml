@@ -1,0 +1,44 @@
+slug: bouldering-spot-rocklands-de-pakhuys
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-rocklands
+parent_cluster: bouldering-spot-rocklands
+country_code: ZA
+
+coordinates:
+  center: { lat: -32.2333, lng: 19.0500 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    De Pakhuys farm is Rocklands' flagship sector, a private-access
+    concentration of Cape sandstone testpieces spanning V8 to V15+ with
+    a global reputation for hard, technical highball lines on featured
+    orange rock. Landings are frequently uneven boulder-strewn fynbos
+    terrain requiring a full multi-pad stacking setup and an experienced
+    spotter team, and several classic lines top out well above safe
+    fall height. Access is gated through the farm's daily permit system,
+    and the remoteness of individual boulders from the farmhouse adds
+    evacuation time in the event of injury.
+
+display_name:
+  en: Bouldering — Rocklands De Pakhuys
+
+description:
+  en: |
+    De Pakhuys farm — the iconic Rocklands sandstone sector, with
+    concentrated V8-V15+ problems on featured orange rock. Private-access
+    via daily farm permit, with camping and a climbers' pub on-site.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Rocklands guidebook"
+    - "Vertical Life Rocklands sector guide"
+  notes: |
+    Sub-spot of bouldering-spot-rocklands cluster. Tier 3: highball
+    testpiece sector, uneven fynbos landings, mandatory multi-pad and
+    spotter team, remote from immediate help.

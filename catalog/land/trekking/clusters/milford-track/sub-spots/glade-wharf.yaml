@@ -1,0 +1,52 @@
+slug: trekking-spot-milford-track-glade-wharf
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-milford-track
+parent_cluster: trekking-spot-milford-track
+region: pacific
+country_code: NZ
+
+coordinates:
+  center: { lat: -44.7767, lng: 167.9083 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Glade Wharf is the boat-only trailhead at 100 m elevation, reached
+    by ferry across Lake Te Anau, marking the start of the Milford
+    Track's first 5 km stage to Clinton Hut through flat beech-forest
+    valley floor. Terrain is a wide, well-formed gravel path with
+    negligible elevation gain and no exposure. DOC-permit-controlled
+    access caps independent walkers at roughly 40/day during the
+    Great Walks season (late October to April), with a warden present
+    at Clinton Hut a short walk away. Cell coverage is limited but the
+    lake-boat evacuation route is straightforward and fast, making this
+    the most benign and forgiving point on the entire track.
+
+display_name:
+  en: Trekking — Glade Wharf Trailhead
+  it: Trekking — Sentiero di partenza Glade Wharf
+  es: Trekking — Cabecera de sendero Glade Wharf
+  fr: Trekking — Départ du sentier Glade Wharf
+  de: Wandern — Trailhead Glade Wharf
+
+description:
+  en: |
+    Glade Wharf is the boat-drop-off trailhead on Lake Te Anau where
+    the Milford Track officially begins, at just 100 m elevation.
+    Access is DOC-permit-controlled with a capped daily start of
+    around 40 walkers during the Nov-Apr Great Walks season, followed
+    by a gentle first stage to Clinton Hut through native beech forest.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Department of Conservation (DOC) New Zealand — Milford Track Great Walk booking and access information"
+    - "Fiordland National Park visitor centre trail notes"
+  notes: |
+    Sub-spot of trekking-spot-milford-track cluster. Tier 1: flat,
+    wide, well-formed valley trail, boat-access trailhead, DOC warden
+    nearby, capped low-density permit system, easy lake evacuation.

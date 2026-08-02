@@ -1,0 +1,51 @@
+slug: kitesurfing-spot-le-morne-kite-lagoon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-le-morne
+parent_cluster: kitesurfing-spot-le-morne
+region: indian
+country_code: MU
+
+coordinates:
+  center: { lat: -20.4600, lng: 57.3167 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    The main Le Morne lagoon, protected by a barrier reef roughly 1-2 km
+    offshore that kills incoming ocean swell and leaves a broad, flat,
+    shallow (chest-deep to waist-deep over sand) sheet of water. SE trade
+    wind arrives side-shore across the lagoon at a steady 15-25 knots
+    with low gust factor, and the reef prevents any current-driven
+    downwind hazard from reaching open water. This combination of flat
+    water, shallow bailout-friendly depth, and consistent clean wind
+    makes it one of the most beginner-friendly lagoons on the planet, and
+    it hosts a dense concentration of IKO-affiliated kite schools.
+
+display_name:
+  en: Kitesurfing — Le Morne Lagoon
+  it: Kitesurf — Laguna di Le Morne
+  es: Kitesurf — Laguna de Le Morne
+  fr: Kitesurf — Lagon du Morne
+  de: Kitesurfen — Le Morne Lagune
+
+description:
+  en: |
+    The flat-water heart of Le Morne — a reef-protected lagoon with warm,
+    shallow, turquoise water and textbook side-shore SE trades. The
+    launch beach in front of the kite-school cluster is the default entry
+    point for the whole bay, with the wave breaks of One Eye and Manawa
+    visible on the reef line beyond.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) Le Morne venue notes"
+    - "Mauritius Meteorological Services SE trade-wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-le-morne cluster. Tier 1: reef-protected
+    flat, shallow lagoon with consistent low-gust SE trade wind — the
+    archetypal beginner kite lagoon.

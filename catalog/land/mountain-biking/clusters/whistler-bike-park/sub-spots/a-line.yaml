@@ -1,0 +1,47 @@
+slug: mountain-biking-spot-whistler-bike-park-a-line
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-whistler-bike-park
+parent_cluster: mountain-biking-spot-whistler-bike-park
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.1133, lng: -122.9464 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    A-Line is the world's most-ridden intermediate flow trail, chair-lift
+    served from the Fitzsimmons Express and built entirely from constructed
+    berms, rollers, and table-top jumps rather than natural technical
+    features. Every jump has a roll-around or B-line option, so riders can
+    choose to send the tabletops or roll them, keeping consequence
+    moderate for an intermediate-graded blue/single-black trail. Surface
+    is machine-shaped hardpack that drains well but turns greasy fast in
+    rain, and the trail's popularity means significant traffic and
+    overtaking etiquette. Full-face helmet strongly recommended given
+    descent speed even though grading is intermediate.
+
+display_name:
+  en: Mountain Biking — Whistler A-Line
+description:
+  en: |
+    Chair-lift-served flow trail on Whistler Mountain and the signature
+    Whistler descent — machine-built berms and jumps that made "flow
+    trail" a mountain-bike-park category. Every table-top has a roll
+    option, making it accessible to strong intermediates while remaining
+    a bucket-list run for experts riding it flat-out.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Bike Park trail map"
+    - "Trailforks A-Line trail listing"
+  notes: |
+    Sub-spot of mountain-biking-spot-whistler-bike-park cluster. Tier 2:
+    graded flow trail with roll-around options on every jump, chairlift
+    access, moderate exposure at speed.

@@ -1,0 +1,151 @@
+slug: trekking-spot-john-muir-trail
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+region: rockies
+country_code: US
+sub_spots:
+  - trekking-spot-john-muir-trail-happy-isles-yosemite
+  - trekking-spot-john-muir-trail-mount-whitney-summit
+display_name:
+  en: Trekking — John Muir Trail (California)
+  it: Trekking — John Muir Trail (California)
+  es: Senderismo — John Muir Trail (California)
+  fr: Randonnée — John Muir Trail (Californie)
+  de: Wandern — John Muir Trail (Kalifornien)
+description:
+  en: |
+    The John Muir Trail is a roughly 340 km (211 mi), 3-4 week
+    high-Sierra classic running from Happy Isles in Yosemite Valley
+    (1250 m) south to the Mount Whitney summit (4421 m), the highest
+    point in the contiguous United States. The route crosses seven
+    major passes above 3300 m, largely on well-graded granite and dirt
+    trail through Yosemite, Ansel Adams Wilderness, Kings Canyon, and
+    Sequoia National Parks, with backcountry camping at durable
+    established sites rather than a hut system. Permits are quota-
+    controlled by the National Park Service / US Forest Service via
+    a competitive lottery (Yosemite trailhead) and Inyo National
+    Forest (Whitney exit); bear canisters are mandatory throughout.
+    Season runs roughly July-September, bounded by snowpack at the
+    high passes early and first snow late; afternoon thunderstorms
+    are a recurring hazard above tree line. Resupply is via a small
+    number of remote pack-stations or trail towns (Tuolumne Meadows,
+    Muir Trail Ranch, Independence via Kearsarge Pass).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m makes off-trail navigation unsafe, particularly at unmarked high passes above tree line.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain creates slippery granite trail, flash-flood risk in Sierra creek crossings, and hypothermia exposure above tree line.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed high passes (Forester, Muir, Whitney) creates fall risk on narrow switchbacks.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 12
+  carrying_capacity_sensitivity: high
+  notes: |
+    NPS/USFS enforce a strict trailhead-quota permit lottery for the
+    Yosemite (Happy Isles) start and a separate exit-quota system at
+    the Whitney Portal / Mt. Whitney Zone, both heavily oversubscribed
+    in peak season. Bear canisters are legally mandatory across the
+    length of the trail following decades of habituated-bear food
+    conflicts. Carrying capacity sensitivity is high given the JMT's
+    status as one of the most sought-after long-distance permits in
+    the US wilderness system.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "National Park Service Yosemite Wilderness permit and quota system"
+    - "Inyo National Forest Mt. Whitney Zone permit lottery rules"
+    - "John Muir Trail Association route and resupply guidance"
+  notes: |
+    Cluster inherits trekking base scoring exactly (no dimension/gate
+    overrides) — the Sierra Nevada high country lacks a dedicated
+    rockies region variant in this catalog phase, so weights/curves
+    are copied verbatim from the trekking base profile. 12-week
+    typical season reflects the narrow July-September high-Sierra
+    snow-free window, shorter than the base profile's 36-week default.

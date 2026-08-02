@@ -1,0 +1,50 @@
+slug: alpine-skiing-spot-las-lenas-marte-lift
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-las-lenas
+parent_cluster: alpine-skiing-spot-las-lenas
+region: andes
+country_code: AR
+
+coordinates:
+  center: { lat: -35.1500, lng: -70.0800 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Marte lift sector is Las Leñas' iconic advanced-and-expert
+    zone, serving steep, rocky Andean faces with a mix of marked black
+    pistes and hike-to freeride variants immediately accessible from
+    the lift's upper station. The terrain is largely treeless and
+    wind-scoured, with rock bands and couloir-like features typical of
+    the exposed Argentine Andes rather than the forested runs common
+    elsewhere. This exposure drives a well-documented roughly 30%
+    closure rate on high-wind days, making the sector highly weather-
+    sensitive even by expert-terrain standards. Ski patrol maintains
+    avalanche control on the open faces, but the terrain is freeride-
+    adjacent and reserved for confident advanced-to-expert skiers.
+
+display_name:
+  en: Alpine Skiing — Marte Lift (Las Leñas)
+  it: Sci Alpino — Marte Lift
+  es: Esquí Alpino — Marte Lift
+  fr: Ski Alpin — Marte Lift
+  de: Alpiner Skilauf — Marte Lift
+
+description:
+  en: |
+    Las Leñas' iconic expert sector, serving steep rocky Andean faces
+    with hike-to freeride access. Wind-exposed with a roughly 30%
+    closure rate on high-wind days.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Las Leñas resort piste map — Marte sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-las-lenas cluster. Tier 3: advanced-
+    and-expert hike-to freeride-adjacent terrain on wind-exposed rocky
+    Andean faces, roughly 30% wind-closure rate.

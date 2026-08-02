@@ -1,0 +1,53 @@
+slug: trekking-spot-camino-frances-roncesvalles
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-camino-frances
+parent_cluster: trekking-spot-camino-frances
+country_code: ES
+
+coordinates:
+  center: { lat: 43.0089, lng: -1.3208 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    Roncesvalles (950 m) is the Spanish-side arrival point after the
+    demanding roughly 25 km, 1200 m-ascent Pyrenean crossing from
+    Saint-Jean-Pied-de-Port — the single hardest single stage of the
+    entire Camino Francés, exposed to sudden fog, wind, and cold even
+    in summer, with limited escape options partway along the route.
+    Roncesvalles itself, however, is a well-developed, low-difficulty
+    arrival village: the iconic Colegiata Real hosts a large modern
+    albergue, a staffed pilgrim office, church, and restaurant, with
+    road access and regular bus service to Pamplona. Once at
+    Roncesvalles, terrain, shelter, and evacuation are all
+    straightforward — the tier reflects the village itself as a
+    trailhead/refuge, distinct from the preceding mountain crossing.
+
+display_name:
+  en: Trekking — Roncesvalles
+  it: Trekking — Roncisvalle
+  es: Senderismo — Roncesvalles
+  fr: Randonnée — Roncevaux
+  de: Wandern — Roncesvalles
+
+description:
+  en: |
+    The historic Collegiate Church and pilgrim refuge at Roncesvalles
+    (950 m), the first major stop in Spain after crossing the Pyrenees
+    from Saint-Jean-Pied-de-Port — an iconic and heavily used stage-1
+    overnight on the Camino Francés.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Oficina del Peregrino (Pilgrim's Office), Santiago de Compostela — route stage guidance"
+    - "John Brierley, A Pilgrim's Guide to the Camino de Santiago (Camino Guides)"
+  notes: |
+    Sub-spot of trekking-spot-camino-frances cluster. Tier 1: developed
+    village with large albergue, staffed pilgrim office, and road/bus
+    access, despite sitting at the end of the route's hardest single
+    mountain-crossing stage.

@@ -1,0 +1,50 @@
+slug: alpine-skiing-spot-hakuba-goryu-hakuba-47
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-hakuba
+parent_cluster: alpine-skiing-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.6717, lng: 137.8300 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Goryu and Hakuba 47 form a combined lift-linked sector immediately
+    south of Happo-One, connected by a shared gondola and chairlift
+    network across the two resort bases. The terrain is dominated by
+    red-marked cruising pistes with full grooming coverage and standard
+    ski-patrol presence, plus a terrain park at Hakuba 47 that gives the
+    sector its freestyle-skiing identity within the valley. The base
+    areas are gentler and more family-friendly than Happo-One's upper
+    mountain, with blue-piste runs serving beginners near both resort
+    base stations.
+
+display_name:
+  en: Alpine Skiing — Goryu / Hakuba 47
+  it: Sci Alpino — Goryu / Hakuba 47
+  es: Esquí Alpino — Goryu / Hakuba 47
+  fr: Ski Alpin — Goryu / Hakuba 47
+  de: Alpiner Skilauf — Goryu / Hakuba 47
+
+description:
+  en: |
+    The combined Goryu and Hakuba 47 sector, linked by a shared lift
+    network. Red-piste cruising dominates, with a terrain park at
+    Hakuba 47 and family-friendly blue runs near both resort bases.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hakuba Valley Tourism Bureau Goryu / Hakuba 47 piste map documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-hakuba cluster. Tier 2: red-piste
+    cruising with connected lift network between the two resorts and
+    family-friendly base terrain. No corresponding freeride or
+    ski-touring sub-spot currently exists at this location in the
+    catalog.

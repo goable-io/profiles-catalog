@@ -1,0 +1,37 @@
+slug: snorkeling-spot-gbr-cairns-snorkel-agincourt-reef
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-gbr-cairns-snorkel
+parent_cluster: snorkeling-spot-gbr-cairns-snorkel
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -15.9333, lng: 145.8167 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Agincourt Reef is a true outer ribbon-reef site facing the Coral Sea, reached by a multi-hour day-boat transfer from Port Douglas and entered from a fixed pontoon into 3-8 m of open reef-flat water with more exposure to swell and current than an inshore fringing reef. Snorkelers are briefed on pontoon-tethered swim boundaries and possible surface chop given the outer-reef position. The offshore location and open-water exposure place it at tier 2.
+
+display_name:
+  en: Snorkeling — Agincourt Reef
+  it: Snorkeling — Agincourt Reef
+  es: Snorkel — Agincourt Reef
+  fr: Snorkeling — Agincourt Reef
+  de: Schnorcheln — Agincourt Reef
+
+description:
+  en: |
+    GBR outer ribbon-reef snorkel from a day-boat pontoon out of Port Douglas, 3-8 m shallow reef facing the Coral Sea.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Great Barrier Reef Marine Park Authority (GBRMPA) zoning and tourism guidelines"
+    - "Quicksilver Cruises / Port Douglas outer-reef pontoon operational briefing"
+  notes: |
+    Sub-spot of snorkeling-spot-gbr-cairns-snorkel. Tier 2: outer ribbon-reef, open-water exposure, pontoon access.

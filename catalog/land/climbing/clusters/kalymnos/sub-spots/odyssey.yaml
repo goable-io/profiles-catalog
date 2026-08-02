@@ -1,0 +1,50 @@
+slug: climbing-spot-kalymnos-odyssey
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-kalymnos
+parent_cluster: climbing-spot-kalymnos
+region: aegean
+country_code: GR
+
+coordinates:
+  center: { lat: 36.9930, lng: 26.9450 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Odyssey is a sustained limestone sector offering routes in the F6b-F8a
+    range on generally vertical-to-slightly-overhanging grey rock, popular
+    with intermediate to advanced climbers working toward the harder grades
+    found elsewhere on the island. Hardware is stainless steel bolts with
+    chain or mailon lower-offs, maintained through federation re-bolting
+    campaigns. The approach is a short, well-marked walk-in from the
+    roadside, and the sector's moderate height keeps falls clean and
+    retrievable without complex rope-management. Shade coverage varies by
+    time of day, making it a popular morning or late-afternoon venue in the
+    warmer months.
+
+display_name:
+  en: Climbing — Kalymnos Odyssey
+  it: Arrampicata — Kalymnos Odyssey
+  es: Escalada — Kalymnos Odyssey
+  fr: Escalade — Kalymnos Odyssey
+  de: Klettern — Kalymnos Odyssey
+
+description:
+  en: |
+    A popular sustained sector for the F6b-F8a intermediate range on solid
+    grey limestone, well-bolted and easily approached — a staple stop for
+    climbers building toward Kalymnos's harder cave routes.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Kalymnos guidebook"
+    - "local Kalymnos bolting fund + Hellenic Federation of Mountaineering and Climbing (EOOA) bolting log"
+  notes: |
+    Sub-spot of climbing-spot-kalymnos cluster. Tier 2: sustained
+    intermediate-to-advanced single-pitch sport with stainless hardware and
+    clean, retrievable falls.

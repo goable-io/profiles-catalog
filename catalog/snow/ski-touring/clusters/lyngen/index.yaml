@@ -4,7 +4,7 @@ version: "1.1.0"
 category: snow
 extends: ski-touring-arctic
 region: arctic
-country_code: NO
+country_code: "NO"
 sub_spots:
   - ski-touring-spot-lyngen-ullstinden
   - ski-touring-spot-lyngen-stortinden

@@ -1,0 +1,54 @@
+slug: alpine-skiing-spot-aspen-snowmass-aspen-mountain
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-aspen-snowmass
+parent_cluster: alpine-skiing-spot-aspen-snowmass
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 39.1836, lng: -106.8175 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Aspen Mountain ("Ajax") rises to a 3417 m summit via the Silver
+    Queen gondola directly from downtown Aspen and is the complex's
+    iconic advanced-and-expert-only mountain, with no green pistes
+    anywhere on the trail map. Piste marking is entirely blue-and-up,
+    with a substantial share of black and double-black terrain on the
+    upper mountain; grooming is applied selectively to keep some
+    cruising runs accessible while preserving mogul and steep-pitch
+    character elsewhere. Aspen Mountain has hosted FIS World Cup
+    Winternational races for decades on its race-standard pitches, and
+    ski patrol maintains full coverage across the marked network. There
+    is no terrain park and minimal snowmaking given the reliable
+    altitude-driven snowpack; the mountain is reserved for
+    intermediate-and-above skiers given the absence of true beginner
+    terrain.
+
+display_name:
+  en: Alpine Skiing — Aspen Mountain (Ajax)
+  it: Sci Alpino — Aspen Mountain (Ajax)
+  es: Esquí Alpino — Aspen Mountain (Ajax)
+  fr: Ski Alpin — Aspen Mountain (Ajax)
+  de: Alpiner Skilauf — Aspen Mountain (Ajax)
+
+description:
+  en: |
+    Aspen Mountain (Ajax), 3417 m summit via the Silver Queen gondola —
+    the iconic advanced-and-expert-only mountain with no green pistes,
+    host of FIS World Cup Winternational races.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Aspen Skiing Company Aspen Mountain (Ajax) trail-map documentation"
+    - "FIS World Cup Winternational Aspen race-venue documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-aspen-snowmass cluster. Tier 3:
+    advanced-and-expert-only mountain, no green pistes, FIS World Cup
+    race history.

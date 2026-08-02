@@ -1,0 +1,55 @@
+slug: trekking-spot-tour-du-mont-blanc-col-du-brevent
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-tour-du-mont-blanc
+parent_cluster: trekking-spot-tour-du-mont-blanc
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.9333, lng: 6.8536 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Col du Brévent forms the final high ridge crossing of the TMB on
+    stages 10-11 above Chamonix, a roughly 5-6 hour, ~1000 m ascent day
+    on a narrow balcony trail with short fixed-cable-protected rock
+    steps and sustained exposure directly across the valley from the
+    Mont Blanc massif. Refuge de Bellachat sits on the approach for
+    overnight or emergency shelter, and the Brévent cable car station
+    nearby provides an unusually fast evacuation option compared to
+    most TMB high passes — a descent to Chamonix in minutes rather than
+    hours. The principal hazards are exposure on the narrow ridge
+    sections in wind or wet rock, and afternoon thunderstorm cells
+    typical of the Chamonix valley's orographic convection.
+
+display_name:
+  en: Trekking — Col du Brévent
+  it: Trekking — Col du Brévent
+  es: Trekking — Col du Brévent
+  fr: Trekking — Col du Brévent
+  de: Wandern — Col du Brévent
+
+description:
+  en: |
+    The final high balcony ridge of the TMB above Chamonix, on stages
+    10-11. An exposed, narrow trail delivering the trek's most iconic
+    face-on views of the Mont Blanc massif, with fast cable-car
+    evacuation available nearby.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Tour of Mont Blanc (Kev Reynolds)"
+    - "Fédération Française des Clubs Alpins et de Montagne (FFCAM) trail guidance"
+    - "Compagnie du Mont-Blanc Brévent cable car operational information"
+  notes: |
+    Sub-spot of trekking-spot-tour-du-mont-blanc cluster. Tier 2:
+    established multi-day trail with sustained exposure and short
+    fixed-cable sections, refuge on approach, unusually fast cable-car
+    evacuation option keeps this within intermediate rather than
+    committing difficulty.

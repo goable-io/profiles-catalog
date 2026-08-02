@@ -1,0 +1,46 @@
+slug: snowboarding-spot-avoriaz-arare
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-avoriaz
+parent_cluster: snowboarding-spot-avoriaz
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 46.195, lng: 6.75 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Arare sector combines intermediate red-piste cruising with
+    adjacent park lines and direct connections into the broader Portes
+    du Soleil lift network. Snowboarders can link toward Châtel and
+    Morzine without returning to the Avoriaz centre. Terrain is
+    groomed and moderately pitched, suited to red-level riders
+    building mileage across the interconnected domain rather than
+    requiring advanced technical commitment, consistent with a Tier 2
+    classification.
+
+display_name:
+  en: Snowboarding — Arare (Avoriaz)
+  it: Snowboard — Arare
+  es: Snowboard — Arare
+  fr: Snowboard — Arare
+  de: Snowboarden — Arare
+
+description:
+  en: |
+    Intermediate red-piste and park-line
+    sector connecting Avoriaz into the wider Portes du Soleil lift
+    network.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Portes du Soleil Arare sector piste dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-avoriaz cluster.
+    Tier 2: red-piste cruising with adjacent domain-linking lift access.

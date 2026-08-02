@@ -1,0 +1,159 @@
+slug: mountain-biking-spot-whistler-bike-park
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: mountain-biking
+region: rockies
+country_code: CA
+sub_spots:
+  - mountain-biking-spot-whistler-bike-park-a-line
+  - mountain-biking-spot-whistler-bike-park-schleyer-crabapple-hits
+  - mountain-biking-spot-whistler-bike-park-top-of-the-world
+display_name:
+  en: Mountain Biking — Whistler Bike Park
+  it: Mountain Bike — Whistler Bike Park
+  es: Ciclismo de Montaña — Whistler Bike Park
+  fr: VTT — Whistler Bike Park
+  de: Mountainbiken — Whistler Bike Park
+description:
+  en: |
+    Whistler Mountain Bike Park (British Columbia, Canada) is the world's
+    largest lift-served gravity bike park, opened 1999 on Whistler
+    Mountain's lower and upper flanks. Chairlift access via the Fitzsimmons
+    Express and Garbanzo/Whistler Village Gondola serves over 70 trails
+    spanning green flow to double-black-diamond, plus a full jump-park
+    progression. The dominant condition is trail-surface moisture: the
+    park's loamy, glacially-derived soil grips superbly when dry-to-tacky
+    but becomes greasy and dangerous within minutes of rain onset, and
+    operations close specific black-graded trails after sustained wet
+    weather. Alpine sections above 1850m add wind exposure and rapidly
+    shifting visibility not present at the village-base trails.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8,  s: 0.10 }
+      - { x: 2,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 16,  s: 1.00 }
+      - { x: 22,  s: 0.95 }
+      - { x: 28,  s: 0.70 }
+      - { x: 35,  s: 0.30 }
+      - { x: 40,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.20 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.85 }
+      - { x: 1.6, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_TRAIL_DAMAGE
+    description: Heavy active rain on Whistler's loamy soil creates dangerous traction loss and accelerates tread erosion — Whistler Blackcomb bike-park operations close graded trails above this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on the exposed alpine sections above 1850m destabilises riders at descent speed and can trigger lift closures.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: LOW_VISIBILITY_DESCENT
+    description: Visibility below 200m on Top of the World's alpine descent makes navigating technical sections at speed unsafe.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 40°C creates immediate heat-illness risk under sustained effort with helmet and body armour.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Whistler Blackcomb (Vail Resorts) operates the bike park on a lift-ticket
+    and trail-permit model, typically open mid-May to early-October snow
+    permitting. Trail counts and crowding are managed by the resort's own
+    grooming and closure schedule; several black trails close after heavy
+    rain to protect tread. E-bikes are prohibited on lift-served park
+    trails, keeping equipment dependency centred on downhill/enduro bikes,
+    full-face helmets, and body armour.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Bike Park trail map and operations guidelines"
+    - "Trailforks Whistler Mountain Bike Park trail database"
+    - "MTBparks Whistler Bike Park guide"
+  notes: |
+    Cluster inherits base mountain-biking scoring unchanged. Season is
+    shorter than the base 36-week default (22 weeks) because the park
+    operates on a snow-dependent lift schedule, mid-May to early October.

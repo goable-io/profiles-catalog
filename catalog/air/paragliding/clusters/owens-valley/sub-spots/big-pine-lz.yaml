@@ -1,0 +1,49 @@
+slug: paragliding-spot-owens-valley-big-pine-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-owens-valley
+parent_cluster: paragliding-spot-owens-valley
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.1650, lng: -118.2900 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    Big Pine is the Owens Valley's standard open-desert landing
+    zone, a wide flat stretch of valley floor with no obstacles and
+    generous margin for approach from any direction. The site
+    routinely serves as the target for both local sled-ride flights
+    and as an intermediate or final landing point along the valley's
+    classic north-south XC tasks launched from Walt's Point or
+    Gunter. Flat, obstacle-free desert terrain removes
+    landing-technique risk for low-time pilots, and the valley's
+    wide-open geometry means overshoot or undershoot rarely
+    encounters any hazard. A low-risk, high-capacity baseline LZ for
+    the whole valley.
+
+display_name:
+  en: Paragliding — Big Pine LZ (Owens Valley)
+  it: Parapendio — Big Pine (Owens Valley)
+  es: Parapente — Big Pine (Owens Valley)
+  fr: Parapente — Big Pine (Owens Valley)
+  de: Gleitschirmfliegen — Big Pine (Owens Valley)
+
+description:
+  en: |
+    Big Pine's standard open-desert landing zone in the Owens
+    Valley — flat, obstacle-free, and the standard XC-flight target.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "USHPA Owens Valley LZ documentation"
+    - "Owens Valley XC pilot community consolidated launch and LZ practice"
+  notes: |
+    Sub-spot of paragliding-spot-owens-valley cluster. Tier 1: wide
+    flat open-desert LZ, no obstacles, standard XC-flight target.

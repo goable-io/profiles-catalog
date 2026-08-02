@@ -1,0 +1,156 @@
+slug: mountain-biking-spot-morzine-portes-du-soleil
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: mountain-biking
+region: alpine
+country_code: FR
+sub_spots:
+  - mountain-biking-spot-morzine-portes-du-soleil-pleney-bike-park
+  - mountain-biking-spot-morzine-portes-du-soleil-canyon-trail
+  - mountain-biking-spot-morzine-portes-du-soleil-avoriaz-cross-border
+display_name:
+  en: Mountain Biking — Morzine / Portes du Soleil
+  it: Mountain Bike — Morzine / Portes du Soleil
+  es: Ciclismo de Montaña — Morzine / Portes du Soleil
+  fr: VTT — Morzine / Portes du Soleil
+  de: Mountainbiken — Morzine / Portes du Soleil
+description:
+  en: |
+    Morzine (Haute-Savoie, France) is the historic hub of the Portes
+    du Soleil, one of the world's largest interconnected lift-served
+    bike-park networks spanning the France-Switzerland border. Chairlift
+    access opens up hundreds of kilometres of DH, enduro, and flow trail
+    across multiple resort sides (Morzine, Avoriaz, and onward toward
+    Champéry), and the area is a fixture on the Enduro World Series
+    calendar. Alpine convective weather brings frequent afternoon
+    thunderstorms in summer; wet granite roots and rock gardens on the
+    signature descents become significantly more hazardous in rain.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8,  s: 0.10 }
+      - { x: 2,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 16,  s: 1.00 }
+      - { x: 22,  s: 0.95 }
+      - { x: 28,  s: 0.70 }
+      - { x: 35,  s: 0.30 }
+      - { x: 40,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.20 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.85 }
+      - { x: 1.6, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_TRAIL_DAMAGE
+    description: Heavy active rain creates dangerous traction loss and accelerates trail erosion — IMBA and trail-stewardship policy gates riding above this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed lift-served descents destabilises riders at speed.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: LOW_VISIBILITY_DESCENT
+    description: Visibility below 200m from alpine cloud makes descending technical DH/enduro sections at speed unsafe.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 40°C creates immediate heat-illness risk under sustained effort with helmet and pads.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 18
+  carrying_capacity_sensitivity: high
+  notes: |
+    Portes du Soleil bike-park lifts typically run mid-June through
+    mid-September, coordinated across the multi-resort lift consortium
+    (Portes du Soleil / Morzine-Avoriaz Tourisme). This is one of
+    Europe's highest-traffic MTB destinations, and heavy rider volume
+    on the signature descents (notably the Canyon trail) accelerates
+    tread erosion, prompting periodic trail closures for maintenance.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Portes du Soleil bike-park trail network documentation"
+    - "Enduro World Series Morzine round race notes"
+    - "Trailforks Morzine / Portes du Soleil trail database"
+  notes: |
+    Cluster inherits base mountain-biking scoring unchanged. 18-week
+    season reflects the Portes du Soleil multi-resort summer lift
+    operating window.

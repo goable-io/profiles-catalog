@@ -1,0 +1,45 @@
+slug: bouldering-spot-magic-wood-riverbed-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-magic-wood
+parent_cluster: bouldering-spot-magic-wood
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.5150, lng: 9.5250 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    The Riverbed sector is Magic Wood's hardest and most committing
+    area, home to Dreamtime — first ascended by Fred Nicole in 2000 and
+    historically credited as the first-ever confirmed V11 boulder
+    problem — alongside a cluster of other V6-V11 testpieces on
+    compact gneiss above the river gravel. Landings are uneven cobble
+    and boulder rubble, and several lines sit high enough above the
+    riverbed to require a full multi-pad stack and an experienced
+    spotting team. Access along the riverbank can be affected by high
+    water after rain.
+
+display_name:
+  en: Bouldering — Magic Wood Riverbed Boulders
+
+description:
+  en: |
+    Magic Wood's hardest sector along the riverbed, home to Dreamtime
+    (Fred Nicole, 2000) — historically the first confirmed V11 boulder
+    problem — and other V6-V11 testpieces on compact gneiss.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Averstal / Magic Wood bouldering guidance"
+    - "Vertical Life Magic Wood sector database"
+  notes: |
+    Sub-spot of bouldering-spot-magic-wood cluster. Tier 3: hard
+    V6-V11 testpieces, uneven riverbed landings, mandatory full-team
+    spotting.

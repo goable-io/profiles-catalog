@@ -1,0 +1,171 @@
+slug: trekking-spot-ladakh-markha-valley
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-himalayas
+region: himalayas
+country_code: IN
+sub_spots:
+  - trekking-spot-ladakh-markha-valley-spituk-start
+  - trekking-spot-ladakh-markha-valley-markha-village
+  - trekking-spot-ladakh-markha-valley-kongmaru-la-pass
+display_name:
+  en: Trekking — Ladakh Markha Valley
+  it: Trekking — Valle di Markha (Ladakh)
+  es: Senderismo — Valle de Markha (Ladakh)
+  fr: Randonnée — Vallée de Markha (Ladakh)
+  de: Wandern — Markha-Tal (Ladakh)
+description:
+  en: |
+    The Markha Valley trek is the classic multi-day route through
+    Hemis National Park in Ladakh, India's trans-Himalayan cold-desert
+    region. The route runs roughly 60-70 km over 6-9 days, starting
+    near Leh at the Spituk monastery trailhead (3300 m) and crossing
+    the Kongmaru La pass (5260 m) near its eastern end. Terrain is
+    high-altitude cold desert — arid river-valley walking on gravel
+    and sand tracks through willow-and-poplar oasis villages, framed by
+    stark, treeless mountainsides, transitioning to rock and scree on
+    the pass approaches. A homestay network in villages such as Skiu,
+    Markha, and Hankar provides overnight lodging and meals, so tents
+    are optional but recommended as backup. A Hemis National Park entry
+    permit (Inner Line Permit for the wider Ladakh region where
+    applicable) is required, and while independent trekking is
+    possible for experienced hikers, a local guide is recommended given
+    the pass crossing and river-ford sections. Ladakh's brief safe
+    trekking window is Jun-Sep, since the region lies in the Himalayan
+    rain shadow and is snowbound outside summer; Markha village and the
+    Kongmaru La crossing form the trek's signature stages.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -20, s: 0.05 }
+      - { x: -10, s: 0.35 }
+      - { x: -2,  s: 0.75 }
+      - { x: 8,   s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 25,  s: 0.70 }
+      - { x: 32,  s: 0.30 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.75 }
+      - { x: 2,   s: 0.30 }
+      - { x: 5,   s: 0.05 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.60 }
+      - { x: 28, s: 0.20 }
+      - { x: 40, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.65 }
+      - { x: 9,  s: 0.30 }
+      - { x: 11, s: 0.10 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.30 }
+      - { x: 2000, s: 0.60 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.85 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: HIMALAYAN_MONSOON_DELUGE
+    description: Precipitation above 5 mm/h in the Markha Valley signals rare but hazardous cloudburst conditions in this cold-desert region, with flash-flood risk in the narrow river gorge sections used as the trail — trek closes immediately.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: HIGH_ALTITUDE_WIND
+    description: Sustained wind above 40 knots forces closure of the Kongmaru La crossing — hypothermia + wind-chill risk exceeds safe pass-crossing threshold on this exposed trans-Himalayan pass.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_PASS
+    description: Visibility below 500 m on the Kongmaru La approach prevents cairn + trail navigation across the rock and scree high-pass terrain.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: HIMALAYAN_HYPOTHERMIA
+    description: Apparent temperature below -20°C on the Kongmaru La approach or at high camp creates immediate frostbite + hypothermia risk given Ladakh's continental cold-desert temperature swings.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    Hemis National Park administers entry permits for the Markha
+    Valley corridor, and the homestay-based lodging model (rather than
+    commercial tea-houses) distributes visitor impact across village
+    households while still creating documented water and firewood
+    pressure in this arid cold-desert ecosystem. The trek's brief
+    Jun-Sep season concentrates visitor volume sharply; local Ladakhi
+    trekking associations coordinate with Hemis NP on homestay
+    rotation and pack-animal grazing management to limit trail and
+    pasture degradation.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hemis National Park entry permit + management authority"
+    - "IMF (Indian Mountaineering Foundation) trekking-permit standards"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+    - "Cicerone Trekking in Ladakh guidebook"
+  notes: |
+    Cluster inherits trekking-himalayas dimensions, gates, and curves
+    unchanged — no material deviation identified for the Markha
+    Valley. Precipitation gate description adapted for Ladakh's
+    cold-desert cloudburst risk profile rather than monsoon-band
+    context, while retaining the same 5 mm/h threshold from the
+    parent region profile.

@@ -1,0 +1,46 @@
+slug: snorkeling-spot-silfra-crack-snorkel
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-silfra
+parent_cluster: snorkeling-spot-silfra
+region: atlantic
+country_code: IS
+
+coordinates:
+  center: { lat: 64.2567, lng: -21.1183 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    The Silfra Crack itself is the narrow tectonic fissure between the
+    North American and Eurasian plates, where snorkelers swim through a
+    confined rock channel in 2-4C water year-round — a physically demanding
+    cold-water environment that mandates a drysuit. Thermal layers, and a
+    certified guide even though no scuba certification is required. The
+    near-freezing temperature and enclosed fissure geometry are a
+    materially different and more demanding environment than a warm
+    tropical reef, but the swim itself follows a fixed, guide-controlled,
+    low-current route rather than open ocean drift or wall exposure,
+    landing it at tier 2.
+
+display_name:
+  en: Snorkeling — Silfra Crack
+  it: Snorkeling — Silfra Crack
+  es: Snorkel — Grieta de Silfra
+  fr: Snorkeling — Faille de Silfra
+  de: Schnorcheln — Silfra-Spalte
+
+description:
+  en: |
+    Guided surface-snorkel through the Silfra tectonic fissure between the North American and Eurasian plates; 2-4C glacial water, drysuit-mandatory, Þingvellir National Park permit required.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Þingvellir National Park (UNESCO World Heritage Site, 2004) management plan"
+    - "Icelandic National Park Silfra permit + drysuit-mandatory operating regulations"
+  notes: |
+    Sub-spot of snorkeling-spot-silfra. Tier 2: cold-water fissure snorkel, guide-only, drysuit-mandatory.

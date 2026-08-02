@@ -1,0 +1,55 @@
+slug: trekking-spot-kilimanjaro-machame-uhuru-peak
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-kilimanjaro-machame
+parent_cluster: trekking-spot-kilimanjaro-machame
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -3.0674, lng: 37.3556 }
+  radius_m: 1000
+
+tier: 3
+tier_rationale:
+  en: |
+    Uhuru Peak, at 5895 m, is the summit of Kilimanjaro and the
+    highest point in Africa, reached via a roughly 5-6 km, 1225 m
+    ascent from Barafu Camp (4670 m) that begins around midnight for
+    a dawn summit arrival. Terrain is loose volcanic scoria and scree
+    on steep switchbacks in darkness and extreme cold, with
+    temperatures routinely falling below -15°C with wind chill and
+    supplemental oxygen levels around half of sea level. This is the
+    single most physically demanding stretch of the climb, with high
+    rates of altitude sickness (AMS/HAPE/HACE) turning back climbers
+    even with mandatory guide supervision; evacuation above Barafu
+    Camp is on foot or by stretcher/wheeled litter carried by the
+    guide team down to lower altitude, as no vehicle or reliable
+    helicopter access exists at this elevation on the route.
+
+display_name:
+  en: Trekking — Uhuru Peak Summit
+  it: Trekking — Vetta Uhuru Peak
+  es: Trekking — Cumbre Uhuru Peak
+  fr: Trekking — Sommet Uhuru Peak
+  de: Wandern — Uhuru-Peak-Gipfel
+
+description:
+  en: |
+    Uhuru Peak (5895 m) is the summit of Kilimanjaro, Africa's highest
+    point, reached on a pre-dawn summit push from Barafu Camp (4670 m)
+    across loose scoria in extreme cold and thin air.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Kilimanjaro National Park Authority (KINAPA) — summit route and safety guidance"
+    - "Wilderness Medical Society altitude illness practice guidelines (Kilimanjaro-relevant altitude thresholds)"
+    - "Cicerone Kilimanjaro: The Trekking Guide guidebook coverage of the summit night ascent"
+  notes: |
+    Sub-spot of trekking-spot-kilimanjaro-machame cluster. Tier 3:
+    5895 m summit, pre-dawn extreme-cold ascent on loose scree, severe
+    altitude exposure with high AMS/HAPE/HACE incidence, foot/stretcher
+    evacuation only above Barafu Camp.

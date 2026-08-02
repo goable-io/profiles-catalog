@@ -1,0 +1,47 @@
+slug: alpine-skiing-spot-val-disere-tignes-solaise
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-val-disere-tignes
+parent_cluster: alpine-skiing-spot-val-disere-tignes
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.4442, lng: 6.9906 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Solaise sector (2551 m), reached via the Solaise gondola,
+    offers sunny-side red-piste cruising with an extended network of
+    family-friendly runs and a dedicated beginner area near the
+    mid-station. Grooming coverage is consistent across the marked
+    pistes, with ski patrol present throughout, and the sector's
+    south-facing aspect keeps conditions comfortable through the
+    core season. Mountain restaurants and a scenic viewing platform
+    at the Solaise station add to its standard intermediate appeal.
+
+display_name:
+  en: Alpine Skiing — Solaise (Val d'Isère)
+  it: Sci Alpino — Solaise
+  es: Esquí Alpino — Solaise
+  fr: Ski Alpin — Solaise
+  de: Alpiner Skilauf — Solaise
+
+description:
+  en: |
+    Sunny-side intermediate sector at 2551 m via the Solaise
+    gondola. Red-piste cruising with extended family-friendly
+    coverage.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "STVI Solaise piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-val-disere-tignes cluster. Tier 2:
+    red-piste dominant intermediate cruising, family-friendly
+    extended coverage.

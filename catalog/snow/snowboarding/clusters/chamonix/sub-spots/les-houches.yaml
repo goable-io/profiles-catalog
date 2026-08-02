@@ -1,0 +1,45 @@
+slug: snowboarding-spot-chamonix-les-houches
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-chamonix
+parent_cluster: snowboarding-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.8925, lng: 6.8003 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Les Houches, at the southern entrance to the Chamonix valley. Offers
+    wide family-friendly red pistes and a terrain park suited to
+    progression riders — a deliberate contrast to the valley's extreme-
+    terrain reputation elsewhere. Lower altitude gives it easier access and
+    gentler grades, and the sector's terrain park adds moderate freestyle
+    features without pro-line commitment, consistent with a Tier 2
+    classification.
+
+display_name:
+  en: Snowboarding — Les Houches (Chamonix)
+  it: Snowboard — Les Houches
+  es: Snowboard — Les Houches
+  fr: Snowboard — Les Houches
+  de: Snowboarden — Les Houches
+
+description:
+  en: |
+    Family-friendly wide red pistes and
+    terrain park at the valley entrance to Chamonix.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie du Mont-Blanc Les Houches sector piste dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-chamonix
+    cluster. Tier 2: wide intermediate red-piste terrain with terrain
+    park, distinct from the expert Grands Montets sector.

@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-rotorua-skyline-gondola-bike-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-rotorua
+parent_cluster: mountain-biking-spot-rotorua
+region: pacific
+country_code: NZ
+
+coordinates:
+  center: { lat: -38.1333, lng: 176.2500 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Skyline Rotorua's gondola-served bike park on Mount Ngongotaha offers
+    lift-accessed downhill and enduro trails graded from intermediate
+    flow to expert black lines, and hosts the Crankworx Rotorua stop —
+    signalling world-class trail construction and maintenance standards.
+    Gondola service removes the climbing effort, letting riders lap
+    graded descents repeatedly, with the core visitor-graded trails
+    built to intermediate red-line standard (berms, rollers, graded
+    jumps with roll-around options). Volcanic soil surface and forest
+    cover keep grip reasonable in light rain, though the park suspends
+    gondola operation in high wind, gating access outright rather than
+    just degrading conditions.
+
+display_name:
+  en: Mountain Biking — Rotorua Skyline Gondola Bike Park
+description:
+  en: |
+    Gondola-served downhill and enduro bike park on Mount Ngongotaha,
+    host venue for Crankworx Rotorua, with graded intermediate-to-expert
+    lines and lift-lapped descents.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Skyline Rotorua Gondola Bike Park trail information"
+    - "Crankworx Rotorua event and venue documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-rotorua cluster. Tier 2: gondola-
+    served graded descents, intermediate red-line standard with expert
+    options, Crankworx-standard trail construction.

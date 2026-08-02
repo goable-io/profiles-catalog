@@ -1,0 +1,43 @@
+slug: bouldering-spot-cresciano-cresciano-boulder-valley
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-cresciano
+parent_cluster: bouldering-spot-cresciano
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.2933, lng: 9.0417 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    The Cresciano boulder valley is one of the world's most celebrated
+    hard-bouldering venues. Home to Dreamtime — relocated here and one of
+    the most-repeated V15 boulder problems in the sport — alongside a
+    cluster of other V8-V15 testpieces on steep, compact granite. Landings
+    beneath the rain-shelter overhangs are often uneven and sloped, and the
+    steepness of the lines means falls can carry horizontal swing,
+    requiring a full multi-pad stack and an experienced spotting team even
+    on shorter boulders.
+
+display_name:
+  en: Bouldering — Cresciano Boulder Valley
+
+description:
+  en: |
+    Cresciano's main valley, a world-class hard-bouldering venue with
+    V8-V15 testpieces including Dreamtime, one of the sport's
+    most-repeated V15 problems, under rain-shelter overhangs.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Ticino bouldering guidance"
+    - "Vertical Life Cresciano sector database"
+  notes: |
+    Sub-spot of bouldering-spot-cresciano cluster. Tier 3: hard V8-V15
+    testpieces, steep overhang landings, mandatory full-team spotting.

@@ -1,0 +1,43 @@
+slug: snorkeling-spot-fernando-de-noronha-atalaia-natural-pool
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-fernando-de-noronha
+parent_cluster: snorkeling-spot-fernando-de-noronha
+region: atlantic
+country_code: BR
+
+coordinates:
+  center: { lat: -3.8617, lng: -32.4133 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    Atalaia is a shallow, tide-formed natural rock pool with calm, clear.
+    Ankle-to-chest-deep water — physically among the gentlest snorkel
+    environments in the cluster — used as a turtle nursery and closely
+    regulated by ICMBio with a roughly 100-visitor daily cap and mandatory
+    guided, no-sunscreen access. The shallow, current-free pool requires no
+    technical snorkeling skill, so despite the strict permit logistics the
+    water environment itself is unambiguously tier 1.
+
+display_name:
+  en: Snorkeling — Atalaia Natural Pool
+  it: Snorkeling — Piscina Naturale di Atalaia
+  es: Snorkel — Piscina Natural de Atalaia
+  fr: Snorkeling — Piscine Naturelle d'Atalaia
+  de: Schnorcheln — Atalaia-Naturpool
+
+description:
+  en: |
+    Tide-formed shallow natural pool with a strict ICMBio guided-tour daily limit (about 100 visitors/day) and a protected turtle nursery.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Atalaia natural-pool guided-tour daily-limit documentation"
+    - "ICMBio Parque Nacional Marinho de Fernando de Noronha visitor-quota regulations"
+  notes: |
+    Sub-spot of snorkeling-spot-fernando-de-noronha. Tier 1: shallow tide pool, calm, permit-limited access.

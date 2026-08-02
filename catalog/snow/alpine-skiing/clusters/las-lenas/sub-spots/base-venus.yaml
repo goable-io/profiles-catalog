@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-las-lenas-base-venus
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-las-lenas
+parent_cluster: alpine-skiing-spot-las-lenas
+region: andes
+country_code: AR
+
+coordinates:
+  center: { lat: -35.1417, lng: -70.0817 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The base area around the Venus and Neptuno lifts is Las Leñas'
+    sheltered valley-floor sector, offering intermediate red-piste
+    cruising close to the purpose-built village at roughly 2240 m.
+    The valley setting provides more consistent shelter from the wind
+    events that regularly close the upper Marte sector, making this
+    the reliable fallback zone on high-wind days. Grooming and
+    ski-patrol coverage are standard across the marked network, with
+    wide, moderate-gradient red pistes dominating the terrain profile
+    and easier links back to the village base.
+
+display_name:
+  en: Alpine Skiing — Base Venus (Las Leñas)
+  it: Sci Alpino — Base Venus
+  es: Esquí Alpino — Base Venus
+  fr: Ski Alpin — Base Venus
+  de: Alpiner Skilauf — Base Venus
+
+description:
+  en: |
+    Las Leñas' sheltered valley base sector around the Venus and
+    Neptuno lifts. Intermediate red-piste cruising with more consistent
+    wind protection than the upper mountain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Las Leñas resort piste map — Venus/Neptuno base sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-las-lenas cluster. Tier 2: sheltered
+    valley-floor intermediate red-piste cruising, reliable fallback
+    zone when upper-mountain wind closures occur.

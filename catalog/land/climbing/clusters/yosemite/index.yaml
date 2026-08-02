@@ -1,0 +1,146 @@
+slug: climbing-spot-yosemite
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing-alpine
+region: rockies
+country_code: US
+sub_spots:
+  - climbing-spot-yosemite-el-capitan-nose
+  - climbing-spot-yosemite-half-dome-nw-face
+  - climbing-spot-yosemite-cathedral-rocks
+display_name:
+  en: Climbing — Yosemite Valley
+  it: Arrampicata — Yosemite Valley
+  es: Escalada — Yosemite Valley
+  fr: Escalade — Yosemite Valley
+  de: Klettern — Yosemite Valley
+description:
+  en: |
+    Yosemite Valley (Sierra Nevada, California) is the reference big-wall
+    granite destination, with formations rising 700-900m off the valley
+    floor at 1200-2600m elevation. The cluster spans committing multi-day
+    trad/aid big walls (El Capitan, Half Dome) and shorter intermediate
+    multipitch (Cathedral Rocks), on clean, generally sound granite with
+    grades from 5.7 moderate trad to 5.14 free testpieces. Aspect varies by
+    formation — El Capitan is broadly southwest-facing and bakes in summer
+    afternoon sun, Half Dome's NW Face stays shaded most of the day, and
+    Cathedral Rocks offers a mix. Best conditions are spring (April-June)
+    and fall (September-October); summer heat on sun-exposed faces and
+    winter storms/snow both degrade conditions. Access requires an NPS
+    wilderness permit for overnight bivouac on the wall, and select
+    formations carry seasonal peregrine falcon nesting closures.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.26
+    curve:
+      - { x: -5, s: 0.05 }
+      - { x: 2,  s: 0.40 }
+      - { x: 8,  s: 0.85 }
+      - { x: 14, s: 1.00 }
+      - { x: 22, s: 0.95 }
+      - { x: 30, s: 0.55 }
+      - { x: 38, s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.16
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.13
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK, description: "Active precipitation on Yosemite granite sharply increases fall risk on friction slabs and degrades rope/hardware handling on multi-day walls." }
+  - { metric: visibility_km, condition: lt, value: 0.5, reason_code: LOW_VISIBILITY, description: "Visibility below 500m on 700-900m big-wall faces creates route-finding and party-communication risk, especially on the upper pitches of El Capitan and Half Dome." }
+  - { metric: wind_speed_kn, condition: gt, value: 35, reason_code: HIGH_WIND_EXPOSED, description: "Sustained wind above 35 knots on the exposed faces of El Capitan and Half Dome makes hauling, rope handling, and verbal communication between pitches unsafe." }
+  - { metric: apparent_temp_c, condition: lt, value: -5, reason_code: EXTREME_COLD, description: "Below -5°C apparent, tendons stiffen and grip deteriorates on granite crimps; frostbite risk rises sharply at exposed hanging belays." }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: high
+  notes: |
+    Big-wall routes (El Capitan, Half Dome) require an NPS wilderness
+    permit for overnight bivouac and portaledge use; queueing on The Nose
+    in peak spring/fall season is actively managed by Yosemite Search and
+    Rescue (YOSAR) to reduce rockfall from stacked parties. Select
+    formations carry seasonal peregrine falcon nesting closures
+    (typically spring into early summer). Cathedral Rocks and shorter
+    multipitch routes have lower gear dependency than the big walls.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SuperTopo Yosemite Big Walls guidebook (Reid & McNamara)"
+    - "National Park Service Yosemite climbing regulations and permit guidance"
+    - "American Alpine Club Accidents in North American Climbing, Yosemite incident reports"
+  notes: |
+    Cluster overrides vs climbing-alpine base: temperature curve reverted
+    to the warmer mid-latitude profile (base `climbing` curve) rather than
+    the cooler high-alpine curve, reflecting Yosemite Valley's 1200-2600m
+    elevation band versus true high-alpine terrain. Rockfall weight raised
+    to 0.13 (vs 0.08 default) given documented granite exfoliation events
+    on El Capitan and Half Dome. Season narrowed to 26 weeks (spring/fall)
+    to reflect summer heat avoidance on sun-exposed faces and winter
+    closures.

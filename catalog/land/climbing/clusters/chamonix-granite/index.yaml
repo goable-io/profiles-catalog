@@ -1,0 +1,86 @@
+slug: climbing-spot-chamonix-granite
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing-alpine
+region: alpine
+country_code: FR
+sub_spots:
+  - climbing-spot-chamonix-granite-aiguille-du-midi
+  - climbing-spot-chamonix-granite-envers-des-aiguilles
+  - climbing-spot-chamonix-granite-mont-blanc-du-tacul
+display_name:
+  en: Climbing — Chamonix Granite
+  it: Arrampicata — Granito di Chamonix
+  es: Escalada — Granito de Chamonix
+  fr: Escalade — Granite de Chamonix
+  de: Klettern — Granit von Chamonix
+description:
+  en: |
+    The Chamonix granite cluster covers the classic high-alpine
+    multipitch terrain of the Mont-Blanc massif, from cable-car-accessed
+    granite towers around the Aiguille du Midi (3842m) to glacier-
+    approached faces on Mont Blanc du Tacul and hut-based routes on the
+    Envers des Aiguilles wall system. Rock is compact, generally
+    excellent-quality granite, climbed via mixed trad and sport
+    protection at grades from F6a to F7c depending on route and era of
+    equipping. Altitude dominates conditions here: routes sit between
+    3200m and 4200m, so freeze-thaw rockfall, glacier crevasse hazard on
+    approaches, and rapid afternoon weather deterioration are the
+    defining physical constraints. Season is short, roughly July to
+    early September, and even within season a route can be in or out of
+    condition day to day depending on recent freeze-thaw cycling and
+    glacier state. Cable car (Aiguille du Midi) or hut-based approaches
+    (Envers hut) are required; there is no roadside access.
+
+dimensions:
+  - { name: temperature,      metric: apparent_temp_c,     weight: 0.22, curve: [ { x: -12, s: 0.10 }, { x: -2, s: 0.55 }, { x: 6, s: 0.90 }, { x: 12, s: 1.00 }, { x: 18, s: 0.95 }, { x: 24, s: 0.65 }, { x: 30, s: 0.25 }, { x: 36, s: 0.00 } ] }
+  - { name: precipitation,    metric: precipitation_mm_h,  weight: 0.21, curve: [ { x: 0, s: 1.00 }, { x: 0.2, s: 0.40 }, { x: 0.7, s: 0.10 }, { x: 2, s: 0.00 } ] }
+  - { name: wind_speed,       metric: wind_speed_kn,       weight: 0.16, curve: [ { x: 0, s: 0.95 }, { x: 5, s: 1.00 }, { x: 14, s: 0.80 }, { x: 22, s: 0.40 }, { x: 32, s: 0.05 } ] }
+  - { name: visibility,       metric: visibility_km,       weight: 0.14, curve: [ { x: 0, s: 0.00 }, { x: 1, s: 0.30 }, { x: 3, s: 0.70 }, { x: 8, s: 1.00 } ] }
+  - { name: sun,               metric: sun_altitude_deg,    weight: 0.08, curve: [ { x: 0, s: 0.00 }, { x: 8, s: 0.65 }, { x: 25, s: 1.00 } ] }
+  - { name: uv_safety,         metric: uv_index,            weight: 0.06, curve: [ { x: 0, s: 1.00 }, { x: 3, s: 1.00 }, { x: 6, s: 0.75 }, { x: 9, s: 0.35 }, { x: 11, s: 0.10 } ] }
+  - { name: rockfall,          metric: rockfall_risk_index, weight: 0.13, curve: [ { x: 0.0, s: 1.00 }, { x: 0.2, s: 0.95 }, { x: 0.45, s: 0.80 }, { x: 0.7, s: 0.55 }, { x: 1.0, s: 0.30 } ] }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 0.7,  reason_code: WET_ROCK_AND_STORM,  description: Active precipitation above 0.7 mm/h on Mont-Blanc massif granite signals fast-building convective storms and lightning risk at altitude. }
+  - { metric: wind_speed_kn,      condition: gt, value: 38,   reason_code: HIGH_WIND_RIDGE,      description: Sustained wind above 38 knots on exposed granite arêtes and ridges near the Aiguille du Midi creates fall and communication risk. }
+  - { metric: visibility_km,      condition: lt, value: 0.4,  reason_code: ALPINE_NAVIGATION,     description: Visibility below 400m on glacier approaches and multipitch descents makes crevasse and route-finding navigation unsafe. }
+  - { metric: apparent_temp_c,    condition: lt, value: -15,  reason_code: ALPINE_HYPOTHERMIA,    description: Apparent temperature below -15°C at 3200-4200m altitude creates immediate frostbite risk on belay stances. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 10
+  carrying_capacity_sensitivity: high
+  notes: |
+    Approach depends on the Aiguille du Midi cable car or the Envers des
+    Aiguilles hut system, both operated/managed by Compagnie du Mont-Blanc
+    and the CAF/FFCAM hut network respectively — capacity-limited and
+    weather-dependent. Peak summer weeks concentrate hundreds of parties
+    on classic lines (Frendo Spur, Cosmiques Arête, Grand Capucin area),
+    driving cumulative rockfall hazard from traffic and glacier retreat
+    exposing looser rock on approach paths.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie du Mont-Blanc Aiguille du Midi access and condition information"
+    - "FFCAM (Fédération Française des Clubs Alpins et de Montagne) Envers des Aiguilles hut and route documentation"
+    - "IFMGA Chamonix guide condition reports"
+  notes: |
+    Cluster inherits climbing-alpine base weights closely, with rockfall
+    weight raised to 0.13 reflecting well-documented glacier-retreat and
+    freeze-thaw rockfall trends on Mont-Blanc massif granite in recent
+    seasons. Season shortened to 10 weeks (roughly July-early September)
+    reflecting the narrow high-altitude window compared to lower Alpine
+    crags.

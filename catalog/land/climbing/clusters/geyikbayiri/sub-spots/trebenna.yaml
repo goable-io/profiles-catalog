@@ -1,0 +1,47 @@
+slug: climbing-spot-geyikbayiri-trebenna
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-geyikbayiri
+parent_cluster: climbing-spot-geyikbayiri
+region: mediterranean
+country_code: TR
+
+coordinates:
+  center: { lat: 36.7550, lng: 30.4850 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Trebenna is an adjacent limestone sector to Sarkıt with routes in the
+    F5c-F7c range on generally shaded aspects, making it a useful summer
+    and midday alternative when the main sun-facing sectors become too hot.
+    Hardware is stainless steel bolts with chain lower-offs, maintained
+    alongside the rest of the Geyikbayırı area by the local climbing
+    community. Approach is a short walk through pine forest from the
+    roadside; the moderate grade range and single-pitch height keep falls
+    clean and descents straightforward via lowering.
+
+display_name:
+  en: Climbing — Geyikbayırı Trebenna
+  it: Arrampicata — Geyikbayırı Trebenna
+  es: Escalada — Geyikbayırı Trebenna
+  fr: Escalade — Geyikbayırı Trebenna
+  de: Klettern — Geyikbayırı Trebenna
+
+description:
+  en: |
+    An adjacent shaded-aspect sector, F5c-F7c on well-bolted limestone —
+    the go-to alternative to sun-drenched Sarkıt during warmer hours.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Turkey guidebook"
+    - "Geyikbayırı local climbing community bolting and access documentation"
+  notes: |
+    Sub-spot of climbing-spot-geyikbayiri cluster. Tier 2: single-pitch
+    sport climbing, stainless bolted hardware, shaded aspect, short forest
+    approach.

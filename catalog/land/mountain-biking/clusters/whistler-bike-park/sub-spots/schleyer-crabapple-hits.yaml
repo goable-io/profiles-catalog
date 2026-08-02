@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-whistler-bike-park-schleyer-crabapple-hits
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-whistler-bike-park
+parent_cluster: mountain-biking-spot-whistler-bike-park
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.1100, lng: -122.9500 }
+  radius_m: 1000
+
+tier: 3
+tier_rationale:
+  en: |
+    Schleyer and Crabapple Hits form Whistler's expert-only big-hit
+    downhill line, with mandatory 15-20 ft table-tops and gap jumps that
+    have no roll-around option — riders committing to the trail must
+    clear each feature. Landing zones are steep and unforgiving of
+    under- or over-shooting, and the trail is regularly used for
+    professional and Crankworx-adjacent big-mountain film segments.
+    Full-face helmet and full body armour (chest, spine, knee/elbow) are
+    treated as mandatory rather than recommended by the bike park's own
+    trail-difficulty signage. Wet or greasy takeoffs materially raise
+    injury risk given the jump commitment.
+
+display_name:
+  en: Mountain Biking — Whistler Schleyer + Crabapple Hits
+description:
+  en: |
+    Double-black-diamond big-hit trail on Whistler Mountain combining the
+    Schleyer descent with the Crabapple Hits jump line — mandatory 15-20 ft
+    jumps with no roll-around, ridden by experts and pros. Full-face and
+    body armour are treated as mandatory equipment.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Bike Park trail map"
+    - "Trailforks Schleyer and Crabapple Hits trail listings"
+  notes: |
+    Sub-spot of mountain-biking-spot-whistler-bike-park cluster. Tier 3:
+    double-black expert-only, mandatory unrollable jumps, full-face +
+    body-armour standard equipment.

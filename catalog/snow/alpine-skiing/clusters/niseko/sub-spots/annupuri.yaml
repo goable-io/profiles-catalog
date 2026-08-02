@@ -1,0 +1,52 @@
+slug: alpine-skiing-spot-niseko-annupuri
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-niseko
+parent_cluster: alpine-skiing-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8500, lng: 140.6772 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Niseko Annupuri sector occupies the quieter western flank of Mt.
+    Niseko-Annupuri, served by a smaller network of fixed-grip and
+    high-speed chairlifts than Grand Hirafu on the opposite side of the
+    mountain. The piste network is dominated by red-marked cruising
+    runs with full grooming coverage and standard ski-patrol presence,
+    plus blue beginner terrain lower on the mountain near the base
+    lodge. Crowd density is notably lower than the Hirafu side of
+    Niseko United, making Annupuri the preferred sector for skiers
+    seeking uncrowded red-piste cruising within the same connected
+    lift network.
+
+display_name:
+  en: Alpine Skiing — Annupuri (Niseko)
+  it: Sci Alpino — Annupuri (Niseko)
+  es: Esquí Alpino — Annupuri (Niseko)
+  fr: Ski Alpin — Annupuri (Niseko)
+  de: Alpiner Skilauf — Annupuri (Niseko)
+
+description:
+  en: |
+    The quiet western sector of Niseko United. Annupuri delivers
+    red-piste cruising with lower crowd density than the Hirafu side,
+    plus gentle blue-piste terrain near the base lodge.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko United Annupuri Resort piste map and lift operational dossier"
+    - "Japan Ski Areas Association operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-niseko cluster. Tier 2: red-piste
+    cruising terrain with lower crowd density than the Hirafu sector.
+    Same general resort area as freeride-spot-niseko-annupuri but
+    scoped to the marked piste-skiing product rather than the
+    sidecountry descent lines.

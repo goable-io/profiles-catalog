@@ -1,0 +1,55 @@
+slug: trekking-spot-ladakh-markha-valley-kongmaru-la-pass
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-ladakh-markha-valley
+parent_cluster: trekking-spot-ladakh-markha-valley
+region: himalayas
+country_code: IN
+
+coordinates:
+  center: { lat: 33.9333, lng: 77.7250 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Kongmaru La (5260 m) is the Markha Valley trek's eastern high-pass
+    crossing, typically climbed from a high camp near Nimaling
+    (4700 m) in a committing 6-8 hour, roughly 12-14 km day over rock
+    and scree with a steep, loose final approach and a long descent
+    toward Chogdo/Sumdo at the edge of Hemis National Park. There is no
+    fixed shelter on the pass itself, and the descent side involves
+    exposed narrow gorge sections. A pre-dawn start is standard to
+    avoid afternoon wind. Full AMS exposure applies given the
+    accumulated altitude from Nimaling camp, cell coverage is absent on
+    the crossing, and evacuation once committed requires either a
+    multi-hour walk to Chogdo/Sumdo or helicopter extraction — the
+    most remote and demanding stage of the Markha Valley trek.
+
+display_name:
+  en: Trekking — Kongmaru La Pass
+  it: Trekking — Passo di Kongmaru La
+  es: Senderismo — Paso de Kongmaru La
+  fr: Randonnée — Col du Kongmaru La
+  de: Wandern — Kongmaru-La-Pass
+
+description:
+  en: |
+    Kongmaru La (5260 m) is the Markha Valley trek's eastern high-pass
+    crossing, climbed from Nimaling camp over exposed rock and scree
+    before a long descent toward Chogdo and the edge of Hemis National
+    Park.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hemis National Park Kongmaru La crossing guidance"
+    - "IMF (Indian Mountaineering Foundation) trekking-permit standards"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+  notes: |
+    Sub-spot of trekking-spot-ladakh-markha-valley cluster. Tier 3:
+    5260 m committing pass crossing, no shelter on-pass, full AMS
+    exposure, no cell coverage, and helicopter-only or multi-hour-walk
+    complex evacuation once committed.

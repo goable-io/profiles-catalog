@@ -1,0 +1,49 @@
+slug: ski-touring-spot-otztal-similaun
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-otztal
+parent_cluster: ski-touring-spot-otztal
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 46.7683, lng: 10.8850 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Similaun (3606 m) sits directly on the Austrian-Italian border
+    in the Ötztaler Alpen and is one of the classic "3600er" glaciated
+    ski-touring summits in the Eastern Alps. The standard approach
+    from the Similaunhütte crosses open glacier terrain with
+    crevassed sections requiring rope and crevasse-rescue kit,
+    especially once spring melt opens bridges. The summit ridge is
+    exposed with cornice risk on the north side, and the descent
+    line demands confident glacier skiing at altitude. This is a
+    spring-touring reference route reserved for advanced ski-tourers
+    with full glacier kit and, on first visits, a mountain guide.
+
+display_name:
+  en: Ski Touring — Similaun
+  it: Sci alpinismo — Similaun
+  es: Esquí de travesía — Similaun
+  fr: Ski de randonnée — Similaun
+  de: Skitourengehen — Similaun
+
+description:
+  en: |
+    Similaun (3606 m), the Ötztal's glaciated border summit between
+    Austria and Italy. Approached from the Similaunhütte across open
+    crevassed glacier; a spring-touring classic once bridges firm up.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Österreichischer Alpenverein (ÖAV) Similaunhütte touring dossier"
+    - "LWD Tirol historic bulletin archive"
+  notes: |
+    Sub-spot of ski-touring-spot-otztal cluster. Tier 3: glaciated,
+    crevassed approach, cross-border committing objective.

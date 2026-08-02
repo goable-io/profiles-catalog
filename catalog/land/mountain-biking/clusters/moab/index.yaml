@@ -1,0 +1,160 @@
+slug: mountain-biking-spot-moab
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: mountain-biking
+region: rockies
+country_code: US
+sub_spots:
+  - mountain-biking-spot-moab-slickrock-trail
+  - mountain-biking-spot-moab-whole-enchilada
+  - mountain-biking-spot-moab-captain-ahab
+display_name:
+  en: Mountain Biking — Moab
+  it: Mountain Bike — Moab
+  es: Ciclismo de Montaña — Moab
+  fr: VTT — Moab
+  de: Mountainbiken — Moab
+description:
+  en: |
+    Moab (Utah, USA) is the birthplace of modern American mountain biking,
+    built on the friction-grip properties of Navajo Sandstone slickrock
+    across BLM-managed desert terrain around the Colorado River and La Sal
+    Mountains. Riding here spans exposed sandstone domes at the desert
+    floor (1200m) to shuttle-served descents from subalpine La Sal terrain
+    above 3300m. Heat is the dominant hazard most of the year — the desert
+    floor regularly exceeds 35°C apparent temperature April-October — while
+    the sandstone itself becomes hazardously slick when wet, and flash
+    flood risk in slot-canyon-adjacent trail sections rises sharply during
+    monsoon season (July-September).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8,  s: 0.10 }
+      - { x: 2,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 16,  s: 1.00 }
+      - { x: 22,  s: 0.95 }
+      - { x: 28,  s: 0.70 }
+      - { x: 35,  s: 0.30 }
+      - { x: 40,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.20 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.85 }
+      - { x: 1.6, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_TRAIL_DAMAGE
+    description: Heavy active rain makes Navajo Sandstone slickrock hazardously slick and raises flash-flood risk in canyon-adjacent sections — BLM Sand Flats Recreation Area guidance discourages riding above this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed slickrock domes and the La Sal shuttle-descent ridgelines destabilises riders at descent speed.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: LOW_VISIBILITY_DESCENT
+    description: Visibility below 200m on the Whole Enchilada's high-alpine start makes descending technical sections at speed unsafe.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 40°C on the exposed desert-floor sandstone creates immediate heat-illness risk, common April-October at Moab.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Trails sit on Bureau of Land Management (BLM) land; Sand Flats
+    Recreation Area (covering Slickrock Trail) charges a day-use/fee
+    permit and caps camping capacity. Grand County and BLM trail
+    stewardship programs flag soil-crust (cryptobiotic) protection as a
+    core concern — riders are required to stay on marked slickrock and
+    singletrack. Shuttle-served descents like the Whole Enchilada
+    concentrate high visitor volume on a narrow trail corridor spanning
+    four ecosystems, making carrying-capacity sensitivity high.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bureau of Land Management (BLM) Moab Field Office trail and Sand Flats Recreation Area guidance"
+    - "Trailforks Moab trail database"
+    - "Singletracks Moab trail guides"
+  notes: |
+    Cluster inherits base mountain-biking scoring unchanged. Season is
+    longer than the Whistler lift-served park (40 weeks) since Moab's
+    desert and shuttle trails are not snow-dependent, though summer
+    midday heat routinely gates riding in practice.

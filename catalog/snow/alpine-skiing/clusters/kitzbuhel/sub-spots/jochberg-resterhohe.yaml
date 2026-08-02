@@ -1,0 +1,47 @@
+slug: alpine-skiing-spot-kitzbuhel-jochberg-resterhohe
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-kitzbuhel
+parent_cluster: alpine-skiing-spot-kitzbuhel
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.4067, lng: 12.4292 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Jochberg-Resterhöhe sector sits on the quieter side of the
+    Kitzbühel ski area, connected via the lift network to the Hahnenkamm
+    sector. Pistes are predominantly red-marked, extended cruising runs
+    across mid-mountain terrain with fewer crowds than the Hahnenkamm and
+    town-facing sectors. Grooming is daily, snowmaking coverage secures
+    the lower connecting pistes, and ski patrol coverage is standard
+    chairlift-network access. The sector suits intermediate skiers
+    looking for longer, less-congested red-piste runs away from the
+    Streif's race-week crowds.
+
+display_name:
+  en: Alpine Skiing — Jochberg-Resterhöhe (Kitzbühel)
+  it: Sci Alpino — Jochberg-Resterhöhe
+  es: Esquí Alpino — Jochberg-Resterhöhe
+  fr: Ski Alpin — Jochberg-Resterhöhe
+  de: Alpiner Skilauf — Jochberg-Resterhöhe
+
+description:
+  en: |
+    Quieter, lift-connected extended red-piste cruising sector on the
+    Jochberg-Resterhöhe side of the Kitzbühel ski area.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Kitzbüheler Bergbahn AG (Kitzski) Jochberg-Resterhöhe lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-kitzbuhel cluster. Tier 2: red-piste
+    extended intermediate cruising, chairlift-served, quieter side of
+    resort.

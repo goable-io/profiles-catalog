@@ -1,0 +1,52 @@
+slug: climbing-spot-chamonix-granite-mont-blanc-du-tacul
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-chamonix-granite
+parent_cluster: climbing-spot-chamonix-granite
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.8556, lng: 6.8875 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    The east face of Mont Blanc du Tacul, including the Grand Capucin
+    granite triangle, offers high-alpine trad and mixed multipitch
+    climbing up to roughly 4200m, among the most committing terrain in
+    the cluster. Protection on established lines mixes trad gear with
+    some fixed bolts on the steeper granite faces, but hardware is sparse
+    by sport-climbing standards and route-finding requires alpine
+    experience. Approach is via glacier from the Aiguille du Midi cable
+    car station, crossing crevassed terrain that demands roped travel and
+    crevasse-rescue capability. Altitude (up to 4200m) magnifies every
+    weather and cold-injury risk, and afternoon storm buildup is rapid;
+    this is expedition-style alpine climbing with PGHM helicopter rescue
+    as the only realistic evacuation option.
+
+display_name:
+  en: Climbing — Mont Blanc du Tacul
+  it: Arrampicata — Mont Blanc du Tacul
+  es: Escalada — Mont Blanc du Tacul
+  fr: Escalade — Mont Blanc du Tacul
+  de: Klettern — Mont Blanc du Tacul
+
+description:
+  en: |
+    Mont Blanc du Tacul's east face, including the Grand Capucin area,
+    offers high-alpine granite trad and mixed multipitch to 4200m via
+    glacier approach — the cluster's most committing terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IFMGA Chamonix guide condition reports"
+    - "Compagnie du Mont-Blanc Aiguille du Midi access information"
+  notes: |
+    Sub-spot of climbing-spot-chamonix-granite cluster. Tier 3:
+    expedition-style high-alpine multipitch to 4200m, glacier approach,
+    sparse fixed protection, helicopter-only rescue.

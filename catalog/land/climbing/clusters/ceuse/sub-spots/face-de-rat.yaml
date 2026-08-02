@@ -1,0 +1,51 @@
+slug: climbing-spot-ceuse-face-de-rat
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-ceuse
+parent_cluster: climbing-spot-ceuse
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 44.5200, lng: 5.9400 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Face de Rat is a well-bolted single-pitch sport sector on Céüse
+    limestone offering routes from F6a to F7c, with stainless hardware
+    and chain lower-offs maintained by local equippers. It sits at the
+    far end of the plateau's approach network, requiring the same
+    1-hour-plus uphill walk from the parking area as the rest of Céüse,
+    which is the sector's main added commitment beyond the climbing
+    itself. Grades here are more moderate than Berlin or Cascade, making
+    it a reasonable entry point to Céüse-style steep limestone technique
+    for climbers not yet ready for the plateau's hardest lines. Falls are
+    generally clean onto bolts; standard bolted-sport-route residual
+    risks apply.
+
+display_name:
+  en: Climbing — Céüse Face de Rat
+  it: Arrampicata — Céüse Face de Rat
+  es: Escalada — Céüse Face de Rat
+  fr: Escalade — Céüse Face de Rat
+  de: Klettern — Céüse Face de Rat
+
+description:
+  en: |
+    Face de Rat offers well-bolted sport routes from F6a to F7c, a more
+    moderate introduction to Céüse's steep limestone style, reached by
+    the same long uphill approach.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Céüse guidebook"
+    - "FFME Céüse access documentation"
+  notes: |
+    Sub-spot of climbing-spot-ceuse cluster. Tier 2: well-bolted
+    moderate sport climbing, stainless hardware, 1h+ uphill approach
+    shared with the rest of the plateau.

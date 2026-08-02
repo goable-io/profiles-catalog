@@ -1,0 +1,44 @@
+slug: mountain-biking-spot-coed-y-brenin-mbr-trail
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-coed-y-brenin
+parent_cluster: mountain-biking-spot-coed-y-brenin
+country_code: GB
+
+coordinates:
+  center: { lat: 52.8250, lng: -3.9400 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The MBR Trail is a 20km red-graded loop at Coed y Brenin built in
+    partnership with Mountain Bike Rider magazine, offering a shorter
+    alternative to The Beast with a similar moderate technical profile
+    of rock gardens, root sections, and berm-and-jump singletrack. The
+    climbing profile is moderate and sustained rather than punchy, suited
+    to intermediate riders progressing from blue-graded trails. Like the
+    rest of the centre, surface is engineered free-draining tread that
+    stays rideable in typical Welsh wet weather, with mapped waymarking
+    and straightforward bail-out access back to the visitor centre.
+
+display_name:
+  en: Mountain Biking — Coed y Brenin MBR Trail
+description:
+  en: |
+    20km red-graded loop at Coed y Brenin developed with Mountain Bike
+    Rider magazine — a shorter, moderately technical alternative to The
+    Beast with sustained climbing and engineered, weather-resilient
+    singletrack.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Forestry England Coed y Brenin trail centre guidance"
+    - "Trailforks MBR Trail listing"
+  notes: |
+    Sub-spot of mountain-biking-spot-coed-y-brenin cluster. Tier 2:
+    red-graded intermediate loop, moderate technical singletrack,
+    sustained moderate climbing.

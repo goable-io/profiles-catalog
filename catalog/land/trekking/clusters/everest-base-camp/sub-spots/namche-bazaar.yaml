@@ -1,0 +1,57 @@
+slug: trekking-spot-everest-base-camp-namche-bazaar
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-everest-base-camp
+parent_cluster: trekking-spot-everest-base-camp
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 27.8050, lng: 86.7136 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Namche Bazaar (3440 m) is the Khumbu's largest Sherpa settlement and
+    the trek's principal acclimatization hub, typically reached on day
+    2-3 after a steep ~800 m climb from the Dudh Kosi river at Phakding.
+    Standard itineraries schedule a mandatory rest day here to reduce
+    AMS risk before continuing above 3500 m. The trail is a well-marked
+    stone-and-dirt path with suspension-bridge river crossings and no
+    technical difficulty, and the village itself has the densest
+    tea-house, lodge, bakery, and clinic (Himalayan Rescue Association
+    post) concentration on the entire route. Evacuation is straight-
+    forward via a short helicopter hop or a multi-day walk-out to Lukla;
+    the principal hazard at this stage is altitude-gain rate rather than
+    terrain, since Namche sits just below the threshold where AMS
+    incidence rises sharply.
+
+display_name:
+  en: Trekking — Namche Bazaar
+  it: Trekking — Namche Bazaar
+  es: Senderismo — Namche Bazaar
+  fr: Randonnée — Namche Bazaar
+  de: Wandern — Namche Bazaar
+
+description:
+  en: |
+    Namche Bazaar (3440 m) is the cultural and logistical heart of the
+    Khumbu, a terraced Sherpa town built into a natural amphitheatre.
+    Nearly every EBC itinerary schedules an acclimatization day here,
+    and its dense tea-house, bakery, and gear-shop network makes it the
+    trek's most comfortable overnight stop.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Sagarmatha National Park Namche Bazaar visitor center"
+    - "Himalayan Rescue Association acclimatization guidance"
+    - "Nepal TAAN (Trekking Agencies' Association of Nepal) SOP"
+  notes: |
+    Sub-spot of trekking-spot-everest-base-camp cluster. Tier 2: dense
+    tea-house infrastructure and non-technical trail offset by the
+    altitude-gain / AMS-onset risk that defines the mandatory
+    acclimatization stop.

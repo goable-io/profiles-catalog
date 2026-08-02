@@ -1,0 +1,54 @@
+slug: trekking-spot-annapurna-circuit-manang
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-annapurna-circuit
+parent_cluster: trekking-spot-annapurna-circuit
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 28.6667, lng: 84.0333 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Manang (3540 m) sits in the rain-shadow of the Annapurna massif and
+    is the circuit's iconic acclimatization stop before the Thorong La
+    crossing, typically reached around day 6-7 with a mandatory rest
+    day scheduled here on most itineraries. The high alpine desert
+    terrain around Manang is dry, wide, and well-trodden, and the
+    village has the densest tea-house concentration above 3000 m on the
+    route, including a Himalayan Rescue Association altitude-sickness
+    aid post that runs daily briefings in season. Evacuation is
+    feasible via helicopter or a multi-day walk-back down-valley; the
+    principal risk at this stage is AMS from the accumulated altitude
+    gain rather than technical terrain difficulty.
+
+display_name:
+  en: Trekking — Manang
+  it: Trekking — Manang
+  es: Senderismo — Manang
+  fr: Randonnée — Manang
+  de: Wandern — Manang
+
+description:
+  en: |
+    Manang (3540 m) is the Annapurna Circuit's high-altitude desert
+    village and the trek's essential acclimatization stop before
+    Thorong La. Nearly every itinerary schedules a rest day here, and
+    its dense tea-house network makes it the most comfortable overnight
+    stop above 3000 m on the route.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Annapurna Conservation Area Project (ACAP) Manang checkpoint"
+    - "Himalayan Rescue Association acclimatization guidance"
+  notes: |
+    Sub-spot of trekking-spot-annapurna-circuit cluster. Tier 2: dense
+    tea-house infrastructure and non-technical trail offset by the
+    altitude-gain / AMS-onset risk that defines the mandatory
+    acclimatization stop.

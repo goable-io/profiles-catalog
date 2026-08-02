@@ -1,0 +1,50 @@
+slug: climbing-spot-verdon-ancien-monde
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-verdon
+parent_cluster: climbing-spot-verdon
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 43.7400, lng: 6.3650 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Ancien Monde is a single-pitch sport sector on Verdon limestone, well
+    bolted with modern stainless hardware and chain or mailon lower-off
+    anchors, offering routes from F6a to F7c. Unlike the abseil-in
+    big-wall sectors elsewhere in the cluster, Ancien Monde is
+    approached by a short rim-side walk-in with a straightforward return
+    to the top, making it the cluster's beginner-friendly introduction to
+    Verdon sport climbing. Falls are clean onto bolts with no ledge
+    hazards on most lines. The main residual risks are standard bolted-
+    sport-route hazards — lowering errors and rope-end incidents — rather
+    than the commitment and rockfall exposure of the gorge's flagship
+    multipitch walls.
+
+display_name:
+  en: Climbing — Verdon Ancien Monde
+  it: Arrampicata — Verdon Ancien Monde
+  es: Escalada — Verdon Ancien Monde
+  fr: Escalade — Verdon Ancien Monde
+  de: Klettern — Verdon Ancien Monde
+
+description:
+  en: |
+    Ancien Monde is a well-bolted single-pitch sport sector, F6a to F7c
+    on stainless hardware with a short walk-in — the Verdon cluster's
+    most approachable, beginner-friendly sport climbing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Verdon guidebook"
+    - "FFME Verdon topo and access documentation"
+  notes: |
+    Sub-spot of climbing-spot-verdon cluster. Tier 2: single-pitch sport,
+    stainless hardware, short walk-in, straightforward top return.

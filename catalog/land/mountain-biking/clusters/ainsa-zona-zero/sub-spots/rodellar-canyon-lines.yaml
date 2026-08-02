@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-ainsa-zona-zero-rodellar-canyon-lines
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-ainsa-zona-zero
+parent_cluster: mountain-biking-spot-ainsa-zona-zero
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.3167, lng: -0.0667 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Rodellar-adjacent canyon rim lines run technical rocky descents
+    along the edge of the Mascún canyon, one of the Sierra de Guara's most
+    dramatic limestone formations. Exposed rim-side sections, loose-over-
+    rock surfaces, and steep technical steps close to significant drops
+    make this expert-only. High-consequence terrain demanding precise line
+    choice and strong technical bike-handling.
+
+display_name:
+  en: Mountain Biking — Rodellar Canyon Lines
+  it: Mountain Bike — Linee Canyon di Rodellar
+  es: Ciclismo de Montaña — Líneas del Cañón de Rodellar
+  fr: VTT — Lignes du Canyon de Rodellar
+  de: Mountainbiken — Rodellar Canyon-Linien
+
+description:
+  en: |
+    Technical canyon-rim enduro lines near Rodellar, descending along
+    the edge of the dramatic Mascún canyon in the Sierra de Guara —
+    expert-only, high-exposure terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zona Zero Ainsa signed trail network documentation"
+    - "Sierra de Guara Mascún canyon area documentation"
+  notes: |
+    Sub-spot of mountain-biking-spot-ainsa-zona-zero cluster. Tier 3:
+    exposed canyon-rim technical descents, expert-only, high
+    consequence.

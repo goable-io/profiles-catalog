@@ -1,0 +1,161 @@
+slug: alpine-skiing-spot-hakuba
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-sea-of-japan
+region: sea-of-japan
+country_code: JP
+sub_spots:
+  - alpine-skiing-spot-hakuba-happo-one
+  - alpine-skiing-spot-hakuba-goryu-hakuba-47
+  - alpine-skiing-spot-hakuba-tsugaike-kogen
+display_name:
+  en: Alpine Skiing — Hakuba Valley (Nagano)
+  it: Sci Alpino — Hakuba Valley (Nagano)
+  es: Esquí Alpino — Hakuba Valley (Nagano)
+  fr: Ski Alpin — Hakuba Valley (Nagano)
+  de: Alpiner Skilauf — Hakuba Valley (Nagano)
+description:
+  en: |
+    Hakuba Valley (Nagano, Japanese Northern Alps) is Japan's largest
+    resort-skiing region, a network of ten interconnected ski areas
+    across the valley including Happo-One, Goryu, Hakuba 47, and
+    Tsugaike Kogen, combining for well over 200 km of marked piste
+    served by more than 130 lifts. Happo-One hosted the downhill and
+    Super-G events of the 1998 Nagano Winter Olympics, and its Kurobishi
+    top-station black run remains one of the steepest lift-served
+    in-bounds pistes in Japan. Piste colours span the full range from
+    green and blue beginner terrain at the valley-floor bases through
+    extensive red cruising to black-piste terrain on the upper
+    mountains. Altitude ranges from roughly 750 m at the valley base
+    areas up to around 1830 m on Happo-One's Usagidaira upper sector.
+    Snowfall is heavy and reliable via the same Sea-of-Japan lake-effect
+    monsoon that feeds Niseko, so snowmaking plays a limited supporting
+    role. Lift operator coordination runs through the Hakuba Valley
+    Tourism Bureau / Hakuba Valley Ski Alliance.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.15 }
+      - { x: -15, s: 0.65 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.16
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.20 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.14
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.30 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.75 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 1.00 }
+      - { x: 5,   s: 0.85 }
+      - { x: 12,  s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.06
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes upper gondolas at the Hakuba Valley resorts during blizzard windows; on-piste exposure above treeline becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.15
+    reason_code: JAPOW_WHITEOUT
+    description: Visibility below 150 m during peak JAPOW dump cycles makes piste navigation impossible even on marked runs; resorts close ungroomed upper terrain first.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK
+    description: Apparent temperature below -25°C on the exposed upper Hakuba Valley sectors creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Hakuba Valley Tourism Bureau and the Hakuba Valley Ski Alliance
+    coordinate grooming, snowmaking, and lift-closure protocols across
+    the ten-resort network. Snow is abundant and reliably cold via the
+    Sea-of-Japan lake-effect monsoon, so snowmaking is a limited
+    supporting input on lower connector runs rather than a core
+    dependency. Peak season carrying capacity is medium — foreign
+    visitor concentration is high in the Happo-One/Hakuba 47 corridor,
+    but the wider ten-resort spread absorbs peak-day crowding better
+    than single-mountain destinations.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hakuba Valley Tourism Bureau resort network documentation"
+    - "Hakuba Valley Ski Alliance operational SOP"
+    - "1998 Nagano Winter Olympics Alpine venue documentation (Happo-One)"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-sea-of-japan
+    (dimensions, gates copied exactly). Coordinates for the three
+    sub-spots describe groomed piste-skiing sectors distinct from the
+    sidecountry gate zones catalogued separately under freeride-spot-hakuba
+    and the backcountry touring zones under ski-touring-spot-hakuba.

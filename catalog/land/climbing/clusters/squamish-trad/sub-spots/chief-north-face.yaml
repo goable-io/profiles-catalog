@@ -1,0 +1,51 @@
+slug: climbing-spot-squamish-chief-north-face
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-squamish
+parent_cluster: climbing-spot-squamish
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 49.6867, lng: -123.1567 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Stawamus Chief's north face hosts a set of sustained granite
+    multipitch trad lines in the 5.10-5.12 range, including well-known
+    routes such as Angel's Crest and Ultimate Everything, on clean
+    crack-and-face terrain that stays in shade for much of the day.
+    Protection is primarily traditional gear with periodic fixed anchors at
+    belay stances, and the routes' length (commonly eight or more pitches)
+    demands efficient multipitch systems and route-finding across featured
+    but continuously technical granite. Descent is typically via walk-off
+    or rappel from established anchors, and the north-facing aspect keeps
+    the rock cooler and often damp longer after rain than sun-exposed
+    sectors, extending the effective drying time needed before conditions
+    are safe.
+
+display_name:
+  en: Climbing — Squamish Chief North Face
+  it: Arrampicata — Squamish Chief North Face
+  es: Escalada — Squamish Chief North Face
+  fr: Escalade — Squamish Chief North Face
+  de: Klettern — Squamish Chief North Face
+
+description:
+  en: |
+    Sustained shaded granite multipitch on the Stawamus Chief's north face,
+    5.10-5.12 trad classics including Angel's Crest and Ultimate Everything.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Squamish Access Society route and access guidance"
+    - "Alpine Club of Canada — Squamish rock climbing guidance"
+  notes: |
+    Sub-spot of climbing-spot-squamish cluster. Tier 3: sustained,
+    multi-pitch granite trad climbing with a north-facing aspect that
+    extends post-rain drying time.

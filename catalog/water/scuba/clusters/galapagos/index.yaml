@@ -1,0 +1,161 @@
+slug: scuba-spot-galapagos
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-pacific
+region: pacific
+country_code: EC
+sub_spots:
+  - scuba-spot-galapagos-darwin-arch
+  - scuba-spot-galapagos-wolf-island
+  - scuba-spot-galapagos-cousins-rock
+display_name:
+  en: Scuba Diving — Galápagos
+  it: Immersione — Galápagos
+  es: Buceo — Galápagos
+  fr: Plongée — Galápagos
+  de: Tauchen — Galápagos
+description:
+  en: |
+    The Galápagos Islands (Ecuador) sit inside the Galápagos Marine
+    Reserve (established 1998, ~133,000 km², a UNESCO World Heritage
+    Site since 1978 for the archipelago). Cold, nutrient-rich
+    upwelling from the Cromwell and Humboldt currents mixes with
+    warm equatorial water, producing the world's most concentrated
+    pelagic-shark diving. Darwin and Wolf islands are remote, strong-
+    current, liveaboard-only sites in the reserve's northern zone;
+    Cousins Rock near Santiago/Bartolomé offers calmer central-zone
+    diving. Water temperature swings widely (18-27°C) by season and
+    site.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.65 }
+      - { x: 5.0, s: 0.92 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.40 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 14, s: 0.30 }
+      - { x: 20, s: 0.55 }
+      - { x: 25, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.80 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.65 }
+      - { x: 24, s: 0.25 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 8,  s: 0.30 }
+      - { x: 18, s: 0.75 }
+      - { x: 26, s: 1.00 }
+      - { x: 34, s: 0.90 }
+      - { x: 42, s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: PACIFIC_HIGH_SEAS
+    description: Wave height above 3.0 m at Galápagos's exposed offshore pinnacles makes drift drop-off and open-water retrieval unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: TROPICAL_CYCLONE_PERIPHERY
+    description: Sustained wind above 30 knots on the exposed Darwin / Wolf crossing makes liveaboard tender operations unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_PAC
+    description: Surface visibility below 800 m during upwelling-driven fog or squall makes site-finding at remote offshore pinnacles unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: TROPICAL_DELUGE_PAC
+    description: Heavy rain above 20 mm/h during the warm/wet season (Jan-May) correlates with squall passage and swell buildup.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Galápagos Marine Reserve (1998, ~133,000 km²) is one of the
+    world's largest and strictest MPAs, enforced by the Galápagos
+    National Park Directorate; Darwin and Wolf are liveaboard-permit-
+    only with strict vessel and diver caps. The archipelago is a
+    UNESCO World Heritage Site (1978) and the marine reserve a
+    UNESCO addition (2001). Per-session footprint is dominated by
+    liveaboard transit given the remote offshore location.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Galápagos Marine Reserve (1998) management plan, Galápagos National Park Directorate"
+    - "UNESCO Galápagos Islands World Heritage Site (1978, marine reserve extension 2001) documentation"
+    - "PADI Galápagos regional dive-condition briefing"
+    - "Charles Darwin Foundation Galápagos marine biodiversity reports"
+  notes: |
+    Spot overrides vs scuba-pacific: matches regional baseline for
+    the E-Pacific upwelling sector. 40-week season; water temperature
+    varies sharply between the warm/wet season (Jan-May, 24-27°C)
+    and the cool/garúa season (Jun-Dec, 18-22°C, stronger Cromwell
+    upwelling at Darwin/Wolf).

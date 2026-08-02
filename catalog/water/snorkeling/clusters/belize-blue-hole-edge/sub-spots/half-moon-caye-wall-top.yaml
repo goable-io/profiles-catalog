@@ -1,0 +1,42 @@
+slug: snorkeling-spot-belize-blue-hole-edge-half-moon-caye-wall-top
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-belize-blue-hole-edge
+parent_cluster: snorkeling-spot-belize-blue-hole-edge
+region: caribbean
+country_code: BZ
+
+coordinates:
+  center: { lat: 17.2, lng: -87.5333 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Half Moon Caye's wall-top snorkel sits on the crest of the barrier-reef
+    drop-off with dense tropical-fish life. Reached only by the same long
+    open-water boat transfer as the Blue Hole cluster and exposed to the
+    same remote-atoll swell conditions. Snorkelers swim along a reef edge
+    above a substantial wall rather than in a bounded lagoon, which
+    requires more open-water comfort than a beach-entry site, placing it at
+    tier 2 alongside the Blue Hole rim.
+
+display_name:
+  en: Snorkeling — Half Moon Caye Wall Top
+  it: Snorkeling — Cima della Parete di Half Moon Caye
+  es: Snorkel — Cima del Muro de Half Moon Caye
+  fr: Snorkeling — Sommet du Mur de Half Moon Caye
+  de: Schnorcheln — Half Moon Caye Wandkrone
+
+description:
+  en: |
+    Barrier-reef wall-top snorkel off Half Moon Caye Natural Monument, dense tropical-fish life, remote boat access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Belize Audubon Society Half Moon Caye Natural Monument (1982) management plan"
+  notes: |
+    Sub-spot of snorkeling-spot-belize-blue-hole-edge. Tier 2: open-water wall-top reef, remote atoll boat access.

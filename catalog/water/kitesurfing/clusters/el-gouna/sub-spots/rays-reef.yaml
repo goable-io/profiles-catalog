@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-el-gouna-rays-reef
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-el-gouna
+parent_cluster: kitesurfing-spot-el-gouna
+region: red-sea
+country_code: EG
+
+coordinates:
+  center: { lat: 27.4000, lng: 33.6800 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Ray's Reef sits adjacent to the shallow lagoons but is more exposed
+    to wind-driven chop and small wind-swell where the reef breaks the
+    otherwise-flat bay geometry. This requires intermediate riding
+    skill — upwind ability, comfort in choppier water, reef awareness
+    beyond what beginners need in the sheltered lagoons. Wind here
+    runs 20-30 knots in season, generally a touch stronger and
+    gustier than the fully enclosed lagoon sectors due to greater
+    exposure to open water.
+
+display_name:
+  en: Kitesurfing — El Gouna Ray's Reef
+  it: Kitesurf — El Gouna Ray's Reef
+  es: Kitesurf — El Gouna Ray's Reef
+  fr: Kitesurf — El Gouna Ray's Reef
+  de: Kitesurfen — El Gouna Ray's Reef
+
+description:
+  en: |
+    An intermediate chop-and-wave sector adjacent to El Gouna's flat
+    lagoons, where reef breaks the water surface and wind runs slightly
+    stronger — a natural step up for lagoon-trained riders.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) El Gouna venue notes"
+    - "Egyptian Meteorological Authority Red Sea coastal wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-el-gouna cluster. Tier 2: reef-adjacent
+    chop-and-wave intermediate sector with stronger, gustier wind than
+    the enclosed lagoons.

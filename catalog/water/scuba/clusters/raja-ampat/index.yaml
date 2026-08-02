@@ -1,0 +1,158 @@
+slug: scuba-spot-raja-ampat
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-pacific
+region: pacific
+country_code: ID
+sub_spots:
+  - scuba-spot-raja-ampat-cape-kri
+  - scuba-spot-raja-ampat-manta-sandy
+  - scuba-spot-raja-ampat-mios-kon
+display_name:
+  en: Scuba Diving — Raja Ampat
+  it: Immersione — Raja Ampat
+  es: Buceo — Raja Ampat
+  fr: Plongée — Raja Ampat
+  de: Tauchen — Raja Ampat
+description:
+  en: |
+    Raja Ampat (West Papua, Indonesia) sits at the apex of the Coral
+    Triangle and holds the highest recorded marine biodiversity on
+    Earth. The Raja Ampat Marine Protected Area network (est.
+    2007-2010, ~4.6 million hectares) covers the Dampier Strait and
+    surrounding archipelago. Sites are current-swept channel walls
+    and seamounts with warm water (28-30°C) and routine 15-25 m
+    visibility, tidally driven currents up to 2-3 kn. Cape Kri,
+    Manta Sandy, and Mios Kon anchor the Dampier Strait dive
+    circuit. Boat access from Waisai / liveaboard.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.65 }
+      - { x: 5.0, s: 0.92 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.40 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 14, s: 0.30 }
+      - { x: 20, s: 0.55 }
+      - { x: 25, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.80 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.65 }
+      - { x: 24, s: 0.25 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 8,  s: 0.30 }
+      - { x: 18, s: 0.75 }
+      - { x: 26, s: 1.00 }
+      - { x: 34, s: 0.90 }
+      - { x: 42, s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: PACIFIC_HIGH_SEAS
+    description: Wave height above 3.0 m on Raja Ampat's exposed channel and seamount sites makes drift drop-off and retrieval unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: TROPICAL_CYCLONE_PERIPHERY
+    description: Sustained wind above 30 knots signals monsoon-squall or storm periphery; Raja Ampat liveaboard and day-boat operations stand down.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_PAC
+    description: Surface visibility below 800 m during tropical squall makes site-finding across Raja Ampat's dispersed island channels unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: TROPICAL_DELUGE_PAC
+    description: Heavy tropical rain above 20 mm/h correlates with squall systems and runoff-driven visibility crashes near high-island channels.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Raja Ampat MPA network (established 2007-2010, managed with
+    Conservation International and local Misool/Dampier Strait
+    communities) enforces a marine park entry fee and zone-based
+    tourism rules across ~4.6 million hectares. Cape Kri and Manta
+    Sandy carry the highest per-session visitor pressure in the
+    archipelago; guide-lead, no-touch protocols are standard.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Raja Ampat Marine Protected Area network (2007-2010) management documentation"
+    - "Conservation International Raja Ampat marine biodiversity survey reports"
+    - "PADI Raja Ampat regional dive-condition briefing"
+    - "Coral Triangle Initiative site monitoring, West Papua sector"
+  notes: |
+    Spot overrides vs scuba-pacific: matches regional baseline for
+    the Coral Triangle / West Papua sector. 40-week season; NW
+    monsoon (Dec-Mar) brings choppier surface conditions and reduced
+    visibility on exposed channel sites.

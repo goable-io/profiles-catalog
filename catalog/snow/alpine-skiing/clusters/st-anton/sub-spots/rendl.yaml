@@ -1,0 +1,46 @@
+slug: alpine-skiing-spot-st-anton-rendl
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-st-anton
+parent_cluster: alpine-skiing-spot-st-anton
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.1233, lng: 10.2711 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Rendl sector (2645 m) sits across the valley from Galzig, reached
+    by its own gondola from St. Anton village. Pistes are predominantly
+    red-marked cruising runs across quieter, less-crowded terrain than
+    the main Galzig-Valluga side, with dramatic panoramic views across
+    the Arlberg massif. Grooming is daily, snowmaking coverage secures
+    the mid-mountain pistes, and ski patrol coverage is standard gondola-
+    network access. The sector is popular with intermediate skiers
+    seeking a quieter alternative and also has a reputation for good
+    off-piste-adjacent terrain in favorable conditions.
+
+display_name:
+  en: Alpine Skiing — Rendl (St. Anton)
+  it: Sci Alpino — Rendl
+  es: Esquí Alpino — Rendl
+  fr: Ski Alpin — Rendl
+  de: Alpiner Skilauf — Rendl
+
+description:
+  en: |
+    Quieter red-piste alternative sector (2645 m) across the valley from
+    Galzig, with dramatic Arlberg-panorama views.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ski Arlberg / Bergbahnen Sankt Anton am Arlberg Rendl lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-st-anton cluster. Tier 2: red-piste
+    intermediate cruising, gondola-served, quieter side of resort.

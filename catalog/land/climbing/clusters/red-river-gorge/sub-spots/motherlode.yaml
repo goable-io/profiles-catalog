@@ -1,0 +1,50 @@
+slug: climbing-spot-red-river-gorge-motherlode
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-red-river-gorge
+parent_cluster: climbing-spot-red-river-gorge
+country_code: US
+
+coordinates:
+  center: { lat: 37.8000, lng: -83.6500 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Motherlode is the Red River Gorge's flagship steep sector, cut into
+    overhanging pocketed Corbin sandstone with routes from moderate 5.10s
+    up to national testpieces like Pure Imagination and Golden Ticket in
+    the F8c-F9a range. Hardware is stainless bolts and chain or mailon
+    lower-off anchors maintained through the RRGCC's bolt-replacement
+    program. The steep, overhung terrain keeps most falls clean swings
+    into space rather than ledge-falls, the approach is a short walk from
+    parking on RRGCC-held land, and cell coverage in the gorge is
+    patchy — routine bolted-sport residual risk (lowering errors, rope-end
+    accidents, holds breaking on hard moves).
+
+display_name:
+  en: Climbing — Motherlode
+  it: Arrampicata — Motherlode
+  es: Escalada — Motherlode
+  fr: Escalade — Motherlode
+  de: Klettern — Motherlode
+
+description:
+  en: |
+    Motherlode is Red River Gorge's flagship steep sandstone sector,
+    packed with pumpy overhanging lines from moderate 5.10s to national
+    testpieces like Pure Imagination and Golden Ticket in the F8c-F9a
+    range.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Red River Gorge Rock Climbs guidebook (RRGCC / Wolverine Publishing)"
+    - "Mountain Project Red River Gorge area guide"
+  notes: |
+    Sub-spot of climbing-spot-red-river-gorge cluster. Tier 2: steep
+    single-pitch sport with stainless hardware and clean overhung falls —
+    sport-climbing baseline residual risk.

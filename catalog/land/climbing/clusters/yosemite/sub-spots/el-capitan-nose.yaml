@@ -1,0 +1,54 @@
+slug: climbing-spot-yosemite-el-capitan-nose
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-yosemite
+parent_cluster: climbing-spot-yosemite
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.7340, lng: -119.6370 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Nose climbs 900m of golden El Capitan granite over 31 pitches,
+    broadly southwest-facing, as a multi-day trad/aid route (5.9 C2) or an
+    all-free line at 5.14a — famously free-soloed by Alex Honnold in 2017.
+    Protection is primarily trad (removable cams and nuts placed by the
+    leader) with fixed pins and bolted anchors at established belays;
+    sections of the route carry loose rock requiring helmet use, and party
+    stacking during peak spring/fall season increases rockfall exposure
+    from climbers above. Descent is by rappel retracing the route or via
+    the East Ledges, with no easy bail once committed above the lower
+    pitches; rescue is technical big-wall rescue coordinated by Yosemite
+    Search and Rescue (YOSAR). An NPS wilderness permit is required for
+    overnight bivouac and portaledge use on the wall.
+
+display_name:
+  en: Climbing — El Capitan, The Nose
+  it: Arrampicata — El Capitan, The Nose
+  es: Escalada — El Capitan, The Nose
+  fr: Escalade — El Capitan, The Nose
+  de: Klettern — El Capitan, The Nose
+
+description:
+  en: |
+    The Nose on El Capitan is the defining big-wall route of American
+    climbing: 900m/31 pitches of golden granite up the prow of El Cap,
+    climbable as a multi-day aid line (5.9 C2) or all-free at 5.14a. Alex
+    Honnold's 2017 free solo and the sub-2-hour speed-climbing record era
+    have made it the most storied wall in the sport.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SuperTopo Yosemite Big Walls guidebook (Reid & McNamara)"
+    - "National Park Service Yosemite climbing regulations and wilderness permit guidance"
+  notes: |
+    Sub-spot of climbing-spot-yosemite cluster. Tier 3: committing
+    multi-day trad/aid big wall with loose-rock sections and no easy
+    bail — advanced with a documented consequence profile.

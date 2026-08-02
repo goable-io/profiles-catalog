@@ -1,0 +1,53 @@
+slug: trekking-spot-gr20-corsica-cirque-de-la-solitude
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-gr20-corsica
+parent_cluster: trekking-spot-gr20-corsica
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 42.4325, lng: 8.9083 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The historic Cirque de la Solitude section on the GR20's northern
+    stages was permanently closed after a fatal 2015 rockfall and is now
+    rerouted via the via-ferrata-equipped Pointe des Éboulis bypass at
+    around 2007 m, involving roughly 2-3 hours of chain- and
+    cable-protected scrambling on exposed granite slabs and boulder
+    fields with significant rockfall potential from above. There is no
+    hut within the section itself, mobile coverage is intermittent in
+    the surrounding high terrain, and evacuation in poor weather or after
+    injury effectively requires helicopter extraction given the terrain's
+    remoteness and technicality. This remains the single most demanding
+    and consequence-heavy section on the entire GR20.
+
+display_name:
+  en: Trekking — Cirque de la Solitude (Pointe des Éboulis Bypass)
+  it: Trekking — Cirque de la Solitude (Deviazione Pointe des Éboulis)
+  es: Trekking — Cirque de la Solitude (Desvío Pointe des Éboulis)
+  fr: Trekking — Cirque de la Solitude (Déviation Pointe des Éboulis)
+  de: Wandern — Cirque de la Solitude (Umgehung Pointe des Éboulis)
+
+description:
+  en: |
+    The GR20's most iconic and technical section, historically a
+    committing scramble through the Cirque de la Solitude and now
+    permanently rerouted via a via-ferrata-equipped bypass over the
+    Pointe des Éboulis at 2007 m following a 2015 fatal rockfall.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — GR20 Corsica: The High Level Route"
+    - "Parc Naturel Régional de Corse (PNRC) GR20 safety notices and rerouting information"
+  notes: |
+    Sub-spot of trekking-spot-gr20-corsica cluster. Tier 3: committing
+    technical scramble section, mandatory rerouted via-ferrata bypass,
+    rockfall hazard, no hut in-section, intermittent mobile coverage,
+    helicopter-only evacuation in practice.

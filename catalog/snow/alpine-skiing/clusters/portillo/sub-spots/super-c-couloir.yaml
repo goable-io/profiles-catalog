@@ -1,0 +1,52 @@
+slug: alpine-skiing-spot-portillo-super-c-couloir
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-portillo
+parent_cluster: alpine-skiing-spot-portillo
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -32.8400, lng: -70.1350 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    The Super C Couloir is Portillo's signature hike-to in-bounds
+    steep line, a granite-walled chute pitching above 45 degrees that
+    requires a bootpack ascent from the lift network before dropping
+    into the narrow, rock-flanked couloir. Ski patrol controls access
+    and avalanche mitigation for the line, but the terrain is
+    freeride-adjacent rather than groomed, with no grooming or
+    snowmaking possible on the confined rock walls. Fall consequences
+    are severe given the couloir's width and the exposed granite on
+    both sides, and the entry is reserved for expert skiers who can
+    commit to sustained steep turns in a no-fall zone. Conditions are
+    highly sensitive to fresh snow and wind-loading given the couloir's
+    orientation and confinement.
+
+display_name:
+  en: Alpine Skiing — Super C Couloir (Portillo)
+  it: Sci Alpino — Super C Couloir
+  es: Esquí Alpino — Super C Couloir
+  fr: Ski Alpin — Super C Couloir
+  de: Alpiner Skilauf — Super C Couloir
+
+description:
+  en: |
+    Portillo's iconic hike-to in-bounds couloir: a granite-walled
+    45-degree-plus chute reached by bootpack, patrolled but ungroomed.
+    Freeride-adjacent expert terrain reserved for confident steep
+    skiers.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ski Portillo piste map and hike-to terrain advisories"
+  notes: |
+    Sub-spot of alpine-skiing-spot-portillo cluster. Tier 3: patrolled
+    in-bounds hike-to steep couloir, 45°+ granite chute, expert-only
+    freeride-adjacent terrain.

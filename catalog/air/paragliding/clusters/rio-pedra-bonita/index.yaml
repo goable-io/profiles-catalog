@@ -1,0 +1,163 @@
+slug: paragliding-spot-rio-pedra-bonita
+spot_kind: cluster
+version: "1.0.0"
+category: air
+extends: paragliding
+region: atlantic
+country_code: BR
+sub_spots:
+  - paragliding-spot-rio-pedra-bonita-pedra-bonita-launch
+  - paragliding-spot-rio-pedra-bonita-sao-conrado-beach-lz
+display_name:
+  en: Paragliding — Rio de Janeiro (Pedra Bonita)
+  it: Parapendio — Rio de Janeiro (Pedra Bonita)
+  es: Parapente — Río de Janeiro (Pedra Bonita)
+  fr: Parapente — Rio de Janeiro (Pedra Bonita)
+  de: Gleitschirmfliegen — Rio de Janeiro (Pedra Bonita)
+description:
+  en: |
+    Pedra Bonita, above São Conrado in Rio de Janeiro, is one of the
+    world's most famous urban paragliding sites — an Atlantic-facing
+    granite cliff launch with a backdrop of Tijuca rainforest and a
+    direct glide to São Conrado beach far below. Year-round tandem
+    operations run daily, driven by Rio's tropical thermal-and-sea-
+    breeze regime rather than a seasonal window; the flying day
+    typically builds through the morning as onshore flow and slope
+    thermals couple over the Pedra da Gávea massif. The combination
+    of dependable daily flyability, dramatic scenery, and a huge
+    urban catchment makes it one of the highest-traffic tandem sites
+    on the planet.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.40 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.85 }
+      - { x: 18, s: 0.55 }
+      - { x: 22, s: 0.20 }
+      - { x: 28, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.20
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.4, s: 0.65 }
+      - { x: 1.6, s: 0.30 }
+      - { x: 2.0, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 25, s: 0.95 }
+      - { x: 40, s: 1.00 }
+      - { x: 70, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 2,  s: 0.30 }
+      - { x: 5,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -10, s: 0.20 }
+      - { x: 0,   s: 0.70 }
+      - { x: 12,  s: 1.00 }
+      - { x: 25,  s: 1.00 }
+      - { x: 35,  s: 0.65 }
+      - { x: 42,  s: 0.20 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: HIGH_WIND
+    description: Sustained wind above 28 knots on the Pedra Bonita cliff launch makes paraglider control unsafe; canopy collapse risk rises sharply.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 2.0
+    reason_code: GUSTY_TURBULENT_AIR
+    description: Gust factor above 2.0x over the Pedra da Gávea massif indicates turbulent air with severe canopy collapse risk.
+
+  - metric: visibility_km
+    condition: lt
+    value: 2
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 2km violates VFR flight requirements and creates terrain collision risk against the Tijuca massif.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation degrades canopy fabric and dramatically increases stall risk.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Paragliding requires daylight; night operations are not standard recreational practice at Pedra Bonita.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 48
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Pedra Bonita paragliding is free-flight with zero direct emissions
+    per session, flyable nearly year-round given Rio's tropical
+    climate. Equipment footprint is moderate (tandem/solo canopy,
+    harness, reserve). Carrying capacity is medium given the site's
+    very high daily tandem-flight volume feeding a single launch
+    ramp and a shared urban beach LZ — operator queue management at
+    the ramp is a well-established local practice. The launch sits
+    within Tijuca National Park, requiring coordination with park
+    authorities on access and vegetation protection.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federação de Voo Livre do Rio de Janeiro (FVRJ) Pedra Bonita site standards"
+    - "FAI Paragliding Commission (CIVL) operational guidelines"
+    - "ICMBio (Instituto Chico Mendes) Tijuca National Park access documentation"
+  notes: |
+    Cluster aggregates the Pedra Bonita launch and the São Conrado
+    beach LZ. Extends the base `paragliding` profile directly (no
+    Atlantic-basin paragliding region variant exists yet in the
+    catalog); dimensions/gates copied verbatim from the base
+    profile. typical_season_weeks raised to 48 to reflect Rio's
+    near-year-round tropical flyability versus the base profile's
+    32-week default.

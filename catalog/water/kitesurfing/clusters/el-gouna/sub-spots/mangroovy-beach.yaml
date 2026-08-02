@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-el-gouna-mangroovy-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-el-gouna
+parent_cluster: kitesurfing-spot-el-gouna
+region: red-sea
+country_code: EG
+
+coordinates:
+  center: { lat: 27.4083, lng: 33.6717 }
+  radius_m: 1200
+
+tier: 1
+tier_rationale:
+  en: |
+    Mangroovy Beach is El Gouna's main kite lagoon — a shallow, reef-
+    fringed bay shielded from open Red Sea swell, with the northerly
+    Etesian-driven wind arriving cross-shore at a steady 15-25 knots
+    through the summer season. The lagoon bottom is mostly sand with
+    scattered shallow reef patches marked and avoided by the resident
+    kite schools, and the enclosed bay geometry limits downwind drift.
+    High kite-school density and dedicated beginner zones make this the
+    default first-timer destination on this stretch of coast.
+
+display_name:
+  en: Kitesurfing — El Gouna Mangroovy Beach
+  it: Kitesurf — El Gouna Mangroovy Beach
+  es: Kitesurf — El Gouna Mangroovy Beach
+  fr: Kitesurf — El Gouna Mangroovy Beach
+  de: Kitesurfen — El Gouna Mangroovy Beach
+
+description:
+  en: |
+    The flat-water heart of El Gouna's kite scene — a reef-fringed lagoon
+    with steady northerly wind and one of the highest concentrations of
+    kite schools on the Egyptian Red Sea coast, popular with beginners
+    and progression riders alike.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) El Gouna venue notes"
+    - "Egyptian Meteorological Authority Red Sea coastal wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-el-gouna cluster. Tier 1: reef-fringed
+    flat-water lagoon with consistent northerly Etesian-driven wind and
+    dense school infrastructure.

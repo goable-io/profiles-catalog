@@ -1,0 +1,52 @@
+slug: climbing-spot-ceuse-berlin
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-ceuse
+parent_cluster: climbing-spot-ceuse
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 44.5150, lng: 5.9350 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    The Berlin sector is the historic heart of Céüse's hardest climbing,
+    home to Biographie (also known as Realization, first climbed by
+    Chris Sharma), one of the world's earliest 5.15a/F9a+ routes, along
+    with a concentration of F8a-F9b lines on steep, technical grey
+    limestone. Bolting is modern stainless with chain lower-offs,
+    well-maintained given the sector's international profile, but the
+    routes themselves are steep, powerful, and often run-out on
+    technical faces between bolts by design of the original equippers.
+    The 1-1.5 hour uphill approach from the parking area and the
+    plateau's altitude-driven weather volatility (fast-building
+    afternoon storms) add commitment beyond the climbing itself, and
+    rescue access requires descending the same approach trail.
+
+display_name:
+  en: Climbing — Céüse Berlin
+  it: Arrampicata — Céüse Berlin
+  es: Escalada — Céüse Berlin
+  fr: Escalade — Céüse Berlin
+  de: Klettern — Céüse Berlin
+
+description:
+  en: |
+    The Berlin sector is Céüse's flagship hard-climbing showcase, home to
+    Biographie (5.15a) and a dense cluster of F8a-F9b testpieces on
+    steep, technical limestone — the cluster's most demanding venue.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Céüse guidebook"
+    - "FFME Céüse access documentation"
+  notes: |
+    Sub-spot of climbing-spot-ceuse cluster. Tier 3: world-class hard
+    sport climbing, steep and technically run-out between bolts, long
+    uphill approach, altitude weather volatility.

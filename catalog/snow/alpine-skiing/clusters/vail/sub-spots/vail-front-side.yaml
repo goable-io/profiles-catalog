@@ -1,0 +1,52 @@
+slug: alpine-skiing-spot-vail-vail-front-side
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-vail
+parent_cluster: alpine-skiing-spot-vail
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 39.6403, lng: -106.3742 }
+  radius_m: 2500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Vail front-side sector (Lionshead, Wildwood, and Golden Peak
+    base areas) is the intermediate red-piste cruising heart of the
+    mountain, served by a dense high-speed chair network including
+    several detachable quads and six-packs. Piste marking is
+    predominantly red with blue-piste beginner terrain near the base
+    areas and select black pistes on steeper front-side pitches;
+    grooming coverage is comprehensive and daily across the network.
+    Terrain parks are concentrated in this sector (including features
+    near Golden Peak), and snowmaking secures the lower-mountain runs.
+    Ski patrol and lodge services are dense throughout, making this the
+    resort's highest-traffic but also most infrastructure-supported
+    zone.
+
+display_name:
+  en: Alpine Skiing — Vail Front Side
+  it: Sci Alpino — Vail Front Side
+  es: Esquí Alpino — Vail Front Side
+  fr: Ski Alpin — Vail Front Side
+  de: Alpiner Skilauf — Vail Front Side
+
+description:
+  en: |
+    Vail's front-side sector (Lionshead, Wildwood, Golden Peak) — the
+    intermediate red-piste cruising heart with a dense high-speed
+    chair network, terrain park, and snowmaking.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Vail Mountain (Vail Resorts) Lionshead/Wildwood/Golden Peak trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-vail cluster. Tier 2: red-piste
+    intermediate cruising heart, high-speed chair network, terrain
+    park + snowmaking.

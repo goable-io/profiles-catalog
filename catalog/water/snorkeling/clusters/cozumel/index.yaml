@@ -1,0 +1,125 @@
+slug: snorkeling-spot-cozumel
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: snorkeling
+region: caribbean
+country_code: MX
+sub_spots:
+  - snorkeling-spot-cozumel-palancar-shallow
+  - snorkeling-spot-cozumel-el-cielo-lagoon
+display_name:
+  en: Snorkeling — Isla Cozumel
+  it: Snorkeling — Isola Cozumel
+  es: Snorkel — Isla Cozumel
+  fr: Snorkeling — Isla Cozumel
+  de: Schnorcheln — Insel Cozumel
+description:
+  en: |
+    Isla Cozumel (Yucatán, Mexico) pairs a shallow section of its famous Palancar Gardens drift reef with El Cielo, a shallow sand-bottom lagoon protected inside the Cozumel Reefs National Park (Parque Nacional Arrecifes de Cozumel, D.O.F. 04/07/1996) and known worldwide for its starfish sanctuary. Warm water year-round (25-29C) and typically excellent clarity make both sites reliable snorkel destinations, with boat access from San Miguel de Cozumel harbours.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.2, s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 0.8, s: 0.50 }
+      - { x: 1.2, s: 0.20 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.3 }
+      - { x: 20, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 15, s: 0.30 }
+      - { x: 20, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.4 }
+      - { x: 22, s: 0.9 }
+      - { x: 30, s: 1.0 }
+      - { x: 40, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 15, s: 0.5 }
+      - { x: 30, s: 0.9 }
+      - { x: 45, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 1.5
+    reason_code: CHOPPY_SEA
+    description: Waves above 1.5m make snorkeling unsafe, especially for beginners.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 15
+    reason_code: HIGH_WIND
+    description: Wind above 15 knots creates surface chop and current that is dangerous for snorkelers.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 44
+  carrying_capacity_sensitivity: high
+  notes: |
+    Parque Nacional Arrecifes de Cozumel enforces daily-visitor caps and no-anchor mooring-buoy rules at Palancar. El Cielo has a strict no-touch, no-standing policy for its Oreaster reticulatus starfish population, enforced by local boat-guide cooperatives after documented visitor damage; guides now require snorkelers to remain afloat over the sanctuary zone.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parque Nacional Arrecifes de Cozumel (D.O.F. 04/07/1996) management documentation"
+    - "CONANP (Comisión Nacional de Áreas Naturales Protegidas) Cozumel operational rules"
+    - "PADI Cozumel regional snorkel/dive-condition briefing"
+  notes: |
+    Extends snorkeling base directly; dimensions/gates copied verbatim from base. Coordinates piggyback the existing scuba-spot-cozumel cluster geography plus El Cielo's independently known lagoon position, restricted to shallow sections.

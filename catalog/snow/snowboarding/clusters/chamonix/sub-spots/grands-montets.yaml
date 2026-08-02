@@ -1,0 +1,46 @@
+slug: snowboarding-spot-chamonix-grands-montets
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-chamonix
+parent_cluster: snowboarding-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.9825, lng: 6.9319 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Grands Montets above Argentière is Chamonix's iconic advanced
+    snowboarding sector, historically famous for steep black pistes and
+    direct access to freeride-adjacent off-piste lines beneath the Aiguille
+    des Grands Montets. Terrain is sustained and steep with minimal
+    beginner grooming, and the sector's reputation among expert riders
+    places it well above the valley's intermediate zones. Warranting Tier 3
+    alongside comparable expert steeps elsewhere in the catalog.
+
+display_name:
+  en: Snowboarding — Grands Montets (Chamonix)
+  it: Snowboard — Grands Montets
+  es: Snowboard — Grands Montets
+  fr: Snowboard — Grands Montets
+  de: Snowboarden — Grands Montets
+
+description:
+  en: |
+    Argentière-side iconic advanced
+    snowboarding terrain at Chamonix, with freeride-adjacent steeps and
+    park elements.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie du Mont-Blanc Grands Montets sector piste dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-chamonix
+    cluster. Tier 3: steep advanced terrain with freeride-adjacent
+    off-piste access.

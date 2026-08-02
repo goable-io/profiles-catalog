@@ -1,0 +1,54 @@
+slug: trekking-spot-tour-du-mont-blanc-col-de-la-seigne
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-tour-du-mont-blanc
+parent_cluster: trekking-spot-tour-du-mont-blanc
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.7778, lng: 6.7975 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Col de la Seigne (2516 m) is the France/Italy border crossing on TMB
+    stage 4, a roughly 14-15 km, 5-6 hour day climbing about 900 m from
+    Refuge des Mottets (1868 m) on well-marked, switchbacked dirt trail
+    before descending a moderate scree-and-talus slope into the Val Veny
+    toward Rifugio Elisabetta (2195 m) on the Italian side. Two staffed
+    refuges bracket the crossing, each with food, water, and radio-
+    equipped emergency contact, and evacuation on either side takes
+    2-3 hours on foot via the Vallée des Glaciers or the Val Veny jeep
+    track. The principal hazards are afternoon thunderstorm exposure on
+    the open pass, where there is no shelter for roughly an hour on
+    either side, and loose scree footing on the Italian-side descent.
+
+display_name:
+  en: Trekking — Col de la Seigne
+  it: Trekking — Colle della Seigne
+  es: Trekking — Col de la Seigne
+  fr: Trekking — Col de la Seigne
+  de: Wandern — Col de la Seigne
+
+description:
+  en: |
+    The France-Italy border pass on TMB stage 4, crossed between
+    Refuge des Mottets and Rifugio Elisabetta. A well-marked, heavily
+    trafficked crossing at 2516 m offering the first classic views of
+    the Mont Blanc massif's Italian side.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Tour of Mont Blanc (Kev Reynolds)"
+    - "Fédération Française des Clubs Alpins et de Montagne (FFCAM) trail guidance"
+    - "Club Alpino Italiano (CAI) Val Veny section trail notes"
+  notes: |
+    Sub-spot of trekking-spot-tour-du-mont-blanc cluster. Tier 2:
+    established multi-day trail, moderate altitude gain, refuge system
+    on both sides of the border, scree exposure on descent but standard
+    intermediate route difficulty.

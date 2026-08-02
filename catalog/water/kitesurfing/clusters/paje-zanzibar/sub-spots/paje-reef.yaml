@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-paje-zanzibar-paje-reef
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-paje-zanzibar
+parent_cluster: kitesurfing-spot-paje-zanzibar
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -6.2650, lng: 39.5450 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Paje's reef-flat lagoon is shielded from open-ocean swell by a
+    barrier reef roughly 1-2 km offshore, leaving flat, shallow water
+    over sand and seagrass at mid-to-high tide, when most riding happens.
+    Both kaskazi (NE monsoon) and kusi (SE monsoon) deliver rideable
+    side-shore wind here, with kusi the stronger and more reliable at
+    15-25 knots. The lagoon empties substantially at low tide — riders
+    must plan sessions around the tide table, a scheduling consideration
+    rather than a safety one for this beginner-friendly reef flat, which
+    hosts the highest concentration of kite schools on the island.
+
+display_name:
+  en: Kitesurfing — Paje Reef
+  it: Kitesurf — Paje Reef
+  es: Kitesurf — Paje Reef
+  fr: Kitesurf — Paje Reef
+  de: Kitesurfen — Paje Reef
+
+description:
+  en: |
+    Zanzibar's flat-water kite hub — a barrier-reef-protected lagoon with
+    two monsoon wind seasons a year and the island's densest kite-school
+    concentration, though sessions are tide-dependent as the reef flat
+    drains at low water.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) Paje venue notes"
+    - "Tanzania Meteorological Authority monsoon wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-paje-zanzibar cluster. Tier 1: reef-
+    protected flat-water lagoon, tide-dependent, two rideable monsoon
+    seasons.

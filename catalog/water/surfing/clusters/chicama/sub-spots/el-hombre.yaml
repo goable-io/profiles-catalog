@@ -1,0 +1,52 @@
+slug: surfing-spot-chicama-el-hombre
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-chicama
+parent_cluster: surfing-spot-chicama
+region: pacific
+country_code: PE
+
+coordinates:
+  center: { lat: -7.6817, lng: -79.4600 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    El Hombre is the outer, most exposed section of the Chicama point
+    system, the first part of the wave to activate on a rising swell and
+    the section that must connect for a rider to link all the way
+    through to the main point. It shares the same moderate, sloped wave
+    shape as the rest of Chicama but sits furthest from shore and
+    shelter, meaning wind and swell direction changes are felt first and
+    most strongly here. Intermediate riders use it primarily on bigger
+    swell days when the whole point is working, since on smaller days it
+    may not break cleanly enough to be worth the extra paddle out from
+    the village.
+
+display_name:
+  en: Surfing — Chicama El Hombre
+  it: Surf — Chicama El Hombre
+  es: Surf — Chicama El Hombre
+  fr: Surf — Chicama El Hombre
+  de: Surfen — Chicama El Hombre
+
+description:
+  en: |
+    The outermost section of the Chicama point system, the first part of
+    the wave to catch a building swell and the connector that lets
+    riders link all the way through to the main point on the biggest
+    days. More exposed to wind and swell-direction shifts than the
+    inner sections, and best surfed when the whole point is firing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Deportiva Peruana de Tabla (surfing federation) spot classification"
+    - "Guinness World Records, longest rideable wave, Chicama, Peru"
+  notes: |
+    Sub-spot of surfing-spot-chicama cluster. Tier 2: outer connecting
+    section of the point, more exposed to wind/swell shifts, requires
+    bigger swell to break cleanly.

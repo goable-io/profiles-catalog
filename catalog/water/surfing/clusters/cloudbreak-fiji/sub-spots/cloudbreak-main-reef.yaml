@@ -1,0 +1,52 @@
+slug: surfing-spot-cloudbreak-fiji-cloudbreak-main-reef
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-cloudbreak-fiji
+parent_cluster: surfing-spot-cloudbreak-fiji
+region: pacific
+country_code: FJ
+
+coordinates:
+  center: { lat: -17.8617, lng: 177.1683 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Cloudbreak's main reef pass sits over shallow, sharp coral several
+    hundred metres offshore, where South Pacific groundswell wraps and
+    focuses into a long, powerful left-hand barrel reaching 3-6 m on
+    clean swells and considerably larger on tow-in days. The takeoff
+    zone is exposed to open ocean with no channel to rest in during
+    sets, and a wipeout at size means being driven across live coral in
+    shallow water with a long paddle back against current. It is a WSL
+    Championship Tour venue reserved for the world's best surfers on
+    contest days, reflecting the wave's combination of size, power, and
+    consequence.
+
+display_name:
+  en: Surfing — Cloudbreak Main Reef
+  it: Surf — Cloudbreak Main Reef
+  es: Surf — Cloudbreak Main Reef
+  fr: Surf — Cloudbreak Main Reef
+  de: Surfen — Cloudbreak Main Reef
+
+description:
+  en: |
+    The world-class left-hand reef break off Tavarua Island, ranked
+    among the best waves on the planet. South Pacific groundswell wraps
+    onto a shallow coral pass to produce long, hollow, mechanically
+    perfect barrels 3-6 m on clean days, hosting the WSL Championship
+    Tour's Fiji stop. Boat access only, from Tavarua or Namotu resorts.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Championship Tour Fiji venue documentation (Cloudbreak)"
+    - "Fiji Islands Surfing Association reef-break classification"
+  notes: |
+    Sub-spot of surfing-spot-cloudbreak-fiji cluster. Tier 3: exposed
+    open-ocean reef pass over shallow coral, WSL CT venue, no resting
+    channel at the peak.

@@ -1,0 +1,52 @@
+slug: trekking-spot-west-highland-way-loch-lomond-shore
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-west-highland-way
+parent_cluster: trekking-spot-west-highland-way
+country_code: GB
+
+coordinates:
+  center: { lat: 56.1017, lng: -4.6222 }
+  radius_m: 2000
+
+tier: 1
+tier_rationale:
+  en: |
+    The Rowardennan-to-Inversnaid stage runs roughly 12 km along the
+    rocky eastern shore of Loch Lomond at near sea-level altitude,
+    typically taking 4-5 hours. The path is well-signed but genuinely
+    rooty and rocky underfoot in sections, becoming notably muddy and
+    slick in the region's frequent wet weather — the defining
+    character of this low-altitude, low-technical-difficulty stretch.
+    Regular villages, a youth hostel at Rowardennan, and the Inversnaid
+    Hotel provide shelter, food, and phone signal at intervals, and the
+    West Highland Way's popularity means the path sees heavy foot
+    traffic with straightforward road or boat evacuation at several
+    points along the shore.
+
+display_name:
+  en: Trekking — Loch Lomond East Shore
+  it: Trekking — Sponda orientale del Loch Lomond
+  es: Senderismo — Orilla este del Loch Lomond
+  fr: Randonnée — Rive est du Loch Lomond
+  de: Wandern — Ostufer des Loch Lomond
+
+description:
+  en: |
+    The rocky, tree-lined eastern shore of Loch Lomond between
+    Rowardennan and Inversnaid — low altitude, well-signed, and
+    typically wet underfoot, a classic early stage of the West
+    Highland Way.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Loch Lomond and The Trossachs National Park Authority West Highland Way stage guidance"
+    - "Cicerone The West Highland Way guidebook"
+  notes: |
+    Sub-spot of trekking-spot-west-highland-way cluster. Tier 1:
+    low-altitude lochside path, well-signed, shelter and phone signal
+    at intervals, heavy foot traffic, easy evacuation — wet-weather
+    conditions are typical rather than hazardous here.

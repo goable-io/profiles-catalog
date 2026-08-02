@@ -1,0 +1,52 @@
+slug: road-cycling-spot-stelvio-mortirolo-gavia-stelvio-bormio-side
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-stelvio-mortirolo-gavia
+parent_cluster: road-cycling-spot-stelvio-mortirolo-gavia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5283, lng: 10.4533 }
+  radius_m: 3000
+
+tier: 3
+tier_rationale:
+  en: |
+    Passo dello Stelvio's Bormio side is the iconic Giro d'Italia
+    Cima Coppi climb: 23 km averaging 7% gradient through 48
+    numbered hairpins to a 2758m summit, the second-highest paved
+    pass in the Alps. The sheer length combined with high altitude
+    means riders face thinning air, sharp temperature drops, and
+    frequently unstable weather on the upper switchbacks even in
+    midsummer. Its status as one of cycling's most photographed and
+    revered climbs, paired with genuinely demanding sustained
+    effort and consequential exposed hairpins, places it firmly at
+    tier 3.
+
+display_name:
+  en: Road Cycling — Passo dello Stelvio (Bormio side)
+  it: Ciclismo su Strada — Passo dello Stelvio (versante Bormio)
+  es: Ciclismo de Ruta — Passo dello Stelvio (vertiente Bormio)
+  fr: Cyclisme sur Route — Passo dello Stelvio (versant Bormio)
+  de: Rennradfahren — Stilfser Joch (Bormio-Seite)
+
+description:
+  en: |
+    The classic ascent of Passo dello Stelvio from Bormio: 23 km at
+    an average 7% gradient, climbing through 48 numbered hairpins to
+    the 2758m summit. This is the Giro d'Italia's traditional Cima
+    Coppi, awarded to the highest point reached in each edition of
+    the race, and one of the most photographed roads in cycling.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Giro d'Italia official race documentation, Cima Coppi climb archive"
+    - "ProCyclingStats climb database — Passo dello Stelvio (Bormio) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-stelvio-mortirolo-gavia cluster.
+    Tier 3: legendary HC climb, Giro Cima Coppi status, high-altitude
+    exposure.

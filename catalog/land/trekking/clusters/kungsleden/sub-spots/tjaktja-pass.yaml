@@ -1,0 +1,55 @@
+slug: trekking-spot-kungsleden-tjaktja-pass
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-kungsleden
+parent_cluster: trekking-spot-kungsleden
+region: arctic
+country_code: SE
+
+coordinates:
+  center: { lat: 68.0567, lng: 18.5342 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Tjäktja Pass (1150 m) is the highest point on the Kungsleden main
+    trail, reached via a long approach of roughly 15-18 km and 600+ m
+    of cumulative ascent from the nearest STF huts at Alesjaure or
+    Sälka, typically a full trekking day each way. The crossing is a
+    fully exposed arctic-tundra traverse above the tree line on rock
+    and gravel path with duckboards over the wettest sections; snow
+    can persist on the pass into July, and there is no shelter, hut,
+    or reliable mobile coverage anywhere on the crossing itself.
+    Sudden arctic weather shifts (whiteout, high wind, sub-zero wind
+    chill even in summer) are the defining hazard, and evacuation from
+    the pass requires a multi-hour walk back to the nearest staffed
+    hut or a helicopter response coordinated through Swedish Mountain
+    Rescue.
+
+display_name:
+  en: Trekking — Tjäktja Pass
+  it: Trekking — Passo di Tjäktja
+  es: Senderismo — Puerto de Tjäktja
+  fr: Randonnée — Col de Tjäktja
+  de: Wandern — Tjäktja-Pass
+
+description:
+  en: |
+    The highest point of the Kungsleden main trail at 1150 m, an
+    exposed arctic-tundra pass crossing between the Alesjaure and
+    Sälka hut sections with sweeping views over the high-mountain
+    Lapland landscape and no shelter en route.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Svenska Turistföreningen (STF) Kungsleden Tjäktja Pass trail guidance"
+    - "Fjällsäkerhetsrådet (Swedish Mountain Safety Council) arctic-tundra crossing advisories"
+  notes: |
+    Sub-spot of trekking-spot-kungsleden cluster. Tier 3: highest point
+    of the trail, fully exposed above tree line, no hut or shelter on
+    the crossing itself, multi-hour or helicopter-only evacuation,
+    persistent early-season snow.

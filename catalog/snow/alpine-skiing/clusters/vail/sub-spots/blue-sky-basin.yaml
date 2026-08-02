@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-vail-blue-sky-basin
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-vail
+parent_cluster: alpine-skiing-spot-vail
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 39.6017, lng: -106.3117 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Blue Sky Basin is Vail's "third" mountain section, a north-facing
+    sector reached via the Skyline and Pete's Express chairs that
+    delivers gladed black and advanced-red piste terrain with
+    exceptional deep-snow retention thanks to its shaded aspect. Piste
+    marking runs black through the glades with advanced-red access
+    runs, grooming is limited given the tree-skiing character of the
+    terrain, and there is no snowmaking or terrain park in this sector.
+    Ski patrol maintains standard coverage across the marked glade
+    boundaries, and the sector's remoteness from the front-side base
+    areas (a longer chair-and-traverse approach) keeps crowding lower
+    than the Back Bowls on powder days; it is best suited to advanced
+    skiers comfortable with glade and variable-snow skiing.
+
+display_name:
+  en: Alpine Skiing — Blue Sky Basin
+  it: Sci Alpino — Blue Sky Basin
+  es: Esquí Alpino — Blue Sky Basin
+  fr: Ski Alpin — Blue Sky Basin
+  de: Alpiner Skilauf — Blue Sky Basin
+
+description:
+  en: |
+    Vail's north-facing third mountain section — gladed black and
+    advanced-red piste terrain with deep-snow retention, reached via
+    Skyline and Pete's Express chairs.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Vail Mountain (Vail Resorts) Blue Sky Basin and trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-vail cluster. Tier 3: gladed black
+    and advanced-red terrain, north-facing aspect, deep-snow retention.

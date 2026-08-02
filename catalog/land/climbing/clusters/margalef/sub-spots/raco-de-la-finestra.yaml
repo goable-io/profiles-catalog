@@ -1,0 +1,49 @@
+slug: climbing-spot-margalef-raco-de-la-finestra
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-margalef
+parent_cluster: climbing-spot-margalef
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 41.2900, lng: 0.7550 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Racó de la Finestra sits adjacent to the flagship La Finestra sector
+    and offers a more moderate grade band, F6a to F7c, on the same
+    rounded-pocket conglomerate. Bolting is stainless with chain
+    lower-offs, maintained to the same standard as the neighbouring
+    hard sector. The rock character is identical conglomerate texture
+    but with less-steep, more approachable lines suited to climbers
+    building toward Margalef's pocket-pulling style. Approach is a short
+    walk from roadside or village parking, sharing access with La
+    Finestra. Falls are clean onto bolts; standard bolted-sport-route
+    residual risks apply.
+
+display_name:
+  en: Climbing — Margalef Racó de la Finestra
+  it: Arrampicata — Margalef Racó de la Finestra
+  es: Escalada — Margalef Racó de la Finestra
+  fr: Escalade — Margalef Racó de la Finestra
+  de: Klettern — Margalef Racó de la Finestra
+
+description:
+  en: |
+    Racó de la Finestra, adjacent to La Finestra, offers a more moderate
+    F6a-F7c grade band on the same pocketed conglomerate style.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Margalef-region guidebook coverage"
+    - "FEEC Margalef access documentation"
+  notes: |
+    Sub-spot of climbing-spot-margalef cluster. Tier 2: moderate
+    single-pitch sport conglomerate, stainless hardware, shares access
+    with La Finestra.

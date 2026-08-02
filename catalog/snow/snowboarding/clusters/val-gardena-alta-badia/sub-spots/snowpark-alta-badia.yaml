@@ -1,0 +1,44 @@
+slug: snowboarding-spot-val-gardena-alta-badia-snowpark-alta-badia
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-val-gardena-alta-badia
+parent_cluster: snowboarding-spot-val-gardena-alta-badia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5642, lng: 11.8683 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    The Alta Badia snowpark on the Piz La Ila side offers moderate
+    freestyle-park lines suited to progression riders rather than pro-scale
+    big-air commitment. Feature scale is comparable to other resort-
+    standard parks documented elsewhere in this catalog, and the
+    surrounding groomed terrain gives easy access between park laps and
+    cruising runs. Consistent with a Tier 2 classification.
+
+display_name:
+  en: Snowboarding — Alta Badia Snowpark
+  it: Snowboard — Snowpark Alta Badia
+  es: Snowboard — Snowpark Alta Badia
+  fr: Snowboard — Snowpark Alta Badia
+  de: Snowboarden — Snowpark Alta Badia
+
+description:
+  en: |
+    Moderate freestyle-park lines on the
+    Piz La Ila side of Alta Badia.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Alta Badia snowpark feature inventory"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-val-gardena-alta-badia cluster. Tier 2: moderate
+    freestyle-park terrain, not pro-line big-air.

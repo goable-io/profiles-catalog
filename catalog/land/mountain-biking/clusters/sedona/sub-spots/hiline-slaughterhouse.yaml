@@ -1,0 +1,45 @@
+slug: mountain-biking-spot-sedona-hiline-slaughterhouse
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-sedona
+parent_cluster: mountain-biking-spot-sedona
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 34.8500, lng: -111.7833 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Hiline and Slaughterhouse trail loop is Sedona's benchmark
+    technical intermediate ride, mixing slickrock rollers with
+    dirt-and-rock singletrack across red-rock terrain south of town.
+    Technical features include short slickrock climbs, moderate ledge
+    drops, and off-camber rock sections that demand line choice, but
+    exposure is contained compared to Hangover Trail — most technical
+    moves have a rideable bail-out or walk-around. The loop is popular
+    with intermediate riders building toward Sedona's harder exposure
+    trails and sees heavy weekend traffic.
+
+display_name:
+  en: Mountain Biking — Sedona Hiline + Slaughterhouse
+description:
+  en: |
+    Technical intermediate red-rock loop combining the Hiline and
+    Slaughterhouse trails south of Sedona — mixed slickrock and dirt
+    singletrack with moderate ledges and off-camber sections, contained
+    exposure compared to the area's harder lines.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Coconino National Forest trail information"
+    - "Trailforks Hiline and Slaughterhouse trail listings"
+  notes: |
+    Sub-spot of mountain-biking-spot-sedona cluster. Tier 2: intermediate
+    technical singletrack, mixed slickrock/dirt, contained exposure with
+    rideable bail-outs.

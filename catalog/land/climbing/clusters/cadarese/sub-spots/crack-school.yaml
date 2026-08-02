@@ -1,0 +1,50 @@
+slug: climbing-spot-cadarese-crack-school
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-cadarese
+parent_cluster: climbing-spot-cadarese
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.4650, lng: 8.3200 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Widely known as Italy's crack-climbing school, this sector holds the
+    gorge's core collection of clean, parallel-sided Ossola granite
+    cracks from 5.9 to 5.13, protected entirely by natural gear (cams
+    from fingers to offwidth sizes) with essentially no fixed hardware
+    on the crack lines themselves. The north-facing gorge stays shaded
+    and cool through summer, a defining feature that keeps climbing
+    comfortable in hot months but slows rock-drying after rain. Jamming
+    technique on unfamiliar crack sizes and the trad-only protection
+    scheme make this a committing, technique-demanding venue placed in
+    the advanced tier despite short pitch lengths, consistent with its
+    reputation as the reference trad-crack venue in Italy.
+
+display_name:
+  en: Climbing — Cadarese Crack School
+  it: Arrampicata — Cadarese Crack School
+  es: Escalada — Cadarese Crack School
+  fr: Escalade — Cadarese Crack School
+  de: Klettern — Cadarese Crack School
+
+description:
+  en: |
+    Italy's reference crack-climbing school: clean Ossola granite cracks
+    from 5.9 to 5.13, natural-gear protection only, north-facing shade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Versante Sud Cadarese crack-climbing guidebook"
+    - "CAI Verbano alpine route and condition documentation"
+  notes: |
+    Sub-spot of climbing-spot-cadarese cluster. Tier 3: trad-only crack
+    climbing demanding specific jamming technique, no fixed hardware —
+    advanced with documented consequence profile.

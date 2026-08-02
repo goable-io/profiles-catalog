@@ -1,0 +1,50 @@
+slug: road-cycling-spot-dolomiti-passes-passo-sella
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-dolomiti-passes
+parent_cluster: road-cycling-spot-dolomiti-passes
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5083, lng: 11.7550 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    Passo Sella (2244m) from the Val Gardena side is a shorter,
+    steeper Sella Ronda climb at 5.5 km averaging 7%, ridden beneath
+    the sheer vertical walls of the Sella massif. It is a well-
+    established, well-surfaced cyclosportive road rather than a
+    Grand Tour rarity, so while the gradient and altitude demand real
+    fitness, the consequence and technical exposure sit below the
+    Stelvio/Zoncolan tier. Its established Cat 1-calibre profile,
+    heavy but manageable cyclotourism traffic, and dramatic but non-
+    extreme exposure place it at tier 2.
+
+display_name:
+  en: Road Cycling — Passo Sella (Val Gardena side)
+  it: Ciclismo su Strada — Passo Sella (versante Val Gardena)
+  es: Ciclismo de Ruta — Passo Sella (vertiente Val Gardena)
+  fr: Cyclisme sur Route — Passo Sella (versant Val Gardena)
+  de: Rennradfahren — Sellajoch (Grödental-Seite)
+
+description:
+  en: |
+    Passo Sella (2244m) climbed from Val Gardena: 5.5 km at an
+    average 7% gradient, running directly beneath the towering
+    vertical walls of the Sella massif. One leg of the classic Sella
+    Ronda four-pass circuit.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ProCyclingStats climb database — Passo Sella (Val Gardena) profile"
+    - "Maratona dles Dolomites official route documentation"
+  notes: |
+    Sub-spot of road-cycling-spot-dolomiti-passes cluster. Tier 2:
+    Cat 1-calibre Sella Ronda climb, dramatic but well-engineered
+    road.

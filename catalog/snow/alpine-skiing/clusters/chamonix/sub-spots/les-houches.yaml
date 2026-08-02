@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-chamonix-les-houches
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-chamonix
+parent_cluster: alpine-skiing-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.8925, lng: 6.8003 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Les Houches sits at the entrance to the Chamonix valley and
+    hosts the Kandahar World Cup downhill venue alongside wide,
+    well-groomed red-piste cruising and an intermediate terrain
+    park. The sector's lower elevation is supported by consistent
+    snowmaking coverage, and its wide runs plus family-friendly base
+    area make it more approachable than the higher valley sectors.
+    Ski patrol covers the full marked network, including the
+    race-piste terrain used for FIS competition.
+
+display_name:
+  en: Alpine Skiing — Les Houches (Chamonix)
+  it: Sci Alpino — Les Houches
+  es: Esquí Alpino — Les Houches
+  fr: Ski Alpin — Les Houches
+  de: Alpiner Skilauf — Les Houches
+
+description:
+  en: |
+    Valley-entrance sector hosting the Kandahar World Cup downhill
+    venue, with wide red-piste cruising, a terrain park, and a
+    family-friendly base area.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIS Les Houches Kandahar World Cup downhill venue documentation"
+    - "Compagnie du Mont-Blanc Les Houches piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-chamonix cluster. Tier 2: red-piste
+    dominant cruising with WC downhill race venue and family-friendly
+    base area.

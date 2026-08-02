@@ -1,0 +1,50 @@
+slug: road-cycling-spot-mauna-kea-saddle-road-approach
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-mauna-kea
+parent_cluster: road-cycling-spot-mauna-kea
+region: pacific
+country_code: US
+
+coordinates:
+  center: { lat: 19.7583, lng: -155.4783 }
+  radius_m: 3000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Saddle Road approach to the Mauna Kea Visitor Information
+    Station reaches roughly 2800m entirely on paved road, avoiding
+    the unpaved summit-avoidance section that makes the full Summit
+    Road effectively unrideable on a road bike. It still involves
+    significant sustained altitude gain and thinning air by the
+    visitor centre, but without the extreme tropical-to-alpine full
+    transition or unpaved surface risk of the complete summit route.
+    This more moderate, fully-paved profile with real but lesser
+    altitude exposure places it at tier 2 rather than tier 3.
+
+display_name:
+  en: Road Cycling — Mauna Kea Saddle Road Approach
+  it: Ciclismo su Strada — Mauna Kea Saddle Road Approach
+  es: Ciclismo de Ruta — Mauna Kea Saddle Road Approach
+  fr: Cyclisme sur Route — Mauna Kea Saddle Road Approach
+  de: Rennradfahren — Mauna Kea Saddle Road Approach
+
+description:
+  en: |
+    The Saddle Road approach to the Mauna Kea Visitor Information
+    Station at roughly 2800m — the practical, fully-paved ceiling for
+    road cyclists on Mauna Kea, avoiding the unpaved final summit
+    section.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Mauna Kea Visitor Information Station road and elevation documentation"
+    - "University of Hawai'i Institute for Astronomy access and altitude guidance"
+  notes: |
+    Sub-spot of road-cycling-spot-mauna-kea cluster. Tier 2: fully
+    paved approach with moderate but real altitude exposure, avoids
+    the unpaved summit-avoidance section.

@@ -1,0 +1,82 @@
+slug: climbing-spot-siurana
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: ES
+sub_spots:
+  - climbing-spot-siurana-can-piqui-pugui
+  - climbing-spot-siurana-ca-lonso
+  - climbing-spot-siurana-cornalada
+display_name:
+  en: Climbing — Siurana
+  it: Arrampicata — Siurana
+  es: Escalada — Siurana
+  fr: Escalade — Siurana
+  de: Klettern — Siurana
+description:
+  en: |
+    Siurana (Tarragona province, Catalonia) sits above the Siurana
+    reservoir on a limestone plateau and is one of the world's premier
+    sport-climbing destinations, historically home to some of the
+    hardest routes ever established (including early ascents by Chris
+    Sharma such as La Rambla). The orange and grey limestone offers
+    steep, pocketed, and tufa-featured walls across a huge grade range
+    from F5 moderate lines to F9a+ testpieces, with varied aspects
+    allowing sun or shade rotation through the day. Mediterranean climate
+    gives a long season, roughly October through May as the primary
+    window, with summer climbable at altitude and in shade but generally
+    too hot at midday. Approach is via short walks from village-adjacent
+    parking; the main physical constraint is heat in summer and, after
+    rain, limestone runoff that can leave routes wet for a day or more.
+
+dimensions:
+  - { name: temperature,   metric: apparent_temp_c,     weight: 0.29, curve: [ { x: -5, s: 0.05 }, { x: 2, s: 0.40 }, { x: 8, s: 0.85 }, { x: 14, s: 1.00 }, { x: 22, s: 0.95 }, { x: 30, s: 0.55 }, { x: 38, s: 0.15 } ] }
+  - { name: precipitation, metric: precipitation_mm_h,  weight: 0.23, curve: [ { x: 0, s: 1.00 }, { x: 0.1, s: 0.50 }, { x: 0.5, s: 0.15 }, { x: 2, s: 0.00 } ] }
+  - { name: wind_speed,    metric: wind_speed_kn,       weight: 0.13, curve: [ { x: 0, s: 1.00 }, { x: 8, s: 0.95 }, { x: 16, s: 0.70 }, { x: 25, s: 0.30 }, { x: 35, s: 0.00 } ] }
+  - { name: sun,           metric: sun_altitude_deg,    weight: 0.10, curve: [ { x: 0, s: 0.00 }, { x: 10, s: 0.65 }, { x: 25, s: 1.00 } ] }
+  - { name: uv_safety,     metric: uv_index,            weight: 0.08, curve: [ { x: 0, s: 1.00 }, { x: 3, s: 1.00 }, { x: 6, s: 0.85 }, { x: 9, s: 0.55 }, { x: 11, s: 0.30 } ] }
+  - { name: visibility,    metric: visibility_km,       weight: 0.09, curve: [ { x: 0, s: 0.00 }, { x: 1, s: 0.30 }, { x: 3, s: 0.75 }, { x: 10, s: 1.00 } ] }
+  - { name: rockfall,      metric: rockfall_risk_index, weight: 0.08, curve: [ { x: 0.0, s: 1.00 }, { x: 0.2, s: 0.95 }, { x: 0.45, s: 0.80 }, { x: 0.7, s: 0.55 }, { x: 1.0, s: 0.30 } ] }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation makes Siurana limestone slick; post-rain runoff can persist on tufa features for a day or more. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Fog or low cloud on the plateau below 500m obscures approach trails and route-finding. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained wind above 35 knots makes rope handling and communication unsafe on the exposed plateau walls. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Below -5°C apparent, tendons stiffen and grip on pocketed limestone deteriorates sharply. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 38
+  carrying_capacity_sensitivity: high
+  notes: |
+    Siurana draws heavy international climber traffic in the October-May
+    window, concentrating crowding and cliff-base erosion around the
+    village and popular sectors; local climbing associations (FEEC -
+    Federació d'Entitats Excursionistes de Catalunya) and the Siurana
+    community coordinate bolting maintenance and access. Some sectors
+    have raptor nesting closures during spring, and parking in the small
+    village is limited during peak weekends.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Siurana / Costa Blanca-region guidebook coverage"
+    - "FEEC (Federació d'Entitats Excursionistes de Catalunya) Siurana access documentation"
+  notes: |
+    Cluster overrides vs global climbing: long season (38 weeks)
+    reflecting the mild Mediterranean climate and October-May primary
+    window; temperature weight raised slightly (0.29) since aspect
+    rotation and heat are the dominant strategic decision much like
+    El Chorro.

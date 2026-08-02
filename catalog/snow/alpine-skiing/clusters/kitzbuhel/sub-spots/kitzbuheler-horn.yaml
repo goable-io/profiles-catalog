@@ -1,0 +1,46 @@
+slug: alpine-skiing-spot-kitzbuhel-kitzbuheler-horn
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-kitzbuhel
+parent_cluster: alpine-skiing-spot-kitzbuhel
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.4483, lng: 12.4192 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Kitzbüheler Horn sector (1996 m) is reached by gondola directly
+    from Kitzbühel town, on the sunny east side of the resort. Pistes are
+    predominantly red-marked cruising runs across broad, south-facing
+    mid-mountain terrain, with a dedicated terrain park featuring jumps
+    and rail lines for freestyle skiers. Grooming is daily and thorough,
+    snowmaking coverage supplements the lower-altitude pistes, and ski
+    patrol coverage is standard gondola-network access. The sector is
+    popular for its panoramic views over the Kitzbühel valley and its
+    reliable sun exposure through the day.
+
+display_name:
+  en: Alpine Skiing — Kitzbüheler Horn (Kitzbühel)
+  it: Sci Alpino — Kitzbüheler Horn
+  es: Esquí Alpino — Kitzbüheler Horn
+  fr: Ski Alpin — Kitzbüheler Horn
+  de: Alpiner Skilauf — Kitzbüheler Horn
+
+description:
+  en: |
+    Sunny, gondola-served red-piste cruising sector (1996 m) directly
+    above Kitzbühel town, with a dedicated terrain park.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Kitzbüheler Bergbahn AG (Kitzski) Kitzbüheler Horn lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-kitzbuhel cluster. Tier 2: red-piste
+    intermediate cruising, gondola-served, terrain park, sunny exposure.

@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-zermatt-rothorn
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-zermatt
+parent_cluster: alpine-skiing-spot-zermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 45.9950, lng: 7.7717 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Rothorn sector (3103 m), reached via the Sunnegga funicular
+    and Blauherd gondola, offers sunny-side red-piste cruising on
+    the long Rothorn-Findelbach descent. Grooming coverage is
+    consistent across the marked network with ski-patrol presence
+    throughout, and the sector benefits from good snow retention on
+    its higher shoulder-season sections. Piste marking is
+    predominantly red with a handful of connecting blue links lower
+    down, making it a standard intermediate cruising ground with
+    mountain-restaurant service at Blauherd and Rothorn stations.
+
+display_name:
+  en: Alpine Skiing — Rothorn (Zermatt)
+  it: Sci Alpino — Rothorn
+  es: Esquí Alpino — Rothorn
+  fr: Ski Alpin — Rothorn
+  de: Alpiner Skilauf — Rothorn
+
+description:
+  en: |
+    Sunny-side intermediate sector at 3103 m, reached via the
+    Sunnegga funicular and Blauherd gondola. Long red-piste cruising
+    on the Rothorn-Findelbach descent.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zermatt Bergbahnen AG Rothorn piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-zermatt cluster. Tier 2: red-piste
+    dominant intermediate cruising sector with funicular + gondola
+    access.

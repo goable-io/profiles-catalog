@@ -1,0 +1,143 @@
+slug: climbing-spot-arco
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: IT
+sub_spots:
+  - climbing-spot-arco-massone
+  - climbing-spot-arco-nago
+  - climbing-spot-arco-baone
+display_name:
+  en: Climbing — Arco
+  it: Arrampicata — Arco
+  es: Escalada — Arco
+  fr: Escalade — Arco
+  de: Klettern — Arco
+description:
+  en: |
+    Arco (Trentino, on the northern shore of Lake Garda) is one of Europe's
+    premier sport-climbing destinations, with thousands of bolted limestone
+    routes spread across sun-warmed crags in the lower Sarca valley. Elevation
+    ranges from near lake level up to a few hundred metres on the surrounding
+    slopes, with aspects covering south-facing showcase walls, north-facing
+    shaded multipitch, and family-friendly low-angle sectors. Grades span
+    F3 beginner routes to F8c+ testpieces, with the bulk of the catalog in
+    the F5-F7c sport range. Best season runs spring and autumn; south-facing
+    crags become uncomfortably hot in July-August while shaded or higher
+    sectors remain climbable. Rock is predominantly compact Dolomia and
+    grey limestone, mostly dry-fast after rain given the steep, well-drained
+    terrain. Arco hosts the annual Rockmaster competition and is managed in
+    part by the local SAT (Società Alpinisti Tridentini) climbing committee.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.30
+    curve:
+      - { x: -5, s: 0.05 }
+      - { x: 2,  s: 0.40 }
+      - { x: 8,  s: 0.85 }
+      - { x: 14, s: 1.00 }
+      - { x: 22, s: 0.95 }
+      - { x: 30, s: 0.55 }
+      - { x: 38, s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation on Arco limestone reduces friction sharply and increases lowering/rope-handling risk on steep sport routes. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Visibility below 500m impairs approach navigation and communication on multipitch sectors above Massone and Nago. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained wind above 35 knots is unusual in the sheltered Sarca valley but creates rope-drag and communication hazards when it occurs. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Apparent temperature below -5°C is rare at this elevation but stiffens tendons and degrades grip on cold winter mornings. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: high
+  notes: |
+    Arco crags are managed cooperatively with the SAT (Società Alpinisti
+    Tridentini) Arco climbing committee, which coordinates re-bolting and
+    signage. The lower Sarca valley sees heavy seasonal crowding
+    spring/autumn and during the Rockmaster festival; some sectors post
+    advisory closures during raptor nesting (peregrine falcon, kestrel)
+    on the surrounding crags February-June. Parking and approach-trail
+    erosion at Massone are actively managed by the local climbing club.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SAT Arco (Società Alpinisti Tridentini) climbing area management documentation"
+    - "Vertical-Life Arco route database"
+  notes: |
+    Weights follow the catalog default sport-climbing template
+    (temperature-dominant at 0.30) reflecting Arco's reputation as a
+    warm, low-precipitation destination where heat management (aspect
+    rotation) is the primary strategic decision, similar in character to
+    El Chorro. Season window (36 weeks) is shorter than El Chorro because
+    Arco's continental-alpine winters are colder.

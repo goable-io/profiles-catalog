@@ -1,0 +1,168 @@
+slug: kitesurfing-spot-le-morne
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: kitesurfing
+region: indian
+country_code: MU
+sub_spots:
+  - kitesurfing-spot-le-morne-kite-lagoon
+  - kitesurfing-spot-le-morne-one-eye
+  - kitesurfing-spot-le-morne-manawa-outer-reef
+display_name:
+  en: Kitesurfing — Le Morne (Mauritius)
+  it: Kitesurf — Le Morne (Mauritius)
+  es: Kitesurf — Le Morne (Mauricio)
+  fr: Kitesurf — Le Morne (Maurice)
+  de: Kitesurfen — Le Morne (Mauritius)
+description:
+  en: |
+    Le Morne, at the southwest tip of Mauritius beneath the UNESCO-listed
+    Le Morne Brabant peak, is one of the world's most complete kitesurfing
+    venues — a single bay offering flat-water lagoon, mid-reef chop, and
+    a world-class outer-reef wave break within a few hundred metres of
+    each other. The Indian Ocean SE trade winds blow reliably 15-25 knots
+    from May through November (Austral winter), side-shore across the
+    lagoon. The barrier reef 1-2 km offshore creates the flat inner lagoon
+    while channelling ocean swell onto the outer reef at One Eye and
+    Manawa, producing a rare freeride-to-wave-riding progression in one
+    bay. Water is warm year-round (24-28°C).
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.45
+    curve:
+      - { x: 0, s: 0.00 }
+      - { x: 8, s: 0.20 }
+      - { x: 12, s: 0.60 }
+      - { x: 15, s: 0.95 }
+      - { x: 22, s: 1.00 }
+      - { x: 30, s: 0.70 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+    modifiers:
+      gust_factor_penalty:
+        threshold: 1.4
+        penalty_coefficient: 0.15
+
+  - name: wind_direction
+    metric: wind_direction_deg
+    weight: 0.15
+    modifiers:
+      direction_preference:
+        - { from: 180, to: 270, multiplier: 1.0 }
+        - { from: 90, to: 180, multiplier: 0.7 }
+        - { from: 0, to: 90, multiplier: 0.3 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.80 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 1.5, s: 0.85 }
+      - { x: 2.5, s: 0.55 }
+      - { x: 4.0, s: 0.20 }
+      - { x: 6.0, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.4 }
+      - { x: 15, s: 0.9 }
+      - { x: 25, s: 1.0 }
+      - { x: 35, s: 0.7 }
+      - { x: 40, s: 0.3 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.05
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 12, s: 0.3 }
+      - { x: 18, s: 0.8 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 1.0 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.7 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wind_speed_kn
+    condition: lt
+    value: 6
+    kind: feasibility
+    reason_code: NO_RIDABLE_WIND
+    description: Below ~6 knots there is not enough wind to generate power on any kite, so kitesurfing is not feasible regardless of the other conditions.
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: GALE_FORCE_WIND
+    description: Wind above 45 knots is unsafe for kitesurfing.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces visibility and indicates storm or cyclone-adjacent conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    Wind-powered activity with zero direct emissions per session. Le Morne
+    sits within a designated public beach access corridor and a marine
+    area adjacent to coral reef habitat; the reef-protected lagoon has
+    finite safe kite density and the outer-reef wave zones (One Eye,
+    Manawa) are shared with surfers under a long-standing local
+    right-of-way etiquette. International-flight transport to Mauritius
+    dominates per-trip footprint.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "International Kiteboarding Organization (IKO) condition guidelines"
+    - "Mauritius Meteorological Services SE trade-wind climatology"
+  notes: |
+    Cluster aggregates the Le Morne lagoon (flat-water school zone), One
+    Eye (outer-reef left-hand wave break, PKRA/GKA tour venue), and the
+    Manawa outer-reef sector between them. Dimensions and gates copied
+    verbatim from the base kitesurfing profile (no Indian-Ocean region
+    variant exists yet).

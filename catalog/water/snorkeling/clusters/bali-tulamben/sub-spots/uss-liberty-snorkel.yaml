@@ -1,0 +1,37 @@
+slug: snorkeling-spot-bali-tulamben-uss-liberty-snorkel
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-bali-tulamben
+parent_cluster: snorkeling-spot-bali-tulamben
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.274, lng: 115.594 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    The USS Liberty's stern and mid-hull sections sit at 5-10 m and the hull's uppermost ribs are visible from the surface at low tide, so a snorkeler never needs to descend below the beginner-safe shallow band to see the wreck's outline and resident reef fish. Entry is a flat black-sand beach walk-in with no boat, current, or surge hazard under normal conditions, and the site is used routinely for first-time snorkelers and school groups. The combination of a world-famous wreck silhouette, calm shallow water, and zero-skill entry places this firmly at tier 1.
+
+display_name:
+  en: Snorkeling — USS Liberty Wreck (Tulamben)
+  it: Snorkeling — Relitto USS Liberty
+  es: Snorkel — Naufragio USS Liberty
+  fr: Snorkeling — Épave USS Liberty
+  de: Schnorcheln — Wrack USS Liberty
+
+description:
+  en: |
+    Beginner-friendly walk-in snorkel over the shallow-breaking portion of Bali's iconic USS Liberty wreck, visible from the surface at low tide in 5-10 m.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "USS Liberty 1942 loss + 1963 tsunami-shift documentation"
+    - "PADI Bali Tulamben shore-entry site briefing"
+  notes: |
+    Sub-spot of snorkeling-spot-bali-tulamben. Tier 1: flat shore-entry, no current, wreck visible near-surface.

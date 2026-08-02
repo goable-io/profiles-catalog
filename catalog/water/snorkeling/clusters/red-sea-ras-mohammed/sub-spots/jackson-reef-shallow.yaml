@@ -1,0 +1,36 @@
+slug: snorkeling-spot-red-sea-ras-mohammed-jackson-reef-shallow
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-red-sea-ras-mohammed
+parent_cluster: snorkeling-spot-red-sea-ras-mohammed
+region: red-sea
+country_code: EG
+
+coordinates:
+  center: { lat: 27.7167, lng: 34.2167 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Jackson Reef's shallow rim in the Straits of Tiran offers clear water and a visible wall drop-off just beneath the surface, but the Straits carry a stronger tidal current than sheltered inshore sites and access is boat-only, well offshore from Sharm El-Sheikh. Snorkelers must hold position near the reef edge under guide supervision while current runs, which is a materially different skill demand than a calm lagoon. This places the site at tier 2.
+
+display_name:
+  en: Snorkeling — Jackson Reef Shallow
+  it: Snorkeling — Jackson Reef
+  es: Snorkel — Jackson Reef
+  fr: Snorkeling — Jackson Reef
+  de: Schnorcheln — Jackson Reef
+
+description:
+  en: |
+    Boat-access reef-top snorkel over Jackson Reef's shallow rim in the Straits of Tiran, clear water with a visible wall drop-off.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Straits of Tiran / Jackson Reef marine-protection zone briefing"
+  notes: |
+    Sub-spot of snorkeling-spot-red-sea-ras-mohammed. Tier 2: boat-access reef-top with strait current exposure.

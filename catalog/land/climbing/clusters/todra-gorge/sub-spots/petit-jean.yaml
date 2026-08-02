@@ -1,0 +1,48 @@
+slug: climbing-spot-todra-gorge-petit-jean
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-todra-gorge
+parent_cluster: climbing-spot-todra-gorge
+region: mediterranean
+country_code: MA
+
+coordinates:
+  center: { lat: 31.5900, lng: -5.5900 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Petit Jean sector offers moderate limestone sport routes from
+    roughly F5c to F7a, positioned for an easy walk-in directly from the
+    gorge road, making it one of Todra's most tourist-friendly and
+    frequently visited areas. Hardware is stainless steel maintained
+    through Fédération Royale Marocaine des Sports de Montagne et
+    d'Escalade (FRMSM) rebolting work, with well-spaced bolts and reliable
+    lower-offs suited to climbers newer to outdoor limestone. Route lengths
+    are short to moderate single-pitch, keeping falls clean and manageable,
+    and the sector's proximity to the road and local guiding operations
+    makes it the default introduction to the gorge for visiting climbers.
+
+display_name:
+  en: Climbing — Todra Gorge Petit Jean
+  it: Arrampicata — Gola del Todra Petit Jean
+  es: Escalada — Garganta del Todra Petit Jean
+  fr: Escalade — Gorges du Todra Petit Jean
+  de: Klettern — Todra-Schlucht Petit Jean
+
+description:
+  en: |
+    A tourist-friendly, easy-access Todra Gorge sector with moderate
+    F5c-F7a limestone sport routes and a short walk-in from the canyon
+    road.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Royale Marocaine des Sports de Montagne et d'Escalade (FRMSM) route and access guidance"
+  notes: |
+    Sub-spot of climbing-spot-todra-gorge cluster. Tier 2: moderate,
+    well-bolted single-pitch sport climbing with an easy roadside approach.

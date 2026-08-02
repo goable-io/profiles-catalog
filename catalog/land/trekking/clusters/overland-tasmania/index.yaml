@@ -1,0 +1,151 @@
+slug: trekking-spot-overland-tasmania
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+region: pacific
+country_code: AU
+sub_spots:
+  - trekking-spot-overland-tasmania-cradle-mountain-ronny-creek
+  - trekking-spot-overland-tasmania-mount-ossa-summit
+  - trekking-spot-overland-tasmania-narcissus-lake-st-clair
+display_name:
+  en: Trekking — Overland Track (Cradle Mountain–Lake St Clair, Tasmania)
+  it: Trekking — Overland Track (Cradle Mountain–Lake St Clair, Tasmania)
+  es: Senderismo — Overland Track (Cradle Mountain–Lake St Clair, Tasmania)
+  fr: Randonnée — Overland Track (Cradle Mountain–Lake St Clair, Tasmanie)
+  de: Wandern — Overland Track (Cradle Mountain–Lake St Clair, Tasmanien)
+description:
+  en: |
+    The Overland Track is a 65 km, six-day traverse of Tasmania's
+    Cradle Mountain-Lake St Clair National Park, running from Ronny
+    Creek at 940 m in the north to Narcissus Bay on Lake St Clair in
+    the south. The route crosses button-grass moorland, ancient
+    Gondwanan rainforest, and alpine dolerite plateau, with altitude
+    ranging from roughly 700 m at Lake St Clair to 1617 m at the
+    optional Mount Ossa summit side-trip — Tasmania's highest peak.
+    Terrain includes duckboarded wetland, well-formed gravel track,
+    and, on side trips, loose scree and rock scramble. The Parks and
+    Wildlife Service (PWS) operates a chain of unstaffed huts with
+    platform camping alongside, and enforces a booking system capping
+    independent walkers at 60 per day departing Ronny Creek during the
+    peak season (1 October to 31 May), when the track is walked in one
+    direction only. Tasmania's weather is notoriously changeable —
+    snow, hail, and gale-force wind are possible in any month — and
+    the walk finishes with a choice of a two-day walk-out or a boat
+    pick-up across Lake St Clair from Narcissus Hut to Cynthia Bay.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m makes off-trail navigation unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain creates slippery trails, flash-flood risk in canyons, and hypothermia exposure.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed ridges creates fall risk.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 35
+  carrying_capacity_sensitivity: high
+  notes: |
+    Tasmania's Parks and Wildlife Service (PWS) caps independent
+    walker departures from Ronny Creek at 60 people per day during
+    the booked peak season (1 October-31 May), a hard carrying-
+    capacity mechanism protecting the alpine dolerite plateau and
+    Gondwanan rainforest from erosion. Equipment dependency is high
+    given Tasmania's famously changeable weather, where snow is
+    possible in any month even at moderate elevation.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tasmania Parks and Wildlife Service (PWS) — Overland Track booking and visitor information"
+    - "Cradle Mountain-Lake St Clair National Park management plan"
+    - "Lonely Planet Tasmania guidebook coverage of the Overland Track"
+  notes: |
+    Cluster inherits trekking base scoring unmodified (no matching
+    alpine-family region variant exists for Tasmania's temperate
+    alpine-plateau + rainforest regime). 35-week typical season
+    reflects the PWS booked peak season (Oct-May) plus shoulder access
+    for experienced independent walkers outside the booking window.

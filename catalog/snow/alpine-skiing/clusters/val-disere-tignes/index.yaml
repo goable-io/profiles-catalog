@@ -1,0 +1,156 @@
+slug: alpine-skiing-spot-val-disere-tignes
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-alpine
+region: alpine
+country_code: FR
+sub_spots:
+  - alpine-skiing-spot-val-disere-tignes-bellevarde
+  - alpine-skiing-spot-val-disere-tignes-solaise
+  - alpine-skiing-spot-val-disere-tignes-grande-motte
+display_name:
+  en: Alpine Skiing — Val d'Isère / Tignes (Espace Killy)
+  it: Sci Alpino — Val d'Isère / Tignes (Espace Killy)
+  es: Esquí Alpino — Val d'Isère / Tignes (Espace Killy)
+  fr: Ski Alpin — Val d'Isère / Tignes (Espace Killy)
+  de: Alpiner Skilauf — Val d'Isère / Tignes (Espace Killy)
+description:
+  en: |
+    Val d'Isère and Tignes together form the Espace Killy (Savoie,
+    French Alps), a fully interconnected domain of roughly 300 km of
+    piste and around 80 lifts spanning from the valley floor near
+    1550 m up to the Grande Motte glacier at 3456 m. The area carries
+    deep Olympic and World Cup pedigree — Val d'Isère's Bellevarde
+    face hosted the men's downhill at the 1992 Albertville Games and
+    remains a regular World Cup venue, while Tignes' Grande Motte
+    glacier offers above-3000 m skiing into the summer months. Piste
+    marking spans blue through black across the linked domain, with
+    snowmaking covering lower and mid-mountain sectors and full
+    ski-patrol coverage on all marked runs. Primary lift operators
+    are Val d'Isère's STVI and Tignes' STGM. Season runs late
+    November to early May, with the Grande Motte glacier sector
+    extending into summer skiing.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots closes the Grande Motte funicular/cable-car link and Bellevarde upper lifts during Foehn events; on-piste exposure on ridge-adjacent runs becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m on the Grande Motte glacier sector makes piste navigation and lift retrieval unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on the Grande Motte glacier sector above 3000 m creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Espace Killy is operated jointly by STVI (Val d'Isère) and
+    STGM (Tignes) under the Domaines Skiables de France coordinated
+    environmental protocol. Snowmaking is extensive across the
+    mid-mountain given the domain's below-2200 m connecting runs;
+    the Grande Motte glacier's extended summer season adds year-round
+    operational and glacier-preservation pressure.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "STVI (Société des Téléphériques de Val d'Isère) piste map"
+    - "STGM (Société des Téléphériques Grande Motte, Tignes) piste map"
+    - "FIS Val d'Isère Bellevarde World Cup downhill venue documentation (1992 Albertville Olympic DH)"
+    - "Domaines Skiables de France (DSF) lift-closure and grooming protocol"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-alpine
+    (dimensions, gates copied exactly). Espace Killy spans two
+    communes (Val d'Isère, Tignes) on one interconnected lift
+    network.

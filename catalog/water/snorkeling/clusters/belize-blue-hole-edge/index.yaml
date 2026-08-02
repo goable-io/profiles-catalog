@@ -1,0 +1,125 @@
+slug: snorkeling-spot-belize-blue-hole-edge
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: snorkeling
+region: caribbean
+country_code: BZ
+sub_spots:
+  - snorkeling-spot-belize-blue-hole-edge-blue-hole-rim-snorkel
+  - snorkeling-spot-belize-blue-hole-edge-half-moon-caye-wall-top
+display_name:
+  en: Snorkeling — Belize Blue Hole Edge
+  it: Snorkeling — Bordo del Grande Buco Blu
+  es: Snorkel — Borde del Gran Agujero Azul
+  fr: Snorkeling — Bord du Grand Trou Bleu
+  de: Schnorcheln — Rand des Great Blue Hole
+description:
+  en: |
+    The Great Blue Hole, part of the Belize Barrier Reef Reserve System (UNESCO World Heritage Site, 1996), is a giant marine sinkhole roughly 318 m across and 124 m deep, made famous by Jacques Cousteau. Snorkeling is confined to the shallow reef rim circling the hole since visibility and marine life drop sharply below the halocline; nearby Half Moon Caye Natural Monument (Belize's first protected area, 1982) adds a barrier-reef wall-top with dense tropical fish. Both sites are remote atoll locations reached by long boat or seaplane transfer from the mainland, requiring calm-swell conditions.
+
+dimensions:
+  - name: wave
+    metric: wave_height_m
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.2, s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 0.8, s: 0.50 }
+      - { x: 1.2, s: 0.20 }
+      - { x: 1.5, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.15
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.3 }
+      - { x: 20, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 32, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 5, s: 1.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 15, s: 0.30 }
+      - { x: 20, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 5, s: 0.0 }
+      - { x: 15, s: 0.4 }
+      - { x: 22, s: 0.9 }
+      - { x: 30, s: 1.0 }
+      - { x: 40, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 15, s: 0.5 }
+      - { x: 30, s: 0.9 }
+      - { x: 45, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 1.5
+    reason_code: CHOPPY_SEA
+    description: Waves above 1.5m make snorkeling unsafe, especially for beginners.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 15
+    reason_code: HIGH_WIND
+    description: Wind above 15 knots creates surface chop and current that is dangerous for snorkelers.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Belize Barrier Reef Reserve System (UNESCO World Heritage Site, 1996) governs both sites; Half Moon Caye Natural Monument, managed by the Belize Audubon Society, protects a nesting red-footed booby colony and enforces visitor-trail limits on the cay itself. The Blue Hole's long open-water transfer and mid-day-only, calm-swell operating window naturally cap visitor volume and equipment demands relative to inshore reef sites.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Belize Barrier Reef Reserve System (UNESCO World Heritage Site, 1996) documentation"
+    - "Belize Audubon Society Half Moon Caye Natural Monument (1982) management plan"
+    - "Great Blue Hole hydrogeology + halocline marine-life documentation"
+  notes: |
+    Extends snorkeling base directly; dimensions/gates copied verbatim from base. Dedicated cluster reflecting the Great Blue Hole's shallow rim and adjacent Half Moon Caye — the deep sinkhole interior itself is a scuba/technical-dive feature, not a snorkel one, so only the rim and reef-top are captured here.

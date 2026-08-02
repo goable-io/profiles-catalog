@@ -1,0 +1,41 @@
+slug: snorkeling-spot-bunaken-fukui-point
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-bunaken
+parent_cluster: snorkeling-spot-bunaken
+region: pacific
+country_code: ID
+
+coordinates:
+  center: { lat: 1.61, lng: 124.7333 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Fukui Point is a boat-drop drift site along the Bunaken wall known for
+    exceptionally dense schools of tropical fish. Where snorkelers drift
+    with a boat-tracked current along the reef crest rather than swimming a
+    fixed shore route. The drift technique and proximity to the sheer wall
+    drop-off demand more water comfort and current awareness than Liang
+    Beach's sheltered shore entry, placing Fukui Point at tier 2.
+
+display_name:
+  en: Snorkeling — Fukui Point (Bunaken)
+  it: Snorkeling — Fukui Point
+  es: Snorkel — Fukui Point
+  fr: Snorkeling — Fukui Point
+  de: Schnorcheln — Fukui Point
+
+description:
+  en: |
+    Boat-drop drift snorkel over the Bunaken wall at Fukui Point, known for record tropical-fish density.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Coral Triangle Initiative Sulawesi biodiversity monitoring"
+  notes: |
+    Sub-spot of snorkeling-spot-bunaken. Tier 2: boat-drop drift site along the barrier-reef wall.

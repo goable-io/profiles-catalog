@@ -1,0 +1,49 @@
+slug: climbing-spot-lofoten-presten
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-lofoten
+parent_cluster: climbing-spot-lofoten
+region: arctic
+country_code: "NO"
+
+coordinates:
+  center: { lat: 68.0980, lng: 13.5850 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Presten's north-west face is a 400 m+ granite big wall offering classic
+    Arctic multipitch trad climbing from F5c to F7a, split by clean crack
+    systems on generally solid rock with some sections requiring careful
+    route-finding among featured slabs and corners. Protection is primarily
+    trad (cams and nuts) with occasional fixed anchors at belay stances;
+    descent is by rappel down established lines. The midnight-sun summer
+    season (roughly June-July) allows unusually flexible start times, but
+    weather off the Norwegian Sea can deteriorate rapidly, and the wall's
+    height and remoteness make retreat from upper pitches a serious
+    undertaking with limited rescue access from the fjord below.
+
+display_name:
+  en: Climbing — Lofoten Presten
+  it: Arrampicata — Lofoten Presten
+  es: Escalada — Lofoten Presten
+  fr: Escalade — Lofoten Presten
+  de: Klettern — Lofoten Presten
+
+description:
+  en: |
+    The cluster's flagship: a 400m+ granite big wall on Presten's NW face,
+    classic Arctic trad multipitch from F5c to F7a, climbed under the
+    midnight sun in summer.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chris Craggs / Thomas Rennfeldt Lofoten climbing guidebook"
+  notes: |
+    Sub-spot of climbing-spot-lofoten cluster. Tier 3: committing granite
+    big-wall multipitch, trad protection, remote setting with limited
+    rescue access.

@@ -1,0 +1,152 @@
+slug: alpine-skiing-sea-of-japan
+spot_kind: region
+version: "0.1.0"
+category: snow
+extends: alpine-skiing
+region: sea-of-japan
+display_name:
+  en: Alpine Skiing — Sea of Japan (JAPOW)
+  it: Sci Alpino — Giappone (Sea of Japan)
+  es: Esquí Alpino — Japón (Mar del Japón)
+  fr: Ski Alpin — Japon (Mer du Japon)
+  de: Alpiner Skilauf — Japan (Sea of Japan)
+description:
+  en: |
+    Japanese resort skiing on the Sea-of-Japan W-facing slopes (Niseko
+    on Hokkaido, Hakuba Valley + Myoko + Nozawa Onsen on Honshu) is
+    driven by the winter Siberian NW monsoon — cold-air masses from
+    the Asian continent absorb massive Sea-of-Japan moisture and
+    dump 10-15 m annual snowfall (world-record snowfall totals) on
+    the W-facing Japanese Alps. Snow surface quality is exceptional
+    (dry maritime-continental hybrid — "JAPOW"), but visibility during
+    active dump cycles routinely drops below 500 m for days. Wind
+    is generally moderate (Sea-of-Japan pressure-gradient less
+    ridge-exposed than European Alps) but blizzard conditions during
+    peak monsoon dumps close some upper lifts. Season 20 weeks
+    (mid-Dec to mid-Apr).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.15 }
+      - { x: -15, s: 0.65 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.16
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.20 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.14
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.30 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.75 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 1.00 }
+      - { x: 5,   s: 0.85 }
+      - { x: 12,  s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.06
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes upper gondolas at Japanese resorts during blizzard windows; on-piste exposure above treeline becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.15
+    reason_code: JAPOW_WHITEOUT
+    description: Visibility below 150 m during peak JAPOW dump cycles makes piste navigation impossible even on marked runs; resorts close ungroomed upper terrain first.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK
+    description: Apparent temperature below -25°C on Hokkaido interior sectors creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Japanese resort operators (Niseko United, Hakuba Valley Ski Alliance)
+    coordinate seasonal grooming + snowmaking + lift-closure protocols.
+    Snow is abundant and cold — snowmaking is less critical than in
+    the European Alps. Peak season carrying capacity is medium
+    (foreign-visitor concentration is high but Japanese domestic ski
+    tourism has been declining, freeing peak-day capacity in most
+    resorts).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Japan Ski Areas Association operational standards"
+    - "JMA (Japan Meteorological Agency) Sea-of-Japan monsoon winter snowfall data"
+    - "Niseko United / Hakuba Valley Ski Alliance operational SOP"
+  notes: |
+    Regional overrides vs alpine-skiing base: precipitation weight
+    raised to 0.20 (JAPOW dump cycles are the value proposition — heavy
+    snow is a positive, not a negative); snow_surface weight raised
+    to 0.20 (dry powder is baseline expectation); visibility gate
+    tightened to 0.15 km reflecting JAPOW whiteout intensity. Season
+    tightened to 20 weeks (mid-Dec to mid-Apr) — Japan has short
+    resort season vs 20-22 weeks in Alps/Rockies.

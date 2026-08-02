@@ -1,0 +1,50 @@
+slug: freeride-spot-silverton-billboard
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-silverton
+parent_cluster: freeride-spot-silverton
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.8583, lng: -107.6667 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Billboard is Silverton Mountain's iconic hike-to steep-couloir
+    sector, reached by a ridgeline bootpack above the top of the
+    chairlift into sustained 40-45° chutes with rock-bound entries.
+    The zone exemplifies Silverton's small-resort concept — a single
+    avalanche-controlled lift feeding genuinely committing terrain
+    normally found only in backcountry settings, available either
+    on guided days or during the limited unguided-with-beacon window.
+    Persistent weak layers in the continental San Juan snowpack make
+    this a hazard-sensitive zone even after avalanche-control work.
+    Reserved for expert freeriders with full avalanche safety kit.
+
+display_name:
+  en: Freeride — Billboard (Silverton)
+  it: Freeride — Billboard (Silverton)
+  es: Freeride — Billboard (Silverton)
+  fr: Freeride — Billboard (Silverton)
+  de: Freeride — Billboard (Silverton)
+
+description:
+  en: |
+    Silverton Mountain's iconic hike-to steep-couloir zone. Sustained
+    40-45° chutes reached via ridgeline bootpack above the chairlift,
+    avalanche-controlled but genuinely committing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Silverton Mountain guided-terrain trail map and hike-to zone documentation"
+    - "CAIC San Juan Mountains zone historic bulletin archive"
+  notes: |
+    Sub-spot of freeride-spot-silverton cluster. Tier 3: sustained
+    40-45° hike-to couloirs, rock-bound entries, persistent-weak-layer
+    snowpack sensitivity.

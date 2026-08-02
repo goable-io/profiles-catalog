@@ -1,0 +1,51 @@
+slug: climbing-spot-todra-gorge-grande-classique
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-todra-gorge
+parent_cluster: climbing-spot-todra-gorge
+region: mediterranean
+country_code: MA
+
+coordinates:
+  center: { lat: 31.5850, lng: -5.5850 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Grande Classique sector sits at the dramatic base of Todra Gorge,
+    beneath roughly 300 m red limestone walls, offering sustained sport
+    routes from F6a to F7c on generally vertical to slightly overhanging
+    rock. Bolting is stainless steel installed and maintained through
+    Fédération Royale Marocaine des Sports de Montagne et d'Escalade
+    (FRMSM) rebolting campaigns, with reliable chain lower-offs on the
+    established lines. The approach is a short walk from the gorge road,
+    and the canyon's depth provides shade for much of the day, making this
+    one of the more comfortable sectors even in warmer months. Route
+    lengths are predominantly single-pitch, keeping the climbing accessible
+    to solid intermediate climbers without the commitment of the gorge's
+    taller multipitch-adjacent lines.
+
+display_name:
+  en: Climbing — Todra Gorge Grande Classique
+  it: Arrampicata — Gola del Todra Grande Classique
+  es: Escalada — Garganta del Todra Grande Classique
+  fr: Escalade — Gorges du Todra Grande Classique
+  de: Klettern — Todra-Schlucht Grande Classique
+
+description:
+  en: |
+    The dramatic gorge-base sector beneath Todra's 300 m red limestone
+    walls, with sustained F6a-F7c sport routes on FRMSM-maintained
+    stainless hardware.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Royale Marocaine des Sports de Montagne et d'Escalade (FRMSM) route and access guidance"
+  notes: |
+    Sub-spot of climbing-spot-todra-gorge cluster. Tier 2: sustained
+    intermediate-to-advanced single-pitch sport climbing with a short
+    approach and shaded canyon aspect.

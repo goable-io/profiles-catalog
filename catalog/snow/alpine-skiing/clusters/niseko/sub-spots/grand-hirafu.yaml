@@ -1,0 +1,56 @@
+slug: alpine-skiing-spot-niseko-grand-hirafu
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-niseko
+parent_cluster: alpine-skiing-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8578, lng: 140.7025 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    Grand Hirafu is the largest of the Niseko United four resorts and
+    carries the most extensive marked piste network in the cluster,
+    running from wide lower-mountain red cruisers up to a mix of red
+    and black-piste terrain on the upper flank of Mt. Niseko-Annupuri.
+    Lift access is via a mix of gondola and high-speed quad chairlifts,
+    with full grooming coverage on the marked runs and ski-patrol
+    presence across the network. Grand Hirafu operates one of Japan's
+    best-known night-skiing programmes, with a dedicated illuminated
+    piste circuit running until 20:30, and its Gate 3 in-bounds access
+    point provides ski-patrol-monitored entry to controlled off-piste
+    terrain directly adjacent to the groomed pistes for confident
+    intermediate-to-advanced skiers.
+
+display_name:
+  en: Alpine Skiing — Grand Hirafu (Niseko)
+  it: Sci Alpino — Grand Hirafu (Niseko)
+  es: Esquí Alpino — Grand Hirafu (Niseko)
+  fr: Ski Alpin — Grand Hirafu (Niseko)
+  de: Alpiner Skilauf — Grand Hirafu (Niseko)
+
+description:
+  en: |
+    The flagship sector of Niseko United — Grand Hirafu combines wide
+    red-piste cruising with black-piste terrain on the upper mountain
+    and Japan's best-known illuminated night-skiing circuit. Gate 3
+    provides patrolled access to adjacent controlled off-piste.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko United Grand Hirafu Resort piste map and lift operational dossier"
+    - "Japan Ski Areas Association operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-niseko cluster. Tier 2: extensive
+    red-piste zone with black-piste terrain on the upper mountain,
+    night-skiing programme, and a patrolled in-bounds gate (Gate 3)
+    to adjacent controlled off-piste. Same general resort area as
+    freeride-spot-niseko-hirafu but scoped to the marked piste-skiing
+    product rather than the sidecountry descent lines.

@@ -1,0 +1,82 @@
+slug: climbing-spot-buoux
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: FR
+sub_spots:
+  - climbing-spot-buoux-bout-du-monde
+  - climbing-spot-buoux-styx
+display_name:
+  en: Climbing — Buoux
+  it: Arrampicata — Buoux
+  es: Escalada — Buoux
+  fr: Escalade — Buoux
+  de: Klettern — Buoux
+description:
+  en: |
+    Buoux, in the Luberon (Vaucluse, Provence), is one of the historic
+    birthplaces of modern European sport climbing, drawing pilgrimage
+    traffic through the 1980s and 1990s and remaining a benchmark crag
+    for steep technical limestone. The cliff sits above the Aiguebrun
+    valley on south-facing orange and grey limestone, with grades from
+    F6a moderate lines up through F8c overhanging test-pieces known for
+    old-school, sometimes sparse bolting by modern standards. Season runs
+    roughly March-November given the Mediterranean climate and south
+    aspect, with summer afternoons hot enough to push climbing into
+    morning hours. The approach is a short walk from valley parking,
+    though some sectors sit on ledges with meaningful exposure. Wet
+    weather is uncommon but the historic bolting on some classic lines
+    means climbers should check hardware condition on less-visited
+    routes.
+
+dimensions:
+  - { name: temperature,   metric: apparent_temp_c,     weight: 0.30, curve: [ { x: -5, s: 0.05 }, { x: 2, s: 0.40 }, { x: 8, s: 0.85 }, { x: 14, s: 1.00 }, { x: 22, s: 0.95 }, { x: 30, s: 0.55 }, { x: 38, s: 0.15 } ] }
+  - { name: precipitation, metric: precipitation_mm_h,  weight: 0.22, curve: [ { x: 0, s: 1.00 }, { x: 0.1, s: 0.50 }, { x: 0.5, s: 0.15 }, { x: 2, s: 0.00 } ] }
+  - { name: wind_speed,    metric: wind_speed_kn,       weight: 0.15, curve: [ { x: 0, s: 1.00 }, { x: 8, s: 0.95 }, { x: 16, s: 0.70 }, { x: 25, s: 0.30 }, { x: 35, s: 0.00 } ] }
+  - { name: sun,           metric: sun_altitude_deg,    weight: 0.10, curve: [ { x: 0, s: 0.00 }, { x: 10, s: 0.65 }, { x: 25, s: 1.00 } ] }
+  - { name: uv_safety,     metric: uv_index,            weight: 0.08, curve: [ { x: 0, s: 1.00 }, { x: 3, s: 1.00 }, { x: 6, s: 0.85 }, { x: 9, s: 0.55 }, { x: 11, s: 0.30 } ] }
+  - { name: visibility,    metric: visibility_km,       weight: 0.07, curve: [ { x: 0, s: 0.00 }, { x: 1, s: 0.30 }, { x: 3, s: 0.75 }, { x: 10, s: 1.00 } ] }
+  - { name: rockfall,      metric: rockfall_risk_index, weight: 0.08, curve: [ { x: 0.0, s: 1.00 }, { x: 0.2, s: 0.95 }, { x: 0.45, s: 0.80 }, { x: 0.7, s: 0.55 }, { x: 1.0, s: 0.30 } ] }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation makes Buoux limestone slick, particularly on the historic sparsely-bolted classic lines. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Fog below 500m on the valley-side crag obscures route-finding on ledge-exposed sectors. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained wind above 35 knots makes rope handling unsafe on exposed ledge sectors. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Below -5°C apparent, tendons stiffen and grip deteriorates sharply on technical Buoux crimping. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Buoux's status as a historic pilgrimage crag concentrates visitor
+    traffic on classic 1980s-90s lines, and the Luberon Regional Natural
+    Park (Parc naturel régional du Luberon) manages access and trail
+    erosion around the valley approach. Some sectors retain older
+    bolting from the sport-climbing era that local associations (CAF,
+    FFME) periodically re-equip; climbers should verify hardware
+    condition before committing to less-traveled classic routes.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Buoux guidebook"
+    - "Parc naturel régional du Luberon access documentation"
+  notes: |
+    Cluster overrides vs global climbing: weights kept close to base
+    climbing defaults reflecting Buoux's moderate valley-side setting;
+    typical_season_weeks set to 32 reflecting the south-facing
+    Mediterranean climate with a hot midsummer lull rather than a hard
+    seasonal closure.

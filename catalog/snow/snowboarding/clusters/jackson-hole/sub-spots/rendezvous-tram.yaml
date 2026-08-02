@@ -1,0 +1,46 @@
+slug: snowboarding-spot-jackson-hole-rendezvous-tram
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-jackson-hole
+parent_cluster: snowboarding-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.5972, lng: -110.8714 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Rendezvous Peak, accessed via the Aerial Tram, delivers Jackson Hole's
+    most advanced in-bounds snowboarding terrain. Including the traverse-in
+    access to the legendary Corbet's Couloir — a mandatory-air chute
+    requiring committed technique at entry. Sustained steep pitches and
+    minimal grooming across most of the sector place this firmly at Tier 3,
+    consistent with the resort's reputation as one of North America's
+    premier expert-terrain destinations.
+
+display_name:
+  en: Snowboarding — Rendezvous Tram (Jackson Hole)
+  it: Snowboard — Rendezvous Peak
+  es: Snowboard — Rendezvous Peak
+  fr: Snowboard — Rendezvous Peak
+  de: Snowboarden — Rendezvous Peak
+
+description:
+  en: |
+    Rendezvous Peak via Aerial Tram —
+    Jackson's advanced snowboard terrain including Corbet's Couloir
+    traverse-in access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort Aerial Tram / Rendezvous Peak operational dossier"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-jackson-hole cluster. Tier 3: expert steep terrain
+    including Corbet's Couloir traverse-in access.

@@ -1,0 +1,52 @@
+slug: climbing-spot-yosemite-half-dome-nw-face
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-yosemite
+parent_cluster: climbing-spot-yosemite
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.7460, lng: -119.5340 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Regular Northwest Face of Half Dome climbs 700m of granite over
+    roughly 23 pitches as a trad/aid route (5.9 C1) or a 5.12 free line,
+    first climbed in 1957 and now the historical sibling to The Nose as
+    America's other reference big wall. Protection is mostly trad, with
+    fixed pins at many belays; the glacier-polished Zig-Zags sections
+    demand precise footwork on low-friction slab. Descent from the summit
+    is via the cable route or hiking trail — a long, exposed hike-off with
+    real afternoon-thunderstorm lightning exposure on the open summit
+    plateau — and an NPS wilderness/backcountry permit is required for the
+    approach and any overnight bivouac on the wall.
+
+display_name:
+  en: Climbing — Half Dome, NW Face
+  it: Arrampicata — Half Dome, NW Face
+  es: Escalada — Half Dome, cara NO
+  fr: Escalade — Half Dome, face NO
+  de: Klettern — Half Dome, NW-Wand
+
+description:
+  en: |
+    The Regular Northwest Face of Half Dome is the historic sibling to The
+    Nose: 700m of glacier-polished granite up Yosemite's iconic monolith,
+    climbed as a 5.9 C1 aid route or a 5.12 free line, with a long
+    cables/trail descent off the summit.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SuperTopo Yosemite Big Walls guidebook (Reid & McNamara)"
+    - "National Park Service Half Dome and Yosemite wilderness permit guidance"
+  notes: |
+    Sub-spot of climbing-spot-yosemite cluster. Tier 3: committing
+    multi-day trad/aid big wall with a long exposed summit hike-off and
+    documented lightning risk — advanced with a documented consequence
+    profile.

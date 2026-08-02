@@ -1,0 +1,50 @@
+slug: climbing-spot-frankenjura-krottenseer-turm
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-frankenjura
+parent_cluster: climbing-spot-frankenjura
+country_code: DE
+
+coordinates:
+  center: { lat: 49.6320, lng: 11.5400 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Krottenseer Turm is a limestone tower crag hosting some of the
+    Frankenjura's hardest historical and modern testpieces, with routes
+    from F7c up to F9a on compact, pocketed rock demanding precise
+    pocket-pulling technique. The area sits within the region's classic
+    testing ground, historically associated with the training grounds used
+    by pioneers such as Wolfgang Güllich in developing the era's hardest
+    grades. Bolting follows DAV (Deutscher Alpenverein) standards with
+    stainless hardware and chain lower-offs; the walk-in is short through
+    forest, and single-pitch height keeps falls clean with straightforward
+    lowering, though the hard, technical grades demand strong technique
+    given the small holds typical of the style.
+
+display_name:
+  en: Climbing — Frankenjura Krottenseer Turm
+  it: Arrampicata — Frankenjura Krottenseer Turm
+  es: Escalada — Frankenjura Krottenseer Turm
+  fr: Escalade — Frankenjura Krottenseer Turm
+  de: Klettern — Frankenjura Krottenseer Turm
+
+description:
+  en: |
+    A limestone tower hosting hard-sport testpieces from F7c to F9a on
+    classic pocket-pulling Frankenjura rock, historically tied to the
+    region's hardest-grade development.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Frankenjura guidebook"
+    - "Deutscher Alpenverein (DAV) Frankenjura access and bolting documentation"
+  notes: |
+    Sub-spot of climbing-spot-frankenjura cluster. Tier 2: hard technical
+    single-pitch sport climbing, stainless bolted hardware, short forest
+    approach.

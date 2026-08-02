@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-jackson-hole-teton-village-base
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-jackson-hole
+parent_cluster: alpine-skiing-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.5867, lng: -110.8283 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    The Teton Village base area plus the Sweetwater gondola blue-piste
+    sectors provide beginner-and-family kids-zone terrain at the foot
+    of Rendezvous Mountain, with gentle green and blue-piste runs
+    served by low-speed chairs and a magic carpet for first-timers.
+    Snowmaking secures base-elevation coverage against variable early-
+    and late-season snow conditions, and grooming is comprehensive
+    daily. Ski school facilities, lodge access, and ski patrol first-
+    response stations concentrate at this base sector, making it the
+    resort's lowest-risk, most family-oriented zone.
+
+display_name:
+  en: Alpine Skiing — Teton Village (Base)
+  it: Sci Alpino — Teton Village (Base)
+  es: Esquí Alpino — Teton Village (Base)
+  fr: Ski Alpin — Teton Village (Base)
+  de: Alpiner Skilauf — Teton Village (Basis)
+
+description:
+  en: |
+    Jackson Hole's Teton Village base and Sweetwater gondola sectors,
+    beginner-and-family blue-piste terrain with a snowmaking-secured
+    base.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort Teton Village base area and Sweetwater gondola documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-jackson-hole cluster. Tier 1: green
+    and blue-piste base terrain, snowmaking-secured, beginner and
+    family kids-zone.

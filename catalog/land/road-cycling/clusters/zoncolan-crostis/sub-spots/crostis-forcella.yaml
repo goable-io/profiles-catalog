@@ -1,0 +1,52 @@
+slug: road-cycling-spot-zoncolan-crostis-crostis-forcella
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-zoncolan-crostis
+parent_cluster: road-cycling-spot-zoncolan-crostis
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.6167, lng: 12.9283 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Monte Crostis (Forcella Crostis) is roughly 15 km at an average
+    9.5% gradient on a rough, narrow road with sections barely wide
+    enough for two vehicles and unguarded drops. The Giro d'Italia
+    planned to use it in 2011 but cancelled the descent portion after
+    a course inspection flagged the surface and width as unsafe for
+    a fast-moving peloton, a rare instance of a Grand Tour vetoing its
+    own parcours on safety grounds. That documented safety history,
+    combined with the genuinely poor surface quality and sustained
+    steep gradient, makes this an unambiguous tier 3 climb best
+    attempted only in stable, dry, clear conditions.
+
+display_name:
+  en: Road Cycling — Monte Crostis (Forcella Crostis)
+  it: Ciclismo su Strada — Monte Crostis (Forcella Crostis)
+  es: Ciclismo de Ruta — Monte Crostis (Forcella Crostis)
+  fr: Cyclisme sur Route — Monte Crostis (Forcella Crostis)
+  de: Rennradfahren — Monte Crostis (Forcella Crostis)
+
+description:
+  en: |
+    Monte Crostis via the Forcella Crostis: roughly 15 km averaging
+    9.5% on a narrow, rough-surfaced road with unguarded drops. The
+    Giro d'Italia planned to include it in 2011 but cancelled the
+    descent after a safety inspection — a rare case of a Grand Tour
+    vetoing its own route.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Giro d'Italia 2011 route safety review (Crostis descent cancellation)"
+    - "ProCyclingStats climb database — Monte Crostis profile"
+  notes: |
+    Sub-spot of road-cycling-spot-zoncolan-crostis cluster. Tier 3:
+    documented Giro safety cancellation, poor narrow surface, sustained
+    steep gradient.

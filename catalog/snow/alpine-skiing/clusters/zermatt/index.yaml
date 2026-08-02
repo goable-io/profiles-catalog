@@ -1,0 +1,159 @@
+slug: alpine-skiing-spot-zermatt
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-alpine
+region: alpine
+country_code: CH
+sub_spots:
+  - alpine-skiing-spot-zermatt-matterhorn-paradise
+  - alpine-skiing-spot-zermatt-rothorn
+  - alpine-skiing-spot-zermatt-sunnegga
+display_name:
+  en: Alpine Skiing — Zermatt
+  it: Sci Alpino — Zermatt
+  es: Esquí Alpino — Zermatt
+  fr: Ski Alpin — Zermatt
+  de: Alpiner Skilauf — Zermatt
+description:
+  en: |
+    Zermatt (Valais, Swiss Alps) sits at the foot of the Matterhorn
+    and offers over 360 km of piste across the Matterhorn ski
+    paradise, connected on the Italian side to Cervinia. The resort
+    spans from the family-friendly Sunnegga sector at 2288 m up to
+    Klein Matterhorn at 3883 m, the highest lift-served point and the
+    highest year-round glacier ski area in Europe, reached via the
+    Matterhorn Glacier Ride 3S tri-cable gondola. Piste marking runs
+    blue through black, with snowmaking covering the lower sectors
+    below 2200 m and full ski-patrol coverage across the network.
+    Zermatt is famously car-free, with village access via the
+    Matterhorn Gotthard Bahn cogwheel railway, giving it a lower
+    per-day access-transport footprint than car-only Alpine resorts.
+    Primary lift operator is Zermatt Bergbahnen AG. Season runs
+    November to April core, with the Klein Matterhorn glacier sector
+    open essentially year-round.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots closes the Matterhorn Glacier Ride 3S and other upper Zermatt cable cars during Foehn events; on-piste exposure on ridge-adjacent runs becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m on the Klein Matterhorn glacier sector makes piste navigation and lift retrieval unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on the glaciated Klein Matterhorn summit sector creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Zermatt is car-free, with village access via the Matterhorn
+    Gotthard Bahn cogwheel railway, giving it a lower per-day access
+    footprint than car-only Alpine resorts. Lift operator Zermatt
+    Bergbahnen AG runs under the Seilbahnen Schweiz coordinated
+    environmental protocol; the Klein Matterhorn lift is a
+    year-round operational expenditure as the highest cable car
+    in Europe.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zermatt Bergbahnen AG piste map and lift operational dossier"
+    - "Matterhorn Glacier Paradise (Klein Matterhorn) operational dossier"
+    - "Seilbahnen Schweiz operational safety standards"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-alpine
+    (dimensions, gates copied exactly). Matterhorn Paradise
+    coordinates describe the marked-piste Klein Matterhorn summit
+    sector distinct from the ski-touring-spot-zermatt-klein-matterhorn
+    touring departure point catalogued separately in the ski-touring
+    category.

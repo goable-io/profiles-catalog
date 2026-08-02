@@ -1,0 +1,46 @@
+slug: scuba-spot-truk-lagoon-shinkoku-maru
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-truk-lagoon
+parent_cluster: scuba-spot-truk-lagoon
+region: pacific
+country_code: FM
+
+coordinates:
+  center: { lat: 7.3717, lng: 151.8767 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Shinkoku Maru is a 152 m Imperial Japanese Navy fleet oiler sunk on 17
+    February 1944 during Operation Hailstone, resting upright at 12-40 m
+    with the superstructure. Engine room, and operating theatre accessible
+    to trained divers and heavy coral overgrowth covering the hull. As a
+    designated war grave, penetration is restricted to wreck-certified
+    divers, and depths beyond 30 m to reach the engine room require
+    advanced training, placing it at the cluster's top tier.
+
+display_name:
+  en: Scuba — Shinkoku Maru (Truk Lagoon)
+  it: Immersione — Shinkoku Maru
+  es: Buceo — Shinkoku Maru
+  fr: Plongée — Shinkoku Maru
+  de: Tauchen — Shinkoku Maru
+
+description:
+  en: |
+    A 152 m Japanese fleet oiler sunk during Operation Hailstone
+    (17 Feb 1944), an iconic coral-encrusted war-grave wreck at
+    12-40 m.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "US Naval History and Heritage Command, Operation Hailstone (17-18 Feb 1944) records"
+    - "Chuuk State war-grave wreck-protection statutes and site documentation"
+  notes: |
+    Sub-spot of scuba-spot-truk-lagoon cluster. Tier 3: advanced
+    wreck-penetration dive to 40 m, protected war grave.

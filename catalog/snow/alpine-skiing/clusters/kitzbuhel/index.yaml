@@ -1,0 +1,156 @@
+slug: alpine-skiing-spot-kitzbuhel
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-alpine
+region: alpine
+country_code: AT
+sub_spots:
+  - alpine-skiing-spot-kitzbuhel-hahnenkamm-streif
+  - alpine-skiing-spot-kitzbuhel-kitzbuheler-horn
+  - alpine-skiing-spot-kitzbuhel-jochberg-resterhohe
+display_name:
+  en: Alpine Skiing — Kitzbühel
+  it: Sci Alpino — Kitzbühel
+  es: Esquí Alpino — Kitzbühel
+  fr: Ski Alpin — Kitzbühel
+  de: Alpiner Skilauf — Kitzbühel
+description:
+  en: |
+    Kitzbühel (Tyrol, Austria) is one of the oldest and most prestigious
+    ski resorts in the Alps, part of the Kitzski/SkiWelt-adjacent lift
+    network spanning the Hahnenkamm, Kitzbüheler Horn, and Jochberg-
+    Resterhöhe sectors across roughly 179 km of pistes. Altitude ranges
+    from the town at around 760 m up to 2000 m on the Hahnenkamm and
+    Kitzbüheler Horn summits, with extensive snowmaking covering the
+    lower and mid-mountain pistes given the resort's relatively modest
+    base elevation. Kitzbühel is world-famous for the Hahnenkamm Streif,
+    the single most demanding and celebrated course on the FIS Alpine Ski
+    World Cup calendar, drawing enormous crowds each January. Beyond the
+    Streif, the resort offers extensive red-piste cruising on the
+    Kitzbüheler Horn and the quieter Jochberg-Resterhöhe side, with
+    terrain parks and well-developed rail access via the ÖBB network.
+    Operator: Kitzbüheler Bergbahn AG (Kitzski).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots closes exposed Hahnenkamm and Kitzbüheler Horn summit lifts during Foehn events; on-piste exposure on ridge-adjacent runs becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m on the Hahnenkamm and Kitzbüheler Horn summit sectors makes piste navigation and lift retrieval unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on the exposed Hahnenkamm and Horn upper sectors creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Kitzbühel operates under Seilbahnen Österreich (Austrian cable-car
+    association) protocols. Snowmaking is extensive given the resort's
+    relatively low base elevation (~760 m), covering the majority of
+    pistes on the Hahnenkamm and Kitzbüheler Horn. Kitzbühel is directly
+    rail-connected via ÖBB, giving it a lower per-day access-transport
+    footprint than car-only Alpine resorts; carrying-capacity pressure
+    peaks sharply during the annual Hahnenkamm World Cup race week in
+    January.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Seilbahnen Österreich operational + lift-closure protocols"
+    - "Kitzbüheler Bergbahn AG (Kitzski) piste network documentation"
+    - "FIS Alpine Ski World Cup Kitzbühel (Hahnenkamm/Streif) venue documentation"
+  notes: |
+    Cluster inherits region variant (alpine-skiing-alpine) scoring
+    unchanged; weights and gates copied verbatim as the site is not
+    materially distinct from the general Alps regime.

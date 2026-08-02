@@ -1,0 +1,48 @@
+slug: snowboarding-spot-laax-crap-sogn-gion
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-laax
+parent_cluster: snowboarding-spot-laax
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.8767, lng: 9.2183 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Crap Sogn Gion (2228 m) is Laax's central
+    freestyle hub, combining a dense network of red-and-black groomed
+    pistes with direct lift access to the resort's snowpark facilities.
+    The sector sits at the intersection of the Laax, Falera, and Flims
+    lift networks, giving snowboarders continuous red-piste cruising
+    alongside constant park exposure. Grooming quality is high given the
+    sector's flagship status, and moderate altitude keeps snow surface
+    reliable through most of the core season without the extreme exposure
+    of the higher Vorab glacier terrain.
+
+display_name:
+  en: Snowboarding — Crap Sogn Gion (Laax)
+  it: Snowboard — Crap Sogn Gion
+  es: Snowboard — Crap Sogn Gion
+  fr: Snowboard — Crap Sogn Gion
+  de: Snowboarden — Crap Sogn Gion
+
+description:
+  en: |
+    Laax's central freestyle hub at 2228 m,
+    combining red-and-black piste cruising with direct snowpark lift
+    access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Weisse Arena Bergbahnen AG Crap Sogn Gion sector piste dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-laax cluster.
+    Tier 2: red-and-black groomed piste zone with dense park proximity,
+    not itself a hike-to or expert-only sector.

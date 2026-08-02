@@ -1,0 +1,49 @@
+slug: climbing-spot-lofoten-store-kalstind
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-lofoten
+parent_cluster: climbing-spot-lofoten
+region: arctic
+country_code: "NO"
+
+coordinates:
+  center: { lat: 68.1300, lng: 14.5100 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Store Kalstind area, near Reine and Moskenes, offers shorter
+    granite multipitch and single-pitch routes on clean, friction-friendly
+    rock with generally solid protection — a lower-commitment alternative
+    to the big walls further north in the archipelago. Protection is a mix
+    of trad placements and occasional fixed anchors at belay stances,
+    with retreat and descent more manageable than the longer Presten or
+    Vågakallen objectives given the shorter route lengths. The approach
+    involves a moderate hike from road access near Reine, and the exposed
+    coastal setting means wind and rapidly changing maritime-Arctic weather
+    remain the primary hazards even on shorter routes.
+
+display_name:
+  en: Climbing — Lofoten Store Kalstind
+  it: Arrampicata — Lofoten Store Kalstind
+  es: Escalada — Lofoten Store Kalstind
+  fr: Escalade — Lofoten Store Kalstind
+  de: Klettern — Lofoten Store Kalstind
+
+description:
+  en: |
+    Shorter granite multipitch and single-pitch routes near Reine and
+    Moskenes — accessible Arctic granite friction climbing with a more
+    moderate commitment level than the archipelago's big walls.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chris Craggs / Thomas Rennfeldt Lofoten climbing guidebook"
+  notes: |
+    Sub-spot of climbing-spot-lofoten cluster. Tier 2: shorter granite
+    multipitch and single-pitch trad climbing, moderate approach, lower
+    commitment than the flagship big walls.

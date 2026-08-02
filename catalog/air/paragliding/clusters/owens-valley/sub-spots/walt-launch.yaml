@@ -1,0 +1,51 @@
+slug: paragliding-spot-owens-valley-walt-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-owens-valley
+parent_cluster: paragliding-spot-owens-valley
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.3833, lng: -118.4300 }
+  radius_m: 1000
+
+tier: 3
+tier_rationale:
+  en: |
+    Walt's Point launch, at roughly 2450 m in the Sierra Nevada
+    foothills above Lone Pine near Bishop, is one of the most
+    storied cross-country paragliding launches in the world and the
+    departure point for multiple US and world XC distance records.
+    The high-altitude launch demands 4WD/high-clearance road access
+    and confident mountain-launch technique into strong, sometimes
+    aggressive thermal cycles that build rapidly through the day.
+    Pilots flying from Walt's routinely commit to long, remote
+    valley crossings with limited bail-out landing options along
+    portions of the route, requiring serious XC decision-making and
+    retrieve planning. Reserved for experienced XC pilots.
+
+display_name:
+  en: Paragliding — Walt's Point Launch (Owens Valley)
+  it: Parapendio — Walt's Point (Owens Valley)
+  es: Parapente — Walt's Point (Owens Valley)
+  fr: Parapente — Walt's Point (Owens Valley)
+  de: Gleitschirmfliegen — Walt's Point (Owens Valley)
+
+description:
+  en: |
+    Walt's Point launch at roughly 2450 m near Bishop — an iconic
+    desert-thermal cross-country departure and the site of numerous
+    XC distance records.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "USHPA Walt's Point site documentation"
+    - "Owens Valley XC pilot community consolidated launch practice"
+  notes: |
+    Sub-spot of paragliding-spot-owens-valley cluster. Tier 3:
+    high-altitude launch, strong thermal cycles, long remote XC
+    commitment with limited bail-out options.

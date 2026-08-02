@@ -1,0 +1,51 @@
+slug: surfing-spot-jeffreys-bay-supertubes
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-jeffreys-bay
+parent_cluster: surfing-spot-jeffreys-bay
+region: atlantic
+country_code: ZA
+
+coordinates:
+  center: { lat: -34.0500, lng: 24.9083 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Supertubes is the signature section of the Jeffreys Bay point, a
+    fast, hollow right-hander that peels over a cobblestone-and-rock
+    bottom at a speed that demands committed positioning and high-level
+    turning ability to stay in the pocket. Southern Ocean groundswell
+    delivers walls that section rapidly, so a mistimed take-off leaves a
+    surfer exposed to a shallow, rocky reef with limited room for error.
+    It is the WSL Championship Tour's Jeffreys Bay venue and one of the
+    most competitive lineups in world surfing, with local and visiting
+    experts converging whenever the point is firing.
+
+display_name:
+  en: Surfing — Jeffreys Bay Supertubes
+  it: Surf — Jeffreys Bay Supertubes
+  es: Surf — Jeffreys Bay Supertubes
+  fr: Surf — Jeffreys Bay Supertubes
+  de: Surfen — Jeffreys Bay Supertubes
+
+description:
+  en: |
+    The most famous section of the Jeffreys Bay point, a fast, hollow
+    right-hander over a rocky cobblestone bottom, and the WSL
+    Championship Tour venue. Southern Ocean groundswell produces long,
+    speed-walled rides that demand advanced positioning and turning
+    ability. Prime season April-September (austral autumn-winter).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Championship Tour Jeffreys Bay venue documentation (Supertubes)"
+    - "Surfing South Africa spot classification, Eastern Cape"
+  notes: |
+    Sub-spot of surfing-spot-jeffreys-bay cluster. Tier 3: fast hollow
+    point section over rocky bottom, WSL CT venue, competitive
+    expert-dominated lineup.

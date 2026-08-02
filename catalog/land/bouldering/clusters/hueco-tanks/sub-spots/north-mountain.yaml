@@ -1,0 +1,46 @@
+slug: bouldering-spot-hueco-tanks-north-mountain
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-hueco-tanks
+parent_cluster: bouldering-spot-hueco-tanks
+country_code: US
+
+coordinates:
+  center: { lat: 31.9250, lng: -106.0417 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    North Mountain is the iconic Hueco Tanks sector, hosting the park's
+    hardest syenite hueco problems including testpieces such as Fry Boy
+    and Slashface, both graded V13, on steep, pocketed rock with
+    committing, sometimes highball, topouts. Access is restricted to
+    reserved permits with a mandatory guided tour under the Texas Parks
+    and Wildlife management regime instituted in 1998 to protect the
+    site's Native American pictographs, meaning independent pad-hauling
+    and route-finding are constrained by the tour schedule and guide
+    routing. Landings are frequently uneven rock and boulder-strewn
+    desert floor, requiring multi-pad setups and attentive spotting.
+
+display_name:
+  en: Bouldering — Hueco Tanks North Mountain
+
+description:
+  en: |
+    North Mountain — the iconic Hueco Tanks sector, with syenite hueco
+    problems from V4 to V13 including Fry Boy and Slashface. Reserved-
+    permit, guided-tour access only under Texas Parks and Wildlife
+    management.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Texas Parks and Wildlife Hueco Tanks State Park access and reservation policy"
+    - "Rockfax Hueco Tanks bouldering guidebook"
+  notes: |
+    Sub-spot of bouldering-spot-hueco-tanks cluster. Tier 3: hard
+    highball-leaning syenite testpiece sector, uneven landings,
+    reserved-permit guided-tour access only.

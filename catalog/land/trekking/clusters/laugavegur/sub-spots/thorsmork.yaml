@@ -1,0 +1,53 @@
+slug: trekking-spot-laugavegur-thorsmork
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-laugavegur
+parent_cluster: trekking-spot-laugavegur
+region: atlantic
+country_code: IS
+
+coordinates:
+  center: { lat: 63.6800, lng: -19.5000 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Þórsmörk (200 m) is the southern trailend of the Laugavegur, roughly
+    55 km and 3-4 days from Landmannalaugar, reached via a final
+    descent through birch and rowan woodland flanked by the
+    Eyjafjallajökull, Mýrdalsjökull, and Tindfjallajökull glaciers. The
+    valley floor is sheltered relative to the exposed highland
+    sections above, with well-marked paths, several campsites (Húsadalur,
+    Langidalur, Básar) with staffed wardens, shops, and mountain-hut
+    accommodation. Access is by highland bus (river-fording 4x4 track)
+    in summer, giving a straightforward evacuation route and the
+    lowest-altitude, most forgiving terrain on the entire trail;
+    onward trekkers can continue via the more demanding Fimmvörðuháls
+    pass to Skógar.
+
+display_name:
+  en: Trekking — Þórsmörk Valley
+  it: Trekking — Valle di Þórsmörk
+  es: Senderismo — Valle de Þórsmörk
+  fr: Randonnée — Vallée de Þórsmörk
+  de: Wandern — Þórsmörk-Tal
+
+description:
+  en: |
+    The sheltered, birch-forested southern trailend of the Laugavegur,
+    tucked between three glaciers at 200 m. A welcome contrast to the
+    barren highlands further north, with multiple staffed campsites
+    and hut accommodation.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ferðafélag Íslands (Icelandic Touring Association) Þórsmörk hut and campsite guidance"
+    - "Umhverfisstofnun (Icelandic Environment Agency) Þórsmörk conservation area information"
+  notes: |
+    Sub-spot of trekking-spot-laugavegur cluster. Tier 1: low altitude,
+    sheltered forested valley, multiple staffed campsites, highland-bus
+    access — the trail's southern gateway and most forgiving terrain.

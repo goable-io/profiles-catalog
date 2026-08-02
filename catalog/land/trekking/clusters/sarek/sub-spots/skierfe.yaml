@@ -1,0 +1,53 @@
+slug: trekking-spot-sarek-skierfe
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-sarek
+parent_cluster: trekking-spot-sarek
+region: arctic
+country_code: SE
+
+coordinates:
+  center: { lat: 67.2647, lng: 17.8367 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Skierfe (1179 m) is the cliff-edge viewpoint overlooking the
+    Rapadalen delta, reached via a steep, unmarked off-trail ascent of
+    roughly 700 m gain from the valley floor over rock, tundra, and
+    talus with no cairns or waymarking inside the park. The summit
+    plateau ends in an exposed vertical drop toward the delta below,
+    creating serious fall-hazard exposure in poor visibility or high
+    wind, and the approach itself crosses the same unbridged glacial
+    channels as the Rapadalen floor. There is no hut, shelter, or
+    mobile coverage anywhere near the summit, and reaching help
+    requires descending the full off-trail approach or a helicopter
+    response — consistent with the rest of Sarek's no-infrastructure
+    wilderness design.
+
+display_name:
+  en: Trekking — Skierfe Viewpoint
+  it: Trekking — Punto panoramico di Skierfe
+  es: Senderismo — Mirador de Skierfe
+  fr: Randonnée — Point de vue de Skierfe
+  de: Wandern — Aussichtspunkt Skierfe
+
+description:
+  en: |
+    A dramatic cliff-edge summit at 1179 m overlooking the Rapadalen
+    delta below — one of the most photographed Nordic wilderness views,
+    reached by a steep, unmarked off-trail climb from the valley floor.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Naturvårdsverket (Swedish Environmental Protection Agency) Sarek National Park management plan"
+    - "Länsstyrelsen Norrbotten Skierfe access and safety guidance"
+  notes: |
+    Sub-spot of trekking-spot-sarek cluster. Tier 3: unmarked off-trail
+    ascent, exposed cliff-edge summit, no shelter or coverage, same
+    unbridged-river approach hazards as Rapadalen, helicopter-only
+    evacuation.

@@ -1,0 +1,50 @@
+slug: road-cycling-spot-ventoux-ventoux-sault
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-ventoux
+parent_cluster: road-cycling-spot-ventoux
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 44.1750, lng: 5.2783 }
+  radius_m: 2500
+
+tier: 2
+tier_rationale:
+  en: |
+    Mont Ventoux from Sault is 26 km at a gentle average 4.4%
+    gradient, joining the Bédoin route only in its final few
+    kilometres and offering the mildest and most scenic of the three
+    approaches through lavender fields and open farmland. The much
+    lower average gradient and longer, gentler lower section make
+    this accessible to a broader range of fitness levels than the
+    other two sides, even though the shared exposed summit finish
+    still carries wind risk. Given the substantially easier overall
+    profile relative to Bédoin and Malaucène, tier 2 rather than
+    tier 3 is appropriate.
+
+display_name:
+  en: Road Cycling — Mont Ventoux (Sault side)
+  it: Ciclismo su Strada — Mont Ventoux (versante Sault)
+  es: Ciclismo de Ruta — Mont Ventoux (vertiente Sault)
+  fr: Cyclisme sur Route — Mont Ventoux (versant Sault)
+  de: Rennradfahren — Mont Ventoux (Sault-Seite)
+
+description:
+  en: |
+    Mont Ventoux climbed from Sault: 26 km at a gentle average 4.4%
+    gradient through Provençal lavender fields, the easiest and most
+    scenic of the mountain's three paved approaches.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Mont Ventoux (Sault) climb archive"
+    - "ProCyclingStats climb database — Mont Ventoux (Sault) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-ventoux cluster. Tier 2: gentlest of
+    the three Ventoux approaches, though still shares the exposed
+    summit wind risk.

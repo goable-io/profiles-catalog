@@ -1,0 +1,82 @@
+slug: climbing-spot-ceuse
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: FR
+sub_spots:
+  - climbing-spot-ceuse-berlin
+  - climbing-spot-ceuse-cascade
+  - climbing-spot-ceuse-face-de-rat
+display_name:
+  en: Climbing — Céüse
+  it: Arrampicata — Céüse
+  es: Escalada — Céüse
+  fr: Escalade — Céüse
+  de: Klettern — Céüse
+description:
+  en: |
+    Céüse (Hautes-Alpes) sits on a limestone plateau above Sigoyer at
+    roughly 2000m altitude, widely regarded as one of the world's premier
+    sport-climbing destinations for its steep, technical, immaculate grey
+    and orange limestone. The cliff faces south and east, giving strong
+    sun exposure and a short usable season of roughly June to September
+    at altitude — snow and cold shut it down outside summer. The approach
+    is a genuine 1-1.5 hour uphill walk from the parking area, with no
+    shortcuts, so weather and daylight planning matter more here than at
+    roadside crags. Grades run from moderate F6a testpieces up through
+    some of the hardest sport routes in the world (F8a-F9b+), all on
+    well-bolted stainless hardware maintained by local equippers. The
+    defining physical constraints are altitude-driven weather volatility
+    (afternoon storms build fast) and the long, exposed approach walk.
+
+dimensions:
+  - { name: temperature,   metric: apparent_temp_c,     weight: 0.26, curve: [ { x: -5, s: 0.05 }, { x: 2, s: 0.40 }, { x: 8, s: 0.85 }, { x: 14, s: 1.00 }, { x: 22, s: 0.95 }, { x: 30, s: 0.55 }, { x: 38, s: 0.15 } ] }
+  - { name: precipitation, metric: precipitation_mm_h,  weight: 0.24, curve: [ { x: 0, s: 1.00 }, { x: 0.1, s: 0.50 }, { x: 0.5, s: 0.15 }, { x: 2, s: 0.00 } ] }
+  - { name: wind_speed,    metric: wind_speed_kn,       weight: 0.17, curve: [ { x: 0, s: 1.00 }, { x: 8, s: 0.95 }, { x: 16, s: 0.70 }, { x: 25, s: 0.30 }, { x: 35, s: 0.00 } ] }
+  - { name: sun,           metric: sun_altitude_deg,    weight: 0.09, curve: [ { x: 0, s: 0.00 }, { x: 10, s: 0.65 }, { x: 25, s: 1.00 } ] }
+  - { name: uv_safety,     metric: uv_index,            weight: 0.08, curve: [ { x: 0, s: 1.00 }, { x: 3, s: 1.00 }, { x: 6, s: 0.85 }, { x: 9, s: 0.55 }, { x: 11, s: 0.30 } ] }
+  - { name: visibility,    metric: visibility_km,       weight: 0.08, curve: [ { x: 0, s: 0.00 }, { x: 1, s: 0.30 }, { x: 3, s: 0.75 }, { x: 10, s: 1.00 } ] }
+  - { name: rockfall,      metric: rockfall_risk_index, weight: 0.08, curve: [ { x: 0.0, s: 1.00 }, { x: 0.2, s: 0.95 }, { x: 0.45, s: 0.80 }, { x: 0.7, s: 0.55 }, { x: 1.0, s: 0.30 } ] }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation on the Céüse plateau makes limestone slick and signals fast-building altitude storms typical of summer afternoons. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Fog or cloud below 500m on the plateau obscures the exposed uphill approach trail and cliff-base route-finding. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained wind above 35 knots on the open plateau makes rope handling and communication unsafe on the steep faces. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Below -5°C apparent at ~2000m altitude, tendons stiffen and grip on small holds deteriorates sharply. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: high
+  notes: |
+    Céüse's short summer season and 1-1.5 hour uphill approach
+    concentrate climber traffic into a compact window (roughly June-
+    September), driving cliff-base erosion and trail wear that local
+    associations (FFME, Grimper à Céüse) work to manage. Griffon vulture
+    nesting closes select sectors seasonally each spring. Fixed-gear
+    maintenance on the world-class hard routes is coordinated by local
+    equippers and relies on climber donations.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Céüse guidebook"
+    - "FFME (Fédération Française de la Montagne et de l'Escalade) Céüse access documentation"
+  notes: |
+    Cluster overrides vs global climbing: wind weight raised to 0.17
+    reflecting the exposed 2000m plateau setting; season shortened to 16
+    weeks (short, weather-volatile alpine-adjacent summer window) versus
+    Mediterranean crags at lower altitude. Precipitation gate tightened
+    to 1.5 mm/h given fast-building altitude convective storms.

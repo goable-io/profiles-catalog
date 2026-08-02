@@ -1,0 +1,160 @@
+slug: surfing-spot-puerto-escondido
+spot_kind: cluster
+version: "1.0.0"
+category: water
+extends: surfing-pacific
+region: pacific
+country_code: MX
+sub_spots:
+  - surfing-spot-puerto-escondido-zicatela
+  - surfing-spot-puerto-escondido-la-punta
+  - surfing-spot-puerto-escondido-carrizalillo
+display_name:
+  en: Surfing — Puerto Escondido
+  it: Surf — Puerto Escondido
+  es: Surf — Puerto Escondido
+  fr: Surf — Puerto Escondido
+  de: Surfen — Puerto Escondido
+
+description:
+  en: |
+    Puerto Escondido (Oaxaca, Mexico) sits on a steep-shelving stretch of
+    Pacific coastline where deep-water groundswell arrives almost
+    unrefracted, producing some of the heaviest beach-break barrels on
+    Earth at Playa Zicatela — the "Mexican Pipeline." The same swell
+    energy is tamed by geography at La Punta (a point break south of
+    Zicatela) and almost fully blocked at the sheltered cove of
+    Carrizalillo, giving the cluster a full spread from expert-only
+    big-wave venue to a protected beginner bay within a few kilometres
+    of coastline. Prime season is the Pacific hurricane/groundswell
+    window, May-September, when Zicatela regularly runs 3-8 m.
+
+dimensions:
+  - name: wave_height
+    metric: wave_height_m
+    weight: 0.40
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.30 }
+      - { x: 0.7, s: 0.70 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 2.0, s: 1.00 }
+      - { x: 3.5, s: 0.95 }
+      - { x: 5.0, s: 0.70 }
+      - { x: 7.0, s: 0.30 }
+      - { x: 10.0, s: 0.00 }
+
+  - name: wave_period
+    metric: wave_period_s
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 4,  s: 0.10 }
+      - { x: 8,  s: 0.40 }
+      - { x: 12, s: 0.80 }
+      - { x: 15, s: 1.00 }
+      - { x: 22, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.75 }
+      - { x: 5,  s: 1.00 }
+      - { x: 12, s: 0.80 }
+      - { x: 18, s: 0.45 }
+      - { x: 25, s: 0.15 }
+      - { x: 35, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 1, s: 0.0 }
+      - { x: 2, s: 0.6 }
+      - { x: 5, s: 1.0 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 8,  s: 0.4 }
+      - { x: 16, s: 0.85 }
+      - { x: 23, s: 1.00 }
+      - { x: 32, s: 0.95 }
+      - { x: 38, s: 0.6 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.08
+    curve:
+      - { x: 10, s: 0.2 }
+      - { x: 14, s: 0.5 }
+      - { x: 18, s: 0.85 }
+      - { x: 22, s: 1.00 }
+      - { x: 28, s: 1.00 }
+
+gates:
+  # Feasibility floor (auto): below this the activity is physically
+  # impossible at any skill level — a hard PREREQUISITE, not a weighted
+  # dimension. See Gate.kind='feasibility'.
+  - metric: wave_height_m
+    condition: lt
+    value: 0.3
+    kind: feasibility
+    reason_code: FLAT_NO_SURF
+    description: Below ~0.3 m the sea is flat with no rideable waves, so surfing is not feasible regardless of the other conditions.
+  - metric: wave_height_m
+    condition: gt
+    value: 10
+    reason_code: EXTREME_PACIFIC_SURF
+    description: Wave height above 10m is unsafe for recreational surfing; Zicatela's biggest days are tow-in / elite-paddle only.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND
+    description: Strong wind above 35 knots destroys wave shape and creates dangerous conditions.
+
+  - metric: visibility_km
+    condition: lt
+    value: 1
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 1 km is unsafe.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 38
+  carrying_capacity_sensitivity: high
+  notes: |
+    Puerto Escondido's surf economy is the dominant driver of local
+    tourism, with international arrivals concentrated May-September
+    around the Zicatela groundswell window. Zicatela's beach-break
+    power and heavy shorebreak make it one of the most consequential
+    breaks a recreational surfer can paddle out at; Carrizalillo's
+    cove is a low-impact beginner alternative that draws crowd pressure
+    away from Zicatela during lessons.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Puerto Escondido Challenge venue documentation"
+    - "Federación Mexicana de Surf spot classification, Oaxaca coast"
+    - "NOAA Eastern Pacific hurricane-season swell climatology"
+  notes: |
+    Provisional cluster v1.0. Dimensions/gates copied verbatim from
+    surfing-pacific region variant (weights sum to 1.000). Expert review
+    pending. Sub-spots differentiate by tier: Zicatela (T3, heavy
+    beach-break big-wave venue), La Punta (T2, more forgiving point
+    break), Carrizalillo (T1, sheltered beginner cove).

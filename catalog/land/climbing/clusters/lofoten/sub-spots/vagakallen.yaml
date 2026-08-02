@@ -1,0 +1,50 @@
+slug: climbing-spot-lofoten-vagakallen
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-lofoten
+parent_cluster: climbing-spot-lofoten
+region: arctic
+country_code: "NO"
+
+coordinates:
+  center: { lat: 68.1500, lng: 14.2500 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Vågakallen's north face, rising above Kabelvåg, is an alpine-style
+    granite multipitch objective with committing 6-10 pitch routes
+    protected primarily by trad gear (cams, nuts) on generally solid rock
+    with some looser sections requiring careful placement judgment. The
+    approach involves a sustained hike-in before roping up, and the route's
+    mountain setting means weather can change quickly, with descent
+    typically by a long walk-off or multiple rappels depending on route
+    chosen. This is serious alpine terrain by any standard — no-fall
+    consequences on run-out sections, remote from road access, and rescue
+    would require organized mountain-rescue response rather than a simple
+    lower-off.
+
+display_name:
+  en: Climbing — Lofoten Vågakallen
+  it: Arrampicata — Lofoten Vågakallen
+  es: Escalada — Lofoten Vågakallen
+  fr: Escalade — Lofoten Vågakallen
+  de: Klettern — Lofoten Vågakallen
+
+description:
+  en: |
+    A committing alpine granite objective above Kabelvåg: 6-10 pitch north
+    face multipitch routes with sustained trad protection in a remote
+    mountain setting.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chris Craggs / Thomas Rennfeldt Lofoten climbing guidebook"
+  notes: |
+    Sub-spot of climbing-spot-lofoten cluster. Tier 3: committing alpine
+    multipitch, trad protection, remote mountain setting with limited
+    rescue access.

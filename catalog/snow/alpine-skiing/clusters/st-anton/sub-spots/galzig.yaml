@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-st-anton-galzig
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-st-anton
+parent_cluster: alpine-skiing-spot-st-anton
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.1289, lng: 10.2653 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Galzig sector (2185 m), reached via the Galzigbahn gondola from
+    St. Anton village, is the main Arlberg intermediate red-piste hub.
+    Pistes are predominantly red-marked, broad cruising runs across
+    varied mid-mountain terrain, lift-connected onward to Rendl and St.
+    Christoph, giving skiers a long circuit within the Ski Arlberg
+    network. Grooming is daily and thorough, snowmaking coverage
+    supplements the lower connecting pistes, and ski patrol coverage is
+    standard across the gondola-and-chairlift network. The sector
+    includes mid-mountain restaurants and forms the natural hub for
+    ski-school groups and intermediate skiers.
+
+display_name:
+  en: Alpine Skiing — Galzig (St. Anton)
+  it: Sci Alpino — Galzig
+  es: Esquí Alpino — Galzig
+  fr: Ski Alpin — Galzig
+  de: Alpiner Skilauf — Galzig
+
+description:
+  en: |
+    Main Arlberg intermediate red-piste hub (2185 m) via the Galzigbahn
+    gondola, lift-connected to Rendl and St. Christoph.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ski Arlberg / Bergbahnen Sankt Anton am Arlberg Galzigbahn lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-st-anton cluster. Tier 2: red-piste
+    intermediate cruising hub, gondola-served, lift-connected to Rendl
+    and St. Christoph.

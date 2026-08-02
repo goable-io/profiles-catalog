@@ -1,0 +1,164 @@
+slug: paragliding-spot-owens-valley
+spot_kind: cluster
+version: "1.0.0"
+category: air
+extends: paragliding
+region: rockies
+country_code: US
+sub_spots:
+  - paragliding-spot-owens-valley-walt-launch
+  - paragliding-spot-owens-valley-gunter-launch
+  - paragliding-spot-owens-valley-big-pine-lz
+display_name:
+  en: Paragliding — Owens Valley
+  it: Parapendio — Owens Valley
+  es: Parapente — Owens Valley
+  fr: Parapente — Owens Valley
+  de: Gleitschirmfliegen — Owens Valley
+description:
+  en: |
+    The Owens Valley, flanked by the Sierra Nevada to the west and
+    the White-Inyo Range to the east near Bishop, California, is
+    one of the most storied cross-country paragliding and hang
+    gliding arenas in the world — the birthplace of many US and
+    world XC distance records thanks to its strong, reliable desert
+    thermals and long, obstacle-free valley corridor. Walt's Point
+    and Gunter are the valley's classic high-altitude XC-departure
+    launches, feeding flights that run north-south along the valley
+    axis with landing options scattered along its length, including
+    the Big Pine desert LZ. Flying season runs roughly April-October,
+    with the strongest XC conditions in the summer months when
+    surface heating over the Owens dry lakebed and valley floor
+    drives powerful, well-organized thermals.
+
+dimensions:
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.30
+    curve:
+      - { x: 0,  s: 0.40 }
+      - { x: 3,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 14, s: 0.85 }
+      - { x: 18, s: 0.55 }
+      - { x: 22, s: 0.20 }
+      - { x: 28, s: 0.00 }
+
+  - name: gust_factor
+    metric: wind_gust_factor
+    weight: 0.20
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.2, s: 0.95 }
+      - { x: 1.4, s: 0.65 }
+      - { x: 1.6, s: 0.30 }
+      - { x: 2.0, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 25, s: 0.95 }
+      - { x: 40, s: 1.00 }
+      - { x: 70, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 2,  s: 0.30 }
+      - { x: 5,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -10, s: 0.20 }
+      - { x: 0,   s: 0.70 }
+      - { x: 12,  s: 1.00 }
+      - { x: 25,  s: 1.00 }
+      - { x: 35,  s: 0.65 }
+      - { x: 42,  s: 0.20 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: HIGH_WIND
+    description: Sustained wind above 28 knots at Owens Valley launches makes paraglider control unsafe; canopy collapse risk rises sharply.
+
+  - metric: wind_gust_factor
+    condition: gt
+    value: 2.0
+    reason_code: GUSTY_TURBULENT_AIR
+    description: Gust factor above 2.0x in the Owens Valley's strong desert thermal cycles indicates turbulent air with severe canopy collapse risk.
+
+  - metric: visibility_km
+    condition: lt
+    value: 2
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 2km violates VFR flight requirements and creates terrain collision risk against the Sierra Nevada or White-Inyo escarpments.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: ACTIVE_PRECIPITATION
+    description: Active precipitation degrades canopy fabric and dramatically increases stall risk.
+
+  - metric: sun_altitude_deg
+    condition: lt
+    value: 0
+    reason_code: NO_DAYLIGHT
+    description: Paragliding requires daylight; night operations are not standard recreational practice in the Owens Valley.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: low
+  notes: |
+    Owens Valley paragliding is free-flight with zero direct
+    emissions per session. Equipment footprint is moderate (canopy,
+    harness, reserve, vario/GPS essential for the valley's long XC
+    tasks). Carrying capacity is low — pilots disperse widely along
+    the north-south valley corridor and land at scattered desert
+    LZs. 4WD/high-clearance access to Walt's Point adds out-of-
+    session vehicle emissions; retrieve driving along US-395 is the
+    dominant per-trip footprint for XC pilots chasing long tasks.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "United States Hang Gliding & Paragliding Association (USHPA) Owens Valley site documentation"
+    - "FAI Paragliding Commission (CIVL) operational guidelines"
+    - "Owens Valley XC pilot community consolidated launch and LZ practice"
+  notes: |
+    Cluster aggregates the valley's two classic XC-departure launches
+    and its standard desert LZ. Extends the base `paragliding`
+    profile directly (no Rockies-region paragliding variant exists
+    yet in the catalog); dimensions/gates copied verbatim from the
+    base profile. typical_season_weeks set to 28 reflecting the
+    April-October Sierra/Owens flying window.

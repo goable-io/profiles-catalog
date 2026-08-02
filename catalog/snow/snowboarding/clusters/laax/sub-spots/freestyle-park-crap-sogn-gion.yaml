@@ -1,0 +1,50 @@
+slug: snowboarding-spot-laax-freestyle-park-crap-sogn-gion
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-laax
+parent_cluster: snowboarding-spot-laax
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.8783, lng: 9.22 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    The Laax Snowpark on Crap Sogn Gion is
+    Europe's largest snowpark by feature count, with over 90 obstacles
+    spanning beginner to pro lines including a competition-grade
+    superpipe. The park hosts the annual World Rookie Fest and has been
+    a Burton Open venue, drawing elite riders for its pro-line kickers
+    and rail gardens. This concentration of large-airtime features and
+    technical rail setups places the sector firmly in expert territory —
+    distinct from the surrounding cruising pistes — warranting the
+    highest tier alongside hike-to freeride terrain elsewhere in the
+    catalog.
+
+display_name:
+  en: Snowboarding — Laax Snowpark
+  it: Snowboard — Laax Snowpark
+  es: Snowboard — Laax Snowpark
+  fr: Snowboard — Laax Snowpark
+  de: Snowboarden — Laax Snowpark
+
+description:
+  en: |
+    Europe's largest snowpark with 90+
+    obstacles, pro-line kickers, and a competition superpipe on Crap Sogn
+    Gion. Host venue for the World Rookie Fest.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Laax Snowpark official feature inventory"
+    - "World Rookie Fest / Burton Open Laax event documentation"
+  notes: |
+    Sub-spot of snowboarding-spot-laax cluster.
+    Tier 3: pro-line big-air and superpipe features distinguish this from
+    the general Crap Sogn Gion piste zone.

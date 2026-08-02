@@ -1,0 +1,51 @@
+slug: climbing-spot-rodellar-ventanas-del-mascun
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-rodellar
+parent_cluster: climbing-spot-rodellar
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.2830, lng: -0.0500 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Ventanas del Mascún is Rodellar's flagship sector, an overhanging
+    tufa-streaked limestone wall above the Mascún canyon offering routes
+    from F8a to F9b among the steepest, most sustained climbing in the
+    cluster. Bolting is modern stainless on the well-traveled classics,
+    maintained via ongoing local re-equipping, though the sheer scale of
+    tufa features and steep terrain demands strong technique and stamina
+    to manage. Approach involves a canyon-floor walk from Rodellar
+    village that can cross seasonal watercourses; heavy rain upstream
+    raises flash-flood risk in the gorge. Falls on the very steep
+    terrain are generally clean and air-y; the tier reflects sustained
+    grade severity and canyon approach hazard rather than loose rock.
+
+display_name:
+  en: Climbing — Rodellar Ventanas del Mascún
+  it: Arrampicata — Rodellar Ventanas del Mascún
+  es: Escalada — Rodellar Ventanas del Mascún
+  fr: Escalade — Rodellar Ventanas del Mascún
+  de: Klettern — Rodellar Ventanas del Mascún
+
+description:
+  en: |
+    Ventanas del Mascún is Rodellar's flagship sector, steep tufa-streaked
+    limestone above the Sierra de Guara canyons offering F8a-F9b
+    overhanging testpieces.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Rodellar / Sierra de Guara-region guidebook coverage"
+    - "Parque Natural de la Sierra y Cañones de Guara access documentation"
+  notes: |
+    Sub-spot of climbing-spot-rodellar cluster. Tier 3: world-class
+    steep tufa sport climbing, canyon-floor approach with flash-flood
+    exposure, sustained grade severity.

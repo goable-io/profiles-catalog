@@ -1,0 +1,54 @@
+slug: trekking-spot-haute-route-europaweg-zermatt
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-haute-route
+parent_cluster: trekking-spot-haute-route
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0722, lng: 7.7150 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Europaweg high-traverse leg from Grächen to Zermatt covers
+    roughly 25-30 km and 8-10 hours across two long stage-days, holding
+    a near-constant ~2200-2500 m contour on well-marked, established
+    trail with several sections of fixed cable and a suspension bridge
+    (Charles Kuonen bridge) crossing a deep ravine. Staffed huts (Europa
+    Hut, Gasenried) sit along the route with food, water, and radio
+    contact, and several villages along the valley below (Randa, Täsch)
+    provide bail-out descent options within 2-3 hours. The dramatic,
+    sustained exposure on the traverse and the suspension-bridge
+    crossing are the defining hazards, alongside afternoon thunderstorm
+    risk on the open balcony trail with the Matterhorn in view for the
+    final approach.
+
+display_name:
+  en: Trekking — Europaweg to Zermatt
+  it: Trekking — Europaweg per Zermatt
+  es: Trekking — Europaweg a Zermatt
+  fr: Trekking — Europaweg vers Zermatt
+  de: Wandern — Europaweg nach Zermatt
+
+description:
+  en: |
+    The dramatic high-balcony final approach of the Haute Route from
+    Grächen to Zermatt, including Europe's longest pedestrian suspension
+    bridge, with the Matterhorn dominating the skyline for the last
+    stages.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Chamonix to Zermatt: The Walker's Haute Route (Kev Reynolds)"
+    - "Zermatt Tourismus Europaweg trail guidance"
+  notes: |
+    Sub-spot of trekking-spot-haute-route cluster. Tier 2: established
+    long-traverse trail, sustained exposure and suspension-bridge
+    crossing, staffed huts along route, bail-out villages within reach —
+    standard intermediate difficulty.

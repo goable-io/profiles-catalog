@@ -1,0 +1,45 @@
+slug: snorkeling-spot-belize-blue-hole-edge-blue-hole-rim-snorkel
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-belize-blue-hole-edge
+parent_cluster: snorkeling-spot-belize-blue-hole-edge
+region: caribbean
+country_code: BZ
+
+coordinates:
+  center: { lat: 17.316, lng: -87.535 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Blue Hole rim snorkel covers the 0-6 m shallow reef ring encircling
+    the 318 m sinkhole, immediately adjacent to a sheer drop into open
+    water hundreds of meters deep. Which demands comfort swimming beside an
+    abrupt depth change even though the snorkeler never leaves the shallow
+    rim itself. Access is boat-only via a multi-hour open-water crossing
+    from the mainland or outer atolls, tours run only in the middle of the
+    day, and operators require calm-swell conditions before dropping
+    snorkelers, all of which push this past a beginner shore site to tier
+    2.
+
+display_name:
+  en: Snorkeling — Blue Hole Rim
+  it: Snorkeling — Bordo del Grande Buco Blu
+  es: Snorkel — Borde del Agujero Azul
+  fr: Snorkeling — Bord du Trou Bleu
+  de: Schnorcheln — Blue-Hole-Rand
+
+description:
+  en: |
+    Shallow 0-6 m reef-rim snorkel around the 318 m Great Blue Hole sinkhole; mid-day-only boat access, calm-swell required.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Belize Barrier Reef Reserve System (UNESCO World Heritage Site, 1996) documentation"
+    - "Great Blue Hole hydrogeology + halocline marine-life documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-belize-blue-hole-edge. Tier 2: shallow rim beside a sheer open-water drop, remote boat access.

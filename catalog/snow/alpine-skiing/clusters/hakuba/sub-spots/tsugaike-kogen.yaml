@@ -1,0 +1,55 @@
+slug: alpine-skiing-spot-hakuba-tsugaike-kogen
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-hakuba
+parent_cluster: alpine-skiing-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.7550, lng: 137.8033 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Tsugaike Kogen's base sector is the flattest and widest terrain in
+    the Hakuba Valley, served by gondola and a network of gentle
+    chairlifts and magic-carpet lifts dedicated to beginner terrain.
+    The piste network here is dominated by green and blue-marked runs
+    with full grooming coverage and low-gradient, wide-corridor
+    geometry that keeps collision risk low, plus dedicated kids' zones
+    and ski-school terrain near the base lodge. Ski patrol coverage is
+    standard across the marked network. This lower, family-friendly
+    base sector is distinct from the resort's higher above-treeline
+    bowls, which feed the Tsugaike freeride cluster and share its
+    summit-area coordinate.
+
+display_name:
+  en: Alpine Skiing — Tsugaike Kogen (Hakuba)
+  it: Sci Alpino — Tsugaike Kogen (Hakuba)
+  es: Esquí Alpino — Tsugaike Kogen (Hakuba)
+  fr: Ski Alpin — Tsugaike Kogen (Hakuba)
+  de: Alpiner Skilauf — Tsugaike Kogen (Hakuba)
+
+description:
+  en: |
+    Tsugaike Kogen's wide, flat base sector — the Hakuba Valley's most
+    beginner-friendly terrain, with green and blue pistes and dedicated
+    kids' zones connected by gondola to the resort's upper mountain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tsugaike Kogen Resort piste map and lift operational dossier"
+    - "Hakuba Valley Tourism Bureau resort network documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-hakuba cluster. Tier 1: flat, wide
+    green and blue-piste base terrain with dedicated kids' zones. This
+    base-sector coordinate is distinct from the higher above-treeline
+    bowl coordinate shared by freeride-spot-hakuba-tsugaike-powder and
+    ski-touring-spot-hakuba-tsugaike, which describes the resort's
+    summit-area sidecountry/backcountry zone rather than the beginner
+    base sector catalogued here.

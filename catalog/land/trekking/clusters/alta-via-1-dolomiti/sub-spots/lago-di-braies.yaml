@@ -1,0 +1,53 @@
+slug: trekking-spot-alta-via-1-dolomiti-lago-di-braies
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-alta-via-1-dolomiti
+parent_cluster: trekking-spot-alta-via-1-dolomiti
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.6944, lng: 12.0847 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    Lago di Braies (1496 m) is the northern trailhead of Alta Via 1. The
+    lakeside approach path is wide, gravel-surfaced, and essentially
+    flat for the first 1-2 hours before the AV1 route begins its climb
+    into the Fanes-Sennes-Braies Nature Park. A staffed hotel and
+    refuge sit directly at the lake with food, water, and full mobile
+    coverage, and the trailhead is served by a paved road and seasonal
+    shuttle bus, making evacuation or bail-out immediate at any point on
+    this section. Worst-case consequence at this sub-spot is weather
+    exposure on the initial climb, fully recoverable by returning to the
+    lakeside facilities.
+
+display_name:
+  en: Trekking — Lago di Braies Trailhead
+  it: Trekking — Attacco Lago di Braies
+  es: Trekking — Inicio Lago di Braies
+  fr: Trekking — Départ Lago di Braies
+  de: Wandern — Ausgangspunkt Pragser Wildsee
+
+description:
+  en: |
+    The iconic emerald-water trailhead of Alta Via 1, inside the
+    Fanes-Sennes-Braies Nature Park. An easy, well-serviced lakeside
+    start before the route climbs into the high Dolomites, popular with
+    both day visitors and AV1 through-trekkers.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Parco Naturale Fanes-Senes-Braies visitor management plan"
+    - "Club Alpino Italiano (CAI) Alta Via 1 trail classification"
+  notes: |
+    Sub-spot of trekking-spot-alta-via-1-dolomiti cluster. Tier 1: wide,
+    flat, road-served lakeside path, staffed facilities, full mobile
+    coverage, immediate evacuation — most forgiving sub-spot in the
+    cluster.

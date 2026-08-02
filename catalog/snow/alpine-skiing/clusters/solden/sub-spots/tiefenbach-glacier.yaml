@@ -1,0 +1,46 @@
+slug: alpine-skiing-spot-solden-tiefenbach-glacier
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-solden
+parent_cluster: alpine-skiing-spot-solden
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 46.9350, lng: 10.9083 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Tiefenbachgletscher sector is Sölden's second glacier zone,
+    offering red-piste intermediate cruising that is generally gentler
+    than the neighbouring Rettenbach race sector. The sector connects
+    to the main resort via a tunnel through the Tiefenbachjoch, giving
+    it reliable access independent of surface weather on the connecting
+    ridge. Grooming and glacier-safety protocols match the Rettenbach
+    side, but the terrain profile favours wide, moderate-gradient red
+    pistes suited to sustained intermediate cruising rather than race-
+    piste-style steepness.
+
+display_name:
+  en: Alpine Skiing — Tiefenbach Glacier (Sölden)
+  it: Sci Alpino — Ghiacciaio Tiefenbach
+  es: Esquí Alpino — Glaciar Tiefenbach
+  fr: Ski Alpin — Glacier de Tiefenbach
+  de: Alpiner Skilauf — Tiefenbachgletscher
+
+description:
+  en: |
+    Sölden's second glacier zone with red-piste cruising, connected to
+    the main resort via a tunnel through the Tiefenbachjoch.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergbahnen Sölden piste map — Tiefenbachgletscher sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-solden cluster. Tier 2: red-piste
+    intermediate glacier cruising, tunnel-connected to the main resort.

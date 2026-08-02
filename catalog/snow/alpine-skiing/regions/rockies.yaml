@@ -1,0 +1,151 @@
+slug: alpine-skiing-rockies
+spot_kind: region
+version: "0.1.0"
+category: snow
+extends: alpine-skiing
+region: rockies
+display_name:
+  en: Alpine Skiing — North American Rockies
+  it: Sci Alpino — Rocciose Nord-Americane
+  es: Esquí Alpino — Rocosas Norteamericanas
+  fr: Ski Alpin — Rocheuses Nord-Américaines
+  de: Alpiner Skilauf — Nordamerikanische Rocky Mountains
+description:
+  en: |
+    The North American Rockies + Sierra Nevada resort belt spans the
+    Coast Range (Whistler-Blackcomb), Wasatch (Park City, Alta,
+    Snowbird), Tetons (Jackson Hole), Colorado Rockies (Vail, Aspen,
+    Breckenridge, Steamboat), Utah cottonwoods, and the Sierra
+    (Squaw, Mammoth). Continental dry-snow climate: 30-60 cm overnight
+    storm cycles Jan-Feb, cold-air drainage keeps snow-surface quality
+    exceptional at altitude, but continental arctic-air outbreaks
+    can drop temperatures to -35°C on Colorado + Wyoming days. Lift
+    infrastructure comparable to European Alps but with terrain-park
+    + steep-inbounds emphasis. Season 20-22 weeks (mid-Nov to
+    mid-Apr typical).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -32, s: 0.05 }
+      - { x: -22, s: 0.35 }
+      - { x: -12, s: 0.75 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.90 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.25 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.17
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 5,   s: 0.70 }
+      - { x: 12,  s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts + gondolas at N-American Rockies resorts; upper-mountain and above-treeline zones become unsafe for on-piste skiing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200 m in continental Rocky-Mountain conditions makes piste navigation on wide alpine bowls unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: ARCTIC_OUTBREAK_FROSTBITE
+    description: Apparent temperature below -32°C (continental arctic-air outbreak days, esp. Wyoming + Colorado + Alberta) creates immediate frostbite risk on lift-served exposure; resorts often close upper lifts.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 21
+  carrying_capacity_sensitivity: high
+  notes: |
+    N-American Rockies resorts operate under Vail Resorts (Vail, Park
+    City, Whistler-Blackcomb) + Alterra Mountain Company (Aspen,
+    Steamboat, Mammoth) + independent (Jackson Hole, Alta) frameworks.
+    Snowmaking + grooming + electric lift electricity dominate
+    operational footprint; Colorado + Utah + BC state carbon-mix on
+    electric lifts averages 40-60% renewables in 2020s data.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NSAA (National Ski Areas Association US) operational + safety standards"
+    - "Canadian Ski Council / Canada West Ski Areas Association operational standards"
+    - "NOAA continental arctic-air outbreak advisories 1980-2023"
+    - "FIS North American Alpine race-venue weather criteria"
+  notes: |
+    Regional overrides vs alpine-skiing base: temperature curve extended
+    left to -32°C for continental arctic-air outbreak profile; frostbite
+    gate tightened from -28 → -32°C matching resort-closure trigger;
+    snow_surface weight raised to 0.15 (dry-snow quality is the value
+    proposition on Rockies days). Precipitation weight raised to 0.17
+    (Colorado / Utah / Tetons dry-storm-cycle correlates with excellent
+    powder).

@@ -1,0 +1,45 @@
+slug: bouldering-spot-squamish-boulders-section-16
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-squamish-boulders
+parent_cluster: bouldering-spot-squamish-boulders
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 49.6900, lng: -123.1550 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Section 16 is Squamish's hard testpiece and highball sector, home to
+    V8-V13 granite problems and Dreamcatcher, a committing highball line
+    often cited as the world's first confirmed V16 boulder problem,
+    first climbed by Chris Sharma in 2005. Landings on the steeper lines
+    are uneven forest floor with root and rock hazards, requiring a
+    full multi-pad stacking setup and an experienced spotter team on
+    the taller problems. The forest approach trail is longer and less
+    trafficked than the Grand Wall Boulders, adding evacuation time in
+    the event of a fall injury.
+
+display_name:
+  en: Bouldering — Squamish Section 16
+
+description:
+  en: |
+    Section 16 — Squamish's hard and highball sector, V8-V13, including
+    Dreamcatcher, often noted as the world's first confirmed V16
+    boulder problem (Chris Sharma, 2005).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Squamish Bouldering guidebook (Marc Bourguignon)"
+    - "Squamish Access Society trail and access information"
+  notes: |
+    Sub-spot of bouldering-spot-squamish-boulders cluster. Tier 3: hard
+    highball testpiece sector, uneven forest-floor landings, mandatory
+    multi-pad and spotter team, longer less-trafficked approach.

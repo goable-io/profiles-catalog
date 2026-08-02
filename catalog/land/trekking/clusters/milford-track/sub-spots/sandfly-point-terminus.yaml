@@ -1,0 +1,51 @@
+slug: trekking-spot-milford-track-sandfly-point-terminus
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-milford-track
+parent_cluster: trekking-spot-milford-track
+region: pacific
+country_code: NZ
+
+coordinates:
+  center: { lat: -44.7014, lng: 167.8983 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    Sandfly Point marks the trail terminus on Milford Sound, reached
+    after a short final 1.5 km stretch of flat, well-formed track from
+    Dumpling Hut through coastal rainforest at near sea level. There is
+    no elevation gain and no technical terrain, but the point is
+    boat-only: walkers wait under a DOC shelter for a scheduled ferry
+    crossing to Milford village, as no trail or road continues from
+    here. The shelter provides protection from rain and the notoriously
+    dense sandflies, and the short ferry crossing to Milford Sound
+    village offers a fast, reliable evacuation route in the event of
+    injury earlier on the track.
+
+display_name:
+  en: Trekking — Sandfly Point Terminus
+  it: Trekking — Terminal di Sandfly Point
+  es: Trekking — Término de Sandfly Point
+  fr: Trekking — Terminus de Sandfly Point
+  de: Wandern — Ziel Sandfly Point
+
+description:
+  en: |
+    Sandfly Point is the Milford Track's official finish on Milford
+    Sound, at near sea level. A DOC shelter here protects walkers
+    while awaiting the scheduled ferry to Milford village — the only
+    way out, as no road or trail continues from this trailhead.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Department of Conservation (DOC) New Zealand — Milford Track Great Walk ferry and transport information"
+    - "Fiordland National Park visitor centre trail notes"
+  notes: |
+    Sub-spot of trekking-spot-milford-track cluster. Tier 1: flat
+    coastal terminus, sheltered waiting area, boat-only exit with
+    scheduled ferry, no technical hazard.

@@ -1,0 +1,41 @@
+slug: bouldering-spot-albarracin-arrastradero
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-albarracin
+parent_cluster: bouldering-spot-albarracin
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 40.4183, lng: -1.4517 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Arrastradero is the reference sector of Albarracín bouldering, with
+    red sandstone problems from V3 to V8 defined by rounded pockets and
+    technical friction slabs set in open pine forest. Boulder heights
+    are moderate and mostly non-highball, calling for standard 3-6 pad
+    coverage and an attentive spotter on the taller lines. The sector's
+    fame and central parking access make it the busiest single area in
+    Albarracín, with well-established trails between problems.
+
+display_name:
+  en: Bouldering — Albarracín Arrastradero
+
+description:
+  en: |
+    The reference sector of Albarracín bouldering, with red sandstone
+    pocket-and-friction problems from V3 to V8 in open pine forest.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Aragonesa de Montañismo (FAM) Albarracín sector documentation"
+    - "Vertical Life Albarracín sector database"
+  notes: |
+    Sub-spot of bouldering-spot-albarracin cluster. Tier 2: intermediate
+    V3-V8 sandstone, standard pad-and-spotter needs, high foot traffic.

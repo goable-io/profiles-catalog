@@ -1,0 +1,44 @@
+slug: scuba-spot-silfra-cathedral
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-silfra
+parent_cluster: scuba-spot-silfra
+region: atlantic
+country_code: IS
+
+coordinates:
+  center: { lat: 64.2583, lng: -21.1200 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    Silfra Cathedral is the deepest chamber of the Silfra fissure system,
+    opening to roughly 20 m where the rift walls widen into a dramatic open
+    rock amphitheatre. The same near-freezing glacial water (2-4°C) and 100
+    m+ visibility apply, with the greater depth and open-chamber geometry
+    demanding slightly more buoyancy precision than the main crack section.
+    Keeping it at the cluster's intermediate tier alongside Silfra Crack.
+
+display_name:
+  en: Scuba — Silfra Cathedral (Iceland)
+  it: Immersione — Silfra Cathedral
+  es: Buceo — Silfra Cathedral
+  fr: Plongée — Silfra Cathedral
+  de: Tauchen — Silfra Cathedral
+
+description:
+  en: |
+    The deepest, widest chamber of the Silfra fissure system, with
+    dramatic rock geometry and glacier-clear water.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Þingvellir National Park dive-permit and site documentation"
+    - "Icelandic Environment Agency (Umhverfisstofnun) Silfra access documentation"
+  notes: |
+    Sub-spot of scuba-spot-silfra cluster. Tier 2: intermediate
+    drysuit-mandatory deep-chamber dive, guide-led + permit-required.

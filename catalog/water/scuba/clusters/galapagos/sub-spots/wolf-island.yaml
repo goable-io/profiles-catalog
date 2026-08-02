@@ -1,0 +1,46 @@
+slug: scuba-spot-galapagos-wolf-island
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-galapagos
+parent_cluster: scuba-spot-galapagos
+region: pacific
+country_code: EC
+
+coordinates:
+  center: { lat: 1.3872, lng: -91.8158 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Wolf Island is a remote volcanic pinnacle in the Galápagos Marine
+    Reserve's northern zone, reached only by liveaboard. Where schooling
+    hammerhead sharks and resident Galápagos sharks patrol current-swept
+    walls in the 15-30 m range. Current is frequently strong and can shift
+    direction without warning, requiring advanced blue-water drift skill
+    and negative-entry technique, placing it alongside Darwin at the
+    cluster's top tier.
+
+display_name:
+  en: Scuba — Wolf Island (Galápagos)
+  it: Immersione — Wolf Island
+  es: Buceo — Isla Wolf
+  fr: Plongée — Île Wolf
+  de: Tauchen — Wolf Island
+
+description:
+  en: |
+    A remote offshore volcanic pinnacle with hammerhead- and
+    Galápagos-shark aggregations, liveaboard-only with strong
+    current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Galápagos National Park Directorate Darwin/Wolf dive-site documentation"
+    - "Charles Darwin Foundation hammerhead shark aggregation reports"
+  notes: |
+    Sub-spot of scuba-spot-galapagos cluster. Tier 3: liveaboard-
+    only offshore pinnacle with strong, direction-shifting current.

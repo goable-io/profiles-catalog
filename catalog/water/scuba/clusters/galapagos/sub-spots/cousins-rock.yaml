@@ -1,0 +1,45 @@
+slug: scuba-spot-galapagos-cousins-rock
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-galapagos
+parent_cluster: scuba-spot-galapagos
+region: pacific
+country_code: EC
+
+coordinates:
+  center: { lat: -0.3167, lng: -90.5850 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Cousins Rock, near Bartolomé in the Galápagos central zone, is a
+    submerged volcanic pinnacle offering calmer, more sheltered conditions
+    than the northern Darwin/Wolf sites — green sea turtles. Galápagos sea
+    lions, and eagle rays are the signature encounters in the 5-25 m range
+    with generally mild current. Day-boat accessible from Santa Cruz rather
+    than liveaboard-only, making it the cluster's intermediate reference
+    dive for divers building toward the northern pelagic sites.
+
+display_name:
+  en: Scuba — Cousins Rock (Galápagos)
+  it: Immersione — Cousins Rock
+  es: Buceo — Cousins Rock
+  fr: Plongée — Cousins Rock
+  de: Tauchen — Cousins Rock
+
+description:
+  en: |
+    A calmer central-zone volcanic pinnacle near Bartolomé with
+    turtles, sea lions, and eagle rays.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Galápagos National Park Directorate central-zone dive-site documentation"
+    - "PADI Galápagos regional dive-condition briefing"
+  notes: |
+    Sub-spot of scuba-spot-galapagos cluster. Tier 2: intermediate
+    day-boat-accessible central-zone pinnacle.

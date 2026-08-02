@@ -1,0 +1,44 @@
+slug: snowboarding-spot-whistler-blackcomb-highest-level-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-whistler-blackcomb
+parent_cluster: snowboarding-spot-whistler-blackcomb
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.11, lng: -122.95 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    Highest Level Park is Whistler's pro-line terrain park, featuring
+    mandatory-air big kickers and a competition superpipe used by
+    professional and elite amateur riders. Feature scale requires committed
+    big-air technique rather than progressive learning lines. Placing it
+    clearly in expert territory alongside other pro-scale parks classified
+    Tier 3 elsewhere in this catalog.
+
+display_name:
+  en: Snowboarding — Highest Level Park (Whistler)
+  it: Snowboard — Highest Level Park
+  es: Snowboard — Highest Level Park
+  fr: Snowboard — Highest Level Park
+  de: Snowboarden — Highest Level Park
+
+description:
+  en: |
+    Whistler's pro-line snowpark with
+    mandatory-air big kickers and a competition superpipe.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Highest Level Park feature inventory"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-whistler-blackcomb cluster. Tier 3: pro-scale
+    mandatory-air features and superpipe, expert-only terrain.

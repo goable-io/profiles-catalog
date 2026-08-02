@@ -1,0 +1,43 @@
+slug: snorkeling-spot-silfra-lagoon-shallow
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-silfra
+parent_cluster: snorkeling-spot-silfra
+region: atlantic
+country_code: IS
+
+coordinates:
+  center: { lat: 64.2583, lng: -21.12 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    Silfra Lagoon is the wider, calmer basin at the end of the fissure
+    route where the crack opens out before the guided exit point, still
+    within the same 2-4C glacial meltwater and drysuit-mandatory regime as
+    the crack itself. The open lagoon geometry has less confinement than
+    the narrow crack, but the extreme water temperature and mandatory
+    specialized equipment keep the environment well outside beginner-
+    tropical-lagoon territory. Warranting the same tier 2 as the crack
+    section.
+
+display_name:
+  en: Snorkeling — Silfra Lagoon Shallow
+  it: Snorkeling — Laguna di Silfra
+  es: Snorkel — Laguna de Silfra
+  fr: Snorkeling — Lagon de Silfra
+  de: Schnorcheln — Silfra-Lagune
+
+description:
+  en: |
+    Shallow end-of-route section of the Silfra fissure, glacier-filtered visibility, drysuit-mandatory before the guided exit.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Icelandic National Park Silfra permit + drysuit-mandatory operating regulations"
+  notes: |
+    Sub-spot of snorkeling-spot-silfra. Tier 2: open lagoon basin, same cold-water/drysuit regime as the crack.

@@ -1,0 +1,46 @@
+slug: snowboarding-spot-verbier-attelas-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-verbier
+parent_cluster: snowboarding-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.105, lng: 7.245 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Attelas and Ruinettes sector is
+    Verbier's mid-mountain hub, combining the resort's main terrain park
+    with the bulk of its intermediate red-piste cruising terrain. Lift
+    density is highest here, and grooming quality is consistently strong
+    given the sector's flagship intermediate status. Terrain difficulty
+    and feature scale are moderate rather than expert, placing this at
+    Tier 2 in contrast to the summit Mont Fort sector.
+
+display_name:
+  en: Snowboarding — Attelas Park (Verbier)
+  it: Snowboard — Attelas
+  es: Snowboard — Attelas
+  fr: Snowboard — Attelas
+  de: Snowboarden — Attelas
+
+description:
+  en: |
+    Attelas + Ruinettes mid-mountain sector
+    with Verbier's snowpark and main intermediate red-piste cruising
+    terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Téléverbier SA Attelas / Ruinettes sector piste dossier"
+  notes: |
+    Sub-spot of snowboarding-spot-verbier cluster.
+    Tier 2: intermediate red-piste and park terrain, distinct from the
+    expert Mont Fort summit sector.

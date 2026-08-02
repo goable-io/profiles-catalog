@@ -1,0 +1,42 @@
+slug: bouldering-spot-fontainebleau-franchard-cuisiniere
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-fontainebleau
+parent_cluster: bouldering-spot-fontainebleau
+country_code: FR
+
+coordinates:
+  center: { lat: 48.4283, lng: 2.6017 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Franchard Cuisinière is a sustained, high-density sandstone sector
+    with problems concentrated in the V4-V7c range, prized as one of the
+    best winter crags in the forest because its open, sunny position
+    dries quickly after rain. Boulder heights are moderate with the
+    typical Fontainebleau slopers and pockets, requiring 2-3 pads and a
+    spotter for the taller, more technical lines. Its popularity and
+    dense problem count mean landings are well-packed sand but can get
+    crowded on clear winter weekends.
+
+display_name:
+  en: Bouldering — Fontainebleau Franchard Cuisinière
+
+description:
+  en: |
+    Sun-exposed Franchard Cuisinière sector, a favourite winter venue
+    with a dense concentration of sustained V4-V7c sandstone problems
+    and classic Fontainebleau friction.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Française de la Montagne et de l'Escalade (FFME) Fontainebleau sector guidance"
+    - "Vertical Life Fontainebleau sector database"
+  notes: |
+    Sub-spot of bouldering-spot-fontainebleau cluster. Tier 2: sustained
+    V4-V7c grading, moderate heights, popular sun-exposed winter sector.

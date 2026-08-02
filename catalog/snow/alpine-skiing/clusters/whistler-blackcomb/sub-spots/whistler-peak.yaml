@@ -1,0 +1,54 @@
+slug: alpine-skiing-spot-whistler-blackcomb-whistler-peak
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-whistler-blackcomb
+parent_cluster: alpine-skiing-spot-whistler-blackcomb
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.0603, lng: -122.9500 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Whistler Peak Chair sector tops out at the 2181 m summit and is
+    the cluster's flagship, combining black and red-piste terrain with
+    the Peak-to-Creek run — at roughly 11 km the longest continuous
+    descent in North America, dropping to the Creekside base. Piste
+    marking is predominantly black off the summit chair with red-piste
+    links lower down, and the sector sits above treeline with full
+    exposure to wind and whiteout conditions on ridge terrain. Ski
+    patrol maintains daily avalanche-control operations before opening
+    the peak chair each morning, and snowmaking is not present at this
+    altitude given the reliable natural snowpack. Terrain-park presence
+    is minimal here; the sector's identity is long, sustained descent
+    rather than freestyle features, and it is reserved for confident
+    intermediate-to-advanced skiers given the sustained pitch and
+    altitude exposure.
+
+display_name:
+  en: Alpine Skiing — Whistler Peak
+  it: Sci Alpino — Whistler Peak
+  es: Esquí Alpino — Whistler Peak
+  fr: Ski Alpin — Whistler Peak
+  de: Alpiner Skilauf — Whistler Peak
+
+description:
+  en: |
+    Whistler's summit sector (2181 m) via the Peak Chair, home to the
+    Peak-to-Creek run — North America's longest continuous ski descent
+    at roughly 11 km. Black and red-piste terrain above treeline.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb (Vail Resorts) Peak Chair and Peak-to-Creek run documentation"
+    - "Canadian Ski Council operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-whistler-blackcomb cluster. Tier 3:
+    black-piste summit sector, above-treeline exposure, the iconic
+    Peak-to-Creek 11 km descent, cluster's flagship sector.

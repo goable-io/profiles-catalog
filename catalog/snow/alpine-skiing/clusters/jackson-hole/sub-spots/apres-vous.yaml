@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-jackson-hole-apres-vous
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-jackson-hole
+parent_cluster: alpine-skiing-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.6117, lng: -110.8481 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Après Vous mountain sector, served by the Après Vous high-speed
+    quad chairlift on the resort's south-western quadrant, delivers
+    intermediate red-piste cruising across a broad, groomed run network
+    distinct from the steep terrain further up-mountain. Piste marking
+    is predominantly red with some blue-piste sections lower down,
+    grooming coverage is comprehensive, and the wide, moderate-gradient
+    runs give this sector low collision risk relative to the resort's
+    steeper zones. Ski patrol maintains standard coverage across the
+    marked network, and the sector's extended vertical makes it a
+    family-friendly cruising option for skiers not yet ready for
+    Rendezvous Mountain's advanced terrain.
+
+display_name:
+  en: Alpine Skiing — Après Vous
+  it: Sci Alpino — Après Vous
+  es: Esquí Alpino — Après Vous
+  fr: Ski Alpin — Après Vous
+  de: Alpiner Skilauf — Après Vous
+
+description:
+  en: |
+    Jackson Hole's Après Vous mountain sector, intermediate red-piste
+    cruising on the resort's south-western quadrant served by the
+    Après Vous high-speed quad.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort Après Vous chairlift and trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-jackson-hole cluster. Tier 2:
+    intermediate red-piste cruising, high-speed quad access, family-
+    friendly extended coverage.

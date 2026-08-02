@@ -1,0 +1,53 @@
+slug: trekking-spot-west-highland-way-kingshouse-glencoe
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-west-highland-way
+parent_cluster: trekking-spot-west-highland-way
+country_code: GB
+
+coordinates:
+  center: { lat: 56.6739, lng: -4.9375 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Kingshouse (250 m) sits on stage 6 of the West Highland Way, at
+    the point where the trail leaves the open expanse of Rannoch Moor
+    and enters the Glencoe approach beneath the Buachaille Etive Mòr
+    and the Glencoe mountains. The preceding moor crossing is roughly
+    12-13 km of exposed, largely flat but pathless-feeling gravel
+    track with no shelter and variable mobile coverage, making
+    Kingshouse — a staffed hotel with food, lodging, and road access
+    via the A82 — an important resupply and shelter point before the
+    steeper climb over the Devil's Staircase that follows. The
+    combination of moor exposure and dramatic mountain terrain gives
+    this stage more weather sensitivity and a longer walk between
+    reliable shelter points than the lower-altitude Loch Lomond
+    section.
+
+display_name:
+  en: Trekking — Kingshouse & Glencoe Approach
+  it: Trekking — Kingshouse e ingresso a Glencoe
+  es: Senderismo — Kingshouse y entrada a Glencoe
+  fr: Randonnée — Kingshouse et l'entrée de Glencoe
+  de: Wandern — Kingshouse und Zugang nach Glencoe
+
+description:
+  en: |
+    The Kingshouse Hotel at 250 m marks the trail's dramatic entrance
+    into Glencoe on stage 6, following the long exposed crossing of
+    Rannoch Moor and preceding the climb over the Devil's Staircase.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Loch Lomond and The Trossachs National Park Authority / Fort William stage guidance"
+    - "Cicerone The West Highland Way guidebook"
+  notes: |
+    Sub-spot of trekking-spot-west-highland-way cluster. Tier 2: long
+    exposed moor crossing precedes this point, road-accessible staffed
+    shelter, greater weather sensitivity and mountain terrain than the
+    lower Loch Lomond stage.

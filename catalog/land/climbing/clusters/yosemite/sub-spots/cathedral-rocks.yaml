@@ -1,0 +1,50 @@
+slug: climbing-spot-yosemite-cathedral-rocks
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-yosemite
+parent_cluster: climbing-spot-yosemite
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.7200, lng: -119.6400 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Higher, Middle, and Lower Cathedral Rocks, together with the
+    neighboring Cookie Cliff, offer 100-300m granite multipitch trad
+    routes in the 5.7-5.10 range — Yosemite's classic intermediate
+    stepping-stone from single-pitch cragging to full big-wall routes.
+    Protection is mixed trad with fixed anchors at many belays and route
+    tops; rock quality is generally sound clean granite with occasional
+    loose blocks on ledgy sections. Approach is via use trails from the
+    valley floor, shorter and less committing than the big walls, and
+    descent/rescue access is comparatively straightforward given proximity
+    to the road.
+
+display_name:
+  en: Climbing — Cathedral Rocks
+  it: Arrampicata — Cathedral Rocks
+  es: Escalada — Cathedral Rocks
+  fr: Escalade — Cathedral Rocks
+  de: Klettern — Cathedral Rocks
+
+description:
+  en: |
+    Higher, Middle, and Lower Cathedral Rocks plus neighboring Cookie
+    Cliff offer Yosemite's classic intermediate multipitch trad climbing,
+    100-300m routes in the 5.7-5.10 range on clean granite — the standard
+    step up from valley-floor cragging.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SuperTopo Yosemite Free Climbs guidebook (Reid & McNamara)"
+  notes: |
+    Sub-spot of climbing-spot-yosemite cluster. Tier 2: 2-4+ pitch
+    multipitch trad with retrievable descent and sound rock — the
+    intermediate multipitch reference for the cluster.

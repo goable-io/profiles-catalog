@@ -1,0 +1,51 @@
+slug: climbing-spot-finale-ligure-rocca-dellaquila
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-finale-ligure
+parent_cluster: climbing-spot-finale-ligure
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.1650, lng: 8.3400 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Rocca dell'Aquila is Finalborgo's multipitch limestone icon, a
+    tufa-streaked tower with 3-6 pitch trad-and-sport routes from F5 to
+    F7c. Hardware is a mix of stainless sport bolts on the popular lines
+    and sparser natural-gear placements higher up, so parties should carry
+    a rack alongside quickdraws. The north-facing aspect keeps the wall
+    shaded and cool through summer, which is a draw in hot months but
+    means slower rock-drying after rain. Descent is by multi-station
+    rappel; route-finding and rappel-anchor identification in poor
+    visibility is the main navigational hazard, and the sustained,
+    committing nature of the upper pitches puts this firmly in the
+    advanced multipitch category for the cluster.
+
+display_name:
+  en: Climbing — Finale Ligure Rocca dell'Aquila
+  it: Arrampicata — Finale Ligure Rocca dell'Aquila
+  es: Escalada — Finale Ligure Rocca dell'Aquila
+  fr: Escalade — Finale Ligure Rocca dell'Aquila
+  de: Klettern — Finale Ligure Rocca dell'Aquila
+
+description:
+  en: |
+    Multipitch limestone tower above Finalborgo with tufa-streaked
+    3-6 pitch trad-and-sport routes from F5 to F7c, north-facing and
+    shaded — the cluster's advanced multipitch objective.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Finale Ligure guidebook multipitch topos"
+    - "Parco del Finalese climbing area management documentation"
+  notes: |
+    Sub-spot of climbing-spot-finale-ligure cluster. Tier 3: committing
+    multipitch with mixed trad-and-sport protection and rappel descent —
+    advanced with documented consequence profile.

@@ -1,0 +1,55 @@
+slug: trekking-spot-john-muir-trail-mount-whitney-summit
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-john-muir-trail
+parent_cluster: trekking-spot-john-muir-trail
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 36.5786, lng: -118.2925 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mount Whitney's summit, 4421 m, is the highest point in the
+    contiguous United States and the John Muir Trail's southern
+    terminus, reached via a final ~3200 m of cumulative elevation
+    gain from Happy Isles over 3-4 weeks, or a steep ~1900 m single
+    push from Whitney Portal on rocky switchbacks and exposed granite
+    slabs above tree line. Altitude sickness and afternoon lightning
+    on the largely shelterless summit ridge are the defining hazards;
+    a wilderness permit issued through a competitive lottery is
+    mandatory for the Whitney Zone exit. No hut exists — an emergency
+    stone shelter near the summit is explicitly NOT lightning-safe.
+    Cell coverage is intermittent, and evacuation from the summit
+    plateau requires either a multi-hour descent on foot or helicopter
+    rescue in a genuine emergency.
+
+display_name:
+  en: Trekking — Mount Whitney Summit
+  it: Trekking — Vetta del Monte Whitney
+  es: Senderismo — Cumbre del Monte Whitney
+  fr: Randonnée — Sommet du Mont Whitney
+  de: Wandern — Mount-Whitney-Gipfel
+
+description:
+  en: |
+    The John Muir Trail's southern terminus at 4421 m, the highest
+    point in the contiguous United States, reached after weeks of
+    high-Sierra trekking or a steep single-day push from Whitney
+    Portal.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Inyo National Forest Mt. Whitney Zone permit lottery and trail conditions"
+    - "John Muir Trail Association Whitney summit route guidance"
+  notes: |
+    Sub-spot of trekking-spot-john-muir-trail cluster. Tier 3: 4421 m
+    summit, altitude-sickness and lightning risk on exposed ridge,
+    mandatory permit, no lightning-safe shelter, multi-hour or
+    heli-only evacuation.

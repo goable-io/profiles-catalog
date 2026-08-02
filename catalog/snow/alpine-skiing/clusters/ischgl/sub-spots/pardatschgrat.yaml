@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-ischgl-pardatschgrat
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-ischgl
+parent_cluster: alpine-skiing-spot-ischgl
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 46.9950, lng: 10.3025 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Pardatschgrat (2624 m), reached via the Pardatschgrat gondola,
+    is Ischgl's iconic advanced sector, combining sustained steep red
+    pistes with black-marked terrain on the ridgeline descents. The
+    upper mountain is more exposed to wind than the sheltered Idalp
+    plateau, and the steeper pitches demand confident technique at
+    speed. Snowmaking backs up the lower connecting pistes, grooming is
+    daily on the marked runs, and ski patrol coverage extends across the
+    gondola network. This sector is well regarded among strong
+    intermediate and advanced skiers as Ischgl's most challenging
+    lift-served terrain.
+
+display_name:
+  en: Alpine Skiing — Pardatschgrat (Ischgl)
+  it: Sci Alpino — Pardatschgrat
+  es: Esquí Alpino — Pardatschgrat
+  fr: Ski Alpin — Pardatschgrat
+  de: Alpiner Skilauf — Pardatschgrat
+
+description:
+  en: |
+    Steep red and black piste zone (2624 m) via the Pardatschgrat
+    gondola — Ischgl's iconic advanced sector.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Silvretta Seilbahn AG / Silvretta Skiarena Pardatschgrat lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-ischgl cluster. Tier 3: steep red +
+    black piste zone, gondola-served, wind-exposed ridgeline, Ischgl's
+    most challenging lift-served terrain.

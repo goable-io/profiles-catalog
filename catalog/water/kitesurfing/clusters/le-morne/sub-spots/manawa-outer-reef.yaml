@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-le-morne-manawa-outer-reef
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-le-morne
+parent_cluster: kitesurfing-spot-le-morne
+region: indian
+country_code: MU
+
+coordinates:
+  center: { lat: -20.4700, lng: 57.3050 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Manawa sits on the outer reef between the flat lagoon and the
+    hollow One Eye break, offering wind-swell chop and smaller,
+    softer-shouldered waves than One Eye. It suits intermediate riders
+    stepping up from flat water into their first swell-riding and
+    downwind sessions. Reef is present but deeper and less exposed than
+    at One Eye, and the channel access is more forgiving, though riders
+    still need solid upwind riding and self-rescue skills before
+    venturing this far from the beach.
+
+display_name:
+  en: Kitesurfing — Le Morne Manawa Outer Reef
+  it: Kitesurf — Le Morne Manawa Outer Reef
+  es: Kitesurf — Le Morne Manawa Outer Reef
+  fr: Kitesurf — Le Morne Manawa Outer Reef
+  de: Kitesurfen — Le Morne Manawa Outer Reef
+
+description:
+  en: |
+    The middle ground of Le Morne bay — a chop-and-small-wave freeride
+    sector on the outer reef between the flat lagoon and the world-class
+    One Eye break. A natural progression zone for lagoon-trained riders
+    building confidence in swell before attempting One Eye.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) condition guidelines"
+    - "Mauritius Meteorological Services SE trade-wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-le-morne cluster. Tier 2: outer-reef
+    chop-and-wave intermediate freeride zone between the lagoon and One
+    Eye.

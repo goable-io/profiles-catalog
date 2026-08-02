@@ -1,0 +1,142 @@
+slug: climbing-spot-finale-ligure
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: IT
+sub_spots:
+  - climbing-spot-finale-ligure-rocca-dellaquila
+  - climbing-spot-finale-ligure-bric-pianarella
+  - climbing-spot-finale-ligure-rian-cornei
+display_name:
+  en: Climbing — Finale Ligure
+  it: Arrampicata — Finale Ligure
+  es: Escalada — Finale Ligure
+  fr: Escalade — Finale Ligure
+  de: Klettern — Finale Ligure
+description:
+  en: |
+    Finale Ligure (Savona province, Liguria) is a year-round Mediterranean
+    sport-climbing and multipitch destination on compact grey limestone
+    riddled with pockets and tufa formations. Crags spread across the
+    hills above Finalborgo and the coast, with aspects ranging from
+    sun-exposed south faces to shaded north sectors, letting climbers
+    chase good conditions through the seasons. Grades run from beginner
+    F3 school routes to sustained F7c+ testpieces, with the bulk of the
+    catalog in the F5-F7b sport range plus a handful of long multipitch
+    lines on the signature limestone towers. Mediterranean climate keeps
+    rock mostly dry outside autumn storm fronts, and the mild coastal
+    winters make several sectors climbable year-round when aspect is
+    chosen well. The area is managed in part through the Parco del
+    Finalese and local climbing associations.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.30
+    curve:
+      - { x: -5, s: 0.05 }
+      - { x: 2,  s: 0.40 }
+      - { x: 8,  s: 0.85 }
+      - { x: 14, s: 1.00 }
+      - { x: 22, s: 0.95 }
+      - { x: 30, s: 0.55 }
+      - { x: 38, s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation on Finale's compact limestone reduces friction and slickens pocketed holds, especially on the multipitch towers. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Visibility below 500m impairs route-finding and rappel-line communication on the multipitch sectors above Finalborgo. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained coastal wind above 35 knots creates rope-drag and communication hazards on the exposed towers and ridgeline sectors. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Apparent temperature below -5°C is rare at this coastal elevation but stiffens tendons and degrades grip on cold winter mornings. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 42
+  carrying_capacity_sensitivity: high
+  notes: |
+    Finale Ligure crags fall largely within the Parco del Finalese, which
+    coordinates trail maintenance and manages seasonal raptor closures
+    (peregrine falcon nesting) on several sectors February-June. The area
+    sees heavy international crowding in spring and autumn shoulder
+    seasons; local climbing associations coordinate re-bolting campaigns
+    on the older sport lines with stainless hardware.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parco del Finalese climbing area management documentation"
+    - "Rockfax Finale Ligure guidebook seasonal condition guidance"
+  notes: |
+    Weights follow the catalog default sport-climbing template
+    (temperature-dominant at 0.30), reflecting Finale's Mediterranean
+    coastal climate where aspect rotation across the hillside sectors is
+    the primary strategic decision. Season window (42 weeks) reflects
+    the mild coastal winters that keep several south-facing sectors
+    climbable nearly year-round.

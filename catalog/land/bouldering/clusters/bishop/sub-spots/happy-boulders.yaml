@@ -1,0 +1,45 @@
+slug: bouldering-spot-bishop-happy-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-bishop
+parent_cluster: bouldering-spot-bishop
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.4547, lng: -118.5978 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Happy Boulders sector sits in a shallow canyon cut into the
+    Volcanic Tableland, where welded-tuff (ignimbrite) rock forms
+    pocket-pulling problems in the V2-V8 range on generally flat, sandy
+    canyon-floor landings. The setting is standard intermediate Bishop
+    bouldering: 2-4 pad setups with a single spotter suffice for the
+    great majority of lines, and the canyon walls offer wind shelter.
+    Approach is a short, well-marked trail from the trailhead parking
+    area, keeping the sector accessible and popular with visiting
+    climbers.
+
+display_name:
+  en: Bouldering — Bishop Happy Boulders
+
+description:
+  en: |
+    Happy Boulders sector — Volcanic Tableland ignimbrite pocket-pulling
+    at V2-V8, in a wind-sheltered canyon with sandy, flat landings.
+    Standard intermediate Bishop bouldering.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Bishop Area Bouldering guidebook"
+    - "Bishop Area Climbers Coalition access information"
+  notes: |
+    Sub-spot of bouldering-spot-bishop cluster. Tier 2: intermediate
+    volcanic-tuff pocket problems, standard pad setup, sheltered
+    canyon setting.

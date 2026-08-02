@@ -1,0 +1,159 @@
+slug: trekking-himalayas
+spot_kind: region
+version: "0.1.0"
+category: land
+extends: trekking
+region: himalayas
+display_name:
+  en: Trekking — Himalayas
+  it: Trekking — Himalaya
+  es: Senderismo — Himalaya
+  fr: Randonnée — Himalaya
+  de: Wandern — Himalaya
+description:
+  en: |
+    Himalayan trekking spans the Nepal high-country (Everest BC, Annapurna
+    Circuit, Manaslu, Langtang), Indian Ladakh + Kumaon + Sikkim, and
+    Bhutan. Distinct regime from Alpine trekking: routine multi-day
+    exposure at 3500-5500 m altitude requires acclimatization protocols
+    (AMS + HACE + HAPE physiology), pass crossings above 5000 m
+    (Thorong La 5416 m, Kongma La 5535 m, Cho La 5420 m, Larke La
+    5106 m), and monsoon-partitioned seasons — hard-closed during
+    NE-monsoon Jun-Sep with landslide + trail-washout risk, plus
+    post/pre-monsoon Oct-Nov and Mar-May as the two safe windows.
+    Cold-air outbreaks can drop temperatures to -20°C on 5000 m+ passes
+    even in shoulder seasons. Water treatment mandatory throughout.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -20, s: 0.05 }
+      - { x: -10, s: 0.35 }
+      - { x: -2,  s: 0.75 }
+      - { x: 8,   s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 25,  s: 0.70 }
+      - { x: 32,  s: 0.30 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.75 }
+      - { x: 2,   s: 0.30 }
+      - { x: 5,   s: 0.05 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.60 }
+      - { x: 28, s: 0.20 }
+      - { x: 40, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.65 }
+      - { x: 9,  s: 0.30 }
+      - { x: 11, s: 0.10 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.30 }
+      - { x: 2000, s: 0.60 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.85 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: HIMALAYAN_MONSOON_DELUGE
+    description: Precipitation above 5 mm/h in the Himalayas signals monsoon-band arrival with rapid trail-washout + landslide + river-crossing failure risk — trek closes immediately.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 40
+    reason_code: HIGH_ALTITUDE_WIND
+    description: Sustained wind above 40 knots on 5000+ m Himalayan passes (Thorong La, Larke La, Kongma La) forces pass-closure — hypothermia + wind-chill risk exceeds safe crossing threshold.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_PASS
+    description: Visibility below 500 m on high-altitude Himalayan passes prevents cairn + trail navigation; falls into crevasses + off-trail exposure become material hazards.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: HIMALAYAN_HYPOTHERMIA
+    description: Apparent temperature below -20°C on Himalayan camps creates immediate frostbite + hypothermia risk during standard trekking-tent overnight exposure.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    Himalayan trekking has a documented per-visitor footprint (porter
+    logistics, tea-house diesel + kerosene for heating and cooking,
+    single-use bottled water at altitude, air access to Lukla / Jomsom
+    / Leh). Sagarmatha NP + Annapurna Conservation Area + Manaslu
+    Conservation Area enforce permit-tracked visitor caps; carrying
+    capacity is high on the classic Everest BC corridor (spring peak
+    35 000+ trekkers/season). Local operator ratios (Nepal TAAN,
+    Indian IMF) coordinate SOP.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+    - "Nepal TAAN (Trekking Agencies' Association of Nepal) SOP"
+    - "IMF (Indian Mountaineering Foundation) trekking-permit standards"
+    - "Sagarmatha National Park + Annapurna Conservation Area management authorities"
+  notes: |
+    Regional overrides vs trekking base: temperature curve extended
+    left to -20°C for high-camp cold-outbreak profile; added freezing_
+    level_m dimension (0.05 weight) as a proxy for cold-air-mass
+    intrusion at trekking altitudes; precipitation gate at 5 mm/h
+    reflects the fatality-driver profile (monsoon-band landslide);
+    wind gate at 40 kn for pass closure. 14-week season (7-week
+    post-monsoon Oct-Nov + 7-week pre-monsoon Mar-May).

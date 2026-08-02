@@ -1,0 +1,162 @@
+slug: climbing-spot-smith-rock
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+region: rockies
+country_code: US
+sub_spots:
+  - climbing-spot-smith-rock-dihedrals
+  - climbing-spot-smith-rock-morning-glory-wall
+display_name:
+  en: Climbing — Smith Rock
+  it: Arrampicata — Smith Rock
+  es: Escalada — Smith Rock
+  fr: Escalade — Smith Rock
+  de: Klettern — Smith Rock
+description:
+  en: |
+    Smith Rock State Park (central Oregon, USA) is widely credited as the
+    birthplace of American sport climbing: welded volcanic tuff and
+    columnar basalt walls rising above a horseshoe bend of the Crooked
+    River, first extensively bolted for redpoint-style sport climbing by
+    Alan Watts and local climbers beginning in the 1980s. The tuff is
+    generally solid but varies in texture from sharp and featured to
+    polished on the most popular lines, with routes spanning the full
+    difficulty spectrum from beginner-friendly slabs to some of the
+    country's hardest sport testpieces. The high-desert climate produces
+    hot, dry summers that push climbers to shaded or higher-elevation
+    sectors, and cool, more consistently climbable spring and fall
+    conditions; winter brings occasional snow and ice that closes most
+    objectives. Smith Rock's popularity and proximity to Bend/Redmond make
+    it one of the most heavily visited climbing areas in the western
+    United States.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.22
+    curve:
+      - { x: -8, s: 0.05 }
+      - { x: -2, s: 0.30 }
+      - { x: 6,  s: 0.75 }
+      - { x: 14, s: 1.00 }
+      - { x: 22, s: 0.90 }
+      - { x: 30, s: 0.45 }
+      - { x: 38, s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.18
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.10
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 2
+    reason_code: WET_ROCK
+    description: Active precipitation makes Smith Rock's welded tuff slick, particularly on polished high-traffic holds, and raises rockfall risk on looser sectors.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 500m impairs approach navigation along the Crooked River canyon trails and belayer-climber communication on longer routes.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 35 knots, common with high-desert weather systems, creates rope-management hazards on exposed rim and upper-wall sectors.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -8
+    reason_code: EXTREME_COLD
+    description: Below -8°C apparent temperature, a realistic winter high-desert scenario at Smith Rock, grip and rope handling deteriorate sharply and ice can form on north-facing rock.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 34
+  carrying_capacity_sensitivity: high
+  notes: |
+    Smith Rock State Park is one of the most heavily visited climbing
+    destinations in the western United States, with Oregon State Parks and
+    local climbing organisations managing trail erosion, base-area
+    vegetation loss, and seasonal raptor closures (notably on Monkey Face
+    and other tall formations during nesting season). Bolted-hardware
+    maintenance is coordinated through local climbing coalitions given the
+    park's popularity and traffic-driven wear.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Oregon State Parks — Smith Rock State Park climbing guidance"
+    - "Smith Rock climbing guidebook (Alan Watts)"
+  notes: |
+    Cluster overrides vs global climbing: temperature curve shifted cooler
+    than the tropical/Mediterranean references (optimum ~14°C, tolerant
+    down to -8°C) to reflect central Oregon's high-desert seasonal swing;
+    season set to 34 weeks reflecting a long spring-through-fall window with
+    reduced but non-zero winter activity.

@@ -1,0 +1,51 @@
+slug: road-cycling-spot-dolomiti-passes-passo-pordoi
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-dolomiti-passes
+parent_cluster: road-cycling-spot-dolomiti-passes
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.4881, lng: 11.8117 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Passo Pordoi (2239m) has been crossed at the summit of a Giro
+    d'Italia stage more than 33 times, making it the single most-used
+    high-altitude Giro pass in the race's history and the traditional
+    home of the Cima Coppi commemorative marker. The Arabba-side
+    ascent used here is 9.2 km at an average 6.9% gradient with wide,
+    well-engineered switchbacks, but the exposed alpine plateau it sits
+    on is prone to fast-moving afternoon thunderstorms typical of high
+    Dolomiti terrain. Its unmatched historical significance combined
+    with genuine high-altitude exposure earns tier 3 despite the
+    relatively moderate gradient.
+
+display_name:
+  en: Road Cycling — Passo Pordoi (Arabba side)
+  it: Ciclismo su Strada — Passo Pordoi (versante Arabba)
+  es: Ciclismo de Ruta — Passo Pordoi (vertiente Arabba)
+  fr: Cyclisme sur Route — Passo Pordoi (versant Arabba)
+  de: Rennradfahren — Pordoijoch (Arabba-Seite)
+
+description:
+  en: |
+    Passo Pordoi (2239m) from Arabba: 9.2 km at an average 6.9%
+    gradient on wide, historic switchbacks. The most-used high-alpine
+    Giro d'Italia summit of all time — over 33 stage crossings — and
+    the centrepiece of the Sella Ronda circuit.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Giro d'Italia official race documentation, Passo Pordoi climb archive"
+    - "ProCyclingStats climb database — Passo Pordoi (Arabba) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-dolomiti-passes cluster. Tier 3:
+    most-crossed Giro high-alpine summit in history, real thunderstorm
+    exposure on the Dolomiti plateau.

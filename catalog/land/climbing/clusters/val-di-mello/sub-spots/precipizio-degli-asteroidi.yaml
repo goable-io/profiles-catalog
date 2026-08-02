@@ -1,0 +1,51 @@
+slug: climbing-spot-val-di-mello-precipizio-degli-asteroidi
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-val-di-mello
+parent_cluster: climbing-spot-val-di-mello
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.2650, lng: 9.6700 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Precipizio degli Asteroidi is the flagship big-wall multipitch of Val
+    di Mello: 10-15 pitch trad routes on clean, glacier-polished Val
+    Masino granite, with sustained crack and slab climbing in the F6a-F7a
+    range. Protection is entirely natural gear (cams and nuts) on most
+    lines, with only sparse fixed anchors at belay stances, so parties
+    need a full trad rack and multipitch experience. The wall faces
+    generally south, giving long summer sun exposure and fast drying
+    after rain, but the long, committing nature of the routes and
+    exposure to afternoon convective storms typical of the Alps put this
+    firmly in the advanced, no-easy-retreat category. Descent is by
+    multi-pitch rappel or walk-off depending on the line.
+
+display_name:
+  en: Climbing — Val di Mello Precipizio degli Asteroidi
+  it: Arrampicata — Val di Mello Precipizio degli Asteroidi
+  es: Escalada — Val di Mello Precipizio degli Asteroidi
+  fr: Escalade — Val di Mello Precipizio degli Asteroidi
+  de: Klettern — Val di Mello Precipizio degli Asteroidi
+
+description:
+  en: |
+    Flagship granite big-wall of Val di Mello, 10-15 pitch trad routes
+    with sustained crack and slab climbing from F6a to F7a on clean
+    Val Masino granite.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Val Masino alpine route and condition documentation"
+    - "camptocamp.org Val di Mello route database"
+  notes: |
+    Sub-spot of climbing-spot-val-di-mello cluster. Tier 3: long
+    natural-gear-protected big-wall multipitch with committing retreat
+    options — advanced with documented consequence profile.

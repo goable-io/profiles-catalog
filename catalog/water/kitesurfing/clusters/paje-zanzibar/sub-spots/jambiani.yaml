@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-paje-zanzibar-jambiani
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-paje-zanzibar
+parent_cluster: kitesurfing-spot-paje-zanzibar
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -6.2917, lng: 39.5567 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Jambiani sits a few kilometres south of Paje on the same barrier- reef-
+    protected flat, but with a narrower and less continuously developed
+    lagoon, more exposed sections of reef, and considerably fewer kite
+    schools. Wind conditions mirror Paje's monsoon regime, but riders here
+    get less crowd-support infrastructure and need to be more self-
+    sufficient reading the tide and reef exposure. Placing it a step above
+    the fully beginner-oriented Paje reef flat.
+
+display_name:
+  en: Kitesurfing — Jambiani
+  it: Kitesurf — Jambiani
+  es: Kitesurf — Jambiani
+  fr: Kitesurf — Jambiani
+  de: Kitesurfen — Jambiani
+
+description:
+  en: |
+    A quieter southern-Zanzibar beach on the same reef-flat system as
+    Paje, offering the same monsoon wind windows with far fewer riders
+    and less school infrastructure — a favourite for those who prefer
+    open space over convenience.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) Zanzibar venue notes"
+    - "Tanzania Meteorological Authority monsoon wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-paje-zanzibar cluster. Tier 2: quieter
+    reef-flat beach south of Paje, intermediate freeride with less
+    infrastructure.

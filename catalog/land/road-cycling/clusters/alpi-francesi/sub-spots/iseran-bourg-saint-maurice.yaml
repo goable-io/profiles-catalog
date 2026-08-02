@@ -1,0 +1,49 @@
+slug: road-cycling-spot-alpi-francesi-iseran-bourg-saint-maurice
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-alpi-francesi
+parent_cluster: road-cycling-spot-alpi-francesi
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.4183, lng: 7.0300 }
+  radius_m: 3000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Col de l'Iseran (2764m) is the highest paved through-road pass
+    in the Alps, and the long approach from Bourg-Saint-Maurice via
+    Val d'Isère gains sustained altitude over an extended distance
+    before finishing on an exposed, treeless upper plateau. The Tour
+    de France has occasionally crowned it Cima Coppi-calibre highest
+    point of the race, reflecting both its extreme elevation and its
+    rarity as a full crossing. Thin air, an unusually long exposed
+    summit approach, and genuine risk of sudden snow even in summer
+    at this altitude make tier 3 the appropriate classification.
+
+display_name:
+  en: Road Cycling — Col de l'Iseran (Bourg-Saint-Maurice side)
+  it: Ciclismo su Strada — Col de l'Iseran (versante Bourg-Saint-Maurice)
+  es: Ciclismo de Ruta — Col de l'Iseran (vertiente Bourg-Saint-Maurice)
+  fr: Cyclisme sur Route — Col de l'Iseran (versant Bourg-Saint-Maurice)
+  de: Rennradfahren — Col de l'Iseran (Bourg-Saint-Maurice-Seite)
+
+description:
+  en: |
+    The Col de l'Iseran (2764m) climbed from Bourg-Saint-Maurice via
+    Val d'Isère — the highest paved through-road pass in the Alps and
+    an occasional Tour de France Cima Coppi crossing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Col de l'Iseran climb archive"
+    - "ProCyclingStats climb database — Col de l'Iseran (Bourg-Saint-Maurice) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-alpi-francesi cluster. Tier 3:
+    highest paved through-pass in the Alps, extreme altitude exposure,
+    occasional Tour Cima Coppi.

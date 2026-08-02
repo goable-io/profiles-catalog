@@ -1,0 +1,47 @@
+slug: mountain-biking-spot-livigno-mottolino-bike-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-livigno
+parent_cluster: mountain-biking-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5325, lng: 10.1642 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Mottolino is Livigno's flagship chairlift-served bike park, with a
+    wide network of purpose-built flow lines and freeride/DH tracks
+    served by dedicated bike lifts. It has hosted Enduro Europe stages,
+    reflecting a trail mix that spans machine-built berms and jumps
+    through to genuinely technical rock-garden freeride sections.
+    Riders of intermediate flow-trail ability can session the graded
+    lines while advanced riders find real technical challenge on the
+    black-graded descents.
+
+display_name:
+  en: Mountain Biking — Mottolino Bike Park
+  it: Mountain Bike — Mottolino Bike Park
+  es: Ciclismo de Montaña — Mottolino Bike Park
+  fr: VTT — Mottolino Bike Park
+  de: Mountainbiken — Mottolino Bike Park
+
+description:
+  en: |
+    Livigno's main lift-served bike park on the Mottolino side, mixing
+    machine-built flow trails with freeride and DH lines. Enduro Europe
+    stage venue with dedicated bike-lift access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Livigno Turismo Mottolino bike park trail map"
+    - "Enduro Europe Livigno stage race notes"
+  notes: |
+    Sub-spot of mountain-biking-spot-livigno cluster. Tier 2: lift-served
+    flow + freeride park network with red-to-black graded lines.

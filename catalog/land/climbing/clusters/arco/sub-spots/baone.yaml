@@ -1,0 +1,47 @@
+slug: climbing-spot-arco-baone
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-arco
+parent_cluster: climbing-spot-arco
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 45.9080, lng: 10.9250 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    Baone is a kids-friendly limestone crag with school-grade routes from
+    F3 to F5, entirely single-pitch bolt-and-lower with stainless hardware
+    and chain anchors placed low enough for easy toproping and instructor
+    supervision. The approach is a short, flat walk from parking, and the
+    low-angle slab terrain keeps falls low-consequence with no ledges in
+    the fall zone. Baone is a popular venue for climbing schools and youth
+    training groups from the Arco area, with good cell coverage and quick
+    vehicle access for any incident response.
+
+display_name:
+  en: Climbing — Arco Baone
+  it: Arrampicata — Arco Baone
+  es: Escalada — Arco Baone
+  fr: Escalade — Arco Baone
+  de: Klettern — Arco Baone
+
+description:
+  en: |
+    Kids-friendly limestone school crag with low-angle F3-F5 routes,
+    stainless bolt-and-lower hardware, and easy access — a popular
+    training venue near Arco.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SAT Arco (Società Alpinisti Tridentini) climbing area management documentation"
+  notes: |
+    Sub-spot of climbing-spot-arco cluster. Tier 1: low-angle school
+    routes, stainless bolt-and-lower hardware, short flat approach —
+    beginner-safe.

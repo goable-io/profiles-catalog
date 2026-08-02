@@ -1,0 +1,161 @@
+slug: mountain-biking-spot-finale-ligure
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: mountain-biking
+region: mediterranean
+country_code: IT
+sub_spots:
+  - mountain-biking-spot-finale-ligure-madonna-della-guardia
+  - mountain-biking-spot-finale-ligure-nato-base-trails
+  - mountain-biking-spot-finale-ligure-maremola-valley
+display_name:
+  en: Mountain Biking — Finale Ligure
+  it: Mountain Bike — Finale Ligure
+  es: Ciclismo de Montaña — Finale Ligure
+  fr: VTT — Finale Ligure
+  de: Mountainbiken — Finale Ligure
+description:
+  en: |
+    Finale Ligure (Savona province, Liguria) is widely regarded as
+    Europe's mountain-bike capital: a dense limestone-hinterland trail
+    network above the Mediterranean coast, with hundreds of kilometres
+    of signed singletrack ranging from historic mule tracks to purpose-
+    built enduro lines. The hinterland ridge system enables classic
+    "sea-to-summit-to-sea" rides, and the coastal Mediterranean climate
+    gives a long dry season. Trail surface here is a mix of packed dirt,
+    exposed limestone rock, and root sections that turn treacherously
+    slick when wet; the area hosts an annual Enduro World Series round
+    reflecting its technical pedigree.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -8,  s: 0.10 }
+      - { x: 2,   s: 0.55 }
+      - { x: 10,  s: 0.90 }
+      - { x: 16,  s: 1.00 }
+      - { x: 22,  s: 0.95 }
+      - { x: 28,  s: 0.70 }
+      - { x: 35,  s: 0.30 }
+      - { x: 40,  s: 0.05 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 1.5, s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.90 }
+      - { x: 20, s: 0.65 }
+      - { x: 30, s: 0.25 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.70 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.20 }
+
+  - name: gust_handling
+    metric: wind_gust_factor
+    weight: 0.05
+    curve:
+      - { x: 1.0, s: 1.00 }
+      - { x: 1.3, s: 0.85 }
+      - { x: 1.6, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_TRAIL_DAMAGE
+    description: Heavy active rain creates dangerous traction loss and accelerates trail erosion — IMBA and trail-stewardship policy gates riding above this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed hinterland ridges destabilises riders at descent speeds.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: LOW_VISIBILITY_DESCENT
+    description: Visibility below 200m makes descending technical rocky/rooty sections at speed unsafe.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 40
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 40°C creates immediate heat-illness risk under sustained effort with helmet and pads.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 48
+  carrying_capacity_sensitivity: high
+  notes: |
+    Finale Ligure's trail network sees some of the heaviest recreational
+    mountain-bike traffic in Europe, drawing riders from across the
+    continent year-round given the mild Mediterranean coastal climate.
+    Local trail association Finale Outdoor Region coordinates trail
+    maintenance, signage, and erosion control with the comune; several
+    limestone sections become dangerously slick within hours of rain and
+    take a full day or more to dry out.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Finale Outdoor Region trail network documentation"
+    - "Enduro World Series Finale Ligure round race notes"
+    - "Trailforks Finale Ligure regional trail database"
+    - "MTBparks Finale Ligure area guide"
+  notes: |
+    Cluster inherits base mountain-biking scoring unchanged: precipitation
+    remains the dominant condition variable given how quickly Finale's
+    limestone/root singletrack degrades in wet weather. No deviations
+    from base weights or gates; long 48-week season reflects the mild
+    Ligurian coastal climate.

@@ -1,0 +1,43 @@
+slug: bouldering-spot-rocklands-fields-of-joy
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-rocklands
+parent_cluster: bouldering-spot-rocklands
+country_code: ZA
+
+coordinates:
+  center: { lat: -32.2450, lng: 19.0650 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Fields of Joy is a sustained-difficulty sandstone sector offering
+    problems in the V5-V9 range on generally flatter, sandier landings
+    than De Pakhuys, making it a standard intermediate zone for
+    2-4 pad setups with a single spotter. The sector sees noticeably
+    lighter crowds than the flagship boulders, keeping approach paths
+    and landing zones less compacted. Problems favour crimpy technical
+    footwork on the weathered sandstone rather than committing highball
+    exposure.
+
+display_name:
+  en: Bouldering — Rocklands Fields of Joy
+
+description:
+  en: |
+    Fields of Joy sector — sustained V5-V9 sandstone problems on
+    flatter, sandier landings than the flagship De Pakhuys boulders,
+    with noticeably lighter crowds.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Rocklands guidebook"
+    - "Vertical Life Rocklands sector guide"
+  notes: |
+    Sub-spot of bouldering-spot-rocklands cluster. Tier 2: intermediate
+    sustained sandstone problems, standard pad-and-spotter setup,
+    lower-crowd alternative sector.

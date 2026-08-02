@@ -5,7 +5,7 @@ category: snow
 extends: ski-touring-spot-tromso
 parent_cluster: ski-touring-spot-tromso
 region: arctic
-country_code: NO
+country_code: "NO"
 
 coordinates:
   center: { lat: 69.6722, lng: 18.7556 }

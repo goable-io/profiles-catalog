@@ -1,0 +1,53 @@
+slug: trekking-spot-alta-via-1-dolomiti-rifugio-lagazuoi
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-alta-via-1-dolomiti
+parent_cluster: trekking-spot-alta-via-1-dolomiti
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5231, lng: 12.0044 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Rifugio Lagazuoi (2752 m) is the AV1 stage 5-6 waypoint sitting atop
+    the WWI open-air museum on Monte Lagazuoi, reached via roughly 700 m
+    of ascent on rocky, well-marked trail from Passo Falzarego, with
+    exposed sections along former military tunnels and trenches cut into
+    the rock. The staffed refuge provides food, water, and radio contact
+    at altitude, and a cable car (Funivia Lagazuoi) from Passo Falzarego
+    offers a fast alternate access and evacuation route independent of
+    the walking trail. Hazards include loose rock underfoot near the
+    tunnel entrances and significant afternoon temperature drop and wind
+    exposure at this, one of the highest points on AV1.
+
+display_name:
+  en: Trekking — Rifugio Lagazuoi
+  it: Trekking — Rifugio Lagazuoi
+  es: Trekking — Rifugio Lagazuoi
+  fr: Trekking — Rifugio Lagazuoi
+  de: Wandern — Lagazuoihütte
+
+description:
+  en: |
+    A high-altitude AV1 waypoint at 2752 m built into the WWI-era
+    Lagazuoi tunnel network, with sweeping views over the Sella and
+    Marmolada massifs. Cable-car accessible from Passo Falzarego for
+    non-trekkers and as an evacuation option.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Club Alpino Italiano (CAI) Alta Via 1 trail classification"
+    - "Museo Grande Guerra Lagazuoi open-air museum trail guidance"
+  notes: |
+    Sub-spot of trekking-spot-alta-via-1-dolomiti cluster. Tier 2:
+    established multi-day trail, moderate altitude gain, staffed refuge,
+    rocky exposed terrain near historic tunnels, cable-car evacuation
+    option — standard intermediate difficulty.

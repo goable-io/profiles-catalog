@@ -1,0 +1,53 @@
+slug: climbing-spot-kalymnos-grande-grotta
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-kalymnos
+parent_cluster: climbing-spot-kalymnos
+region: aegean
+country_code: GR
+
+coordinates:
+  center: { lat: 36.9740, lng: 26.9760 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    La Grande Grotta is a deep overhanging limestone cave sector with
+    heavily featured tufa and stalactite formations, hosting some of the
+    hardest and most sustained sport lines on the island in the F7c-F9a+
+    range. Bolting is stainless/titanium hardware installed and maintained
+    by the local Kalymnos bolting fund + Hellenic Federation of Mountaineering and Climbing (EOOA) given the corrosive sea-spray
+    environment, with mailon-and-chain lower-off anchors. The cave's steep,
+    3D roof terrain means long, powerful falls into open air rather than
+    onto ledges, but the sustained overhanging pump and reachy tufa
+    sequences demand advanced technique and endurance, and route-finding
+    among the stalactite features is non-trivial for the grade. Approach is
+    a short walk from the Grande Grotta parking area; cell coverage is
+    generally reliable on this part of the island.
+
+display_name:
+  en: Climbing — Kalymnos Grande Grotta
+  it: Arrampicata — Kalymnos Grande Grotta
+  es: Escalada — Kalymnos Grande Grotta
+  fr: Escalade — Kalymnos Grande Grotta
+  de: Klettern — Kalymnos Grande Grotta
+
+description:
+  en: |
+    Kalymnos's iconic overhanging tufa cave, the island's flagship sector
+    and a bucket-list destination for steep sport climbers. F7c-F9a+ routes
+    thread through spectacular stalactite formations on stainless titanium
+    hardware.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Kalymnos guidebook"
+    - "local Kalymnos bolting fund + Hellenic Federation of Mountaineering and Climbing (EOOA) bolting log"
+  notes: |
+    Sub-spot of climbing-spot-kalymnos cluster. Tier 3: sustained
+    overhanging cave climbing at advanced grades with long open-air falls
+    and demanding route-finding among tufa features.

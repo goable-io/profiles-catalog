@@ -1,0 +1,54 @@
+slug: trekking-spot-haute-route-col-de-riedmatten
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-haute-route
+parent_cluster: trekking-spot-haute-route
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.1200, lng: 7.4467 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Col de Riedmatten (2919 m) is a committing high pass on Haute Route
+    stage 4-5 (walking variant; the glaciated ski Haute Route uses
+    different cols), reached by roughly 800-900 m of ascent on rocky,
+    increasingly exposed trail with a steep, cable-assisted final scramble
+    to the notch. Snow patches routinely persist on the approach and
+    descent gullies into July, requiring careful step-kicking or an ice
+    axe in early season, and the descent toward Arolla crosses loose
+    scree with sustained exposure. There is no hut directly at the pass;
+    the nearest shelter (Cabane des Dix or Refuge de la Barma) is
+    2-3 hours away, mobile coverage is unreliable on the approach, and
+    evacuation in poor weather effectively requires multi-hour retreat
+    on foot rather than any vehicle or cable-car option.
+
+display_name:
+  en: Trekking — Col de Riedmatten
+  it: Trekking — Col de Riedmatten
+  es: Trekking — Col de Riedmatten
+  fr: Trekking — Col de Riedmatten
+  de: Wandern — Col de Riedmatten
+
+description:
+  en: |
+    A committing high pass at 2919 m on the walker's Haute Route between
+    Val des Dix and Arolla, with persistent late-season snow and a
+    steep, cable-assisted final approach. One of the trek's most
+    demanding single crossings.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Chamonix to Zermatt: The Walker's Haute Route (Kev Reynolds)"
+    - "Club Alpin Suisse (CAS) Val d'Hérens hut network"
+  notes: |
+    Sub-spot of trekking-spot-haute-route cluster. Tier 3: committing
+    high-altitude pass, persistent snow hazard, cable-assisted scramble,
+    no hut at the pass, unreliable mobile coverage, multi-hour on-foot
+    evacuation only.

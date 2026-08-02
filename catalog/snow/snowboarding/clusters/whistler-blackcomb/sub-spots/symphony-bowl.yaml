@@ -1,0 +1,44 @@
+slug: snowboarding-spot-whistler-blackcomb-symphony-bowl
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-whistler-blackcomb
+parent_cluster: snowboarding-spot-whistler-blackcomb
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.08, lng: -122.99 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Symphony Bowl offers wide, open intermediate bowl terrain on Whistler's
+    back side. Suited to snowboarders progressing beyond groomed pistes
+    into moderately pitched open terrain without requiring hike-to access
+    or technical line selection. Grooming is partial (bowl skiing rather
+    than full piste corduroy), but terrain angle and consistency keep this
+    at an intermediate Tier 2 classification.
+
+display_name:
+  en: Snowboarding — Symphony Bowl (Whistler)
+  it: Snowboard — Symphony Bowl
+  es: Snowboard — Symphony Bowl
+  fr: Snowboard — Symphony Bowl
+  de: Snowboarden — Symphony Bowl
+
+description:
+  en: |
+    Whistler intermediate bowl snowboarding
+    with wide open lines on the resort's back side.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Symphony Bowl sector piste dossier"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-whistler-blackcomb cluster. Tier 2: wide open bowl
+    terrain, intermediate difficulty.

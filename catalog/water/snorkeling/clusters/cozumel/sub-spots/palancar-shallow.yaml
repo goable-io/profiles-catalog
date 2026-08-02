@@ -1,0 +1,36 @@
+slug: snorkeling-spot-cozumel-palancar-shallow
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-cozumel
+parent_cluster: snorkeling-spot-cozumel
+region: caribbean
+country_code: MX
+
+coordinates:
+  center: { lat: 20.36, lng: -87.03 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Palancar Gardens' shallow section sits at 3-8 m over large coral heads with a steady N-S drift current typical of Cozumel's outer reef (0.5-2 kn), so snorkelers drift with the boat trailing rather than swimming a fixed loop. The drift technique and boat-only access require more water comfort than a sheltered lagoon, though the depth and light current keep it well short of a wall or current-hook site. This combination places it at tier 2.
+
+display_name:
+  en: Snorkeling — Palancar Gardens Shallow
+  it: Snorkeling — Palancar Gardens
+  es: Snorkel — Palancar Gardens
+  fr: Snorkeling — Palancar Gardens
+  de: Schnorcheln — Palancar Gardens
+
+description:
+  en: |
+    Boat-drop drift snorkel over Palancar Gardens' shallow coral heads at 3-8 m, with tropical fish and Cozumel's steady N-S current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parque Nacional Arrecifes de Cozumel (D.O.F. 04/07/1996) management documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-cozumel. Tier 2: boat-drop drift snorkel with steady current.

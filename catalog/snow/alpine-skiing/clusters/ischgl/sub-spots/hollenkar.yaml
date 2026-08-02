@@ -1,0 +1,46 @@
+slug: alpine-skiing-spot-ischgl-hollenkar
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-ischgl
+parent_cluster: alpine-skiing-spot-ischgl
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 46.9917, lng: 10.2683 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    The Höllenkar sector is connected via the Silvretta Skiarena lift
+    chain and offers quieter red-piste cruising away from the busier
+    Idalp and Pardatschgrat sectors. Pistes are predominantly red-marked
+    with dramatic views of the surrounding mountain faces, groomed
+    daily with snowmaking coverage on the connecting sections. Ski
+    patrol and rescue access follows standard lift-network coverage, and
+    the moderate gradient makes the sector accessible to confident
+    intermediate skiers seeking a less-congested alternative within the
+    Ischgl network.
+
+display_name:
+  en: Alpine Skiing — Höllenkar (Ischgl)
+  it: Sci Alpino — Höllenkar
+  es: Esquí Alpino — Höllenkar
+  fr: Ski Alpin — Höllenkar
+  de: Alpiner Skilauf — Höllenkar
+
+description:
+  en: |
+    Quieter red-piste cruising sector connected via the Silvretta lift
+    chain, with dramatic mountain-face views.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Silvretta Seilbahn AG / Silvretta Skiarena Höllenkar lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-ischgl cluster. Tier 2: red-piste
+    intermediate cruising, lift-connected, quieter sector of the resort.

@@ -1,0 +1,51 @@
+slug: trekking-spot-haute-route-cabane-de-prafleuri
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-haute-route
+parent_cluster: trekking-spot-haute-route
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.1583, lng: 7.3833 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Cabane de Prafleuri (2624 m) is a Haute Route stage 3 hut approached
+    by roughly 700-800 m of ascent on well-marked, established trail
+    across rocky moraine and grassy alpine terrain above the Lac des
+    Dix reservoir, with no technical scrambling required in normal
+    conditions. The staffed CAS-run hut provides food, water, and radio
+    contact at altitude, and the approach along the reservoir shoreline
+    offers a manageable retreat route toward the Val des Dix road-head
+    within 3-4 hours. Hazards are afternoon thunderstorm exposure on the
+    open moraine terrain and cold-exposure risk given the hut's
+    altitude, but the well-trodden trail and hut infrastructure keep
+    this within standard intermediate difficulty.
+
+display_name:
+  en: Trekking — Cabane de Prafleuri
+  it: Trekking — Cabane de Prafleuri
+  es: Trekking — Cabane de Prafleuri
+  fr: Trekking — Cabane de Prafleuri
+  de: Wandern — Cabane de Prafleuri
+
+description:
+  en: |
+    A CAS-run hut at 2624 m on the Haute Route's stage 3 approach above
+    Lac des Dix, offering staffed overnight shelter before the trek's
+    higher, more committing central passes.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Chamonix to Zermatt: The Walker's Haute Route (Kev Reynolds)"
+    - "Club Alpin Suisse (CAS) Val d'Hérens hut network"
+  notes: |
+    Sub-spot of trekking-spot-haute-route cluster. Tier 2: established
+    multi-day trail, moderate altitude gain, staffed CAS hut, manageable
+    retreat route, standard intermediate difficulty.

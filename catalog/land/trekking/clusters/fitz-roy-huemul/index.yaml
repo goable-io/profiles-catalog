@@ -1,0 +1,167 @@
+slug: trekking-spot-fitz-roy-huemul
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-andes
+region: andes
+country_code: AR
+sub_spots:
+  - trekking-spot-fitz-roy-huemul-laguna-de-los-tres
+  - trekking-spot-fitz-roy-huemul-laguna-torre
+  - trekking-spot-fitz-roy-huemul-huemul-circuit-paso-viento
+display_name:
+  en: Trekking — Fitz Roy & Huemul Circuit (Argentina)
+  it: Trekking — Fitz Roy e Circuito Huemul (Argentina)
+  es: Senderismo — Fitz Roy y Circuito Huemul (Argentina)
+  fr: Randonnée — Fitz Roy et Circuit Huemul (Argentine)
+  de: Wandern — Fitz Roy und Huemul-Rundweg (Argentinien)
+description:
+  en: |
+    The El Chaltén sector of Parque Nacional Los Glaciares in
+    Argentine Patagonia offers free, open-access trekking (no permit
+    fee, APN ranger oversight) ranging from the classic day-hikes to
+    Laguna de los Tres beneath Monte Fitz Roy and Laguna Torre beneath
+    Cerro Torre, to the far more committing multi-day Huemul Circuit.
+    Day-hike altitudes run 400-1200 m with well-marked dirt trail and
+    established free campamentos; the Huemul Circuit is a ~4-day,
+    ~64 km loop climbing to 1550 m at Paso del Viento, crossing two
+    glaciated passes and requiring an unassisted Tyrolean-traverse
+    crossing of the Río Túnel and Río Fernández — permit-controlled
+    and gear-checked by APN due to its technical demands. Patagonian
+    westerly wind, identical in character to Torres del Paine across
+    the border, is the dominant hazard throughout. Season is the
+    austral summer (November-March); El Chaltén itself has no permit
+    fee but Huemul Circuit trekkers must register and demonstrate
+    Tyrolean-traverse and glacier-travel competence or hire a guide.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -3,  s: 0.55 }
+      - { x: 5,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 22,  s: 0.90 }
+      - { x: 30,  s: 0.55 }
+      - { x: 38,  s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 2,   s: 0.40 }
+      - { x: 5,   s: 0.10 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 20, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 55, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.60 }
+      - { x: 9,  s: 0.25 }
+      - { x: 11, s: 0.05 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.35 }
+      - { x: 2000, s: 0.65 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.80 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: PATAGONIAN_WIND
+    description: Sustained wind above 55 knots on El Chaltén's exposed ridgelines (Huemul Circuit passes especially) exceeds safe trekking threshold — trekkers are routinely blown off feet.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: ANDEAN_STORM
+    description: Precipitation above 5 mm/h signals convective storm activity with trail-washout and Río Túnel / Río Fernández level-rise risk that can strand Huemul Circuit trekkers.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_ANDES
+    description: Visibility below 500 m at Laguna de los Tres, Laguna Torre, or Huemul Circuit passes prevents navigation and removes the iconic Fitz Roy / Cerro Torre / ice-field views.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -12
+    reason_code: ANDEAN_HYPOTHERMIA
+    description: Apparent temperature below -12°C at Patagonian high camps creates frostbite risk during trekking-tent overnight exposure, compounded by wind chill.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    APN (Administración de Parques Nacionales) provides free, open
+    access to the day-hike network around El Chaltén with no permit
+    fee, but the Huemul Circuit requires mandatory registration,
+    equipment inspection (crampons, harness, rope for the Tyrolean
+    traverses), and proof of experience or a certified guide,
+    reflecting its higher objective hazard and lower rescue
+    accessibility. Free campamentos (Poincenot, De Agostini, Río
+    Túnel) have no bookable capacity limit but are subject to Leave
+    No Trace enforcement by rangers.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "APN (Argentina) Parque Nacional Los Glaciares Chalten sector rules"
+    - "APN Huemul Circuit registration and equipment-check requirements"
+    - "Cicerone Trekking in the Patagonian Andes guidebook"
+  notes: |
+    Cluster inherits trekking-andes regional scoring exactly (no
+    dimension/gate overrides). Argentina-specific carrying-capacity
+    note: El Chaltén day-hikes are fee-free open access; Huemul
+    Circuit uniquely requires APN gear-check + competence
+    verification given its Tyrolean-traverse crossings.

@@ -1,0 +1,44 @@
+slug: snowboarding-spot-whistler-blackcomb-blackcomb-glacier
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-whistler-blackcomb
+parent_cluster: snowboarding-spot-whistler-blackcomb
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.1119, lng: -122.9319 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Blackcomb Glacier, accessed via the Showcase T-bar, is a sustained
+    black-rated glacier sector demanding advanced technique across its full
+    descent. With crevasse-adjacent terrain requiring patrol-marked route
+    awareness. The sector's combination of glacier travel considerations
+    and consistently steep, sustained pitch places it at Tier 3 alongside
+    other expert glacier-served terrain documented in this catalog.
+
+display_name:
+  en: Snowboarding — Blackcomb Glacier (Whistler)
+  it: Snowboard — Blackcomb Glacier
+  es: Snowboard — Blackcomb Glacier
+  fr: Snowboard — Blackcomb Glacier
+  de: Snowboarden — Blackcomb Glacier
+
+description:
+  en: |
+    Glacier snowboarding sector via the
+    Showcase T-bar, with sustained black terrain on Blackcomb.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb Blackcomb Glacier / Showcase T-bar operational dossier"
+  notes: |
+    Sub-spot of
+    snowboarding-spot-whistler-blackcomb cluster. Tier 3: sustained
+    black glacier terrain, crevasse-adjacent route awareness required.

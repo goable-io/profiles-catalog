@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-le-morne-one-eye
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-le-morne
+parent_cluster: kitesurfing-spot-le-morne
+region: indian
+country_code: MU
+
+coordinates:
+  center: { lat: -20.4650, lng: 57.3117 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    One Eye is Le Morne's iconic outer-reef break — a fast, hollow,
+    left-hand wave that peels off shallow live coral, exposed at low
+    tide and only rideable by experienced wave-riders who can read the
+    reef and manage a kite in breaking surf simultaneously. It is a
+    long-standing PKRA/GKA world-tour wave-riding venue. A lost kite or a
+    fall on the inside section puts a rider directly over coral in
+    shallow water, and the channel used to reach the break requires
+    crossing active swell lines — this is advanced-only terrain with
+    real reef-cut and impact-injury risk.
+
+display_name:
+  en: Kitesurfing — Le Morne One Eye
+  it: Kitesurf — Le Morne One Eye
+  es: Kitesurf — Le Morne One Eye
+  fr: Kitesurf — Le Morne One Eye
+  de: Kitesurfen — Le Morne One Eye
+
+description:
+  en: |
+    The reef break that put Le Morne on the world wave-riding map — a
+    fast, hollow left visible from the lagoon beach and used for
+    international kite-wave competition. Shallow live coral, strong
+    localism among the wave-riding crowd, and swell/tide dependence make
+    this a spot for confident, experienced wave riders only.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "GKA (Global Kitesports Association) Le Morne wave-tour venue documentation"
+    - "IKO (International Kiteboarding Organization) condition guidelines"
+  notes: |
+    Sub-spot of kitesurfing-spot-le-morne cluster. Tier 3: shallow live
+    coral, hollow breaking wave, competition-grade wave-riding terrain.

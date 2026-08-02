@@ -1,0 +1,169 @@
+slug: ski-touring-spot-otztal
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: ski-touring-alpine
+region: alpine
+country_code: AT
+sub_spots:
+  - ski-touring-spot-otztal-similaun
+  - ski-touring-spot-otztal-wildspitze
+display_name:
+  en: Ski Touring — Ötztal
+  it: Sci alpinismo — Val Senales / Ötztal
+  es: Esquí de travesía — Ötztal
+  fr: Ski de randonnée — Ötztal
+  de: Skitourengehen — Ötztal
+description:
+  en: |
+    The Ötztal (Tyrol, Austria) is the glaciated heart of the Ötztaler
+    Alpen and one of the classic ski-touring ranges of the Eastern
+    Alps, home to the "3600er" high-summit tours straddling the
+    Austrian-Italian border. Similaun and Wildspitze are the range's
+    two signature glaciated objectives, both accessed from
+    high-altitude huts (Similaunhütte, Braunschweiger Hütte) and both
+    requiring full glacier-travel kit. Peak touring season runs
+    December-May, with the spring corn-snow window (March-May) the
+    classic period for the highest summits once crevasse bridges
+    firm up. Avalanche risk consult: LWD Tirol (Lawinenwarndienst
+    Tirol).
+
+dimensions:
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.35 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: snow_depth
+    metric: swe_mm
+    weight: 0.10
+    curve:
+      - { x: 0,   s: 0.00 }
+      - { x: 20,  s: 0.15 }
+      - { x: 55,  s: 0.70 }
+      - { x: 100, s: 1.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.130
+    curve:
+      - { x: -28, s: 0.00 }
+      - { x: -18, s: 0.45 }
+      - { x: -10, s: 0.90 }
+      - { x: -4,  s: 1.00 }
+      - { x: 0,   s: 0.85 }
+      - { x: 5,   s: 0.35 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.130
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.098
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 4,   s: 0.15 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.162
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.60 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.130
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  # Feasibility floor (auto): no natural snowpack -> physically
+  # impossible at any skill level. Hard PREREQUISITE (Gate.kind='feasibility').
+  - metric: swe_mm
+    condition: lt
+    value: 20
+    kind: feasibility
+    reason_code: NO_SNOWPACK
+    description: Below ~20 mm snow water equivalent there is no natural snowpack, so ski touring is not feasible regardless of the other conditions.
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 400m on the Ötztal glaciated summits makes crevasse-field route-finding unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on the Similaun/Wildspitze summit ridges accelerates wind-slab formation and threatens balance on exposed glacier terrain.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: EXTREME_COLD_ALPINE
+    description: Below -28°C at 3600m+ altitude creates immediate frostbite risk; equipment (skins, bindings, crampons) malfunction risk rises sharply.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 8
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely on the Ötztal 3600er tours; consult LWD Tirol bulletin before any glaciated ascent.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Ötztal glaciated touring is human-powered with zero direct session
+    emissions once at the trailhead hut. Equipment footprint is high
+    (touring skis + skins + boots + full glacier kit: rope, harness,
+    crevasse-rescue gear, in addition to standard avalanche safety
+    kit). Hut-to-hut access (Similaunhütte, Braunschweiger Hütte)
+    concentrates traffic in shoulder-season weekends; glacier retreat
+    on both objectives has measurably altered standard route lines
+    over the past two decades, a documented concern for Ötztaler
+    Alpenverein sections.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Lawinenwarndienst Tirol (LWD Tirol) avalanche bulletin standards"
+    - "Österreichischer Alpenverein (ÖAV) Ötztaler Alpen touring guidance"
+    - "SLF cross-border glacier-touring advisory (AT/IT border zone)"
+  notes: |
+    Cluster aggregates the two flagship glaciated summits of the
+    Ötztaler Alpen. Region tag: alpine. Dimensions/gates copied
+    verbatim from ski-touring-alpine region variant; both sub-spots
+    are tier 3 glaciated, committing objectives.

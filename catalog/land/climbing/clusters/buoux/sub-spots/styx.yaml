@@ -1,0 +1,51 @@
+slug: climbing-spot-buoux-styx
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-buoux
+parent_cluster: climbing-spot-buoux
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 43.8250, lng: 5.3750 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    The Styx sector holds Buoux's steepest, most overhanging limestone,
+    with routes from F7c to F8c that became iconic test-pieces during
+    the 1980s European sport-climbing boom. The rock is grey and orange
+    limestone under a pronounced roof/overhang profile, demanding
+    sustained power endurance; bolting is mixed-era, with some routes
+    re-equipped and others retaining older hardware from their first
+    ascent, so hardware condition should be verified per route. The
+    approach is a short walk from valley parking but the sector sits on
+    an exposed ledge system at the cliff base. Falls on the steep terrain
+    are typically clean and air-y rather than ledge-hazard falls, but the
+    grade band and hardware variability place this firmly above the
+    cluster's more moderate sectors.
+
+display_name:
+  en: Climbing — Buoux Styx
+  it: Arrampicata — Buoux Styx
+  es: Escalada — Buoux Styx
+  fr: Escalade — Buoux Styx
+  de: Klettern — Buoux Styx
+
+description:
+  en: |
+    Styx is Buoux's steep, overhanging test-piece sector, F7c to F8c on
+    classic 1980s-era limestone power-endurance climbing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Buoux guidebook"
+    - "Parc naturel régional du Luberon access documentation"
+  notes: |
+    Sub-spot of climbing-spot-buoux cluster. Tier 3: steep overhanging
+    hard sport climbing, mixed-era hardware requiring per-route
+    verification, historic test-piece grade band.

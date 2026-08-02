@@ -1,0 +1,159 @@
+slug: alpine-skiing-spot-verbier
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-alpine
+region: alpine
+country_code: CH
+sub_spots:
+  - alpine-skiing-spot-verbier-attelas
+  - alpine-skiing-spot-verbier-mont-fort
+  - alpine-skiing-spot-verbier-savoleyres
+display_name:
+  en: Alpine Skiing — Verbier
+  it: Sci Alpino — Verbier
+  es: Esquí Alpino — Verbier
+  fr: Ski Alpin — Verbier
+  de: Alpiner Skilauf — Verbier
+description:
+  en: |
+    Verbier (Valais, Swiss Alps) is the resort-skiing hub of the
+    Quatre Vallées, one of the largest interconnected lift systems in
+    the world at over 400 km of marked piste and roughly 90 lifts
+    across the linked valleys. The Verbier sector itself spans from
+    the mid-mountain Attelas/Ruinettes intermediate bowls up to the
+    Mont Fort glacier summit at 3330 m, with snowmaking covering the
+    lower runs below 2200 m and full ski-patrol coverage across the
+    marked network. Piste colours run the full range from blue
+    beginner runs at Savoleyres and Les Ruinettes to red cruisers
+    dominating the mid-mountain and black pistes plus patrolled
+    hike-to freeride variants off Mont Fort. Verbier is also the home
+    of the Freeride World Tour finale on the adjacent Bec des Rosses,
+    giving the resort an international reputation for steep terrain
+    alongside its groomed piste offering. Primary lift operator is
+    Téléverbier SA. Season typically runs late November to early May
+    on Mont Fort's glaciated upper sector.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots closes the Mont Fort cable car and other upper Verbier cable cars during Foehn events; on-piste exposure on ridge-adjacent runs becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m on the Mont Fort glacier sector makes piste navigation and lift retrieval unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on the glaciated Mont Fort summit sector creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Verbier's piste network is operated by Téléverbier SA under the
+    Seilbahnen Schweiz coordinated environmental protocol shared with
+    the wider Quatre Vallées consortium. Snowmaking is standard below
+    2200 m; the Mont Fort glacier summit sector operates on Swiss-grid
+    electricity with significant hydro share. Peak-week crowding on
+    the Attelas/Ruinettes lift line is a recognised carrying-capacity
+    pressure point.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Téléverbier SA piste map and lift operational dossier"
+    - "Quatre Vallées ski area network documentation"
+    - "Seilbahnen Schweiz operational safety standards"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-alpine
+    (dimensions, gates copied exactly). Coordinates for the Mont Fort
+    sub-spot describe the piste-skiing summit sector distinct from
+    the freeride-spot-verbier-mont-fort freeride descent zone
+    catalogued separately in the freeride category.

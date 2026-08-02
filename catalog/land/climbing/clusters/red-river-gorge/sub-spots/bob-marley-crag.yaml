@@ -1,0 +1,48 @@
+slug: climbing-spot-red-river-gorge-bob-marley-crag
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-red-river-gorge
+parent_cluster: climbing-spot-red-river-gorge
+country_code: US
+
+coordinates:
+  center: { lat: 37.8100, lng: -83.6600 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Bob Marley Crag is a steep, pocketed Corbin sandstone sector with
+    sport routes in the F7a-F8b range, a popular training ground for
+    climbers working the gorge's overhanging jug-hauls. Anchors are
+    stainless bolts with chain or mailon lower-offs maintained under the
+    RRGCC bolt-replacement program, the approach is a short forested
+    walk-in, and the steep, overhanging profile of most lines keeps falls
+    away from ledges. Cell coverage is patchy in the gorge and rescue
+    access is via forest-road trailheads, consistent with the cluster's
+    routine bolted-sport risk profile.
+
+display_name:
+  en: Climbing — Bob Marley Crag
+  it: Arrampicata — Bob Marley Crag
+  es: Escalada — Bob Marley Crag
+  fr: Escalade — Bob Marley Crag
+  de: Klettern — Bob Marley Crag
+
+description:
+  en: |
+    Bob Marley Crag is a popular steep pocketed-sandstone sport sector in
+    the F7a-F8b range, a favorite training ground for climbers working
+    the RRG's overhanging jug-hauls.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Red River Gorge Rock Climbs guidebook (RRGCC / Wolverine Publishing)"
+    - "Mountain Project Red River Gorge area guide"
+  notes: |
+    Sub-spot of climbing-spot-red-river-gorge cluster. Tier 2: moderate
+    steep single-pitch sport with stainless hardware and clean overhung
+    falls — sport-climbing baseline residual risk.

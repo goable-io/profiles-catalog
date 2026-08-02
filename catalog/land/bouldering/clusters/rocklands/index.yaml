@@ -1,0 +1,154 @@
+slug: bouldering-spot-rocklands
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: bouldering
+country_code: ZA
+sub_spots:
+  - bouldering-spot-rocklands-de-pakhuys
+  - bouldering-spot-rocklands-fields-of-joy
+  - bouldering-spot-rocklands-plateau-boulders
+display_name:
+  en: Bouldering — Rocklands
+  it: Boulder — Rocklands
+  es: Bulder — Rocklands
+  fr: Bloc — Rocklands
+  de: Bouldern — Rocklands
+description:
+  en: |
+    Rocklands (Western Cape, South Africa) is one of the world's premier
+    bouldering destinations, set on the Cederberg escarpment near the
+    farming town of Clanwilliam. Orange-hued Cape sandstone
+    weathers into featured, incut, and slopey boulders across a series of
+    farm-access sectors, with problems from easy warm-ups to world-class
+    V15+ testpieces. The season runs the Southern Hemisphere winter
+    (May-September): cool, dry, offshore-wind days give the best friction
+    on the sandstone, while summer heat and humidity render most problems
+    unclimbable. Access is largely through private farms (De Pakhuys, the
+    Traveller's Rest) that charge a permit fee supporting conservation and
+    trail upkeep.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.35
+    curve:
+      - { x: -5, s: 0.30 }
+      - { x: 2,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 24, s: 0.50 }
+      - { x: 30, s: 0.20 }
+      - { x: 36, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.30 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.85 }
+      - { x: 25, s: 0.50 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.20 }
+      - { x: 0.5, s: 0.50 }
+      - { x: 2,  s: 0.85 }
+      - { x: 5,  s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: humidity_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.80 }
+      - { x: 22, s: 0.55 }
+      - { x: 28, s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: WET_ROCK_RISK
+    description: Active precipitation makes rock holds slippery and weakens certain rock types (sandstone, conglomerate) — both unsafe and damaging to the resource.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: SPOTTER_HAZARD
+    description: Sustained wind above 45 knots makes spotting falls and predicting fall direction unsafe, particularly on highballs.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 38
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 38°C makes finger grip on holds unsustainable and creates heat exposure for ground belayers.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Rocklands is entirely accessed through private farmland; the De
+    Pakhuys and Traveller's Rest farms charge a daily permit fee that
+    funds sector maintenance and erosion control. Carrying capacity
+    sensitivity is high: soft sandstone is vulnerable to chalk buildup
+    and rubber-shoe polish on popular problems, and landing zones near
+    fynbos vegetation are subject to trampling. Southern Hemisphere
+    winter season (roughly May-September) concentrates visitation into a
+    narrow window.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Rocklands guidebook"
+    - "Vertical Life Rocklands sector guide"
+  notes: |
+    Cluster inherits base bouldering scoring unchanged. Southern
+    Hemisphere winter season timing (opposite of European bouldering
+    destinations) is the key strategic deviation, noted in
+    sustainability.typical_season_weeks rather than in the dimension
+    curves themselves.

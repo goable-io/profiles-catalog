@@ -1,0 +1,46 @@
+slug: snowboarding-spot-hakuba-cortina-tree-runs
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-hakuba
+parent_cluster: snowboarding-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.7597, lng: 137.7867 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Hakuba Cortina's tree runs are celebrated among JAPOW-focused riders
+    for sustained, technical tree-line descents through deep dump-cycle
+    powder, with terrain demanding active line selection between trees
+    rather than groomed-corridor cruising. The sector's smaller lift
+    infrastructure and lower crowd density concentrate a genuinely advanced
+    riding experience. Consistent with the Tier 3 hike-to/expert-steeps
+    classification used elsewhere in this catalog for technical tree and
+    off-piste terrain.
+
+display_name:
+  en: Snowboarding — Cortina Tree Runs (Hakuba)
+  it: Snowboard — Hakuba Cortina
+  es: Snowboard — Hakuba Cortina
+  fr: Snowboard — Hakuba Cortina
+  de: Snowboarden — Hakuba Cortina
+
+description:
+  en: |
+    Hakuba Cortina tree runs — JAPOW
+    dump-cycle-driven advanced snowboard tree lines.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hakuba Cortina piste and tree-run terrain documentation"
+  notes: |
+    Sub-spot of snowboarding-spot-hakuba
+    cluster. Tier 3: technical tree-line descents through sustained
+    powder, advanced line-selection terrain.

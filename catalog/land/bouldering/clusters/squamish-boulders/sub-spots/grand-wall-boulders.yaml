@@ -1,0 +1,44 @@
+slug: bouldering-spot-squamish-boulders-grand-wall-boulders
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-squamish-boulders
+parent_cluster: bouldering-spot-squamish-boulders
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 49.6800, lng: -123.1500 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Grand Wall Boulders area sits in forest at the base of the
+    Stawamus Chief, offering compact granite problems in the V3-V10
+    range on a mix of flat sandy and root-strewn forest-floor landings.
+    This is the iconic entry zone for Squamish bouldering, with a short
+    approach from the main parking area and moderate spotting needs
+    covered by a standard 3-5 pad setup. Shade from the forest canopy
+    keeps the granite climbable later into warm afternoons than exposed
+    sectors elsewhere in the region.
+
+display_name:
+  en: Bouldering — Squamish Grand Wall Boulders
+
+description:
+  en: |
+    Grand Wall Boulders — Stawamus Chief granite base problems in
+    forest, V3-V10, the iconic and most accessible Squamish bouldering
+    zone.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Squamish Bouldering guidebook (Marc Bourguignon)"
+    - "Squamish Access Society trail and access information"
+  notes: |
+    Sub-spot of bouldering-spot-squamish-boulders cluster. Tier 2:
+    intermediate forested granite problems, standard pad setup, short
+    approach, shaded forest microclimate.

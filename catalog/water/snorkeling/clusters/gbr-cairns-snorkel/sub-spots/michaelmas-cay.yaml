@@ -1,0 +1,36 @@
+slug: snorkeling-spot-gbr-cairns-snorkel-michaelmas-cay
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-gbr-cairns-snorkel
+parent_cluster: snorkeling-spot-gbr-cairns-snorkel
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -16.6067, lng: 145.9833 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Michaelmas Cay is a sand-cay lagoon sheltered by the surrounding reef crest, giving a calm 2-6 m swim zone close to the boat mooring with minimal current or swell — a standard first-timer site on Cairns day trips. The lagoon's shallow, protected profile and short swim distance require no drift or current-handling skill, though the seabird-sanctuary status limits the cay's landward beach access seasonally. The sheltered, beginner-suited water places it at tier 1.
+
+display_name:
+  en: Snorkeling — Michaelmas Cay
+  it: Snorkeling — Michaelmas Cay
+  es: Snorkel — Michaelmas Cay
+  fr: Snorkeling — Michaelmas Cay
+  de: Schnorcheln — Michaelmas Cay
+
+description:
+  en: |
+    Sheltered 2-6 m lagoon snorkel beside a protected bird-sanctuary sand cay, beginner-friendly with minimal current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Michaelmas Cay bird-sanctuary seasonal-access documentation"
+  notes: |
+    Sub-spot of snorkeling-spot-gbr-cairns-snorkel. Tier 1: sheltered lagoon, calm water, standard beginner site.

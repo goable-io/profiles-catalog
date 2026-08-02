@@ -1,0 +1,36 @@
+slug: snorkeling-spot-bali-tulamben-coral-garden-snorkel
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-bali-tulamben
+parent_cluster: snorkeling-spot-bali-tulamben
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.276, lng: 115.598 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    Coral Garden is a gently sloping shallow reef flat 3-8 m deep directly adjacent to the Tulamben beach, hosting dense resident tropical reef fish (anthias, damselfish, butterflyfish) over healthy coral-head structure without any current or surge exposure. The shallow, sheltered profile and short swim distance from shore make it a standard kids-and-beginners site used by every Tulamben dive shop for snorkel add-ons. No boat or drift-handling skill is required, justifying tier 1.
+
+display_name:
+  en: Snorkeling — Coral Garden (Tulamben)
+  it: Snorkeling — Coral Garden
+  es: Snorkel — Coral Garden
+  fr: Snorkeling — Coral Garden
+  de: Schnorcheln — Coral Garden
+
+description:
+  en: |
+    Shallow 3-8 m reef flat beside Tulamben beach with dense resident tropical fish, kid-friendly and current-free.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "PADI Bali Tulamben shore-entry site briefing"
+  notes: |
+    Sub-spot of snorkeling-spot-bali-tulamben. Tier 1: sheltered shallow reef flat, beginner and family standard.

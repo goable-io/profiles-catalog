@@ -1,0 +1,159 @@
+slug: alpine-skiing-spot-solden
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-alpine
+region: alpine
+country_code: AT
+sub_spots:
+  - alpine-skiing-spot-solden-rettenbach-glacier
+  - alpine-skiing-spot-solden-tiefenbach-glacier
+display_name:
+  en: Alpine Skiing — Sölden
+  it: Sci Alpino — Sölden
+  es: Esquí Alpino — Sölden
+  fr: Ski Alpin — Sölden
+  de: Alpiner Skilauf — Sölden
+description:
+  en: |
+    Sölden (Ötztal Alps, Tyrol, Austria) is a glacier-anchored resort
+    famous worldwide as the venue for the FIS Alpine Ski World Cup's
+    annual October season opener, run on the Rettenbachgletscher's
+    permanent race piste. The resort spans two glacier sectors —
+    Rettenbach and Tiefenbach — both above 2800 m, connected to each
+    other by a tunnel through the Tiefenbachjoch and down to the main
+    Sölden village lift network, giving the resort one of the longest
+    guaranteed early- and late-season windows in the Alps. Piste
+    colours run from red glacier cruising on both sectors to the
+    hardened black race piste on Rettenbach that hosts the World Cup
+    giant slalom and slalom openers each year. Snowmaking and grooming
+    are extensive across the lower village runs, while the glacier
+    sectors rely primarily on natural glacier ice and managed
+    snowfarming to maintain the October race surface. Season runs
+    effectively year-round on the glacier top, with the core resort
+    season late October to early May.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots closes the upper glacier gondolas and cable cars on Rettenbach and Tiefenbach during Foehn events; on-piste exposure on the exposed glacier terrain becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m on the Rettenbach/Tiefenbach glacier sectors makes piste navigation and race-piste operations unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on the glaciated Sölden sectors creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: high
+  notes: |
+    Sölden's twin-glacier operation under Seilbahnen Österreich
+    protocols carries a higher operational footprint than lower-
+    altitude Alpine resorts: glacier grooming, extensive snowfarming
+    (covering and preserving snow through summer) to guarantee the
+    October World Cup race surface, and tunnel infrastructure linking
+    Rettenbach and Tiefenbach to the valley lift network. The October
+    World Cup opener weekend is a recognised carrying-capacity peak,
+    concentrating visitor and media traffic on the Rettenbach sector.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIS Alpine Ski World Cup Sölden season-opener venue documentation"
+    - "Bergbahnen Sölden piste map and glacier operational dossier"
+    - "Seilbahnen Österreich operational safety standards"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-alpine
+    (dimensions, gates copied exactly). Coordinates for the Rettenbach
+    sub-spot describe the permanent FIS race-piste glacier sector;
+    Tiefenbach describes Sölden's second glacier sector reached via
+    the Tiefenbachjoch tunnel connection.

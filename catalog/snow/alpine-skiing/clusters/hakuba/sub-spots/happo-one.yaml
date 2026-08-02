@@ -1,0 +1,57 @@
+slug: alpine-skiing-spot-hakuba-happo-one
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-hakuba
+parent_cluster: alpine-skiing-spot-hakuba
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 36.6942, lng: 137.8306 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Happo-One is the largest of the Hakuba Valley's ten resorts and
+    hosted the downhill and Super-G events of the 1998 Nagano Winter
+    Olympics, giving it FIS-grade race-venue infrastructure alongside
+    its recreational piste network. Lift access runs via gondola and a
+    series of high-speed and fixed-grip chairlifts up to the Usagidaira
+    upper sector at roughly 1830 m, with extensive red-piste cruising
+    across the mid-mountain and black-piste terrain concentrated on the
+    upper mountain. The top-station Kurobishi run is one of the
+    steepest lift-served in-bounds black pistes in Japan, moguled and
+    narrow in its upper pitch, with ski-patrol coverage across the
+    marked network and full grooming on the standard red and blue
+    runs below it.
+
+display_name:
+  en: Alpine Skiing — Happo-One (Hakuba)
+  it: Sci Alpino — Happo-One (Hakuba)
+  es: Esquí Alpino — Happo-One (Hakuba)
+  fr: Ski Alpin — Happo-One (Hakuba)
+  de: Alpiner Skilauf — Happo-One (Hakuba)
+
+description:
+  en: |
+    The flagship sector of Hakuba Valley and a 1998 Nagano Olympics
+    downhill venue. Happo-One combines extensive red-piste cruising
+    with black-piste terrain, headlined by the steep, narrow Kurobishi
+    top-station run.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Happo-One Resort piste map and lift operational dossier"
+    - "1998 Nagano Winter Olympics Alpine venue documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-hakuba cluster. Tier 3: extended
+    red and black-piste coverage including the Kurobishi top-station
+    black run, FIS Olympic downhill venue heritage. Same general resort
+    area as freeride-spot-hakuba-happo-sakka and
+    ski-touring-spot-hakuba-happo-one but scoped to the marked
+    piste-skiing product rather than the sidecountry or backcountry
+    touring zones.

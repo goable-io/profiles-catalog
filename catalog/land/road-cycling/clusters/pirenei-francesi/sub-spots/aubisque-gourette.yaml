@@ -1,0 +1,51 @@
+slug: road-cycling-spot-pirenei-francesi-aubisque-gourette
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-pirenei-francesi
+parent_cluster: road-cycling-spot-pirenei-francesi
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 42.9683, lng: -0.3383 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Col d'Aubisque climbed via the Gourette ski-station approach
+    is 17.4 km at a moderate average 4.8% gradient but has featured
+    in the Tour de France since 1910, making it one of the race's
+    oldest continuously used Pyrenean passes. Its upper stretches run
+    along an exposed, cliff-cut corniche road with limited barriers
+    above steep drops, so while the average gradient is forgiving the
+    consequence of a weather- or fatigue-driven error on the exposed
+    corniche section is high. Century-plus Tour heritage combined
+    with genuine cliff-edge exposure on the final kilometres justifies
+    tier 3 despite the moderate average gradient.
+
+display_name:
+  en: Road Cycling — Col d'Aubisque (Gourette side)
+  it: Ciclismo su Strada — Col d'Aubisque (versante Gourette)
+  es: Ciclismo de Ruta — Col d'Aubisque (vertiente Gourette)
+  fr: Cyclisme sur Route — Col d'Aubisque (versant Gourette)
+  de: Rennradfahren — Col d'Aubisque (Gourette-Seite)
+
+description:
+  en: |
+    The Col d'Aubisque climbed via Gourette: 17.4 km at an average
+    4.8% gradient, featured in the Tour de France since 1910 and
+    known for its exposed cliff-cut corniche road in the final
+    kilometres.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Col d'Aubisque climb archive"
+    - "ProCyclingStats climb database — Col d'Aubisque (Gourette) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-pirenei-francesi cluster. Tier 3:
+    historic Tour Pyrenean climb since 1910, exposed corniche road
+    with limited barriers on the final kilometres.

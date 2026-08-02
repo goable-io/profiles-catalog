@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-verbier-savoleyres
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-verbier
+parent_cluster: alpine-skiing-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.1150, lng: 7.2100 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Savoleyres sits on a north-facing slope across the valley from
+    the main Attelas side, offering sun-shaded red-piste cruising
+    that holds snow quality longer into spring. Access is via
+    gondola and chairlift with a mix of blue beginner runs near the
+    mid-station and red intermediate pistes on the upper mountain,
+    all groomed and patrolled to the same standard as the rest of
+    the Verbier network. Crowd density here is consistently lower
+    than the Attelas/Ruinettes side, making it a favoured local
+    sector on busy weekends and holiday weeks.
+
+display_name:
+  en: Alpine Skiing — Savoleyres (Verbier)
+  it: Sci Alpino — Savoleyres
+  es: Esquí Alpino — Savoleyres
+  fr: Ski Alpin — Savoleyres
+  de: Alpiner Skilauf — Savoleyres
+
+description:
+  en: |
+    A north-facing, sun-shaded intermediate sector with red-piste
+    cruising and lower crowd density than the main Attelas side.
+    Gondola and chairlift served with a family-friendly blue zone
+    at mid-mountain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Téléverbier SA Savoleyres piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-verbier cluster. Tier 2: red-piste
+    dominant intermediate cruising, north aspect, lower crowd density
+    than the Attelas sector.

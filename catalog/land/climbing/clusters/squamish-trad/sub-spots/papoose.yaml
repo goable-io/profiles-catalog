@@ -1,0 +1,48 @@
+slug: climbing-spot-squamish-papoose
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-squamish
+parent_cluster: climbing-spot-squamish
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 49.7000, lng: -123.1400 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Papoose, a smaller granite formation at the north end of the
+    Squamish corridor, offers an accessible mix of moderate multipitch trad
+    and single-pitch routes in the 5.7-5.11 range on clean, well-featured
+    rock. Protection is predominantly traditional gear in solid crack
+    systems, with a handful of bolted single-pitch lines suited to climbers
+    building multipitch experience before tackling the taller Chief faces.
+    Approach is short relative to the main Chief sectors, and route lengths
+    are typically two to four pitches, keeping retreat straightforward and
+    falls clean on the well-protected cracks.
+
+display_name:
+  en: Climbing — Squamish Papoose
+  it: Arrampicata — Squamish Papoose
+  es: Escalada — Squamish Papoose
+  fr: Escalade — Squamish Papoose
+  de: Klettern — Squamish Papoose
+
+description:
+  en: |
+    Squamish's approachable granite formation at the corridor's north end:
+    moderate 5.7-5.11 trad multipitch and single-pitch routes, a stepping
+    stone before the Chief's bigger faces.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Squamish Access Society route and access guidance"
+  notes: |
+    Sub-spot of climbing-spot-squamish cluster. Tier 2: moderate,
+    well-protected granite trad on shorter multipitch and single-pitch
+    routes with straightforward retreat.

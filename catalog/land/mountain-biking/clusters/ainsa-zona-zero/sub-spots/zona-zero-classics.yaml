@@ -1,0 +1,46 @@
+slug: mountain-biking-spot-ainsa-zona-zero-zona-zero-classics
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-ainsa-zona-zero
+parent_cluster: mountain-biking-spot-ainsa-zona-zero
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.4189, lng: 0.1394 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Zona Zero main network around Ainsa is the reference Aragonese
+    enduro trail system, with 500+ km of signed singletrack across varied
+    limestone and conglomerate terrain. It hosted an Enduro World Series
+    round, reflecting a trail mix that spans intermediate flow through
+    genuinely technical rocky descents. But the sheer breadth and
+    consistent signage/grading of the network keeps it moderate and
+    approachable overall for competent intermediate-to-advanced riders.
+
+display_name:
+  en: Mountain Biking — Zona Zero Classics
+  it: Mountain Bike — Zona Zero Classics
+  es: Ciclismo de Montaña — Zona Zero Clásicos
+  fr: VTT — Zona Zero Classiques
+  de: Mountainbiken — Zona Zero Klassiker
+
+description:
+  en: |
+    The reference Zona Zero trail network around Ainsa, with 500+ km of
+    signed enduro singletrack across Aragonese limestone terrain. An
+    Enduro World Series venue.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zona Zero Ainsa signed trail network documentation"
+    - "Enduro World Series Ainsa round race notes"
+  notes: |
+    Sub-spot of mountain-biking-spot-ainsa-zona-zero cluster. Tier 2:
+    the reference signed enduro network, moderate consequence overall.

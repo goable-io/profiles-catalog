@@ -1,0 +1,53 @@
+slug: trekking-spot-kilimanjaro-machame-barranco-wall
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-kilimanjaro-machame
+parent_cluster: trekking-spot-kilimanjaro-machame
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -3.0700, lng: 37.3200 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Barranco Camp sits at roughly 3960 m and is followed at first
+    light by the Barranco Wall, a roughly 300 m scramble up a broken
+    volcanic rock face that uses hands for balance and short holds but
+    involves no ropes or fixed protection, taking most parties one to
+    two hours. The route is on stage three of the climb, part of the
+    "climb high, sleep low" acclimatization strategy that is the
+    hallmark of the Machame Route's superior success rate versus
+    shorter routes. Guides and assistant guides are present throughout
+    per KINAPA's mandatory-guide rule, camping is the only overnight
+    option, and evacuation from the wall or camp requires descent on
+    foot or, in emergencies, stretcher evacuation coordinated by the
+    guide team — there is no vehicle or helicopter access at this
+    altitude on the route.
+
+display_name:
+  en: Trekking — Barranco Wall
+  it: Trekking — Barranco Wall
+  es: Trekking — Muro de Barranco
+  fr: Trekking — Barranco Wall
+  de: Wandern — Barranco Wall
+
+description:
+  en: |
+    Barranco Camp and Wall (3960 m) is the Machame Route's iconic
+    stage-three scramble, a non-technical but hands-on rock ascent
+    that forms a key part of the climb's acclimatization strategy.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Kilimanjaro National Park Authority (KINAPA) — Machame Route stage and campsite information"
+    - "Cicerone Kilimanjaro: The Trekking Guide guidebook coverage of the Barranco Wall"
+  notes: |
+    Sub-spot of trekking-spot-kilimanjaro-machame cluster. Tier 2:
+    non-technical hands-on scramble, mandatory guide present,
+    camping-only overnight, foot-only evacuation at this altitude.

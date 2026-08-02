@@ -1,0 +1,41 @@
+slug: bouldering-spot-albarracin-masia
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-albarracin
+parent_cluster: bouldering-spot-albarracin
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 40.4150, lng: -1.4550 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    Masia is Albarracín's kids-friendly warm-up zone, with low, easy
+    sandstone problems from V0 to V4 on flat, sandy-soiled ground. The
+    low boulder heights and gentle landings make it suitable for
+    beginners and families with minimal spotting, and its position close
+    to the village access road gives it the shortest approach of any
+    Albarracín sector. Popular as a first-session or rest-day venue.
+
+display_name:
+  en: Bouldering — Albarracín Masia
+
+description:
+  en: |
+    Beginner-friendly Albarracín warm-up sector with easy V0-V4
+    sandstone problems, flat landings, and a short village-side
+    approach.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Aragonesa de Montañismo (FAM) Albarracín sector documentation"
+    - "Vertical Life Albarracín sector database"
+  notes: |
+    Sub-spot of bouldering-spot-albarracin cluster. Tier 1: easy V0-V4
+    grades, flat sandy landings, short low-consequence approach.

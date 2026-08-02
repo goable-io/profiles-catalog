@@ -1,0 +1,150 @@
+slug: trekking-spot-wonderland-rainier
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+region: pacific
+country_code: US
+sub_spots:
+  - trekking-spot-wonderland-rainier-paradise-visitor-center
+  - trekking-spot-wonderland-rainier-spray-park
+display_name:
+  en: Trekking — Wonderland Trail, Mount Rainier (Washington)
+  it: Trekking — Wonderland Trail, Mount Rainier (Washington)
+  es: Senderismo — Wonderland Trail, Mount Rainier (Washington)
+  fr: Randonnée — Wonderland Trail, Mount Rainier (Washington)
+  de: Wandern — Wonderland Trail, Mount Rainier (Washington)
+description:
+  en: |
+    The Wonderland Trail is a roughly 150 km (93 mi), 10-14 day loop
+    entirely circumnavigating Mount Rainier (4392 m) in Washington
+    State's Cascade Range, staying largely in the 900-1980 m band
+    through old-growth forest, subalpine meadow, and glacial river
+    valleys, with a handful of higher shoulder crossings near
+    Panhandle Gap (~2000 m). Terrain is well-established dirt and
+    root trail maintained by the National Park Service, with
+    designated backcountry camps (no free camping) spaced along the
+    loop and several glacier-fed river crossings that can become
+    hazardous during afternoon snowmelt surges. Permits are quota-
+    controlled through a competitive NPS lottery given the trail's
+    popularity; bear canisters are recommended and food-storage
+    lockers exist at many camps. Season runs roughly late July to
+    early October, bounded by lingering snowpack at Panhandle Gap
+    early season. The Paradise and Sunrise/Mowich areas serve as the
+    principal access points and shorter day-hike sampler sections.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m makes off-trail navigation unsafe, particularly on the Panhandle Gap shoulder crossing above tree line.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain in the Cascades' maritime climate rapidly raises glacial-melt river levels at Wonderland Trail crossings and creates slippery root-and-mud trail sections.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed subalpine meadow sections (Spray Park, Panhandle Gap) creates fall risk and rapid wind-chill exposure.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 10
+  carrying_capacity_sensitivity: high
+  notes: |
+    Mount Rainier National Park (NPS) issues Wonderland Trail permits
+    through a heavily oversubscribed early-season lottery, with
+    designated backcountry camps at fixed capacity per night and no
+    off-site camping permitted. Subalpine meadow trampling (Spray
+    Park, Paradise) is a documented carrying-capacity concern given
+    fragile high-elevation vegetation with short growing seasons;
+    NPS actively reroutes and rests damaged meadow sections.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "National Park Service Mount Rainier Wonderland Trail permit and camp system"
+    - "Washington Trails Association Wonderland Trail route guidance"
+  notes: |
+    Cluster inherits trekking base scoring exactly (no dimension/gate
+    overrides) — the Cascades lack a dedicated pacific-Northwest
+    region variant in this catalog phase, so weights/curves are
+    copied verbatim from the trekking base profile. 10-week typical
+    season reflects the narrow late-July to early-October
+    Cascades snow-free window, shorter than the base profile's
+    36-week default.

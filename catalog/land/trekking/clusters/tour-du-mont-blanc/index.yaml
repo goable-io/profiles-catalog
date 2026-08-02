@@ -1,0 +1,163 @@
+slug: trekking-spot-tour-du-mont-blanc
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-alpine
+region: alpine
+sub_spots:
+  - trekking-spot-tour-du-mont-blanc-col-de-la-seigne
+  - trekking-spot-tour-du-mont-blanc-grand-col-ferret
+  - trekking-spot-tour-du-mont-blanc-col-du-brevent
+display_name:
+  en: Trekking — Tour du Mont Blanc
+  it: Trekking — Tour del Monte Bianco
+  es: Senderismo — Tour del Mont Blanc
+  fr: Randonnée — Tour du Mont Blanc
+  de: Wandern — Tour du Mont Blanc
+description:
+  en: |
+    The Tour du Mont Blanc (TMB) is a ~170 km circuit around the Mont Blanc
+    massif crossing France, Italy, and Switzerland in 10-11 days. Altitude
+    ranges from roughly 1000 m in the Chamonix and Courmayeur valleys to
+    2537 m at Grand Col Ferret, the route's highest standard pass. Terrain
+    alternates between valley pasture, larch forest, and rocky high passes
+    with moderate scree on the steeper descents; several optional variants
+    add via-ferrata-style exposure. A dense network of staffed refuges
+    (Rifugio Elisabetta, Refuge des Mottets, Rifugio Elena, Cabane de la
+    Balme, and others) covers nearly every stage, and booking ahead through
+    the Autour du Mont Blanc reservation system is effectively mandatory in
+    July-August. No permits are required, and the route is walkable without
+    a guide, though route-finding in whiteout on the high cols is a real
+    hazard. Optimal season is mid-June to mid-September; the three-country
+    border crossings at Col de la Seigne and Grand Col Ferret, and the
+    Chamonix-valley balcony trail near Col du Brévent, are the trek's most
+    photographed landmarks.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -15, s: 0.05 }
+      - { x: -5,  s: 0.40 }
+      - { x: 5,   s: 0.85 }
+      - { x: 14,  s: 1.00 }
+      - { x: 22,  s: 0.85 }
+      - { x: 30,  s: 0.40 }
+      - { x: 38,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 4,   s: 0.10 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 35, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 1.00 }
+      - { x: 7,  s: 0.80 }
+      - { x: 10, s: 0.50 }
+      - { x: 13, s: 0.20 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 300m in alpine terrain creates immediate route-finding hazard; high-altitude rescue often impossible.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_PRECIPITATION_ALPINE
+    description: Heavy active precipitation in alpine terrain triggers flash floods in gullies and rapidly degrades trail surface.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 50 knots at alpine altitude makes ridge traverses and exposed sections dangerous.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: EXTREME_COLD_ALPINE
+    description: Apparent temperature below -20°C in alpine terrain creates immediate frostbite risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    The TMB is human-powered with zero direct emissions, but is among the
+    most crowded long-distance treks in the Alps, with an estimated
+    25,000-30,000 trekkers completing the full circuit annually plus
+    many more day-walkers on access sections near Chamonix and Courmayeur.
+    The Autour du Mont Blanc reservation platform (operated by the
+    Chamonix and Courmayeur tourist offices) centralizes refuge booking
+    and functions as a de facto carrying-capacity control during the
+    June-September peak. Trail erosion on the Col de la Seigne and
+    Grand Col Ferret approaches is documented and actively managed by
+    park authorities on both the French and Italian sides.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Tour of Mont Blanc (Kev Reynolds)"
+    - "Trailblazer — Tour du Mont Blanc"
+    - "Autour du Mont Blanc official refuge reservation platform"
+    - "Fédération Française des Clubs Alpins et de Montagne (FFCAM) trail guidance"
+  notes: |
+    Cluster inherits trekking-alpine scoring unchanged (weights, gates,
+    curves copied exactly — no material deviation identified for this
+    route relative to the regional baseline). Three-country border
+    crossings (Col de la Seigne FR/IT, Grand Col Ferret IT/CH) are
+    represented as sub-spots; country_code on the cluster reflects the
+    conventional start/end point in France.

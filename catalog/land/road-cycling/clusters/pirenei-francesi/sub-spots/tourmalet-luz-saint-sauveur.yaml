@@ -1,0 +1,50 @@
+slug: road-cycling-spot-pirenei-francesi-tourmalet-luz-saint-sauveur
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-pirenei-francesi
+parent_cluster: road-cycling-spot-pirenei-francesi
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 42.9083, lng: 0.1450 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Col du Tourmalet from Luz-Saint-Sauveur is 19 km at an
+    average 7.4% gradient to a 2115m summit, and is the most-crossed
+    Pyrenean climb in Tour de France history with more than 80 race
+    visits since 1910. The long, sustained ascent finishes above
+    treeline on an exposed ridge where weather can change rapidly
+    even in summer, and the descent's length and unguarded hairpins
+    raise real consequence for any mistake at speed. Its unrivalled
+    historical stature combined with genuine high-altitude and
+    weather exposure firmly places it at tier 3.
+
+display_name:
+  en: Road Cycling — Col du Tourmalet (Luz-Saint-Sauveur side)
+  it: Ciclismo su Strada — Col du Tourmalet (versante Luz-Saint-Sauveur)
+  es: Ciclismo de Ruta — Col du Tourmalet (vertiente Luz-Saint-Sauveur)
+  fr: Cyclisme sur Route — Col du Tourmalet (versant Luz-Saint-Sauveur)
+  de: Rennradfahren — Col du Tourmalet (Luz-Saint-Sauveur-Seite)
+
+description:
+  en: |
+    The Col du Tourmalet climbed from Luz-Saint-Sauveur: 19 km at an
+    average 7.4% gradient to a 2115m summit. The most-crossed
+    Pyrenean climb in Tour de France history, first summited by the
+    race in 1910.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Col du Tourmalet climb archive"
+    - "ProCyclingStats climb database — Col du Tourmalet (Luz-Saint-Sauveur) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-pirenei-francesi cluster. Tier 3:
+    most-crossed Pyrenean Tour de France climb in history (80+
+    crossings), exposed above-treeline summit.

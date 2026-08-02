@@ -1,0 +1,52 @@
+slug: surfing-spot-skeleton-bay-donkey-bay-main
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-skeleton-bay
+parent_cluster: surfing-spot-skeleton-bay
+region: atlantic
+country_code: NA
+
+coordinates:
+  center: { lat: -25.8367, lng: 14.5583 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The main sandbar at Donkey Bay is the outer entry point of Skeleton
+    Bay's sand-bottom left, where South Atlantic groundswell wraps
+    around the sand spit onto a shifting but consistently steep bank to
+    produce rides that can run up to 2 km on peak swells. The wave
+    breaks with barrel sections from the takeoff, demanding a surfer
+    commit deep into the tube repeatedly across a very long ride with no
+    resting channel and no lifeguard or rescue infrastructure anywhere
+    nearby. Water and air conditions are cold South Atlantic (Benguela
+    current) year-round, and the desert setting means any injury
+    requires hours of overland evacuation.
+
+display_name:
+  en: Surfing — Skeleton Bay Donkey Bay Main
+  it: Surf — Skeleton Bay Donkey Bay Main
+  es: Surf — Skeleton Bay Donkey Bay Main
+  fr: Surf — Skeleton Bay Donkey Bay Main
+  de: Surfen — Skeleton Bay Donkey Bay Main
+
+description:
+  en: |
+    The outer sandbar entry point of Skeleton Bay's famous left,
+    considered the longest and most perfect sand-bottom barrel in the
+    world. South Atlantic groundswell wraps around the sand spit to
+    deliver rides up to 2 km on the biggest days. Remote desert access,
+    cold Benguela-current water, and no rescue infrastructure make this
+    an advanced/expert-only wave.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Namibia Tourism Board coastal recreation notes, Walvis Bay region"
+  notes: |
+    Sub-spot of surfing-spot-skeleton-bay cluster. Tier 3: extreme-length
+    sand-bottom barrel, remote wilderness with no rescue infrastructure,
+    cold Benguela-current water.

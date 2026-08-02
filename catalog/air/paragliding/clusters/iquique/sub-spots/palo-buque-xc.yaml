@@ -1,0 +1,52 @@
+slug: paragliding-spot-iquique-palo-buque-xc
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-iquique
+parent_cluster: paragliding-spot-iquique
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -20.3167, lng: -70.1500 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Palo Buque marks the departure area for Iquique's advanced XC
+    route running south along the Atacama coastal escarpment,
+    where pilots chain the sustained S-flow thermal-and-ridge lift
+    band into flights of 200+ km on peak days — among the longest
+    routinely achievable XC distances in world paragliding. The
+    route traverses long stretches of remote, sparsely-populated
+    desert coastline with limited retrieve access and few
+    intermediate landing options, demanding strong cross-country
+    decision-making and self-sufficiency. Wind and thermal reading
+    over changing coastal terrain features (headlands, escarpment
+    breaks) require advanced XC competence well beyond local
+    soaring. Reserved for experienced XC pilots with retrieve
+    logistics planned in advance.
+
+display_name:
+  en: Paragliding — Palo Buque XC (Iquique)
+  it: Parapendio — Palo Buque (Iquique)
+  es: Parapente — Palo Buque (Iquique)
+  fr: Parapente — Palo Buque (Iquique)
+  de: Gleitschirmfliegen — Palo Buque (Iquique)
+
+description:
+  en: |
+    Departure area for Iquique's advanced XC route south along the
+    Atacama coast, where 200+ km flights are routine on peak days.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FEDACH Iquique XC route documentation"
+    - "Iquique paragliding operators consolidated daily-window practice"
+  notes: |
+    Sub-spot of paragliding-spot-iquique cluster. Tier 3: remote
+    long-distance XC corridor, limited retrieve options, advanced
+    pilot competence required.

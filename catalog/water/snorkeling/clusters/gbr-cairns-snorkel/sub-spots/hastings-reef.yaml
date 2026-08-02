@@ -1,0 +1,36 @@
+slug: snorkeling-spot-gbr-cairns-snorkel-hastings-reef
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: snorkeling-spot-gbr-cairns-snorkel
+parent_cluster: snorkeling-spot-gbr-cairns-snorkel
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -16.5167, lng: 145.9833 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Hastings Reef is a standard Cairns day-boat destination combining snorkeling with shallow scuba, set over sandy-bottom coral bommies reachable from a moored boat rather than a fixed pontoon, which means less shelter from swell than a lagoon site. Snorkelers swim in open water around scattered bommie structures and must track boat position, a step up from a bounded shore lagoon. This combination places it at tier 2.
+
+display_name:
+  en: Snorkeling — Hastings Reef
+  it: Snorkeling — Hastings Reef
+  es: Snorkel — Hastings Reef
+  fr: Snorkeling — Hastings Reef
+  de: Schnorcheln — Hastings Reef
+
+description:
+  en: |
+    Cairns-standard day-boat snorkel over sandy-bottom coral bommies, combined routinely with shallow scuba on the same trip.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Great Barrier Reef Marine Park Authority (GBRMPA) zoning and tourism guidelines"
+  notes: |
+    Sub-spot of snorkeling-spot-gbr-cairns-snorkel. Tier 2: moored-boat open-water bommie site.

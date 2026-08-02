@@ -1,0 +1,46 @@
+slug: alpine-skiing-spot-livigno-carosello
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-livigno
+parent_cluster: alpine-skiing-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5217, lng: 10.1281 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Carosello 3000 sector is reached by gondola from Livigno-Centro
+    up to the Costaccia station, forming the west-side counterpart to
+    Mottolino. Pistes are predominantly red-marked with wide, beginner-
+    friendly sub-sectors lower on the mountain that make it a popular
+    progression zone for skiers moving up from blue runs. Grooming is
+    daily and thorough, snowmaking coverage supplements the natural
+    snowpack on the lower connecting pistes, and ski patrol coverage is
+    standard across the gondola network. The sector connects onward to
+    further Carosello 3000 lifts toward the Swiss border ridgeline.
+
+display_name:
+  en: Alpine Skiing — Carosello (Livigno)
+  it: Sci Alpino — Carosello
+  es: Esquí Alpino — Carosello
+  fr: Ski Alpin — Carosello
+  de: Alpiner Skilauf — Carosello
+
+description:
+  en: |
+    Gondola-served Carosello 3000 sector from Livigno-Centro to Costaccia,
+    with wide, beginner-friendly red pistes and reliable grooming.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Livigno Ski Carosello 3000 lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-livigno cluster. Tier 2: red-piste
+    cruising with wide beginner-friendly sub-sectors, gondola-served.

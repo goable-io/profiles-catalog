@@ -1,0 +1,50 @@
+slug: road-cycling-spot-angliru-covadonga-lagos-de-covadonga
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-angliru-covadonga
+parent_cluster: road-cycling-spot-angliru-covadonga
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 43.2717, lng: -4.9867 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Lagos de Covadonga is 12.5 km at an average 7.2% gradient but
+    includes sustained double-digit-percent ramps into the Picos de
+    Europa, and has been one of the Vuelta a España's most iconic
+    summit finishes since its 1983 debut. The narrow mountain road
+    climbs through frequently wet, cloud-wrapped Asturian terrain
+    with limited overtaking room and long sections without barriers
+    above steep drops. This sustained steep climbing on a narrow,
+    weather-exposed road with a decades-long Grand Tour pedigree
+    warrants tier 3.
+
+display_name:
+  en: Road Cycling — Lagos de Covadonga
+  it: Ciclismo su Strada — Lagos de Covadonga
+  es: Ciclismo de Ruta — Lagos de Covadonga
+  fr: Cyclisme sur Route — Lagos de Covadonga
+  de: Rennradfahren — Lagos de Covadonga
+
+description:
+  en: |
+    Lagos de Covadonga climbed into the Picos de Europa: 12.5 km at
+    an average 7.2% gradient with sustained double-digit ramps. One
+    of the Vuelta a España's most iconic summit finishes since its
+    1983 debut.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Vuelta a España official race documentation, Lagos de Covadonga climb archive"
+    - "ProCyclingStats climb database — Lagos de Covadonga profile"
+  notes: |
+    Sub-spot of road-cycling-spot-angliru-covadonga cluster. Tier 3:
+    iconic Vuelta summit finish since 1983, sustained steep ramps,
+    narrow weather-exposed road.

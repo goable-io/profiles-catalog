@@ -1,0 +1,52 @@
+slug: climbing-spot-chamonix-granite-aiguille-du-midi
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-chamonix-granite
+parent_cluster: climbing-spot-chamonix-granite
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.8785, lng: 6.8877 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    The Aiguille du Midi granite towers, reached by the cable car to
+    3842m, host classic committing multipitch lines including the
+    Rebuffat-Baquet arête, the Frendo Spur, and the Cosmiques Arête,
+    graded roughly F6a to F7c on compact high-quality granite. Protection
+    is mixed trad placements and fixed bolts of varying vintage, with
+    some rappel anchors on established descents but sparse hardware on
+    less-traveled variations. The approach and descent both cross
+    glaciated terrain requiring crevasse-rescue readiness, and altitude
+    (3200-3842m) means rapid weather deterioration, freeze-thaw rockfall,
+    and cold-injury risk are ever-present even mid-summer. Rescue relies
+    on PGHM helicopter response given the terrain; this is committing
+    alpine-grade climbing, not a roadside crag.
+
+display_name:
+  en: Climbing — Aiguille du Midi
+  it: Arrampicata — Aiguille du Midi
+  es: Escalada — Aiguille du Midi
+  fr: Escalade — Aiguille du Midi
+  de: Klettern — Aiguille du Midi
+
+description:
+  en: |
+    The Aiguille du Midi granite towers, cable-car-accessed at 3842m,
+    offer classic committing multipitch trad and sport granite (F6a to
+    F7c) including the Frendo Spur and Cosmiques Arête.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie du Mont-Blanc Aiguille du Midi access information"
+    - "IFMGA Chamonix guide condition reports"
+  notes: |
+    Sub-spot of climbing-spot-chamonix-granite cluster. Tier 3:
+    committing high-altitude granite multipitch, glaciated approach and
+    descent, mixed-vintage trad/sport protection.

@@ -1,0 +1,50 @@
+slug: road-cycling-spot-ventoux-ventoux-malaucene
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: road-cycling-spot-ventoux
+parent_cluster: road-cycling-spot-ventoux
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 44.1750, lng: 5.2783 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mont Ventoux from Malaucène is 21 km at an average 7.2% gradient,
+    a north-facing route that climbs through forested shade for most
+    of its length before emerging onto the same exposed summit zone
+    as the Bédoin side. The wooded lower and middle sections offer
+    real heat relief compared to Bédoin, but the shared final
+    kilometres above the tree line still expose riders to the
+    Vaucluse's characteristic violent Mistral gusts and rapid weather
+    changes. Given the identical extreme summit exposure and
+    comparable sustained length and gradient to the Bédoin approach,
+    this route also merits tier 3.
+
+display_name:
+  en: Road Cycling — Mont Ventoux (Malaucène side)
+  it: Ciclismo su Strada — Mont Ventoux (versante Malaucène)
+  es: Ciclismo de Ruta — Mont Ventoux (vertiente Malaucène)
+  fr: Cyclisme sur Route — Mont Ventoux (versant Malaucène)
+  de: Rennradfahren — Mont Ventoux (Malaucène-Seite)
+
+description:
+  en: |
+    Mont Ventoux climbed from Malaucène: 21 km at an average 7.2%
+    gradient, the shaded north-face forest approach that joins the
+    Bédoin route for the exposed summit kilometres.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Tour de France official race documentation, Mont Ventoux (Malaucène) climb archive"
+    - "ProCyclingStats climb database — Mont Ventoux (Malaucène) profile"
+  notes: |
+    Sub-spot of road-cycling-spot-ventoux cluster. Tier 3: shares the
+    same extreme exposed summit zone as the Bédoin approach despite
+    more forest shade lower down.

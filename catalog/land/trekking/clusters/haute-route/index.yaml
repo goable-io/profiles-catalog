@@ -1,0 +1,161 @@
+slug: trekking-spot-haute-route
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-alpine
+region: alpine
+sub_spots:
+  - trekking-spot-haute-route-col-de-riedmatten
+  - trekking-spot-haute-route-cabane-de-prafleuri
+  - trekking-spot-haute-route-europaweg-zermatt
+display_name:
+  en: Trekking — Haute Route (Chamonix-Zermatt)
+  it: Trekking — Alta Via (Chamonix-Zermatt)
+  es: Senderismo — Alta Ruta (Chamonix-Zermatt)
+  fr: Randonnée — Haute Route (Chamonix-Zermatt)
+  de: Wandern — Haute Route (Chamonix-Zermatt)
+description:
+  en: |
+    The walker's Haute Route connects Chamonix, France to Zermatt,
+    Switzerland over roughly 180 km and 11-12 days, passing beneath four
+    of the six highest summits in the Alps. Altitude ranges from around
+    1035 m in the Chamonix valley to nearly 2919 m at Col de Riedmatten,
+    with terrain crossing high alpine passes, glacial moraine, and talus
+    fields where late-lying snow patches can persist into July. Swiss
+    Alpine Club (CAS) and French refuges cover most stages, though a few
+    remote huts (Cabane de Prafleuri, Cabane des Dix) require reservation
+    well ahead in season. No permit is required for the walking route,
+    but this is distinct from the ski Haute Route, which follows glaciated
+    terrain and different cols in winter/spring and mandates roped glacier
+    travel and a guide. Optimal season is early July to mid-September; the
+    Matterhorn approach on the Europaweg high traverse into Zermatt is the
+    trek's signature finale.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -15, s: 0.05 }
+      - { x: -5,  s: 0.40 }
+      - { x: 5,   s: 0.85 }
+      - { x: 14,  s: 1.00 }
+      - { x: 22,  s: 0.85 }
+      - { x: 30,  s: 0.40 }
+      - { x: 38,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.3, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 4,   s: 0.10 }
+      - { x: 8,   s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 0.75 }
+      - { x: 25, s: 0.40 }
+      - { x: 35, s: 0.10 }
+      - { x: 45, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 35, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 4,  s: 1.00 }
+      - { x: 7,  s: 0.80 }
+      - { x: 10, s: 0.50 }
+      - { x: 13, s: 0.20 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: ALPINE_WHITEOUT
+    description: Visibility below 300m in alpine terrain creates immediate route-finding hazard; high-altitude rescue often impossible.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_PRECIPITATION_ALPINE
+    description: Heavy active precipitation in alpine terrain triggers flash floods in gullies and rapidly degrades trail surface.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: ALPINE_HIGH_WIND
+    description: Sustained wind above 50 knots at alpine altitude makes ridge traverses and exposed sections dangerous.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -20
+    reason_code: EXTREME_COLD_ALPINE
+    description: Apparent temperature below -20°C in alpine terrain creates immediate frostbite risk.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 10
+  carrying_capacity_sensitivity: medium
+  notes: |
+    The walker's Haute Route is human-powered with zero direct emissions
+    per session, but the short reliable weather window (snow persistence
+    on high cols into July, early autumn snowfall from mid-September)
+    compresses use into a narrow 10-week season. Remote huts including
+    Cabane de Prafleuri rely on helicopter resupply, an indirect
+    emissions source typical of high Alpine refuges run by the Club
+    Alpin Suisse (CAS). Carrying-capacity sensitivity is medium — the
+    route is less crowded than the TMB but individual huts have hard
+    bed-count caps that function as a natural throughput limit.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Chamonix to Zermatt: The Walker's Haute Route (Kev Reynolds)"
+    - "Club Alpin Suisse (CAS) hut network and reservation guidance"
+    - "Fédération Française des Clubs Alpins et de Montagne (FFCAM) trail guidance"
+  notes: |
+    Cluster inherits trekking-alpine scoring unchanged (weights, gates,
+    curves copied exactly — no material deviation identified for this
+    route relative to the regional baseline). equipment_dependency
+    raised to high vs the low regional default given late-lying snow on
+    the higher cols; typical_season_weeks lowered to 10 to reflect this
+    narrower reliable window relative to the 14-week regional baseline.
+    This profile describes the summer walking route only, distinct from
+    the glaciated ski Haute Route.

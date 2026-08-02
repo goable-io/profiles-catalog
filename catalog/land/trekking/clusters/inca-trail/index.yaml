@@ -1,0 +1,166 @@
+slug: trekking-spot-inca-trail
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking-andes
+region: andes
+country_code: PE
+sub_spots:
+  - trekking-spot-inca-trail-km-82-piscacucho
+  - trekking-spot-inca-trail-warmiwanusca-pass
+  - trekking-spot-inca-trail-machu-picchu-gate
+display_name:
+  en: Trekking — Inca Trail to Machu Picchu (Peru)
+  it: Trekking — Cammino Inca per Machu Picchu (Perù)
+  es: Senderismo — Camino Inca a Machu Picchu (Perú)
+  fr: Randonnée — Chemin de l'Inca vers le Machu Picchu (Pérou)
+  de: Wandern — Inka-Pfad zum Machu Picchu (Peru)
+description:
+  en: |
+    The Classic Inca Trail is a 43 km, 4-day trek through the Cusco
+    region of the Peruvian Andes, following stone-paved Inca roadway
+    from the Km 82 (Piscacucho) trailhead at 2600 m over Warmiwañusca
+    ("Dead Woman's Pass") at 4215 m — the trail's highest point — and
+    two further passes before descending through cloud-forest to the
+    Sun Gate (Intipunku) and Machu Picchu itself at 2720 m. Terrain
+    alternates original Inca stonework, dirt switchbacks, and stepped
+    stone staircases, with camping at designated SERNANP sites along
+    the route (no free camping). Access is strictly permit-controlled:
+    SERNANP (Servicio Nacional de Áreas Naturales Protegidas) caps
+    daily trail entrants at 500 people including guides, porters, and
+    cooks, and a licensed guide is mandatory for all trekkers. Permits
+    routinely sell out 4-6 months ahead in peak season (May-September,
+    dry austral winter); the trail closes entirely each February for
+    maintenance. Altitude sickness on Warmiwañusca is the trek's
+    defining physical challenge, generally managed with 1-2 days of
+    Cusco (3400 m) acclimatization before starting.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -3,  s: 0.55 }
+      - { x: 5,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 22,  s: 0.90 }
+      - { x: 30,  s: 0.55 }
+      - { x: 38,  s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.80 }
+      - { x: 2,   s: 0.40 }
+      - { x: 5,   s: 0.10 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 20, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 55, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.60 }
+      - { x: 9,  s: 0.25 }
+      - { x: 11, s: 0.05 }
+
+  - name: freezing_proxy
+    metric: freezing_level_m
+    weight: 0.05
+    curve:
+      - { x: 0,    s: 0.35 }
+      - { x: 2000, s: 0.65 }
+      - { x: 4000, s: 1.00 }
+      - { x: 6000, s: 0.80 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: PATAGONIAN_WIND
+    description: Sustained wind above 55 knots exceeds safe trekking threshold on exposed high-Andean passes.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: ANDEAN_STORM
+    description: Precipitation above 5 mm/h on the Inca Trail's stone stairways signals convective storm activity with lightning + slick-stone slip risk on the steep Warmiwañusca ascent/descent.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: WHITEOUT_ANDES
+    description: Visibility below 500 m on Warmiwañusca pass and cloud-forest sections prevents safe navigation of narrow stone stairways with drop-offs.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -12
+    reason_code: ANDEAN_HYPOTHERMIA
+    description: Apparent temperature below -12°C at the high-altitude Warmiwañusca camps creates frostbite risk during trekking-tent overnight exposure.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    SERNANP enforces a hard cap of 500 daily trail entrants (trekkers,
+    guides, cooks, and porters combined) via a permit system booked
+    through licensed tour operators — the tightest carrying-capacity
+    control of any trek in this catalog. The trail closes entirely
+    each February for erosion-recovery maintenance. Porter welfare
+    (weight limits, footwear, insurance) is regulated by Peruvian law
+    following historical abuses, and is monitored by operator
+    associations in Cusco.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SERNANP (Peru) Machu Picchu + Camino Inca permit standards"
+    - "Ministerio de Cultura del Perú Santuario Histórico de Machu Picchu regulations"
+    - "Lonely Planet Peru trekking guide, Inca Trail chapter"
+  notes: |
+    Cluster inherits trekking-andes regional scoring exactly (no
+    dimension/gate overrides). Peru-specific carrying-capacity note:
+    SERNANP's 500-pax/day cap is the strictest permit regime in the
+    Andean trekking catalog.

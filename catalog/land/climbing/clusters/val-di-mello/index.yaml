@@ -1,0 +1,144 @@
+slug: climbing-spot-val-di-mello
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - climbing-spot-val-di-mello-precipizio-degli-asteroidi
+  - climbing-spot-val-di-mello-sasso-remenno
+  - climbing-spot-val-di-mello-placca-delloasi
+display_name:
+  en: Climbing — Val di Mello
+  it: Arrampicata — Val di Mello
+  es: Escalada — Val di Mello
+  fr: Escalade — Val di Mello
+  de: Klettern — Val di Mello
+description:
+  en: |
+    Val di Mello (Val Masino, Sondrio province, Lombardy) is one of the
+    Alps' premier granite climbing valleys, often called "Italy's little
+    Yosemite" for its glacier-polished slabs and clean crack systems.
+    Elevations range roughly 900-1400m on the valley floor and
+    approach slopes, with south- and west-facing walls that catch long
+    summer sun and north-facing slabs that stay cooler. Grades span
+    beginner-friendly F4 slabs to sustained F7a+ crack and face pitches,
+    with the valley's signature big-wall multipitch routes running
+    10-15 pitches. The best season is late spring through early autumn;
+    granite dries fast after rain but afternoon convective storms are a
+    recurring summer hazard typical of alpine terrain. The valley sits
+    within a protected nature reserve (Riserva Naturale Val di Mello)
+    with restricted vehicle access.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.28
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -2,  s: 0.55 }
+      - { x: 6,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 24,  s: 0.65 }
+      - { x: 30,  s: 0.25 }
+      - { x: 36,  s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.24
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.40 }
+      - { x: 0.7, s: 0.10 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.16
+    curve:
+      - { x: 0,  s: 0.95 }
+      - { x: 5,  s: 1.00 }
+      - { x: 14, s: 0.80 }
+      - { x: 22, s: 0.40 }
+      - { x: 32, s: 0.05 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.09
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.75 }
+      - { x: 9,  s: 0.35 }
+      - { x: 11, s: 0.10 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 0.7,  reason_code: WET_ROCK_AND_STORM, description: Active precipitation above 0.7 mm/h on Val Masino granite signals incoming afternoon convective storms typical of the Alps in summer, and wet granite slabs lose friction fast. }
+  - { metric: wind_speed_kn,      condition: gt, value: 38,   reason_code: HIGH_WIND_RIDGE,     description: Sustained wind above 38 knots on the exposed upper pitches of the valley's big-wall routes creates fall risk and impairs partner communication. }
+  - { metric: visibility_km,      condition: lt, value: 0.4,  reason_code: ALPINE_NAVIGATION,   description: Visibility below 400m makes route-finding on the 10-15 pitch multipitch routes and descent navigation unsafe. }
+  - { metric: apparent_temp_c,    condition: lt, value: -12,  reason_code: ALPINE_HYPOTHERMIA,  description: Apparent temperature below -12°C creates frostbite risk on exposed belay stances and impairs rope handling on the long multipitch routes. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Val di Mello lies within the Riserva Naturale Val di Mello, which
+    bans motor vehicle access beyond the reserve gate and prohibits
+    camping outside designated areas, managed by the Comune di Val
+    Masino. The valley sees heavy weekend crowding in summer; approach
+    trail erosion and boulder-base vegetation trampling are actively
+    monitored by the local alpine club (CAI Val Masino).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Val Masino alpine route and condition documentation"
+    - "camptocamp.org Val di Mello route database"
+  notes: |
+    Weights and curves follow the climbing-alpine regional template
+    (cooler temperature optimum, tightened precipitation gate at 0.7
+    mm/h for convective-storm risk) with a slightly higher precipitation
+    weight (0.24) reflecting the valley's exposure to fast-moving
+    afternoon storms off the Bregaglia/Masino granite massif. Season
+    window (22 weeks) is shorter than the alpine base default given the
+    valley's ~900-1400m elevation band and snow-affected shoulder months.

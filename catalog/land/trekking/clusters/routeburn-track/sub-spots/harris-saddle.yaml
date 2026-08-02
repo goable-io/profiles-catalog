@@ -1,0 +1,54 @@
+slug: trekking-spot-routeburn-track-harris-saddle
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-routeburn-track
+parent_cluster: trekking-spot-routeburn-track
+region: pacific
+country_code: NZ
+
+coordinates:
+  center: { lat: -44.7500, lng: 168.2000 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Harris Saddle sits at 1255 m roughly midway along the Routeburn
+    Track, a mid-trail alpine crossing reached via a well-marked but
+    rockier trail with several hundred metres of elevation gain from
+    Routeburn Falls Hut. A DOC emergency shelter sits at the saddle
+    itself, and the short side-trip to Conical Hill offers views over
+    Lake Harris and the Darran Mountains. The crossing is exposed to
+    weather but is shorter and less committing than a multi-hour
+    high-alpine traverse, and standard practice is to time the crossing
+    within a clear weather window; both Routeburn Falls Hut and
+    Lake Mackenzie Hut are within a few hours' walk on either side for
+    retreat if conditions deteriorate.
+
+display_name:
+  en: Trekking — Harris Saddle
+  it: Trekking — Passo Harris
+  es: Trekking — Paso Harris
+  fr: Trekking — Col de Harris
+  de: Wandern — Harris Saddle
+
+description:
+  en: |
+    Harris Saddle (1255 m) is the Routeburn Track's alpine high point,
+    with an emergency shelter and a side-trip to Conical Hill
+    overlooking Lake Harris and the Darran Mountains. It is the
+    trail's most weather-exposed section, best crossed in a clear
+    window.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Department of Conservation (DOC) New Zealand — Routeburn Track alpine crossing safety notes"
+    - "Mount Aspiring National Park weather and track condition bulletins"
+  notes: |
+    Sub-spot of trekking-spot-routeburn-track cluster. Tier 2: alpine
+    saddle crossing with emergency shelter on-site, moderate exposure,
+    huts within a few hours' retreat on either side, standard
+    weather-window practice.

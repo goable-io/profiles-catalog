@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-val-disere-tignes-grande-motte
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-val-disere-tignes
+parent_cluster: alpine-skiing-spot-val-disere-tignes
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.4633, lng: 6.9394 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Grande Motte glacier (3456 m) is the Tignes side's
+    high-altitude sector, reached via funicular and cable car above
+    3000 m, with red and black glacier pistes across the permanent
+    snowfield. Ski patrol manages daily crevasse-marking and
+    avalanche-control operations before opening, and the sector
+    extends the Espace Killy's season into the summer months on the
+    glacier. Grooming coverage is more limited than lower-mountain
+    sectors given the terrain's scale and altitude, and exposure to
+    wind and cold is higher than anywhere else in the domain.
+
+display_name:
+  en: Alpine Skiing — Grande Motte (Tignes)
+  it: Sci Alpino — Grande Motte
+  es: Esquí Alpino — Grande Motte
+  fr: Ski Alpin — Grande Motte
+  de: Alpiner Skilauf — Grande Motte
+
+description:
+  en: |
+    Tignes' high-altitude glacier sector at 3456 m, reached via
+    funicular and cable car. Red and black glacier pistes above
+    3000 m.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "STGM (Société des Téléphériques Grande Motte) glacier piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-val-disere-tignes cluster. Tier 3:
+    above-3000 m glacier sector, red + black pistes, funicular +
+    cable car access.

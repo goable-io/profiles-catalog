@@ -1,0 +1,50 @@
+slug: alpine-skiing-spot-aspen-snowmass-highlands
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-aspen-snowmass
+parent_cluster: alpine-skiing-spot-aspen-snowmass
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 39.1808, lng: -106.8617 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Aspen Highlands combines an in-bounds black and double-black piste
+    zone with the hike-to Highland Bowl, whose summit reaches roughly
+    3773 m (12,392 ft) via a bootpack accessed from the top of the
+    Deep Temerity lift. Piste marking is black throughout the advanced
+    zone, with the bowl itself ungroomed, avalanche-control-gated
+    terrain that ski patrol opens only after morning control work.
+    There is no snowmaking or terrain park at this altitude; grooming
+    is limited to the resort's lower-mountain cruising runs outside
+    this advanced-focused sector. The combination of sustained hike-to
+    access and steep, often wind-affected bowl terrain makes this
+    sector strictly advanced-and-expert-focused.
+
+display_name:
+  en: Alpine Skiing — Aspen Highlands
+  it: Sci Alpino — Aspen Highlands
+  es: Esquí Alpino — Aspen Highlands
+  fr: Ski Alpin — Aspen Highlands
+  de: Alpiner Skilauf — Aspen Highlands
+
+description:
+  en: |
+    Aspen Highlands — Highland Bowl (12,392 ft hike-to) plus in-bounds
+    black and double-black piste terrain, advanced-and-expert focused.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Aspen Skiing Company Aspen Highlands and Highland Bowl trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-aspen-snowmass cluster. Tier 3:
+    hike-to Highland Bowl plus in-bounds black/double-black terrain,
+    advanced-and-expert focused.

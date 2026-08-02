@@ -1,0 +1,153 @@
+slug: bouldering-spot-val-di-mello
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: bouldering
+region: alpine
+country_code: IT
+sub_spots:
+  - bouldering-spot-val-di-mello-sasso-remenno
+  - bouldering-spot-val-di-mello-val-di-mello-boulders
+display_name:
+  en: Bouldering — Val di Mello
+  it: Boulder — Val di Mello
+  es: Bulder — Val di Mello
+  fr: Bloc — Val di Mello
+  de: Bouldern — Val di Mello
+description:
+  en: |
+    Val di Mello (Val Masino, Lombardy, Italy) is a granite-walled alpine
+    valley nicknamed the "Italian Yosemite," home to some of Europe's
+    largest and most celebrated glacial-erratic boulders alongside a
+    dense scatter of valley-floor problems on rough, high-friction Val
+    Masino granite. The valley sits at roughly 1000-1300 m and is a
+    summer-to-autumn destination: snowmelt and afternoon thunderstorms
+    dominate June-July, while September brings the driest, coolest
+    granite friction. Granite holds well when damp compared to
+    sandstone, but wet rock is still a hard safety gate here given the
+    boulder heights involved.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.35
+    curve:
+      - { x: -5, s: 0.30 }
+      - { x: 2,  s: 0.85 }
+      - { x: 6,  s: 1.00 }
+      - { x: 12, s: 1.00 }
+      - { x: 18, s: 0.85 }
+      - { x: 24, s: 0.50 }
+      - { x: 30, s: 0.20 }
+      - { x: 36, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.30 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.90 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.85 }
+      - { x: 25, s: 0.50 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.20 }
+      - { x: 0.5, s: 0.50 }
+      - { x: 2,  s: 0.85 }
+      - { x: 5,  s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: humidity_proxy
+    metric: water_temperature_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 1.00 }
+      - { x: 5,  s: 1.00 }
+      - { x: 15, s: 0.80 }
+      - { x: 22, s: 0.55 }
+      - { x: 28, s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.5
+    reason_code: WET_ROCK_RISK
+    description: Active precipitation makes rock holds slippery and weakens certain rock types (sandstone, conglomerate) — both unsafe and damaging to the resource.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 45
+    reason_code: SPOTTER_HAZARD
+    description: Sustained wind above 45 knots makes spotting falls and predicting fall direction unsafe, particularly on highballs.
+
+  - metric: apparent_temp_c
+    condition: gt
+    value: 38
+    reason_code: EXTREME_HEAT
+    description: Apparent temperature above 38°C makes finger grip on holds unsustainable and creates heat exposure for ground belayers.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Val di Mello lies within a regional nature reserve managed by the
+    Val Masino municipality and the Parco delle Orobie Valtellinesi
+    buffer area; motorised access to the valley floor is restricted to
+    protect the meadows around the erratic boulders. FEEC (Federazione
+    Escursionismo e Escursionismo di Montagna) and local Val Masino
+    guides promote leave-no-trace bouldering practice given the seasonal
+    influx of visitors to Sasso Remenno.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Bergell Insider Val Masino granite bouldering guidance"
+    - "Vertical Life Val di Mello sector database"
+    - "Comune di Val Masino nature reserve access notes"
+  notes: |
+    Cluster inherits base scoring unchanged. Val Masino granite retains
+    friction better than sandstone in marginal humidity, but the gate
+    values are kept identical to the base since several sub-spot
+    problems here are highball and the safety margin should not be
+    loosened.

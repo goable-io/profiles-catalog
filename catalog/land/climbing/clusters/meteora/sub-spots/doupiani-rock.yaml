@@ -1,0 +1,49 @@
+slug: climbing-spot-meteora-doupiani-rock
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-meteora
+parent_cluster: climbing-spot-meteora
+region: mediterranean
+country_code: GR
+
+coordinates:
+  center: { lat: 39.7150, lng: 21.6217 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Doupiani Rock is Meteora's most approachable crag, a shorter conglomerate
+    formation close to Kastraki village with a set of bolted sport routes
+    from roughly 5c to 6c that serve as the standard introduction to the
+    region's distinctive pebble rock. Unlike the historic towers, Doupiani
+    carries fixed protection maintained for beginner and intermediate
+    traffic, and its modest height keeps falls short and easily managed.
+    The walk-in from Kastraki is short and well-trodden, making it the
+    default venue for guided groups and climbers acclimatising to
+    conglomerate technique before attempting the taller trad towers
+    elsewhere in the range.
+
+display_name:
+  en: Climbing — Meteora Doupiani Rock
+  it: Arrampicata — Meteora Doupiani Rock
+  es: Escalada — Meteora Doupiani Rock
+  fr: Escalade — Meteora Doupiani Rock
+  de: Klettern — Meteora Doupiani Rock
+
+description:
+  en: |
+    Meteora's beginner-friendly sport crag near Kastraki village: bolted
+    5c-6c conglomerate routes on shorter walls, the standard introduction
+    to the range's pebble rock.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hellenic Federation of Mountaineering and Climbing (EOOA) Meteora access guidance"
+  notes: |
+    Sub-spot of climbing-spot-meteora cluster. Tier 2: bolted intermediate
+    sport climbing on shorter conglomerate walls with a short village
+    approach.

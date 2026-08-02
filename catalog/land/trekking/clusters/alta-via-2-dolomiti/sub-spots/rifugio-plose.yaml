@@ -1,0 +1,51 @@
+slug: trekking-spot-alta-via-2-dolomiti-rifugio-plose
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-alta-via-2-dolomiti
+parent_cluster: trekking-spot-alta-via-2-dolomiti
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.7000, lng: 11.7333 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Rifugio Plose (2447 m) near Bressanone is the AV2 stage 1 entry
+    point, reached from the Plose cable car and chairlift station via a
+    short, wide, well-graded path (~30-45 minutes, under 100 m gain)
+    across open alpine meadow. The staffed refuge and the mountain
+    station's restaurant offer food, water, and full mobile coverage,
+    with the cable car providing near-instant evacuation back to
+    Bressanone. Worst-case consequence at this sub-spot is weather
+    exposure on the open plateau, fully recoverable by returning to
+    the cable-car station.
+
+display_name:
+  en: Trekking — Rifugio Plose
+  it: Trekking — Rifugio Plose
+  es: Trekking — Rifugio Plose
+  fr: Trekking — Rifugio Plose
+  de: Wandern — Plosehütte
+
+description:
+  en: |
+    The gentle, cable-car-accessible northern trailhead of Alta Via 2
+    above Bressanone, with wide panoramic views over the Val d'Isarco
+    before the route commits to the more technical central stages.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cicerone Guides — Alta Via 1 and 2 (Dolomites)"
+    - "Club Alpino Italiano (CAI) Alta Via 2 trail classification"
+    - "Rother Wanderführer — Dolomiten Höhenwege"
+  notes: |
+    Sub-spot of trekking-spot-alta-via-2-dolomiti cluster. Tier 1: wide
+    cable-car-served plateau path, minimal gain, staffed facilities,
+    full mobile coverage, near-instant evacuation — most forgiving
+    sub-spot in the cluster.

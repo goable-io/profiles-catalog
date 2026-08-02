@@ -1,0 +1,57 @@
+slug: trekking-spot-everest-base-camp-lukla-airport
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-everest-base-camp
+parent_cluster: trekking-spot-everest-base-camp
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 27.6883, lng: 86.7317 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    Tenzing-Hillary Airport at Lukla (2860 m) is the fixed-wing gateway
+    to the Khumbu and the practical start/end point of the Everest Base
+    Camp trek. The runway is only 527 m long, sloped at roughly 12%, and
+    bounded by a mountainside on one end and a sheer drop on the other —
+    it is widely regarded as one of the most demanding STOL (short
+    take-off and landing) airstrips in commercial aviation. Flights
+    operate only in daylight with visual-flight-rules minimums and are
+    routinely cancelled or delayed by cloud, wind, or crosswind, which
+    can strand trekkers for multiple days at either end. There is no
+    hut/tent camp requirement here — trekkers stay in Lukla's tea-houses
+    — but the elevated cancellation risk, tight village-street funnel of
+    porters and cargo, and total dependence on a single fair-weather
+    air corridor for evacuation to Kathmandu place it above a simple
+    trailhead in operational complexity.
+
+display_name:
+  en: Trekking — Lukla Airport (Tenzing-Hillary)
+  it: Trekking — Aeroporto di Lukla (Tenzing-Hillary)
+  es: Senderismo — Aeropuerto de Lukla (Tenzing-Hillary)
+  fr: Randonnée — Aéroport de Lukla (Tenzing-Hillary)
+  de: Wandern — Flughafen Lukla (Tenzing-Hillary)
+
+description:
+  en: |
+    Lukla (2860 m) is the EBC trek's mandatory air gateway, served by
+    the notoriously short 527 m Tenzing-Hillary Airport runway. Nearly
+    all trekkers fly in and out here via Kathmandu or Ramechhap, and
+    the village's tea-houses form the first and last overnight stop of
+    the standard itinerary.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Nepal Civil Aviation Authority Lukla (Tenzing-Hillary) airport operations"
+    - "Sagarmatha National Park entry-point visitor guidance"
+  notes: |
+    Sub-spot of trekking-spot-everest-base-camp cluster. Tier 2: fixed
+    tea-house infrastructure and low technical trail demand, offset by
+    STOL-runway operational risk and single-corridor air-evacuation
+    dependency.

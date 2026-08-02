@@ -1,0 +1,52 @@
+slug: trekking-spot-ladakh-markha-valley-markha-village
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-ladakh-markha-valley
+parent_cluster: trekking-spot-ladakh-markha-valley
+region: himalayas
+country_code: IN
+
+coordinates:
+  center: { lat: 33.9333, lng: 77.5833 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Markha village (3800 m) is the largest hamlet on the trek and the
+    homestay base typically reached around day 3-4, sitting below a
+    ruined fort and gompa on the Markha river. The trail to this point
+    involves several unbridged river fords through the Markha gorge
+    that can run high with snowmelt in early summer, requiring
+    careful timing and occasionally guide assistance. Markha's cluster
+    of family homestays offers meals, beds, and basic warmth, making it
+    the trek's most comfortable overnight stop after the western
+    approach villages. Evacuation from here is a multi-day walk-out in
+    either direction or a helicopter lift; the principal hazards en
+    route are river-crossing depth/flow rather than technical terrain.
+
+display_name:
+  en: Trekking — Markha Village
+  it: Trekking — Villaggio di Markha
+  es: Senderismo — Aldea de Markha
+  fr: Randonnée — Village de Markha
+  de: Wandern — Dorf Markha
+
+description:
+  en: |
+    Markha village (3800 m) is the largest settlement on the trek, with
+    a ruined fort overlooking a cluster of homestays along the Markha
+    river. It is the trek's central logistical hub, reached after
+    several river-ford crossings through the Markha gorge.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hemis National Park Markha village checkpoint"
+    - "Cicerone Trekking in Ladakh guidebook"
+  notes: |
+    Sub-spot of trekking-spot-ladakh-markha-valley cluster. Tier 2:
+    homestay-dense village hub offset by unbridged river-ford crossings
+    en route that carry seasonal snowmelt-flow risk.

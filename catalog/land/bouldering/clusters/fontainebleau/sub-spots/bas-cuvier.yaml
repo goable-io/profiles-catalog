@@ -1,0 +1,43 @@
+slug: bouldering-spot-fontainebleau-bas-cuvier
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-fontainebleau
+parent_cluster: bouldering-spot-fontainebleau
+country_code: FR
+
+coordinates:
+  center: { lat: 48.4372, lng: 2.6647 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    Bas Cuvier is the historic birthplace of Fontainebleau bouldering and
+    remains its most beginner-friendly circuit, with problems from V0 to
+    V6 on fine orange sandstone. Landings are flat compacted sand at the
+    base of low, non-highball boulders, so a single pad and a casual
+    spotter are sufficient for the yellow and orange circuits. The sector
+    is a five-minute walk from the parking area, extremely popular, and
+    well-trodden, making it the standard first destination for visiting
+    climbers.
+
+display_name:
+  en: Bouldering — Fontainebleau Bas Cuvier
+
+description:
+  en: |
+    Historic Fontainebleau sector considered the birthplace of modern
+    bouldering. Sandstone problems from V0 to V6 on flat sand landings,
+    with the classic yellow, orange, and blue circuits.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Fédération Française de la Montagne et de l'Escalade (FFME) Fontainebleau sector guidance"
+    - "Vertical Life Fontainebleau sector database"
+  notes: |
+    Sub-spot of bouldering-spot-fontainebleau cluster. Tier 1: low
+    boulder heights, flat sand landings, easy V0-V6 circuits, high foot
+    traffic.

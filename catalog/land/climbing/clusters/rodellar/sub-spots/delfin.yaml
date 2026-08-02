@@ -1,0 +1,51 @@
+slug: climbing-spot-rodellar-delfin
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-rodellar
+parent_cluster: climbing-spot-rodellar
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.2800, lng: -0.0480 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Delfín sector offers sustained sport climbing from F6c to F8a on
+    tufa-featured Rodellar limestone, well bolted with stainless
+    hardware maintained by local re-equipping efforts. The rock and
+    canyon setting matches the cluster's flagship sector but with a more
+    moderate grade band, less extreme steepness, and shorter sustained
+    sections, making it a solid intermediate-to-advanced venue.
+    Approach follows the same canyon-floor trail from Rodellar village
+    used by neighbouring sectors, sharing the same seasonal watercourse
+    crossing and flash-flood considerations after heavy rain. Falls are
+    generally clean onto bolts; standard bolted-sport-route residual
+    risks apply.
+
+display_name:
+  en: Climbing — Rodellar Delfín
+  it: Arrampicata — Rodellar Delfín
+  es: Escalada — Rodellar Delfín
+  fr: Escalade — Rodellar Delfín
+  de: Klettern — Rodellar Delfín
+
+description:
+  en: |
+    Delfín offers sustained sport climbing from F6c to F8a on
+    stainless-bolted tufa limestone, a moderate counterpart to
+    Rodellar's hardest sectors.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Rodellar / Sierra de Guara-region guidebook coverage"
+    - "Parque Natural de la Sierra y Cañones de Guara access documentation"
+  notes: |
+    Sub-spot of climbing-spot-rodellar cluster. Tier 2: sustained
+    single-pitch sport tufa limestone, stainless hardware, shared
+    canyon-floor approach with the cluster's flagship sector.

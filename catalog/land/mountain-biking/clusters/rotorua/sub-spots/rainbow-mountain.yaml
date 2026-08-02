@@ -1,0 +1,45 @@
+slug: mountain-biking-spot-rotorua-rainbow-mountain
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-rotorua
+parent_cluster: mountain-biking-spot-rotorua
+region: pacific
+country_code: NZ
+
+coordinates:
+  center: { lat: -38.2000, lng: 176.3833 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Rainbow Mountain offers intermediate flow singletrack across an
+    active geothermal hillside south of Rotorua, with volcanic mineral
+    soils and steam-vent-adjacent terrain giving the ride a distinctive
+    character among the region's trail networks. Trail grading is
+    intermediate — flowing berms and rollers on well-drained volcanic
+    substrate — without the sustained technical demand of the black
+    lines at Skyline or the Redwoods' harder sectors. Geothermal
+    activity nearby means riders should stay on marked tread rather than
+    exploring off-trail ground, and localized steam haze can briefly
+    reduce visibility near vent areas after rain.
+
+display_name:
+  en: Mountain Biking — Rotorua Rainbow Mountain
+description:
+  en: |
+    Intermediate flow singletrack on an active geothermal hillside south
+    of Rotorua — volcanic mineral soils and steam-vent-adjacent terrain
+    give this trail a distinctive character among the region's networks.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rotorua Mountain Bike Club trail network guidance"
+    - "Trailforks Rainbow Mountain trail listing"
+  notes: |
+    Sub-spot of mountain-biking-spot-rotorua cluster. Tier 2: intermediate
+    flow trail, geothermal volcanic terrain, marked-tread-only access
+    near vent areas.

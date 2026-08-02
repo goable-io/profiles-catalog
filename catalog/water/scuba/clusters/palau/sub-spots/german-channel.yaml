@@ -1,0 +1,46 @@
+slug: scuba-spot-palau-german-channel
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-palau
+parent_cluster: scuba-spot-palau
+region: pacific
+country_code: PW
+
+coordinates:
+  center: { lat: 7.2050, lng: 134.2450 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    German Channel is a man-made passage dredged through the reef
+    by German phosphate miners in the early 1900s, now Palau's
+    most reliable manta-cleaning-station dive. Early-morning tidal
+    outflow draws reef mantas to a shallow sand-patch cleaning
+    station at 10-15 m where wrasse remove parasites. The dive
+    combines a moderate drift through the channel with a stationary
+    cleaning-station observation, requiring intermediate current
+    awareness but no reef-hook technique.
+
+display_name:
+  en: Scuba — German Channel (Palau)
+  it: Immersione — German Channel
+  es: Buceo — Canal Alemán
+  fr: Plongée — Canal Allemand
+  de: Tauchen — German Channel
+
+description:
+  en: |
+    Dredged reef passage with a reliable early-morning reef-manta
+    cleaning station and moderate drift current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Palau National Marine Sanctuary / Rock Islands Southern Lagoon dive-site documentation"
+    - "PADI Palau German Channel site briefing"
+  notes: |
+    Sub-spot of scuba-spot-palau cluster. Tier 2: intermediate
+    channel-drift + manta cleaning-station dive.

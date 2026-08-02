@@ -1,0 +1,46 @@
+slug: alpine-skiing-spot-trois-vallees-mont-vallon-meribel
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-trois-vallees
+parent_cluster: alpine-skiing-spot-trois-vallees
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.3833, lng: 6.5883 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mont Vallon (2952 m), on the Méribel/Mottaret side of the
+    domain, combines black and red pistes with high-altitude
+    cruising and adjacent steep couloir access for confident
+    skiers. Ski patrol manages the upper terrain closely given its
+    exposure and pitch, and grooming is limited on the black
+    sections in favour of natural snow retention. Cable-car access
+    delivers a sustained vertical descent back toward Mottaret, and
+    the sector's combination of black-piste steepness and couloir
+    proximity makes it Méribel's most demanding lift-served zone.
+
+display_name:
+  en: Alpine Skiing — Mont Vallon (Méribel)
+  it: Sci Alpino — Mont Vallon
+  es: Esquí Alpino — Mont Vallon
+  fr: Ski Alpin — Mont Vallon
+  de: Alpiner Skilauf — Mont Vallon
+
+description:
+  en: |
+    Méribel/Mottaret side high-altitude sector at 2952 m. Black and
+    red-piste cruising with steep couloir access, cable-car served.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Méribel Alpina Mont Vallon piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-trois-vallees cluster. Tier 3:
+    black/red high-altitude sector with steep couloir access.

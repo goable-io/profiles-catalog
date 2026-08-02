@@ -1,0 +1,51 @@
+slug: trekking-spot-camino-frances-cruz-de-ferro
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-camino-frances
+parent_cluster: trekking-spot-camino-frances
+country_code: ES
+
+coordinates:
+  center: { lat: 42.4900, lng: -6.3606 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    The Cruz de Ferro (1504 m), the highest point of the entire Camino
+    Francés, sits in the Montes de León on a well-marked dirt-track
+    stage between Foncebadón and Manjarín, roughly 5-6 km and modest
+    further ascent from the last village. The path is a wide,
+    established camino surface with regular waymarking and no
+    technical difficulty, and the site itself is a simple roadside
+    iron cross atop a large stone cairn built up over centuries by
+    pilgrims dropping stones in a symbolic tradition. Nearby villages
+    (Foncebadón, El Acebo) offer albergue accommodation, and the site
+    is accessible by the parallel LE-142 road, keeping evacuation and
+    resupply straightforward despite the altitude.
+
+display_name:
+  en: Trekking — Cruz de Ferro
+  it: Trekking — Cruz de Ferro
+  es: Senderismo — Cruz de Ferro
+  fr: Randonnée — Cruz de Ferro
+  de: Wandern — Cruz de Ferro
+
+description:
+  en: |
+    The Iron Cross atop a centuries-old pilgrim stone cairn at 1504 m
+    in the Montes de León — the highest point of the Camino Francés and
+    one of its most symbolic waypoints, where pilgrims traditionally
+    leave a stone carried from home.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Oficina del Peregrino (Pilgrim's Office), Santiago de Compostela — route stage guidance"
+    - "John Brierley, A Pilgrim's Guide to the Camino de Santiago (Camino Guides)"
+  notes: |
+    Sub-spot of trekking-spot-camino-frances cluster. Tier 1: highest
+    point on the route but reached via a well-marked, non-technical
+    dirt track with nearby albergue villages and parallel road access.

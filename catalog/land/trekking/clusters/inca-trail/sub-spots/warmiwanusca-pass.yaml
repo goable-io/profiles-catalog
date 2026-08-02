@@ -1,0 +1,53 @@
+slug: trekking-spot-inca-trail-warmiwanusca-pass
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-inca-trail
+parent_cluster: trekking-spot-inca-trail
+region: andes
+country_code: PE
+
+coordinates:
+  center: { lat: -13.3708, lng: -72.4750 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Warmiwañusca ("Dead Woman's Pass"), 4215 m, is the highest point
+    of the Inca Trail and the crux of stage 2: a relentless ~1200 m
+    stone-and-dirt climb from Wayllabamba camp (3000 m) over roughly
+    5-6 hours, then a steep knee-jarring stone-staircase descent to
+    Pacaymayo. Altitude sickness (headache, nausea, in rare cases
+    HAPE/HACE) is the trail's principal medical hazard here; there is
+    no vehicle or road access — evacuation is on foot/horseback to
+    the nearest trailhead, or by emergency helicopter in severe cases,
+    both multi-hour operations. Weather turns quickly at this
+    altitude with cold rain, hail, and reduced visibility common;
+    licensed guides carry oxygen and radio contact but cell coverage
+    is unreliable on the pass itself.
+
+display_name:
+  en: Trekking — Warmiwañusca Pass (Dead Woman's Pass)
+  it: Trekking — Passo Warmiwañusca (Passo della Donna Morta)
+  es: Senderismo — Abra Warmiwañusca (Paso de la Mujer Muerta)
+  fr: Randonnée — Col de Warmiwañusca (Col de la Femme Morte)
+  de: Wandern — Warmiwañusca-Pass (Pass der toten Frau)
+
+description:
+  en: |
+    The trail's high point at 4215 m, reached via a punishing climb
+    on stage 2 from Wayllabamba, followed by a steep stone-stair
+    descent to Pacaymayo camp. The single most demanding altitude
+    barrier on the Classic Inca Trail.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SERNANP (Peru) Camino Inca trail profile and altitude advisories"
+    - "UIAA Mountain Medicine Commission high-altitude trekking protocols"
+  notes: |
+    Sub-spot of trekking-spot-inca-trail cluster. Tier 3: 4215 m pass,
+    ~1200 m climb, altitude-sickness risk, no road access, multi-hour
+    foot/horseback evacuation only.

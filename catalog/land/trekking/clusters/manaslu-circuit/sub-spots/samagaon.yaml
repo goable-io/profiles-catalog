@@ -1,0 +1,54 @@
+slug: trekking-spot-manaslu-circuit-samagaon
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-manaslu-circuit
+parent_cluster: trekking-spot-manaslu-circuit
+region: himalayas
+country_code: NP
+
+coordinates:
+  center: { lat: 28.5842, lng: 84.7233 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Samagaon (3520 m) is the key acclimatization stop below Larke La,
+    typically reached around day 6-7 with a rest day scheduled here on
+    most itineraries, often used for a side trip toward the Manaslu
+    Base Camp viewpoint (adding roughly 6-8 hours round trip on
+    moraine and glacial-approach terrain). The village trail itself is
+    a well-established alpine path with moderate grade, and Samagaon
+    has the region's best-developed tea-house cluster above 3000 m,
+    including basic medical aid in season. Evacuation is feasible via
+    helicopter or a multi-day walk-back down the Budhi Gandaki valley;
+    the principal risk at this stage is AMS from accumulated altitude
+    gain, compounded for trekkers who add the Base Camp side trip
+    without adequate acclimatization.
+
+display_name:
+  en: Trekking — Samagaon
+  it: Trekking — Samagaon
+  es: Senderismo — Samagaon
+  fr: Randonnée — Samagaon
+  de: Wandern — Samagaon
+
+description:
+  en: |
+    Samagaon (3520 m) is the Manaslu Circuit's essential acclimatization
+    village below Larke La, and the base for an optional side trip
+    toward the Manaslu Base Camp viewpoint. Its tea-house cluster is
+    the best-developed above 3000 m on the route.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Manaslu Conservation Area Project (MCAP) Samagaon checkpoint"
+    - "Himalayan Rescue Association acclimatization guidance"
+  notes: |
+    Sub-spot of trekking-spot-manaslu-circuit cluster. Tier 2: developed
+    tea-house infrastructure and non-technical trail offset by the
+    altitude-gain / AMS-onset risk of the mandatory acclimatization
+    stop and optional Base Camp side trip.

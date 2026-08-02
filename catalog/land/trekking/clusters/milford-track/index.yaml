@@ -1,0 +1,156 @@
+slug: trekking-spot-milford-track
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: trekking
+region: pacific
+country_code: NZ
+sub_spots:
+  - trekking-spot-milford-track-glade-wharf
+  - trekking-spot-milford-track-mackinnon-pass
+  - trekking-spot-milford-track-sandfly-point-terminus
+display_name:
+  en: Trekking — Milford Track (Fiordland, New Zealand)
+  it: Trekking — Milford Track (Fiordland, Nuova Zelanda)
+  es: Senderismo — Milford Track (Fiordland, Nueva Zelanda)
+  fr: Randonnée — Milford Track (Fiordland, Nouvelle-Zélande)
+  de: Wandern — Milford Track (Fiordland, Neuseeland)
+description:
+  en: |
+    The Milford Track is a 53.5 km, four-day "Great Walk" through
+    Fiordland National Park, running from the boat-only Glade Wharf
+    trailhead on Lake Te Anau to Sandfly Point on Milford Sound, with
+    no road access at either end. The route climbs from valley
+    rainforest at around 100 m through beech forest to the exposed
+    Mackinnon Pass at 1154 m — the trail's high point and only true
+    alpine crossing — before descending through the Arthur Valley to
+    the coast. Terrain alternates between well-formed gravel valley
+    track and rocky, weather-exposed alpine tussock on the pass. The
+    Department of Conservation (DOC) operates three serviced Great
+    Walk huts (Clinton, Mintaro, Dumpling) with bunks, gas cookers,
+    and warden presence during the guided/independent walking season.
+    Access is strictly controlled: independent walkers must book a
+    fixed hut itinerary and the daily start is capped at roughly 40
+    people, walking in one direction only. The Great Walks season runs
+    late October to April; outside this window the track is officially
+    "unmaintained" and river crossings plus avalanche exposure on
+    Mackinnon Pass become significantly more hazardous. Sandfly Point
+    is a boat-only exit — walkers are collected by ferry across Milford
+    Sound to Milford village, with no road or trail continuation.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -10, s: 0.10 }
+      - { x: 0,   s: 0.50 }
+      - { x: 10,  s: 0.90 }
+      - { x: 18,  s: 1.00 }
+      - { x: 25,  s: 0.90 }
+      - { x: 32,  s: 0.55 }
+      - { x: 40,  s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.85 }
+      - { x: 2,   s: 0.45 }
+      - { x: 5,   s: 0.15 }
+      - { x: 10,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.35 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.95 }
+      - { x: 18, s: 0.75 }
+      - { x: 28, s: 0.40 }
+      - { x: 40, s: 0.10 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 8,  s: 0.55 }
+      - { x: 11, s: 0.25 }
+
+gates:
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: NAVIGATION_HAZARD
+    description: Visibility below 300m makes off-trail navigation unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_ACTIVE_RAIN
+    description: Heavy active rain creates slippery trails, flash-flood risk in canyons, and hypothermia exposure.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 50 knots on exposed ridges creates fall risk.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: high
+  notes: |
+    DOC (Department of Conservation) caps independent Great Walk
+    bookings at roughly 40 walkers/day departing Glade Wharf, plus a
+    parallel guided-walk quota via Ultimate Hikes, giving Fiordland's
+    most iconic track a hard carrying-capacity ceiling year-round.
+    Fiordland receives among the highest rainfall totals in New
+    Zealand (Milford Sound averages 6000+ mm/year), so equipment
+    dependency (rain gear, hut bookings, sandfly protection) is high
+    despite zero direct emissions from the walk itself.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Department of Conservation (DOC) New Zealand — Milford Track Great Walk visitor information"
+    - "Fiordland National Park management plan"
+    - "Lonely Planet New Zealand's Best Walks guidebook coverage of the Milford Track"
+  notes: |
+    Cluster inherits trekking base scoring unmodified (no matching
+    alpine-family region variant exists for Fiordland's temperate
+    rainforest + single alpine-crossing regime). 24-week typical season
+    reflects the DOC Great Walks booking window (late Oct-Apr) plus
+    shoulder access for experienced independent walkers; outside this
+    window the track is unmaintained and considerably higher risk.

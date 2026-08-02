@@ -5,7 +5,7 @@ category: snow
 extends: ski-touring-spot-lyngen
 parent_cluster: ski-touring-spot-lyngen
 region: arctic
-country_code: NO
+country_code: "NO"
 
 coordinates:
   center: { lat: 69.5333, lng: 20.0500 }

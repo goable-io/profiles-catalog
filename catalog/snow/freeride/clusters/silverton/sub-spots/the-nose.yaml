@@ -1,0 +1,51 @@
+slug: freeride-spot-silverton-the-nose
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: freeride-spot-silverton
+parent_cluster: freeride-spot-silverton
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.8617, lng: -107.6717 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    The Nose is Silverton Mountain's benchmark spine-and-couloir
+    sector, offering some of the most sustained, committing
+    in-bounds terrain in North America despite being nominally
+    lift-served. Multiple narrow spine lines and rock-walled
+    couloirs drop off a prominent ridge feature with no easy bail
+    option once committed, demanding precise line selection and
+    confident steep-skiing technique throughout. The San Juan
+    Mountains' faceted, persistent-weak-layer snowpack keeps
+    avalanche hazard elevated even within the resort's
+    avalanche-control perimeter. Reserved for expert freeriders
+    with full avalanche safety kit and steep-skiing competence.
+
+display_name:
+  en: Freeride — The Nose (Silverton)
+  it: Freeride — The Nose (Silverton)
+  es: Freeride — The Nose (Silverton)
+  fr: Freeride — The Nose (Silverton)
+  de: Freeride — The Nose (Silverton)
+
+description:
+  en: |
+    Silverton Mountain's benchmark spine-and-couloir terrain — one
+    of North America's most committing in-bounds terrain profiles,
+    despite being technically lift-served.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Silverton Mountain guided-terrain trail map and hike-to zone documentation"
+    - "CAIC San Juan Mountains zone historic bulletin archive"
+  notes: |
+    Sub-spot of freeride-spot-silverton cluster. Tier 3: spine and
+    couloir terrain, no-bail commitment once entered, persistent
+    San Juan snowpack hazard.

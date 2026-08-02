@@ -1,0 +1,48 @@
+slug: mountain-biking-spot-sauze-doulx-assietta-ridge
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: mountain-biking-spot-sauze-doulx
+parent_cluster: mountain-biking-spot-sauze-doulx
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 45.0450, lng: 6.9083 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Strada dell'Assietta is a 30km high-altitude ridge traverse on a
+    former WW1 military dirt road running above 2400m, one of the Alps'
+    most iconic XC/enduro ridge rides. Full exposure to weather with no
+    shelter, sustained altitude effort, and long remote sections far from
+    any rescue access place this firmly at expert consequence level. Even
+    though the road surface itself is not technically extreme — the risk is
+    environmental (lightning, whiteout, hypothermia exposure) rather than
+    purely trail-technical.
+
+display_name:
+  en: Mountain Biking — Strada dell'Assietta Ridge
+  it: Mountain Bike — Strada dell'Assietta
+  es: Ciclismo de Montaña — Cresta Strada dell'Assietta
+  fr: VTT — Crête de la Strada dell'Assietta
+  de: Mountainbiken — Assietta-Grat
+
+description:
+  en: |
+    A 30km high-altitude ridge traverse on the historic WW1 military
+    Strada dell'Assietta, running above 2400m across an iconic exposed
+    Alpine dirt-road ridgeline linking Sauze d'Oulx toward Sestriere.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Strada dell'Assietta military-road route documentation"
+    - "Trailforks Alta Val Susa trail database"
+  notes: |
+    Sub-spot of mountain-biking-spot-sauze-doulx cluster. Tier 3: high-
+    altitude, fully exposed ridge traverse — remote, weather-dependent
+    consequence rather than purely technical.

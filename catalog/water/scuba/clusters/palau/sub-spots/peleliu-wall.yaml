@@ -1,0 +1,46 @@
+slug: scuba-spot-palau-peleliu-wall
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-palau
+parent_cluster: scuba-spot-palau
+region: pacific
+country_code: PW
+
+coordinates:
+  center: { lat: 6.9950, lng: 134.2500 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Peleliu Wall sits off the southern tip of Peleliu island, site
+    of the 1944 WW2 Battle of Peleliu, where the reef drops sheer
+    into the Philippine Sea. The site sees pelagic passages of
+    sharks and occasional oceanic manta, but is defined by strong,
+    unpredictable current including occasional downwelling that
+    can pull divers off the wall without warning. This exposure
+    profile requires advanced drift-diving experience and places
+    it at the cluster's top tier alongside Blue Corner.
+
+display_name:
+  en: Scuba — Peleliu Wall (Palau)
+  it: Immersione — Peleliu Wall
+  es: Buceo — Muro de Peleliu
+  fr: Plongée — Mur de Peleliu
+  de: Tauchen — Peleliu Wall
+
+description:
+  en: |
+    Southern-Peleliu drift wall off the WW2 battle site with
+    pelagic encounters and strong, occasionally downwelling current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Palau National Marine Sanctuary / Rock Islands Southern Lagoon dive-site documentation"
+    - "PADI Palau Peleliu Wall site briefing"
+  notes: |
+    Sub-spot of scuba-spot-palau cluster. Tier 3: advanced drift
+    wall with strong-current / downwelling exposure.

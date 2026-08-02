@@ -1,0 +1,50 @@
+slug: trekking-spot-kilimanjaro-machame-machame-gate
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-kilimanjaro-machame
+parent_cluster: trekking-spot-kilimanjaro-machame
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -3.1875, lng: 37.2350 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    Machame Gate, at 1800 m, is the road-accessible trailhead where
+    KINAPA rangers register every climber, verify the mandatory
+    licensed-guide requirement, and process park fees. The first
+    stage from here climbs roughly 11 km gently through montane
+    rainforest to Machame Camp at 3000 m. The gate itself involves
+    no elevation gain or technical terrain, has vehicle access,
+    ranger presence, and radio/communications infrastructure —
+    the most accessible and lowest-consequence point on the entire
+    route before the mandatory-guide multi-day ascent begins in earnest.
+
+display_name:
+  en: Trekking — Machame Gate
+  it: Trekking — Machame Gate
+  es: Trekking — Machame Gate
+  fr: Trekking — Machame Gate
+  de: Wandern — Machame Gate
+
+description:
+  en: |
+    Machame Gate (1800 m) is the KINAPA-permit-controlled trailhead
+    where climbers register and begin the rainforest-zone first stage
+    of the route. Guides are mandatory for all Kilimanjaro ascents,
+    and this gate is where that requirement is enforced.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Kilimanjaro National Park Authority (KINAPA) — Machame Gate registration and permit process"
+    - "Tanzania National Parks (TANAPA) Kilimanjaro visitor guidance"
+  notes: |
+    Sub-spot of trekking-spot-kilimanjaro-machame cluster. Tier 1:
+    road-accessible gate, ranger-staffed, mandatory-guide registration
+    point, flat rainforest-zone entry, no technical hazard.

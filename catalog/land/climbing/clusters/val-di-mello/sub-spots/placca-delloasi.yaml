@@ -1,0 +1,47 @@
+slug: climbing-spot-val-di-mello-placca-delloasi
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-val-di-mello
+parent_cluster: climbing-spot-val-di-mello
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.2680, lng: 9.6600 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    Placca dell'Oasi is a low-angle friction-slab area on the approach
+    into Val di Mello proper, with granite slab routes from F4 to F6a
+    protected by natural gear (small cams and nuts) on generally
+    low-consequence, low-angle terrain. The flat valley-floor approach
+    keeps walk-in short. The gentle slab angle means falls are typically
+    slides rather than freefalls, making this a common venue for parties
+    building trad and slab-friction skills before committing to the
+    valley's harder multipitch objectives.
+
+display_name:
+  en: Climbing — Val di Mello Placca dell'Oasi
+  it: Arrampicata — Val di Mello Placca dell'Oasi
+  es: Escalada — Val di Mello Placca dell'Oasi
+  fr: Escalade — Val di Mello Placca dell'Oasi
+  de: Klettern — Val di Mello Placca dell'Oasi
+
+description:
+  en: |
+    Low-angle granite friction-slab area on the approach into Val di
+    Mello, trad-protected F4-F6a routes on gentle, low-consequence
+    terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Val Masino alpine route and condition documentation"
+  notes: |
+    Sub-spot of climbing-spot-val-di-mello cluster. Tier 1: low-angle
+    trad-protected slab, short flat approach, low-consequence falls —
+    beginner-safe.

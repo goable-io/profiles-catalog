@@ -1,0 +1,43 @@
+slug: bouldering-spot-hueco-tanks-east-mountain
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: bouldering-spot-hueco-tanks
+parent_cluster: bouldering-spot-hueco-tanks
+country_code: US
+
+coordinates:
+  center: { lat: 31.9333, lng: -106.0417 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    East Mountain offers a V2-V10 range of syenite hueco problems on
+    generally more moderate terrain than North Mountain, with a similar
+    permit-and-guided-tour access requirement under Texas Parks and
+    Wildlife management. The sector sees noticeably lower crowding than
+    North Mountain, making it a common choice for tour groups seeking
+    more moderate grades. Landings are mixed rock and sand requiring a
+    standard 2-4 pad setup with a single spotter for the majority of
+    problems.
+
+display_name:
+  en: Bouldering — Hueco Tanks East Mountain
+
+description:
+  en: |
+    East Mountain sector — permit-guided-tour syenite hueco problems
+    from V2-V10, a lower-crowd, more moderate alternative to North
+    Mountain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Texas Parks and Wildlife Hueco Tanks State Park access and reservation policy"
+    - "Rockfax Hueco Tanks bouldering guidebook"
+  notes: |
+    Sub-spot of bouldering-spot-hueco-tanks cluster. Tier 2: moderate
+    syenite hueco problems, standard pad setup, reserved-permit guided-
+    tour access, lower crowding than North Mountain.

@@ -1,0 +1,49 @@
+slug: climbing-spot-railay-tonsai-thaiwand-wall
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-railay-tonsai
+parent_cluster: climbing-spot-railay-tonsai
+country_code: TH
+
+coordinates:
+  center: { lat: 8.0083, lng: 98.8367 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Thaiwand Wall, rising directly above Railay East's mangrove shoreline, is
+    one of Thailand's most photographed sea-cliffs: grey and orange
+    tufa-featured limestone with sport routes from F5c to F8a on generally
+    vertical-to-overhanging terrain. Bolting is stainless steel, maintained
+    by local guiding shops given the tropical marine environment, with
+    mailon-and-chain lower-offs on the more heavily trafficked lines. The
+    approach is a short walk along Railay East's shoreline path, tide-
+    dependent at the base of some routes, and the wall's sustained tufa
+    features reward good route-reading without demanding the advanced
+    endurance of the steepest cave lines elsewhere on the peninsula. Shade
+    coverage is partial through the day given the wall's orientation.
+
+display_name:
+  en: Climbing — Railay & Tonsai Thaiwand Wall
+  it: Arrampicata — Railay e Tonsai Thaiwand Wall
+  es: Escalada — Railay y Tonsai Thaiwand Wall
+  fr: Escalade — Railay et Tonsai Thaiwand Wall
+  de: Klettern — Railay und Tonsai Thaiwand Wall
+
+description:
+  en: |
+    The iconic tufa-streaked sea-cliff above Railay East, one of Thailand's
+    most recognisable climbing backdrops. Sustained F5c-F8a sport routes on
+    stainless hardware, with a short shoreline approach.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Thailand Climbing (King Climbers) route and access guidance"
+  notes: |
+    Sub-spot of climbing-spot-railay-tonsai cluster. Tier 2: sustained
+    intermediate-to-advanced tufa sport climbing with stainless hardware and
+    a short, tide-dependent shoreline approach.

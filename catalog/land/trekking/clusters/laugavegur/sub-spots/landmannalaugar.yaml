@@ -1,0 +1,53 @@
+slug: trekking-spot-laugavegur-landmannalaugar
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: trekking-spot-laugavegur
+parent_cluster: trekking-spot-laugavegur
+region: atlantic
+country_code: IS
+
+coordinates:
+  center: { lat: 63.9944, lng: -19.0567 }
+  radius_m: 800
+
+tier: 1
+tier_rationale:
+  en: |
+    Landmannalaugar (600 m) is the northern trailhead of the Laugavegur
+    and the most accessible point in the cluster, reachable by
+    highland bus and 4x4 track in summer. The immediate area is flat
+    to gently rolling terrain around geothermal springs and rhyolite
+    mountains, with a well-marked, wide gravel path network suitable
+    for day-walkers as well as trekkers starting the multi-day route.
+    A staffed Ferðafélag Íslands hut and campsite with warden, shop,
+    and geothermal bathing pool sit at the trailhead, giving reliable
+    water, shelter, and first-aid access. Mobile coverage is
+    intermittent but the site sees heavy summer visitor traffic and
+    regular highland-bus service, keeping evacuation straightforward
+    compared to the trail's remote middle sections.
+
+display_name:
+  en: Trekking — Landmannalaugar Trailhead
+  it: Trekking — Testa del sentiero di Landmannalaugar
+  es: Senderismo — Cabecera de sendero de Landmannalaugar
+  fr: Randonnée — Départ du sentier de Landmannalaugar
+  de: Wandern — Trailhead Landmannalaugar
+
+description:
+  en: |
+    The northern gateway to the Laugavegur Trail, set in the Fjallabak
+    Nature Reserve amid multicoloured rhyolite mountains, obsidian
+    lava fields, and natural geothermal bathing pools. Most trekkers
+    spend a night here before setting out south toward Hrafntinnusker.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ferðafélag Íslands (Icelandic Touring Association) Landmannalaugar hut guidance"
+    - "Umhverfisstofnun (Icelandic Environment Agency) Fjallabak Nature Reserve visitor information"
+  notes: |
+    Sub-spot of trekking-spot-laugavegur cluster. Tier 1: staffed hut
+    and campsite, wide well-marked path network, highland-bus access,
+    heavy summer visitor traffic — the most forgiving point on the trail.

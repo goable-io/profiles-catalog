@@ -1,0 +1,174 @@
+slug: freeride-spot-silverton
+spot_kind: cluster
+version: "1.0.0"
+category: snow
+extends: freeride-rockies
+region: rockies
+country_code: US
+sub_spots:
+  - freeride-spot-silverton-billboard
+  - freeride-spot-silverton-the-nose
+display_name:
+  en: Freeride — Silverton Mountain
+  it: Freeride — Silverton Mountain
+  es: Freeride — Silverton Mountain
+  fr: Freeride — Silverton Mountain
+  de: Freeride — Silverton Mountain
+description:
+  en: |
+    Silverton Mountain (San Juan Mountains, Colorado) is a
+    single-chairlift, avalanche-controlled "small resort" concept
+    built entirely around expert hike-to and lift-served steep
+    terrain — no beginner or intermediate runs exist on the
+    mountain. Guided days run through most of the season; a limited
+    unguided-with-beacon window (typically January-early February)
+    opens the terrain to qualified self-guided experts. Billboard
+    and The Nose are two of the mountain's signature steep-couloir
+    and spine sectors, both sustained 40°+ terrain with committing
+    fall lines. Continental San Juan snowpack is notoriously
+    faceted and persistent-weak-layer prone; avalanche risk consult
+    the Colorado Avalanche Information Center (CAIC) San Juan zone
+    daily — this is one of the most hazard-sensitive snowpacks in
+    North America.
+
+dimensions:
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.4, s: 0.35 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: snow_depth
+    metric: swe_mm
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 0.00 }
+      - { x: 20,  s: 0.15 }
+      - { x: 55,  s: 0.70 }
+      - { x: 100, s: 1.00 }
+
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.110
+    curve:
+      - { x: -30, s: 0.05 }
+      - { x: -20, s: 0.45 }
+      - { x: -12, s: 0.90 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.80 }
+      - { x: 5,   s: 0.30 }
+      - { x: 12,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.110
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 0.90 }
+      - { x: 18, s: 0.55 }
+      - { x: 28, s: 0.15 }
+      - { x: 38, s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.099
+    curve:
+      - { x: 0,   s: 0.85 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 4,   s: 0.55 }
+      - { x: 8,   s: 0.20 }
+      - { x: 12,  s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.121
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.20 }
+      - { x: 3,  s: 0.65 }
+      - { x: 8,  s: 0.95 }
+      - { x: 15, s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.110
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 5,  s: 0.45 }
+      - { x: 15, s: 0.80 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  # Feasibility floor (auto): no natural snowpack -> physically
+  # impossible at any skill level. Hard PREREQUISITE (Gate.kind='feasibility').
+  - metric: swe_mm
+    condition: lt
+    value: 20
+    kind: feasibility
+    reason_code: NO_SNOWPACK
+    description: Below ~20 mm snow water equivalent there is no natural snowpack to ride, so freeride is not feasible regardless of the other conditions.
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ROCKIES_WHITEOUT
+    description: Visibility below 400m in Silverton's steep couloir terrain makes entry-point identification and fall-line judgment unsafe.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 42
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 42 knots on the Silverton ridgeline accelerates wind-slab formation on the lee aspects of Billboard and The Nose.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: ROCKIES_DEEP_COLD
+    description: Apparent temperature below -32°C is common during San Juan arctic-air intrusions at Silverton's 3450m+ base elevation — kit-failure rates rise sharply.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
+    description: Heavy active snowfall loads slopes acutely onto the San Juans' persistent weak layers; consult CAIC San Juan zone daily.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    Silverton runs a single fixed-grip chairlift plus avalanche-control
+    infrastructure (howitzer and hand-charge work) — a low-throughput
+    operation by design, capped at roughly 475 skier visits/day, which
+    keeps per-visitor terrain pressure low compared to conventional
+    resorts despite the concentrated expert-only clientele. Equipment
+    footprint is high (freeride skis/board, boots, full avalanche
+    safety kit including transceiver/probe/shovel, often airbag packs
+    given the hazard profile). Remote San Juan location drives a
+    significant per-trip travel footprint for the mountain's largely
+    fly-in clientele.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Colorado Avalanche Information Center (CAIC) San Juan Mountains zone bulletin standards"
+    - "American Avalanche Association (AAA) US zonal bulletin coordination"
+    - "Silverton Mountain operational terrain and guiding documentation"
+  notes: |
+    Cluster aggregates two signature steep sectors of Silverton
+    Mountain's single-lift, avalanche-controlled expert-only terrain.
+    Region tag: rockies. Dimensions/gates copied verbatim from
+    freeride-rockies region variant; both sub-spots are tier 3.

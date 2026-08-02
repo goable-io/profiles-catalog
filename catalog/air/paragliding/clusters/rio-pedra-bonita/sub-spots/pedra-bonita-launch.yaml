@@ -1,0 +1,52 @@
+slug: paragliding-spot-rio-pedra-bonita-pedra-bonita-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-rio-pedra-bonita
+parent_cluster: paragliding-spot-rio-pedra-bonita
+region: atlantic
+country_code: BR
+
+coordinates:
+  center: { lat: -22.9917, lng: -43.2867 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Pedra Bonita launch at roughly 510 m is Rio's iconic
+    Atlantic-facing cliff ramp above São Conrado, framed by Tijuca
+    rainforest and looking directly out over the ocean. Tandem
+    operations run daily year-round, and the site's tropical
+    thermal-driven sea-breeze regime delivers consistently flyable
+    mid-morning-to-afternoon windows, but the exposed cliff-edge
+    launch and coupling of slope thermals with onshore flow over
+    the Pedra da Gávea massif demand solid launch technique beyond
+    pure beginner level. High daily traffic volume requires pilots
+    to manage ramp queueing and mid-air spacing, making this a
+    standard intermediate-and-tandem platform rather than an
+    isolated training hill.
+
+display_name:
+  en: Paragliding — Pedra Bonita Launch (Rio de Janeiro)
+  it: Parapendio — Pedra Bonita (Rio de Janeiro)
+  es: Parapente — Pedra Bonita (Río de Janeiro)
+  fr: Parapente — Pedra Bonita (Rio de Janeiro)
+  de: Gleitschirmfliegen — Pedra Bonita (Rio de Janeiro)
+
+description:
+  en: |
+    Rio's iconic Atlantic-cliff launch above São Conrado at 510 m,
+    with year-round tandem operations driven by a tropical
+    thermal-and-sea-breeze regime.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FVRJ Pedra Bonita launch site documentation"
+    - "ICMBio Tijuca National Park access documentation"
+  notes: |
+    Sub-spot of paragliding-spot-rio-pedra-bonita cluster. Tier 2:
+    exposed cliff-edge launch, coupled slope-thermal and sea-breeze
+    flow, high daily tandem traffic volume.

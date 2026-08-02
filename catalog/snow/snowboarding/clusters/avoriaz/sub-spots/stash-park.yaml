@@ -1,0 +1,48 @@
+slug: snowboarding-spot-avoriaz-stash-park
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: snowboarding-spot-avoriaz
+parent_cluster: snowboarding-spot-avoriaz
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 46.1917, lng: 6.7708 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    The Stash is Avoriaz's iconic natural-wood freestyle zone, built
+    directly into the forest along a piste run rather than as a standalone
+    park — reclaimed wood features. Natural transitions and organic wood-
+    and-earth berms give it a distinctive snowboard-only character among
+    European resort parks. Terrain is approachable rather than pro-line:
+    features scale from mellow wood rollers to moderate jumps, making it
+    accessible to red-level intermediate riders rather than requiring
+    expert big-air commitment, which places it at Tier 2 alongside
+    comparable red-park zones.
+
+display_name:
+  en: Snowboarding — The Stash (Avoriaz)
+  it: Snowboard — The Stash
+  es: Snowboard — The Stash
+  fr: Snowboard — The Stash
+  de: Snowboarden — The Stash
+
+description:
+  en: |
+    Avoriaz's iconic natural-wood freestyle
+    park built into the forest — a unique organic, snowboard-only style
+    zone distinct from conventional steel-feature parks.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Burton Snowboards The Stash Avoriaz feature documentation"
+  notes: |
+    Sub-spot of snowboarding-spot-avoriaz cluster.
+    Tier 2: approachable natural-wood freestyle terrain, not pro-line
+    big-air.
