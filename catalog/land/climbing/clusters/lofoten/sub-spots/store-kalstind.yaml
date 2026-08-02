@@ -5,7 +5,7 @@ category: land
 extends: climbing-spot-lofoten
 parent_cluster: climbing-spot-lofoten
 region: arctic
-country_code: NO
+country_code: "NO"
 
 coordinates:
   center: { lat: 68.1300, lng: 14.5100 }

@@ -4,7 +4,7 @@ version: "1.0.0"
 category: land
 extends: climbing
 region: arctic
-country_code: NO
+country_code: "NO"
 sub_spots:
   - climbing-spot-lofoten-presten
   - climbing-spot-lofoten-vagakallen
