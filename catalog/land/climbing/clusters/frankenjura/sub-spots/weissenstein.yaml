@@ -1,0 +1,48 @@
+slug: climbing-spot-frankenjura-weissenstein
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-frankenjura
+parent_cluster: climbing-spot-frankenjura
+country_code: DE
+
+coordinates:
+  center: { lat: 49.6420, lng: 11.5300 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Weißenstein is a moderate-grade limestone crag offering routes from
+    F5c to F7c, well-suited to climbers building technique before tackling
+    the region's harder testpieces. Bolting follows DAV (Deutscher
+    Alpenverein) federation standards with well-maintained stainless
+    hardware and chain lower-offs. The approach is a short forest walk-in
+    from roadside parking, and the crag's moderate single-pitch height
+    keeps falls clean with straightforward lowering descents. Aspect and
+    rock quality are typical of the Frankenjura style — compact, pocketed
+    limestone that dries quickly after rain.
+
+display_name:
+  en: Climbing — Frankenjura Weißenstein
+  it: Arrampicata — Frankenjura Weißenstein
+  es: Escalada — Frankenjura Weißenstein
+  fr: Escalade — Frankenjura Weißenstein
+  de: Klettern — Frankenjura Weißenstein
+
+description:
+  en: |
+    A moderate-grade sport crag, F5c-F7c on well-bolted pocketed limestone
+    following German-federation-standard hardware — a solid technique-
+    building venue in the Frankenjura.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Frankenjura guidebook"
+    - "Deutscher Alpenverein (DAV) Frankenjura access and bolting documentation"
+  notes: |
+    Sub-spot of climbing-spot-frankenjura cluster. Tier 2: moderate-grade
+    single-pitch sport climbing, stainless bolted hardware, short forest
+    approach.

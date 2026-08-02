@@ -1,0 +1,54 @@
+slug: climbing-spot-verdon-lescales
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-verdon
+parent_cluster: climbing-spot-verdon
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 43.7500, lng: 6.3800 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Falaise de l'Escalès, on the north rim above the Verdon river, is
+    a 250-300m grey limestone big wall and the cluster's flagship
+    multi-pitch venue. Routes mix trad protection with fixed bolts on
+    classics such as Éperon Sublime and La Demande, spanning F5c to F8a
+    across 10-15+ pitch lines. Access is by rappel from the rim down into
+    the gorge, meaning most routes require full commitment to the climb
+    and exit — there is no simple walk-off retreat partway up. Bolt
+    hardware varies by line and era, from older mailon-and-piton anchors
+    on classic routes to more recently re-equipped stainless belays;
+    parties should carry a trad rack for many lines. Rockfall from loose
+    bands and cumulative wear on popular lines is a documented hazard,
+    and rescue access is limited to trained mountain rescue teams given
+    the canyon depth.
+
+display_name:
+  en: Climbing — Verdon L'Escalès
+  it: Arrampicata — Verdon L'Escalès
+  es: Escalada — Verdon L'Escalès
+  fr: Escalade — Verdon L'Escalès
+  de: Klettern — Verdon L'Escalès
+
+description:
+  en: |
+    The Falaise de l'Escalès is the Verdon's iconic 250-300m limestone
+    big wall on the north rim, home to classic multi-pitch trad and sport
+    lines from F5c to F8a. Abseil-in access and committing exits make
+    this the cluster's most serious and celebrated venue.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Verdon guidebook"
+    - "FFME Verdon topo and access documentation"
+  notes: |
+    Sub-spot of climbing-spot-verdon cluster. Tier 3: committing
+    abseil-in multipitch, mixed trad + sport hardware, no simple retreat,
+    documented rockfall exposure on classic lines.

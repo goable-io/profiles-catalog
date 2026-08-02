@@ -1,0 +1,49 @@
+slug: climbing-spot-arco-nago
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-arco
+parent_cluster: climbing-spot-arco
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 45.9020, lng: 10.8850 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Nago is a limestone crag north of Nago-Torbole with a south-to-southeast
+    aspect, mixing single-pitch sport lines with short trad-protected
+    multipitch up to F7a. Bolting is a mix of stainless sport hardware on
+    the popular sectors and sparser gear-protected placements on the
+    multipitch lines, so parties should carry a small rack for the longer
+    routes. The approach is a moderate walk from roadside parking, and
+    several sectors have low-angle, family-friendly bases that make Nago
+    a common warm-up or beginner-accompaniment venue close to Lake Garda.
+    Rescue access is straightforward given the proximity to Nago-Torbole.
+
+display_name:
+  en: Climbing — Arco Nago
+  it: Arrampicata — Arco Nago
+  es: Escalada — Arco Nago
+  fr: Escalade — Arco Nago
+  de: Klettern — Arco Nago
+
+description:
+  en: |
+    Limestone crag above Nago-Torbole mixing sport and short trad
+    multipitch from F4 to F7a, south-southeast aspect, close to Lake
+    Garda with family-friendly base sectors.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SAT Arco (Società Alpinisti Tridentini) climbing area management documentation"
+    - "Vertical-Life Arco route database"
+  notes: |
+    Sub-spot of climbing-spot-arco cluster. Tier 2: mixed sport and
+    short trad multipitch requiring a small rack, retrievable descent,
+    intermediate baseline.

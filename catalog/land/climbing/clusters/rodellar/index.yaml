@@ -1,0 +1,81 @@
+slug: climbing-spot-rodellar
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: ES
+sub_spots:
+  - climbing-spot-rodellar-ventanas-del-mascun
+  - climbing-spot-rodellar-delfin
+display_name:
+  en: Climbing — Rodellar
+  it: Arrampicata — Rodellar
+  es: Escalada — Rodellar
+  fr: Escalade — Rodellar
+  de: Klettern — Rodellar
+description:
+  en: |
+    Rodellar (Huesca province, Aragon) sits above the Mascún canyon in
+    the Sierra de Guara, renowned for steep tufa-streaked limestone
+    walls forming some of the most striking overhanging sport climbing
+    in Europe. Grades run from moderate lines up through F9b test-pieces,
+    concentrated on south- and canyon-facing aspects that stay dry and
+    climbable across a long season, roughly September through June, with
+    summer too hot at midday. The canyon setting means some approaches
+    involve short canyon-floor walks and occasional stream crossings that
+    can be affected by seasonal water levels. Bolting is generally modern
+    stainless given ongoing local re-equipping efforts, though older
+    fixed gear persists on some less-traveled lines. The main physical
+    constraints are heat in summer, canyon shade/sun rotation, and
+    localized flash-flood risk in the Mascún gorge after heavy rain.
+
+dimensions:
+  - { name: temperature,   metric: apparent_temp_c,     weight: 0.30, curve: [ { x: -5, s: 0.05 }, { x: 2, s: 0.40 }, { x: 8, s: 0.85 }, { x: 14, s: 1.00 }, { x: 22, s: 0.95 }, { x: 30, s: 0.55 }, { x: 38, s: 0.15 } ] }
+  - { name: precipitation, metric: precipitation_mm_h,  weight: 0.24, curve: [ { x: 0, s: 1.00 }, { x: 0.1, s: 0.50 }, { x: 0.5, s: 0.15 }, { x: 2, s: 0.00 } ] }
+  - { name: wind_speed,    metric: wind_speed_kn,       weight: 0.12, curve: [ { x: 0, s: 1.00 }, { x: 8, s: 0.95 }, { x: 16, s: 0.70 }, { x: 25, s: 0.30 }, { x: 35, s: 0.00 } ] }
+  - { name: sun,           metric: sun_altitude_deg,    weight: 0.10, curve: [ { x: 0, s: 0.00 }, { x: 10, s: 0.65 }, { x: 25, s: 1.00 } ] }
+  - { name: uv_safety,     metric: uv_index,            weight: 0.08, curve: [ { x: 0, s: 1.00 }, { x: 3, s: 1.00 }, { x: 6, s: 0.85 }, { x: 9, s: 0.55 }, { x: 11, s: 0.30 } ] }
+  - { name: visibility,    metric: visibility_km,       weight: 0.08, curve: [ { x: 0, s: 0.00 }, { x: 1, s: 0.30 }, { x: 3, s: 0.75 }, { x: 10, s: 1.00 } ] }
+  - { name: rockfall,      metric: rockfall_risk_index, weight: 0.08, curve: [ { x: 0.0, s: 1.00 }, { x: 0.2, s: 0.95 }, { x: 0.45, s: 0.80 }, { x: 0.7, s: 0.55 }, { x: 1.0, s: 0.30 } ] }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation makes Rodellar's tufa-streaked limestone slick and raises flash-flood risk on canyon-floor approaches in the Mascún gorge. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Fog or low cloud below 500m in the canyon obscures approach trails and route-finding on the tall overhanging walls. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained wind above 35 knots in the canyon creates rope handling and communication hazards on the steep sectors. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Below -5°C apparent, tendons stiffen and tufa-pinching grip deteriorates sharply. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 36
+  carrying_capacity_sensitivity: high
+  notes: |
+    Rodellar sits within the Sierra y Cañones de Guara Natural Park,
+    which regulates canyon and trail access; local climbing associations
+    coordinate bolting maintenance. Griffon vulture and other raptor
+    nesting closes select sectors seasonally in spring. Canyon-floor
+    approaches are subject to flash-flood risk after heavy rain, and
+    park guidance should be checked before approaching low sectors
+    following storms.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Rodellar / Sierra de Guara-region guidebook coverage"
+    - "Parque Natural de la Sierra y Cañones de Guara access documentation"
+  notes: |
+    Cluster overrides vs global climbing: precipitation weight kept
+    slightly elevated reflecting canyon flash-flood sensitivity in
+    addition to standard wet-rock concerns; long season (36 weeks)
+    reflecting the mild climate similar to other Mediterranean Iberian
+    crags in this catalog expansion.

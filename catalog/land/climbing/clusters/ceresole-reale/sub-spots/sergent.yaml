@@ -1,0 +1,50 @@
+slug: climbing-spot-ceresole-reale-sergent
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-ceresole-reale
+parent_cluster: climbing-spot-ceresole-reale
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 45.4300, lng: 7.2300 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Sergent is the Val d'Orco's reference multipitch granite dome,
+    climbing 4-8 pitch trad and mixed-sport lines from F5c to F7a on the
+    boundary of Gran Paradiso National Park. Protection is a mix of
+    sparse fixed bolts at belay stations and natural gear on the run-out
+    slab and corner pitches, demanding a solid trad rack and confident
+    slab technique. The dome sits around 1600-1800m, high enough that
+    afternoon convective storms are a recurring summer hazard and
+    descent — typically by rappel or a walk-off gully — requires care in
+    poor visibility. Rescue access is limited compared to roadside
+    crags, reflecting its status as a committing alpine objective.
+
+display_name:
+  en: Climbing — Ceresole Reale Sergent
+  it: Arrampicata — Ceresole Reale Sergent
+  es: Escalada — Ceresole Reale Sergent
+  fr: Escalade — Ceresole Reale Sergent
+  de: Klettern — Ceresole Reale Sergent
+
+description:
+  en: |
+    Reference granite dome multipitch of the Val d'Orco, 4-8 pitch trad
+    and mixed-sport lines from F5c to F7a near the Gran Paradiso NP
+    boundary.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Versante Sud Valle dell'Orco granite dome guidebook"
+    - "CAI Torino alpine route and condition documentation"
+  notes: |
+    Sub-spot of climbing-spot-ceresole-reale cluster. Tier 3: committing
+    multipitch dome with sparse fixed protection and rappel/walk-off
+    descent — advanced with documented consequence profile.

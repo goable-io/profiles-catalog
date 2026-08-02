@@ -1,0 +1,48 @@
+slug: climbing-spot-margalef-espadelles
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-margalef
+parent_cluster: climbing-spot-margalef
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 41.2830, lng: 0.7500 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Espadelles is a sport sector on Margalef conglomerate offering routes
+    from F6c to F8a, well bolted with stainless hardware and chain
+    lower-offs. The rock is characteristic rounded-pocket and cobble
+    conglomerate, moderately steep, less extreme than the cluster's
+    hardest sector at La Finestra but still sustained and technical.
+    Approach is a short walk from roadside or village parking. Falls are
+    generally clean onto bolts; standard bolted-sport-route residual
+    risks apply, with the usual conglomerate caution to test holds
+    before committing weight.
+
+display_name:
+  en: Climbing — Margalef Espadelles
+  it: Arrampicata — Margalef Espadelles
+  es: Escalada — Margalef Espadelles
+  fr: Escalade — Margalef Espadelles
+  de: Klettern — Margalef Espadelles
+
+description:
+  en: |
+    Espadelles offers sustained sport climbing from F6c to F8a on
+    stainless-bolted Margalef conglomerate — a solid intermediate-to-hard
+    sector.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Margalef-region guidebook coverage"
+    - "FEEC Margalef access documentation"
+  notes: |
+    Sub-spot of climbing-spot-margalef cluster. Tier 2: sustained
+    single-pitch sport conglomerate, stainless hardware, short walk-in.

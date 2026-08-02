@@ -1,0 +1,52 @@
+slug: climbing-spot-ceuse-cascade
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-ceuse
+parent_cluster: climbing-spot-ceuse
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 44.5100, lng: 5.9280 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Cascade sector offers sustained single-pitch sport routes from
+    F7a to F8b on Céüse's characteristic steep grey limestone, well
+    bolted with stainless hardware and chain anchors maintained by local
+    equippers. It sits within the same 1-1.5 hour uphill approach as the
+    rest of the plateau, but the routes themselves are moderate sport
+    testpieces without the extreme run-outs found in the hardest Berlin
+    lines, giving cleaner falls onto bolts. Aspect is broadly south to
+    east, so the sector gets strong sun and is best climbed in morning
+    or shoulder-season conditions during the short summer window.
+    Standard bolted-sport-route hazards apply — lowering errors,
+    rope-end incidents — with the approach walk as the main added
+    commitment factor.
+
+display_name:
+  en: Climbing — Céüse Cascade
+  it: Arrampicata — Céüse Cascade
+  es: Escalada — Céüse Cascade
+  fr: Escalade — Céüse Cascade
+  de: Klettern — Céüse Cascade
+
+description:
+  en: |
+    Cascade is a sustained sport sector, F7a to F8b on well-bolted
+    stainless hardware — moderate Céüse testpieces without the extreme
+    run-outs of the hardest routes nearby.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Céüse guidebook"
+    - "FFME Céüse access documentation"
+  notes: |
+    Sub-spot of climbing-spot-ceuse cluster. Tier 2: sustained
+    single-pitch sport, stainless hardware, cleaner falls than Berlin,
+    same long uphill approach.

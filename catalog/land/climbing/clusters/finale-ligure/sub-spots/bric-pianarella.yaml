@@ -1,0 +1,46 @@
+slug: climbing-spot-finale-ligure-bric-pianarella
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-finale-ligure
+parent_cluster: climbing-spot-finale-ligure
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.1800, lng: 8.3200 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Bric Pianarella sits south of Le Manie and is one of Finale's
+    best-known sport-training crags: single-pitch limestone tufa routes
+    from F5 to F7b on fully stainless-bolted lines with chain lower-off
+    anchors. The approach is a short, well-marked walk from the Le Manie
+    plateau road. Falls are clean onto bolts on the steep, pocketed tufa
+    terrain, and the moderate pitch length keeps this at an intermediate
+    consequence level compared to the cluster's multipitch objective at
+    Rocca dell'Aquila.
+
+display_name:
+  en: Climbing — Finale Ligure Bric Pianarella
+  it: Arrampicata — Finale Ligure Bric Pianarella
+  es: Escalada — Finale Ligure Bric Pianarella
+  fr: Escalade — Finale Ligure Bric Pianarella
+  de: Klettern — Finale Ligure Bric Pianarella
+
+description:
+  en: |
+    Well-known sport-training crag south of Le Manie, stainless-bolted
+    limestone tufa routes from F5 to F7b — a Finale training staple.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Finale Ligure guidebook"
+  notes: |
+    Sub-spot of climbing-spot-finale-ligure cluster. Tier 2: dense
+    stainless-bolted single-pitch sport climbing, clean falls, short
+    approach — intermediate baseline.

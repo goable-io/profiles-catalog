@@ -1,0 +1,51 @@
+slug: climbing-spot-paklenica-anica-kuk
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-paklenica
+parent_cluster: climbing-spot-paklenica
+region: mediterranean
+country_code: HR
+
+coordinates:
+  center: { lat: 44.3050, lng: 15.4700 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Anica Kuk is a 400 m compact grey limestone big wall rising from the
+    floor of Velika Paklenica canyon, hosting classic multipitch routes in
+    the F5c-F7c range that mix bolted sport pitches with sections requiring
+    trad protection (cams and nuts) on older or less-equipped lines. The
+    wall is broadly north-facing within the canyon, giving welcome shade in
+    summer but also meaning slower drying after rain. Descent is typically
+    by rappel or a long walk-off, and retreat mid-route is non-trivial —
+    this is committing terrain requiring solid multipitch systems, rope
+    management, and route-finding, with rescue access limited to park
+    ranger and mountain rescue teams reachable by radio or phone from the
+    canyon floor.
+
+display_name:
+  en: Climbing — Paklenica Anica Kuk
+  it: Arrampicata — Paklenica Anica Kuk
+  es: Escalada — Paklenica Anica Kuk
+  fr: Escalade — Paklenica Anica Kuk
+  de: Klettern — Paklenica Anica Kuk
+
+description:
+  en: |
+    The cluster's flagship: a 400 m limestone big wall in Velika Paklenica
+    canyon with classic multipitch trad-and-sport routes from F5c to F7c —
+    the defining Balkan multipitch objective.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Croatia guidebook"
+    - "Paklenica National Park climbing access and regulations"
+  notes: |
+    Sub-spot of climbing-spot-paklenica cluster. Tier 3: committing 400m
+    multipitch big wall with mixed trad/sport protection, non-trivial
+    retreat, and limited rescue access.

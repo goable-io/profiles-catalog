@@ -1,0 +1,51 @@
+slug: climbing-spot-arco-massone
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-arco
+parent_cluster: climbing-spot-arco
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 45.9250, lng: 10.9100 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Massone is the Arco sport-climbing showcase: south-facing compact
+    limestone slab-and-vertical terrain with 200+ single-pitch routes from
+    F5 to F8b. Hardware is stainless bolts placed and maintained by the
+    SAT Arco climbing committee, with chain or double-mailon lower-off
+    anchors on nearly all lines. The approach is a short walk from the
+    dedicated parking area with clear trail signage. Full sun exposure
+    makes the wall excellent in spring and autumn and uncomfortably hot
+    in summer afternoons; falls are clean onto bolts with no ledge-fall
+    hazard on the vertical-to-slab terrain. Massone is the primary venue
+    for the annual Rockmaster festival, so hardware turnover and route
+    density are unusually high for the grade range.
+
+display_name:
+  en: Climbing — Arco Massone
+  it: Arrampicata — Arco Massone
+  es: Escalada — Arco Massone
+  fr: Escalade — Arco Massone
+  de: Klettern — Arco Massone
+
+description:
+  en: |
+    South-facing limestone slab-and-vertical showcase crag above Arco,
+    with 200+ stainless-bolted routes from F5 to F8b. Home of the
+    Rockmaster festival, full sun in spring/autumn, hot in summer.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SAT Arco (Società Alpinisti Tridentini) Massone bolting log"
+    - "Vertical-Life Arco route database"
+  notes: |
+    Sub-spot of climbing-spot-arco cluster. Tier 2: dense stainless-bolted
+    sport climbing on compact limestone, clean falls, short approach —
+    standard intermediate sport-crag residual risk.

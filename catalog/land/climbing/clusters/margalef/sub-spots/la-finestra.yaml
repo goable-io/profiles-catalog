@@ -1,0 +1,52 @@
+slug: climbing-spot-margalef-la-finestra
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-margalef
+parent_cluster: climbing-spot-margalef
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 41.2870, lng: 0.7530 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    La Finestra is Margalef's iconic hard-climbing sector, distinguished
+    by rounded conglomerate pockets and cobbles on steep, overhanging
+    orange-grey rock, home to test-pieces such as those in the Era Vella
+    area in the F8a-F9a+ range. Bolting is modern stainless with chain
+    lower-offs maintained given the sector's profile among visiting
+    climbers, but the pocket-pulling style demands precise technique and
+    the conglomerate matrix can occasionally shed a loose cobble,
+    particularly after rain or on less-polished holds. Approach is a
+    short walk from roadside or village parking. Falls on the steep
+    terrain are generally clean and air-y; the tier reflects grade
+    severity and sustained power demands characteristic of Margalef's
+    hardest climbing.
+
+display_name:
+  en: Climbing — Margalef La Finestra
+  it: Arrampicata — Margalef La Finestra
+  es: Escalada — Margalef La Finestra
+  fr: Escalade — Margalef La Finestra
+  de: Klettern — Margalef La Finestra
+
+description:
+  en: |
+    La Finestra is Margalef's iconic conglomerate showcase, with F8a-F9a+
+    pocket-pulling testpieces on steep overhanging rock — the cluster's
+    flagship hard sector.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Margalef-region guidebook coverage"
+    - "FEEC Margalef access documentation"
+  notes: |
+    Sub-spot of climbing-spot-margalef cluster. Tier 3: world-class hard
+    conglomerate sport climbing, occasional loose cobble hazard, sustained
+    power-endurance grade band.

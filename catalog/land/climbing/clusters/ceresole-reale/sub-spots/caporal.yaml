@@ -1,0 +1,50 @@
+slug: climbing-spot-ceresole-reale-caporal
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-ceresole-reale
+parent_cluster: climbing-spot-ceresole-reale
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 45.4350, lng: 7.2350 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Caporal is the dome immediately adjacent to Sergent and shares its
+    character: clean granite trad multipitch from F5c to F7b+ over 4-8
+    pitches, protected primarily by natural gear with fixed bolts limited
+    to belay stances. Together with Sergent, Caporal anchors the Val
+    d'Orco's Piemontese granite "classic tour," so route-finding
+    conventions and rappel lines are well documented by local guides,
+    but the exposed, high-altitude (~1600-1800m) setting still carries
+    the same afternoon-storm and limited-rescue-access profile as its
+    neighbor. Slightly harder grade ceiling than Sergent places it in
+    the same advanced tier.
+
+display_name:
+  en: Climbing — Ceresole Reale Caporal
+  it: Arrampicata — Ceresole Reale Caporal
+  es: Escalada — Ceresole Reale Caporal
+  fr: Escalade — Ceresole Reale Caporal
+  de: Klettern — Ceresole Reale Caporal
+
+description:
+  en: |
+    Granite dome adjacent to Sergent, trad multipitch from F5c to F7b+
+    over 4-8 pitches — part of the Val d'Orco's Piemontese granite
+    classic tour.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Versante Sud Valle dell'Orco granite dome guidebook"
+    - "CAI Torino alpine route and condition documentation"
+  notes: |
+    Sub-spot of climbing-spot-ceresole-reale cluster. Tier 3: committing
+    granite dome multipitch, natural-gear protection, high-altitude
+    storm exposure — advanced with documented consequence profile.

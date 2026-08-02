@@ -1,0 +1,140 @@
+slug: climbing-spot-cadarese
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - climbing-spot-cadarese-crack-school
+  - climbing-spot-cadarese-verampio-slabs
+display_name:
+  en: Climbing — Cadarese
+  it: Arrampicata — Cadarese
+  es: Escalada — Cadarese
+  fr: Escalade — Cadarese
+  de: Klettern — Cadarese
+description:
+  en: |
+    Cadarese, in the Val d'Ossola near Verbania-Cusio-Ossola, is widely
+    regarded as Italy's premier crack-climbing destination — a compact
+    granite gorge where clean, parallel-sided cracks of every width from
+    fingers to offwidth are packed into a short valley. Elevation sits
+    around 700-800m, with a mostly north-facing orientation that keeps
+    the gorge shaded and cool even in high summer, the crag's defining
+    physical trait. Grades span roughly 5.6 to 5.13 (crack-specific
+    rating), with adjacent slab and low-angle granite sectors offering a
+    gentler F5-F7a sport-and-trad mix. Best season is late spring through
+    early autumn; the narrow gorge shades out morning sun and can stay
+    damp longer after rain than open-aspect crags.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.26
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -2,  s: 0.55 }
+      - { x: 6,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 24,  s: 0.65 }
+      - { x: 30,  s: 0.25 }
+      - { x: 36,  s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.40 }
+      - { x: 0.7, s: 0.10 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.95 }
+      - { x: 5,  s: 1.00 }
+      - { x: 14, s: 0.80 }
+      - { x: 22, s: 0.40 }
+      - { x: 32, s: 0.05 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.75 }
+      - { x: 9,  s: 0.35 }
+      - { x: 11, s: 0.10 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 0.7,  reason_code: WET_ROCK_AND_STORM, description: Active precipitation above 0.7 mm/h wets the parallel-sided cracks and reduces friction badly; the shaded gorge dries slower than open-aspect crags. }
+  - { metric: wind_speed_kn,      condition: gt, value: 38,   reason_code: HIGH_WIND_RIDGE,     description: Sustained wind above 38 knots channeling through the narrow Val d'Ossola gorge creates rope-management and communication hazards. }
+  - { metric: visibility_km,      condition: lt, value: 0.4,  reason_code: ALPINE_NAVIGATION,   description: Visibility below 400m impairs approach-trail navigation and belay communication in the gorge. }
+  - { metric: apparent_temp_c,    condition: lt, value: -12,  reason_code: ALPINE_HYPOTHERMIA,  description: Apparent temperature below -12°C creates frostbite risk on cold-hands crack jamming and stiffens rope handling at belay stances. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    Cadarese is a compact, high-traffic gorge managed informally by the
+    local climbing community and CAI Verbano; crack-climbing routes are
+    trad-protected with minimal fixed hardware, so equipment turnover is
+    low but crowding at popular crack lines is common on weekends. The
+    narrow gorge floor is sensitive to trampling near the base of the
+    most popular crack pitches.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Verbano alpine route and condition documentation"
+    - "Versante Sud Cadarese crack-climbing guidebook"
+  notes: |
+    Weights and curves follow the climbing-alpine regional template.
+    Visibility weight raised slightly (0.10) versus other clusters to
+    reflect the narrow gorge's reduced approach-trail sightlines;
+    precipitation weight kept high (0.25) given the shaded north aspect
+    dries more slowly after rain than the Val di Mello or Ceresole
+    clusters.

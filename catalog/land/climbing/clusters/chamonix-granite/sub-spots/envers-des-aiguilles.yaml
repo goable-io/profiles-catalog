@@ -1,0 +1,50 @@
+slug: climbing-spot-chamonix-granite-envers-des-aiguilles
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-chamonix-granite
+parent_cluster: climbing-spot-chamonix-granite
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.8850, lng: 6.9400 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    The Envers des Aiguilles wall system is a classic granite trad
+    multipitch venue reached via the Envers hut (Refuge de l'Envers des
+    Aiguilles), offering 10-20 pitch routes on compact high-quality
+    granite in the F6a-F7c range. Protection is predominantly traditional
+    gear placement with some fixed belay anchors, demanding a full trad
+    rack and competent multipitch systems management. The hut-based
+    approach crosses glaciated and moraine terrain, and routes here sit
+    at altitudes where afternoon thunderstorms build quickly, making
+    early starts standard practice. Rescue access requires descent to the
+    hut or PGHM helicopter response; this is serious, remote alpine
+    granite climbing well beyond roadside sport crags.
+
+display_name:
+  en: Climbing — Envers des Aiguilles
+  it: Arrampicata — Envers des Aiguilles
+  es: Escalada — Envers des Aiguilles
+  fr: Escalade — Envers des Aiguilles
+  de: Klettern — Envers des Aiguilles
+
+description:
+  en: |
+    The Envers des Aiguilles wall system offers classic 10-20 pitch trad
+    granite multipitch (F6a-F7c), hut-based and remote — a serious
+    alpine-grade venue in the Mont-Blanc massif.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FFCAM Envers des Aiguilles hut and route documentation"
+    - "IFMGA Chamonix guide condition reports"
+  notes: |
+    Sub-spot of climbing-spot-chamonix-granite cluster. Tier 3: long trad
+    multipitch, hut-based glacial approach, remote rescue access.

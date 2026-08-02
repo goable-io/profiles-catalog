@@ -1,0 +1,145 @@
+slug: climbing-spot-red-river-gorge
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing
+country_code: US
+sub_spots:
+  - climbing-spot-red-river-gorge-motherlode
+  - climbing-spot-red-river-gorge-bob-marley-crag
+  - climbing-spot-red-river-gorge-roadside
+display_name:
+  en: Climbing — Red River Gorge
+  it: Arrampicata — Red River Gorge
+  es: Escalada — Red River Gorge
+  fr: Escalade — Red River Gorge
+  de: Klettern — Red River Gorge
+description:
+  en: |
+    Red River Gorge (Daniel Boone National Forest, Kentucky) is one of the
+    world's premier steep sport-climbing destinations, cut into pocketed
+    and featured Corbin sandstone at a low elevation of roughly 250-400m.
+    Thousands of routes span F5 easy vertical walls to F9a overhanging
+    testpieces, with the gorge's signature overhanging jug-hauls drawing
+    climbers year-round, though spring and fall offer the most consistent
+    conditions in this humid continental/subtropical climate. Sandstone is
+    highly sensitive to moisture — climbing on wet rock breaks holds and
+    causes irreversible damage — so the Red River Gorge Climbers'
+    Coalition (RRGCC) asks climbers to stay off routes for 24-48h after
+    rain, an ethic this catalog encodes as a tightened precipitation gate.
+    Access across much of the cluster runs through RRGCC-held recreational
+    preserves with seasonal raptor closures on select cliff lines.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.25
+    curve:
+      - { x: -5, s: 0.05 }
+      - { x: 2,  s: 0.40 }
+      - { x: 8,  s: 0.85 }
+      - { x: 14, s: 1.00 }
+      - { x: 22, s: 0.95 }
+      - { x: 30, s: 0.55 }
+      - { x: 38, s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.30
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.35 }
+      - { x: 0.3, s: 0.10 }
+      - { x: 1,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 0.3, reason_code: WET_SANDSTONE_DAMAGE, description: "Climbing on wet Corbin sandstone breaks holds and causes irreversible rock damage; RRGCC ethics ask climbers to avoid routes for 24-48h after rain." }
+  - { metric: visibility_km, condition: lt, value: 0.5, reason_code: LOW_VISIBILITY, description: "Visibility below 500m makes approach-trail navigation to forested cliff-line sectors unsafe." }
+  - { metric: wind_speed_kn, condition: gt, value: 35, reason_code: HIGH_WIND_EXPOSED, description: "Sustained wind above 35 knots creates rope-drag and communication hazards on the taller overhanging sectors." }
+  - { metric: apparent_temp_c, condition: lt, value: -5, reason_code: EXTREME_COLD, description: "Below -5°C apparent, tendons stiffen and grip deteriorates on sandstone crimps and pockets; frostbite risk rises at belay stances." }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: low
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    Much of the cluster sits on RRGCC-held recreational preserves
+    (including the Pendergrass-Murray Recreational Preserve), which manage
+    parking, trail maintenance, and access agreements with adjoining
+    private land. The gorge's defining local ethic — never climb on wet
+    sandstone — is a hold-preservation rule, not just a safety one, and is
+    actively promoted by the RRGCC. Select cliff lines carry seasonal
+    raptor nesting closures.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "RRGCC (Red River Gorge Climbers' Coalition) access and wet-rock ethics guidance"
+    - "Red River Gorge Rock Climbs guidebook (RRGCC / Wolverine Publishing)"
+    - "Mountain Project Red River Gorge area guide"
+  notes: |
+    Cluster overrides vs base climbing: precipitation weight raised to
+    0.30 (vs 0.21 base) and the gate tightened to 0.3 mm/h (vs 2 mm/h
+    base) to encode the sandstone wet-rock damage ethic, which is a
+    stricter constraint here than the generic wet-rock slip hazard.
+    Rockfall weight kept at the 0.08 base default since these are
+    single-pitch sport sectors without the exfoliation profile of alpine
+    granite. Season set to 32 weeks reflecting the RRG's practical
+    year-round but spring/fall-favored climbing calendar.

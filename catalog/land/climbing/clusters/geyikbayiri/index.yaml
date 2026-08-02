@@ -1,0 +1,156 @@
+slug: climbing-spot-geyikbayiri
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: TR
+sub_spots:
+  - climbing-spot-geyikbayiri-sarkit
+  - climbing-spot-geyikbayiri-trebenna
+display_name:
+  en: Climbing — Geyikbayırı
+  it: Arrampicata — Geyikbayırı
+  es: Escalada — Geyikbayırı
+  fr: Escalade — Geyikbayırı
+  de: Klettern — Geyikbayırı
+description:
+  en: |
+    Geyikbayırı, in the pine-forested foothills above Antalya on Turkey's
+    Mediterranean coast, is Turkey's largest sport-climbing area with well
+    over 1,000 routes on grey and orange limestone. Sectors span south- to
+    south-east-facing sun-drenched walls to shaded north-facing crags,
+    letting climbers chase comfortable conditions across seasons — the area
+    is climbable nearly year-round, with a dedicated camp-based climbing
+    culture supporting long stays. Grades run from beginner-friendly F4 up
+    through F8b+ testpieces. Rock is generally solid pocketed and featured
+    limestone; best conditions are October-April, with summer climbing
+    concentrated at shaded or higher-altitude sectors to avoid midday heat.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.30
+    curve:
+      - { x: -5, s: 0.05 }
+      - { x: 2,  s: 0.40 }
+      - { x: 8,  s: 0.85 }
+      - { x: 14, s: 1.00 }
+      - { x: 22, s: 0.95 }
+      - { x: 30, s: 0.55 }
+      - { x: 38, s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.14
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 1.5
+    reason_code: WET_ROCK
+    description: Active precipitation on Geyikbayırı's pocketed limestone makes holds slick and raises fall risk, particularly on the steeper sectors.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 500m impairs approach navigation on the forested hillside trails and belayer-climber communication.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 35 knots creates rope-management hazards on the more exposed south-facing sectors.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -5
+    reason_code: EXTREME_COLD
+    description: Below -5°C apparent temperature, rare but possible on winter nights in the foothills, grip and rope handling deteriorate sharply.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Geyikbayırı's camp-based climbing tourism concentrates visitor density
+    at flagship sectors like Sarkıt during the long October-April season.
+    Local Antalya-area climbing associations and international volunteer
+    equipping trips maintain bolting; forest-floor erosion and vegetation
+    trampling at popular crag bases is an ongoing management concern for
+    the pine forest ecosystem.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Turkey guidebook"
+    - "Geyikbayırı local climbing community bolting and access documentation"
+  notes: |
+    Cluster overrides vs global climbing: temperature weight raised to 0.30
+    reflecting the aspect-rotation strategy climbers use across sun- and
+    shade-facing sectors; season set to 40 weeks, among the longest in the
+    catalog, reflecting the area's near-year-round camp-based climbing
+    culture.

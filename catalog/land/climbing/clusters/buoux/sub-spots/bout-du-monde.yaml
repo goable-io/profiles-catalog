@@ -1,0 +1,51 @@
+slug: climbing-spot-buoux-bout-du-monde
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-buoux
+parent_cluster: climbing-spot-buoux
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 43.8280, lng: 5.3800 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Bout du Monde is the historic showcase sector of Buoux, the crag that
+    drew European sport-climbing pilgrimage traffic through the 1980s and
+    90s, with routes from F6a to F8a on south-facing orange and grey
+    limestone. Bolting reflects the sector's era of first ascents — mostly
+    retrofitted or re-equipped over the decades but with some older
+    hardware still present on less-traveled lines, so climbers should
+    check individual routes rather than assume uniform modern stainless.
+    The approach is a short walk from valley parking with some ledge
+    exposure at the cliff base. Falls are generally clean on the popular
+    re-bolted classics; standard bolted-sport-route hazards apply, with
+    added caution warranted on older hardware.
+
+display_name:
+  en: Climbing — Buoux Bout du Monde
+  it: Arrampicata — Buoux Bout du Monde
+  es: Escalada — Buoux Bout du Monde
+  fr: Escalade — Buoux Bout du Monde
+  de: Klettern — Buoux Bout du Monde
+
+description:
+  en: |
+    Bout du Monde is Buoux's historic sport-climbing showcase, the
+    epicenter of the 1980s-90s European sport-climbing pilgrimage, with
+    routes from F6a to F8a on classic Luberon limestone.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Buoux guidebook"
+    - "Parc naturel régional du Luberon access documentation"
+  notes: |
+    Sub-spot of climbing-spot-buoux cluster. Tier 2: historic sport
+    sector, mixed-era hardware (check individual routes), short walk-in
+    with ledge exposure at the base.

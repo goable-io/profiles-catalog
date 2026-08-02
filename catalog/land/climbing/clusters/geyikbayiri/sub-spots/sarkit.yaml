@@ -1,0 +1,49 @@
+slug: climbing-spot-geyikbayiri-sarkit
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-geyikbayiri
+parent_cluster: climbing-spot-geyikbayiri
+region: mediterranean
+country_code: TR
+
+coordinates:
+  center: { lat: 36.7600, lng: 30.4900 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Sarkıt is the main sector of Geyikbayırı, with south to south-east
+    facing pocketed limestone routes from F6a to F8a on generally solid
+    rock. Bolting is stainless steel with chain lower-offs, maintained by
+    the local Antalya climbing community and periodic international
+    volunteer equipping trips. The sun-facing aspect makes it a strong
+    autumn-through-spring venue, becoming uncomfortably hot at midday in
+    summer, and it is the social hub of Geyikbayırı's camp-based climbing
+    culture with a short, well-established approach path. Falls are clean
+    single-pitch falls onto bolts with straightforward lowering descents.
+
+display_name:
+  en: Climbing — Geyikbayırı Sarkıt
+  it: Arrampicata — Geyikbayırı Sarkıt
+  es: Escalada — Geyikbayırı Sarkıt
+  fr: Escalade — Geyikbayırı Sarkıt
+  de: Klettern — Geyikbayırı Sarkıt
+
+description:
+  en: |
+    The main Geyikbayırı sport crag, F6a-F8a on south-to-southeast-facing
+    pocketed limestone — the social and climbing hub of the Antalya camp
+    scene.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Turkey guidebook"
+    - "Geyikbayırı local climbing community bolting and access documentation"
+  notes: |
+    Sub-spot of climbing-spot-geyikbayiri cluster. Tier 2: single-pitch
+    sport climbing, stainless bolted hardware, sun-facing aspect, short
+    approach.

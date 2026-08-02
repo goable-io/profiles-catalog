@@ -1,0 +1,48 @@
+slug: climbing-spot-paklenica-klanci
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-paklenica
+parent_cluster: climbing-spot-paklenica
+region: mediterranean
+country_code: HR
+
+coordinates:
+  center: { lat: 44.3020, lng: 15.4650 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Klanci comprises single-pitch sport sectors near the base of Velika
+    Paklenica canyon, offering compact grey limestone routes from F5 to
+    F7b on stainless-steel bolted hardware with chain lower-offs. The short
+    approach along the canyon path makes this an accessible warm-up or
+    lower-commitment alternative to the big walls above, with clean,
+    retrievable falls and straightforward lowering descents. Canyon shade
+    keeps conditions comfortable into the warmer months, though post-rain
+    drying can be slower than open crags given the gorge's limited sun
+    exposure at midday.
+
+display_name:
+  en: Climbing — Paklenica Klanci
+  it: Arrampicata — Paklenica Klanci
+  es: Escalada — Paklenica Klanci
+  fr: Escalade — Paklenica Klanci
+  de: Klettern — Paklenica Klanci
+
+description:
+  en: |
+    Single-pitch sport sectors at the canyon base, F5-F7b on well-bolted
+    compact limestone — an accessible complement to Anica Kuk's big-wall
+    multipitch.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Croatia guidebook"
+    - "Paklenica National Park climbing access and regulations"
+  notes: |
+    Sub-spot of climbing-spot-paklenica cluster. Tier 2: single-pitch sport
+    climbing, stainless bolted hardware, short canyon-floor approach.

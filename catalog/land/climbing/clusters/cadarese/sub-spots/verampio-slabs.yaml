@@ -1,0 +1,48 @@
+slug: climbing-spot-cadarese-verampio-slabs
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-cadarese
+parent_cluster: climbing-spot-cadarese
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.4600, lng: 8.3050 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Verampio Slabs sits adjacent to the Val Cadarese gorge entry and
+    offers gentler, lower-angle granite terrain than the crack-school
+    sector, with a mixed sport-and-trad rack of routes from F5 to F7a.
+    Bolting is partial — stainless bolts protect the blanker slab
+    sections while corners and seams take natural gear — so a light rack
+    is recommended alongside quickdraws. Morning shade from the valley
+    walls keeps the rock cool early, warming through midday, and the
+    short approach from the Cadarese parking area keeps this an
+    accessible, moderate-consequence complement to the harder crack
+    lines nearby.
+
+display_name:
+  en: Climbing — Cadarese Verampio Slabs
+  it: Arrampicata — Cadarese Verampio Slabs
+  es: Escalada — Cadarese Verampio Slabs
+  fr: Escalade — Cadarese Verampio Slabs
+  de: Klettern — Cadarese Verampio Slabs
+
+description:
+  en: |
+    Slab and low-angle granite sector adjacent to the Val Cadarese entry,
+    mixed sport-and-trad routes from F5 to F7a with morning shade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Versante Sud Cadarese crack-climbing guidebook"
+  notes: |
+    Sub-spot of climbing-spot-cadarese cluster. Tier 2: mixed
+    sport-and-trad slab climbing with partial bolting, moderate
+    consequence — intermediate baseline.

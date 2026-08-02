@@ -1,0 +1,47 @@
+slug: climbing-spot-red-river-gorge-roadside
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-red-river-gorge
+parent_cluster: climbing-spot-red-river-gorge
+country_code: US
+
+coordinates:
+  center: { lat: 37.7900, lng: -83.6800 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    Roadside is Red River Gorge's easiest-access sector, a short flat walk
+    from the pull-off to vertical-to-slightly-overhanging Corbin sandstone
+    in the F5-F6c range. Hardware is well-maintained stainless bolts with
+    chain or mailon lower-offs under the RRGCC bolt-replacement program.
+    Falls are clean drops onto bolted lines with no ledge hazard on the
+    moderate-angle rock, and cell coverage near the road is reliable.
+    Red River Gorge's classic beginner-friendly, kids-safe reference
+    sector.
+
+display_name:
+  en: Climbing — Roadside
+  it: Arrampicata — Roadside
+  es: Escalada — Roadside
+  fr: Escalade — Roadside
+  de: Klettern — Roadside
+
+description:
+  en: |
+    Roadside is the Red River Gorge's easiest-access sector — a short walk
+    from the pull-off puts climbers on moderate F5-F6c sandstone, the
+    classic first stop for gorge beginners.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Red River Gorge Rock Climbs guidebook (RRGCC / Wolverine Publishing)"
+    - "Mountain Project Red River Gorge area guide"
+  notes: |
+    Sub-spot of climbing-spot-red-river-gorge cluster. Tier 1: low-
+    consequence sport crag, stainless hardware, short walk-in, reliable
+    cell coverage — beginner-safe.

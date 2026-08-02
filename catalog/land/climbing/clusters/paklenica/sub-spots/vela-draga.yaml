@@ -1,0 +1,48 @@
+slug: climbing-spot-paklenica-vela-draga
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-paklenica
+parent_cluster: climbing-spot-paklenica
+region: mediterranean
+country_code: HR
+
+coordinates:
+  center: { lat: 45.2280, lng: 14.2670 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Vela Draga is a limestone spire crag in Istria, geographically distinct
+    from the Velika Paklenica canyon but grouped into this cluster as part
+    of the shared Croatian climbing culture and guidebook coverage. Routes
+    run F6a-F7c on distinctive freestanding limestone towers and pinnacles,
+    single-pitch and bolted with stainless steel hardware and chain
+    lower-offs. The site is sun-exposed with limited shade at midday, so
+    aspect and time-of-day matter more here than in the shaded main
+    Paklenica gorge. Approach is a short walk from roadside parking; falls
+    are clean on the featured, well-travelled spire faces.
+
+display_name:
+  en: Climbing — Paklenica Vela Draga
+  it: Arrampicata — Paklenica Vela Draga
+  es: Escalada — Paklenica Vela Draga
+  fr: Escalade — Paklenica Vela Draga
+  de: Klettern — Paklenica Vela Draga
+
+description:
+  en: |
+    A distinctive limestone spire crag in Istria, F6a-F7c on freestanding
+    towers and pinnacles — co-managed within the Croatian climbing culture
+    alongside the main Paklenica canyon.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Croatia guidebook"
+  notes: |
+    Sub-spot of climbing-spot-paklenica cluster. Tier 2: single-pitch sport
+    climbing on limestone spires, stainless bolted hardware, sun-exposed
+    aspect.

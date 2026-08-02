@@ -1,0 +1,52 @@
+slug: climbing-spot-verdon-la-demandee
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-verdon
+parent_cluster: climbing-spot-verdon
+region: mediterranean
+country_code: FR
+
+coordinates:
+  center: { lat: 43.7580, lng: 6.3900 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    La Demandée is a sustained limestone pillar sector in the Verdon
+    Gorge offering multi-pitch routes from F6a to F7c, vertical near the
+    base transitioning to overhanging orange rock higher up in classic
+    Verdon style. Hardware is mixed sport bolting on the steeper pitches
+    with some trad placements protecting easier ground; anchors are
+    typically chain or mailon on established lines. The approach and
+    descent involve exposed rim trail and, on several lines, an
+    abseil-in start similar to neighbouring Escalès, so route-finding
+    and rope management on multipitch descent are the primary hazards.
+    Rescue access is limited given the canyon terrain, and afternoon
+    convective weather in the Provençal summer can close in quickly on
+    parties mid-route.
+
+display_name:
+  en: Climbing — Verdon La Demandée
+  it: Arrampicata — Verdon La Demandée
+  es: Escalada — Verdon La Demandée
+  fr: Escalade — Verdon La Demandée
+  de: Klettern — Verdon La Demandée
+
+description:
+  en: |
+    La Demandée pillar offers sustained multi-pitch limestone from F6a to
+    F7c, vertical low down and overhanging higher — classic Verdon-style
+    climbing with a serious, committing character.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Verdon guidebook"
+    - "FFME Verdon topo and access documentation"
+  notes: |
+    Sub-spot of climbing-spot-verdon cluster. Tier 3: sustained
+    multi-pitch pillar, mixed sport/trad hardware, abseil-in start on
+    several lines, limited rescue access.

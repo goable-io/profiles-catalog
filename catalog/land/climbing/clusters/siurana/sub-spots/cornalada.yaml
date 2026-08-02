@@ -1,0 +1,48 @@
+slug: climbing-spot-siurana-cornalada
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-siurana
+parent_cluster: climbing-spot-siurana
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 41.2650, lng: 0.9350 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    La Cornalada is a moderate sport sector on Siurana limestone with
+    routes from F6a to F7a, well bolted with stainless hardware and
+    chain or mailon lower-offs. The rock is typical Siurana orange-grey
+    limestone, less steep and technical than the plateau's harder
+    sectors, making this one of the more approachable venues in the
+    cluster for climbers building toward Siurana's characteristic
+    pocketed and tufa-featured style. Approach is a short walk from
+    village-adjacent parking. Falls are clean onto bolts; standard
+    bolted-sport-route residual risks apply.
+
+display_name:
+  en: Climbing — Siurana La Cornalada
+  it: Arrampicata — Siurana La Cornalada
+  es: Escalada — Siurana La Cornalada
+  fr: Escalade — Siurana La Cornalada
+  de: Klettern — Siurana La Cornalada
+
+description:
+  en: |
+    La Cornalada is a moderate, well-bolted sport sector, F6a to F7a on
+    Siurana limestone — an approachable venue for climbers newer to the
+    area's style.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Siurana-region guidebook coverage"
+    - "FEEC Siurana access documentation"
+  notes: |
+    Sub-spot of climbing-spot-siurana cluster. Tier 2: moderate
+    single-pitch sport, stainless hardware, short walk-in.

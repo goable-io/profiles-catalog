@@ -1,0 +1,83 @@
+slug: climbing-spot-verdon
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: FR
+sub_spots:
+  - climbing-spot-verdon-lescales
+  - climbing-spot-verdon-la-demandee
+  - climbing-spot-verdon-ancien-monde
+display_name:
+  en: Climbing — Verdon Gorge
+  it: Arrampicata — Gole del Verdon
+  es: Escalada — Gargantas del Verdon
+  fr: Escalade — Gorges du Verdon
+  de: Klettern — Verdonschlucht
+description:
+  en: |
+    The Verdon Gorge (Alpes-de-Haute-Provence / Var, Provence) is one of
+    Europe's defining big-wall limestone destinations, with 250-300m grey
+    and orange walls dropping directly into the canyon. Routes run from
+    single-pitch sport sectors near the rim to committing multi-pitch trad
+    and mixed lines requiring an abseil-in approach and a re-ascent or
+    exit traverse — there is often no simple walk-off. Grades span F4 to
+    F8a across a huge range of aspects (north and south rims), so shade
+    can usually be found in summer and sun in shoulder season. The
+    defining physical constraint is commitment: many multi-pitch routes
+    have no easy retreat once the abseil is committed, and afternoon
+    thunderstorms build quickly over the Provençal plateau in summer.
+    Best season is April-June and September-October; July-August is
+    climbable on shaded aspects but crowded and hot on the rim approach.
+
+dimensions:
+  - { name: temperature,   metric: apparent_temp_c,     weight: 0.28, curve: [ { x: -5, s: 0.05 }, { x: 2, s: 0.40 }, { x: 8, s: 0.85 }, { x: 14, s: 1.00 }, { x: 22, s: 0.95 }, { x: 30, s: 0.55 }, { x: 38, s: 0.15 } ] }
+  - { name: precipitation, metric: precipitation_mm_h,  weight: 0.24, curve: [ { x: 0, s: 1.00 }, { x: 0.1, s: 0.50 }, { x: 0.5, s: 0.15 }, { x: 2, s: 0.00 } ] }
+  - { name: wind_speed,    metric: wind_speed_kn,       weight: 0.14, curve: [ { x: 0, s: 1.00 }, { x: 8, s: 0.95 }, { x: 16, s: 0.70 }, { x: 25, s: 0.30 }, { x: 35, s: 0.00 } ] }
+  - { name: sun,           metric: sun_altitude_deg,    weight: 0.09, curve: [ { x: 0, s: 0.00 }, { x: 10, s: 0.65 }, { x: 25, s: 1.00 } ] }
+  - { name: uv_safety,     metric: uv_index,            weight: 0.07, curve: [ { x: 0, s: 1.00 }, { x: 3, s: 1.00 }, { x: 6, s: 0.85 }, { x: 9, s: 0.55 }, { x: 11, s: 0.30 } ] }
+  - { name: visibility,    metric: visibility_km,       weight: 0.08, curve: [ { x: 0, s: 0.00 }, { x: 1, s: 0.30 }, { x: 3, s: 0.75 }, { x: 10, s: 1.00 } ] }
+  - { name: rockfall,      metric: rockfall_risk_index, weight: 0.10, curve: [ { x: 0.0, s: 1.00 }, { x: 0.2, s: 0.95 }, { x: 0.45, s: 0.80 }, { x: 0.7, s: 0.55 }, { x: 1.0, s: 0.30 } ] }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 1.5, reason_code: WET_ROCK,          description: Active precipitation on Verdon limestone makes abseil-in multipitch routes unsafe and traps parties mid-wall with no easy retreat. }
+  - { metric: visibility_km,      condition: lt, value: 0.5, reason_code: LOW_VISIBILITY,    description: Fog or low cloud in the gorge below 500m obscures rappel lines and belay stances on 250-300m walls. }
+  - { metric: wind_speed_kn,      condition: gt, value: 35,  reason_code: HIGH_WIND_EXPOSED, description: Sustained wind above 35 knots in the canyon creates rope-drag, pendulum, and communication hazards on multipitch abseil-in routes. }
+  - { metric: apparent_temp_c,    condition: lt, value: -5,  reason_code: EXTREME_COLD,      description: Below -5°C apparent, rope handling and rappel device operation on committing multipitch becomes unsafe. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 32
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Verdon is a Natura 2000 site and Parc Naturel Régional; access
+    tracks and rim parking are managed to limit erosion. Griffon vulture
+    and other raptor nesting closes select sectors seasonally (typically
+    February-June), enforced by local climbing associations (CAF, FFME)
+    in coordination with the Parc du Verdon. Fixed-gear maintenance is
+    coordinated by regional equippers; abseil-in commitment concentrates
+    traffic on classic lines during peak season.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Verdon guidebook"
+    - "FFME (Fédération Française de la Montagne et de l'Escalade) Verdon topo and access documentation"
+  notes: |
+    Cluster overrides vs global climbing: rockfall weight raised to 0.10
+    (freeze-thaw limestone spalling on tall multipitch walls) and
+    precipitation gate tightened to 1.5 mm/h reflecting the no-retreat
+    abseil-in commitment on flagship routes. Temperature weight kept
+    close to base since the gorge spans both rims with broad aspect
+    choice across seasons.

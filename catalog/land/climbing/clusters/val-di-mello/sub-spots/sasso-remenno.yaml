@@ -1,0 +1,49 @@
+slug: climbing-spot-val-di-mello-sasso-remenno
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-val-di-mello
+parent_cluster: climbing-spot-val-di-mello
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.2600, lng: 9.6350 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    Sasso Remenno is a giant granite erratic block near San Martino, one
+    of Europe's largest single boulders, offering a sport-and-bouldering
+    hybrid with slabby and arête single-pitch lines from F5 to F7a
+    alongside its famous high-ball boulder problems. Sport routes are
+    bolted with stainless hardware and chain lower-offs; the compact
+    granite face dries quickly after rain. The short, flat approach from
+    San Martino di Val Masino makes it one of the most accessible venues
+    in the valley, with good cell coverage and clean falls onto bolts on
+    the roped lines.
+
+display_name:
+  en: Climbing — Val di Mello Sasso Remenno
+  it: Arrampicata — Val di Mello Sasso Remenno
+  es: Escalada — Val di Mello Sasso Remenno
+  fr: Escalade — Val di Mello Sasso Remenno
+  de: Klettern — Val di Mello Sasso Remenno
+
+description:
+  en: |
+    Giant granite erratic block near San Martino di Val Masino, one of
+    Europe's largest single boulders, with sport and bouldering-hybrid
+    slab and arête lines from F5 to F7a.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Val Masino alpine route and condition documentation"
+    - "camptocamp.org Val di Mello route database"
+  notes: |
+    Sub-spot of climbing-spot-val-di-mello cluster. Tier 2:
+    stainless-bolted single-pitch sport and bouldering-hybrid granite,
+    clean falls, short flat approach — intermediate baseline.

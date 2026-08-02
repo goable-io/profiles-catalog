@@ -1,0 +1,144 @@
+slug: climbing-spot-ceresole-reale
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - climbing-spot-ceresole-reale-sergent
+  - climbing-spot-ceresole-reale-caporal
+display_name:
+  en: Climbing — Ceresole Reale / Val d'Orco
+  it: Arrampicata — Ceresole Reale / Val d'Orco
+  es: Escalada — Ceresole Reale / Val d'Orco
+  fr: Escalade — Ceresole Reale / Val d'Orco
+  de: Klettern — Ceresole Reale / Val d'Orco
+description:
+  en: |
+    Ceresole Reale and the Val d'Orco (Città Metropolitana di Torino,
+    Piemonte) form one of the Alps' classic granite multipitch valleys,
+    bordering the Gran Paradiso National Park. Elevation sits around
+    1600-1800m at the dome bases, high enough that afternoon convective
+    storms and cool mountain air are recurring factors even in
+    midsummer. The valley's signature routes climb clean granite domes
+    in 4-8 pitch trad-and-mixed lines from F5c to F7b+, on rock famous
+    for its friction and sparse but well-placed protection. Best season
+    is a short alpine window, roughly June through September, with
+    afternoon thunderstorm risk the dominant scheduling constraint. The
+    Val d'Orco is closely associated with the Piemontese granite
+    "classic tour" of dome routes climbed by generations of Italian
+    alpinists.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.26
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -2,  s: 0.55 }
+      - { x: 6,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 24,  s: 0.65 }
+      - { x: 30,  s: 0.25 }
+      - { x: 36,  s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.25
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.40 }
+      - { x: 0.7, s: 0.10 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.17
+    curve:
+      - { x: 0,  s: 0.95 }
+      - { x: 5,  s: 1.00 }
+      - { x: 14, s: 0.80 }
+      - { x: 22, s: 0.40 }
+      - { x: 32, s: 0.05 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.75 }
+      - { x: 9,  s: 0.35 }
+      - { x: 11, s: 0.10 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.09
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - { metric: precipitation_mm_h, condition: gt, value: 0.7,  reason_code: WET_ROCK_AND_STORM, description: Active precipitation above 0.7 mm/h signals incoming afternoon convective storms, the dominant summer hazard on the exposed granite domes above 1600m. }
+  - { metric: wind_speed_kn,      condition: gt, value: 38,   reason_code: HIGH_WIND_RIDGE,     description: Sustained wind above 38 knots on the exposed dome faces of Sergent and Caporal creates fall risk and impairs partner communication. }
+  - { metric: visibility_km,      condition: lt, value: 0.4,  reason_code: ALPINE_NAVIGATION,   description: Visibility below 400m makes route-finding on the unmarked dome faces and descent navigation near the Gran Paradiso NP boundary unsafe. }
+  - { metric: apparent_temp_c,    condition: lt, value: -12,  reason_code: ALPINE_HYPOTHERMIA,  description: Apparent temperature below -12°C at the ~1600-1800m dome bases creates frostbite risk on exposed belay stances. }
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 16
+  carrying_capacity_sensitivity: high
+  notes: |
+    Ceresole Reale sits on the boundary of the Parco Nazionale Gran
+    Paradiso, whose access rules constrain approach trails and camping
+    near the park perimeter. The classic dome routes (Sergent, Caporal,
+    and neighbors) see concentrated summer traffic from parties doing
+    the Val d'Orco "classic tour," which CAI Torino and local guides
+    coordinate to reduce queuing and rockfall risk from parties
+    climbing above one another.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Torino alpine route and condition documentation"
+    - "Versante Sud Valle dell'Orco granite dome guidebook"
+  notes: |
+    Weights and curves follow the climbing-alpine regional template with
+    wind weight raised slightly (0.17) to reflect the exposed dome faces
+    at 1600-1800m. Season window (16 weeks) is the shortest of the
+    catalog's Italian clusters, reflecting the higher elevation and
+    short reliable alpine-summer climbing window bordering Gran Paradiso
+    National Park.
+

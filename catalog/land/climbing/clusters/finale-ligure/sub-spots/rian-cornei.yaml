@@ -1,0 +1,46 @@
+slug: climbing-spot-finale-ligure-rian-cornei
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-finale-ligure
+parent_cluster: climbing-spot-finale-ligure
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.1700, lng: 8.3050 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Rian Cornei is a sport sector on the Rocca di Perti massif with
+    sustained single-pitch limestone routes from F6a to F7c, bolted with
+    stainless hardware and chain anchors typical of Finale's well-serviced
+    crags. The south-facing aspect makes it one of the area's most popular
+    winter venues, holding sun through the cooler months while remaining
+    steep enough to stay shaded in the early hours of hot summer days.
+    Approach is a moderate uphill walk from roadside parking; falls are
+    clean onto bolts with no ledge hazard on the steep terrain.
+
+display_name:
+  en: Climbing — Finale Ligure Rian Cornei
+  it: Arrampicata — Finale Ligure Rian Cornei
+  es: Escalada — Finale Ligure Rian Cornei
+  fr: Escalade — Finale Ligure Rian Cornei
+  de: Klettern — Finale Ligure Rian Cornei
+
+description:
+  en: |
+    Sustained south-facing sport sector on the Rocca di Perti massif,
+    F6a-F7c limestone, stainless-bolted — a popular Finale winter venue.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Rockfax Finale Ligure guidebook"
+  notes: |
+    Sub-spot of climbing-spot-finale-ligure cluster. Tier 2: sustained
+    stainless-bolted sport climbing, clean falls, moderate approach —
+    intermediate baseline.
