@@ -1,0 +1,44 @@
+slug: scuba-spot-tavolara-secca-del-papa
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-tavolara
+parent_cluster: scuba-spot-tavolara
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.9200, lng: 9.7500 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    La Secca del Papa is an offshore pinnacle N of Tavolara rising
+    from a 50 m sand bottom to a top at 18-22 m. Dense Paramuricea +
+    Corallium rubrum below 35 m and frequent pelagic passages
+    (barracuda school + amberjack). Advanced-open-water baseline
+    given depth + Corallium proximity + open-sea exposure. Cluster's
+    reference deep pinnacle dive.
+
+display_name:
+  en: Scuba — Secca del Papa (Tavolara)
+  it: Immersione — Secca del Papa
+  es: Buceo — Secca del Papa
+  fr: Plongée — Secca del Papa
+  de: Tauchen — Secca del Papa
+
+description:
+  en: |
+    The N-Tavolara offshore pinnacle with Corallium rubrum below
+    35 m. Advanced-open-water offshore pinnacle dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Tavolara Secca del Papa documentation"
+    - "FIPSAS Tavolara Secca del Papa advanced-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-tavolara cluster. Tier 3: offshore
+    pinnacle, deep wall, Corallium rubrum, advanced-open-water baseline.

@@ -1,0 +1,44 @@
+slug: scuba-spot-kornati-mana
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-kornati
+parent_cluster: scuba-spot-kornati
+region: adriatic
+country_code: HR
+
+coordinates:
+  center: { lat: 43.7900, lng: 15.2900 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mana is the outer-Kornati W-facing island with the "crown of
+    Kornati" outer cliff wall dropping vertically from 8 m to 60 m+
+    on the open-Adriatic-fetch side. Deep wall with dense encrusting
+    biocoenosis and pelagic passage of amberjack + occasional dentex.
+    Depth + open-sea exposure + Bora vulnerability make advanced-
+    open-water baseline. Cluster's advanced-grade wall dive.
+
+display_name:
+  en: Scuba — Mana (Kornati outer wall)
+  it: Immersione — Mana
+  es: Buceo — Mana
+  fr: Plongée — Mana
+  de: Tauchen — Mana
+
+description:
+  en: |
+    The outer-Kornati Mana W-face cliff wall dropping to 60 m+.
+    Advanced-open-water deep wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NP Kornati Mana outer-wall documentation"
+    - "Croatian Diving Federation Mana advanced-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-kornati cluster. Tier 3: deep vertical
+    wall, open-sea exposure, advanced-open-water baseline.

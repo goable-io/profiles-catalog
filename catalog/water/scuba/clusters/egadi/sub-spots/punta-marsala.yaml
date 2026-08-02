@@ -1,0 +1,41 @@
+slug: scuba-spot-egadi-punta-marsala
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-egadi
+parent_cluster: scuba-spot-egadi
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 37.9160, lng: 12.3040 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Marsala is the SE point of Favignana with wall + reef
+    geometry descending from 8 m to 30 m+, dense Paramuricea +
+    Eunicella cavolini gorgonian and clear encrusting coralligenous
+    biocoenosis. Sheltered from Libeccio on some approaches. Standard
+    intermediate wall dive with buoyed mooring line, boat access from
+    Favignana Porto in 15 min.
+
+display_name:
+  en: Scuba — Punta Marsala (Favignana)
+  it: Immersione — Punta Marsala
+  es: Buceo — Punta Marsala
+  fr: Plongée — Punta Marsala
+  de: Tauchen — Punta Marsala
+
+description:
+  en: |
+    The SE-Favignana Punta Marsala wall. Intermediate gorgonian wall.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Egadi Favignana site documentation"
+  notes: |
+    Sub-spot of scuba-spot-egadi cluster. Tier 2: intermediate wall.

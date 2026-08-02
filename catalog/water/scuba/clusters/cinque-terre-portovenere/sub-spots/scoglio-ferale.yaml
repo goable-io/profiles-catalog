@@ -1,0 +1,48 @@
+slug: scuba-spot-cinque-terre-portovenere-scoglio-ferale
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-cinque-terre-portovenere
+parent_cluster: scuba-spot-cinque-terre-portovenere
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.0300, lng: 9.8280 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Scoglio Ferale is the exposed offshore rock SE of Tino, a vertical
+    pinnacle plunging from 20 m to 55 m+ with the densest gorgonian
+    fields of the AMP Portovenere sector plus black-coral (Antipathes
+    subpinnata) colonies documented on the deep face. The site's
+    exposure to full-fetch Libeccio and Sirocco makes weather-window
+    selection tight; dive shops guide only on flat post-storm windows.
+    Depth + current + open-sea exposure make advanced-open-water and
+    deep-diver rating baseline; the cluster's technical-diving
+    reference.
+
+display_name:
+  en: Scuba — Scoglio Ferale
+  it: Immersione — Scoglio Ferale
+  es: Buceo — Scoglio Ferale
+  fr: Plongée — Scoglio Ferale
+  de: Tauchen — Scoglio Ferale
+
+description:
+  en: |
+    The exposed offshore pinnacle SE of Tino. Deep gorgonian + black-
+    coral wall — the cluster's technical-grade reference.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Regione Liguria Portovenere-Palmaria-Tino-Tinetto Scoglio Ferale documentation"
+    - "FIPSAS Ferale deep-wall + Antipathes subpinnata site briefing"
+  notes: |
+    Sub-spot of scuba-spot-cinque-terre-portovenere cluster. Tier 3:
+    exposed pinnacle, deep + current, black-coral proximity, advanced-
+    open-water baseline. Cluster's technical-grade dive.

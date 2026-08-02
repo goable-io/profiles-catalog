@@ -1,0 +1,45 @@
+slug: scuba-spot-ponza-scoglio-della-botte
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ponza
+parent_cluster: scuba-spot-ponza
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.9100, lng: 12.9700 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Lo Scoglio della Botte is a submerged pinnacle NW of Ponza rising
+    from a sand-rock plateau at 40 m to a top at 15 m. Vertical wall
+    with dense gorgonian, red coral (Corallium rubrum) at 40 m+, and
+    frequent pelagic passages of dentex + tuna. Depth + off-shore
+    exposure + no-obvious-shelter position make advanced-open-water
+    rating baseline. Site is dive-shop-guided by default and requires
+    calm surface conditions for safe boat mooring on the reduced-
+    footprint plateau top.
+
+display_name:
+  en: Scuba — Scoglio della Botte (Ponza)
+  it: Immersione — Scoglio della Botte
+  es: Buceo — Scoglio della Botte
+  fr: Plongée — Scoglio della Botte
+  de: Tauchen — Scoglio della Botte
+
+description:
+  en: |
+    Submerged NW-Ponza pinnacle with dense gorgonian and Corallium
+    rubrum. Advanced-open-water offshore pinnacle dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Scoglio della Botte site briefing"
+  notes: |
+    Sub-spot of scuba-spot-ponza cluster. Tier 3: offshore pinnacle,
+    deep wall, Corallium rubrum proximity, advanced grade.

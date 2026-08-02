@@ -1,0 +1,45 @@
+slug: scuba-spot-tremiti-cristo-di-tremiti
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-tremiti
+parent_cluster: scuba-spot-tremiti
+region: adriatic
+country_code: IT
+
+coordinates:
+  center: { lat: 42.1250, lng: 15.4830 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    Il Cristo di Tremiti (installed 1998) is a bronze Christ statue
+    submerged at 15-18 m off San Domino island. Sheltered site with
+    sand + posidonia bottom, easy anchor-line descent for training
+    and tourist dives — the Adriatic counterpart to Portofino's
+    1954 Cristo degli Abissi. Depth keeps NDL long; boat traffic on
+    surface at the buoyed entry line is the main hazard. The
+    cluster's iconic training-and-tourist reference.
+
+display_name:
+  en: Scuba — Cristo di Tremiti
+  it: Immersione — Cristo di Tremiti
+  es: Buceo — Cristo de las Tremiti
+  fr: Plongée — Christ des Tremiti
+  de: Tauchen — Christus der Tremiti
+
+description:
+  en: |
+    The 1998 Cristo bronze statue submerged at 15-18 m off San
+    Domino. Adriatic Tremiti iconic training dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Riserva Marina Tremiti Cristo di Tremiti site documentation"
+    - "FIPSAS Tremiti dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-tremiti cluster. Tier 1: shallow, permit-
+    managed, training-and-tourist grade.

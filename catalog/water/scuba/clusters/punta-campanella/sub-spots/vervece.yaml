@@ -1,0 +1,44 @@
+slug: scuba-spot-punta-campanella-vervece
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-punta-campanella
+parent_cluster: scuba-spot-punta-campanella
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.5760, lng: 14.3300 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Vervece is a submerged pinnacle off the Marina del Cantone coast
+    with the "Madonnina di Vervece" bronze statue at 12 m — a Sorrentine
+    memorial + iconic dive site. Pinnacle top at 8 m, drop-off to 40 m+
+    on the outer face with Paramuricea gorgonian fields at 25-35 m.
+    Boat mooring at AMP-managed buoyed line. Standard intermediate
+    pinnacle + statue-visit dive with clear ascent-line profile.
+
+display_name:
+  en: Scuba — Vervece (Madonnina)
+  it: Immersione — Vervece (Madonnina)
+  es: Buceo — Vervece (Madonnina)
+  fr: Plongée — Vervece (Madonnina)
+  de: Tauchen — Vervece (Madonnina)
+
+description:
+  en: |
+    The Vervece pinnacle + Madonnina bronze statue off Marina del
+    Cantone. Sorrentine cluster's iconic dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Punta Campanella Vervece + Madonnina documentation"
+    - "FIPSAS Vervece dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-punta-campanella cluster. Tier 2:
+    intermediate pinnacle, buoyed-mooring managed.

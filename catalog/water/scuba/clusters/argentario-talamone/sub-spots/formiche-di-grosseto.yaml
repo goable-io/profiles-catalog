@@ -1,0 +1,45 @@
+slug: scuba-spot-argentario-talamone-formiche-di-grosseto
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-argentario-talamone
+parent_cluster: scuba-spot-argentario-talamone
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.5700, lng: 10.9200 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Le Formiche di Grosseto is a three-islet offshore cluster 15 km
+    off the Argentario coast, with reef + wall geometry descending
+    from 8 m to 40 m+ and dense Paramuricea gorgonian at 25-35 m.
+    Sheltered from Libeccio on the SE flank, exposed on Sirocco.
+    Standard intermediate offshore reef dive with boat transit of
+    30-40 min from Porto Santo Stefano. Post-Libeccio-storm turbidity
+    is the dominant quality-swing variable.
+
+display_name:
+  en: Scuba — Formiche di Grosseto
+  it: Immersione — Formiche di Grosseto
+  es: Buceo — Formiche di Grosseto
+  fr: Plongée — Formiche di Grosseto
+  de: Tauchen — Formiche di Grosseto
+
+description:
+  en: |
+    The three-islet offshore Formiche di Grosseto reef cluster.
+    Intermediate offshore gorgonian reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Formiche di Grosseto site briefing"
+    - "Parco Regionale della Maremma offshore-dive coordination"
+  notes: |
+    Sub-spot of scuba-spot-argentario-talamone cluster. Tier 2:
+    offshore reef, intermediate multi-tier.

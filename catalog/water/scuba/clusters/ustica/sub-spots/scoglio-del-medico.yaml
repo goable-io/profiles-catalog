@@ -1,0 +1,45 @@
+slug: scuba-spot-ustica-scoglio-del-medico
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ustica
+parent_cluster: scuba-spot-ustica
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 38.7100, lng: 13.1650 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Lo Scoglio del Medico is an emergent volcanic rock 500 m off
+    Ustica's W coast — circumnavigation delivers wall + boulder-field
+    geometry with dense Paramuricea + Eunicella cavolini gorgonian at
+    20-35 m plus a resident dentex + barracuda-school signature.
+    Boat mooring on AMP-managed buoyed line on the sheltered side.
+    Standard intermediate wall + circumnavigation dive, the cluster's
+    all-round reference site.
+
+display_name:
+  en: Scuba — Scoglio del Medico (Ustica)
+  it: Immersione — Scoglio del Medico
+  es: Buceo — Scoglio del Medico
+  fr: Plongée — Scoglio del Medico
+  de: Tauchen — Scoglio del Medico
+
+description:
+  en: |
+    The emergent W-Ustica volcanic rock. Intermediate wall +
+    circumnavigation dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Ustica Scoglio del Medico documentation"
+    - "FIPSAS Ustica Scoglio del Medico dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-ustica cluster. Tier 2: emergent volcanic
+    rock, intermediate wall + circumnavigation.

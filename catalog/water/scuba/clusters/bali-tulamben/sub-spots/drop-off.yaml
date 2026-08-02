@@ -1,0 +1,44 @@
+slug: scuba-spot-bali-tulamben-drop-off
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-bali-tulamben
+parent_cluster: scuba-spot-bali-tulamben
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.2720, lng: 115.5900 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Drop-Off (Tulamben Wall) is a vertical wall descending from
+    10 m to 60 m+ off the S end of Tulamben beach, with dense
+    encrusting biocoenosis + soft coral + occasional pelagic passage.
+    Depth + wall geometry make advanced-open-water baseline. Shore-
+    entry from Tulamben in 5-10 min. The cluster's advanced-grade
+    dive without the Liberty wreck's beginner-friendliness.
+
+display_name:
+  en: Scuba — Drop-Off (Tulamben Wall)
+  it: Immersione — Drop-Off (Tulamben)
+  es: Buceo — Drop-Off (Tulamben)
+  fr: Plongée — Drop-Off (Tulamben)
+  de: Tauchen — Drop-Off (Tulamben)
+
+description:
+  en: |
+    The Tulamben vertical wall dropping to 60 m+. Advanced-open-water
+    reef wall.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Indonesian Ministry of Marine Affairs Tulamben Drop-Off documentation"
+    - "PADI Bali Tulamben Wall dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-bali-tulamben cluster. Tier 2: deep wall,
+    advanced-open-water baseline.

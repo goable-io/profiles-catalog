@@ -1,0 +1,45 @@
+slug: scuba-spot-portonovo-conero-trave-passetto
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-portonovo-conero
+parent_cluster: scuba-spot-portonovo-conero
+region: adriatic
+country_code: IT
+
+coordinates:
+  center: { lat: 43.6100, lng: 13.5300 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Trave del Passetto is an offshore rock slab off Ancona's
+    Passetto beach — reef + wall geometry from 8 m to 25 m+ with
+    encrusting biocoenosis and Adriatic-typical benthic community
+    (lower biodiversity than western Mediterranean but distinct
+    species mix). Boat access from Ancona harbour in 10 min.
+    Adriatic-typical: bora rotor + bloom + Po plume are the dominant
+    quality-swing variables.
+
+display_name:
+  en: Scuba — Trave del Passetto (Ancona)
+  it: Immersione — Trave del Passetto
+  es: Buceo — Trave del Passetto
+  fr: Plongée — Trave del Passetto
+  de: Tauchen — Trave del Passetto
+
+description:
+  en: |
+    The offshore Trave del Passetto rock slab off Ancona.
+    Intermediate reef + wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Comune di Ancona Trave del Passetto documentation"
+    - "FIPSAS Ancona Passetto dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-portonovo-conero cluster. Tier 2:
+    intermediate offshore rock reef.

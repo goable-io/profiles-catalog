@@ -1,0 +1,45 @@
+slug: scuba-spot-gbr-cairns-cod-hole
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-gbr-cairns
+parent_cluster: scuba-spot-gbr-cairns
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -14.7000, lng: 145.6500 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Cod Hole (Ribbon Reef #10, N GBR) is one of the reference
+    marine-wildlife encounter sites on the GBR — resident population
+    of ~10-15 potato cod (Epinephelus tukula, 1-2 m each) that
+    interact with divers on the reef pinnacle at 15-25 m depth.
+    Guide-lead with strict no-feed protocol post-2020 GBRMPA policy
+    update. Intermediate depth + wildlife-focus, liveaboard-day-trip
+    from Cairns. Cluster's marine-life reference.
+
+display_name:
+  en: Scuba — Cod Hole (Ribbon Reef #10, GBR)
+  it: Immersione — Cod Hole
+  es: Buceo — Cod Hole
+  fr: Plongée — Cod Hole
+  de: Tauchen — Cod Hole
+
+description:
+  en: |
+    The Ribbon Reef #10 potato-cod encounter site on the N GBR.
+    Intermediate wildlife-encounter reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "GBRMPA Cod Hole management + no-feed policy documentation"
+    - "PADI Ribbon Reefs dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-gbr-cairns cluster. Tier 2: intermediate
+    reef with wildlife-encounter overlay, guide-led, no-feed policy.

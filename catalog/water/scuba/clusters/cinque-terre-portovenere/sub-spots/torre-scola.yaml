@@ -1,0 +1,47 @@
+slug: scuba-spot-cinque-terre-portovenere-torre-scola
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-cinque-terre-portovenere
+parent_cluster: scuba-spot-cinque-terre-portovenere
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.0522, lng: 9.8386 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    The Torre Scola is a 16th-century artillery tower ruin submerged
+    at 3-15 m off Palmaria island in the La Spezia gulf. Historically
+    documented pre-scuba as a Napoleonic-era gun emplacement. Depth
+    keeps NDL essentially unlimited, sheltered from Libeccio, boat
+    access from Portovenere in 15 min. The cluster's training-and-
+    tourist reference: overhead + swim-through geometry through the
+    tower ruins, dense encrusting biocoenosis on masonry, resident
+    conger + moray. Boat traffic in the Palmaria channel is the main
+    surface hazard.
+
+display_name:
+  en: Scuba — Torre Scola
+  it: Immersione — Torre Scola
+  es: Buceo — Torre Scola
+  fr: Plongée — Torre Scola
+  de: Tauchen — Torre Scola
+
+description:
+  en: |
+    The submerged 16th-century artillery tower ruin off Palmaria.
+    Shallow, sheltered, iconic Portovenere-cluster training dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Regione Liguria Torre Scola historical + underwater documentation"
+    - "Portovenere-Palmaria Regional Reserve site briefing"
+  notes: |
+    Sub-spot of scuba-spot-cinque-terre-portovenere cluster. Tier 1:
+    shallow, sheltered, overhead-managed training grade.

@@ -1,0 +1,152 @@
+slug: scuba-spot-portonovo-conero
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-adriatic
+region: adriatic
+country_code: IT
+sub_spots:
+  - scuba-spot-portonovo-conero-grotta-degli-schiavi
+  - scuba-spot-portonovo-conero-trave-passetto
+display_name:
+  en: Scuba Diving — Portonovo / Conero
+  it: Immersione — Portonovo / Conero
+  es: Buceo — Portonovo / Conero
+  fr: Plongée — Portonovo / Conero
+  de: Tauchen — Portonovo / Conero
+description:
+  en: |
+    Il Parco Naturale del Conero (Ancona, Marche) marine boundary
+    delivers the reference central-Adriatic Italian coastal diving.
+    Coastal walls, caverns (Grotta degli Schiavi), and the offshore
+    Trave del Passetto rock slab off Ancona. Water 14-24°C. Boat
+    access from Portonovo or Numana harbours. Cluster sits on the
+    S-Adriatic-mid-shelf zone with distinct bora + sirocco wind
+    regime and higher river-plume vulnerability than the western
+    Mediterranean.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.45 }
+      - { x: 3.0, s: 0.80 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.24
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.80 }
+      - { x: 1.3, s: 0.45 }
+      - { x: 2.0, s: 0.10 }
+      - { x: 2.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.22
+    curve:
+      - { x: 10, s: 0.10 }
+      - { x: 14, s: 0.40 }
+      - { x: 18, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.90 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.65 }
+      - { x: 18, s: 0.30 }
+      - { x: 24, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.06
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.50 }
+      - { x: 0.6, s: 0.80 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 24
+    reason_code: BORA_ROTOR
+    description: NE Bora above 24 knots on the Conero coast shuts boat access from Portonovo + Numana.
+  - metric: wave_height_m
+    condition: gt
+    value: 2.2
+    reason_code: ADRIATIC_HIGH_SEAS
+    description: Wave above 2.2 m makes Trave del Passetto + coastal cavern approach unsafe.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_ADRIATIC
+    description: Surface visibility below 800 m during Sirocco haze makes site-finding unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN_PO_PLUME
+    description: Heavy rain triggers Po + eastern Adriatic river plume; visibility drops materially for 24-72 h.
+  - metric: turbidity_proxy
+    condition: gt
+    value: 22
+    reason_code: HIGH_TURBIDITY_BLOOM
+    description: Spring/summer plankton bloom (April-June) destroys diving quality on central Adriatic sites.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: low
+  notes: |
+    Parco Naturale del Conero enforces coastal-protection zoning
+    around Portonovo + adjacent Grotta degli Schiavi cavern. Adriatic
+    plankton bloom + Po river plume are the dominant quality
+    constraints. Boat access limited by seasonal harbour operations.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parco Naturale del Conero coastal-protection documentation"
+    - "FIPSAS Marche + Conero site classification"
+  notes: |
+    Spot overrides vs scuba-adriatic: matches regional baseline.
+    22-week season (Adriatic-standard).

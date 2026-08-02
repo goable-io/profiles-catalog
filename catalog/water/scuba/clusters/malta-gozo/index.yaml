@@ -1,0 +1,153 @@
+slug: scuba-spot-malta-gozo
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: MT
+sub_spots:
+  - scuba-spot-malta-gozo-um-el-faroud
+  - scuba-spot-malta-gozo-blue-hole-gozo
+  - scuba-spot-malta-gozo-cirkewwa-arch
+  - scuba-spot-malta-gozo-inland-sea-gozo
+display_name:
+  en: Scuba Diving — Malta / Gozo
+  it: Immersione — Malta / Gozo
+  es: Buceo — Malta / Gozo
+  fr: Plongée — Malte / Gozo
+  de: Tauchen — Malta / Gozo
+description:
+  en: |
+    Malta + Gozo host one of Europe's densest per-km-coast concentrations
+    of diveable wrecks, sea caves, and coastal walls. Sites include the
+    Um El Faroud tanker (deliberately scuttled 1998 at 35 m as a
+    reef-and-wreck training site), Gozo's iconic Blue Hole cavern
+    system (unfortunately reduced after the 2017 Azure Window collapse
+    but still an iconic dive), Cirkewwa Arch (natural rock arch at 12 m),
+    and the Inland Sea Gozo tunnel dive. Water 15-27°C. Excellent
+    visibility (20-40 m routine). Boat + shore-entry hybrid operations.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m makes Gozo Blue Hole + Inland Sea tunnel shore-entry unsafe; boat operations to Um El Faroud constrained.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze makes shore-approach navigation unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain in Malta triggers island-hinterland runoff into coastal cavern entries.
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Sirocco storm sediment destroys wall + wreck dive quality.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Malta Tourism Authority Diving Regulations + Gozo Aquatic Sports
+    Association enforce dive-permit + guide requirements. Post-2017
+    Azure Window collapse the Blue Hole site's above-water landmark
+    is gone but the cavern remains intact. Carrying capacity at
+    Cirkewwa Arch is high year-round (shore-entry, easy access).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Malta Tourism Authority Diving Regulations documentation"
+    - "Gozo Aquatic Sports Association site classification"
+    - "PADI Malta regional dive-condition handbook"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline
+    with slightly-warmer-water bias and longer season (40 weeks —
+    Malta operates year-round). Shore-entry + boat hybrid pattern
+    is Malta-specific.

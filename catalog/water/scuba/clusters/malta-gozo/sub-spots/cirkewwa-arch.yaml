@@ -1,0 +1,43 @@
+slug: scuba-spot-malta-gozo-cirkewwa-arch
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-malta-gozo
+parent_cluster: scuba-spot-malta-gozo
+region: mediterranean
+country_code: MT
+
+coordinates:
+  center: { lat: 35.9840, lng: 14.3300 }
+  radius_m: 200
+
+tier: 1
+tier_rationale:
+  en: |
+    Il Cirkewwa Arch is a natural rock arch at 12 m depth on the
+    Cirkewwa headland (NW Malta), shore-entry from the ferry-port
+    area. Site is Malta's most-dived shore-entry — depth kept at
+    12-18 m for arch passage + adjacent reef, straightforward
+    swim-through geometry, encrusting biocoenosis + resident conger
+    + moray. Cluster's beginner-friendly shore-entry reference dive.
+
+display_name:
+  en: Scuba — Cirkewwa Arch (Malta)
+  it: Immersione — Cirkewwa Arch
+  es: Buceo — Cirkewwa Arch
+  fr: Plongée — Cirkewwa Arch
+  de: Tauchen — Cirkewwa Arch
+
+description:
+  en: |
+    The NW-Malta Cirkewwa natural rock arch at 12 m. Beginner-friendly
+    shore-entry dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Malta Tourism Authority Cirkewwa site documentation"
+  notes: |
+    Sub-spot of scuba-spot-malta-gozo cluster. Tier 1: shallow arch,
+    shore-entry, beginner-friendly.

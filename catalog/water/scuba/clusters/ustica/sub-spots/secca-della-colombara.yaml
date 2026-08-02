@@ -1,0 +1,47 @@
+slug: scuba-spot-ustica-secca-della-colombara
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ustica
+parent_cluster: scuba-spot-ustica
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 38.7350, lng: 13.2050 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    La Secca della Colombara is Ustica's most-known offshore pinnacle
+    NNE of the island — top at 12-15 m, drop-off to 55 m+ with dense
+    Paramuricea + Corallium rubrum below 40 m and frequent pelagic
+    passages (barracuda school + occasional tuna and grouper). Depth
+    + open-sea exposure + Corallium rubrum-proximity depth range
+    make advanced-open-water + deep-diver rating baseline. Boat
+    mooring is AMP-permit-managed on the plateau top with rotation
+    among licensed operators. The cluster's reference deep pinnacle
+    dive.
+
+display_name:
+  en: Scuba — Secca della Colombara (Ustica)
+  it: Immersione — Secca della Colombara
+  es: Buceo — Secca della Colombara
+  fr: Plongée — Secca della Colombara
+  de: Tauchen — Secca della Colombara
+
+description:
+  en: |
+    The NNE-Ustica offshore pinnacle with dense gorgonian and
+    Corallium rubrum. Ustica's reference deep pinnacle dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Ustica Secca della Colombara documentation"
+    - "FIPSAS Ustica advanced-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-ustica cluster. Tier 3: offshore pinnacle,
+    deep wall, Corallium rubrum proximity, advanced-open-water baseline.

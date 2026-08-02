@@ -1,0 +1,45 @@
+slug: scuba-spot-rovinj-kamenjak-baron-gautsch
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-rovinj-kamenjak
+parent_cluster: scuba-spot-rovinj-kamenjak
+region: adriatic
+country_code: HR
+
+coordinates:
+  center: { lat: 44.9600, lng: 13.5800 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    Il Baron Gautsch was an Austro-Hungarian passenger steamer sunk
+    13 August 1914 by a mine off Rovinj — 240 lives lost. Wreck sits
+    upright on sand bottom at 40 m depth, one of the most iconic and
+    intact WWI civilian wrecks in the Adriatic. War-grave protection
+    under Croatian Ministry of Culture — look-only, no artefact
+    contact, guide-led with strict penetration limits. Advanced-
+    open-water baseline; wreck-diving certification recommended.
+
+display_name:
+  en: Scuba — Baron Gautsch (Rovinj)
+  it: Immersione — Baron Gautsch
+  es: Buceo — Baron Gautsch
+  fr: Plongée — Baron Gautsch
+  de: Tauchen — Baron Gautsch
+
+description:
+  en: |
+    The 1914 Baron Gautsch WWI passenger-ship wreck at 40 m off
+    Rovinj. War-grave-protected, look-only.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ministarstvo Kulture Republike Hrvatske Baron Gautsch protection documentation"
+    - "Croatian Diving Federation Baron Gautsch site briefing"
+  notes: |
+    Sub-spot of scuba-spot-rovinj-kamenjak cluster. Tier 3: 40 m
+    WWI war-grave wreck, look-only, advanced-open-water baseline.

@@ -1,0 +1,44 @@
+slug: scuba-spot-villasimius-capo-carbonara-scoglio-serpentara
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-villasimius-capo-carbonara
+parent_cluster: scuba-spot-villasimius-capo-carbonara
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 39.1500, lng: 9.6100 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Lo Scoglio Serpentara is an offshore granite islet + reef E of
+    Villasimius with wall + reef geometry descending from 8 m to
+    30 m+ and clear Sardegna SE water. Circumnavigation delivers
+    dense encrusting biocoenosis + resident dentex + moray. Standard
+    intermediate wall + circumnavigation dive with clear ascent-line
+    profile, boat access from Villasimius Porto in 15-20 min.
+
+display_name:
+  en: Scuba — Scoglio Serpentara
+  it: Immersione — Scoglio Serpentara
+  es: Buceo — Scoglio Serpentara
+  fr: Plongée — Scoglio Serpentara
+  de: Tauchen — Scoglio Serpentara
+
+description:
+  en: |
+    The offshore E-Villasimius granite islet. Intermediate
+    circumnavigation wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Capo Carbonara Serpentara documentation"
+    - "FIPSAS Villasimius Serpentara site briefing"
+  notes: |
+    Sub-spot of scuba-spot-villasimius-capo-carbonara cluster. Tier 2:
+    intermediate circumnavigation.

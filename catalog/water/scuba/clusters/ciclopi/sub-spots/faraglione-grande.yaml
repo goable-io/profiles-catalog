@@ -1,0 +1,44 @@
+slug: scuba-spot-ciclopi-faraglione-grande
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ciclopi
+parent_cluster: scuba-spot-ciclopi
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 37.5620, lng: 15.1650 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Faraglione Grande is the largest of the Ciclopi Faraglioni sea
+    stacks, rising from a 25-30 m bottom off Aci Trezza. Underwater
+    circumnavigation delivers wall + boulder-field geometry on
+    columnar-basalt substrate with encrusting biocoenosis. Sheltered
+    from Sirocco on some approaches by Faraglione + adjacent island
+    geometry. Standard intermediate wall + circumnavigation dive with
+    the cluster's iconic scenery.
+
+display_name:
+  en: Scuba — Faraglione Grande (Ciclopi)
+  it: Immersione — Faraglione Grande
+  es: Buceo — Faraglione Grande
+  fr: Plongée — Faraglione Grande
+  de: Tauchen — Faraglione Grande
+
+description:
+  en: |
+    Circumnavigation dive of the largest Ciclopi sea stack.
+    Columnar-basalt intermediate wall.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Ciclopi Faraglione Grande documentation"
+  notes: |
+    Sub-spot of scuba-spot-ciclopi cluster. Tier 2: circumnavigation
+    intermediate on columnar-basalt.

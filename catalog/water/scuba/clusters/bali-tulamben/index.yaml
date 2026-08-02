@@ -1,0 +1,149 @@
+slug: scuba-spot-bali-tulamben
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-indian
+region: indian
+country_code: ID
+sub_spots:
+  - scuba-spot-bali-tulamben-uss-liberty
+  - scuba-spot-bali-tulamben-coral-garden
+  - scuba-spot-bali-tulamben-drop-off
+display_name:
+  en: Scuba Diving — Bali Tulamben
+  it: Immersione — Bali Tulamben
+  es: Buceo — Bali Tulamben
+  fr: Plongée — Bali Tulamben
+  de: Tauchen — Bali Tulamben
+description:
+  en: |
+    Tulamben on Bali's NE coast is Indonesia's most-dived shore-entry
+    diving destination — the USS Liberty WWII wreck (US Army cargo
+    ship torpedoed 11 January 1942, beach-launched by 1963 Mt Agung
+    eruption tsunami-shift to current 5-30 m location) is one of the
+    world's most-photographed wrecks, walkable-in from the beach.
+    Coral Garden + Drop-Off adjacent sites complete the Tulamben
+    cluster. Water 26-30°C year-round. Boat + shore-entry hybrid.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.65 }
+      - { x: 5.0, s: 0.92 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.35 }
+      - { x: 2.5, s: 0.05 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 22, s: 0.50 }
+      - { x: 26, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.80 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.70 }
+      - { x: 24, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 15, s: 0.40 }
+      - { x: 24, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 34, s: 0.90 }
+      - { x: 42, s: 0.30 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: MONSOON_HIGH_SEAS
+    description: Wave above 3.0 m during monsoon transition shuts Tulamben shore-entry (beach cobble surge).
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: MONSOON_HIGH_WIND
+    description: Sustained wind above 28 knots during NW-monsoon peak makes Tulamben operations unsafe.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: MONSOON_POOR_VISIBILITY
+    description: Surface visibility below 800 m during monsoon squall makes shore-entry unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: MONSOON_DELUGE
+    description: Heavy monsoon rain triggers land-runoff into shore-entry sites; visibility drops for 24 h.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Tulamben-Amed coastal region is under Ministry of Marine Affairs
+    coordinated tourism-management protocol; USS Liberty wreck is
+    Indonesian-registered historic asset (protected). Boat + shore-
+    entry hybrid + high visitor density create sustained carrying-
+    capacity pressure on the shallow reef and adjacent Coral Garden.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "USS Liberty 1942 loss + 1963 tsunami-shift documentation"
+    - "Indonesian Ministry of Marine Affairs Tulamben tourism-management protocol"
+    - "PADI Bali regional dive-condition briefing"
+  notes: |
+    Spot overrides vs scuba-indian: matches regional baseline for
+    the Indonesian E-fringe of the Indian Ocean. 40-week season
+    (dry season Apr-Oct core).

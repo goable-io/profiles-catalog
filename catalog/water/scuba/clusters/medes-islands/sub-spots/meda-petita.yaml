@@ -1,0 +1,44 @@
+slug: scuba-spot-medes-islands-meda-petita
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-medes-islands
+parent_cluster: scuba-spot-medes-islands
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.0500, lng: 3.2280 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    La Meda Petita is the smaller S island of the Medes complex,
+    delivering wall + boulder-field diving from 12 m to 35 m+ with
+    exceptional grouper density (Epinephelus marginatus reference
+    site) and dense Paramuricea clavata gorgonian at 25-35 m. Site
+    is guide-led by default; boat mooring at Reserva-managed buoyed
+    line. Standard intermediate wall dive with the reserve's
+    signature wildlife density.
+
+display_name:
+  en: Scuba — Meda Petita
+  it: Immersione — Meda Petita
+  es: Buceo — Meda Petita
+  fr: Plongée — Meda Petita
+  de: Tauchen — Meda Petita
+
+description:
+  en: |
+    The S island of Islas Medes. Intermediate wall with reference
+    Mediterranean grouper density.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Reserva Natural Illes Medes Meda Petita documentation"
+  notes: |
+    Sub-spot of scuba-spot-medes-islands cluster. Tier 2: intermediate
+    wall, guide-led, grouper reference site.

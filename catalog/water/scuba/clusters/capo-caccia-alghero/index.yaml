@@ -1,0 +1,151 @@
+slug: scuba-spot-capo-caccia-alghero
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-capo-caccia-alghero-grotta-di-nereo
+  - scuba-spot-capo-caccia-alghero-punta-cristallo
+display_name:
+  en: Scuba Diving — AMP Capo Caccia / Alghero
+  it: Immersione — AMP Capo Caccia
+  es: Buceo — AMP Capo Caccia
+  fr: Plongée — AMP Capo Caccia
+  de: Tauchen — MPA Capo Caccia
+description:
+  en: |
+    AMP Capo Caccia — Isola Piana (D.M. 20/09/2002) protects the
+    NW Sardegna promontory including the Grotta di Nereo — the largest
+    submerged karst sea cave in the Mediterranean by mapped extent
+    (350+ m of passage documented by SSI + Speleo Sub AMP Capo Caccia
+    surveys). Also delivers wall diving with Paramuricea + Corallium
+    rubrum on the exposed Punta Cristallo face. Water 15-25°C. Boat
+    access from Alghero Porto.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m on Capo Caccia W face (Mistral events) makes Grotta di Nereo + Punta Cristallo boat approach unsafe.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze makes site-finding unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain triggers karst-runoff into Grotta di Nereo entry area; visibility drops in cavern for 24-48 h.
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Mistral storm sediment destroys wall + cavern-entry visibility.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: high
+  notes: |
+    AMP Capo Caccia enforces zone-based diving permits + strict
+    guide-required protocol for Grotta di Nereo penetration (cave-
+    diving certification required beyond the entry chamber; cavern-
+    grade guided-dive available for cavern-certified divers on
+    entry-area only). Karst-cavern silt-out risk demands strict
+    dive planning.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Capo Caccia — Isola Piana management authority documentation"
+    - "D.M. 20/09/2002 istitutivo dell'AMP Capo Caccia"
+    - "SSI (Società Speleologica Italiana) + Speleo Sub Grotta di Nereo survey"
+    - "FIPSAS Sardegna NW site classification"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline.
+    30-week season. Grotta di Nereo cave-diving overlay outside
+    recreational profile — captured at sub-spot level.

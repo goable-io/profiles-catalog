@@ -1,0 +1,42 @@
+slug: scuba-spot-kornati-piskera
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-kornati
+parent_cluster: scuba-spot-kornati
+region: adriatic
+country_code: HR
+
+coordinates:
+  center: { lat: 43.7500, lng: 15.3600 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Piškera is a central-Kornati island cluster with outer W-face wall
+    diving descending from 12 m to 40 m+, dense encrusting biocoenosis
+    and typical Adriatic karst-limestone geology. Exposed to Bora on
+    NE approaches. Standard intermediate wall dive with boat access
+    from Murter in 1-1.5 hours transit; liveaboard-day-trip staple.
+
+display_name:
+  en: Scuba — Piškera (Kornati)
+  it: Immersione — Piškera
+  es: Buceo — Piškera
+  fr: Plongée — Piškera
+  de: Tauchen — Piškera
+
+description:
+  en: |
+    The central-Kornati Piškera W-face wall. Intermediate karst-
+    limestone wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NP Kornati Piškera documentation"
+  notes: |
+    Sub-spot of scuba-spot-kornati cluster. Tier 2: intermediate
+    wall.

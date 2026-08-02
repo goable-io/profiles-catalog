@@ -1,0 +1,44 @@
+slug: scuba-spot-ponza-formiche-di-ponza
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ponza
+parent_cluster: scuba-spot-ponza
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.7500, lng: 13.0000 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Le Formiche di Ponza is an offshore seamount + reef cluster S of
+    Ponza with plateau top at 12-15 m and drop-off to 45 m+ on the
+    outer face. Dense Paramuricea + Eunicella gorgonian at 25-40 m,
+    resident dentex + barracuda + occasional grouper. Exposed to
+    Libeccio and Sirocco on full fetch; boat operators from Ponza
+    Porto select weather windows tightly. Standard intermediate-to-
+    advanced offshore reef dive.
+
+display_name:
+  en: Scuba — Formiche di Ponza
+  it: Immersione — Formiche di Ponza
+  es: Buceo — Formiche di Ponza
+  fr: Plongée — Formiche di Ponza
+  de: Tauchen — Formiche di Ponza
+
+description:
+  en: |
+    The offshore Formiche di Ponza seamount cluster. Multi-tier
+    intermediate-to-advanced offshore reef dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Formiche di Ponza offshore-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-ponza cluster. Tier 2: offshore seamount,
+    intermediate multi-tier.

@@ -1,0 +1,47 @@
+slug: scuba-spot-diano-marina-capo-berta-parete
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-diano-marina-capo-berta
+parent_cluster: scuba-spot-diano-marina-capo-berta
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 43.9000, lng: 8.1000 }
+  radius_m: 600
+
+tier: 2
+tier_rationale:
+  en: |
+    The Capo Berta parete is the S-facing headland wall between
+    Diano Marina and Imperia, descending from 12 m to 38 m+ with
+    Paramuricea + Eunicella cavolini gorgonian at 25-35 m and dense
+    coralligenous encrustation on the vertical face. Site is exposed
+    to Libeccio; on-current drift dives on Libeccio-release days
+    reach 0.5-0.8 kn on the outer face. Boat access from Diano
+    Marina or Imperia in 10 min. Standard intermediate-recreational
+    grade with drift-diving overlay.
+
+display_name:
+  en: Scuba — Capo Berta parete
+  it: Immersione — Parete di Capo Berta
+  es: Buceo — Pared de Capo Berta
+  fr: Plongée — Paroi de Capo Berta
+  de: Tauchen — Wand von Capo Berta
+
+description:
+  en: |
+    The S-facing Capo Berta headland wall between Diano Marina and
+    Imperia. Intermediate gorgonian-wall dive with drift-current
+    character on Libeccio-release days.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Imperia Capo Berta site briefing"
+    - "Comune di Diano Marina dive operator site guide"
+  notes: |
+    Sub-spot of scuba-spot-diano-marina-capo-berta cluster. Tier 2:
+    intermediate wall + drift, Libeccio-exposed.

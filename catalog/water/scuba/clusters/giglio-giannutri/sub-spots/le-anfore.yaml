@@ -1,0 +1,46 @@
+slug: scuba-spot-giglio-giannutri-le-anfore
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-giglio-giannutri
+parent_cluster: scuba-spot-giglio-giannutri
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.2450, lng: 11.1050 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Le Anfore is a scattered late-Republican Roman wine-amphorae field
+    at 28-32 m depth off Giannutri's E flank, adjacent to the Nasim II
+    wreck but at recreational depth. Amphorae are dispersed on a
+    sand-rock bottom in the wake of a shipwreck cargo release, all
+    under Soprintendenza look-only protection (no contact, no removal,
+    guide-led dives with pre-briefing on artefact protection). Depth +
+    calm sand-bottom + amphorae in-situ make this the cluster's
+    archaeological reference dive.
+
+display_name:
+  en: Scuba — Le Anfore (Giannutri)
+  it: Immersione — Le Anfore (Giannutri)
+  es: Buceo — Le Anfore (Giannutri)
+  fr: Plongée — Le Anfore (Giannutri)
+  de: Tauchen — Le Anfore (Giannutri)
+
+description:
+  en: |
+    Scattered late-Republican Roman wine-amphorae field off Giannutri
+    at 28-32 m. Archaeological reference, look-only.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Soprintendenza Toscana Giannutri amphorae field survey documentation"
+    - "PNAT Giannutri archaeology-briefing protocol"
+  notes: |
+    Sub-spot of scuba-spot-giglio-giannutri cluster. Tier 2:
+    recreational-depth archaeological look-only site, guide-led.

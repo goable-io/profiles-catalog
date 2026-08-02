@@ -1,0 +1,43 @@
+slug: scuba-spot-medes-islands-la-vaca
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-medes-islands
+parent_cluster: scuba-spot-medes-islands
+region: mediterranean
+country_code: ES
+
+coordinates:
+  center: { lat: 42.0480, lng: 3.2260 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    La Vaca is a wall + cavern site on Meda Gran's E flank —
+    vertical wall from 15 m to 45 m+ with dense Paramuricea gorgonian
+    and a cavern entry at 22 m opening into a chamber with distinctive
+    encrusting biocoenosis. Depth + cavern-diving overlay make
+    advanced-open-water baseline; guide-led with strict Reserva
+    permit enforcement. The cluster's advanced wall-plus-cavern dive.
+
+display_name:
+  en: Scuba — La Vaca (Islas Medes)
+  it: Immersione — La Vaca
+  es: Buceo — La Vaca
+  fr: Plongée — La Vaca
+  de: Tauchen — La Vaca
+
+description:
+  en: |
+    The E-Meda-Gran wall + cavern. Advanced-open-water wall + cavern
+    dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Reserva Natural Illes Medes La Vaca documentation"
+  notes: |
+    Sub-spot of scuba-spot-medes-islands cluster. Tier 3: deep wall +
+    cavern, advanced-open-water baseline.

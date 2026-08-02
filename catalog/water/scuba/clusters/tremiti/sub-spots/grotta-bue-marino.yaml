@@ -1,0 +1,44 @@
+slug: scuba-spot-tremiti-grotta-bue-marino
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-tremiti
+parent_cluster: scuba-spot-tremiti
+region: adriatic
+country_code: IT
+
+coordinates:
+  center: { lat: 42.1150, lng: 15.4900 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    La Grotta del Bue Marino ("monk seal cave") is a coastal sea
+    cave on San Domino island — historically named for Mediterranean
+    monk seal (Monachus monachus) sightings pre-1970s, now
+    Mediterranean-locally-extirpated on this coast but the name
+    persists. Cavern-diving grade with guide-led penetration, short
+    single-exit route at 6-15 m depth. Depth kept in recreational
+    range; boat access from San Domino in 5 min.
+
+display_name:
+  en: Scuba — Grotta del Bue Marino (Tremiti)
+  it: Immersione — Grotta del Bue Marino
+  es: Buceo — Grotta del Bue Marino
+  fr: Plongée — Grotte du Bue Marino
+  de: Tauchen — Grotte des Bue Marino
+
+description:
+  en: |
+    The San Domino coastal sea cave. Guided cavern dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Riserva Marina Tremiti Grotta del Bue Marino documentation"
+    - "FIPSAS Tremiti cavern-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-tremiti cluster. Tier 2: cavern-diving
+    grade, guide-led.

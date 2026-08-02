@@ -1,0 +1,49 @@
+slug: scuba-spot-elba-formiche-montecristo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-elba
+parent_cluster: scuba-spot-elba
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 42.3500, lng: 10.2600 }
+  radius_m: 1000
+
+tier: 3
+tier_rationale:
+  en: |
+    Le Formiche di Montecristo is an offshore seamount + reef complex
+    ~40 km S of Elba between Elba and Montecristo island. Plateau top
+    at 30 m, drop-off to 60 m+, in open sea outside the strict-access
+    Montecristo terrestrial reserve. Pelagic-encounter site — dentex,
+    barracuda, occasional tuna and rare grouper. Depth + open-sea
+    exposure + full-fetch Libeccio and Sirocco vulnerability make
+    weather-window selection tight; boat transit from Elba is 90+ min.
+    Advanced-open-water + deep-diver rating baseline. The cluster's
+    offshore reference.
+
+display_name:
+  en: Scuba — Formiche di Montecristo
+  it: Immersione — Formiche di Montecristo
+  es: Buceo — Formiche di Montecristo
+  fr: Plongée — Formiche di Montecristo
+  de: Tauchen — Formiche di Montecristo
+
+description:
+  en: |
+    The offshore Formiche di Montecristo seamount + reef complex.
+    Deep, open-sea, pelagic — the Elba cluster's advanced-grade
+    reference dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "PNAT Formiche di Montecristo offshore-dive permit documentation"
+    - "FIPSAS Formiche di Montecristo advanced-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-elba cluster. Tier 3: offshore seamount,
+    30-60 m depth range, advanced-open-water baseline, 90+ min boat
+    transit.

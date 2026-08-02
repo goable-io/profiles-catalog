@@ -1,0 +1,45 @@
+slug: scuba-spot-cozumel-palancar-gardens
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-cozumel
+parent_cluster: scuba-spot-cozumel
+region: caribbean
+country_code: MX
+
+coordinates:
+  center: { lat: 20.3600, lng: -87.0300 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Palancar Gardens is the shallow-reef section of the Palancar reef
+    system on the SW Cozumel coast — coral-head pinnacles and
+    swim-through channels in the 12-25 m range. Standard drift-dive
+    format with boat drop-off + retrieval at the reef terminus.
+    Current 0.5-1.5 kn typical. Intermediate drift-dive experience;
+    guide-lead by default. Cluster's beginner-to-intermediate reef
+    reference.
+
+display_name:
+  en: Scuba — Palancar Gardens (Cozumel)
+  it: Immersione — Palancar Gardens
+  es: Buceo — Jardines de Palancar
+  fr: Plongée — Jardins de Palancar
+  de: Tauchen — Palancar Gardens
+
+description:
+  en: |
+    The shallow Palancar Gardens coral-head reef section on SW
+    Cozumel. Intermediate drift dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parque Nacional Arrecifes de Cozumel Palancar Gardens documentation"
+    - "CONANP Cozumel Palancar site briefing"
+  notes: |
+    Sub-spot of scuba-spot-cozumel cluster. Tier 2: intermediate
+    drift dive on shallow coral heads.

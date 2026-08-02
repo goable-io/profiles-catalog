@@ -1,0 +1,48 @@
+slug: scuba-spot-portofino-colombara
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-portofino
+parent_cluster: scuba-spot-portofino
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.3050, lng: 9.2100 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Colombara ("dove-cote wall") is the Portofino promontory's most
+    committing recreational dive: a vertical + overhanging wall
+    plunging from 20 m to 55 m+ with dense Paramuricea clavata and
+    yellow gorgonian (Eunicella cavolini) fields and endemic red
+    coral (Corallium rubrum) at 40 m+. Depth + current + wall
+    orientation make advanced open-water + deep-diver rating baseline;
+    technical divers extend past 55 m. Site is dive-shop-guided by
+    default in the AMP; independent operations require documented
+    prior familiarity briefing.
+
+display_name:
+  en: Scuba — Colombara
+  it: Immersione — Colombara
+  es: Buceo — Colombara
+  fr: Plongée — Colombara
+  de: Tauchen — Colombara
+
+description:
+  en: |
+    The Portofino deep wall — Colombara plunges from 20 m to 55 m+
+    with the densest gorgonian and red coral fields of the AMP.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Portofino Colombara deep-wall permit + operator qualification documentation"
+    - "FIPSAS Portofino Colombara depth-limit briefing"
+  notes: |
+    Sub-spot of scuba-spot-portofino cluster. Tier 3: deep vertical
+    wall, advanced-open-water baseline, endemic Corallium rubrum
+    proximity — cluster's deep-diving reference.

@@ -1,0 +1,165 @@
+slug: scuba-adriatic
+spot_kind: region
+version: "0.1.0"
+category: water
+extends: scuba
+region: adriatic
+display_name:
+  en: Scuba Diving — Adriatic
+  it: Immersione — Adriatico
+  es: Buceo — Adriático
+  fr: Plongée — Adriatique
+  de: Tauchen — Adria
+description:
+  en: |
+    Adriatic diving spans Italian E coast (Conero, Tremiti), Croatian
+    mid-coast (Kornati, Kamenjak, Rovinj), and Slovenian shelf. The
+    basin is shallow (avg 173 m, max 1230 m in the Southern Adriatic
+    Pit) which produces sharper thermal stratification than the wider
+    Mediterranean and distinct summer sirocco / winter bora regimes.
+    Visibility 8-25 m — clarity is markedly lower than the western
+    Mediterranean because runoff from the Po + eastern Alpine rivers
+    seeds spring/summer plankton blooms. Wreck density is exceptional
+    (WW1 + WW2 losses on both coasts). The Bora rotor gate is the
+    dominant safety variable: NE ≥18 kn shuts shore entry from most
+    Croatian sites within 2-4 hours of onset.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.45 }
+      - { x: 3.0, s: 0.80 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.24
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.80 }
+      - { x: 1.3, s: 0.45 }
+      - { x: 2.0, s: 0.10 }
+      - { x: 2.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.22
+    curve:
+      - { x: 10, s: 0.10 }
+      - { x: 14, s: 0.40 }
+      - { x: 18, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.90 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.65 }
+      - { x: 18, s: 0.30 }
+      - { x: 24, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.06
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.50 }
+      - { x: 0.6, s: 0.80 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 24
+    reason_code: BORA_ROTOR
+    description: NE Bora above 24 knots on the Croatian and Italian NE coasts creates rotor turbulence at shore entries and downdrafts on sheltered lee slopes; boat access is unsafe within 2-4 hours of onset.
+
+  - metric: wave_height_m
+    condition: gt
+    value: 2.2
+    reason_code: ADRIATIC_HIGH_SEAS
+    description: Wave height above 2.2 m in the Adriatic (Bora + Sirocco events) makes shore entry and small-RIB access to offshore sites unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_ADRIATIC
+    description: Surface visibility below 800 m during Sirocco haze events makes site-finding unsafe on the Italian side.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 10
+    reason_code: HEAVY_RAIN_PO_PLUME
+    description: Heavy active rain funnelled through Po + Isonzo river basins triggers plume events that drop underwater visibility from 15-25 m to 1-3 m for 24-72 h.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 22
+    reason_code: HIGH_TURBIDITY_BLOOM
+    description: Elevated turbidity from spring/summer plankton bloom (April-June typical) destroys diving quality on both coasts.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Adriatic dive sites are heavily concentrated in Marine Protected Areas
+    (Riserva Marina Tremiti, Parco del Conero, Parco Nazionale Kornati,
+    Cape Kamenjak Nature Park). Water clarity is more variable than the
+    western Mediterranean due to Po + eastern-Alpine river discharge —
+    seasonal plankton blooms materially reduce quality in April-June.
+    Bora storms create sharp surface degradation windows that cluster
+    site closures. Boat transport dominates per-session footprint.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Adriatic dive site classification"
+    - "Croatian Ministry of Environment Kornati NP diving permit standards"
+    - "Riserva Marina Isole Tremiti operational rules (D.M. 14/07/1989)"
+    - "Parco del Conero AMP guidance"
+  notes: |
+    Regional overrides vs global scuba: wave weight raised to 0.24 (Bora + Sirocco
+    variability); water_temp sweet-spot 22-26°C (basin warms slower than
+    W Mediterranean); added Bora rotor gate at 24 kn; added Po-plume runoff
+    gate. Visibility floor slightly relaxed vs Mediterranean (0.5 → 0.5) but
+    typical clarity is lower (8-25 m vs 15-30 m). turbidity_proxy gate
+    tightened to 22 to catch bloom periods. Site season 22 weeks (May-Sep
+    core + shoulder Apr/Oct on bora-free windows).

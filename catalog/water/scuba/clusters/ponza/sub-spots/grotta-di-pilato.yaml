@@ -1,0 +1,47 @@
+slug: scuba-spot-ponza-grotta-di-pilato
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ponza
+parent_cluster: scuba-spot-ponza
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.8900, lng: 12.9600 }
+  radius_m: 200
+
+tier: 1
+tier_rationale:
+  en: |
+    La Grotta di Pilato is a Roman-era submerged piscina (fish-farming
+    tank) complex on the SE Ponza coast — three interconnected pools
+    at 3-6 m depth carved into tuff cliff, connected to the sea by
+    submerged channels. Depth keeps NDL essentially unlimited.
+    Historically pre-scuba as the "Pilate's grotto" (post-classical
+    misattribution) — the site is protected under Soprintendenza
+    Archeologica look-only regime. Site is a short shore-entry from
+    an adjacent boat mooring; the cluster's training and heritage
+    reference dive.
+
+display_name:
+  en: Scuba — Grotta di Pilato (Ponza)
+  it: Immersione — Grotta di Pilato
+  es: Buceo — Grotta di Pilato
+  fr: Plongée — Grotta di Pilato
+  de: Tauchen — Grotta di Pilato
+
+description:
+  en: |
+    The Roman-era submerged piscinae complex on SE Ponza. Shallow
+    archaeological training dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Soprintendenza Archeologica Lazio Grotta di Pilato piscinae documentation"
+    - "FIPSAS Ponza heritage dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-ponza cluster. Tier 1: shallow protected
+    piscinae, training-and-heritage grade.

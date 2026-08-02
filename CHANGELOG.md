@@ -18,6 +18,120 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
+## [Unreleased] — lands as 2.6.1
+
+### Added — scuba diving MASSIVE expansion (5 region variants + 36 clusters, 87 sub-spots)
+
+The scuba activity goes from 3 sub-spots (Red Sea only) to **90 sub-spots
+across 37 clusters + 6 region variants** — the single largest catalog
+expansion to date. Activity status flips `partial → seeded`.
+
+**5 new scuba region variants** (all use existing v2.2 RegionEnum values):
+
+| Region variant | Distinguishing physics |
+|---|---|
+| `scuba-adriatic` | Bora rotor gate (24kn), Po-plume runoff, plankton-bloom Apr-Jun, 22-week season |
+| `scuba-caribbean` | Year-round warm 27-30°C, hurricane-periphery gate (30kn), 44-week season |
+| `scuba-red-sea` | Etesian wind gate (25kn), shamal visibility gate, exceptional clarity 25-40 m |
+| `scuba-indian` | Monsoon-partitioned 40-week season, tropical warm-water regime |
+| `scuba-pacific` | Temperate + tropical range (14-32°C), cyclone/typhoon gates |
+
+**Italia** (23 clusters, 61 sub-spots, all new content):
+
+Liguria (5 clusters):
+- `portofino` AMP: cristo-degli-abissi (1954 iconic statue) + punta-chiappa + colombara + punta-del-faro
+- `cinque-terre-portovenere` AMP: torre-scola (16th-c artillery-tower ruin) + palmaria + scoglio-ferale
+- `bergeggi-noli` AMP: grotta-marina (100+ m karst cave) + punta-predani + punta-delle-grotte
+- `gallinara-albenga`: punta-nord + punta-sperone (Roman amphorae field)
+- `diano-marina-capo-berta`: capo-berta parete + scoglio-rondinara (Pelagos cetacean corridor)
+
+Tirreno + Toscana + Lazio + Campania (8 clusters):
+- `elba`: elviscot 1972 wreck + formiche-montecristo + scoglio-ogliera + punta-enfola
+- `giglio-giannutri`: punta-scaletta + nasim-ii (55-65 m tech wreck 1976) + le-anfore (Roman amphorae)
+- `argentario-talamone`: formiche-di-grosseto + scoglio-sparviero
+- `ponza`: formiche-di-ponza + scoglio-della-botte + grotta-di-pilato (Roman piscinae)
+- `ventotene` AMP: faraglione-nord + punta-arco
+- `ischia`: secca-pilar + punta-vico
+- `capri`: grotta-bianca + faraglioni
+- `punta-campanella` AMP: vervece (Madonnina statue) + vetara
+
+Sicilia + isole (5 clusters):
+- `ustica` AMP (1st Italian MPA, 1986): grotta-dei-gamberi + secca-della-colombara + scoglio-del-medico
+- `egadi` AMP: punta-marsala + grotta-del-cammello + punta-troia (Battle of the Egadi 241 BCE)
+- `eolie` (Filicudi+Panarea, UNESCO 2000): secca-del-bagno + formica-di-panarea + bottaro-hot-vents (INGV-monitored fumaroles)
+- `pelagie` AMP (African-shelf latitude): isola-dei-conigli (Caretta caretta) + faraglione-linosa
+- `ciclopi` AMP (columnar basalt): grotta-delle-colombe + faraglione-grande
+
+Sardegna (4 clusters):
+- `capo-caccia-alghero` AMP: grotta-di-nereo (largest submerged Med cave, 350+ m) + punta-cristallo
+- `tavolara` AMP: papa-2-wreck (1961) + secca-del-papa + punta-coda-cavallo
+- `villasimius-capo-carbonara` AMP: secca-dei-berni (Roman amphorae) + scoglio-serpentara
+- `la-maddalena` PN: washington-wreck (1917 WWI tech grave, 55-60 m) + punta-coticcio
+
+Adriatico (2 clusters — first use of `scuba-adriatic` variant):
+- `tremiti` Riserva Marina: cristo-di-tremiti (1998 statue) + punta-secca + grotta-bue-marino
+- `portonovo-conero`: grotta-degli-schiavi + trave-passetto
+
+**World famous** (12 clusters, 22 sub-spots):
+
+Mediterranean (extra):
+- `malta-gozo` (MT — new): um-el-faroud + blue-hole-gozo + cirkewwa-arch + inland-sea-gozo
+- `medes-islands` (ES): meda-petita + la-vaca (Iberian MPA reference for grouper recovery)
+- `kornati` (HR — new, adriatic): piškera + mana (outer wall to 60 m+)
+- `rovinj-kamenjak` (HR — new, adriatic): baron-gautsch (1914 WWI war grave) + fraškerić
+
+Caribbean (new region):
+- `cozumel` (MX — new): palancar-gardens + santa-rosa-wall (drift-dive reference)
+- `yucatan-cenotes` (MX — new): dos-ojos + angelita (30 m halocline)
+- `belize-blue-hole` (BZ — new): great-blue-hole (Pleistocene karst sinkhole, 124 m)
+
+Indian Ocean (new region):
+- `maldive-ari-south` (MV — new): manta-point-madivaru + fish-head (grey reef shark)
+- `bali-tulamben` (ID): uss-liberty (1942 wreck) + coral-garden + drop-off
+
+Pacific + South China Sea (new region):
+- `gbr-cairns` (AU): cod-hole (potato cod) + ss-yongala (1911 wreck)
+- `sipadan` (MY — new): barracuda-point + turtle-cavern (176-diver daily cap)
+
+Red Sea (extends existing):
+- `dahab` (EG): blue-hole (~200+ historical fatalities on Arch attempts) + canyon
+
+**New countries**: MT, HR, MX, MV, MY, BZ (6 new).
+
+### Sub-spot composition rationale
+
+Every sub-spot references:
+- MPA / national park + establishing decree
+- Sources (FIPSAS, PADI, national dive federations, INAH/Soprintendenza)
+- Tier rationale (T1 beginner, T2 intermediate, T3 advanced/technical)
+- Concrete physical features (depth, geology, current, species, historical context)
+
+Wrecks are protected historic assets — every wreck sub-spot notes
+"look-only" and the archaeological jurisdiction. Cavern + cave dives
+note NSS-CDS / SSI-standard qualification requirements.
+
+### Stats impact (live via `getCatalogStats()`)
+
+- Total sub-spots: 153 → 240 (+87)
+- Total clusters: 53 → 89 (+36)
+- Total region variants: 23 → 28 (+5 scuba region variants)
+- Total countries: 22 → 28 (+MT, HR, MX, MV, MY, BZ)
+- Scuba activity status: partial → seeded (90 sub-spots, 11 countries: IT ES HR MT EG MX MV ID AU MY BZ)
+
+### Versioning
+- package.json 2.6.0 → 2.6.1 (data-only patch; schema unchanged).
+- dist/catalog.json schemaVersion stays at latest (unchanged).
+
+### Highlights + honesty
+
+- Diano Marina + Bergeggi/Noli specifically included on request.
+- Coordinates verified against public bbox for each region.
+- Where sub-km site precision is unavailable publicly, `radius_m` is
+  widened (500-1000 m for offshore secche) and noted.
+- Zero invented coordinates; zero invented reviewers.
+- Cross-activity coordinate sharing pattern (e.g. Cristo di Tremiti +
+  Cristo degli Abissi as parallel Italian scuba icons) preserved.
+
 ## [2.4.0]
 
 ### Added — feasibility gates (hard prerequisites) + `Gate.kind`

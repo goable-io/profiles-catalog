@@ -1,0 +1,47 @@
+slug: scuba-spot-malta-gozo-um-el-faroud
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-malta-gozo
+parent_cluster: scuba-spot-malta-gozo
+region: mediterranean
+country_code: MT
+
+coordinates:
+  center: { lat: 35.8340, lng: 14.4460 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    L'Um El Faroud is a 110 m Libyan-flagged tanker deliberately
+    scuttled 2 September 1998 off Wied iz-Zurrieq (SW Malta) as a
+    reef-and-wreck training + tourism asset. Wreck sits upright on
+    sand-rock bottom at 25-36 m depth — recreational-wreck geometry
+    with intact hull + superstructure + engine-room penetration mapped
+    for wreck-trained divers. In 2005 the wreck split into two
+    sections after a severe storm — swim-through geometry now
+    includes the mid-ship break. Guide-led by default; shore + boat
+    entry both feasible.
+
+display_name:
+  en: Scuba — Um El Faroud wreck (Malta)
+  it: Immersione — Relitto Um El Faroud
+  es: Buceo — Pecio Um El Faroud
+  fr: Plongée — Épave Um El Faroud
+  de: Tauchen — Wrack Um El Faroud
+
+description:
+  en: |
+    The 110 m tanker deliberately scuttled 1998 at 25-36 m off SW
+    Malta. Wreck-training grade — Malta's most-dived wreck.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Malta Tourism Authority Um El Faroud scuttling documentation"
+    - "Gozo Aquatic Sports Association Um El Faroud site briefing"
+  notes: |
+    Sub-spot of scuba-spot-malta-gozo cluster. Tier 2: 25-36 m
+    wreck, wreck-training grade.

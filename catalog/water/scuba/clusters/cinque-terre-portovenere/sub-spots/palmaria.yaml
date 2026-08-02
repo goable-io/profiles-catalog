@@ -1,0 +1,47 @@
+slug: scuba-spot-cinque-terre-portovenere-palmaria
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-cinque-terre-portovenere
+parent_cluster: scuba-spot-cinque-terre-portovenere
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.0450, lng: 9.8320 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Palmaria island's outer W-face delivers wall + boulder-field diving
+    from 12 m to 40 m+, with the Grotta Azzurra (Palmaria) cavern dive
+    at 15-20 m accessed from the S side. Coralligenous encrustation and
+    dense Paramuricea + Eunicella cavolini gorgonian below 25 m. Site
+    exposes to Libeccio swell on the W flank; sheltered channel-side
+    on the E. Standard intermediate-recreational grade with cavern-
+    diving overlay on the Grotta route (requires cave/cavern rating for
+    penetration).
+
+display_name:
+  en: Scuba — Palmaria wall
+  it: Immersione — Palmaria
+  es: Buceo — Palmaria
+  fr: Plongée — Palmaria
+  de: Tauchen — Palmaria
+
+description:
+  en: |
+    Palmaria island W-face wall + Grotta Azzurra cavern. Portovenere
+    cluster's intermediate wall + overhead dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Regione Liguria Palmaria site documentation"
+    - "FIPSAS Palmaria wall + Grotta Azzurra dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-cinque-terre-portovenere cluster. Tier 2:
+    wall + cavern combination, W-face Libeccio-exposed, intermediate
+    recreational rating.

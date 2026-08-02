@@ -1,0 +1,44 @@
+slug: scuba-spot-capo-caccia-alghero-punta-cristallo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-capo-caccia-alghero
+parent_cluster: scuba-spot-capo-caccia-alghero
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.5730, lng: 8.1600 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Punta Cristallo is the exposed N face of the Capo Caccia
+    promontory, a vertical wall from 12 m to 45 m+ with dense
+    Paramuricea gorgonian and Corallium rubrum below 35 m — the
+    Sardegna NW reference deep-recreational wall. Exposed to Mistral
+    on full fetch; weather-window-selected. Advanced-open-water
+    rating baseline given depth + Corallium proximity.
+
+display_name:
+  en: Scuba — Punta Cristallo (Capo Caccia)
+  it: Immersione — Punta Cristallo
+  es: Buceo — Punta Cristallo
+  fr: Plongée — Punta Cristallo
+  de: Tauchen — Punta Cristallo
+
+description:
+  en: |
+    The N-face Capo Caccia wall with Corallium rubrum. Sardegna NW
+    reference deep-recreational wall.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Capo Caccia Punta Cristallo site documentation"
+    - "FIPSAS Sardegna NW dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-capo-caccia-alghero cluster. Tier 3: deep
+    wall, Corallium rubrum, advanced-open-water baseline.

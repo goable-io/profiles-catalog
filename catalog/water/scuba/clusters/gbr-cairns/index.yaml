@@ -1,0 +1,153 @@
+slug: scuba-spot-gbr-cairns
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-pacific
+region: pacific
+country_code: AU
+sub_spots:
+  - scuba-spot-gbr-cairns-cod-hole
+  - scuba-spot-gbr-cairns-ss-yongala
+display_name:
+  en: Scuba Diving — Great Barrier Reef (Cairns)
+  it: Immersione — Grande Barriera Corallina (Cairns)
+  es: Buceo — Gran Barrera de Coral (Cairns)
+  fr: Plongée — Grande Barrière de Corail (Cairns)
+  de: Tauchen — Great Barrier Reef (Cairns)
+description:
+  en: |
+    The Cairns + Ribbon Reefs sector of the Great Barrier Reef (GBR)
+    delivers the reference Australian tropical reef diving. Cod Hole
+    (Ribbon Reef #10) hosts the world-famous potato-cod (Epinephelus
+    tukula) encounter site; SS Yongala (200 km S off Ayr, but
+    typically operated from Townsville / Cairns liveaboards) is one
+    of the world's greatest wreck dives at 15-30 m. Water 22-30°C
+    seasonal. Liveaboard-dominant format. Coral bleaching pressure
+    is severe (2016-17, 2020, 2022 mass events documented).
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.65 }
+      - { x: 5.0, s: 0.92 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.40 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 14, s: 0.30 }
+      - { x: 20, s: 0.55 }
+      - { x: 25, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.80 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.65 }
+      - { x: 24, s: 0.25 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 8,  s: 0.30 }
+      - { x: 18, s: 0.75 }
+      - { x: 26, s: 1.00 }
+      - { x: 34, s: 0.90 }
+      - { x: 42, s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: PACIFIC_HIGH_SEAS
+    description: Wave above 3.0 m on the Coral Sea (cyclone periphery Nov-Apr) makes SS Yongala + Cod Hole boat mooring unsafe.
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: TROPICAL_CYCLONE_PERIPHERY
+    description: Sustained wind above 30 knots signals tropical cyclone periphery; GBR liveaboard operations stand down.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_PAC
+    description: Surface visibility below 800 m during tropical squall makes site-finding unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: TROPICAL_DELUGE_PAC
+    description: Heavy tropical rain triggers coastal runoff into inshore GBR sector; visibility drops for 24-48 h.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Great Barrier Reef Marine Park Authority (GBRMPA) enforces zone-
+    based dive-tourism rules on the entire GBR system. Coral bleaching
+    events since 2016 have caused documented 30-50% coral cover loss
+    on inshore reefs. SS Yongala is protected historic-wreck under
+    Queensland + Australian legislation (look-only, no penetration
+    beyond safe-route zone).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "GBRMPA (Great Barrier Reef Marine Park Authority) zone-management documentation"
+    - "SS Yongala 1911 loss + protection documentation"
+    - "Queensland Historic Shipwrecks Act SS Yongala protocol"
+    - "PADI Australia regional dive-condition briefing"
+    - "NOAA CoralReefWatch GBR bleaching bulletins 2016-2022"
+  notes: |
+    Spot overrides vs scuba-pacific: matches regional baseline for
+    the tropical-Pacific GBR sector. 40-week season with cyclone
+    closure risk (Nov-Apr peak).

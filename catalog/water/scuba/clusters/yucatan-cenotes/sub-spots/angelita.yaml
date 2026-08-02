@@ -1,0 +1,47 @@
+slug: scuba-spot-yucatan-cenotes-angelita
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-yucatan-cenotes
+parent_cluster: scuba-spot-yucatan-cenotes
+region: caribbean
+country_code: MX
+
+coordinates:
+  center: { lat: 20.1400, lng: -87.5500 }
+  radius_m: 200
+
+tier: 3
+tier_rationale:
+  en: |
+    Il Cenote Angelita is a 60 m-deep sinkhole S of Tulum with a
+    famous 30 m halocline layer — a dense hydrogen-sulfide-rich
+    saltwater "cloud" separating freshwater above from saltwater
+    below. Descent through the cloud is a visual +
+    disorientation event: the diver passes through 1-2 m of near-
+    zero-visibility haze before emerging into cold clear saltwater
+    below. Advanced-open-water rating baseline; nitrox recommended.
+    Guide-lead by default. Cluster's advanced signature dive.
+
+display_name:
+  en: Scuba — Cenote Angelita (halocline)
+  it: Immersione — Cenote Angelita
+  es: Buceo — Cenote Angelita
+  fr: Plongée — Cénote Angelita
+  de: Tauchen — Cenote Angelita
+
+description:
+  en: |
+    The 60 m Angelita sinkhole S of Tulum with 30 m halocline "cloud".
+    Advanced-open-water signature dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NSS-CDS Cenote Angelita halocline documentation"
+    - "Quintana Roo advanced-cenote operator SOP"
+  notes: |
+    Sub-spot of scuba-spot-yucatan-cenotes cluster. Tier 3: 60 m
+    depth + halocline, advanced-open-water baseline, nitrox
+    recommended.

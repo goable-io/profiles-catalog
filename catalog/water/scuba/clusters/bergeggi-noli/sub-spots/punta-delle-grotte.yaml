@@ -1,0 +1,49 @@
+slug: scuba-spot-bergeggi-noli-punta-delle-grotte
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-bergeggi-noli
+parent_cluster: scuba-spot-bergeggi-noli
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.2050, lng: 8.4200 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Punta delle Grotte sits on the Noli coast between Capo Noli and
+    Spotorno, a shallow (6-25 m) reef and boulder-slope well
+    sheltered from Libeccio by the Capo Noli headland. Multiple small
+    coastal caverns give the sub-spot its name; overheads are shallow
+    (max 8-10 m depth inside) and short (single-buddy-team single-
+    exit typical), making the site the cluster's beginner-to-
+    intermediate open-water reference — the go-to shore-entry or
+    short-boat-hop dive when Bergeggi outer sites are wind-shut.
+    Encrusting sponges, moray, octopus on the reef.
+
+display_name:
+  en: Scuba — Punta delle Grotte (Noli)
+  it: Immersione — Punta delle Grotte
+  es: Buceo — Punta delle Grotte
+  fr: Plongée — Punta delle Grotte
+  de: Tauchen — Punta delle Grotte
+
+description:
+  en: |
+    The sheltered Noli coastal reef between Capo Noli and Spotorno.
+    Shallow shore/short-boat dive with small caverns — the cluster's
+    beginner-friendly Libeccio-shelter dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Riviera di Ponente Punta delle Grotte + Capo Noli site briefing"
+    - "Comune di Noli coastal-diving guidance"
+  notes: |
+    Sub-spot of scuba-spot-bergeggi-noli cluster. Tier 1: shallow
+    sheltered coastal reef, short overheads, beginner-and-training
+    grade. Cluster's Libeccio-shelter alternative dive.

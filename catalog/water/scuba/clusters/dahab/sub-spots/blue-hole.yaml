@@ -1,0 +1,49 @@
+slug: scuba-spot-dahab-blue-hole
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-dahab
+parent_cluster: scuba-spot-dahab
+region: red-sea
+country_code: EG
+
+coordinates:
+  center: { lat: 28.5720, lng: 34.5370 }
+  radius_m: 200
+
+tier: 3
+tier_rationale:
+  en: |
+    Il Dahab Blue Hole is a 100+ m coastal submarine pit connected to
+    open sea via a 56 m submerged Arch. Recreational-depth diving
+    (0-30 m on the rim + reef) is straightforward and safe. The
+    56 m Arch swim-through requires trimix technical-diving
+    qualification — recreational-air attempts have caused ~200+
+    documented fatalities historically, making this one of the
+    world's most-tracked dive-fatality sites. Shore-entry from the
+    Bedouin-café strip on the cliff-side road. Strict guide-lead
+    + qualification enforcement post-2010 CDWS policy tightening.
+
+display_name:
+  en: Scuba — Dahab Blue Hole
+  it: Immersione — Dahab Blue Hole
+  es: Buceo — Blue Hole (Dahab)
+  fr: Plongée — Blue Hole (Dahab)
+  de: Tauchen — Blue Hole (Dahab)
+
+description:
+  en: |
+    The 100+ m Dahab coastal pit + 56 m Arch swim-through.
+    Recreational rim = safe; Arch = strict trimix technical.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CDWS Egypt Dahab Blue Hole safety documentation"
+    - "Global Underwater Explorers (GUE) Blue Hole Arch technical protocol"
+    - "DAN (Divers Alert Network) Dahab Blue Hole fatality analysis 2000-2023"
+  notes: |
+    Sub-spot of scuba-spot-dahab cluster. Tier 3: recreational rim
+    safe + Arch strict-trimix, one of the world's most-documented
+    fatality-site backgrounds.

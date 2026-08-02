@@ -1,0 +1,42 @@
+slug: scuba-spot-bali-tulamben-coral-garden
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-bali-tulamben
+parent_cluster: scuba-spot-bali-tulamben
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.2760, lng: 115.5980 }
+  radius_m: 400
+
+tier: 1
+tier_rationale:
+  en: |
+    Coral Garden is a shallow reef site adjacent to the USS Liberty
+    wreck — depth 5-15 m, sand + coral-rubble bottom with resident
+    reef fish, occasional black-tip reef shark on outer edge, and
+    dense hard-coral cover on the shallow reef. Shore-entry from the
+    Tulamben beach in 5 min. Beginner-friendly reef dive with
+    extended-NDL profile.
+
+display_name:
+  en: Scuba — Coral Garden (Tulamben)
+  it: Immersione — Coral Garden
+  es: Buceo — Jardín de Coral
+  fr: Plongée — Jardin de Corail
+  de: Tauchen — Korallengarten
+
+description:
+  en: |
+    Shallow reef adjacent to USS Liberty. Beginner-friendly reef dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Indonesian Ministry of Marine Affairs Tulamben Coral Garden documentation"
+  notes: |
+    Sub-spot of scuba-spot-bali-tulamben cluster. Tier 1: shallow
+    reef, beginner-friendly.

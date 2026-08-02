@@ -1,0 +1,51 @@
+slug: scuba-spot-bergeggi-noli-grotta-marina
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-bergeggi-noli
+parent_cluster: scuba-spot-bergeggi-noli
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 44.2400, lng: 8.4500 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    The Grotta Marina di Bergeggi is a partially submerged karst sea
+    cave on the E-inner flank of Bergeggi island — surveyed by SSI
+    speleologists at 100+ m of underwater passage development, entry
+    at 4-8 m from the seaward opening, air-space chambers with
+    stalactite / stalagmite formations from Quaternary lower sea-
+    level periods. Cavern-diving grade with strict guide-led penetration
+    under AMP permit conditions; deeper cave-diving beyond the second
+    air chamber is reserved for certified cave divers with double-tank
+    + guideline gear. Silt-out risk is high (fine karst sediment). Shallow
+    outer entry keeps NDL long for the cavern segment.
+
+display_name:
+  en: Scuba — Grotta Marina di Bergeggi
+  it: Immersione — Grotta Marina di Bergeggi
+  es: Buceo — Cueva Marina de Bergeggi
+  fr: Plongée — Grotte Marine de Bergeggi
+  de: Tauchen — Meereshöhle von Bergeggi
+
+description:
+  en: |
+    The 100+ m karst sea cave on E-inner Bergeggi island. Cavern-
+    diving grade with guide-led penetration under AMP permit — the
+    cluster's overhead-environment reference.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SSI (Società Speleologica Italiana) Grotta Marina di Bergeggi 2005 survey"
+    - "AMP Isola di Bergeggi cavern-permit + guide-team documentation"
+  notes: |
+    Sub-spot of scuba-spot-bergeggi-noli cluster. Tier 2: cavern-
+    diving grade shallow entry, guide-led with silt-out risk,
+    speleologically-documented 100+ m passage. Cluster's overhead
+    reference.

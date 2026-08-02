@@ -1,0 +1,43 @@
+slug: scuba-spot-ischia-punta-vico
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ischia
+parent_cluster: scuba-spot-ischia
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.7500, lng: 13.8700 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Vico is a N-Ischia coastal reef between Forio and Casamicciola,
+    descending from 8 m to 30 m+ with encrusting biocoenosis and
+    resident conger + moray + octopus. Sheltered from Sirocco by island
+    geometry, exposed to Libeccio. Boat access from Casamicciola in
+    10 min. Standard intermediate coastal reef dive with clear ascent
+    profile, no depth commitment beyond 30 m.
+
+display_name:
+  en: Scuba — Punta Vico (Ischia)
+  it: Immersione — Punta Vico
+  es: Buceo — Punta Vico
+  fr: Plongée — Punta Vico
+  de: Tauchen — Punta Vico
+
+description:
+  en: |
+    N-Ischia coastal reef between Forio and Casamicciola.
+    Intermediate no-depth-commitment reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Ischia Punta Vico site briefing"
+  notes: |
+    Sub-spot of scuba-spot-ischia cluster. Tier 2: intermediate
+    coastal reef.

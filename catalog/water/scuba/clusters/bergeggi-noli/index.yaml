@@ -1,0 +1,162 @@
+slug: scuba-spot-bergeggi-noli
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-bergeggi-noli-grotta-marina
+  - scuba-spot-bergeggi-noli-punta-predani
+  - scuba-spot-bergeggi-noli-punta-delle-grotte
+display_name:
+  en: Scuba Diving — Bergeggi / Noli AMP
+  it: Immersione — AMP Isola di Bergeggi (Noli)
+  es: Buceo — AMP Isola di Bergeggi (Noli)
+  fr: Plongée — AMP Isola di Bergeggi (Noli)
+  de: Tauchen — MPA Isola di Bergeggi (Noli)
+description:
+  en: |
+    The AMP Isola di Bergeggi (Riviera di Ponente, Savona, D.M.
+    07/05/2007) covers the offshore Bergeggi island plus adjacent
+    coastal cliffs including the Grotta Marina di Bergeggi — a
+    partially-submerged karst sea cave with 100+ m of underwater
+    passage documented as one of the most extended cavern-dive systems
+    on the Italian W coast. Cluster combines cavern penetration, wall
+    diving with Paramuricea gorgonian at 25-35 m, and coralligenous
+    biocoenosis. Sheltered on the E side of the island from prevailing
+    Libeccio; the offshore Punta delle Grotte cliffs sit closer to
+    the town of Noli and share the same regional exposure profile.
+    Boat access from Spotorno, Noli, or Bergeggi harbours.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m on the Riviera di Ponente (Libeccio events) shuts Bergeggi and Noli boat access; cavern penetration remains available on E-sheltered side up to 2.5 m.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze events makes navigation to Bergeggi + Punta Predani unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain in the Ligurian hinterland triggers Sciusa + Segno river runoff into Bergeggi coastal sites; visibility drops for 24-48 h.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Libeccio storm sediment stirring destroys wall + cavern dive quality.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    AMP Isola di Bergeggi (D.M. 07/05/2007) enforces zone-based diving
+    permits, daily visitor caps, and licensed-operator-only cavern
+    penetration at the Grotta Marina. Coastal-cavern silt-out risk is
+    the dominant operational-hazard concern — Grotta penetration is
+    guide-led with strict buddy-team-size limits and depth caps
+    inside the karst passage.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Isola di Bergeggi management authority (Comune di Bergeggi)"
+    - "D.M. 07/05/2007 istitutivo dell'AMP Isola di Bergeggi"
+    - "FIPSAS Riviera di Ponente Bergeggi + Noli site classification"
+    - "Grotta Marina di Bergeggi karst-cavern speleological survey (SSI 2005)"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline
+    for the Ponente sector. Cavern-cover overlay is captured at sub-
+    spot level (Grotta Marina). Season 28 weeks with Nov-March closed
+    for shore-entry and Libeccio storm windows. Bergeggi is materially
+    more sheltered from Libeccio than adjacent Noli coast — E flank
+    of the island stays workable when Noli cliffs shut.
