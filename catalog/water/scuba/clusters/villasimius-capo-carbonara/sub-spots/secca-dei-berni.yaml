@@ -1,0 +1,44 @@
+slug: scuba-spot-villasimius-capo-carbonara-secca-dei-berni
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-villasimius-capo-carbonara
+parent_cluster: scuba-spot-villasimius-capo-carbonara
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 39.0900, lng: 9.5400 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    La Secca dei Berni is an offshore reef complex SE of Villasimius
+    with wall + drop-off descending from 15 m to 40 m+ plus a Roman-
+    era amphorae field at 28-32 m depth (protected Soprintendenza
+    look-only). Advanced-open-water baseline given depth + open-sea
+    exposure + archaeological-adjacency guide-lead requirement.
+    Cluster's advanced dive.
+
+display_name:
+  en: Scuba — Secca dei Berni
+  it: Immersione — Secca dei Berni
+  es: Buceo — Secca dei Berni
+  fr: Plongée — Secca dei Berni
+  de: Tauchen — Secca dei Berni
+
+description:
+  en: |
+    The SE-Villasimius offshore reef with Roman amphorae field.
+    Advanced-open-water archaeological + wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Capo Carbonara Secca dei Berni documentation"
+    - "Soprintendenza Sardegna Secca dei Berni amphorae field protocol"
+  notes: |
+    Sub-spot of scuba-spot-villasimius-capo-carbonara cluster. Tier 3:
+    deep wall + archaeological adjacency, guide-led.

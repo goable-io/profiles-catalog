@@ -1,0 +1,45 @@
+slug: scuba-spot-tavolara-papa-2-wreck
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-tavolara
+parent_cluster: scuba-spot-tavolara
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.9000, lng: 9.7200 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Papa 2 (originally a WW2-era US minesweeper transferred to
+    Marina Militare Italiana) sank 26 May 1961 during a naval training
+    exercise off Tavolara. Wreck sits upright on a sand-rock bottom at
+    30 m depth — clean recreational-wreck geometry with intact hull +
+    superstructure outline + engine-room + cargo-hold penetration
+    mapped for open-water divers with wreck training. Site is guide-
+    led by default; boat access from Porto San Paolo in 15 min.
+
+display_name:
+  en: Scuba — Papa 2 wreck (Tavolara)
+  it: Immersione — Relitto Papa 2
+  es: Buceo — Pecio Papa 2
+  fr: Plongée — Épave Papa 2
+  de: Tauchen — Wrack Papa 2
+
+description:
+  en: |
+    The 1961 Papa 2 Marina Militare minesweeper wreck at 30 m off
+    Tavolara. Recreational wreck-training grade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Marina Militare Italiana Papa 2 1961 documentation"
+    - "AMP Tavolara Papa 2 wreck permit + guide-lead protocol"
+  notes: |
+    Sub-spot of scuba-spot-tavolara cluster. Tier 2: 30 m wreck,
+    wreck-training grade, guide-led.

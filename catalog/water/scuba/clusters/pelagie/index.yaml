@@ -1,0 +1,155 @@
+slug: scuba-spot-pelagie
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-pelagie-isola-dei-conigli
+  - scuba-spot-pelagie-faraglione-linosa
+display_name:
+  en: Scuba Diving — AMP Isole Pelagie
+  it: Immersione — AMP Isole Pelagie
+  es: Buceo — AMP Isole Pelagie
+  fr: Plongée — AMP Isole Pelagie
+  de: Tauchen — MPA Pelagische Inseln
+description:
+  en: |
+    AMP Isole Pelagie (D.M. 21/10/2002) protects Lampedusa +
+    Lampione + Linosa, southernmost Italian islands (technically on
+    the African continental shelf, closer to Tunisia than to Sicily).
+    Water is exceptionally clear + warm (17-28°C seasonal), with
+    unique bio-geographical mixing of Med and Atlantic-tropical
+    species. Sites at Isola dei Conigli (turtle beach, MPA Zone A
+    on land) offshore reef + faraglione at Linosa volcanic islet.
+    Boat access from Lampedusa Porto or Linosa Porto (ferry from
+    Porto Empedocle mainland).
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 14, s: 0.20 }
+      - { x: 18, s: 0.60 }
+      - { x: 22, s: 0.90 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m makes offshore Lampione + Linosa transit unsafe (open Mediterranean fetch on both sides).
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze (with Saharan dust plume overlay) makes navigation unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain triggers island-hinterland runoff; visibility drops for 24 h (rare event in Pelagie desert climate).
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from storm sediment stirring destroys wall dive quality.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 34
+  carrying_capacity_sensitivity: high
+  notes: |
+    AMP Isole Pelagie enforces strict zone rules — Zone A around
+    Isola dei Conigli beach is a Caretta caretta turtle nesting site
+    with seasonal closure (May-August). Linosa is a volcanic islet
+    with Chelonia mydas green turtle nesting also under protection.
+    Cluster's ecological sensitivity is materially higher than most
+    Italian sites.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Isole Pelagie management authority documentation"
+    - "D.M. 21/10/2002 istitutivo dell'AMP Isole Pelagie"
+    - "Legambiente Pelagie sea-turtle nesting monitoring reports"
+    - "FIPSAS Pelagie site classification"
+  notes: |
+    Spot overrides vs scuba-mediterranean: water_temp curve shifted
+    warm (Pelagie is on African-shelf latitude); 34-week season
+    reflects year-round African-climate diving feasibility. Turtle-
+    nesting seasonal closures at Zone A managed by AMP outside this
+    profile.

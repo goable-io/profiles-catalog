@@ -1,0 +1,45 @@
+slug: scuba-spot-egadi-punta-troia
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-egadi
+parent_cluster: scuba-spot-egadi
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 37.9820, lng: 12.0620 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Punta Troia is the northern tip of Marettimo topped by an Aragonese
+    fortress. Underwater delivers wall + drop-off from 15 m to 45 m+
+    with dense Paramuricea gorgonian and the offshore Battle-of-the-
+    Egadi (241 BCE) archaeological zone in adjacent waters. Depth +
+    exposure + strict-AMP-zoning make advanced-open-water baseline;
+    guided-dive-only with strict Soprintendenza look-only enforcement
+    on any archaeological-context passage.
+
+display_name:
+  en: Scuba — Punta Troia (Marettimo)
+  it: Immersione — Punta Troia
+  es: Buceo — Punta Troia
+  fr: Plongée — Punta Troia
+  de: Tauchen — Punta Troia
+
+description:
+  en: |
+    The N-Marettimo Punta Troia wall + archaeological adjacent zone.
+    Advanced-open-water grade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Egadi Marettimo Punta Troia documentation"
+    - "Soprintendenza del Mare Battle of the Egadi 241 BCE site protocol"
+  notes: |
+    Sub-spot of scuba-spot-egadi cluster. Tier 3: deep wall + strict-
+    zone + archaeological adjacency, guide-led.

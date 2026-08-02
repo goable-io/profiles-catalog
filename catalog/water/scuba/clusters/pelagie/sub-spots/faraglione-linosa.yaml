@@ -1,0 +1,45 @@
+slug: scuba-spot-pelagie-faraglione-linosa
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-pelagie
+parent_cluster: scuba-spot-pelagie
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 35.8600, lng: 12.8700 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Linosa is a small volcanic island 40 km N of Lampedusa (still on
+    African shelf). The Faraglione + Punta Beppe Tuccio outer coast
+    delivers reef + wall diving from 10 m to 35 m+ with dense
+    encrusting biocoenosis and clear water. Sheltered from Sirocco
+    by island geometry on some approaches. Boat access from Linosa
+    village or ferry-hop from Lampedusa. Standard intermediate reef
+    dive with post-storm turbidity as the main quality-swing variable.
+
+display_name:
+  en: Scuba — Faraglione Linosa
+  it: Immersione — Faraglione di Linosa
+  es: Buceo — Faraglione Linosa
+  fr: Plongée — Faraglione Linosa
+  de: Tauchen — Faraglione Linosa
+
+description:
+  en: |
+    The Linosa volcanic islet Faraglione + outer coast reef.
+    Intermediate wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Pelagie Linosa documentation"
+    - "FIPSAS Linosa dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-pelagie cluster. Tier 2: intermediate wall
+    on volcanic islet.

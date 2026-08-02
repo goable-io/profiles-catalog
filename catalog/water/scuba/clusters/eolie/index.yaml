@@ -1,0 +1,152 @@
+slug: scuba-spot-eolie
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: IT
+sub_spots:
+  - scuba-spot-eolie-secca-del-bagno
+  - scuba-spot-eolie-formica-di-panarea
+  - scuba-spot-eolie-bottaro-hot-vents
+display_name:
+  en: Scuba Diving — Eolie (Filicudi + Panarea)
+  it: Immersione — Isole Eolie
+  es: Buceo — Islas Eolias
+  fr: Plongée — Îles Éoliennes
+  de: Tauchen — Äolische Inseln
+description:
+  en: |
+    The Aeolian archipelago (Eolie, Sicilia, UNESCO World Heritage
+    2000) is a volcanic seven-island chain N of Sicilia. Cluster
+    focuses on the Filicudi + Panarea islands with wall + seamount
+    diving (Secca del Bagno, Formica di Panarea) plus the geologically
+    unique hot vent field at Bottaro islet — active submarine
+    fumaroles releasing CO2 bubble columns and creating locally
+    warmer water zones. Water 15-27°C. Boat access from Lipari (main
+    hub) or direct from Milazzo mainland ferries.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m makes Filicudi + Panarea inter-island transit and offshore Secca del Bagno mooring unsafe.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze makes navigation unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain triggers island-hinterland runoff into coastal sites; visibility drops for 24 h.
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Libeccio storm sediment destroys wall dive quality.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 30
+  carrying_capacity_sensitivity: medium
+  notes: |
+    UNESCO World Heritage 2000 protection covers geological + volcanic
+    features across the Eolie archipelago. Bottaro hot vents are of
+    active scientific + geotourism interest (INGV monitoring). Local
+    Sicilian coastal authorities coordinate ferry + tour-boat +
+    diving-boat traffic patterns in the archipelago.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "UNESCO World Heritage Aeolian Islands 2000 designation documentation"
+    - "INGV Bottaro hot-vent monitoring reports"
+    - "FIPSAS Sicilia Nord-Orientale + Eolie site classification"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline
+    for the S-Tirreno volcanic sector. 30-week season. Bottaro hot-
+    vent site captures a locally-distinct water-chemistry regime not
+    reflected in the standard water_temp curve.

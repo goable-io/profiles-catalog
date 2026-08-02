@@ -1,0 +1,49 @@
+slug: scuba-spot-eolie-bottaro-hot-vents
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-eolie
+parent_cluster: scuba-spot-eolie
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 38.6300, lng: 15.0900 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    Bottaro islet is a rocky outcropping E of Panarea with active
+    submarine hydrothermal vents releasing CO2 bubble columns and
+    creating locally-warm water zones on the sand-rock bottom at
+    10-25 m depth. INGV-monitored geological feature: vent-field
+    activity increased notably in 2002 with a documented gas-release
+    event. Dive experience combines standard reef geometry with the
+    geologically-distinct bubble-column and low-pH microhabitat.
+    Shallow depth keeps NDL long; guided by default for hot-vent
+    proximity briefing.
+
+display_name:
+  en: Scuba — Bottaro hot vents (Panarea)
+  it: Immersione — Bottaro (fumarole)
+  es: Buceo — Bottaro (fumarolas)
+  fr: Plongée — Bottaro (fumerolles)
+  de: Tauchen — Bottaro (Fumarolen)
+
+description:
+  en: |
+    The E-Panarea Bottaro islet + active submarine hydrothermal vent
+    field. Geologically unique guided dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "INGV Bottaro hot-vent monitoring 2002-2023"
+    - "FIPSAS Panarea Bottaro geological-dive briefing"
+    - "Italiano et al. 2004 Bottaro degassing event characterization"
+  notes: |
+    Sub-spot of scuba-spot-eolie cluster. Tier 2: shallow reef + hot-
+    vent overlay, guide-led for CO2-column briefing. Geological
+    feature outside standard water_temp physics.

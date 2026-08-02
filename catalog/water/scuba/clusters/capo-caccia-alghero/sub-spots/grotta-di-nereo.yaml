@@ -1,0 +1,48 @@
+slug: scuba-spot-capo-caccia-alghero-grotta-di-nereo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-capo-caccia-alghero
+parent_cluster: scuba-spot-capo-caccia-alghero
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.5600, lng: 8.1580 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    La Grotta di Nereo is the largest submerged karst sea cave in
+    the Mediterranean by mapped extent — 350+ m of underwater
+    passage development documented by SSI + Speleo Sub AMP Capo
+    Caccia surveys, entry at 12-18 m from the Capo Caccia W face.
+    Multiple chambers with distinct freshwater-halocline transitions
+    from karst freshwater infiltration. Cavern-grade dive available
+    to cavern-certified divers on the entry area only; full-cave
+    penetration requires cave-diver certification + guide-lead by
+    AMP-permitted operators.
+
+display_name:
+  en: Scuba — Grotta di Nereo (Capo Caccia)
+  it: Immersione — Grotta di Nereo
+  es: Buceo — Grotta di Nereo
+  fr: Plongée — Grotte de Nereo
+  de: Tauchen — Grotte des Nereo
+
+description:
+  en: |
+    The 350+ m karst cave under Capo Caccia — largest submerged
+    Mediterranean cave. Cavern to cave-diver grade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SSI + Speleo Sub AMP Capo Caccia Grotta di Nereo survey documentation"
+    - "AMP Capo Caccia Nereo permit + guide-lead protocol"
+  notes: |
+    Sub-spot of scuba-spot-capo-caccia-alghero cluster. Tier 3:
+    largest Mediterranean submerged cave, cavern-to-cave-diver grade,
+    strict guide-lead + certification enforcement.

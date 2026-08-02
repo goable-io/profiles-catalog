@@ -1,0 +1,47 @@
+slug: scuba-spot-pelagie-isola-dei-conigli
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-pelagie
+parent_cluster: scuba-spot-pelagie
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 35.5100, lng: 12.5600 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    L'Isola dei Conigli is a small islet + tombolo off Lampedusa's
+    SW coast, world-famous for turquoise-water beach + Caretta
+    caretta turtle nesting. Underwater delivers shallow reef +
+    sand-slope from 5 m to 25 m with excellent visibility (20-30 m
+    routine) and clear African-shelf water. Turtle-nesting season
+    (May-August) sees Zone A closure of the tombolo beach — dive
+    activity remains open on adjacent perimeter. Standard
+    intermediate reef dive with the cluster's clarity + wildlife
+    reference.
+
+display_name:
+  en: Scuba — Isola dei Conigli (Lampedusa)
+  it: Immersione — Isola dei Conigli
+  es: Buceo — Isla de los Conejos
+  fr: Plongée — Île des Lapins
+  de: Tauchen — Insel der Kaninchen
+
+description:
+  en: |
+    The SW-Lampedusa Isola dei Conigli reef + turtle nesting site.
+    Intermediate clarity + wildlife dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Pelagie Isola dei Conigli documentation"
+    - "Legambiente Isola dei Conigli Caretta caretta monitoring"
+  notes: |
+    Sub-spot of scuba-spot-pelagie cluster. Tier 2: intermediate reef,
+    turtle-nesting seasonal zone rules.

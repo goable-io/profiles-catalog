@@ -1,0 +1,45 @@
+slug: scuba-spot-tavolara-punta-coda-cavallo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-tavolara
+parent_cluster: scuba-spot-tavolara
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 40.8600, lng: 9.7000 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Coda Cavallo is the mainland promontory S of Tavolara with
+    coastal wall + reef diving from 10 m to 30 m+, dense encrusting
+    biocoenosis and clear water. Sheltered from Mistral by island +
+    coastal geometry. Standard intermediate coastal reef dive with
+    boat access from Porto San Paolo in 10 min. Common training +
+    warm-up site for the Papa 2 / Secca del Papa deeper afternoon
+    dive.
+
+display_name:
+  en: Scuba — Punta Coda Cavallo
+  it: Immersione — Punta Coda Cavallo
+  es: Buceo — Punta Coda Cavallo
+  fr: Plongée — Punta Coda Cavallo
+  de: Tauchen — Punta Coda Cavallo
+
+description:
+  en: |
+    The mainland Punta Coda Cavallo coastal reef. Intermediate no-
+    depth-commitment reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Tavolara Punta Coda Cavallo site documentation"
+    - "FIPSAS Sardegna NE Punta Coda Cavallo dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-tavolara cluster. Tier 2: intermediate
+    coastal reef.

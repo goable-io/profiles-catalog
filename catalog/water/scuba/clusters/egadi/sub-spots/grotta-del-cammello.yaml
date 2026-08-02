@@ -1,0 +1,45 @@
+slug: scuba-spot-egadi-grotta-del-cammello
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-egadi
+parent_cluster: scuba-spot-egadi
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 37.9760, lng: 12.0800 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    La Grotta del Cammello is a submerged sea cave on Marettimo's E
+    flank, entry at 5-12 m opening into an air-space chamber and side
+    galleries. Cavern-diving grade with guide-led penetration; the
+    "cammello" (camel) name derives from a distinctive rock formation
+    at the entry silhouette. Site is exposed to prevailing NW flow;
+    boat access from Marettimo village in 10-15 min. Marettimo is the
+    strictest-access AMP Egadi island — Zone A rules limit visitor
+    numbers.
+
+display_name:
+  en: Scuba — Grotta del Cammello (Marettimo)
+  it: Immersione — Grotta del Cammello
+  es: Buceo — Grotta del Cammello
+  fr: Plongée — Grotta del Cammello
+  de: Tauchen — Grotta del Cammello
+
+description:
+  en: |
+    The E-Marettimo submerged sea cave. Guided cavern dive with
+    air-space chamber.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Egadi Marettimo Grotta del Cammello documentation"
+  notes: |
+    Sub-spot of scuba-spot-egadi cluster. Tier 2: cavern-diving grade,
+    guide-led, strict-AMP-zone (Marettimo).

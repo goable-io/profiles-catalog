@@ -1,0 +1,46 @@
+slug: scuba-spot-ustica-grotta-dei-gamberi
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ustica
+parent_cluster: scuba-spot-ustica
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 38.7200, lng: 13.1900 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    La Grotta dei Gamberi is a submerged cavern on Ustica's NW flank,
+    entry at 40 m dropping into a chamber famous for dense colonies of
+    Plesionika narval red shrimps (the "gamberi" of the name). Cavern-
+    diving grade at depth — the combination of overhead environment
+    and 40 m entry depth demands advanced-open-water baseline. Site
+    is guide-led by default; buoyed descent line to entry, short
+    single-exit chamber illumination, retreat via same route with strict
+    gas planning.
+
+display_name:
+  en: Scuba — Grotta dei Gamberi (Ustica)
+  it: Immersione — Grotta dei Gamberi
+  es: Buceo — Grotta dei Gamberi
+  fr: Plongée — Grotta dei Gamberi
+  de: Tauchen — Grotta dei Gamberi
+
+description:
+  en: |
+    The 40 m NW-Ustica cavern with Plesionika narval red shrimp
+    colonies. Advanced cavern-diving grade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Ustica Grotta dei Gamberi documentation"
+    - "FIPSAS Ustica cavern-diving briefing"
+  notes: |
+    Sub-spot of scuba-spot-ustica cluster. Tier 2: cavern at depth,
+    advanced-open-water baseline, guide-led.

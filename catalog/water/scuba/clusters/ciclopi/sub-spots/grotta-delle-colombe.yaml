@@ -1,0 +1,43 @@
+slug: scuba-spot-ciclopi-grotta-delle-colombe
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-ciclopi
+parent_cluster: scuba-spot-ciclopi
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 37.5600, lng: 15.1600 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    La Grotta delle Colombe is a coastal cavern on the Ciclopi
+    Faraglione Grande — entry at 6-10 m opening into a chamber with
+    columnar-basalt walls (a geological signature of the volcanic
+    genesis of the site). Cavern-diving grade with guide-led penetration,
+    short single-exit route. Depth kept in 10-15 m recreational range.
+    Site is exposed to Sirocco on outer approaches.
+
+display_name:
+  en: Scuba — Grotta delle Colombe (Aci Trezza)
+  it: Immersione — Grotta delle Colombe
+  es: Buceo — Grotta delle Colombe
+  fr: Plongée — Grotta delle Colombe
+  de: Tauchen — Grotta delle Colombe
+
+description:
+  en: |
+    The Faraglione Grande coastal cavern with columnar-basalt walls.
+    Guided cavern dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "AMP Ciclopi Grotta delle Colombe documentation"
+  notes: |
+    Sub-spot of scuba-spot-ciclopi cluster. Tier 2: cavern-diving
+    grade, guide-led, geologically distinctive.

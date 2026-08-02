@@ -1,0 +1,42 @@
+slug: scuba-spot-eolie-formica-di-panarea
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-eolie
+parent_cluster: scuba-spot-eolie
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 38.6200, lng: 15.1000 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    La Formica di Panarea is an offshore reef E of Panarea with reef
+    + wall geometry descending from 12 m to 35 m+ and Eunicella
+    cavolini gorgonian fields. Sheltered from Sirocco by adjacent
+    Panarea + Stromboli geometry on some approaches. Standard
+    intermediate offshore reef dive with clear ascent-line profile,
+    boat access from Panarea Porto in 15 min.
+
+display_name:
+  en: Scuba — Formica di Panarea
+  it: Immersione — Formica di Panarea
+  es: Buceo — Formica di Panarea
+  fr: Plongée — Formica di Panarea
+  de: Tauchen — Formica di Panarea
+
+description:
+  en: |
+    Offshore E-Panarea reef. Intermediate offshore gorgonian reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Panarea Formica dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-eolie cluster. Tier 2: intermediate
+    offshore reef.

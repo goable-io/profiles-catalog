@@ -1,0 +1,43 @@
+slug: scuba-spot-tremiti-punta-secca
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-tremiti
+parent_cluster: scuba-spot-tremiti
+region: adriatic
+country_code: IT
+
+coordinates:
+  center: { lat: 42.1350, lng: 15.5000 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    La Secca di Punta Secca is an offshore reef complex NE of San
+    Nicola island — plateau top at 12-15 m dropping to 35 m+ with
+    encrusting biocoenosis + Paramuricea gorgonian on the outer face.
+    Standard intermediate offshore reef dive with clear ascent-line
+    profile, boat access from San Nicola or San Domino in 10 min.
+    Weather-window-sensitive to Bora due to N-face exposure.
+
+display_name:
+  en: Scuba — Punta Secca (Tremiti)
+  it: Immersione — Punta Secca (Tremiti)
+  es: Buceo — Punta Secca (Tremiti)
+  fr: Plongée — Punta Secca (Tremiti)
+  de: Tauchen — Punta Secca (Tremiti)
+
+description:
+  en: |
+    The NE Tremiti offshore reef. Intermediate multi-tier reef.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Riserva Marina Tremiti Punta Secca documentation"
+    - "FIPSAS Tremiti offshore-reef briefing"
+  notes: |
+    Sub-spot of scuba-spot-tremiti cluster. Tier 2: intermediate
+    offshore reef.

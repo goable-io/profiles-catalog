@@ -1,0 +1,43 @@
+slug: scuba-spot-portonovo-conero-grotta-degli-schiavi
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-portonovo-conero
+parent_cluster: scuba-spot-portonovo-conero
+region: adriatic
+country_code: IT
+
+coordinates:
+  center: { lat: 43.5600, lng: 13.5900 }
+  radius_m: 300
+
+tier: 2
+tier_rationale:
+  en: |
+    La Grotta degli Schiavi is a coastal sea cave S of Portonovo on
+    the Conero cliff coast, entry at 6-12 m opening into a chamber
+    accessible by cavern-diving-grade penetration. Short single-exit
+    route with typical Conero-limestone geology. Site is exposed to
+    Sirocco on outer approaches and vulnerable to Adriatic bloom-
+    period visibility crash. Guide-led by default.
+
+display_name:
+  en: Scuba — Grotta degli Schiavi (Conero)
+  it: Immersione — Grotta degli Schiavi
+  es: Buceo — Grotta degli Schiavi
+  fr: Plongée — Grotta degli Schiavi
+  de: Tauchen — Grotta degli Schiavi
+
+description:
+  en: |
+    The Conero coastal sea cave S of Portonovo. Guided cavern dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parco Naturale del Conero Grotta degli Schiavi site documentation"
+    - "FIPSAS Ancona cavern-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-portonovo-conero cluster. Tier 2: cavern-
+    diving grade, guide-led.

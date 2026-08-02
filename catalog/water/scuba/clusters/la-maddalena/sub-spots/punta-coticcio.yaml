@@ -1,0 +1,43 @@
+slug: scuba-spot-la-maddalena-punta-coticcio
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-la-maddalena
+parent_cluster: scuba-spot-la-maddalena
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 41.2100, lng: 9.4700 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Punta Coticcio is the SE headland of Caprera island — coastal
+    wall + reef diving from 10 m to 30 m+ with clear Bocche di
+    Bonifacio water and dense encrusting biocoenosis. Sheltered from
+    Mistral on some approaches by island geometry. Standard
+    intermediate wall dive with clear ascent-line profile. Adjacent
+    Cala Coticcio beach is a Zone A landing-restricted zone.
+
+display_name:
+  en: Scuba — Punta Coticcio (Caprera)
+  it: Immersione — Punta Coticcio
+  es: Buceo — Punta Coticcio
+  fr: Plongée — Punta Coticcio
+  de: Tauchen — Punta Coticcio
+
+description:
+  en: |
+    The SE-Caprera headland wall. Intermediate coastal reef dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "PN La Maddalena Punta Coticcio documentation"
+    - "FIPSAS Caprera Punta Coticcio site briefing"
+  notes: |
+    Sub-spot of scuba-spot-la-maddalena cluster. Tier 2: intermediate
+    coastal reef.

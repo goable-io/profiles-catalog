@@ -1,0 +1,45 @@
+slug: scuba-spot-la-maddalena-washington-wreck
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-la-maddalena
+parent_cluster: scuba-spot-la-maddalena
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 41.2500, lng: 9.4000 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    L'SS Washington is a British oceangoing tugboat sunk on 12 December
+    1917 during WWI by a torpedo strike near the Bocche di Bonifacio.
+    Wreck sits upright at 55-60 m depth — beyond recreational limits,
+    in the technical-diving trimix range. Historically documented
+    war grave under Italian + British archaeological jurisdiction;
+    look-only, no artefact contact. Guide-led by default with strict
+    decompression + gas planning. Cluster's technical reference.
+
+display_name:
+  en: Scuba — SS Washington wreck (La Maddalena)
+  it: Immersione — Relitto SS Washington
+  es: Buceo — Pecio SS Washington
+  fr: Plongée — Épave SS Washington
+  de: Tauchen — Wrack SS Washington
+
+description:
+  en: |
+    The 1917 SS Washington WWI tugboat wreck at 55-60 m off La
+    Maddalena. Technical-diving trimix grade.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Marina Militare + Guardia Costiera SS Washington 1917 loss documentation"
+    - "PN La Maddalena Washington wreck permit + guide-lead protocol"
+  notes: |
+    Sub-spot of scuba-spot-la-maddalena cluster. Tier 3: WWI wreck
+    at technical depth, trimix baseline, look-only.

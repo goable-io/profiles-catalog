@@ -1,0 +1,44 @@
+slug: scuba-spot-eolie-secca-del-bagno
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-eolie
+parent_cluster: scuba-spot-eolie
+region: mediterranean
+country_code: IT
+
+coordinates:
+  center: { lat: 38.5750, lng: 14.5700 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    La Secca del Bagno is a submerged pinnacle SW of Filicudi rising
+    from a 50 m bottom to a top at 15-18 m. Dense Paramuricea +
+    Corallium rubrum below 40 m, frequent pelagic passages of
+    barracuda + amberjack + occasional tuna. Depth + open-sea exposure
+    + Corallium proximity make advanced-open-water baseline. Boat
+    transit from Filicudi in 20-30 min; weather-window-selected.
+    Cluster's advanced offshore reference.
+
+display_name:
+  en: Scuba — Secca del Bagno (Filicudi)
+  it: Immersione — Secca del Bagno
+  es: Buceo — Secca del Bagno
+  fr: Plongée — Secca del Bagno
+  de: Tauchen — Secca del Bagno
+
+description:
+  en: |
+    The offshore SW-Filicudi pinnacle with Corallium rubrum below
+    40 m. Advanced-open-water offshore pinnacle dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIPSAS Filicudi Secca del Bagno site briefing"
+  notes: |
+    Sub-spot of scuba-spot-eolie cluster. Tier 3: offshore pinnacle,
+    Corallium rubrum, advanced grade.
