@@ -1,0 +1,47 @@
+slug: climbing-spot-monviso-parete-est-coolidge
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-monviso
+parent_cluster: climbing-spot-monviso
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 44.6700, lng: 7.1050 }
+  radius_m: 700
+
+tier: 3
+tier_rationale:
+  en: |
+    The E face Coolidge route was first climbed 12 August 1881 by
+    William Auguste Coolidge and the Almer guides — a sustained mixed
+    alpine line up 800 m of serpentinite face on the SE-E aspect.
+    Grade AD/D depending on line variant and conditions; loose rock
+    bands and short vertical steps require solid alpine trad protection
+    experience. Committing: retreat from the upper face requires
+    abseil descents over loose terrain with poor anchor placement
+    options. Historical significance as the second-major-line ascent
+    of Monviso. Reserved for competent trad alpine parties.
+
+display_name:
+  en: Climbing — Monviso E face Coolidge
+  it: Arrampicata — Monviso Parete Est Coolidge
+  es: Escalada — Monviso Cara Este
+  fr: Escalade — Mont Viso face Est
+  de: Bergsteigen — Monviso Ostwand
+
+description:
+  en: |
+    The 1881 Coolidge E face route on Monviso. Sustained AD/D alpine
+    mixed line on loose serpentinite, committing retreat profile.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Torino Monviso E face route documentation"
+    - "Alpine Journal 1881 second-major-line ascent (W.A.B. Coolidge)"
+  notes: |
+    Sub-spot of climbing-spot-monviso cluster. Tier 3: AD/D alpine
+    mixed, committing retreat, historically significant Coolidge line.

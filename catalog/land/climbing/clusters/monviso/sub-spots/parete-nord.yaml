@@ -1,0 +1,48 @@
+slug: climbing-spot-monviso-parete-nord
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-monviso
+parent_cluster: climbing-spot-monviso
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 44.6720, lng: 7.0870 }
+  radius_m: 700
+
+tier: 3
+tier_rationale:
+  en: |
+    The N face is Monviso's most committing objective — 800+ m of
+    mixed alpine terrain with snow + ice + serpentinite rock steps
+    on shaded aspect that retains winter conditions well into July.
+    Standard grade D+ to TD depending on line and conditions, with
+    trad protection on rock steps and screws on ice. Retreat via
+    N-face abseil descent is exposed and time-consuming.
+    Committing objective reserved for advanced alpine parties with
+    documented mixed-alpine experience; guided ascent by IFMGA guides
+    is the standard access mode for non-professional-alpine parties.
+
+display_name:
+  en: Climbing — Monviso N face
+  it: Arrampicata — Monviso Parete Nord
+  es: Escalada — Monviso Cara Norte
+  fr: Escalade — Mont Viso face Nord
+  de: Bergsteigen — Monviso Nordwand
+
+description:
+  en: |
+    The Monviso N face — 800+ m mixed alpine D+/TD on shaded aspect,
+    the mountain's most committing objective.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Torino Monviso N face route + condition bulletin"
+    - "IFMGA Piemonte guides Monviso winter-mixed briefing"
+  notes: |
+    Sub-spot of climbing-spot-monviso cluster. Tier 3: D+/TD mixed
+    alpine on the shaded N face, committing retreat, advanced-alpine
+    party baseline.

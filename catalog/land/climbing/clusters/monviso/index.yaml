@@ -1,0 +1,164 @@
+slug: climbing-spot-monviso
+spot_kind: cluster
+version: "0.1.0"
+category: land
+extends: climbing-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - climbing-spot-monviso-via-normale-sud-ovest
+  - climbing-spot-monviso-parete-est-coolidge
+  - climbing-spot-monviso-parete-nord
+display_name:
+  en: Climbing — Monviso (Re di Pietra)
+  it: Arrampicata — Monviso
+  es: Escalada — Monviso
+  fr: Escalade — Mont Viso
+  de: Bergsteigen — Monviso
+description:
+  en: |
+    Monviso (3841 m) is the highest peak of the Cottian Alps and the
+    iconic Piedmontese mountain — the "Re di Pietra" — first climbed on
+    30 August 1861 by William Mathews, Frederick William Jacomb, Michel
+    Croz, and Jean-Baptiste Croz. The mountain rises isolated between
+    the Po and Varaita valleys inside the Parco Naturale del Monviso
+    (Riserva della Biosfera UNESCO 2013). Climbing spans the PD- south-
+    west normal route from Rifugio Quintino Sella (2650 m), the E face
+    Coolidge line (F.W. Coolidge, 1881), and the committing N face
+    mixed alpine terrain. Rock is metamorphic serpentinite and quartzite
+    — often loose in the couloirs — with snow persistence from mid-
+    October to mid-July on shaded faces. Weather changes fast: afternoon
+    convective storms on the Po basin side are the recurring fatality
+    driver. Route access via Pian del Re (Po source) trailhead.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.22
+    curve:
+      - { x: -12, s: 0.10 }
+      - { x: -2,  s: 0.55 }
+      - { x: 6,   s: 0.90 }
+      - { x: 12,  s: 1.00 }
+      - { x: 18,  s: 0.95 }
+      - { x: 24,  s: 0.65 }
+      - { x: 30,  s: 0.25 }
+      - { x: 36,  s: 0.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.22
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.2, s: 0.40 }
+      - { x: 0.7, s: 0.10 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.95 }
+      - { x: 5,  s: 1.00 }
+      - { x: 14, s: 0.80 }
+      - { x: 22, s: 0.40 }
+      - { x: 32, s: 0.05 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.70 }
+      - { x: 8,  s: 1.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 8,  s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.75 }
+      - { x: 9,  s: 0.35 }
+      - { x: 11, s: 0.10 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.05
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.90 }
+      - { x: 0.45, s: 0.70 }
+      - { x: 0.7,  s: 0.40 }
+      - { x: 1.0,  s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 0.7
+    reason_code: WET_ROCK_AND_STORM
+    description: Active precipitation above 0.7 mm/h on Monviso signals afternoon convective storm buildup — lightning + rockfall + wet loose serpentinite cascade closes the routes immediately.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 38
+    reason_code: HIGH_WIND_RIDGE
+    description: Sustained wind above 38 knots on the exposed Monviso ridges and summit block makes rope handling and communication unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.4
+    reason_code: ALPINE_NAVIGATION
+    description: Visibility below 400 m on the summit block and upper faces of Monviso makes route-finding and descent navigation unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -15
+    reason_code: ALPINE_HYPOTHERMIA
+    description: Apparent temperature below -15°C creates immediate frostbite risk on Monviso's exposed belay stances and impairs rope handling.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 14
+  carrying_capacity_sensitivity: high
+  notes: |
+    Parco Naturale del Monviso + Riserva della Biosfera UNESCO 2013
+    manage visitor access via a permit-tracked hut booking system at
+    Rifugio Quintino Sella. Peak season (July-August weekends) sees
+    100+ climbers per day on the via normale, driving cumulative
+    rockfall on the summit couloir and queue-related descent accidents.
+    CAI Torino coordinates seasonal route-condition bulletins.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Club Alpino Italiano (CAI) Torino sezione — Monviso route and condition bulletins"
+    - "Parco Naturale del Monviso management authority documentation"
+    - "William Mathews 1861 first-ascent historical record (Alpine Journal)"
+  notes: |
+    Spot overrides vs climbing-alpine: matches regional baseline for a
+    3800+ m Cottian Alp peak. Rockfall weight kept slightly lower (0.05
+    vs 0.08 base) because Monviso serpentinite is chronically loose
+    regardless of freeze-thaw signal — the physical hazard is baseline
+    high, not primarily driven by the freeze-thaw metric. 14-week
+    typical season (mid-June to mid-September, with N face conditions-
+    dependent shoulder windows).

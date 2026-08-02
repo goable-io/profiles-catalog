@@ -1,0 +1,50 @@
+slug: climbing-spot-monviso-via-normale-sud-ovest
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-monviso
+parent_cluster: climbing-spot-monviso
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 44.6800, lng: 7.0950 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    The Via Normale on the SW ridge is the historical Monviso ascent
+    line, first climbed 30 August 1861 by William Mathews with the
+    Croz brothers as guides. Approach from Pian del Re (Po source
+    trailhead) via Rifugio Quintino Sella (2650 m) then ~1200 m of
+    ascent to the 3841 m summit on grade PD- mixed rock scrambling
+    and short exposed sections, with fixed ropes on the summit couloir
+    steps in season. Rock is loose serpentinite requiring careful
+    party spacing; helmet mandatory. Descent by reverse route with
+    abseils on the couloir steps. Peak-season queue-related rockfall
+    on the summit block is the dominant hazard.
+
+display_name:
+  en: Climbing — Monviso Via Normale (SW ridge)
+  it: Arrampicata — Monviso Via Normale (cresta SO)
+  es: Escalada — Monviso Via Normal
+  fr: Escalade — Mont Viso Voie Normale
+  de: Bergsteigen — Monviso Normalweg
+
+description:
+  en: |
+    The historical Monviso normal route on the SW ridge, first climbed
+    1861. PD- mixed alpine terrain, Rifugio Quintino Sella base,
+    the reference Italian 3800+ m first-ascent classic.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CAI Torino Via Normale Monviso route documentation"
+    - "Alpine Journal 1861 first-ascent record (William Mathews)"
+  notes: |
+    Sub-spot of climbing-spot-monviso cluster. Tier 2: alpine mixed
+    grade PD-, guided-and-independent ascent standard, hut-based
+    approach.
