@@ -1,0 +1,160 @@
+slug: alpine-skiing-spot-las-lenas
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing
+region: andes
+country_code: AR
+sub_spots:
+  - alpine-skiing-spot-las-lenas-marte-lift
+  - alpine-skiing-spot-las-lenas-base-venus
+  - alpine-skiing-spot-las-lenas-eros-lift
+display_name:
+  en: Alpine Skiing — Las Leñas
+  it: Sci Alpino — Las Leñas
+  es: Esquí Alpino — Las Leñas
+  fr: Ski Alpin — Las Leñas
+  de: Alpiner Skilauf — Las Leñas
+description:
+  en: |
+    Las Leñas (Mendoza Province, Argentine Andes) is South America's
+    most famous expert-terrain resort, built on a single dramatic
+    rocky massif rising above a purpose-built base village at roughly
+    2240 m. The resort's lift network runs from the sheltered Venus
+    and Neptuno base sector up through the mid-mountain Eros bridge
+    zone to the exposed Marte lift, which serves the resort's iconic
+    hike-to and lift-accessed freeride faces on wind-scoured Andean
+    rock. Las Leñas is internationally known for its steep, rocky,
+    largely treeless terrain and dry continental-Andes snowpack, but
+    the same exposure that creates the terrain also drives frequent
+    wind-related lift closures on the upper mountain. Piste colours
+    run from red cruisers around the base through red-and-black
+    mid-mountain runs to black and off-piste-adjacent expert lines
+    off Marte. Season typically runs June-September/October (Southern
+    Hemisphere winter).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.20 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.20
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.15
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts at Las Leñas; the exposed rocky upper-mountain terrain around the Marte sector becomes unsafe for on-piste skiing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200m makes piste navigation unsafe even on marked runs, increasing collision and off-piste-drift risk.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -28
+    reason_code: FROSTBITE_RISK
+    description: Apparent temperature below -28°C creates immediate frostbite risk on exposed skin even with lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 15
+  carrying_capacity_sensitivity: high
+  notes: |
+    Las Leñas' purpose-built base village limits sprawl but concentrates
+    access-transport pressure on the single road link from San Rafael,
+    Mendoza. The exposed Marte sector's 30% wind-closure rate is a
+    recognised operational constraint that both limits carrying
+    capacity on high-wind days and drives concentrated crowding on the
+    sheltered Venus/Neptuno runs when the upper mountain is shut. Lift
+    electricity draws on the Argentine grid mix; grooming fuel is
+    diesel. Equipment footprint is high given the rocky, off-piste-
+    adjacent terrain favoured by visiting expert skiers.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Las Leñas resort piste map and operational information"
+    - "Federación Argentina de Ski y Andinismo venue documentation"
+  notes: |
+    No dedicated Andes region variant exists yet for alpine-skiing, so
+    this cluster extends the base alpine-skiing profile directly and
+    copies dimension weights, curves, gates, and verdict buckets
+    verbatim from the base per authoring convention. Region tag set to
+    andes (bbox: lat -56 to 12, lng -82 to -62); Las Leñas' coordinates
+    (~-35.15, -70.08) fall within this envelope.

@@ -1,0 +1,51 @@
+slug: climbing-spot-railay-tonsai-deep-water-solo-poda
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-railay-tonsai
+parent_cluster: climbing-spot-railay-tonsai
+country_code: TH
+
+coordinates:
+  center: { lat: 7.9367, lng: 98.8117 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    Koh Poda and the surrounding karst islands off Railay are a global
+    reference for deep-water soloing (DWS): rope-free climbing on
+    overhanging pocketed and tufa limestone directly above the sea, with the
+    water itself serving as the fall protection. Routes range from F6c to
+    F8c and are entirely unbolted, accessed only by longtail boat, with no
+    fixed hardware, no belayer, and commitment governed by tide state, swell,
+    and the climber's own fall tolerance from heights that can exceed 10-15
+    m on the harder lines. The absence of rope protection, the boat-only
+    access, and the need to accurately judge water depth and submerged rock
+    before committing to a line place this squarely in advanced,
+    high-consequence terrain despite the "soft" landing. Best conditions are
+    calm seas and mid-to-high tide to ensure adequate water depth below the
+    routes.
+
+display_name:
+  en: Climbing — Railay & Tonsai Deep-Water Solo (Koh Poda)
+  it: Arrampicata — Railay e Tonsai Deep-Water Solo (Koh Poda)
+  es: Escalada — Railay y Tonsai Deep-Water Solo (Koh Poda)
+  fr: Escalade — Railay et Tonsai Deep-Water Solo (Koh Poda)
+  de: Klettern — Railay und Tonsai Deep-Water Solo (Koh Poda)
+
+description:
+  en: |
+    Rope-free deep-water soloing on overhanging karst limestone above the
+    Andaman Sea, F6c-F8c, accessed by longtail boat from Railay/Tonsai — a
+    world-reference DWS destination governed by tide and swell.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Thailand Climbing (King Climbers) route and access guidance"
+  notes: |
+    Sub-spot of climbing-spot-railay-tonsai cluster. Tier 3: unbolted,
+    rope-free advanced climbing over water with boat-only access and
+    tide/swell-dependent commitment.

@@ -1,0 +1,53 @@
+slug: ski-touring-spot-turtagro-store-skagastolstind
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-turtagro
+parent_cluster: ski-touring-spot-turtagro
+country_code: "NO"
+
+coordinates:
+  center: { lat: 61.4667, lng: 7.8000 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Store Skagastølstind (2405 m) is Norway's third-highest peak and
+    the iconic summit of the Hurrungane range, first climbed in 1876
+    and long regarded as the country's premier alpine objective. The
+    ski-touring approach from Turtagrø crosses steep, complex
+    glaciated and rocky terrain with sustained exposure, and the
+    upper mountain demands confident route-finding through couloirs
+    and ridgelines well above typical intermediate-tour terrain. The
+    short spring-touring window (roughly April-June) and committing
+    descent lines place this firmly in advanced territory. Reserved
+    for advanced ski-tourers with full alpine kit and, on first
+    visits, a certified mountain guide.
+
+display_name:
+  en: Ski Touring — Store Skagastølstind
+  it: Sci alpinismo — Store Skagastølstind
+  es: Esquí de travesía — Store Skagastølstind
+  fr: Ski de randonnée — Store Skagastølstind
+  de: Skitourengehen — Store Skagastølstind
+
+description:
+  en: |
+    Store Skagastølstind (2405 m), Norway's third-highest peak and
+    the Hurrungane's iconic spring ski-touring objective, approached
+    from the Turtagrø base.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Den Norske Turistforening (DNT) Hurrungane route documentation"
+    - "Norwegian Trekking Association historic Skagastølstind ascent records"
+  notes: |
+    Sub-spot of ski-touring-spot-turtagro cluster. Tier 3: steep,
+    exposed, committing high-alpine objective. Region tag omitted —
+    coordinates (61.47°N) fall outside the catalog's strict arctic
+    bbox (66-85°N) used for coastal ranges; cluster retains
+    `region: arctic` for its shared Norwegian spring-touring scoring
+    profile.

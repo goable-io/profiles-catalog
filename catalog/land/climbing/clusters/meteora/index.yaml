@@ -1,0 +1,164 @@
+slug: climbing-spot-meteora
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+region: mediterranean
+country_code: GR
+sub_spots:
+  - climbing-spot-meteora-holy-ghost-tower
+  - climbing-spot-meteora-pixari-tower
+  - climbing-spot-meteora-doupiani-rock
+display_name:
+  en: Climbing — Meteora
+  it: Arrampicata — Meteora
+  es: Escalada — Meteora
+  fr: Escalade — Meteora
+  de: Klettern — Meteora
+description:
+  en: |
+    Meteora (Thessaly, Greece) is a UNESCO World Heritage landscape of
+    towering conglomerate rock pillars, world-famous for the Byzantine
+    monasteries perched on their summits and, among climbers, for a
+    distinctive "pebbly" puddingstone rock unlike anywhere else in European
+    trad climbing. The conglomerate is a matrix of rounded river pebbles
+    cemented in sandstone, producing routes protected mostly by traditional
+    gear (with sparse fixed protection on some lines) that demand careful
+    judgement of pebble and matrix integrity — pulling on a loose pebble is
+    a real and well-known hazard. German climber Dietmar "Aschenbrenner"
+    Schuh pioneered much of the historic route development here from the
+    1970s onward, continuing a tradition that traces back to earlier ascents
+    by local monks and shepherds reaching the monasteries before roads and
+    stairs existed. The best season is spring and autumn; summer heat on the
+    sun-exposed towers is intense, and winter brings cold, wet conditions
+    unsuited to the friable rock.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.22
+    curve:
+      - { x: -5, s: 0.05 }
+      - { x: 2,  s: 0.40 }
+      - { x: 8,  s: 0.85 }
+      - { x: 14, s: 1.00 }
+      - { x: 22, s: 0.95 }
+      - { x: 30, s: 0.55 }
+      - { x: 38, s: 0.15 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.15
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.15
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.90 }
+      - { x: 0.45, s: 0.65 }
+      - { x: 0.7,  s: 0.40 }
+      - { x: 1.0,  s: 0.15 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 1.5
+    reason_code: WET_ROCK
+    description: Active precipitation on Meteora's conglomerate significantly weakens the sandstone matrix binding the embedded pebbles, sharply raising the risk of holds breaking away.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 500m on the exposed tower summits and descent gullies creates serious route-finding and rappel-anchor risk.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 35 knots on the freestanding, fully exposed towers creates rope-management and balance hazards on trad multipitch.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -5
+    reason_code: EXTREME_COLD
+    description: Below -5°C apparent temperature, tendons stiffen and grip deteriorates dramatically; the conglomerate's pebble holds become harder to trust with numb hands.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 24
+  carrying_capacity_sensitivity: high
+  notes: |
+    Meteora is a UNESCO World Heritage Site shared between climbers, monks,
+    and mass tourism; access to several towers is restricted or requires
+    coordination with the active monasteries, and some historic routes are
+    off-limits out of respect for monastic privacy. The friable conglomerate
+    is inherently carrying-capacity-sensitive — repeated traffic accelerates
+    pebble loss on popular lines — and local guiding organisations encourage
+    conservative, low-impact trad practice over bolting.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hellenic Federation of Mountaineering and Climbing (EOOA) Meteora access guidance"
+    - "UNESCO World Heritage Centre — Meteora site documentation"
+  notes: |
+    Cluster overrides vs global climbing: rockfall weight raised to 0.15
+    (from base 0.08) reflecting the conglomerate's pebble-matrix rock type,
+    which is materially more sensitive to wet-weather hold failure than
+    typical limestone or granite; precipitation gate tightened to 1.5mm/h
+    for the same reason. Season set to 24 weeks (spring and autumn,
+    avoiding summer heat and winter wet).

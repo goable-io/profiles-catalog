@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-andermatt-natschen-oberalp
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-andermatt
+parent_cluster: alpine-skiing-spot-andermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.6483, lng: 8.6017 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Nätschen and Oberalp side is Andermatt's main red-piste
+    intermediate cruising sector, connected via the SkiArena lift
+    network across the Oberalp Pass toward Sedrun. Terrain here is
+    considerably gentler than the Gemsstock face, with wide groomed
+    red pistes dominating the marked network and full snowmaking and
+    ski-patrol coverage. The sector serves as the primary intermediate
+    training and cruising ground for the resort and functions as the
+    connective backbone linking Andermatt's village-side lifts to the
+    Sedrun extension, making it the busiest through-traffic zone in
+    the arena on midweek touring days.
+
+display_name:
+  en: Alpine Skiing — Nätschen-Oberalp (Andermatt)
+  it: Sci Alpino — Nätschen-Oberalp
+  es: Esquí Alpino — Nätschen-Oberalp
+  fr: Ski Alpin — Nätschen-Oberalp
+  de: Alpiner Skilauf — Nätschen-Oberalp
+
+description:
+  en: |
+    Andermatt's main red-piste intermediate cruising sector, connected
+    via the SkiArena lift network across the Oberalp Pass toward
+    Sedrun.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SkiArena Andermatt-Sedrun-Disentis piste map — Nätschen/Oberalp sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-andermatt cluster. Tier 2: red-piste
+    dominant intermediate cruising, connective backbone toward the
+    Sedrun extension.

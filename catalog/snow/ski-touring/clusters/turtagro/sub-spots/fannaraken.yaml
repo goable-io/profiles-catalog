@@ -1,0 +1,52 @@
+slug: ski-touring-spot-turtagro-fannaraken
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-turtagro
+parent_cluster: ski-touring-spot-turtagro
+country_code: "NO"
+
+coordinates:
+  center: { lat: 61.5100, lng: 7.8583 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Fannaråken (2068 m) is the Hurrungane's classic moderate
+    day-tour, distinguished by the DNT hut perched directly on its
+    summit — one of Norway's highest-altitude staffed mountain
+    huts. The ascent from Turtagrø follows a well-defined ridge and
+    glacier-margin route with manageable gradient throughout,
+    making it the standard introduction to Hurrungane spring
+    touring for parties not yet ready for Store Skagastølstind's
+    technical terrain. Some glacier-margin sections warrant
+    standard avalanche and crevasse awareness but without the
+    sustained steep exposure of the range's harder objectives. A
+    solid intermediate route suited to parties with basic
+    glacier-travel competence.
+
+display_name:
+  en: Ski Touring — Fannaråken
+  it: Sci alpinismo — Fannaråken
+  es: Esquí de travesía — Fannaråken
+  fr: Ski de randonnée — Fannaråken
+  de: Skitourengehen — Fannaråken
+
+description:
+  en: |
+    Fannaråken (2068 m), the Hurrungane's moderate day-tour classic
+    with a DNT hut on the summit — the standard intermediate
+    introduction to Turtagrø spring ski touring.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Den Norske Turistforening (DNT) Fannaråken hut and route documentation"
+  notes: |
+    Sub-spot of ski-touring-spot-turtagro cluster. Tier 2: moderate
+    intermediate day-tour with well-defined route and DNT hut on
+    summit. Region tag omitted — coordinates (61.51°N) fall outside
+    the catalog's strict arctic bbox (66-85°N); cluster retains
+    `region: arctic` for its shared scoring profile.

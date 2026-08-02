@@ -1,0 +1,49 @@
+slug: surfing-spot-puerto-escondido-carrizalillo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-puerto-escondido
+parent_cluster: surfing-spot-puerto-escondido
+region: pacific
+country_code: MX
+
+coordinates:
+  center: { lat: 15.8683, lng: -97.0700 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Playa Carrizalillo occupies a small horseshoe-shaped cove reached by
+    a stairway down a cliff, and the headlands enclosing the bay block
+    most of the open-ocean swell energy that makes Zicatela dangerous.
+    Waves arrive small and soft, breaking over a sand bottom with a
+    gentle beach gradient, and the enclosed shape limits current and rip
+    formation compared to the exposed beaches nearby. This is the venue
+    of choice for Puerto Escondido's surf schools and family lessons,
+    with lifeguard presence during peak tourist hours.
+
+display_name:
+  en: Surfing — Puerto Escondido Carrizalillo
+  it: Surf — Puerto Escondido Carrizalillo
+  es: Surf — Puerto Escondido Carrizalillo
+  fr: Surf — Puerto Escondido Carrizalillo
+  de: Surfen — Puerto Escondido Carrizalillo
+
+description:
+  en: |
+    A sheltered cove beach a short drive west of Zicatela, protected by
+    headlands from the full force of the Oaxaca groundswell. Small, soft
+    sand-bottom waves make Carrizalillo the beginner and family hub of
+    Puerto Escondido, with numerous surf schools operating from the
+    beach and calm swimming water outside the small lineup.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Mexicana de Surf spot classification, Oaxaca coast"
+  notes: |
+    Sub-spot of surfing-spot-puerto-escondido cluster. Tier 1:
+    headland-sheltered cove, small soft sand-bottom waves, established
+    beginner-lesson venue.

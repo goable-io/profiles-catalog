@@ -1,0 +1,46 @@
+slug: scuba-spot-raja-ampat-manta-sandy
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-raja-ampat
+parent_cluster: scuba-spot-raja-ampat
+region: pacific
+country_code: ID
+
+coordinates:
+  center: { lat: -0.4917, lng: 130.6100 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Manta Sandy is a shallow sand-patch cleaning station in the
+    Dampier Strait, 5-12 m deep, where reef mantas hold position
+    over coral-bommie cleaning stations to be groomed by wrasse.
+    Divers settle behind a rope-marked viewing line rather than
+    actively swimming the current, making buoyancy control and
+    patience the primary skills rather than drift technique. This
+    combination of shallow depth and low active-navigation demand
+    keeps it at the cluster's intermediate tier.
+
+display_name:
+  en: Scuba — Manta Sandy (Raja Ampat)
+  it: Immersione — Manta Sandy
+  es: Buceo — Manta Sandy
+  fr: Plongée — Manta Sandy
+  de: Tauchen — Manta Sandy
+
+description:
+  en: |
+    A shallow Dampier Strait sand-patch cleaning station with
+    reliable reef-manta encounters over coral bommies.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Raja Ampat MPA network dive-site documentation"
+    - "Conservation International Raja Ampat manta ray monitoring reports"
+  notes: |
+    Sub-spot of scuba-spot-raja-ampat cluster. Tier 2: intermediate
+    shallow cleaning-station dive.

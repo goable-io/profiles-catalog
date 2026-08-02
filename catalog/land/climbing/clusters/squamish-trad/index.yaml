@@ -1,0 +1,163 @@
+slug: climbing-spot-squamish
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+region: rockies
+country_code: CA
+sub_spots:
+  - climbing-spot-squamish-grand-wall
+  - climbing-spot-squamish-chief-north-face
+  - climbing-spot-squamish-papoose
+display_name:
+  en: Climbing — Squamish (Trad & Multipitch)
+  it: Arrampicata — Squamish (Trad e Multitiro)
+  es: Escalada — Squamish (Trad y Multilargo)
+  fr: Escalade — Squamish (Trad et Grandes Voies)
+  de: Klettern — Squamish (Trad und Mehrseillängen)
+description:
+  en: |
+    Squamish (British Columbia, Canada), known locally as the "outdoor
+    recreation capital of Canada," is one of North America's premier
+    granite trad-climbing destinations, centred on the Stawamus Chief, a
+    700 m granite monolith rising directly above Howe Sound between
+    Vancouver and Whistler. This cluster covers the Chief's trad and
+    multipitch terrain, complementing the corridor's separately catalogued
+    bouldering. Rock is solid, clean granite with excellent friction,
+    split by crack systems ideal for traditional protection alongside
+    select bolted face-climbing sections on the longer routes. The
+    climate is coastal-temperate: mild but wet winters largely close the
+    granite to climbing, while summer (roughly June-September) brings the
+    dry, stable conditions the Chief's big walls demand, with spring and
+    fall offering good conditions between rain systems. Squamish Access
+    Society coordinates fixed-anchor maintenance and seasonal raptor
+    closures on several of the Chief's faces.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -5, s: 0.05 }
+      - { x: 2,  s: 0.35 }
+      - { x: 8,  s: 0.80 }
+      - { x: 14, s: 1.00 }
+      - { x: 20, s: 0.95 }
+      - { x: 27, s: 0.60 }
+      - { x: 34, s: 0.20 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.24
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.14
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.09
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.13
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.12
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.90 }
+      - { x: 0.45, s: 0.70 }
+      - { x: 0.7,  s: 0.45 }
+      - { x: 1.0,  s: 0.20 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 2
+    reason_code: WET_ROCK
+    description: Active precipitation on the Chief's granite makes crack systems and friction slabs slick, and Squamish's coastal weather can turn quickly on committing multipitch routes.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 500m on the Chief's tall multipitch routes creates serious route-finding and rappel/descent-gully navigation risk.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 35 knots on the exposed granite face above Howe Sound creates rope-management and communication hazards over long multipitch routes.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -5
+    reason_code: EXTREME_COLD
+    description: Below -5°C apparent temperature, tendons stiffen and grip deteriorates dramatically; crack-climbing technique on granite becomes markedly harder with cold hands.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: high
+  notes: |
+    The Stawamus Chief draws heavy climbing and hiking traffic through the
+    short dry season, concentrating pressure on approach trails and base
+    areas. The Squamish Access Society coordinates fixed-anchor replacement
+    and seasonal peregrine-falcon nesting closures on several of the
+    Chief's faces (typically spring into early summer), which profiles
+    should encode as advisory alerts during that window.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Squamish Access Society route and access guidance"
+    - "Alpine Club of Canada — Squamish rock climbing guidance"
+  notes: |
+    Cluster overrides vs global climbing: precipitation weight raised to
+    0.24 and rockfall weight to 0.12 reflecting Squamish's wet coastal-
+    temperate climate and granite exfoliation hazard on tall faces; season
+    set to 20 weeks (roughly June-September core season, extending into
+    shoulder months in good years). Complements the separately catalogued
+    bouldering-spot-squamish-boulders bouldering cluster.

@@ -1,0 +1,51 @@
+slug: surfing-spot-jeffreys-bay-boneyards
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-jeffreys-bay
+parent_cluster: surfing-spot-jeffreys-bay
+region: atlantic
+country_code: ZA
+
+coordinates:
+  center: { lat: -34.0483, lng: 24.9067 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Boneyards is the outermost, heaviest take-off zone of the Jeffreys
+    Bay point, the first section to catch a rising Southern Ocean
+    groundswell and the section with the most exposed reef-and-rock
+    bottom. Its name reflects the shallow, jagged bottom structure that
+    a fall at size exposes a surfer to, and the wave here breaks with
+    more raw power and less predictable shape than the groomed
+    Supertubes section downstream. It is used almost exclusively by
+    advanced and expert surfers looking to link the outer section into
+    the rest of the point on the biggest swells.
+
+display_name:
+  en: Surfing — Jeffreys Bay Boneyards
+  it: Surf — Jeffreys Bay Boneyards
+  es: Surf — Jeffreys Bay Boneyards
+  fr: Surf — Jeffreys Bay Boneyards
+  de: Surfen — Jeffreys Bay Boneyards
+
+description:
+  en: |
+    The outer, heaviest take-off section of the Jeffreys Bay point,
+    named for its shallow, jagged reef-and-rock bottom. First section to
+    activate on a building swell and the entry point for advanced
+    surfers linking rides all the way through Supertubes on the biggest
+    days.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfing South Africa spot classification, Eastern Cape"
+    - "WSL Championship Tour Jeffreys Bay venue documentation (Supertubes)"
+  notes: |
+    Sub-spot of surfing-spot-jeffreys-bay cluster. Tier 3: outermost,
+    heaviest section of the point with exposed reef-and-rock bottom,
+    advanced-only.

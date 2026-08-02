@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-hood-river-swell-city
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-hood-river
+parent_cluster: kitesurfing-spot-hood-river
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 45.7167, lng: -121.5300 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    Swell City is the Gorge's advanced wave-riding sector, where a
+    narrower channel section and sustained 30+ knot thermal flow against
+    the river current stack up standing waves and chop significantly
+    larger and steeper than at the Event Site. Riders here need strong
+    upwind ability, comfort in powerful, gusty wind, and confidence
+    self-rescuing in cold moving water well away from a developed beach.
+    This is intermediate-plus-to-advanced river terrain, not a
+    progression spot for newer riders.
+
+display_name:
+  en: Kitesurfing — Hood River Swell City
+  it: Kitesurf — Hood River Swell City
+  es: Kitesurf — Hood River Swell City
+  fr: Kitesurf — Hood River Swell City
+  de: Kitesurfen — Hood River Swell City
+
+description:
+  en: |
+    The Gorge's advanced sector — a narrower stretch of river where wind
+    against current builds standing waves and chop well beyond what the
+    main Event Site produces, favoured by experienced wave-riders
+    chasing sustained 30+ knot thermal wind.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOAA/National Weather Service Columbia River Gorge thermal wind climatology"
+    - "Columbia River Gorge National Scenic Area river-access site documentation"
+  notes: |
+    Sub-spot of kitesurfing-spot-hood-river cluster. Tier 3: sustained
+    30+ knot thermal flow, standing river-current waves, advanced-only
+    terrain away from developed beach infrastructure.

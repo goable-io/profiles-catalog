@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-las-lenas-eros-lift
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-las-lenas
+parent_cluster: alpine-skiing-spot-las-lenas
+region: andes
+country_code: AR
+
+coordinates:
+  center: { lat: -35.1483, lng: -70.0783 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Eros lift sector forms the mid-mountain bridge between the
+    sheltered Venus/Neptuno base and the exposed Marte upper zone,
+    delivering sustained intermediate-to-advanced terrain on a mix of
+    red and black pistes. The sector sits on more open Andean rock
+    slopes than the base, giving it a wider range of pitch than the
+    valley-floor runs while remaining less wind-exposed than Marte.
+    Grooming and ski-patrol coverage are standard, and the lift is a
+    key connector for skiers progressing from the base cruising terrain
+    toward the resort's expert upper-mountain zone.
+
+display_name:
+  en: Alpine Skiing — Eros Lift (Las Leñas)
+  it: Sci Alpino — Eros Lift
+  es: Esquí Alpino — Eros Lift
+  fr: Ski Alpin — Eros Lift
+  de: Alpiner Skilauf — Eros Lift
+
+description:
+  en: |
+    Las Leñas' mid-mountain bridge sector between the base and Marte,
+    with sustained red-and-black-piste terrain on open Andean rock
+    slopes.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Las Leñas resort piste map — Eros sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-las-lenas cluster. Tier 2:
+    mid-mountain red-and-black-piste bridge sector, sustained
+    intermediate-to-advanced coverage between base and Marte.

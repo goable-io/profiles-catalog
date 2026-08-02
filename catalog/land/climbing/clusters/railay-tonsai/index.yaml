@@ -1,0 +1,163 @@
+slug: climbing-spot-railay-tonsai
+spot_kind: cluster
+version: "1.0.0"
+category: land
+extends: climbing
+country_code: TH
+sub_spots:
+  - climbing-spot-railay-tonsai-thaiwand-wall
+  - climbing-spot-railay-tonsai-tonsai-beach
+  - climbing-spot-railay-tonsai-deep-water-solo-poda
+display_name:
+  en: Climbing — Railay & Tonsai
+  it: Arrampicata — Railay e Tonsai
+  es: Escalada — Railay y Tonsai
+  fr: Escalade — Railay et Tonsai
+  de: Klettern — Railay und Tonsai
+description:
+  en: |
+    Railay and Tonsai (Krabi province, Thailand) form a single climbing
+    peninsula accessible only by longtail boat, cut off from the mainland by
+    sheer limestone walls. Grey and orange pocketed limestone rises directly
+    from turquoise water, heavily featured with tufa columns, stalactites,
+    and huecos on steep overhanging terrain, alongside more technical
+    vertical faces. The area is tropical monsoon climate: hot and humid
+    year-round with a pronounced wet season (roughly May-October) when
+    afternoon storms and saturated rock make climbing unreliable, and a dry,
+    climbable season (November-April) with high heat and humidity but
+    generally stable weather. Beyond the fixed sport crags, the peninsula and
+    surrounding karst islands are a global centre for deep-water soloing —
+    rope-free climbing above the sea, with the water itself acting as the
+    landing. Hardware is predominantly stainless steel given the tropical
+    marine environment, maintained through local guiding-shop and community
+    re-bolting efforts.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.24
+    curve:
+      - { x: 14, s: 0.20 }
+      - { x: 20, s: 0.60 }
+      - { x: 26, s: 0.95 }
+      - { x: 30, s: 1.00 }
+      - { x: 34, s: 0.70 }
+      - { x: 38, s: 0.30 }
+      - { x: 42, s: 0.10 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.24
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.1, s: 0.50 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2,   s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.14
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 0.95 }
+      - { x: 16, s: 0.70 }
+      - { x: 25, s: 0.30 }
+      - { x: 35, s: 0.00 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.85 }
+      - { x: 9,  s: 0.55 }
+      - { x: 11, s: 0.30 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 1,  s: 0.30 }
+      - { x: 3,  s: 0.75 }
+      - { x: 10, s: 1.00 }
+
+  - name: rockfall
+    metric: rockfall_risk_index
+    weight: 0.08
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.2,  s: 0.95 }
+      - { x: 0.45, s: 0.80 }
+      - { x: 0.7,  s: 0.55 }
+      - { x: 1.0,  s: 0.30 }
+
+gates:
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 1.5
+    reason_code: WET_ROCK
+    description: Active precipitation on Railay/Tonsai limestone makes tufa and pocket features slick, and tropical monsoon downpours arrive with little warning.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: LOW_VISIBILITY
+    description: Visibility below 500m impairs boat access to the peninsula and to the deep-water-soloing islands, and disrupts belayer-climber communication.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 35
+    reason_code: HIGH_WIND_EXPOSED
+    description: Sustained wind above 35 knots makes longtail-boat transfers to Railay, Tonsai, and Koh Poda unsafe and creates rope-management hazards on sea-cliff sectors.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -5
+    reason_code: EXTREME_COLD
+    description: Below -5°C apparent (not a realistic tropical scenario but retained as the global safety floor), grip and rope handling deteriorate sharply.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: medium
+  typical_season_weeks: 26
+  carrying_capacity_sensitivity: high
+  notes: |
+    Climbing tourism is central to the Railay-Tonsai economy and to Krabi's
+    longtail-boat operators, concentrating heavy foot and boat traffic at
+    flagship sectors and on the deep-water-soloing islands during the
+    November-April dry season. Local guiding shops coordinate stainless-steel
+    re-bolting given rapid saltwater corrosion of hardware; karst island
+    access for DWS is sensitive to monsoon swell and to marine-park
+    conservation rules around Koh Poda.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Thailand Climbing (King Climbers) route and access guidance"
+    - "Tourism Authority of Thailand seasonal climate guidance for Krabi province"
+  notes: |
+    Cluster overrides vs global climbing: temperature curve shifted several
+    degrees warmer than the base template (optimum ~30°C vs 14°C) to reflect
+    tropical ambient conditions; wet-season precipitation makes the dry
+    season (Nov-Apr, ~26 weeks) the practical climbing window. Region field
+    omitted: Krabi sits at ~98.8°E, just west of the declared
+    south-china-sea bbox (lng 99-122).

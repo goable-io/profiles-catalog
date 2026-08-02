@@ -1,0 +1,47 @@
+slug: scuba-spot-raja-ampat-cape-kri
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-raja-ampat
+parent_cluster: scuba-spot-raja-ampat
+region: pacific
+country_code: ID
+
+coordinates:
+  center: { lat: -0.5583, lng: 130.6867 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Cape Kri holds the Guinness World Record for the most fish
+    species recorded on a single dive (374, marine biologist Gerry
+    Allen, 2012), a direct result of sitting at the Dampier Strait
+    entrance where nutrient-rich currents converge on a sloping reef
+    wall. Strong tidal current, frequently exceeding 1.5-2 kn,
+    sweeps the point and demands active drift technique and
+    current-line awareness, placing it at the cluster's advanced
+    tier despite the moderate 5-25 m depth range.
+
+display_name:
+  en: Scuba — Cape Kri (Raja Ampat)
+  it: Immersione — Cape Kri
+  es: Buceo — Cabo Kri
+  fr: Plongée — Cape Kri
+  de: Tauchen — Cape Kri
+
+description:
+  en: |
+    The Dampier Strait entrance drift-wall holding the Guinness
+    World Record for most fish species on a single dive, with
+    strong tidal current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Guinness World Records — most fish species recorded in a single dive (Gerry Allen, Cape Kri, 2012)"
+    - "Raja Ampat MPA network dive-site documentation"
+  notes: |
+    Sub-spot of scuba-spot-raja-ampat cluster. Tier 3: advanced
+    strong-current drift wall, cluster's flagship biodiversity site.

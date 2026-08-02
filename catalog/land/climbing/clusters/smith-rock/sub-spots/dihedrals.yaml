@@ -1,0 +1,52 @@
+slug: climbing-spot-smith-rock-dihedrals
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-smith-rock
+parent_cluster: climbing-spot-smith-rock
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 44.3667, lng: -121.1367 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    The Dihedrals sector is the historic birthplace of American sport
+    climbing, where Alan Watts established "To Bolt or Not to Be" in 1986,
+    at the time the hardest sport route in the United States, on steep,
+    technical welded tuff. Routes here run from roughly F7c to F9a+ on
+    sustained, powerful terrain requiring precise footwork on the tuff's
+    variable texture and the confidence to commit to bolt-protected redpoint
+    attempts well above the last piece of gear on some sections. Hardware
+    is maintained by local climbing-coalition rebolting efforts given
+    decades of heavy traffic, but the routes' sustained difficulty and
+    technical, sometimes polished holds place this sector firmly in
+    advanced-only terrain. Approach is a moderate descent and river crossing
+    from the main park rim.
+
+display_name:
+  en: Climbing — Smith Rock The Dihedrals
+  it: Arrampicata — Smith Rock The Dihedrals
+  es: Escalada — Smith Rock The Dihedrals
+  fr: Escalade — Smith Rock The Dihedrals
+  de: Klettern — Smith Rock The Dihedrals
+
+description:
+  en: |
+    The birthplace of American sport climbing, home to Alan Watts's "To
+    Bolt or Not to Be" (1986). Sustained welded-tuff sport routes from
+    F7c to F9a+.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Oregon State Parks — Smith Rock State Park climbing guidance"
+    - "Smith Rock climbing guidebook (Alan Watts)"
+  notes: |
+    Sub-spot of climbing-spot-smith-rock cluster. Tier 3: sustained
+    advanced-to-elite sport climbing on technical welded tuff with a
+    river-crossing approach.

@@ -1,0 +1,50 @@
+slug: surfing-spot-skeleton-bay-middle-section
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-skeleton-bay
+parent_cluster: surfing-spot-skeleton-bay
+region: atlantic
+country_code: NA
+
+coordinates:
+  center: { lat: -25.8283, lng: 14.5667 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    The middle section links the outer sandbar's swell entry to the
+    inner point, sustaining barrel sections along the sand-spit's curve
+    over a long, physically demanding stretch of the ride. Surfers who
+    connect through from the outer bar must maintain speed and tube
+    positioning through this section without a rest, and any fall here
+    still leaves a long, current-affected swim back to a take-off zone
+    with no channel and no support boat or lifeguard. The wave's speed
+    and sustained hollow shape place it firmly in expert-only territory
+    even relative to the rest of the bay.
+
+display_name:
+  en: Surfing — Skeleton Bay Middle Section
+  it: Surf — Skeleton Bay Middle Section
+  es: Surf — Skeleton Bay Middle Section
+  fr: Surf — Skeleton Bay Middle Section
+  de: Surfen — Skeleton Bay Middle Section
+
+description:
+  en: |
+    The sustained middle stretch of the Skeleton Bay sandbar, linking
+    the outer swell-entry section to the inner point take-off zone with
+    continuous barrel sections. Requires sustained speed and tube
+    positioning over a long, physically demanding ride with no resting
+    channel.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Namibia Tourism Board coastal recreation notes, Walvis Bay region"
+  notes: |
+    Sub-spot of surfing-spot-skeleton-bay cluster. Tier 3: sustained
+    hollow middle section of the sandbar point, expert-only, no channel
+    or rescue support.

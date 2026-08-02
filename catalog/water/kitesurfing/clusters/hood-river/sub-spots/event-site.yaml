@@ -1,0 +1,50 @@
+slug: kitesurfing-spot-hood-river-event-site
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-hood-river
+parent_cluster: kitesurfing-spot-hood-river
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 45.7133, lng: -121.5033 }
+  radius_m: 1000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Event Site is the Columbia Gorge's primary kite launch — a
+    developed riverside park with a well-defined lift-off and landing
+    beach used for competitions and daily sessions alike. The thermal
+    westerly wind is strong and consistent (25-35 knots typical
+    June-August afternoons) but the river current runs against it,
+    producing standing wind-against-current chop that demands solid
+    riding technique beyond flat-water basics. Cold glacial-fed water
+    and barge/boat traffic in the shipping channel are additional
+    intermediate-level considerations absent from typical ocean lagoons.
+
+display_name:
+  en: Kitesurfing — Hood River Event Site
+  it: Kitesurf — Hood River Event Site
+  es: Kitesurf — Hood River Event Site
+  fr: Kitesurf — Hood River Event Site
+  de: Kitesurfen — Hood River Event Site
+
+description:
+  en: |
+    The best-known kite launch on the Columbia River — a riverside park
+    with a purpose-built beach, strong sustained thermal wind through
+    summer afternoons, and standing wind-against-current chop unique to
+    river kiting.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NOAA/National Weather Service Columbia River Gorge thermal wind climatology"
+    - "Columbia River Gorge National Scenic Area river-access site documentation"
+  notes: |
+    Sub-spot of kitesurfing-spot-hood-river cluster. Tier 2: strong
+    thermal wind, standing wind-against-current chop, well-defined
+    launch/landing infrastructure.

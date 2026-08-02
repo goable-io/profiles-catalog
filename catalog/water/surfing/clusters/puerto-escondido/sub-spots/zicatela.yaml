@@ -1,0 +1,54 @@
+slug: surfing-spot-puerto-escondido-zicatela
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-puerto-escondido
+parent_cluster: surfing-spot-puerto-escondido
+region: pacific
+country_code: MX
+
+coordinates:
+  center: { lat: 15.8567, lng: -97.0500 }
+  radius_m: 800
+
+tier: 3
+tier_rationale:
+  en: |
+    Known as the "Mexican Pipeline," Zicatela is a steep beach break
+    where the continental shelf drops away sharply just offshore,
+    letting deep-water groundswell arrive with almost no dissipation
+    before slamming into a shifting sand bottom. Spring-summer swells
+    routinely deliver 3-8 m barrels with extreme power and a violent,
+    close-out shorebreak that has caused serious spinal and head
+    injuries even to experienced surfers. It is the venue for the WSL
+    Puerto Escondido Challenge big-wave event, and strong rip currents
+    running parallel to the beach make paddling out and getting back to
+    shore a significant hazard independent of wave size.
+
+display_name:
+  en: Surfing — Puerto Escondido Zicatela
+  it: Surf — Puerto Escondido Zicatela
+  es: Surf — Puerto Escondido Zicatela
+  fr: Surf — Puerto Escondido Zicatela
+  de: Surfen — Puerto Escondido Zicatela
+
+description:
+  en: |
+    Playa Zicatela's main peak, the "Mexican Pipeline" and one of the
+    most powerful beach breaks in the world. Deep-water groundswell hits
+    a steep sand shelf with minimal refraction, producing thick, hollow
+    barrels from 3-8 m during the May-September Pacific groundswell
+    season. Hosts the WSL Puerto Escondido Challenge big-wave tour stop.
+    Strictly for advanced/expert surfers; the shorebreak alone injures
+    beginners who wander too close.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "WSL Puerto Escondido Challenge venue documentation"
+    - "Federación Mexicana de Surf spot classification, Oaxaca coast"
+  notes: |
+    Sub-spot of surfing-spot-puerto-escondido cluster. Tier 3: heavy
+    beach-break big-wave venue with documented severe-injury shorebreak
+    and strong rips. Domain-expert review recommended.

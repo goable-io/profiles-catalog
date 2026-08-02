@@ -1,0 +1,49 @@
+slug: kitesurfing-spot-paje-zanzibar-kizimkazi
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-paje-zanzibar
+parent_cluster: kitesurfing-spot-paje-zanzibar
+region: indian
+country_code: TZ
+
+coordinates:
+  center: { lat: -6.4283, lng: 39.4767 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Kizimkazi, at the southern tip of Zanzibar's kite coast, sits closer
+    to a reef edge open to Indian Ocean swell than the sheltered Paje
+    lagoon, producing small wind-swell and wave-riding opportunity
+    alongside open-water freeride. The reef here is less continuous and
+    the fetch more open, calling for intermediate riding skill (upwind
+    ability, wave awareness) and reef-position judgement that the
+    fully-protected northern lagoon does not demand. Kaskazi and kusi
+    both reach here, though local channel currents near the point add a
+    further intermediate-level consideration.
+
+display_name:
+  en: Kitesurfing — Kizimkazi
+  it: Kitesurf — Kizimkazi
+  es: Kitesurf — Kizimkazi
+  fr: Kitesurf — Kizimkazi
+  de: Kitesurfen — Kizimkazi
+
+description:
+  en: |
+    Zanzibar's southern point break — reef-edge exposure brings small
+    wind-swell and open-water freeride to complement the flat lagoons
+    further north, favoured by intermediate riders looking for a change
+    of terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) Zanzibar venue notes"
+    - "Tanzania Meteorological Authority monsoon wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-paje-zanzibar cluster. Tier 2: southern
+    reef-edge point, intermediate wave-riding and open-water freeride.

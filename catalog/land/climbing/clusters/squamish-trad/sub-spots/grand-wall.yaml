@@ -1,0 +1,52 @@
+slug: climbing-spot-squamish-grand-wall
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-squamish
+parent_cluster: climbing-spot-squamish
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 49.6800, lng: -123.1500 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Grand Wall is Squamish's defining big-wall route, a roughly ten-pitch
+    line up the Stawamus Chief's steepest granite (5.11a A0 with the
+    original aid moves, or 5.13 for the fully free variant), first climbed
+    in 1961 and still the reference objective for West-Canadian granite
+    climbing. Protection is a mix of traditional gear in the Chief's
+    sustained crack systems and fixed bolts on the committing face
+    sections, with the Split Pillar and Sword pitches demanding technical
+    crack technique well above entry level. A full ascent requires multi-
+    hour commitment, competent multipitch systems, and route-finding
+    through featured but sustained terrain, with retreat options limited
+    once past the lower pitches. The approach is a steep, well-trodden
+    climbers' trail from the base of the Chief.
+
+display_name:
+  en: Climbing — Squamish Grand Wall
+  it: Arrampicata — Squamish Grand Wall
+  es: Escalada — Squamish Grand Wall
+  fr: Escalade — Squamish Grand Wall
+  de: Klettern — Squamish Grand Wall
+
+description:
+  en: |
+    The Stawamus Chief's iconic ten-pitch granite big wall (5.11a A0, or
+    5.13 free), first climbed in 1961 and still the reference big-wall
+    objective for Western Canada.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Squamish Access Society route and access guidance"
+    - "Alpine Club of Canada — Squamish rock climbing guidance"
+  notes: |
+    Sub-spot of climbing-spot-squamish cluster. Tier 3: committing
+    multipitch granite big-wall trad/aid climbing with sustained technical
+    crack pitches and limited retreat options.

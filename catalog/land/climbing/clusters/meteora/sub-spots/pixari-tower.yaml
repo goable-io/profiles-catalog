@@ -1,0 +1,50 @@
+slug: climbing-spot-meteora-pixari-tower
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-meteora
+parent_cluster: climbing-spot-meteora
+region: mediterranean
+country_code: GR
+
+coordinates:
+  center: { lat: 39.7267, lng: 21.6250 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Pixari and its adjacent conglomerate formations offer sustained
+    multipitch trad climbing on Meteora's characteristic pebble-and-matrix
+    rock, among the historically significant towers documented since the
+    early era of Meteora climbing exploration. Protection relies on
+    traditional gear placements read directly off the rock's pebble
+    structure, with limited fixed hardware, and the freestanding nature of
+    the tower means full exposure and rappel descent once committed.
+    Route-finding and rock-quality judgement on the sustained pitches keep
+    this in advanced territory, consistent with the tower's status as one of
+    the range's classic historic objectives. Approach follows forested
+    trails from the base of the Meteora rock cluster.
+
+display_name:
+  en: Climbing — Meteora Pixari Tower
+  it: Arrampicata — Meteora Pixari Tower
+  es: Escalada — Meteora Pixari Tower
+  fr: Escalade — Meteora Pixari Tower
+  de: Klettern — Meteora Pixari Tower
+
+description:
+  en: |
+    A historically significant Meteora tower offering sustained multipitch
+    trad climbing on conglomerate, with limited fixed protection and
+    freestanding exposure.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hellenic Federation of Mountaineering and Climbing (EOOA) Meteora access guidance"
+  notes: |
+    Sub-spot of climbing-spot-meteora cluster. Tier 3: sustained multipitch
+    trad on conglomerate with limited fixed protection and freestanding-
+    tower exposure.

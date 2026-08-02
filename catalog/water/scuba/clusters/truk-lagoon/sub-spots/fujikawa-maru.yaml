@@ -1,0 +1,46 @@
+slug: scuba-spot-truk-lagoon-fujikawa-maru
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-truk-lagoon
+parent_cluster: scuba-spot-truk-lagoon
+region: pacific
+country_code: FM
+
+coordinates:
+  center: { lat: 7.3550, lng: 151.8817 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Fujikawa Maru is a Japanese aircraft ferry sunk during Operation
+    Hailstone in 1944. Resting at 10-35 m with intact Mitsubishi Zero
+    fighter fuselages still visible in the forward hold alongside engine-
+    room machinery and munitions. Penetration to the aircraft hold and
+    engine room requires wreck-certified training under the site's war-
+    grave protection rules, and the 35 m maximum depth places it at the
+    cluster's advanced tier alongside Shinkoku Maru.
+
+display_name:
+  en: Scuba — Fujikawa Maru (Truk Lagoon)
+  it: Immersione — Fujikawa Maru
+  es: Buceo — Fujikawa Maru
+  fr: Plongée — Fujikawa Maru
+  de: Tauchen — Fujikawa Maru
+
+description:
+  en: |
+    A Japanese aircraft ferry sunk in 1944 with intact Zero-fighter
+    cargo, a protected war-grave wreck at 10-35 m.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "US Naval History and Heritage Command, Operation Hailstone (17-18 Feb 1944) records"
+    - "Chuuk State war-grave wreck-protection statutes and site documentation"
+  notes: |
+    Sub-spot of scuba-spot-truk-lagoon cluster. Tier 3: advanced
+    wreck-penetration dive to 35 m, protected war grave with intact
+    aircraft cargo.

@@ -1,0 +1,49 @@
+slug: ski-touring-spot-otztal-wildspitze
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: ski-touring-spot-otztal
+parent_cluster: ski-touring-spot-otztal
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 46.8850, lng: 10.8683 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Wildspitze (3768 m) is Tirol's second-highest peak and the
+    Ötztaler Alpen's high-altitude touring objective, approached via
+    the Braunschweiger Hütte across the Mittelbergferner glacier.
+    The standard route crosses heavily glaciated terrain with
+    crevasse fields requiring rope teams and technical glacier-travel
+    kit, and the final summit pyramid involves exposed, sustained
+    steep skiing above 3600 m. Altitude and glacier commitment place
+    this firmly beyond intermediate touring parties. Reserved for
+    advanced ski-tourers with full glacier kit and, on first visits,
+    a certified mountain guide.
+
+display_name:
+  en: Ski Touring — Wildspitze
+  it: Sci alpinismo — Wildspitze
+  es: Esquí de travesía — Wildspitze
+  fr: Ski de randonnée — Wildspitze
+  de: Skitourengehen — Wildspitze
+
+description:
+  en: |
+    Wildspitze (3768 m), Tirol's second-highest summit and the
+    Ötztal's flagship glaciated tour via the Braunschweiger Hütte
+    and the Mittelbergferner glacier.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Österreichischer Alpenverein (ÖAV) Braunschweiger Hütte touring dossier"
+    - "LWD Tirol historic bulletin archive"
+  notes: |
+    Sub-spot of ski-touring-spot-otztal cluster. Tier 3: glaciated,
+    crevassed, committing high-altitude objective.

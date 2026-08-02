@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-solden-rettenbach-glacier
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-solden
+parent_cluster: alpine-skiing-spot-solden
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 46.9583, lng: 10.9450 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Rettenbachgletscher (3040 m) hosts the FIS Alpine Ski World
+    Cup's annual October season opener, giving this sector a permanent
+    hardened race piste maintained through summer snowfarming to
+    guarantee an early-season World Cup surface. Outside race
+    operations, the sector offers a mix of demanding black race-piste
+    terrain and red glacier cruising, with crevasse-marking and glacier
+    safety protocols in effect across the marked network. Snow surface
+    is typically firmer and more variable than lower-altitude Alpine
+    sectors given the glacier's exposure and the artificial hardening
+    used for race preparation, placing sustained demands on
+    intermediate-to-advanced technique.
+
+display_name:
+  en: Alpine Skiing — Rettenbach Glacier (Sölden)
+  it: Sci Alpino — Ghiacciaio Rettenbach
+  es: Esquí Alpino — Glaciar Rettenbach
+  fr: Ski Alpin — Glacier de Rettenbach
+  de: Alpiner Skilauf — Rettenbachgletscher
+
+description:
+  en: |
+    Sölden's 3040 m glacier race sector, the annual FIS Alpine World
+    Cup October opener venue. Hardened black race piste plus red
+    glacier cruising terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIS Alpine Ski World Cup Sölden season-opener venue documentation"
+    - "Bergbahnen Sölden piste map — Rettenbachgletscher sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-solden cluster. Tier 3: hardened
+    FIS World Cup race piste plus red-and-black glacier terrain at
+    3040 m.

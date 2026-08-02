@@ -1,0 +1,46 @@
+slug: scuba-spot-palau-blue-corner
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-palau
+parent_cluster: scuba-spot-palau
+region: pacific
+country_code: PW
+
+coordinates:
+  center: { lat: 7.1417, lng: 134.2233 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Blue Corner is Palau's iconic reef-hook drift-wall promontory
+    where two current systems converge, producing sustained drift
+    of 1-3 kn along a sheer wall dropping past 30 m. Divers clip a
+    reef hook to bare rock at 15-20 m and hover in the current
+    stream to watch grey reef sharks, bumphead parrotfish schools,
+    napoleon wrasse, and passing pelagics. The convergence current
+    and hook technique demand advanced buoyancy control and current
+    management, placing it firmly at the top tier of the cluster.
+
+display_name:
+  en: Scuba — Blue Corner (Palau)
+  it: Immersione — Blue Corner
+  es: Buceo — Blue Corner
+  fr: Plongée — Blue Corner
+  de: Tauchen — Blue Corner
+
+description:
+  en: |
+    Palau's iconic reef-hook drift-wall promontory with sustained
+    1-3 kn current and grey reef shark + big-fish encounters.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Palau National Marine Sanctuary / Rock Islands Southern Lagoon dive-site documentation"
+    - "PADI Palau Blue Corner site briefing"
+  notes: |
+    Sub-spot of scuba-spot-palau cluster. Tier 3: advanced reef-hook
+    drift-wall dive, cluster's flagship pelagic-encounter site.

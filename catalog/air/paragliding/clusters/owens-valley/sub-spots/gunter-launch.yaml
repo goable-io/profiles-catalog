@@ -1,0 +1,51 @@
+slug: paragliding-spot-owens-valley-gunter-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-owens-valley
+parent_cluster: paragliding-spot-owens-valley
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 37.5000, lng: -118.4167 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    Gunter launch, near Bishop on the Sierra Nevada side of the
+    Owens Valley, is the valley's standard intermediate XC-departure
+    platform, offering more moderate access and launch conditions
+    than the higher, more committing Walt's Point. Pilots typically
+    launch into organized valley thermals that build predictably
+    through the morning, feeding into the same north-south XC
+    corridor used by the valley's classic long-distance tasks. The
+    site sees routine daily traffic from local and visiting
+    intermediate pilots working up to the valley's bigger XC days.
+    A solid intermediate step into Owens Valley cross-country flying
+    rather than a beginner training hill.
+
+display_name:
+  en: Paragliding — Gunter Launch (Owens Valley)
+  it: Parapendio — Gunter (Owens Valley)
+  es: Parapente — Gunter (Owens Valley)
+  fr: Parapente — Gunter (Owens Valley)
+  de: Gleitschirmfliegen — Gunter (Owens Valley)
+
+description:
+  en: |
+    Gunter launch near Bishop — the Owens Valley's standard
+    intermediate XC-departure platform feeding the valley's
+    north-south thermal corridor.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "USHPA Gunter site documentation"
+    - "Owens Valley XC pilot community consolidated launch practice"
+  notes: |
+    Sub-spot of paragliding-spot-owens-valley cluster. Tier 2:
+    moderate access, organized predictable thermal cycles, standard
+    intermediate XC platform.

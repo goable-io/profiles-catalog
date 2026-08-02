@@ -1,0 +1,53 @@
+slug: surfing-spot-puerto-escondido-la-punta
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-puerto-escondido
+parent_cluster: surfing-spot-puerto-escondido
+region: pacific
+country_code: MX
+
+coordinates:
+  center: { lat: 15.8500, lng: -97.0517 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    La Punta is the left-hand point break at the southern end of the
+    Zicatela beach system, where a rocky headland refracts and organises
+    the same Pacific groundswell into a longer, more predictable wave
+    than the sand-bottom beach break to the north. Wave faces are
+    typically cleaner and less abrupt, with a defined take-off zone and
+    walled-up shoulder that gives intermediate surfers time to set up
+    manoeuvres. It is still exposed to open-ocean swell and can build to
+    a size that overwhelms less experienced riders on bigger days, but
+    the point-break shape makes it the natural step up from a beginner
+    beach and the step down from Zicatela's main peak.
+
+display_name:
+  en: Surfing — Puerto Escondido La Punta
+  it: Surf — Puerto Escondido La Punta
+  es: Surf — Puerto Escondido La Punta
+  fr: Surf — Puerto Escondido La Punta
+  de: Surfen — Puerto Escondido La Punta
+
+description:
+  en: |
+    The point break at the south end of Zicatela beach, where a rocky
+    headland shapes incoming groundswell into a long, organised left.
+    Cleaner and more forgiving than the Zicatela peak, La Punta is the
+    intermediate hub of Puerto Escondido, popular with longboarders and
+    progressing shortboarders, with surf schools and rental shacks
+    concentrated along the point.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Federación Mexicana de Surf spot classification, Oaxaca coast"
+    - "WSL Puerto Escondido Challenge venue documentation"
+  notes: |
+    Sub-spot of surfing-spot-puerto-escondido cluster. Tier 2:
+    point-break refraction produces a cleaner, more forgiving wave than
+    the adjacent Zicatela beach break, but still open-ocean exposed.

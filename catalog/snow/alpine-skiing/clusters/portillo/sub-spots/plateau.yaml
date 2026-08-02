@@ -1,0 +1,54 @@
+slug: alpine-skiing-spot-portillo-plateau
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-portillo
+parent_cluster: alpine-skiing-spot-portillo
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -32.8367, lng: -70.1300 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Portillo Plateau and Roca Jack chair sector forms the resort's
+    main intermediate cruising ground in the 2800-3300 m Andean-alpine
+    band directly above Laguna del Inca. Piste marking is dominated by
+    red runs served by a mix of historic slow chairs and the plateau's
+    surface lifts, with wide open pitches typical of the treeless
+    high-Andes terrain rather than the tree-lined runs common in
+    European or North American resorts. The sector is the traditional
+    venue for the Chilean Ski Federation's national training camps and
+    FIS speed-discipline pre-season sessions, reflecting consistent
+    grooming quality and a dependable dry-snow surface at altitude.
+    Full ski-patrol coverage and grooming apply across the marked
+    network, making this the standard entry point for visiting
+    intermediate skiers.
+
+display_name:
+  en: Alpine Skiing — Plateau (Portillo)
+  it: Sci Alpino — Plateau
+  es: Esquí Alpino — Plateau
+  fr: Ski Alpin — Plateau
+  de: Alpiner Skilauf — Plateau
+
+description:
+  en: |
+    Portillo's main intermediate sector, cruising 2800-3300 m on
+    red-piste terrain served by the plateau chairs and Roca Jack lift.
+    Chilean Ski Federation training venue with dependable high-altitude
+    snow.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ski Portillo piste map — Plateau/Roca Jack sector"
+    - "Federación de Ski y Andinismo de Chile national-team training venue records"
+  notes: |
+    Sub-spot of alpine-skiing-spot-portillo cluster. Tier 2: red-piste
+    dominant intermediate cruising sector at 2800-3300 m with full
+    grooming and chairlift access.

@@ -1,0 +1,51 @@
+slug: climbing-spot-meteora-holy-ghost-tower
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-meteora
+parent_cluster: climbing-spot-meteora
+region: mediterranean
+country_code: GR
+
+coordinates:
+  center: { lat: 39.7250, lng: 21.6300 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Holy Ghost Tower and its adjacent conglomerate formations carry some
+    of Meteora's earliest documented modern routes, developed by German
+    climber Dietmar Schuh through the 1960s-70s, graded roughly V+ to VII+
+    on the UIAA scale across sustained multipitch lines. Protection is
+    almost entirely traditional gear placed in the pebble-and-matrix rock,
+    supplemented by sparse aging pitons on some older pitches, demanding
+    careful judgement of which embedded pebbles will hold body weight.
+    Descent is typically by rappel from fixed anchors on freestanding
+    towers with full exposure on all sides, and the historic, lightly
+    documented nature of many lines means route-finding itself is a
+    meaningful part of the challenge. Approach involves scrambling through
+    forest and scree below the towers.
+
+display_name:
+  en: Climbing — Meteora Holy Ghost Tower
+  it: Arrampicata — Meteora Holy Ghost Tower
+  es: Escalada — Meteora Holy Ghost Tower
+  fr: Escalade — Meteora Holy Ghost Tower
+  de: Klettern — Meteora Holy Ghost Tower
+
+description:
+  en: |
+    A historic conglomerate tower and its neighbouring formations, home to
+    some of Meteora's earliest modern trad routes (V+ to VII+), pioneered
+    by Dietmar Schuh from the 1960s.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Hellenic Federation of Mountaineering and Climbing (EOOA) Meteora access guidance"
+  notes: |
+    Sub-spot of climbing-spot-meteora cluster. Tier 3: historic multipitch
+    trad on friable conglomerate with sparse fixed protection and
+    freestanding-tower rappel descents.

@@ -1,0 +1,49 @@
+slug: climbing-spot-railay-tonsai-tonsai-beach
+spot_kind: sub-spot
+version: "1.0.0"
+category: land
+extends: climbing-spot-railay-tonsai
+parent_cluster: climbing-spot-railay-tonsai
+country_code: TH
+
+coordinates:
+  center: { lat: 7.9722, lng: 98.8256 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    The cliffs above Tonsai Beach hold one of Southeast Asia's densest
+    concentrations of steep sport climbing, with sustained tufa-and-hueco
+    limestone routes from F6a to F8b spread across multiple sectors just
+    behind the beach. Hardware is stainless steel installed and maintained
+    by the long-running local climbing-shop community, with well-established
+    lower-off anchors on the classic lines. The overhanging, three-
+    dimensional terrain produces long, clean falls into open air on the
+    steepest routes, and the dense hueco and tufa features demand real
+    technique to read, placing the sector's harder end solidly in advanced
+    territory even though moderate lines exist. Approach is a short walk
+    from the beach through jungle paths that can be muddy after rain.
+
+display_name:
+  en: Climbing — Railay & Tonsai Tonsai Beach
+  it: Arrampicata — Railay e Tonsai Tonsai Beach
+  es: Escalada — Railay y Tonsai Tonsai Beach
+  fr: Escalade — Railay et Tonsai Tonsai Beach
+  de: Klettern — Railay und Tonsai Tonsai Beach
+
+description:
+  en: |
+    Southeast Asia's beach-side sport-climbing hub: dense tufa and hueco
+    limestone sectors from F6a to F8b just behind Tonsai Beach, with iconic
+    overhanging classics and a long-established local bolting community.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Thailand Climbing (King Climbers) route and access guidance"
+  notes: |
+    Sub-spot of climbing-spot-railay-tonsai cluster. Tier 2: sustained
+    intermediate-to-advanced overhanging sport climbing with stainless
+    hardware, clean falls, and short jungle-path approach from the beach.

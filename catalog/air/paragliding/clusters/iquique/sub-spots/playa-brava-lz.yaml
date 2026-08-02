@@ -1,0 +1,49 @@
+slug: paragliding-spot-iquique-playa-brava-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-iquique
+parent_cluster: paragliding-spot-iquique
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -20.2500, lng: -70.1350 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    Playa Brava is Iquique's official landing beach, a wide flat
+    sand strip directly below the Alto Hospicio launch with an open
+    approach from the escarpment and no obstacles on final glide.
+    The beach easily absorbs the high daily volume of tandem and
+    solo traffic typical of one of the world's most consistently
+    flyable coastal sites, and the flat sand surface removes
+    landing-technique risk for low-time pilots. This is the
+    designated target for virtually all Iquique flights that are
+    not on extended XC tasks, making it the site's beginner-friendly
+    baseline landing zone.
+
+display_name:
+  en: Paragliding — Playa Brava LZ (Iquique)
+  it: Parapendio — Playa Brava (Iquique)
+  es: Parapente — Playa Brava (Iquique)
+  fr: Parapente — Playa Brava (Iquique)
+  de: Gleitschirmfliegen — Playa Brava (Iquique)
+
+description:
+  en: |
+    Iquique's official landing beach — a wide, flat, obstacle-free
+    sand strip below the Alto Hospicio launch.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FEDACH Iquique LZ documentation"
+    - "Iquique paragliding operators consolidated daily-window practice"
+  notes: |
+    Sub-spot of paragliding-spot-iquique cluster. Tier 1: wide flat
+    beach LZ, no obstacles, standard target for the large majority
+    of Iquique flights.

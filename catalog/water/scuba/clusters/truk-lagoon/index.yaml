@@ -1,0 +1,158 @@
+slug: scuba-spot-truk-lagoon
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-pacific
+region: pacific
+country_code: FM
+sub_spots:
+  - scuba-spot-truk-lagoon-shinkoku-maru
+  - scuba-spot-truk-lagoon-fujikawa-maru
+display_name:
+  en: Scuba Diving — Truk Lagoon
+  it: Immersione — Laguna di Truk
+  es: Buceo — Laguna de Truk
+  fr: Plongée — Lagon de Truk
+  de: Tauchen — Truk-Lagune
+description:
+  en: |
+    Truk (Chuuk) Lagoon, Federated States of Micronesia, is the
+    world's premier WWII wreck-diving destination, holding over 50
+    Imperial Japanese Navy vessels and aircraft sunk during the
+    United States' Operation Hailstone (17-18 February 1944). The
+    sheltered lagoon offers calm, current-light diving with warm
+    water (28-30°C) and 15-30 m visibility over wrecks lying at
+    10-60 m depth, many with cargo, armament, and personal effects
+    intact. Wrecks are designated war graves under Chuuk State law.
+    Boat access from Weno.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.65 }
+      - { x: 5.0, s: 0.92 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.40 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 14, s: 0.30 }
+      - { x: 20, s: 0.55 }
+      - { x: 25, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.80 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.65 }
+      - { x: 24, s: 0.25 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 8,  s: 0.30 }
+      - { x: 18, s: 0.75 }
+      - { x: 26, s: 1.00 }
+      - { x: 34, s: 0.90 }
+      - { x: 42, s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: PACIFIC_HIGH_SEAS
+    description: Wave height above 3.0 m makes boat crossing to Truk Lagoon's dispersed wreck sites unsafe, though the sheltered lagoon rarely reaches this threshold.
+
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: TROPICAL_CYCLONE_PERIPHERY
+    description: Sustained wind above 30 knots signals typhoon periphery; Truk Lagoon boat operations stand down.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_PAC
+    description: Surface visibility below 800 m during tropical squall makes site-finding across the lagoon's dispersed wreck sites unsafe.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: TROPICAL_DELUGE_PAC
+    description: Heavy tropical rain above 20 mm/h correlates with squall or typhoon-fringe systems and reduces surface navigation safety.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 48
+  carrying_capacity_sensitivity: high
+  notes: |
+    All Truk Lagoon wrecks are designated war graves under Chuuk
+    State (FSM) law, protecting them from artifact removal and
+    penetration damage; many still contain human remains and
+    unexploded ordnance. The sheltered lagoon setting gives it one
+    of the catalog's most consistent, weather-independent seasons,
+    but wreck-penetration training and no-touch / no-removal
+    protocols are strictly enforced by local dive operators.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Chuuk State (Federated States of Micronesia) war-grave wreck-protection statutes"
+    - "US Naval History and Heritage Command, Operation Hailstone (17-18 Feb 1944) records"
+    - "PADI Truk Lagoon wreck-diving regional briefing"
+  notes: |
+    Spot overrides vs scuba-pacific: matches regional baseline for
+    the Micronesian sector, with the sheltered lagoon geometry
+    supporting a longer 48-week season than open-reef Pacific sites.
+    Typhoon season (Jun-Nov) is a reduced-frequency risk given the
+    lagoon's partial shelter from Weno island.

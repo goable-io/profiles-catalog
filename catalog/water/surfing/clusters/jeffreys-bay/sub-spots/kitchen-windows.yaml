@@ -1,0 +1,50 @@
+slug: surfing-spot-jeffreys-bay-kitchen-windows
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-jeffreys-bay
+parent_cluster: surfing-spot-jeffreys-bay
+region: atlantic
+country_code: ZA
+
+coordinates:
+  center: { lat: -34.0517, lng: 24.9100 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Kitchen Windows is the southernmost, most sheltered section of the
+    Jeffreys Bay point system, where the same Southern Ocean groundswell
+    has lost some energy after wrapping past the outer sections and
+    breaks with a softer, more rounded shape over a mixed sand-and-rock
+    bottom. The gentler wall gives intermediate surfers more time to
+    read the wave and set up turns than the fast Supertubes section
+    upstream, while still offering the long, point-break ride quality
+    that defines the bay. It remains open to Southern Ocean swell and
+    cold water, so full wetsuit protection is required year-round.
+
+display_name:
+  en: Surfing — Jeffreys Bay Kitchen Windows
+  it: Surf — Jeffreys Bay Kitchen Windows
+  es: Surf — Jeffreys Bay Kitchen Windows
+  fr: Surf — Jeffreys Bay Kitchen Windows
+  de: Surfen — Jeffreys Bay Kitchen Windows
+
+description:
+  en: |
+    The southernmost, more sheltered section of the Jeffreys Bay point,
+    where the swell has softened after wrapping past the outer sections.
+    Gentler wave shape than Supertubes makes this the intermediate
+    section of the bay, still delivering the long, walling point-break
+    rides the destination is famous for.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Surfing South Africa spot classification, Eastern Cape"
+  notes: |
+    Sub-spot of surfing-spot-jeffreys-bay cluster. Tier 2: softer,
+    more sheltered southern section of the point, intermediate-suitable,
+    mixed sand-and-rock bottom.

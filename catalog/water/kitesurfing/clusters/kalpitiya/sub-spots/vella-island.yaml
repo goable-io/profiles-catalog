@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-kalpitiya-vella-island
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-kalpitiya
+parent_cluster: kitesurfing-spot-kalpitiya
+region: indian
+country_code: LK
+
+coordinates:
+  center: { lat: 8.2100, lng: 79.7250 }
+  radius_m: 1200
+
+tier: 2
+tier_rationale:
+  en: |
+    Vella Island's reef and sandbank area sits further offshore than the
+    sheltered Kappaladi lagoon, exposed to wind-driven chop and small
+    wind-swell rather than fully flat water. Reached by a short boat
+    shuttle rather than a beach launch, it demands intermediate riding
+    skill (upwind ability, self-rescue, and comfort launching/landing
+    from a boat) that beginners in the main lagoon do not yet need.
+    Wind is generally stronger and more consistent than in the lagoon,
+    reflecting the more open offshore fetch.
+
+display_name:
+  en: Kitesurfing — Kalpitiya Vella Island
+  it: Kitesurf — Kalpitiya Vella Island
+  es: Kitesurf — Kalpitiya Isla Vella
+  fr: Kitesurf — Kalpitiya Île Vella
+  de: Kitesurfen — Kalpitiya Vella Island
+
+description:
+  en: |
+    An offshore reef and sandbank sector reached by boat shuttle from the
+    Kalpitiya lagoon shore, offering intermediate chop-and-wave freeride
+    away from the school crowds of the main lagoon, with generally
+    stronger and more open-fetch monsoon wind.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) Kalpitiya venue notes"
+    - "Sri Lanka Department of Meteorology monsoon wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-kalpitiya cluster. Tier 2: boat-shuttle
+    offshore reef sector, intermediate chop-and-wave freeride.

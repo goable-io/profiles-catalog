@@ -1,0 +1,49 @@
+slug: paragliding-spot-rio-pedra-bonita-sao-conrado-beach-lz
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-rio-pedra-bonita
+parent_cluster: paragliding-spot-rio-pedra-bonita
+region: atlantic
+country_code: BR
+
+coordinates:
+  center: { lat: -22.9967, lng: -43.2650 }
+  radius_m: 500
+
+tier: 1
+tier_rationale:
+  en: |
+    São Conrado beach is the standard Rio paragliding landing zone
+    in the Barra da Tijuca sector, a wide open sand approach with
+    no obstacles on final glide from the Pedra Bonita launch above.
+    The beach's generous width easily absorbs the very high daily
+    volume of tandem and solo flights typical of one of the world's
+    busiest urban paragliding sites. Flat sand and an unobstructed
+    approach corridor remove landing-technique risk for low-time
+    pilots and tandem passengers, and the site is designated and
+    used by essentially all Pedra Bonita flights as the default
+    target.
+
+display_name:
+  en: Paragliding — São Conrado Beach LZ (Rio de Janeiro)
+  it: Parapendio — São Conrado (Rio de Janeiro)
+  es: Parapente — São Conrado (Río de Janeiro)
+  fr: Parapente — São Conrado (Rio de Janeiro)
+  de: Gleitschirmfliegen — São Conrado (Rio de Janeiro)
+
+description:
+  en: |
+    The standard Rio paragliding landing beach in the Barra da
+    Tijuca sector, a wide open sand approach below the Pedra Bonita
+    launch.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FVRJ São Conrado LZ documentation"
+  notes: |
+    Sub-spot of paragliding-spot-rio-pedra-bonita cluster. Tier 1:
+    wide flat beach LZ, no obstacles, default target for nearly all
+    Pedra Bonita flights.

@@ -1,0 +1,45 @@
+slug: scuba-spot-silfra-crack
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-silfra
+parent_cluster: scuba-spot-silfra
+region: atlantic
+country_code: IS
+
+coordinates:
+  center: { lat: 64.2567, lng: -21.1183 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    Silfra Crack is the main fissure dive between the North American and
+    Eurasian tectonic plates in Þingvellir National Park. A narrow rift
+    dive to about 18 m through glacially filtered water at a constant 2-4°C
+    with visibility routinely exceeding 100 m. Drysuit certification and
+    guide-led entry under park permit are mandatory; the narrow rift
+    geometry and near-freezing water place cold-water skill above
+    technical-diving skill, keeping it at the cluster's intermediate tier.
+
+display_name:
+  en: Scuba — Silfra Crack (Iceland)
+  it: Immersione — Fessura di Silfra
+  es: Buceo — Grieta de Silfra
+  fr: Plongée — Faille de Silfra
+  de: Tauchen — Silfra-Spalte
+
+description:
+  en: |
+    The main tectonic-plate fissure dive in Þingvellir National
+    Park, with near-freezing glacial water and 100 m+ visibility.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Þingvellir National Park dive-permit and site documentation"
+    - "Icelandic Environment Agency (Umhverfisstofnun) Silfra access documentation"
+  notes: |
+    Sub-spot of scuba-spot-silfra cluster. Tier 2: intermediate
+    drysuit-mandatory fissure dive, guide-led + permit-required.

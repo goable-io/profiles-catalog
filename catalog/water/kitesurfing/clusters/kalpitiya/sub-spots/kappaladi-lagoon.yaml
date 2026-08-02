@@ -1,0 +1,48 @@
+slug: kitesurfing-spot-kalpitiya-kappaladi-lagoon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: kitesurfing-spot-kalpitiya
+parent_cluster: kitesurfing-spot-kalpitiya
+region: indian
+country_code: LK
+
+coordinates:
+  center: { lat: 8.2333, lng: 79.7500 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    Kappaladi lagoon is shielded from ocean swell by a barrier sandbar and
+    the Kalpitiya peninsula itself, leaving a shallow, flat, mud-and-sand
+    bottomed lagoon well suited to beginners. Both the SW monsoon
+    (May-October, 20-30 knots) and the lighter NE monsoon (December-
+    February) deliver rideable wind here, giving the lagoon two distinct
+    seasonal windows. Shallow depth over most of the lagoon means a
+    fallen rider can usually stand, and the lagoon's enclosed geometry
+    limits downwind drift compared with open-ocean beaches.
+
+display_name:
+  en: Kitesurfing — Kalpitiya Kappaladi Lagoon
+  it: Kitesurf — Laguna di Kappaladi, Kalpitiya
+  es: Kitesurf — Laguna Kappaladi, Kalpitiya
+  fr: Kitesurf — Lagon de Kappaladi, Kalpitiya
+  de: Kitesurfen — Kappaladi-Lagune, Kalpitiya
+
+description:
+  en: |
+    The flat-water training ground of Kalpitiya — a shallow, sandbar-
+    protected lagoon with two monsoon wind seasons a year and a dense
+    concentration of kite schools along its shore. The default first
+    stop for visiting riders before venturing to the offshore islands.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "IKO (International Kiteboarding Organization) Kalpitiya venue notes"
+    - "Sri Lanka Department of Meteorology monsoon wind climatology"
+  notes: |
+    Sub-spot of kitesurfing-spot-kalpitiya cluster. Tier 1: sandbar-
+    protected flat, shallow lagoon with two rideable monsoon seasons.

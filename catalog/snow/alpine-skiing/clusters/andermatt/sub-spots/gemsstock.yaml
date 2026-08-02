@@ -1,0 +1,50 @@
+slug: alpine-skiing-spot-andermatt-gemsstock
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-andermatt
+parent_cluster: alpine-skiing-spot-andermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.6250, lng: 8.5850 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Gemsstock (2961 m) is Andermatt's iconic freeride-adjacent peak,
+    reached by cable car and known internationally for its rich
+    in-bounds off-piste bowls alongside the demanding north-face black
+    piste that drops from the summit station. Ski patrol maintains
+    avalanche control on the open north-facing terrain, but much of
+    the appeal lies in the ungroomed, rocky high-alpine bowls flanking
+    the marked black piste rather than in wide groomed cruising. The
+    summit's exposure to Foehn wind events makes the cable car
+    particularly closure-prone compared to lower Andermatt lifts, and
+    the steep pitch plus variable snow surface on the north face
+    reserve this sector for confident advanced-to-expert skiers.
+
+display_name:
+  en: Alpine Skiing — Gemsstock (Andermatt)
+  it: Sci Alpino — Gemsstock
+  es: Esquí Alpino — Gemsstock
+  fr: Ski Alpin — Gemsstock
+  de: Alpiner Skilauf — Gemsstock
+
+description:
+  en: |
+    Andermatt's iconic 2961 m peak, cable-car accessed, with rich
+    in-bounds off-piste terrain and a demanding north-face black
+    piste. Freeride-adjacent expert sector.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SkiArena Andermatt-Sedrun-Disentis piste map — Gemsstock sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-andermatt cluster. Tier 3: cable-car
+    accessed summit peak with in-bounds off-piste bowls and a black
+    north-face piste, freeride-adjacent expert terrain.

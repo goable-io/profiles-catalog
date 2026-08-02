@@ -1,0 +1,51 @@
+slug: paragliding-spot-iquique-alto-hospicio-launch
+spot_kind: sub-spot
+version: "1.0.0"
+category: air
+extends: paragliding-spot-iquique
+parent_cluster: paragliding-spot-iquique
+region: andes
+country_code: CL
+
+coordinates:
+  center: { lat: -20.2617, lng: -70.1017 }
+  radius_m: 800
+
+tier: 2
+tier_rationale:
+  en: |
+    The Alto Hospicio launch sits atop the desert escarpment at
+    roughly 550 m directly above Iquique city and the Pacific,
+    Iquique's iconic desert-cliff-to-sea launch site. The site is
+    driven by a sustained thermal-and-sea-breeze S-flow of typically
+    15-25 knots, delivering soaring conditions on most days of the
+    year, but the cliff-edge exposure and near-daily moderate wind
+    demand solid launch technique and active piloting beyond a
+    beginner skill level. Tandem and solo intermediate traffic share
+    the ramp with rotation managed by local operators. A standard
+    intermediate XC-departure and soaring platform rather than a
+    beginner training hill.
+
+display_name:
+  en: Paragliding — Alto Hospicio Launch (Iquique)
+  it: Parapendio — Alto Hospicio (Iquique)
+  es: Parapente — Alto Hospicio (Iquique)
+  fr: Parapente — Alto Hospicio (Iquique)
+  de: Gleitschirmfliegen — Alto Hospicio (Iquique)
+
+description:
+  en: |
+    Iquique's iconic desert-cliff launch at 550 m above the Pacific,
+    driven by a sustained thermal-and-sea-breeze S-flow typically
+    15-25 knots.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FEDACH Iquique launch site documentation"
+    - "Iquique paragliding operators consolidated daily-window practice"
+  notes: |
+    Sub-spot of paragliding-spot-iquique cluster. Tier 2: sustained
+    moderate coastal thermal wind, cliff-edge launch technique
+    required, standard intermediate soaring/XC platform.

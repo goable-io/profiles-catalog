@@ -1,0 +1,53 @@
+slug: surfing-spot-chicama-chicama-main-point
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-chicama
+parent_cluster: surfing-spot-chicama
+region: pacific
+country_code: PE
+
+coordinates:
+  center: { lat: -7.6900, lng: -79.4517 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The main point at Chicama is the core of the Guinness-record wave, a
+    long, moderately-sloped left that peels along a boulder-and-sand
+    point for the better part of a kilometre on typical days and up to
+    2 km when the whole system connects on the biggest swells. The wave
+    face is broad and forgiving rather than steep or hollow, well suited
+    to longboarding and cruising shortboard turns, and the point's
+    length means a fall rarely ends a ride entirely — paddlers can
+    re-enter downstream sections. It remains open-ocean exposed and the
+    paddle back up the point after a long ride is a genuine physical
+    test, keeping it out of true beginner territory.
+
+display_name:
+  en: Surfing — Chicama Main Point
+  it: Surf — Chicama Main Point
+  es: Surf — Chicama Main Point
+  fr: Surf — Chicama Main Point
+  de: Surfen — Chicama Main Point
+
+description:
+  en: |
+    The heart of the world's longest ridable wave — a left-hand point
+    break running along a boulder-and-sand point for up to 2 km on peak
+    days. Moderate, forgiving wave shape favours longboarders and
+    cruising shortboarders over barrel hunters. Small fishing-village
+    lodges line the point, and the paddle back up after a long ride is
+    part of the Chicama experience.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Guinness World Records, longest rideable wave, Chicama, Peru"
+    - "Federación Deportiva Peruana de Tabla (surfing federation) spot classification"
+  notes: |
+    Sub-spot of surfing-spot-chicama cluster. Tier 2: long, forgiving
+    point-break shape suited to intermediate riders; open-ocean exposed
+    with a demanding paddle-back.

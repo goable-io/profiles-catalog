@@ -1,0 +1,46 @@
+slug: scuba-spot-raja-ampat-mios-kon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-raja-ampat
+parent_cluster: scuba-spot-raja-ampat
+region: pacific
+country_code: ID
+
+coordinates:
+  center: { lat: -0.5800, lng: 130.7583 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Mios Kon is a seamount pinnacle near the Dampier Strait combining
+    reef-fish schooling with occasional pelagic passages of tuna and
+    reef shark. Current typically runs 0.5-2 kn around the pinnacle,
+    moderate enough for intermediate divers with basic drift
+    experience, while the mixed pinnacle topography (18-30 m) offers
+    more structure than a straight wall without the extreme current
+    exposure of Cape Kri, placing it at the cluster's intermediate
+    tier.
+
+display_name:
+  en: Scuba — Mios Kon (Raja Ampat)
+  it: Immersione — Mios Kon
+  es: Buceo — Mios Kon
+  fr: Plongée — Mios Kon
+  de: Tauchen — Mios Kon
+
+description:
+  en: |
+    A Dampier Strait seamount pinnacle with mixed pelagic and reef
+    life and moderate current.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Raja Ampat MPA network dive-site documentation"
+    - "PADI Raja Ampat regional dive-site briefing"
+  notes: |
+    Sub-spot of scuba-spot-raja-ampat cluster. Tier 2: intermediate
+    seamount pinnacle dive.

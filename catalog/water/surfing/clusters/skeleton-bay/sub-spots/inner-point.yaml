@@ -1,0 +1,50 @@
+slug: surfing-spot-skeleton-bay-inner-point
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: surfing-spot-skeleton-bay
+parent_cluster: surfing-spot-skeleton-bay
+region: atlantic
+country_code: NA
+
+coordinates:
+  center: { lat: -25.8250, lng: 14.5717 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    The inner point is the final take-off zone of the Skeleton Bay
+    system, closest to the bay's corner where the sand spit curves in on
+    itself and the wave eventually closes out. It offers a shorter,
+    steeper entry than the outer sections for surfers not attempting the
+    full-length ride, but remains a heavy, fast sand-bottom barrel in an
+    entirely unsupported wilderness setting — no lifeguards, no phone
+    signal at the break, and hours of desert track between the wave and
+    the nearest town. The remoteness itself is a primary hazard
+    multiplier independent of wave size.
+
+display_name:
+  en: Surfing — Skeleton Bay Inner Point
+  it: Surf — Skeleton Bay Inner Point
+  es: Surf — Skeleton Bay Inner Point
+  fr: Surf — Skeleton Bay Inner Point
+  de: Surfen — Skeleton Bay Inner Point
+
+description:
+  en: |
+    The final section of the Skeleton Bay point, near the corner of the
+    bay where the wave closes out. Shorter than a full-length ride from
+    the outer sandbar but still a fast, hollow sand-bottom barrel, set
+    in a remote wilderness with no lifeguards, no cell coverage at the
+    break, and hours of desert track to the nearest town.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Namibia Tourism Board coastal recreation notes, Walvis Bay region"
+  notes: |
+    Sub-spot of surfing-spot-skeleton-bay cluster. Tier 3: final
+    take-off zone before the bay's corner closeout, remote no-crowd
+    wilderness with limited rescue access.

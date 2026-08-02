@@ -1,0 +1,147 @@
+slug: scuba-spot-silfra
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba
+region: atlantic
+country_code: IS
+sub_spots:
+  - scuba-spot-silfra-crack
+  - scuba-spot-silfra-cathedral
+display_name:
+  en: Scuba Diving — Silfra Fissure
+  it: Immersione — Fessura di Silfra
+  es: Buceo — Fisura de Silfra
+  fr: Plongée — Faille de Silfra
+  de: Tauchen — Silfra-Spalte
+description:
+  en: |
+    Silfra is a water-filled tectonic fissure in Þingvellir National
+    Park (Iceland), a UNESCO World Heritage Site (2004), lying
+    directly between the North American and Eurasian tectonic
+    plates. The fissure is fed by glacial meltwater filtered through
+    porous lava for 30-100 years before emerging, producing
+    exceptional clarity (routinely 100 m+) and constant near-
+    freezing temperature (2-4°C) year-round regardless of season.
+    Drysuit diving is mandatory; access is guide-led only under
+    Þingvellir National Park permit. No marine life beyond algae
+    and char — the draw is the geology and visibility itself.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 0.0 }
+      - { x: 0.5, s: 0.0 }
+      - { x: 1.0, s: 0.4 }
+      - { x: 3.0, s: 0.8 }
+      - { x: 5.0, s: 1.0 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.25
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.8, s: 0.80 }
+      - { x: 1.5, s: 0.40 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.0, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 8, s: 0.3 }
+      - { x: 15, s: 0.7 }
+      - { x: 22, s: 1.0 }
+      - { x: 30, s: 0.9 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0, s: 1.00 }
+      - { x: 8, s: 1.00 }
+      - { x: 15, s: 0.70 }
+      - { x: 20, s: 0.40 }
+      - { x: 25, s: 0.10 }
+      - { x: 30, s: 0.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: -5, s: 0.0 }
+      - { x: 5, s: 0.3 }
+      - { x: 15, s: 0.8 }
+      - { x: 25, s: 1.0 }
+      - { x: 38, s: 0.7 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0, s: 0.0 }
+      - { x: 10, s: 0.6 }
+      - { x: 30, s: 1.0 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.5
+    reason_code: HIGH_SEAS
+    description: Wave height above 2.5m makes safe entry and exit from the water dangerous.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY
+    description: Visibility below 500m is unsafe for navigation to dive sites.
+
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 15
+    reason_code: HEAVY_RAIN
+    description: Heavy rain reduces surface visibility and indicates storm conditions.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 52
+  carrying_capacity_sensitivity: high
+  notes: |
+    Þingvellir National Park (UNESCO World Heritage Site, 2004)
+    enforces a mandatory dive-permit and certified-drysuit-diver
+    requirement at Silfra, with guide-led access only and strict
+    entry/exit points to protect the fissure's fragile algae mats
+    and porous rock structure. Year-round near-freezing temperature
+    means equipment dependency (drysuit, thermal undergarment) is
+    at its highest across the whole catalog. High visitor volume
+    (one of the world's most-dived freshwater sites) is managed via
+    timed permit slots.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Þingvellir National Park (UNESCO World Heritage Site, 2004) dive-permit regulations"
+    - "Icelandic Environment Agency (Umhverfisstofnun) Silfra access documentation"
+    - "PADI Silfra drysuit-diving site briefing"
+  notes: |
+    Spot overrides vs base scuba: dimension weights and curves
+    inherited unchanged (no Pacific/Caribbean regional variant fits
+    a freshwater tectonic fissure). Water temperature is constant
+    2-4°C year-round regardless of season, unlike ocean sites; the
+    52-week season reflects year-round permit access (winter access
+    weather-dependent on Þingvellir road conditions).

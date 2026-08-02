@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-andermatt-sedrun-connection
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-andermatt
+parent_cluster: alpine-skiing-spot-andermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.6717, lng: 8.7583 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Sedrun sector forms the eastern extension of the Andermatt-
+    Sedrun-Disentis lift arena, delivering extended red-piste
+    intermediate coverage across the Graubünden side of the Oberalp
+    Pass. Grooming and ski-patrol standards match the main Andermatt
+    side, but crowd density is markedly lower given the sector's
+    distance from the Andermatt village hub and its own separate base
+    access from Sedrun town. The terrain profile is dominated by wide,
+    moderate-gradient red pistes suited to sustained cruising, offering
+    visiting skiers a quieter alternative within the same interconnected
+    lift network.
+
+display_name:
+  en: Alpine Skiing — Sedrun Connection (Andermatt)
+  it: Sci Alpino — Sedrun
+  es: Esquí Alpino — Sedrun
+  fr: Ski Alpin — Sedrun
+  de: Alpiner Skilauf — Sedrun
+
+description:
+  en: |
+    The eastern Sedrun extension of the Andermatt-Sedrun-Disentis
+    arena, with extended red-piste cruising and lower crowd density
+    than the main Andermatt side.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SkiArena Andermatt-Sedrun-Disentis piste map — Sedrun sector"
+  notes: |
+    Sub-spot of alpine-skiing-spot-andermatt cluster. Tier 2: extended
+    red-piste cross-valley coverage with quieter crowd density than the
+    Gemsstock/Nätschen side.
