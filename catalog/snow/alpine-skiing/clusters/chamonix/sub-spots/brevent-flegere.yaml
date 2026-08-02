@@ -1,0 +1,47 @@
+slug: alpine-skiing-spot-chamonix-brevent-flegere
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-chamonix
+parent_cluster: alpine-skiing-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.9333, lng: 6.8536 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The combined Brévent and Flégère sector sits across the valley
+    from the Mont Blanc massif, delivering red-piste cruising with
+    dramatic direct views of the Mont-Blanc face. Access is via
+    cable car and chairlift, with a groomed intermediate network and
+    a smaller share of connecting blue runs. Ski patrol covers the
+    marked pistes throughout, and mountain restaurants operate at
+    both the Brévent and Flégère stations, making this the valley's
+    standard intermediate cruising sector.
+
+display_name:
+  en: Alpine Skiing — Brévent-Flégère (Chamonix)
+  it: Sci Alpino — Brévent-Flégère
+  es: Esquí Alpino — Brévent-Flégère
+  fr: Ski Alpin — Brévent-Flégère
+  de: Alpiner Skilauf — Brévent-Flégère
+
+description:
+  en: |
+    Combined intermediate sector across the Chamonix valley with
+    red-piste cruising and dramatic Mont-Blanc-face views. Cable car
+    and chairlift access.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie du Mont-Blanc Brévent-Flégère piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-chamonix cluster. Tier 2: red-piste
+    dominant intermediate cruising sector with cable car + chairlift
+    access.

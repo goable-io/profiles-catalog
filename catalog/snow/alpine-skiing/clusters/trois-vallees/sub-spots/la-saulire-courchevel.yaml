@@ -1,0 +1,47 @@
+slug: alpine-skiing-spot-trois-vallees-la-saulire-courchevel
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-trois-vallees
+parent_cluster: alpine-skiing-spot-trois-vallees
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.4192, lng: 6.6522 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    La Saulire (2738 m) is Courchevel's main pinnacle sector,
+    reached by cable car and delivering red-piste cruising down into
+    both the 1850 and 1650 base areas. Grooming coverage is
+    extensive and consistent across the marked network, with ski
+    patrol present throughout and snowmaking supplementing the
+    lower connecting runs. The sector links directly into the
+    broader Trois Vallées domain toward Méribel, and its wide,
+    well-maintained red pistes make it the standard intermediate
+    reference point for Courchevel visitors.
+
+display_name:
+  en: Alpine Skiing — La Saulire (Courchevel)
+  it: Sci Alpino — La Saulire
+  es: Esquí Alpino — La Saulire
+  fr: Ski Alpin — La Saulire
+  de: Alpiner Skilauf — La Saulire
+
+description:
+  en: |
+    Courchevel's main pinnacle sector at 2738 m, cable-car accessed,
+    with red-piste cruising down into the 1850 and 1650 base areas.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "S3V (Courchevel) La Saulire piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-trois-vallees cluster. Tier 2:
+    red-piste dominant intermediate cruising sector, cable-car
+    access, links into base 1850/1650 areas.

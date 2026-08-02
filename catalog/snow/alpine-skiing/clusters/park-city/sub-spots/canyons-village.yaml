@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-park-city-canyons-village
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-park-city
+parent_cluster: alpine-skiing-spot-park-city
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 40.6789, lng: -111.5628 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    Canyons Village is the larger of Park City Mountain's two sides
+    following the 2015 merger, with extensive intermediate red-piste
+    cruising served by a network of high-speed quads and the Orange
+    Bubble Express gondola. Piste marking is predominantly red with
+    blue-piste beginner terrain around the base village and select
+    black pistes on the sector's steeper northern aspects. Grooming
+    coverage is comprehensive daily across the cruising network, and
+    terrain-park features are present near the base area. Snowmaking
+    secures base-elevation runs; ski patrol maintains standard coverage
+    across the extensive marked trail network, which spans multiple
+    connected peaks.
+
+display_name:
+  en: Alpine Skiing — Canyons Village
+  it: Sci Alpino — Canyons Village
+  es: Esquí Alpino — Canyons Village
+  fr: Ski Alpin — Canyons Village
+  de: Alpiner Skilauf — Canyons Village
+
+description:
+  en: |
+    Canyons Village, Park City's larger side post-2015 merger —
+    extensive intermediate red-piste cruising with a quad and gondola
+    network.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Park City Mountain (Vail Resorts) Canyons Village trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-park-city cluster. Tier 2:
+    red-piste intermediate cruising, quad + gondola network, larger
+    side of the merged resort.

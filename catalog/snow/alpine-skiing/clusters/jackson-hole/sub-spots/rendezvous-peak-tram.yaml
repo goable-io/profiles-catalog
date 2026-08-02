@@ -1,0 +1,55 @@
+slug: alpine-skiing-spot-jackson-hole-rendezvous-peak-tram
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-jackson-hole
+parent_cluster: alpine-skiing-spot-jackson-hole
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 43.5972, lng: -110.8714 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Rendezvous Peak (3185 m), reached by the Aerial Tram, is the iconic
+    Jackson Hole flagship and the American in-bounds steep-skiing
+    reference. The sector includes the Rendezvous Bowl advanced piste
+    plus access to the mandatory-drop Corbet's Couloir entry variant, a
+    3-5 m cliff drop into a 40° couloir a short walk from the tram exit.
+    Piste marking is black and double-black throughout, with ski patrol
+    conducting avalanche-control operations on the upper bowls before
+    the tram opens each morning. There is no terrain park at this
+    altitude and no snowmaking; the sector relies entirely on natural
+    Teton snowpack. Wind exposure on the open summit ridge is
+    significant, and the tram itself closes at high-wind thresholds;
+    this sector is reserved for advanced-to-expert skiers.
+
+display_name:
+  en: Alpine Skiing — Rendezvous Peak (Tram)
+  it: Sci Alpino — Rendezvous Peak (Tram)
+  es: Esquí Alpino — Rendezvous Peak (Tram)
+  fr: Ski Alpin — Rendezvous Peak (Tram)
+  de: Alpiner Skilauf — Rendezvous Peak (Tram)
+
+description:
+  en: |
+    Jackson Hole's flagship summit sector (3185 m) via the Aerial Tram,
+    home to Rendezvous Bowl's advanced piste and the mandatory-drop
+    Corbet's Couloir entry variant — the American in-bounds steep-
+    skiing reference.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort Aerial Tram and Rendezvous Mountain documentation"
+    - "Corbet's Couloir Contest annual venue dossier"
+  notes: |
+    Sub-spot of alpine-skiing-spot-jackson-hole cluster. Tier 3: black
+    and double-black summit terrain, mandatory-drop couloir variant,
+    American in-bounds steep-skiing reference. Coordinates shared with
+    freeride-spot-jackson-hole-corbets-couloir (same tram-served summit
+    reference point); this profile scopes the marked piste product.

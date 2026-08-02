@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-cortina-5-torri
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-cortina
+parent_cluster: alpine-skiing-spot-cortina
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5083, lng: 12.1119 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The 5 Torri (Cinque Torri) sector is reached via the Ra Valles and
+    Pomedes chairlifts on the sunny side of the Cortina ski area. Pistes
+    are predominantly red-marked, wide, south-facing runs that hold good
+    grooming quality on clear days, with snowmaking coverage supplementing
+    the mid-mountain slopes. The sector's signature feature is the open-
+    air WW1 museum accessible directly from the piste network, with
+    preserved trenches and gun emplacements viewable on skis or via short
+    walks from lift stations. Terrain is broad and moderate-gradient,
+    ski-patrol-served, and popular with intermediate skiers combining
+    cruising runs with the historical sights.
+
+display_name:
+  en: Alpine Skiing — 5 Torri (Cortina)
+  it: Sci Alpino — 5 Torri
+  es: Esquí Alpino — 5 Torri
+  fr: Ski Alpin — 5 Torri
+  de: Alpiner Skilauf — 5 Torri
+
+description:
+  en: |
+    Sunny-side red-piste sector connected via the Ra Valles and Pomedes
+    lifts, with the Cinque Torri open-air WW1 museum viewable directly
+    from the slopes.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cortina Skiworld Ra Valles-Pomedes lift operational map"
+    - "Dolomiti Superski consortium piste network documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-cortina cluster. Tier 2: sunny-side
+    red-piste cruising, chairlift-served, historical on-slope museum.

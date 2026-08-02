@@ -1,0 +1,50 @@
+slug: alpine-skiing-spot-cortina-cristallo
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-cortina
+parent_cluster: alpine-skiing-spot-cortina
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5722, lng: 12.1731 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Cristallo sector (3221 m) is accessed via the Rio Gere-Son Forca
+    chairlift network on the northeast side of the Cortina ski area.
+    Pistes are predominantly red-marked cruising runs across varied
+    mid-mountain terrain, groomed nightly with snowmaking coverage on the
+    lower Rio Gere slopes to bridge shoulder-season conditions. The sector
+    is known for dramatic, close-up views of the Cristallo massif and is
+    lift-connected toward Faloria, giving intermediate skiers a long
+    cruising circuit with mid-mountain rifugi for food and rest. Ski
+    patrol and rescue access is standard chairlift-network coverage, and
+    the terrain is broad enough to stay family-friendly outside the
+    steeper Son Forca approach pitches.
+
+display_name:
+  en: Alpine Skiing — Cristallo (Cortina)
+  it: Sci Alpino — Cristallo
+  es: Esquí Alpino — Cristallo
+  fr: Ski Alpin — Cristallo
+  de: Alpiner Skilauf — Cristallo
+
+description:
+  en: |
+    Red-piste cruising sector on the Cristallo massif (3221 m), served by
+    the Rio Gere-Son Forca chairlift network with dramatic Dolomite views
+    and mid-mountain rifugi.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Cortina Skiworld Rio Gere-Son Forca lift operational map"
+    - "Dolomiti Superski consortium piste network documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-cortina cluster. Tier 2: red-piste
+    intermediate cruising, chairlift-served, snowmaking on lower slopes.

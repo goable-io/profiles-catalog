@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-val-gardena-alta-badia-piz-la-ila
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-val-gardena-alta-badia
+parent_cluster: alpine-skiing-spot-val-gardena-alta-badia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5642, lng: 11.8683 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Piz La Ila (2077 m) is the La Villa/San Cassiano side of the Alta
+    Badia ski area, reached by gondola from the valley floor. Pistes are
+    predominantly red-marked cruising runs across broad, sunny mid-
+    mountain terrain, with full snowmaking coverage securing consistent
+    surface quality through the season. The sector includes a dedicated
+    terrain park with jumps and rail features, and is lift-connected
+    toward the wider Alta Badia and Sella Ronda network. Grooming is
+    daily and thorough, ski patrol coverage is standard gondola-network
+    access, and the moderate gradient makes the sector suitable for
+    confident intermediate skiers and families.
+
+display_name:
+  en: Alpine Skiing — Piz La Ila (Alta Badia)
+  it: Sci Alpino — Piz La Ila
+  es: Esquí Alpino — Piz La Ila
+  fr: Ski Alpin — Piz La Ila
+  de: Alpiner Skilauf — Piz La Ila
+
+description:
+  en: |
+    Sunny red-piste cruising sector above La Villa/San Cassiano (2077 m)
+    with a dedicated terrain park and consistent snowmaking coverage.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Alta Badia Ski Piz La Ila lift operational map"
+    - "Dolomiti Superski consortium piste network documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-val-gardena-alta-badia cluster. Tier 2:
+    red-piste intermediate cruising, gondola-served, terrain park +
+    snowmaking coverage.

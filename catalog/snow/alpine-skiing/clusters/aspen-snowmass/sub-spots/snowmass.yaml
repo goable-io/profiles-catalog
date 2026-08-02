@@ -1,0 +1,52 @@
+slug: alpine-skiing-spot-aspen-snowmass-snowmass
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-aspen-snowmass
+parent_cluster: alpine-skiing-spot-aspen-snowmass
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 39.2100, lng: -106.9483 }
+  radius_m: 2500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Snowmass sector is the family-and-intermediate flagship of the
+    Aspen four-mountain complex, offering red-piste cruising across a
+    3862-vertical-foot descent served by a dense network of high-speed
+    chairs. Piste marking is predominantly red with extensive blue-
+    piste beginner terrain at the base and around dedicated kids zones,
+    plus black pistes on steeper upper-mountain pitches. Grooming
+    coverage is comprehensive daily, terrain parks are extensive
+    (including the Coney Glade and Central Park features), and
+    snowmaking secures base and mid-mountain runs. Ski school
+    facilities and ski patrol coverage are dense throughout, making
+    this the complex's most beginner-and-family-accessible large
+    mountain.
+
+display_name:
+  en: Alpine Skiing — Snowmass
+  it: Sci Alpino — Snowmass
+  es: Esquí Alpino — Snowmass
+  fr: Ski Alpin — Snowmass
+  de: Alpiner Skilauf — Snowmass
+
+description:
+  en: |
+    Snowmass, the family-and-intermediate flagship of the Aspen
+    four-mountain complex, with red-piste cruising, extensive terrain
+    parks, and kids zones.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Aspen Skiing Company Snowmass trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-aspen-snowmass cluster. Tier 2:
+    red-piste intermediate cruising, extensive terrain park + kids
+    zones, family-and-intermediate flagship of the complex.

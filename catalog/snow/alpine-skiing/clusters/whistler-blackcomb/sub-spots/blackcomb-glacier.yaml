@@ -1,0 +1,52 @@
+slug: alpine-skiing-spot-whistler-blackcomb-blackcomb-glacier
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-whistler-blackcomb
+parent_cluster: alpine-skiing-spot-whistler-blackcomb
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.1119, lng: -122.9319 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Blackcomb Glacier sector is reached via the Showcase T-bar and
+    delivers sustained black-piste skiing on glacier snow, one of the
+    few lift-served glacier-skiing sectors in North America. Piste
+    marking is black throughout the glacier descent, with the Horstman
+    Hut sub-lodge providing on-mountain food service and warming
+    shelter near the T-bar top station. Grooming is minimal on the
+    glacier itself given the natural firm-snow surface; ski patrol
+    manages crevasse-hazard boundary marking and avalanche control on
+    the surrounding slopes. The T-bar is a fixed-grip surface lift
+    exposed to wind, and this sector is among the first to close in
+    high-wind events; it is reserved for advanced skiers comfortable
+    with variable glacier snow conditions and sustained steep pitch.
+
+display_name:
+  en: Alpine Skiing — Blackcomb Glacier
+  it: Sci Alpino — Blackcomb Glacier
+  es: Esquí Alpino — Blackcomb Glacier
+  fr: Ski Alpin — Blackcomb Glacier
+  de: Alpiner Skilauf — Blackcomb Glacier
+
+description:
+  en: |
+    Blackcomb's glacier sector, accessed via the Showcase T-bar.
+    Sustained black-piste skiing on glacier snow with the Horstman Hut
+    providing sub-lodge access near the top station.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb (Vail Resorts) Blackcomb Glacier and Showcase T-bar documentation"
+    - "Canadian Ski Council operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-whistler-blackcomb cluster. Tier 3:
+    sustained black-piste glacier terrain, T-bar access exposed to
+    wind, Horstman Hut sub-lodge.

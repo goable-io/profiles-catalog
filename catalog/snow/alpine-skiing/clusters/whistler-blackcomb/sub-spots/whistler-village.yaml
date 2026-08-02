@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-whistler-blackcomb-whistler-village
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-whistler-blackcomb
+parent_cluster: alpine-skiing-spot-whistler-blackcomb
+region: rockies
+country_code: CA
+
+coordinates:
+  center: { lat: 50.1163, lng: -122.9575 }
+  radius_m: 1500
+
+tier: 1
+tier_rationale:
+  en: |
+    The Whistler Village and Creekside base sectors combine wide green
+    and blue-piste terrain served by the beginner-friendly Magic Chair
+    plus the Creekside gondola, giving family and novice skiers gentle,
+    low-gradient runs close to lodge services. Snowmaking secures the
+    lower-mountain green and blue runs against variable base-elevation
+    snow conditions, and grooming coverage is comprehensive across this
+    sector each morning. Ski school meeting areas, magic-carpet lifts
+    for first-timers, and extensive on-mountain restaurant/lodge access
+    make this the resort's lowest-collision-risk, most family-friendly
+    zone, with ski patrol stationed at both base areas for rapid
+    response.
+
+display_name:
+  en: Alpine Skiing — Whistler Village (Base)
+  it: Sci Alpino — Whistler Village (Base)
+  es: Esquí Alpino — Whistler Village (Base)
+  fr: Ski Alpin — Whistler Village (Base)
+  de: Alpiner Skilauf — Whistler Village (Basis)
+
+description:
+  en: |
+    The Whistler Village and Creekside base sectors, green and blue-
+    piste family zones served by the Magic Chair and Creekside gondola,
+    with comprehensive snowmaking securing the lower-mountain runs.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Whistler Blackcomb (Vail Resorts) Village and Creekside base area documentation"
+    - "Canadian Ski Council operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-whistler-blackcomb cluster. Tier 1:
+    green and blue-piste base terrain, snowmaking-secured, family and
+    beginner-friendly lift network.

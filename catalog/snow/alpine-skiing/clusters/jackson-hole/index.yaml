@@ -1,0 +1,160 @@
+slug: alpine-skiing-spot-jackson-hole
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-rockies
+region: rockies
+country_code: US
+sub_spots:
+  - alpine-skiing-spot-jackson-hole-rendezvous-peak-tram
+  - alpine-skiing-spot-jackson-hole-apres-vous
+  - alpine-skiing-spot-jackson-hole-teton-village-base
+display_name:
+  en: Alpine Skiing — Jackson Hole (Wyoming)
+  it: Sci Alpino — Jackson Hole (Wyoming)
+  es: Esquí Alpino — Jackson Hole (Wyoming)
+  fr: Ski Alpin — Jackson Hole (Wyoming)
+  de: Alpiner Skilauf — Jackson Hole (Wyoming)
+description:
+  en: |
+    Jackson Hole Mountain Resort (Teton Range, Wyoming) is the American
+    steep-skiing benchmark, combining lift-served in-bounds extreme
+    terrain with over 4,000 vertical feet of continuous descent from the
+    3185 m Rendezvous Mountain summit to the Teton Village base at
+    1924 m. The resort spans roughly 2,500 acres of marked piste across
+    more than 130 named runs, served by the Aerial Tram, Bridger Gondola,
+    and a network of high-speed quads including the Après Vous chair on
+    the resort's south-western quadrant. Piste marking runs the full
+    range from green beginner terrain at Teton Village through red-piste
+    cruising on Après Vous mountain to black and double-black pistes off
+    Rendezvous, including the mandatory-entry Corbet's Couloir variant.
+    Snowmaking covers the lower-mountain base terrain; ski patrol
+    maintains avalanche-control operations on the upper bowls each
+    morning. Primary operator is Jackson Hole Mountain Resort
+    (independently owned). Continental Teton climate delivers cold, dry
+    powder with frequent arctic-outflow days.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -32, s: 0.05 }
+      - { x: -22, s: 0.35 }
+      - { x: -12, s: 0.75 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.90 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.25 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.17
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 5,   s: 0.70 }
+      - { x: 12,  s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts + gondolas at N-American Rockies resorts; upper-mountain and above-treeline zones become unsafe for on-piste skiing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200 m in continental Rocky-Mountain conditions makes piste navigation on wide alpine bowls unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: ARCTIC_OUTBREAK_FROSTBITE
+    description: Apparent temperature below -32°C (continental arctic-air outbreak days, esp. Wyoming + Colorado + Alberta) creates immediate frostbite risk on lift-served exposure; resorts often close upper lifts.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 21
+  carrying_capacity_sensitivity: high
+  notes: |
+    Jackson Hole Mountain Resort sits at the gateway to Grand Teton
+    National Park; resort-boundary sidecountry gates exit into NPS-
+    managed terrain subject to backcountry-use rules. Wyoming's grid is
+    coal-heavy, giving lift operations a higher carbon character than BC
+    or Utah counterparts. Access is dominated by air travel via Jackson
+    Hole Airport (JAC), the only commercial airport inside a US national
+    park, with limited rail alternative.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Jackson Hole Mountain Resort mountain operations and piste-map documentation"
+    - "NSAA (National Ski Areas Association) operational and safety standards"
+    - "Bridger-Teton Avalanche Center (BTAC) bulletin standards"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-rockies
+    (dimensions, gates copied exactly, weights sum to 1.000). Rendezvous
+    Peak coordinates are shared with the reviewed freeride-spot-jackson-
+    hole cluster's Corbet's Couloir sub-spot reference point (same
+    aerial-tram summit), though this profile scopes the marked in-bounds
+    piste product rather than the freeride descent line.

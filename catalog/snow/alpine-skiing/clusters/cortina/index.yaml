@@ -1,0 +1,157 @@
+slug: alpine-skiing-spot-cortina
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-alpine
+region: alpine
+country_code: IT
+sub_spots:
+  - alpine-skiing-spot-cortina-tofane
+  - alpine-skiing-spot-cortina-cristallo
+  - alpine-skiing-spot-cortina-5-torri
+display_name:
+  en: Alpine Skiing — Cortina d'Ampezzo
+  it: Sci Alpino — Cortina d'Ampezzo
+  es: Esquí Alpino — Cortina d'Ampezzo
+  fr: Ski Alpin — Cortina d'Ampezzo
+  de: Alpiner Skilauf — Cortina d'Ampezzo
+description:
+  en: |
+    Cortina d'Ampezzo (Veneto, Dolomites) is one of the most storied resort
+    towns in Alpine skiing, host of the 1956 Winter Olympics and once again
+    the Winter Olympics in 2026, with the men's and women's Alpine events
+    scheduled on the Tofana slopes. The ski area spans roughly 120 km of
+    pistes across three main sectors — Tofana, Faloria-Cristallo, and 5
+    Torri — connected by cable cars, gondolas, and chairlifts, and forms
+    part of the wider Dolomiti Superski network via the Sella Ronda lift
+    pass. Altitude ranges from the valley floor around 1220 m up to the
+    Tofana di Mezzo summit station at 3244 m, with snowmaking coverage on
+    the lower and mid-mountain pistes to secure the December-March core
+    season. The area is renowned for dramatic Dolomite limestone scenery,
+    the Cinque Torri open-air WW1 museum accessible directly from the
+    piste network, and the Olympia delle Tofane downhill course, a fixture
+    of the FIS Alpine Ski World Cup calendar. Operator: Cortina Skiworld /
+    Dolomiti Superski consortium.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots closes the Freccia nel Cielo cable car and other exposed Tofana/Cristallo cabins during Foehn events; on-piste exposure on ridge-adjacent runs becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m on the high Tofana and Cristallo sectors makes piste navigation and lift retrieval unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on the exposed high Dolomite sectors creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    Cortina d'Ampezzo skiing operates under ANEF (Associazione Nazionale
+    Esercenti Funiviari) protocols and Dolomiti Superski consortium
+    coordination. Snowmaking is standard below ~2200 m across the Tofana
+    and Faloria-Cristallo mid-mountain pistes. The 2026 Winter Olympics
+    build-out has brought new lift and piste infrastructure investment to
+    the Olympia delle Tofane venue; carrying-capacity pressure is high in
+    peak season and around race-week closures.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "ANEF (Associazione Nazionale Esercenti Funiviari) Italian resort protocols"
+    - "Dolomiti Superski consortium piste network documentation"
+    - "FIS Alpine Ski World Cup Cortina d'Ampezzo (Olympia delle Tofane) venue documentation"
+    - "Milano Cortina 2026 Winter Olympics Alpine venue documentation"
+  notes: |
+    Cluster inherits region variant (alpine-skiing-alpine) scoring
+    unchanged; weights and gates copied verbatim as the site is not
+    materially distinct from the general Dolomites/Alps regime.

@@ -1,0 +1,46 @@
+slug: alpine-skiing-spot-ischgl-idalp
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-ischgl
+parent_cluster: alpine-skiing-spot-ischgl
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.0067, lng: 10.2867 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Idalp (2320 m) is the main hub of the Ischgl ski area, reached
+    directly by the Silvrettabahn gondola from the village. Pistes are
+    predominantly red-marked cruising runs across broad plateau terrain,
+    with the Kids Park providing dedicated beginner infrastructure
+    including a magic carpet and low-gradient practice slopes. Grooming
+    is daily and thorough, snowmaking coverage secures the surface across
+    the plateau, and ski patrol coverage is standard given the sector's
+    role as the central lift-network hub. Mid-mountain restaurants and
+    ski-school meeting points are concentrated here.
+
+display_name:
+  en: Alpine Skiing — Idalp (Ischgl)
+  it: Sci Alpino — Idalp
+  es: Esquí Alpino — Idalp
+  fr: Ski Alpin — Idalp
+  de: Alpiner Skilauf — Idalp
+
+description:
+  en: |
+    Main Ischgl hub (2320 m) with the Silvretta Skiarena lift network and
+    Kids Park — broad red-piste plateau cruising.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Silvretta Seilbahn AG / Silvretta Skiarena Idalp lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-ischgl cluster. Tier 2: red-piste
+    cruising plateau hub, gondola-served, Kids Park infrastructure.

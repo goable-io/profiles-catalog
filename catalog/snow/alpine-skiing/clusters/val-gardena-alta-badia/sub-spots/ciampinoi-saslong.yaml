@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-val-gardena-alta-badia-ciampinoi-saslong
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-val-gardena-alta-badia
+parent_cluster: alpine-skiing-spot-val-gardena-alta-badia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5525, lng: 11.7719 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Ciampinoi-Saslong sector is Val Gardena's flagship black-piste
+    zone, home to the Saslong course used annually by the Audi FIS Ski
+    World Cup men's downhill and super-G. The piste is sustained black-
+    marked terrain featuring the famous Camel Bumps compression section
+    and the technical Ciaslat traverse, both requiring advanced technique
+    at speed. Access is via the Ciampinoi cable car/chairlift network from
+    Selva di Val Gardena, with race-standard grooming and snowmaking
+    coverage on the lower course to guarantee World Cup-quality surface.
+    Ski patrol presence is elevated given the venue's competition status,
+    and the terrain is not recommended for beginner or intermediate
+    skiers outside race-course sightseeing runs.
+
+display_name:
+  en: Alpine Skiing — Ciampinoi-Saslong (Val Gardena)
+  it: Sci Alpino — Ciampinoi-Saslong
+  es: Esquí Alpino — Ciampinoi-Saslong
+  fr: Ski Alpin — Ciampinoi-Saslong
+  de: Alpiner Skilauf — Ciampinoi-Saslong
+
+description:
+  en: |
+    Val Gardena's flagship black-piste sector, home to the Saslong World
+    Cup downhill course with the Camel Bumps compression and Ciaslat
+    traverse — sustained, advanced terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Audi FIS Ski World Cup Val Gardena (Saslong) venue documentation"
+    - "Val Gardena Ski Ciampinoi lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-val-gardena-alta-badia cluster. Tier 3:
+    sustained black-piste World Cup downhill venue, Camel Bumps + Ciaslat
+    technical sections, advanced terrain only.

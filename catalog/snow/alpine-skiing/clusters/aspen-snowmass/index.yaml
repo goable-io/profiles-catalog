@@ -1,0 +1,160 @@
+slug: alpine-skiing-spot-aspen-snowmass
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-rockies
+region: rockies
+country_code: US
+sub_spots:
+  - alpine-skiing-spot-aspen-snowmass-aspen-mountain
+  - alpine-skiing-spot-aspen-snowmass-snowmass
+  - alpine-skiing-spot-aspen-snowmass-highlands
+display_name:
+  en: Alpine Skiing — Aspen Snowmass
+  it: Sci Alpino — Aspen Snowmass
+  es: Esquí Alpino — Aspen Snowmass
+  fr: Ski Alpin — Aspen Snowmass
+  de: Alpiner Skilauf — Aspen Snowmass
+description:
+  en: |
+    Aspen Snowmass (Elk Mountains, Colorado) is a four-mountain complex
+    — Aspen Mountain (Ajax), Aspen Highlands, Buttermilk, and Snowmass —
+    operated as a single lift-ticket product by Aspen Skiing Company.
+    Combined the complex covers roughly 5,500 skiable acres across more
+    than 40 lifts. Aspen Mountain rises directly from downtown to a
+    3417 m summit via the Silver Queen gondola and is advanced-and-
+    expert-only terrain with no green pistes, having hosted FIS World
+    Cup Winternational races for decades. Snowmass is the family and
+    intermediate flagship of the complex, with extensive red-piste
+    cruising, terrain parks, and dedicated kids zones across its
+    3862-vertical-foot descent. Aspen Highlands adds the hike-to
+    Highland Bowl (summit 3773 m / 12,392 ft) alongside in-bounds black
+    and double-black piste terrain. Snowmaking covers base and
+    mid-mountain runs across all sectors; ski patrol manages daily
+    avalanche control on Highland Bowl before opening. Season typically
+    runs late November to early April.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -32, s: 0.05 }
+      - { x: -22, s: 0.35 }
+      - { x: -12, s: 0.75 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.90 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.25 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.17
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 5,   s: 0.70 }
+      - { x: 12,  s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts + gondolas at N-American Rockies resorts; upper-mountain and above-treeline zones become unsafe for on-piste skiing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200 m in continental Rocky-Mountain conditions makes piste navigation on wide alpine bowls unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: ARCTIC_OUTBREAK_FROSTBITE
+    description: Apparent temperature below -32°C (continental arctic-air outbreak days, esp. Wyoming + Colorado + Alberta) creates immediate frostbite risk on lift-served exposure; resorts often close upper lifts.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 21
+  carrying_capacity_sensitivity: high
+  notes: |
+    Aspen Skiing Company has long positioned itself as an environmental-
+    policy leader among US resort operators, including early solar and
+    methane-capture investment (the Skico Cardiff Glacier methane
+    plant), though snowmaking and grooming still dominate the complex's
+    operational footprint. The four-mountain shuttle-bus network
+    (managed with the City of Aspen and RFTA regional transit) reduces
+    car dependency between sectors relative to single-mountain
+    Colorado resorts. Highland Bowl carrying capacity is deliberately
+    limited by hike-to access and daily avalanche-control gating.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Aspen Skiing Company mountain operations and piste-map documentation"
+    - "NSAA (National Ski Areas Association) operational and safety standards"
+    - "FIS World Cup Winternational (Aspen Mountain) race-venue documentation"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-rockies
+    (dimensions, gates copied exactly, weights sum to 1.000). No cluster-
+    level dimension overrides applied; the Elk Mountains climate matches
+    the rockies region-variant profile closely.

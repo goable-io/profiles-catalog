@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-trois-vallees-cime-caron-val-thorens
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-trois-vallees
+parent_cluster: alpine-skiing-spot-trois-vallees
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.2967, lng: 6.5817 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Cime Caron (3200 m) is Val Thorens' summit sector, sitting above
+    Europe's highest-altitude ski resort base, and is reached via
+    cable car to deliver a long red-piste top-to-base descent with
+    around 1400 m of vertical. Ski patrol manages the exposed summit
+    terrain, and the sustained length and altitude of the descent —
+    combined with black-piste variants near the top — place this
+    firmly in advanced territory despite the predominant red marking
+    on the main descent line. Snowmaking is largely unnecessary
+    given the altitude, but wind exposure at the summit station is
+    significant.
+
+display_name:
+  en: Alpine Skiing — Cime Caron (Val Thorens)
+  it: Sci Alpino — Cime Caron
+  es: Esquí Alpino — Cime Caron
+  fr: Ski Alpin — Cime Caron
+  de: Alpiner Skilauf — Cime Caron
+
+description:
+  en: |
+    Val Thorens' summit sector at 3200 m, cable-car accessed. Long
+    red-piste top-to-base descent with roughly 1400 m of vertical.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "SETAM (Val Thorens) Cime Caron piste map and lift operational dossier"
+  notes: |
+    Sub-spot of alpine-skiing-spot-trois-vallees cluster. Tier 3:
+    3200 m summit sector, long top-to-base descent, black-piste
+    variants near summit, significant wind exposure.

@@ -1,0 +1,50 @@
+slug: alpine-skiing-spot-st-anton-valluga
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-st-anton
+parent_cluster: alpine-skiing-spot-st-anton
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.1517, lng: 10.2358 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Valluga (2811 m) summit sector, reached via the two-stage
+    Vallugabahn cable cars, is St. Anton's advanced flagship zone.
+    In-bounds terrain includes sustained black pistes with steep,
+    exposed pitches, while the Valluga Nord side requires a guided
+    hike-to descent onto unpatrolled, avalanche-terrain-adjacent slopes
+    accessible only with a qualified mountain guide. Snow conditions
+    at this altitude are highly wind-affected, and the summit cable car
+    is among the first lifts to close in high wind. Ski patrol coverage
+    on the marked black pistes is standard, but the Valluga Nord
+    descent sits outside normal resort safety infrastructure and is
+    reserved for advanced, guided skiers with avalanche equipment.
+
+display_name:
+  en: Alpine Skiing — Valluga (St. Anton)
+  it: Sci Alpino — Valluga
+  es: Esquí Alpino — Valluga
+  fr: Ski Alpin — Valluga
+  de: Alpiner Skilauf — Valluga
+
+description:
+  en: |
+    St. Anton's advanced summit sector (2811 m) via the Vallugabahn
+    cable cars — sustained in-bounds black pistes plus the guided
+    hike-to Valluga Nord descent.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Ski Arlberg / Bergbahnen Sankt Anton am Arlberg Vallugabahn lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-st-anton cluster. Tier 3: advanced
+    black-piste summit sector plus guided hike-to Valluga Nord terrain,
+    wind-exposed, cluster's advanced flag.

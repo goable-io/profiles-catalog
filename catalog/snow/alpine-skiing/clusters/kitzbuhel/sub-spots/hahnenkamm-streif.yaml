@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-kitzbuhel-hahnenkamm-streif
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-kitzbuhel
+parent_cluster: alpine-skiing-spot-kitzbuhel
+region: alpine
+country_code: AT
+
+coordinates:
+  center: { lat: 47.4222, lng: 12.3800 }
+  radius_m: 1200
+
+tier: 3
+tier_rationale:
+  en: |
+    The Hahnenkamm (1712 m) is home to the Streif, the single most
+    demanding and celebrated downhill course on the FIS Alpine Ski World
+    Cup calendar. The black-marked race piste reaches gradients up to
+    85% at the Mausefalle jump, combined with high-speed compressions,
+    blind rolls, and the notorious Hausbergkante traverse that together
+    make it the benchmark test of advanced downhill skiing worldwide.
+    Race-standard grooming and snowmaking secure the course surface, with
+    extensive safety netting installed for the annual World Cup event and
+    elevated ski patrol presence year-round given the terrain's
+    consequence. This sector is the cluster's flagship advanced zone and
+    is not suitable for intermediate or beginner skiers.
+
+display_name:
+  en: Alpine Skiing — Hahnenkamm-Streif (Kitzbühel)
+  it: Sci Alpino — Hahnenkamm-Streif
+  es: Esquí Alpino — Hahnenkamm-Streif
+  fr: Ski Alpin — Hahnenkamm-Streif
+  de: Alpiner Skilauf — Hahnenkamm-Streif
+
+description:
+  en: |
+    Home of the Streif — the world's most iconic Downhill race course.
+    Advanced black-piste terrain with gradients up to 85% at the
+    Mausefalle jump. Kitzbühel's flagship sector.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIS Alpine Ski World Cup Kitzbühel (Hahnenkamm/Streif) venue documentation"
+    - "Kitzbüheler Bergbahn AG (Kitzski) Hahnenkamm lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-kitzbuhel cluster. Tier 3: iconic World
+    Cup black-piste downhill venue, up to 85% max gradient (Mausefalle),
+    advanced terrain only.

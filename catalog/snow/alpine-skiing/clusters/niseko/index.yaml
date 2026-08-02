@@ -1,0 +1,162 @@
+slug: alpine-skiing-spot-niseko
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-sea-of-japan
+region: sea-of-japan
+country_code: JP
+sub_spots:
+  - alpine-skiing-spot-niseko-grand-hirafu
+  - alpine-skiing-spot-niseko-annupuri
+  - alpine-skiing-spot-niseko-hanazono
+display_name:
+  en: Alpine Skiing — Niseko United (Hokkaido)
+  it: Sci Alpino — Niseko United (Hokkaidō)
+  es: Esquí Alpino — Niseko United (Hokkaido)
+  fr: Ski Alpin — Niseko United (Hokkaidō)
+  de: Alpiner Skilauf — Niseko United (Hokkaidō)
+description:
+  en: |
+    Niseko United (Hokkaido, northern Japan) is Japan's flagship resort-
+    skiing destination, formed by four interconnected ski areas — Grand
+    Hirafu, Hanazono, Niseko Village, and Annupuri — sharing a single lift
+    pass across the flanks of Mt. Niseko-Annupuri (1308 m). The combined
+    piste network runs to roughly 60 km of marked terrain served by over
+    30 lifts, with piste colours spanning blue beginner runs at Annupuri
+    and Hanazono through extensive red cruising to black pistes on
+    Hirafu's upper mountain. Grand Hirafu operates Japan's best-known
+    night-skiing programme, with illuminated pistes running until 20:30.
+    Snowfall is exceptional and reliable — 14-16 m of dry lake-effect
+    powder annually — so snowmaking plays a minor supporting role
+    confined to the lowest connector runs. Terrain parks are concentrated
+    at Hanazono, and formal in-bounds gates (such as Grand Hirafu Gate 3)
+    provide ski-patrol-monitored access to controlled off-piste terrain
+    adjacent to the groomed network. Primary operator coordination is
+    through the Niseko United four-resort consortium.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -25, s: 0.15 }
+      - { x: -15, s: 0.65 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.16
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.20 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.14
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.30 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.20
+    curve:
+      - { x: 0,   s: 0.75 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 1.00 }
+      - { x: 5,   s: 0.85 }
+      - { x: 12,  s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.06
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes upper gondolas at Niseko United during blizzard windows; on-piste exposure above treeline becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.15
+    reason_code: JAPOW_WHITEOUT
+    description: Visibility below 150 m during peak JAPOW dump cycles makes piste navigation impossible even on marked runs; the resort closes ungroomed upper terrain first.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK
+    description: Apparent temperature below -25°C on the Hokkaido interior sector creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 20
+  carrying_capacity_sensitivity: medium
+  notes: |
+    Niseko United's four-resort consortium (Grand Hirafu, Hanazono,
+    Niseko Village, Annupuri) coordinates shared grooming, snowmaking,
+    and lift-closure protocols under the Niseko Rules framework. Snow
+    is abundant and reliably cold, so snowmaking is a minor supporting
+    input rather than a core dependency. Peak season carrying capacity
+    is medium — international visitor concentration is high (heavily
+    Australian-origin historically, growing pan-Asian and Western
+    presence), but declining Japanese domestic ski tourism has freed
+    peak-day lift capacity relative to the 1990s boom era. Road and rail
+    access from Sapporo/New Chitose is car- and shuttle-bus dominant.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko United four-resort consortium piste and lift network documentation"
+    - "Japan Ski Areas Association operational standards"
+    - "JMA (Japan Meteorological Agency) Sea-of-Japan monsoon winter snowfall data"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-sea-of-japan
+    (dimensions, gates copied exactly). Coordinates for the three
+    sub-spots describe the groomed piste-skiing sectors of Grand Hirafu,
+    Annupuri, and Hanazono, distinct from the sidecountry gate zones
+    catalogued separately under freeride-spot-niseko.

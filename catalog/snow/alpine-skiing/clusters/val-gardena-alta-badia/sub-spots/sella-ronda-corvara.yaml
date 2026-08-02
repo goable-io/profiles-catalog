@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-val-gardena-alta-badia-sella-ronda-corvara
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-val-gardena-alta-badia
+parent_cluster: alpine-skiing-spot-val-gardena-alta-badia
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5525, lng: 11.8703 }
+  radius_m: 2000
+
+tier: 2
+tier_rationale:
+  en: |
+    The Sella Ronda is the world's iconic multi-valley ski circuit,
+    circumnavigating the Sella massif via a continuous chain of lifts
+    and connecting red pistes through Corvara and the Alta Badia sector.
+    Runs are predominantly red-marked, wide, well-groomed cruising pistes
+    linking four valleys (Gardena, Badia, Fassa, Livinallongo) with
+    snowmaking coverage on the lower connecting sections. The circuit can
+    be skied clockwise or counter-clockwise in a full day, served by
+    gondolas and high-speed chairlifts with mid-mountain rifugi at every
+    pass, and ski patrol coverage standard across the network. Terrain is
+    intermediate-friendly, though queues at connecting lifts can build in
+    peak season.
+
+display_name:
+  en: Alpine Skiing — Sella Ronda Corvara
+  it: Sci Alpino — Sella Ronda Corvara
+  es: Esquí Alpino — Sella Ronda Corvara
+  fr: Ski Alpin — Sella Ronda Corvara
+  de: Alpiner Skilauf — Sella Ronda Corvara
+
+description:
+  en: |
+    The world-iconic Sella Ronda lift-and-piste circuit through Corvara
+    and Alta Badia, circumnavigating the Sella massif on red-piste
+    cruising all day.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Dolomiti Superski consortium Sella Ronda circuit documentation"
+    - "Alta Badia Ski Corvara lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-val-gardena-alta-badia cluster. Tier 2:
+    red-piste intermediate cruising circuit, gondola/chairlift-served,
+    snowmaking on connecting sections.

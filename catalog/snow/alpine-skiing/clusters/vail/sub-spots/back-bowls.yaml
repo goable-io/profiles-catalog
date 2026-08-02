@@ -1,0 +1,54 @@
+slug: alpine-skiing-spot-vail-back-bowls
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-vail
+parent_cluster: alpine-skiing-spot-vail
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 39.6083, lng: -106.3536 }
+  radius_m: 2500
+
+tier: 3
+tier_rationale:
+  en: |
+    Vail's Back Bowls sector spans seven connected above-treeline bowls
+    (Sun Up, Sun Down, China, Siberia, Mongolia, plus adjoining Tea Cup
+    and Genesis terrain), accessed via the Wildwood and Game Creek
+    chairs. Piste marking is black and advanced-red throughout, with
+    wide-open, in-bounds freeride-adjacent slopes lacking the fixed
+    grooming pattern of front-side runs — grooming is limited to
+    perimeter access routes rather than the bowl interiors. Ski patrol
+    conducts avalanche-control operations across the bowls before
+    opening on storm mornings, and there is no snowmaking or terrain
+    park at this altitude. The open, above-treeline exposure makes wind
+    and visibility significant hazards, and the sector is reserved for
+    advanced-to-expert skiers comfortable with variable, ungroomed
+    snow.
+
+display_name:
+  en: Alpine Skiing — Vail Back Bowls
+  it: Sci Alpino — Vail Back Bowls
+  es: Esquí Alpino — Vail Back Bowls
+  fr: Ski Alpin — Vail Back Bowls
+  de: Alpiner Skilauf — Vail Back Bowls
+
+description:
+  en: |
+    Vail's seven-bowl advanced sector (Sun Up, Sun Down, China,
+    Siberia, Mongolia and neighboring bowls), accessed by Wildwood and
+    Game Creek chairs — in-bounds, freeride-adjacent, above-treeline
+    terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Vail Mountain (Vail Resorts) Back Bowls and trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-vail cluster. Tier 3: seven-bowl
+    advanced above-treeline sector, black-piste, freeride-adjacent
+    in-bounds terrain.

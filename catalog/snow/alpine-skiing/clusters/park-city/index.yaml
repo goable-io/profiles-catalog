@@ -1,0 +1,159 @@
+slug: alpine-skiing-spot-park-city
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-rockies
+region: rockies
+country_code: US
+sub_spots:
+  - alpine-skiing-spot-park-city-canyons-village
+  - alpine-skiing-spot-park-city-park-city-village
+  - alpine-skiing-spot-park-city-the-colony
+display_name:
+  en: Alpine Skiing — Park City Mountain
+  it: Sci Alpino — Park City Mountain
+  es: Esquí Alpino — Park City Mountain
+  fr: Ski Alpin — Park City Mountain
+  de: Alpiner Skilauf — Park City Mountain
+description:
+  en: |
+    Park City Mountain (Wasatch Range, Utah) is the largest ski resort
+    in the United States by skiable acreage, formed by the 2015 merger
+    of the historic Park City side with the neighbouring Canyons
+    Village. Combined the resort covers over 7,300 acres across more
+    than 330 marked trails and 40+ lifts, connected by the Quicksilver
+    gondola linking the two former base areas. Altitude ranges from the
+    2072 m Park City Village base to the 3049 m summit near Jupiter
+    Peak. Piste marking spans wide blue and red cruising terrain across
+    the bulk of both sides, with black and hike-to advanced terrain
+    concentrated in The Colony sector on the Canyons side. Utah's
+    famously light, dry "Greatest Snow on Earth" powder benefits from
+    the Wasatch's lake-effect-enhanced storm cycles. Snowmaking covers
+    base and mid-mountain runs; terrain parks are concentrated at
+    Canyons Village and Park City Village base areas. Primary operator
+    is Vail Resorts. Park City hosted alpine and other events for the
+    2002 Winter Olympics and will again for 2034.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -32, s: 0.05 }
+      - { x: -22, s: 0.35 }
+      - { x: -12, s: 0.75 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.90 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.25 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.17
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 5,   s: 0.70 }
+      - { x: 12,  s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts + gondolas at N-American Rockies resorts; upper-mountain and above-treeline zones become unsafe for on-piste skiing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200 m in continental Rocky-Mountain conditions makes piste navigation on wide alpine bowls unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: ARCTIC_OUTBREAK_FROSTBITE
+    description: Apparent temperature below -32°C (continental arctic-air outbreak days, esp. Wyoming + Colorado + Alberta) creates immediate frostbite risk on lift-served exposure; resorts often close upper lifts.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 21
+  carrying_capacity_sensitivity: high
+  notes: |
+    Park City Mountain is operated by Vail Resorts on Utah's improving
+    but still fossil-fuel-heavy grid mix. The Park City / Canyons
+    merger consolidated what were previously two separate carrying-
+    capacity pressure points into one integrated network, though
+    weekend crowding on the Park City Village base remains significant
+    given proximity to Salt Lake City. Utah Transit Authority ski-bus
+    service from Salt Lake City reduces private-car dependency relative
+    to more remote Rockies resorts.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Park City Mountain (Vail Resorts) mountain operations and piste-map documentation"
+    - "NSAA (National Ski Areas Association) operational and safety standards"
+    - "Salt Lake City 2002 / 2034 Winter Olympics Park City venue documentation"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-rockies
+    (dimensions, gates copied exactly, weights sum to 1.000). No cluster-
+    level dimension overrides applied; the Wasatch Range climate matches
+    the rockies region-variant profile closely.

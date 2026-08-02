@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-chamonix-grands-montets
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-chamonix
+parent_cluster: alpine-skiing-spot-chamonix
+region: alpine
+country_code: FR
+
+coordinates:
+  center: { lat: 45.9825, lng: 6.9319 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Grands Montets sector above Argentière tops out near 3300 m
+    and is Chamonix valley's most technically demanding piste zone,
+    reached via cable car with black pistes dominating the upper
+    mountain and freeride-adjacent terrain immediately accessible
+    from the marked network. Ski patrol manages avalanche control on
+    the steep upper faces, and grooming is limited on the black runs
+    given sustained pitch. Snowmaking supports the lower connecting
+    pistes, but the sector's identity is its iconic technical skiing
+    rather than beginner-friendly cruising — this is the cluster's
+    technical-piste flag.
+
+display_name:
+  en: Alpine Skiing — Grands Montets (Chamonix)
+  it: Sci Alpino — Grands Montets
+  es: Esquí Alpino — Grands Montets
+  fr: Ski Alpin — Grands Montets
+  de: Alpiner Skilauf — Grands Montets
+
+description:
+  en: |
+    Chamonix's iconic technical piste sector above Argentière,
+    topping out near 3300 m. Cable-car access to black pistes and
+    freeride-adjacent terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Compagnie du Mont-Blanc Grands Montets piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-chamonix cluster. Tier 3:
+    technical black-piste dominant sector with freeride-adjacent
+    zones, cable-car access to 3300 m.

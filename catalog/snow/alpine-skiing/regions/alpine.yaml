@@ -1,0 +1,154 @@
+slug: alpine-skiing-alpine
+spot_kind: region
+version: "0.1.0"
+category: snow
+extends: alpine-skiing
+region: alpine
+display_name:
+  en: Alpine Skiing — European Alps
+  it: Sci Alpino — Alpi Europee
+  es: Esquí Alpino — Alpes Europeos
+  fr: Ski Alpin — Alpes Européennes
+  de: Alpiner Skilauf — Europäische Alpen
+description:
+  en: |
+    European-Alps resort skiing spans French Alps (Chamonix, Val d'Isère,
+    Trois Vallées), Swiss Alps (Verbier, Zermatt, St. Moritz), Italian
+    Alps + Dolomites (Cortina, Val Gardena, Alta Badia, Livigno), and
+    Austrian Alps (Kitzbühel, St. Anton, Ischgl, Sölden). The regime
+    is high-altitude piste-managed with dense lift infrastructure,
+    snowmaking coverage on low-altitude sectors below ~2200 m due to
+    climate pressure, and full patrol + grooming operations. Dominant
+    condition variables are wind (Bise + Foehn events close upper
+    lifts, cable cars, and gondolas within 45-55 kn thresholds),
+    visibility (whiteout on the high glaciated terrain shuts navigation)
+    and snow quality on shoulder-season warm days. Season 20-24 weeks
+    typical (Dec-Apr core, Nov + May shoulder on high-altitude glacier
+    sectors).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots (tighter than global 55) closes upper cable cars and tramways in the European Alps (Foehn + Bise events); on-piste exposure on ridge-adjacent runs becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m in high-glaciated Alpine terrain (Aiguille du Midi, Klein Matterhorn, Pointe Helbronner sectors) makes piste navigation and lift retrieval unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on Alpine glaciated high sectors creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    European-Alps resorts operate under Domaines Skiables de France (FR),
+    Seilbahnen Schweiz (CH), ANEF (IT), and Seilbahnen Österreich (AT)
+    coordinated environmental protocols. Snowmaking + grooming +
+    electric lift electricity are the dominant operational footprint;
+    rail-connected resorts (Zermatt, St. Anton, Kitzbühel) have lower
+    per-day access transport footprint than car-only access.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Domaines Skiables de France (DSF) lift-closure and grooming protocol"
+    - "Seilbahnen Schweiz operational safety standards"
+    - "ANEF (Associazione Nazionale Esercenti Funiviari) Italian resort protocols"
+    - "Seilbahnen Österreich operational + lift-closure protocols"
+    - "FIS European Alpine race-venue weather criteria"
+  notes: |
+    Regional overrides vs alpine-skiing base: wind + visibility weights
+    raised (0.22 each) reflecting Alpine lift-closure driver frequency;
+    wind gate tightened from 55 → 50 kn (Foehn events shut Swiss +
+    Austrian upper lifts routinely); visibility gate tightened from 0.2
+    → 0.3 km (glaciated whiteout navigation). Precipitation weight
+    reduced to 0.13 (Alpine grooming compensates for fresh snow more
+    aggressively than Rockies).

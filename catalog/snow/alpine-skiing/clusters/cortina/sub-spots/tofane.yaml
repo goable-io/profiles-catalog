@@ -1,0 +1,53 @@
+slug: alpine-skiing-spot-cortina-tofane
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-cortina
+parent_cluster: alpine-skiing-spot-cortina
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5389, lng: 12.1400 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    Tofana di Mezzo (3244 m) is Cortina's flagship black-piste sector,
+    reached via the Freccia nel Cielo cable-car chain from the valley
+    floor. The sector hosts the Olympia delle Tofane downhill course, a
+    fixture of the FIS Alpine Ski World Cup and the venue for the men's
+    and women's downhill at the 1956, and again the 2026, Winter Olympics.
+    Pistes are predominantly black-marked with sustained steep pitches,
+    high-speed compression sections, and course-side safety netting during
+    race weeks; snowmaking secures the lower race track through variable
+    conditions. Ski patrol maintains constant presence given the sector's
+    competition status, and the summit cable-car station offers panoramic
+    Dolomite views but limited shelter in high wind.
+
+display_name:
+  en: Alpine Skiing — Tofane (Cortina)
+  it: Sci Alpino — Tofane
+  es: Esquí Alpino — Tofane
+  fr: Ski Alpin — Tofane
+  de: Alpiner Skilauf — Tofane
+
+description:
+  en: |
+    Cortina's flagship black-piste sector on Tofana di Mezzo (3244 m),
+    reached by the Freccia nel Cielo cable car. Home of the Olympia delle
+    Tofane World Cup and Winter Olympics downhill course — sustained,
+    high-speed, advanced terrain.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "FIS Alpine Ski World Cup Cortina d'Ampezzo (Olympia delle Tofane) venue documentation"
+    - "Milano Cortina 2026 Winter Olympics Alpine venue documentation"
+    - "Cortina Skiworld Freccia nel Cielo lift operational map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-cortina cluster. Tier 3: sustained
+    black-piste World Cup / Olympic downhill venue, high-speed race
+    terrain, exposed summit cable-car access.

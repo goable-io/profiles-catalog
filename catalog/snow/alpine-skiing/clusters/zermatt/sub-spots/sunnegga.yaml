@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-zermatt-sunnegga
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-zermatt
+parent_cluster: alpine-skiing-spot-zermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0117, lng: 7.7628 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Sunnegga (2288 m), reached by underground funicular directly
+    from Zermatt village, is the resort's family-friendly zone with
+    a dedicated kids' park and magic-carpet lifts alongside gentle
+    blue pistes. Snowmaking base coverage keeps the sector reliably
+    open even in thin-snow early season, and the wide, low-gradient
+    runs carry light collision risk. Ski-patrol presence is constant
+    given the sector's beginner traffic, and the funicular access
+    avoids surface-lift queuing common at other village-level
+    beginner areas.
+
+display_name:
+  en: Alpine Skiing — Sunnegga (Zermatt)
+  it: Sci Alpino — Sunnegga
+  es: Esquí Alpino — Sunnegga
+  fr: Ski Alpin — Sunnegga
+  de: Alpiner Skilauf — Sunnegga
+
+description:
+  en: |
+    Zermatt's family-friendly blue-piste zone at 2288 m, reached by
+    funicular from the village. Kids' park and snowmaking base
+    coverage.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zermatt Bergbahnen AG Sunnegga funicular and piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-zermatt cluster. Tier 1:
+    family-friendly blue-piste zone with kids' park and snowmaking
+    base coverage.

@@ -1,0 +1,52 @@
+slug: alpine-skiing-spot-verbier-mont-fort
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-verbier
+parent_cluster: alpine-skiing-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.0900, lng: 7.2892 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    Mont Fort's 3330 m summit sector is reached via the Jumbo cable
+    car and delivers Verbier's highest lift-served skiing, with
+    in-bounds patrolled black pistes plus hike-to freeride variants
+    accessible directly from the cable-car station. Piste marking is
+    black on the direct descents with red-piste links back toward
+    Gentianes and Tortin, and the glaciated upper bowl requires ski
+    patrol avalanche-control operations before opening most mornings.
+    Terrain-park presence is minimal at this altitude; the sector's
+    defining feature is patrolled off-piste access alongside the
+    marked black pistes, reserved for confident advanced skiers.
+
+display_name:
+  en: Alpine Skiing — Mont Fort (Verbier)
+  it: Sci Alpino — Mont Fort
+  es: Esquí Alpino — Mont Fort
+  fr: Ski Alpin — Mont Fort
+  de: Alpiner Skilauf — Mont Fort
+
+description:
+  en: |
+    Verbier's high-altitude summit sector at 3330 m, reached by the
+    Jumbo cable car. Black pistes and patrolled hike-to off-piste
+    variants define the cluster's advanced-terrain flag.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Téléverbier SA Mont Fort cable car operational dossier"
+    - "SBV Verbier Mont Fort freeride descent inventory"
+  notes: |
+    Sub-spot of alpine-skiing-spot-verbier cluster. Tier 3: black
+    in-bounds pistes plus patrolled hike-to off-piste variants from
+    the 3330 m summit. Same general summit area as
+    freeride-spot-verbier-mont-fort but scoped to the marked
+    piste-skiing product rather than the freeride descent lines.

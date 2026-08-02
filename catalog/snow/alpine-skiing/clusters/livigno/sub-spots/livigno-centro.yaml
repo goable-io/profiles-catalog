@@ -1,0 +1,47 @@
+slug: alpine-skiing-spot-livigno-livigno-centro
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-livigno
+parent_cluster: alpine-skiing-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5378, lng: 10.1394 }
+  radius_m: 1000
+
+tier: 1
+tier_rationale:
+  en: |
+    Livigno-Centro is the valley-floor base area, with predominantly
+    blue-marked beginner pistes, magic-carpet lifts, and a dedicated
+    snow-park kids zone for lessons and first turns. Terrain is gentle
+    and wide, with full snowmaking coverage guaranteeing a secure surface
+    from early season, and ski-school infrastructure concentrated in this
+    area. Access is flat and direct from Livigno's main street, making it
+    the natural family base for the whole resort, with immediate ski
+    patrol response given the proximity to the village.
+
+display_name:
+  en: Alpine Skiing — Livigno-Centro
+  it: Sci Alpino — Livigno-Centro
+  es: Esquí Alpino — Livigno-Centro
+  fr: Ski Alpin — Livigno-Centro
+  de: Alpiner Skilauf — Livigno-Centro
+
+description:
+  en: |
+    Family-friendly valley-floor base area with blue pistes, a
+    snowmaking-secured kids' snow park, and direct access from
+    Livigno's main village.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Livigno Ski resort base-area and ski-school documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-livigno cluster. Tier 1: blue-piste
+    valley-floor base area, kids' zone, snowmaking-secured, family-
+    friendly.

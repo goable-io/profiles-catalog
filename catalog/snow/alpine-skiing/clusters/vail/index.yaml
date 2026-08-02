@@ -1,0 +1,159 @@
+slug: alpine-skiing-spot-vail
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-rockies
+region: rockies
+country_code: US
+sub_spots:
+  - alpine-skiing-spot-vail-back-bowls
+  - alpine-skiing-spot-vail-blue-sky-basin
+  - alpine-skiing-spot-vail-vail-front-side
+display_name:
+  en: Alpine Skiing — Vail
+  it: Sci Alpino — Vail
+  es: Esquí Alpino — Vail
+  fr: Ski Alpin — Vail
+  de: Alpiner Skilauf — Vail
+description:
+  en: |
+    Vail Mountain (Gore Range / Sawatch, Colorado) is the largest single
+    ski mountain in the United States, with roughly 5,300 skiable acres
+    across more than 195 marked trails and over 30 lifts. The resort is
+    organized into three distinct sections: the front-side network
+    (Lionshead, Wildwood, Golden Peak) with high-speed chair-served
+    red-piste cruising and terrain parks; the famous Back Bowls, seven
+    connected above-treeline advanced bowls (Sun Up, Sun Down, China,
+    Siberia, Mongolia, Tea Cup, Genesis) reached via Wildwood and Game
+    Creek lifts; and Blue Sky Basin, a gladed, north-facing third
+    section with black and advanced-red piste that retains snow quality
+    longer into the season. Altitude ranges from the 2475 m base at
+    Vail Village to the 3527 m summit of Blue Sky Basin's Pete's Bowl.
+    Snowmaking covers front-side and lower-mountain runs; the Back
+    Bowls and Blue Sky Basin rely on natural snowpack. Primary operator
+    is Vail Resorts. Vail has hosted FIS Alpine World Ski Championships
+    (1989, 1999, 2015 partly at Beaver Creek).
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.20
+    curve:
+      - { x: -32, s: 0.05 }
+      - { x: -22, s: 0.35 }
+      - { x: -12, s: 0.75 }
+      - { x: -5,  s: 1.00 }
+      - { x: 0,   s: 0.90 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.65 }
+      - { x: 35, s: 0.25 }
+      - { x: 50, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.18
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.17
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 2,   s: 0.90 }
+      - { x: 5,   s: 0.70 }
+      - { x: 12,  s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.04
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 55
+    reason_code: LIFT_CLOSURE_WIND
+    description: Sustained wind above 55 knots closes chairlifts + gondolas at N-American Rockies resorts; upper-mountain and above-treeline zones become unsafe for on-piste skiing.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.2
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 200 m in continental Rocky-Mountain conditions makes piste navigation on wide alpine bowls unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -32
+    reason_code: ARCTIC_OUTBREAK_FROSTBITE
+    description: Apparent temperature below -32°C (continental arctic-air outbreak days, esp. Wyoming + Colorado + Alberta) creates immediate frostbite risk on lift-served exposure; resorts often close upper lifts.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 21
+  carrying_capacity_sensitivity: high
+  notes: |
+    Vail Mountain is operated by Vail Resorts under Colorado's grid mix,
+    which has been steadily adding renewables through the 2020s. The
+    Back Bowls and Blue Sky Basin see significant carrying-capacity
+    pressure on powder mornings, with the operator using an app-based
+    parking-reservation system at the Vail Village and Lionshead
+    structures to manage peak-day access. I-70 highway congestion on
+    weekend "ski traffic" days is a recognised regional environmental
+    and access issue.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Vail Mountain (Vail Resorts) mountain operations and piste-map documentation"
+    - "NSAA (National Ski Areas Association) operational and safety standards"
+    - "FIS Alpine World Ski Championships Vail/Beaver Creek venue documentation"
+  notes: |
+    Cluster inherits region variant scoring from alpine-skiing-rockies
+    (dimensions, gates copied exactly, weights sum to 1.000). No cluster-
+    level dimension overrides applied; Vail's continental Colorado
+    climate matches the rockies region-variant profile closely.

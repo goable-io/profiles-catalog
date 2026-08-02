@@ -1,0 +1,53 @@
+slug: alpine-skiing-spot-niseko-hanazono
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-niseko
+parent_cluster: alpine-skiing-spot-niseko
+region: sea-of-japan
+country_code: JP
+
+coordinates:
+  center: { lat: 42.8656, lng: 140.7256 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    Hanazono occupies the eastern flank of the Grand Hirafu side of
+    Niseko United, connected into the shared lift network via
+    interlinking chairlifts. The sector is dominated by red-marked
+    piste terrain with full grooming coverage and ski-patrol presence,
+    plus gentler blue-piste runs near the base area that make it the
+    most family-friendly sector of the cluster. Hanazono hosts the
+    Niseko United terrain park, giving it the cluster's primary
+    freestyle-terrain presence alongside its standard groomed piste
+    offering.
+
+display_name:
+  en: Alpine Skiing — Hanazono (Niseko)
+  it: Sci Alpino — Hanazono (Niseko)
+  es: Esquí Alpino — Hanazono (Niseko)
+  fr: Ski Alpin — Hanazono (Niseko)
+  de: Alpiner Skilauf — Hanazono (Niseko)
+
+description:
+  en: |
+    The family-friendly eastern sector of Niseko United. Hanazono
+    combines red-piste cruising and gentler blue runs with the
+    cluster's main terrain park, linked by lift into the shared
+    Grand Hirafu network.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Niseko United Hanazono Resort piste map and lift operational dossier"
+    - "Japan Ski Areas Association operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-niseko cluster. Tier 2: red-piste
+    terrain with family-friendly blue runs and the cluster's terrain
+    park. Same general resort area as
+    freeride-spot-niseko-hanazono-strawberry-fields but scoped to the
+    marked piste-skiing product rather than the tree-skiing sidecountry
+    zone.

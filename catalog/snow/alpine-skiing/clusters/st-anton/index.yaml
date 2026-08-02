@@ -1,0 +1,153 @@
+slug: alpine-skiing-spot-st-anton
+spot_kind: cluster
+version: "0.1.0"
+category: snow
+extends: alpine-skiing-alpine
+region: alpine
+country_code: AT
+sub_spots:
+  - alpine-skiing-spot-st-anton-valluga
+  - alpine-skiing-spot-st-anton-galzig
+  - alpine-skiing-spot-st-anton-rendl
+display_name:
+  en: Alpine Skiing — St. Anton am Arlberg
+  it: Sci Alpino — St. Anton am Arlberg
+  es: Esquí Alpino — St. Anton am Arlberg
+  fr: Ski Alpin — St. Anton am Arlberg
+  de: Alpiner Skilauf — St. Anton am Arlberg
+description:
+  en: |
+    St. Anton am Arlberg (Tyrol, Austria) is the historic birthplace of
+    modern alpine ski technique and forms the core of the Ski Arlberg
+    network, the largest interconnected ski area in Austria at over 300
+    km of pistes linking St. Anton, St. Christoph, Stuben, Lech, and
+    Zürs. The resort's terrain runs from the village at 1304 m up to the
+    Valluga summit at 2811 m, with the Galzig and Rendl sectors forming
+    the core intermediate red-piste hubs on either side of the valley.
+    St. Anton has a reputation as one of the most demanding lift-served
+    ski areas in the Alps, with a strong off-piste and freeride-adjacent
+    culture around the Valluga in addition to extensive groomed cruising.
+    Snowmaking covers the lower and mid-mountain pistes, and the resort
+    is directly rail-connected via ÖBB. Operator: Ski Arlberg / Bergbahnen
+    Sankt Anton am Arlberg.
+
+dimensions:
+  - name: temperature
+    metric: apparent_temp_c
+    weight: 0.18
+    curve:
+      - { x: -25, s: 0.10 }
+      - { x: -15, s: 0.55 }
+      - { x: -8,  s: 0.95 }
+      - { x: -3,  s: 1.00 }
+      - { x: 1,   s: 0.85 }
+      - { x: 5,   s: 0.55 }
+      - { x: 10,  s: 0.20 }
+      - { x: 15,  s: 0.00 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 12, s: 0.95 }
+      - { x: 22, s: 0.60 }
+      - { x: 35, s: 0.20 }
+      - { x: 45, s: 0.00 }
+
+  - name: visibility
+    metric: visibility_km
+    weight: 0.22
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 0.5, s: 0.25 }
+      - { x: 2,  s: 0.70 }
+      - { x: 10, s: 1.00 }
+
+  - name: precipitation
+    metric: precipitation_mm_h
+    weight: 0.13
+    curve:
+      - { x: 0,   s: 1.00 }
+      - { x: 0.5, s: 0.95 }
+      - { x: 2,   s: 0.80 }
+      - { x: 5,   s: 0.55 }
+      - { x: 12,  s: 0.20 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.08
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.65 }
+      - { x: 25, s: 1.00 }
+
+  - name: uv_safety
+    metric: uv_index
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 3,  s: 1.00 }
+      - { x: 6,  s: 0.80 }
+      - { x: 9,  s: 0.50 }
+
+  - name: snow_surface
+    metric: snow_surface_quality
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 50
+    reason_code: LIFT_CLOSURE_WIND_ALPINE
+    description: Sustained wind above 50 knots closes the Valluga cable cars and other exposed high-Arlberg lifts during Foehn events; on-piste exposure on ridge-adjacent runs becomes unsafe.
+
+  - metric: visibility_km
+    condition: lt
+    value: 0.3
+    reason_code: WHITEOUT_RISK
+    description: Visibility below 300 m on the Valluga summit and Galzig high sectors makes piste navigation and lift retrieval unsafe.
+
+  - metric: apparent_temp_c
+    condition: lt
+    value: -25
+    reason_code: FROSTBITE_RISK_ALPINE
+    description: Apparent temperature below -25°C on the exposed high Arlberg sectors creates immediate frostbite risk on lift-served descents.
+
+sustainability:
+  carbon_neutral: false
+  equipment_dependency: high
+  typical_season_weeks: 22
+  carrying_capacity_sensitivity: high
+  notes: |
+    St. Anton operates under Seilbahnen Österreich (Austrian cable-car
+    association) protocols as part of the wider Ski Arlberg network.
+    Snowmaking covers the lower and mid-mountain pistes. St. Anton is
+    directly rail-connected via ÖBB, giving it a lower per-day access-
+    transport footprint than car-only Alpine resorts; carrying-capacity
+    pressure is high in peak season given the Arlberg's status as one of
+    the most visited interconnected ski areas in Austria.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Seilbahnen Österreich operational + lift-closure protocols"
+    - "Ski Arlberg / Bergbahnen Sankt Anton am Arlberg piste network documentation"
+  notes: |
+    Cluster inherits region variant (alpine-skiing-alpine) scoring
+    unchanged; weights and gates copied verbatim as the site is not
+    materially distinct from the general Alps regime.

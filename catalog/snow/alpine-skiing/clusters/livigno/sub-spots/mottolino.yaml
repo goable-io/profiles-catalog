@@ -1,0 +1,48 @@
+slug: alpine-skiing-spot-livigno-mottolino
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-livigno
+parent_cluster: alpine-skiing-spot-livigno
+region: alpine
+country_code: IT
+
+coordinates:
+  center: { lat: 46.5325, lng: 10.1642 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Mottolino sector (2870 m) is reached by gondola from Livigno's
+    east side and combines cruising red pistes with the Mottolino Fun
+    Mountain terrain park, one of the best-regarded freestyle venues in
+    the Italian Alps, featuring graduated jump lines, rail features, and
+    a dedicated boardercross. Grooming is thorough and daily, with
+    consistent snowmaking coverage supplementing the valley's already
+    reliable natural snowpack at altitude. Ski patrol and rescue access is
+    standard gondola-network coverage, and the moderate-gradient red
+    pistes outside the park zones remain accessible to confident
+    intermediate skiers.
+
+display_name:
+  en: Alpine Skiing — Mottolino (Livigno)
+  it: Sci Alpino — Mottolino
+  es: Esquí Alpino — Mottolino
+  fr: Ski Alpin — Mottolino
+  de: Alpiner Skilauf — Mottolino
+
+description:
+  en: |
+    Gondola-served red-piste cruising sector (2870 m) with the Mottolino
+    Fun Mountain terrain park, one of the Italian Alps' leading freestyle
+    venues.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Livigno Ski Mottolino Fun Mountain lift and terrain-park documentation"
+  notes: |
+    Sub-spot of alpine-skiing-spot-livigno cluster. Tier 2: red-piste
+    cruising, gondola-served, terrain park, consistent snowmaking.

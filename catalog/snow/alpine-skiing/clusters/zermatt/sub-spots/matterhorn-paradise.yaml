@@ -1,0 +1,51 @@
+slug: alpine-skiing-spot-zermatt-matterhorn-paradise
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-zermatt
+parent_cluster: alpine-skiing-spot-zermatt
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 45.9385, lng: 7.7267 }
+  radius_m: 2000
+
+tier: 3
+tier_rationale:
+  en: |
+    The Klein Matterhorn (3883 m) summit sector, reached via the
+    Matterhorn Glacier Ride 3S cable car, is the highest year-round
+    ski area in Europe with glacier skiing above 3000 m nearly every
+    month of the year. Piste marking is red and black across the
+    glacier bowl, with ski patrol managing daily avalanche-control
+    and crevasse-marking operations on the upper terrain. Snowmaking
+    is largely unnecessary at this altitude given permanent glacier
+    cover, though grooming coverage is more limited than lower
+    sectors given the terrain's scale. This is the cluster's
+    flagship high-altitude sector, reserved for skiers comfortable
+    with sustained altitude, exposure and variable glacier snow.
+
+display_name:
+  en: Alpine Skiing — Matterhorn Paradise (Zermatt)
+  it: Sci Alpino — Matterhorn Paradise
+  es: Esquí Alpino — Matterhorn Paradise
+  fr: Ski Alpin — Matterhorn Paradise
+  de: Alpiner Skilauf — Matterhorn Paradise
+
+description:
+  en: |
+    Europe's highest year-round ski area, reached via the Matterhorn
+    Glacier Ride 3S cable car to Klein Matterhorn (3883 m). Red and
+    black glacier pistes above 3000 m.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Zermatt Bergbahnen AG Matterhorn Glacier Paradise operational dossier"
+  notes: |
+    Sub-spot of alpine-skiing-spot-zermatt cluster. Tier 3: highest
+    year-round glacier ski area in Europe, red + black pistes above
+    3000 m, sustained altitude exposure. Cluster's flagship
+    high-altitude sector.

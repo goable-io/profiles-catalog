@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-park-city-the-colony
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-park-city
+parent_cluster: alpine-skiing-spot-park-city
+region: rockies
+country_code: US
+
+coordinates:
+  center: { lat: 40.6942, lng: -111.6033 }
+  radius_m: 1500
+
+tier: 3
+tier_rationale:
+  en: |
+    The Colony sector, on the Canyons side of Park City Mountain,
+    combines hike-to steeper terrain with gladed and bowl skiing in an
+    in-bounds black and advanced-terrain zone. Piste marking is black
+    throughout, with some sections accessed only by short hike from
+    lift-served boundaries; grooming is minimal given the gladed and
+    bowl character of the terrain. There is no snowmaking or terrain
+    park in this sector. Ski patrol manages avalanche-control
+    operations on the open bowl terrain before opening on storm
+    mornings, and the combination of hike-to access and ungroomed
+    glade/bowl skiing makes this sector advanced-and-expert-focused.
+
+display_name:
+  en: Alpine Skiing — The Colony
+  it: Sci Alpino — The Colony
+  es: Esquí Alpino — The Colony
+  fr: Ski Alpin — The Colony
+  de: Alpiner Skilauf — The Colony
+
+description:
+  en: |
+    The Colony sector on the Canyons side — hike-to steeper in-bounds
+    black and advanced terrain, gladed and bowl skiing.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Park City Mountain (Vail Resorts) Canyons side / The Colony trail-map documentation"
+    - "NSAA operational standards"
+  notes: |
+    Sub-spot of alpine-skiing-spot-park-city cluster. Tier 3: hike-to
+    black and advanced terrain, gladed and bowl skiing on the Canyons
+    side.

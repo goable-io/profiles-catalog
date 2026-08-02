@@ -1,0 +1,49 @@
+slug: alpine-skiing-spot-verbier-attelas
+spot_kind: sub-spot
+version: "1.0.0"
+category: snow
+extends: alpine-skiing-spot-verbier
+parent_cluster: alpine-skiing-spot-verbier
+region: alpine
+country_code: CH
+
+coordinates:
+  center: { lat: 46.1050, lng: 7.2450 }
+  radius_m: 1500
+
+tier: 2
+tier_rationale:
+  en: |
+    The Attelas gondola and Ruinettes chair sector is Verbier's main
+    intermediate cruising ground, spanning roughly 1900-2200 m with
+    red pistes dominating the marked network and a handful of easier
+    blue links back toward the village. Access is gondola- and
+    chairlift-served with full grooming and ski-patrol coverage, and
+    snowmaking supplements the lower approach runs in thin-cover
+    years. Wide, well-groomed red pistes and moderate gradient make
+    this the standard entry-level sector for visiting intermediates,
+    with mountain restaurants at both the Attelas and Ruinettes
+    stations.
+
+display_name:
+  en: Alpine Skiing — Attelas (Verbier)
+  it: Sci Alpino — Attelas
+  es: Esquí Alpino — Attelas
+  fr: Ski Alpin — Attelas
+  de: Alpiner Skilauf — Attelas
+
+description:
+  en: |
+    Verbier's main intermediate piste sector, cruising 1900-2200 m
+    on gondola- and chair-served red pistes. Standard entry-level
+    terrain with light gradient and wide grooming.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Téléverbier SA Attelas–Ruinettes piste map"
+  notes: |
+    Sub-spot of alpine-skiing-spot-verbier cluster. Tier 2: red-piste
+    dominant intermediate cruising sector with standard gondola/chair
+    access and full grooming.
