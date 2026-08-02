@@ -1,0 +1,145 @@
+slug: scuba-spot-yucatan-cenotes
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-caribbean
+region: caribbean
+country_code: MX
+sub_spots:
+  - scuba-spot-yucatan-cenotes-dos-ojos
+  - scuba-spot-yucatan-cenotes-angelita
+display_name:
+  en: Scuba Diving — Yucatán Cenotes
+  it: Immersione — Cenotes dello Yucatán
+  es: Buceo — Cenotes del Yucatán
+  fr: Plongée — Cénotes du Yucatán
+  de: Tauchen — Yucatán-Cenoten
+description:
+  en: |
+    The Yucatán Peninsula karst-aquifer network hosts hundreds of
+    submerged cenote (sinkhole) systems including the world's largest
+    known underwater cave systems — Sistema Sac Actun (365+ km surveyed
+    2018) and Sistema Ox Bel Ha (270+ km). Cluster focuses on the two
+    most accessible cenote-diving reference sites: Cenote Dos Ojos
+    (cavern-diving grade, easy access from Tulum) and Cenote Angelita
+    (advanced open-water for the 30 m halocline cloud, freshwater over
+    saltwater). Freshwater regime; distinct sub-regime from Caribbean
+    reef diving in the same country.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.35
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.70 }
+      - { x: 5.0, s: 0.95 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.5, s: 1.00 }
+      - { x: 1.5, s: 0.60 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 20, s: 0.40 }
+      - { x: 24, s: 0.85 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 0.90 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.75 }
+      - { x: 24, s: 0.45 }
+      - { x: 30, s: 0.10 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.15
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.7, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.10
+    curve:
+      - { x: 12, s: 0.30 }
+      - { x: 22, s: 0.85 }
+      - { x: 28, s: 1.00 }
+      - { x: 34, s: 0.95 }
+      - { x: 42, s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HURRICANE_PERIPHERY
+    description: Sustained wind above 30 knots signals hurricane periphery on the Yucatán peninsula; cenote road access + operations may be shut.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 25
+    reason_code: TROPICAL_DELUGE_KARST
+    description: Heavy rain above 25 mm/h triggers surface runoff into the cenote system with visibility crash within hours — closes cenote-diving operations.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 48
+  carrying_capacity_sensitivity: high
+  notes: |
+    Cenote diving operates on private-property or protected-aquifer
+    access — Sistema Sac Actun + Sistema Ox Bel Ha are of world-
+    scientific importance under NSS-CDS (National Speleological Society
+    Cave-Diving Section) coordination with local ejidos + INAH (Mexican
+    archaeology authority). Aquifer-contamination concerns from surface
+    runoff (agrochemicals, sewage, tourism density) are documented and
+    increasing. Cavern + full-cave certification required per depth zone.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NSS-CDS (National Speleological Society Cave-Diving Section) Yucatán karst standards"
+    - "Sistema Sac Actun 2018 survey (365+ km documented)"
+    - "INAH Yucatán aquifer archaeology protection protocols"
+    - "PADI Cavern + TDI Cave courses Yucatán operator SOP"
+  notes: |
+    Spot overrides vs scuba-caribbean: visibility weight raised to
+    0.35 (cenote clarity is the primary quality dimension);
+    water_clarity raised to 0.15; wave dimension down-weighted to
+    0.08 (freshwater sinkhole = no surface wave); year-round 48-week
+    season (no hurricane season closure for road-accessible cenotes
+    outside of periphery). Freshwater sub-regime.

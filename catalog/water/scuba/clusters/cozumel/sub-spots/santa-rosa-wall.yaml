@@ -1,0 +1,45 @@
+slug: scuba-spot-cozumel-santa-rosa-wall
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-cozumel
+parent_cluster: scuba-spot-cozumel
+region: caribbean
+country_code: MX
+
+coordinates:
+  center: { lat: 20.4200, lng: -87.0100 }
+  radius_m: 500
+
+tier: 3
+tier_rationale:
+  en: |
+    Santa Rosa Wall is a dramatic vertical drop-off on the SW-Cozumel
+    reef line, plunging from 15 m to 1000 m+ into the Yucatán
+    Channel. Drift-dive format with N-S current 1-2 kn typical.
+    Overhangs, swim-throughs, and pelagic passages of turtle +
+    grouper + occasional reef shark. Advanced-open-water baseline
+    given drift + drop-off geometry. Cluster's reference deep drift-
+    wall dive.
+
+display_name:
+  en: Scuba — Santa Rosa Wall (Cozumel)
+  it: Immersione — Santa Rosa Wall
+  es: Buceo — Muro de Santa Rosa
+  fr: Plongée — Mur de Santa Rosa
+  de: Tauchen — Santa Rosa Wall
+
+description:
+  en: |
+    The dramatic SW-Cozumel drift wall dropping to 1000 m+. Advanced-
+    open-water reference deep drift-wall dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parque Nacional Arrecifes de Cozumel Santa Rosa Wall documentation"
+    - "CONANP Cozumel advanced-dive site briefing"
+  notes: |
+    Sub-spot of scuba-spot-cozumel cluster. Tier 3: deep drift-wall,
+    advanced-open-water baseline.

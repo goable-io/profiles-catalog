@@ -1,0 +1,47 @@
+slug: scuba-spot-gbr-cairns-ss-yongala
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-gbr-cairns
+parent_cluster: scuba-spot-gbr-cairns
+region: pacific
+country_code: AU
+
+coordinates:
+  center: { lat: -19.3050, lng: 147.6250 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    L'SS Yongala è a 110 m passenger + cargo steamer sunk 23 March
+    1911 by Cyclone Yasi's namesake predecessor storm off Cape
+    Bowling Green (Queensland). Wreck sits on sand + rubble bottom at
+    15-30 m depth — one of the world's most-praised wreck dives for
+    macro + pelagic wildlife density (giant grouper, bull rays,
+    olive sea snakes, schooling trevally). Site is exposed to open
+    Coral Sea; strong current typical. Advanced-open-water baseline;
+    guide-led with strict Queensland Historic Shipwrecks Act look-
+    only enforcement.
+
+display_name:
+  en: Scuba — SS Yongala wreck (Coral Sea)
+  it: Immersione — Relitto SS Yongala
+  es: Buceo — Pecio SS Yongala
+  fr: Plongée — Épave SS Yongala
+  de: Tauchen — Wrack SS Yongala
+
+description:
+  en: |
+    The 1911 SS Yongala wreck at 15-30 m off Cape Bowling Green.
+    Advanced-open-water world-class wreck dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Queensland Historic Shipwrecks Act SS Yongala 1911 protection documentation"
+    - "PADI SS Yongala advanced-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-gbr-cairns cluster. Tier 3: 15-30 m
+    historic wreck, advanced-open-water baseline, look-only.

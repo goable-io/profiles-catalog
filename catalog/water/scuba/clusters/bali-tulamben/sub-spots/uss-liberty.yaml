@@ -1,0 +1,45 @@
+slug: scuba-spot-bali-tulamben-uss-liberty
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-bali-tulamben
+parent_cluster: scuba-spot-bali-tulamben
+region: indian
+country_code: ID
+
+coordinates:
+  center: { lat: -8.2740, lng: 115.5940 }
+  radius_m: 300
+
+tier: 1
+tier_rationale:
+  en: |
+    L'USS Liberty era una cargo ship US Army sunk by Japanese torpedo
+    11 January 1942 and beached in Tulamben; the 1963 Mt Agung
+    eruption tsunami shifted the wreck into its current 5-30 m
+    position parallel to shore. Wreck is walkable-in from the black-
+    sand cobble beach — no boat needed. Depth kept in 5-25 m
+    recreational range; heavy encrusting biocoenosis after 80+ years
+    submersion. Beginner-friendly wreck-training reference dive.
+
+display_name:
+  en: Scuba — USS Liberty wreck (Tulamben)
+  it: Immersione — Relitto USS Liberty
+  es: Buceo — Pecio USS Liberty
+  fr: Plongée — Épave USS Liberty
+  de: Tauchen — Wrack USS Liberty
+
+description:
+  en: |
+    The 1942/1963 USS Liberty wreck walkable-in from Tulamben beach.
+    Beginner-friendly wreck reference.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "USS Liberty 1942 loss + 1963 tsunami-shift documentation"
+    - "Indonesian Ministry of Marine Affairs Liberty protection documentation"
+  notes: |
+    Sub-spot of scuba-spot-bali-tulamben cluster. Tier 1: shallow
+    walkable wreck, beginner-friendly.

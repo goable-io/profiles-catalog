@@ -1,0 +1,46 @@
+slug: scuba-spot-maldive-ari-south-manta-point-madivaru
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-maldive-ari-south
+parent_cluster: scuba-spot-maldive-ari-south
+region: indian
+country_code: MV
+
+coordinates:
+  center: { lat: 3.6000, lng: 72.7200 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Manta Point (Madivaru cleaning station) on Ari South is one
+    of the most reliable Mobula alfredi (reef manta) cleaning-station
+    encounter sites in the Indian Ocean — mantas visit for cleaning
+    by wrasse populations on the reef pinnacle at 8-15 m depth.
+    Peak encounter windows track SW-monsoon plankton concentration
+    (May-Nov). Depth kept shallow for extended NDL manta observation.
+    Guide-lead + no-touch + fixed-distance protocols enforced by
+    Manta Trust code of conduct. Cluster's manta-encounter reference.
+
+display_name:
+  en: Scuba — Manta Point Madivaru (Ari South)
+  it: Immersione — Manta Point Madivaru
+  es: Buceo — Manta Point Madivaru
+  fr: Plongée — Manta Point Madivaru
+  de: Tauchen — Manta Point Madivaru
+
+description:
+  en: |
+    The Madivaru manta cleaning station on Ari South. Reef manta
+    encounter reference.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Manta Trust Madivaru monitoring documentation"
+    - "MRI Ari South cleaning-station protocol"
+  notes: |
+    Sub-spot of scuba-spot-maldive-ari-south cluster. Tier 2:
+    shallow cleaning-station reef, guide-led with no-touch protocol.

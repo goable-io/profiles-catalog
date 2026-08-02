@@ -1,0 +1,147 @@
+slug: scuba-spot-medes-islands
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-mediterranean
+region: mediterranean
+country_code: ES
+sub_spots:
+  - scuba-spot-medes-islands-meda-petita
+  - scuba-spot-medes-islands-la-vaca
+display_name:
+  en: Scuba Diving — Islas Medes (Estartit)
+  it: Immersione — Islas Medes
+  es: Buceo — Islas Medes
+  fr: Plongée — Îles Medes
+  de: Tauchen — Medes-Inseln
+description:
+  en: |
+    Islas Medes (Reserva Natural Parcial des les Illes Medes, LR
+    19/1990) sit 1 km off L'Estartit (Costa Brava, Cataluña) — a
+    seven-islet complex reserved since 1990 as one of the earliest
+    Iberian MPAs. Coralligenous biocoenosis, dense Paramuricea
+    clavata gorgonian, and the highest-recorded Mediterranean
+    grouper population density (Epinephelus marginatus). Water
+    14-24°C. Boat access from L'Estartit in 10 min.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.32
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.10 }
+      - { x: 1.0, s: 0.50 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.22
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.3, s: 0.50 }
+      - { x: 2.0, s: 0.15 }
+      - { x: 2.8, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.20
+    curve:
+      - { x: 12, s: 0.10 }
+      - { x: 16, s: 0.45 }
+      - { x: 20, s: 0.85 }
+      - { x: 24, s: 1.00 }
+      - { x: 26, s: 1.00 }
+      - { x: 28, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 8,  s: 1.00 }
+      - { x: 14, s: 0.75 }
+      - { x: 20, s: 0.40 }
+      - { x: 28, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.05
+    curve:
+      - { x: 5,  s: 0.20 }
+      - { x: 15, s: 0.75 }
+      - { x: 22, s: 1.00 }
+      - { x: 32, s: 1.00 }
+      - { x: 40, s: 0.55 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.03
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 30, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 2.3
+    reason_code: MED_HIGH_SEAS
+    description: Wave above 2.3 m (Tramontane events) makes L'Estartit-Medes boat crossing unsafe.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_MED
+    description: Surface visibility below 800 m during Sirocco haze makes navigation unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 12
+    reason_code: HEAVY_RAIN_RUNOFF
+    description: Heavy rain triggers Ter river + coastal runoff into Medes waters; visibility drops for 24-48 h.
+  - metric: turbidity_proxy
+    condition: gt
+    value: 25
+    reason_code: HIGH_TURBIDITY_POSTSTORM
+    description: Elevated turbidity from Tramontane storm sediment destroys wall dive quality.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 28
+  carrying_capacity_sensitivity: high
+  notes: |
+    Reserva Natural Parcial des les Illes Medes (LR 19/1990) enforces
+    strict daily-diver caps + zone-based rules. Grouper populations
+    at Medes are the reference recovery-benchmark for Mediterranean
+    MPA effectiveness. Guide-led diving is the norm.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Reserva Natural Parcial des les Illes Medes management documentation (Generalitat de Catalunya)"
+    - "Sala et al. 2012 Medes grouper recovery benchmark research"
+    - "PADI Costa Brava regional dive-condition briefing"
+  notes: |
+    Spot overrides vs scuba-mediterranean: matches regional baseline
+    for the Iberian W-Med sector. 28-week season.

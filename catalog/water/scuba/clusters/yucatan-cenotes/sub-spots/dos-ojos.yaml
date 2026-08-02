@@ -1,0 +1,47 @@
+slug: scuba-spot-yucatan-cenotes-dos-ojos
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-yucatan-cenotes
+parent_cluster: scuba-spot-yucatan-cenotes
+region: caribbean
+country_code: MX
+
+coordinates:
+  center: { lat: 20.3230, lng: -87.3900 }
+  radius_m: 400
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Cenote Dos Ojos ("Two Eyes") is one of the most-dived cenote
+    systems in Quintana Roo — two adjacent circular pools connected
+    by an underwater passage. Cavern-diving grade with well-defined
+    daylight-zone routes: "The Barbie Line" (400 m circuit) and
+    "The Bat Cave Line" (200 m to an air-space chamber with fossil-
+    stalactites). Depth kept in 5-12 m recreational range on the
+    cavern route. Guide-lead by default; cavern certification
+    required per NSS-CDS standards. Cluster's beginner-friendly
+    cenote reference.
+
+display_name:
+  en: Scuba — Cenote Dos Ojos
+  it: Immersione — Cenote Dos Ojos
+  es: Buceo — Cenote Dos Ojos
+  fr: Plongée — Cénote Dos Ojos
+  de: Tauchen — Cenote Dos Ojos
+
+description:
+  en: |
+    The "Two Eyes" cenote pair near Tulum. Cavern-diving grade with
+    daylight-zone circuits.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "NSS-CDS Sistema Sac Actun Dos Ojos documentation"
+    - "Quintana Roo cenote-diving operator SOP"
+  notes: |
+    Sub-spot of scuba-spot-yucatan-cenotes cluster. Tier 2: cavern-
+    diving grade, guide-led, cavern certification required.

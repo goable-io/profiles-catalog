@@ -1,0 +1,149 @@
+slug: scuba-spot-cozumel
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-caribbean
+region: caribbean
+country_code: MX
+sub_spots:
+  - scuba-spot-cozumel-palancar-gardens
+  - scuba-spot-cozumel-santa-rosa-wall
+display_name:
+  en: Scuba Diving — Isla Cozumel
+  it: Immersione — Isola Cozumel
+  es: Buceo — Isla Cozumel
+  fr: Plongée — Isla Cozumel
+  de: Tauchen — Insel Cozumel
+description:
+  en: |
+    Isla Cozumel (Yucatán, Mexico) is one of the world's top drift-
+    diving destinations — Cozumel Marine Park (Parque Nacional
+    Arrecifes de Cozumel, D.O.F. 04/07/1996) protects the SW-facing
+    reef system. Warm water year-round (25-29°C), exceptional
+    visibility (30-40 m routine), consistent N-S current 0.5-2 kn on
+    the outer reef. Sites include Palancar Gardens (shallow reef +
+    coral heads) and Santa Rosa Wall (dramatic vertical drop-off).
+    Boat access from San Miguel Cozumel harbours.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.30
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.60 }
+      - { x: 5.0, s: 0.90 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.35 }
+      - { x: 2.5, s: 0.05 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 20, s: 0.40 }
+      - { x: 24, s: 0.80 }
+      - { x: 27, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.85 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.65 }
+      - { x: 24, s: 0.25 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 12, s: 0.30 }
+      - { x: 22, s: 0.85 }
+      - { x: 28, s: 1.00 }
+      - { x: 34, s: 0.95 }
+      - { x: 42, s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.05
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: CARIBBEAN_HIGH_SEAS
+    description: Wave above 3.0 m at Cozumel (typically hurricane-periphery or cold-front) makes boat drop-off on the drift-dive line unsafe.
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: HURRICANE_PERIPHERY
+    description: Sustained wind above 30 knots signals hurricane periphery; Cozumel operations stand down + evacuation may trigger.
+  - metric: visibility_km
+    condition: lt
+    value: 0.5
+    reason_code: POOR_VISIBILITY_CARIB
+    description: Surface visibility below 500 m during tropical squall makes drift-dive drop-off + retrieval unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: TROPICAL_DELUGE
+    description: Heavy tropical rain above 20 mm/h correlates with squall passage; operations pause.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 44
+  carrying_capacity_sensitivity: high
+  notes: |
+    Parque Nacional Arrecifes de Cozumel enforces daily-visitor caps
+    at Palancar + Santa Rosa. Coral bleaching pressure documented on
+    the Yucatán reef systems since 2005; site managers apply strict
+    trim + guide-lead requirements to reduce contact damage.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Parque Nacional Arrecifes de Cozumel (D.O.F. 04/07/1996) management documentation"
+    - "CONANP (Comisión Nacional de Áreas Naturales Protegidas) Cozumel operational rules"
+    - "PADI Cozumel regional dive-condition briefing"
+    - "NOAA CoralReefWatch Cozumel bleaching thermal-stress bulletins"
+  notes: |
+    Spot overrides vs scuba-caribbean: matches regional baseline for
+    the Yucatán-Belize reef sector. 44-week season with 8-week
+    hurricane closure risk (Aug-Oct).

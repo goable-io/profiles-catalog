@@ -1,0 +1,44 @@
+slug: scuba-spot-sipadan-turtle-cavern
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-sipadan
+parent_cluster: scuba-spot-sipadan
+region: pacific
+country_code: MY
+
+coordinates:
+  center: { lat: 4.1130, lng: 118.6280 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    La Turtle Cavern is a submerged sea cave on the SW-Sipadan wall
+    at 20 m entry — a chamber system with air-space pockets and
+    documented historical turtle skeletal remains from turtles that
+    became disoriented and drowned inside. Cavern-diving grade with
+    strict guide-lead + no-penetration-beyond-safe-route enforcement.
+    Sabah Wildlife Department permit conditions include cave-diving
+    experience validation. Cluster's advanced-cavern grade dive.
+
+display_name:
+  en: Scuba — Turtle Cavern (Sipadan)
+  it: Immersione — Turtle Cavern
+  es: Buceo — Turtle Cavern
+  fr: Plongée — Turtle Cavern
+  de: Tauchen — Turtle Cavern
+
+description:
+  en: |
+    The SW-Sipadan sea cave with historical turtle skeletal remains.
+    Advanced cavern dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Sabah Wildlife Department Sipadan Turtle Cavern documentation"
+  notes: |
+    Sub-spot of scuba-spot-sipadan cluster. Tier 3: cavern-diving
+    grade + turtle-remains sensitivity, strict guide-lead.

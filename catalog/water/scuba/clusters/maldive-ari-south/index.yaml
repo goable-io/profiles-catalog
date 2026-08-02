@@ -1,0 +1,152 @@
+slug: scuba-spot-maldive-ari-south
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-indian
+region: indian
+country_code: MV
+sub_spots:
+  - scuba-spot-maldive-ari-south-manta-point-madivaru
+  - scuba-spot-maldive-ari-south-fish-head
+display_name:
+  en: Scuba Diving — Ari South Atoll (Maldives)
+  it: Immersione — Ari Sud (Maldive)
+  es: Buceo — Ari Sur (Maldivas)
+  fr: Plongée — Ari Sud (Maldives)
+  de: Tauchen — Ari Süd (Malediven)
+description:
+  en: |
+    Il South Ari (Alifu Dhaalu) atoll is the Maldives' reference manta
+    + whale-shark encounter zone — SW monsoon (May-Oct) drives
+    plankton concentration into E-side channels where manta cleaning
+    stations aggregate and whale sharks feed. Cluster covers the Manta
+    Point (Madivaru cleaning station, one of the most reliable manta
+    encounters in the Indian Ocean) plus the Fish Head thila (Fesdu
+    Kandu) — a submerged pinnacle world-famous for grey reef shark
+    action. Water 27-30°C year-round. Liveaboard-dominant format.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.65 }
+      - { x: 5.0, s: 0.92 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.35 }
+      - { x: 2.5, s: 0.05 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 22, s: 0.50 }
+      - { x: 26, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.80 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.70 }
+      - { x: 24, s: 0.30 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 0.10 }
+      - { x: 0.3, s: 0.50 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 15, s: 0.40 }
+      - { x: 24, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 34, s: 0.90 }
+      - { x: 42, s: 0.30 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: MONSOON_HIGH_SEAS
+    description: Wave above 3.0 m during SW monsoon peak makes E-channel drop-off + drift-dive retrieval unsafe.
+  - metric: wind_speed_kn
+    condition: gt
+    value: 28
+    reason_code: MONSOON_HIGH_WIND
+    description: Sustained wind above 28 knots during monsoon transition makes liveaboard operations stand down.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: MONSOON_POOR_VISIBILITY
+    description: Surface visibility below 800 m during monsoon squall makes site-finding unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: MONSOON_DELUGE
+    description: Heavy monsoon rain above 20 mm/h correlates with atoll-wide visibility crash.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 40
+  carrying_capacity_sensitivity: high
+  notes: |
+    Maldives Marine Research Institute + Ari South atoll-council
+    coordinate manta + whale-shark encounter permits. Hanifaru Bay
+    (Baa Atoll, adjacent) has strict swimmer + boat limits under
+    UNESCO Biosphere designation. Coral cover on the atolls remains
+    under active climate-driven bleaching pressure (1998, 2016, 2023
+    events documented).
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Maldives Marine Research Institute (MRI) manta + whale-shark encounter documentation"
+    - "Manta Trust Ari South monitoring reports"
+    - "PADI Maldives regional dive-condition briefing"
+    - "Coral Triangle Initiative bleaching bulletins 2016-2023"
+  notes: |
+    Spot overrides vs scuba-indian: matches regional baseline for
+    the SW-Indian atoll sector. 40-week season with SW-monsoon peak
+    windows (Jul-Sep) delivering the manta + whale-shark encounter
+    concentration.

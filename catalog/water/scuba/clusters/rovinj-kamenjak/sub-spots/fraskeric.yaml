@@ -1,0 +1,43 @@
+slug: scuba-spot-rovinj-kamenjak-fraskeric
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-rovinj-kamenjak
+parent_cluster: scuba-spot-rovinj-kamenjak
+region: adriatic
+country_code: HR
+
+coordinates:
+  center: { lat: 44.7800, lng: 13.9200 }
+  radius_m: 500
+
+tier: 2
+tier_rationale:
+  en: |
+    Le Isole Fraškerić sono un piccolo cluster di isolotti off Cape
+    Kamenjak (Rt Kamenjak, S Pula peninsula) with coastal reef +
+    wall diving from 8 m to 30 m+ and Adriatic-typical encrusting
+    biocoenosis. Standard intermediate reef dive with boat access
+    from Premantura or Pula in 10-15 min. Sheltered from Bora on
+    lee-side approaches; exposed on outer flank.
+
+display_name:
+  en: Scuba — Fraškerić (Cape Kamenjak)
+  it: Immersione — Fraškerić
+  es: Buceo — Fraškerić
+  fr: Plongée — Fraškerić
+  de: Tauchen — Fraškerić
+
+description:
+  en: |
+    The Fraškerić islet cluster off Cape Kamenjak. Intermediate
+    coastal reef dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Park Prirode Kamenjak Fraškerić documentation"
+  notes: |
+    Sub-spot of scuba-spot-rovinj-kamenjak cluster. Tier 2:
+    intermediate coastal reef.

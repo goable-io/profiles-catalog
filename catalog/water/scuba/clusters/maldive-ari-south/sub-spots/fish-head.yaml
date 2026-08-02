@@ -1,0 +1,45 @@
+slug: scuba-spot-maldive-ari-south-fish-head
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-maldive-ari-south
+parent_cluster: scuba-spot-maldive-ari-south
+region: indian
+country_code: MV
+
+coordinates:
+  center: { lat: 3.5300, lng: 72.8000 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Il Fish Head (Fesdu Kandu thila) is a submerged pinnacle in the
+    Fesdu Kandu channel on Ari South atoll's E rim — top at 12 m,
+    drop-off to 40 m+ with sustained channel-driven current 1-2 kn
+    typical. Famous for concentrated grey reef shark (Carcharhinus
+    amblyrhynchos) and dogtooth tuna action on the upcurrent side.
+    Advanced-open-water baseline given drift-in-channel geometry.
+    Guide-lead by default. Cluster's shark-encounter reference.
+
+display_name:
+  en: Scuba — Fish Head Thila (Ari South)
+  it: Immersione — Fish Head Thila
+  es: Buceo — Fish Head Thila
+  fr: Plongée — Fish Head Thila
+  de: Tauchen — Fish Head Thila
+
+description:
+  en: |
+    The Fesdu Kandu pinnacle on Ari South. Advanced-open-water
+    grey reef shark drift dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "MRI Fesdu Kandu (Fish Head) monitoring documentation"
+    - "PADI Ari South advanced-dive briefing"
+  notes: |
+    Sub-spot of scuba-spot-maldive-ari-south cluster. Tier 3: channel
+    drift + shark encounter, advanced-open-water baseline.

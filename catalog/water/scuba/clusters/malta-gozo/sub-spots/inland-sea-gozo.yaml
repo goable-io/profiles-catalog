@@ -1,0 +1,45 @@
+slug: scuba-spot-malta-gozo-inland-sea-gozo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-malta-gozo
+parent_cluster: scuba-spot-malta-gozo
+region: mediterranean
+country_code: MT
+
+coordinates:
+  center: { lat: 36.0500, lng: 14.1900 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    The Inland Sea Gozo is a 60 m-diameter shallow salt-water pool on
+    Dwejra Point connected to the open sea by an 80 m underwater
+    tunnel through the cliff. The tunnel dive descends from the
+    pool at ~4 m to ~26 m at mid-tunnel opening into the open sea
+    wall on the exit. Cavern-diving grade for the tunnel passage —
+    guide-led with tunnel-orientation briefing. Post-tunnel dive
+    continues along the outer coast wall. The cluster's tunnel-
+    passage reference dive.
+
+display_name:
+  en: Scuba — Inland Sea Gozo (tunnel)
+  it: Immersione — Inland Sea Gozo (tunnel)
+  es: Buceo — Inland Sea Gozo (túnel)
+  fr: Plongée — Inland Sea Gozo (tunnel)
+  de: Tauchen — Inland Sea Gozo (Tunnel)
+
+description:
+  en: |
+    The Dwejra Point Inland Sea + 80 m submerged tunnel to open sea.
+    Guided cavern-tunnel dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Gozo Aquatic Sports Association Inland Sea Gozo site documentation"
+  notes: |
+    Sub-spot of scuba-spot-malta-gozo cluster. Tier 2: cavern-tunnel
+    passage, guide-led, depth 4-26 m.

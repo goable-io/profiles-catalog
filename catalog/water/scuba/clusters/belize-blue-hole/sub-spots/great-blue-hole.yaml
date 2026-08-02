@@ -1,0 +1,50 @@
+slug: scuba-spot-belize-blue-hole-great-blue-hole
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-belize-blue-hole
+parent_cluster: scuba-spot-belize-blue-hole
+region: caribbean
+country_code: BZ
+
+coordinates:
+  center: { lat: 17.3160, lng: -87.5350 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Il Great Blue Hole is a 318 m-diameter × 124 m-deep Pleistocene
+    karst-collapse marine sinkhole at Lighthouse Reef atoll.
+    Standard recreational dive descends to 40 m at the "stalactite
+    shelf" — massive fossil karst formations from the pre-flooding
+    period visible on the wall + overhang geometry. Below 40 m the
+    hole becomes anoxic (no marine life below ~50 m). Advanced-
+    open-water baseline; the dive itself is straightforward but
+    depth exposure + Belize offshore-atoll logistics + hydrogen
+    sulfide layer below make it technically demanding. Guide-lead
+    by default. Cluster's flagship dive.
+
+display_name:
+  en: Scuba — Great Blue Hole (Belize)
+  it: Immersione — Great Blue Hole
+  es: Buceo — Gran Agujero Azul
+  fr: Plongée — Grand Trou Bleu
+  de: Tauchen — Great Blue Hole
+
+description:
+  en: |
+    The 318 m × 124 m Pleistocene karst sinkhole at Lighthouse Reef.
+    Advanced-open-water 40 m stalactite-shelf dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Belize Fisheries Department Blue Hole Natural Monument documentation"
+    - "PADI Belize Great Blue Hole advanced-dive briefing"
+    - "Aquatica DeepSee 2018 Great Blue Hole submersible survey"
+  notes: |
+    Sub-spot of scuba-spot-belize-blue-hole cluster. Tier 3: 40 m
+    karst-shelf dive, advanced-open-water baseline. World-iconic
+    marine sinkhole.

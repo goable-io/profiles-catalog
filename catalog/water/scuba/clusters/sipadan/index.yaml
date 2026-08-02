@@ -1,0 +1,149 @@
+slug: scuba-spot-sipadan
+spot_kind: cluster
+version: "0.1.0"
+category: water
+extends: scuba-pacific
+region: pacific
+country_code: MY
+sub_spots:
+  - scuba-spot-sipadan-barracuda-point
+  - scuba-spot-sipadan-turtle-cavern
+display_name:
+  en: Scuba Diving — Sipadan (Sabah)
+  it: Immersione — Sipadan
+  es: Buceo — Sipadan
+  fr: Plongée — Sipadan
+  de: Tauchen — Sipadan
+description:
+  en: |
+    Sipadan (Sabah, E-Malaysia, S Celebes Sea / SW Pacific fringe) is
+    one of Asia's iconic diving destinations — a small oceanic pinnacle
+    rising 600 m from the seabed with wall + drop-off diving on the
+    outer perimeter. Sipadan Marine Park (Sabah Wildlife Department
+    permit-managed since 2004) enforces 176 daily-diver cap across
+    12 named dive sites. Water 27-30°C year-round. Liveaboard or
+    Semporna day-boat operations dominate.
+
+dimensions:
+  - name: visibility
+    metric: visibility_km
+    weight: 0.28
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.15 }
+      - { x: 2.0, s: 0.65 }
+      - { x: 5.0, s: 0.92 }
+      - { x: 10,  s: 1.00 }
+
+  - name: wave
+    metric: wave_height_m
+    weight: 0.20
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.40 }
+      - { x: 2.5, s: 0.10 }
+      - { x: 3.5, s: 0.00 }
+
+  - name: water_temp
+    metric: water_temperature_c
+    weight: 0.18
+    curve:
+      - { x: 14, s: 0.30 }
+      - { x: 20, s: 0.55 }
+      - { x: 25, s: 0.90 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 1.00 }
+      - { x: 32, s: 0.80 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.12
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.65 }
+      - { x: 24, s: 0.25 }
+      - { x: 30, s: 0.00 }
+
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 0.15 }
+      - { x: 0.3, s: 0.55 }
+      - { x: 0.7, s: 0.90 }
+      - { x: 1.0, s: 1.00 }
+
+  - name: air_temp_comfort
+    metric: apparent_temp_c
+    weight: 0.07
+    curve:
+      - { x: 8,  s: 0.30 }
+      - { x: 18, s: 0.75 }
+      - { x: 26, s: 1.00 }
+      - { x: 34, s: 0.90 }
+      - { x: 42, s: 0.35 }
+
+  - name: sun
+    metric: sun_altitude_deg
+    weight: 0.07
+    curve:
+      - { x: 0,  s: 0.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
+
+gates:
+  - metric: wave_height_m
+    condition: gt
+    value: 3.0
+    reason_code: PACIFIC_HIGH_SEAS
+    description: Wave above 3.0 m on Sipadan outer wall makes boat mooring + drift drop-off unsafe.
+  - metric: wind_speed_kn
+    condition: gt
+    value: 30
+    reason_code: TROPICAL_CYCLONE_PERIPHERY
+    description: Sustained wind above 30 knots signals cyclone periphery; operations stand down.
+  - metric: visibility_km
+    condition: lt
+    value: 0.8
+    reason_code: POOR_VISIBILITY_PAC
+    description: Surface visibility below 800 m during squall makes drop-off retrieval unsafe.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 20
+    reason_code: TROPICAL_DELUGE_PAC
+    description: Heavy tropical rain triggers visibility crash on the shallow reef sections; operations pause.
+
+sustainability:
+  carbon_neutral: true
+  equipment_dependency: high
+  typical_season_weeks: 44
+  carrying_capacity_sensitivity: high
+  notes: |
+    Sipadan Marine Park (Sabah Wildlife Department) enforces strict
+    176 daily-diver cap distributed across licensed operators.
+    Post-2004 island-resort removal has restored coral cover +
+    green + hawksbill turtle populations. Cluster is one of the
+    world's most strictly-managed dive sites.
+
+verdict_buckets:
+  unsafe: 0
+  poor: [1, 30]
+  marginal: [31, 50]
+  fair: [51, 70]
+  favorable: [71, 85]
+  excellent: [86, 100]
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Sabah Wildlife Department Sipadan Marine Park permit documentation"
+    - "PADI Malaysia Sipadan regional dive-condition briefing"
+  notes: |
+    Spot overrides vs scuba-pacific: matches regional baseline for
+    the Coral Triangle Pacific-fringe sector. 44-week season with
+    year-round warm regime, cyclone periphery events low frequency
+    (Sabah sits south of typhoon belt).

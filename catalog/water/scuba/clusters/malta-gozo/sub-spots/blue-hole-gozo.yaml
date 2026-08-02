@@ -1,0 +1,46 @@
+slug: scuba-spot-malta-gozo-blue-hole-gozo
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-malta-gozo
+parent_cluster: scuba-spot-malta-gozo
+region: mediterranean
+country_code: MT
+
+coordinates:
+  center: { lat: 36.0570, lng: 14.1880 }
+  radius_m: 200
+
+tier: 2
+tier_rationale:
+  en: |
+    Il Blue Hole di Gozo is a 15 m-deep coastal pool connected to the
+    open sea via a 26 m natural rock arch/tunnel — historically
+    accessed from the Dwejra Point cliff base beside the (now
+    collapsed 2017) Azure Window. Post-collapse the site remains
+    accessible from a re-routed shore-entry; the underwater arch
+    and open-sea exit are unchanged. Cavern-diving grade for the
+    tunnel passage with guide-led standard practice. Depth kept in
+    15-25 m recreational range on the standard route.
+
+display_name:
+  en: Scuba — Blue Hole Gozo
+  it: Immersione — Blue Hole Gozo
+  es: Buceo — Blue Hole Gozo
+  fr: Plongée — Blue Hole Gozo
+  de: Tauchen — Blue Hole Gozo
+
+description:
+  en: |
+    The Dwejra Point coastal pool + submerged arch. Iconic Gozo
+    cavern dive (post-2017 Azure Window collapse).
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Gozo Aquatic Sports Association Blue Hole Gozo documentation"
+    - "Malta Tourism Authority post-Azure Window guidance 2017"
+  notes: |
+    Sub-spot of scuba-spot-malta-gozo cluster. Tier 2: cavern +
+    arch passage, guide-led.

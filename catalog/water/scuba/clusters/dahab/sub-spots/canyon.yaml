@@ -1,0 +1,45 @@
+slug: scuba-spot-dahab-canyon
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-dahab
+parent_cluster: scuba-spot-dahab
+region: red-sea
+country_code: EG
+
+coordinates:
+  center: { lat: 28.5570, lng: 34.5130 }
+  radius_m: 300
+
+tier: 3
+tier_rationale:
+  en: |
+    Il Canyon is a narrow submerged rock crack near Dahab shore
+    dropping vertically from ~20 m at the entry to 54 m at the
+    bottom exit. Distinctive geology — a fault-plane cut through
+    the reef limestone with dramatic parallel-wall geometry.
+    Advanced-open-water baseline given depth + confined descent
+    profile; guide-lead by default. Shore-entry from vehicle-
+    accessible parking area on the coastal road.
+
+display_name:
+  en: Scuba — Canyon (Dahab)
+  it: Immersione — Canyon (Dahab)
+  es: Buceo — Canyon (Dahab)
+  fr: Plongée — Canyon (Dahab)
+  de: Tauchen — Canyon (Dahab)
+
+description:
+  en: |
+    The submerged Dahab rock-crack canyon dropping to 54 m.
+    Advanced-open-water dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "CDWS Egypt Dahab Canyon site briefing"
+    - "PADI Dahab Canyon dive documentation"
+  notes: |
+    Sub-spot of scuba-spot-dahab cluster. Tier 3: 54 m depth
+    canyon, advanced-open-water baseline.

@@ -1,0 +1,45 @@
+slug: scuba-spot-sipadan-barracuda-point
+spot_kind: sub-spot
+version: "1.0.0"
+category: water
+extends: scuba-spot-sipadan
+parent_cluster: scuba-spot-sipadan
+region: pacific
+country_code: MY
+
+coordinates:
+  center: { lat: 4.1170, lng: 118.6300 }
+  radius_m: 400
+
+tier: 3
+tier_rationale:
+  en: |
+    Barracuda Point is Sipadan's signature dive — a wall descending
+    from 15 m to 60 m+ on the SW perimeter where large chevron-
+    barracuda schools (Sphyraena qenie, 500+ individuals) form
+    tornado formations mid-water. Sustained current 1-2 kn on the
+    outer wall requires drift-diving discipline. Advanced-open-water
+    baseline; guide-lead by default under Sabah Wildlife Department
+    permit conditions. Cluster's flagship dive.
+
+display_name:
+  en: Scuba — Barracuda Point (Sipadan)
+  it: Immersione — Barracuda Point
+  es: Buceo — Barracuda Point
+  fr: Plongée — Barracuda Point
+  de: Tauchen — Barracuda Point
+
+description:
+  en: |
+    The SW-Sipadan wall with barracuda-school tornado formations.
+    Advanced-open-water drift dive.
+
+meta:
+  maturity: provisional
+  reviewed_by: []
+  sources:
+    - "Sabah Wildlife Department Sipadan Barracuda Point documentation"
+    - "PADI Sipadan Barracuda Point site briefing"
+  notes: |
+    Sub-spot of scuba-spot-sipadan cluster. Tier 3: drift wall,
+    advanced-open-water baseline.
