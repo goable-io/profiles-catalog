@@ -27,7 +27,6 @@ export const MetricEnum = z.enum([
   "bathymetry_quality_multiplier",
   "swell_consistency",
   "storm_intensity",
-  // L1d additions
   "thermal_lift_index",
   "convective_cloud_base_m",
   "wind_shear_vertical",
@@ -38,7 +37,6 @@ export const MetricEnum = z.enum([
   "lightning_proximity_score",
   "precipitation_form",
   "wbgt_c",
-  // L1e additions
   "aqi_composite",
   "aqi_category",
   "tidal_current_speed_kn",
@@ -52,7 +50,6 @@ export const MetricEnum = z.enum([
   "storm_surge_proxy",
   "coastal_visibility_combined_m",
   "twilight_band",
-  // L1f additions
   "breaker_height_m",
   "breaker_type",
   "surf_quality_from_breaker",
@@ -62,6 +59,7 @@ export const MetricEnum = z.enum([
   "solar_azimuth_deg",
   "uv_dose_med",
   "swe_mm",
+  "soil_moisture_proxy",
 ])
 
 export type Metric = z.infer<typeof MetricEnum>

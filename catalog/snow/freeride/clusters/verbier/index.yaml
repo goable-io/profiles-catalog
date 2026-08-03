@@ -123,6 +123,12 @@ gates:
     reason_code: ACTIVE_HEAVY_SNOWFALL
     description: Active heavy snowfall during freeride sessions acutely loads slopes; consult SLF Valais West bulletin.
 
+  - metric: snow_visibility_m
+    condition: lt
+    value: 150
+    reason_code: BLOWING_SNOW_WHITEOUT
+    description: Wind-driven snow (spindrift or ground blizzard) reducing visibility below ~150 m causes whiteout and loss of horizon even when the air is otherwise clear, making route-finding and terrain reading unsafe.
+
 sustainability:
   carbon_neutral: false
   equipment_dependency: high

@@ -51,7 +51,7 @@ dimensions:
 
   - name: precipitation
     metric: precipitation_mm_h
-    weight: 0.25
+    weight: 0.15
     curve:
       - { x: 0,   s: 1.00 }
       - { x: 0.5, s: 0.75 }
@@ -104,6 +104,17 @@ dimensions:
       - { x: 2000, s: 0.60 }
       - { x: 4000, s: 1.00 }
       - { x: 6000, s: 0.85 }
+
+  - name: trail_traction
+    metric: soil_moisture_proxy
+    weight: 0.10
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.3,  s: 0.95 }
+      - { x: 0.5,  s: 0.80 }
+      - { x: 0.7,  s: 0.50 }
+      - { x: 0.85, s: 0.25 }
+      - { x: 1.0,  s: 0.10 }
 
 gates:
   - metric: precipitation_mm_h

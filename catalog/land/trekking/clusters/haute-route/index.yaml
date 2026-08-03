@@ -34,7 +34,7 @@ description:
 dimensions:
   - name: temperature
     metric: apparent_temp_c
-    weight: 0.25
+    weight: 0.15
     curve:
       - { x: -15, s: 0.05 }
       - { x: -5,  s: 0.40 }
@@ -93,6 +93,17 @@ dimensions:
       - { x: 7,  s: 0.80 }
       - { x: 10, s: 0.50 }
       - { x: 13, s: 0.20 }
+
+  - name: trail_traction
+    metric: soil_moisture_proxy
+    weight: 0.10
+    curve:
+      - { x: 0.0,  s: 1.00 }
+      - { x: 0.3,  s: 0.95 }
+      - { x: 0.5,  s: 0.80 }
+      - { x: 0.7,  s: 0.50 }
+      - { x: 0.85, s: 0.25 }
+      - { x: 1.0,  s: 0.10 }
 
 gates:
   - metric: visibility_km

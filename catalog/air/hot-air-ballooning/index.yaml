@@ -22,7 +22,7 @@ description:
 dimensions:
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.35
+    weight: 0.25
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 3,  s: 1.00 }
@@ -87,6 +87,16 @@ dimensions:
       - { x: 15,  s: 1.00 }
       - { x: 28,  s: 0.75 }
       - { x: 38,  s: 0.30 }
+
+  - name: air_density
+    metric: air_density_kg_m3
+    weight: 0.10
+    curve:
+      - { x: 0.95,  s: 0.55 }
+      - { x: 1.05,  s: 0.75 }
+      - { x: 1.15,  s: 0.92 }
+      - { x: 1.225, s: 1.00 }
+      - { x: 1.30,  s: 1.00 }
 
 gates:
   - metric: wind_speed_kn

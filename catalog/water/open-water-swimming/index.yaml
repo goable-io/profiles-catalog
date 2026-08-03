@@ -121,6 +121,12 @@ gates:
     reason_code: ALGAL_BLOOM
     description: High cyanobacteria bloom indicator (>0.7) creates skin, GI, and respiratory exposure risk during swimming.
 
+  - metric: rip_current_proxy
+    condition: gt
+    value: 0.6
+    reason_code: RIP_CURRENT_HAZARD
+    description: A rip-current proxy above 0.6 indicates channelised offshore flow strong enough to overpower a swimmer with no flotation, a drowning hazard.
+
 sustainability:
   carbon_neutral: true
   equipment_dependency: low

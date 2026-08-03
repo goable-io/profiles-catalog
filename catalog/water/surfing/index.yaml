@@ -108,6 +108,12 @@ gates:
     reason_code: LOW_VISIBILITY
     description: Visibility below 1 km is unsafe.
 
+  - metric: rip_current_proxy
+    condition: gt
+    value: 0.75
+    reason_code: RIP_CURRENT_HAZARD
+    description: A rip-current proxy above 0.75 indicates strong channelised offshore flow from oblique groundswell over a sand or mixed bottom, a drowning hazard when entering or exiting the water.
+
 sustainability:
   carbon_neutral: true
   equipment_dependency: medium
