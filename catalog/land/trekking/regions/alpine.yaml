@@ -147,7 +147,6 @@ meta:
     raised from 0.15 to 0.20 (route-finding criticality); wind gate
     lowered from 50kn to 50kn but with steeper degradation curve; added
     explicit ALPINE_WHITEOUT gate with stricter visibility floor.
-    Afternoon-thunderstorm bias is the most-requested L1d enhancement:
-    once lightning_proximity_score is wired in, this profile gains a
-    time-of-day-aware penalty rising sharply post-13:00 local during
-    June-August.
+    Afternoon thunderstorms are a known limitation: convective storms
+    build sharply after 13:00 local during June-August, which the
+    current scoring does not yet weight by time of day.

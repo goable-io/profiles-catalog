@@ -137,7 +137,7 @@ gates:
     condition: gt
     value: 0.7
     reason_code: POOR_UNDERWATER_VISIBILITY_ADRIATIC
-    description: Elevated turbidity from spring/summer plankton bloom (April-June typical) or Po plume destroys diving quality on both coasts. (v0.1.0 used wrong scale value 22 → corrected to 0.7 on 0-1 turbidity_proxy scale.)
+    description: Elevated turbidity from spring/summer plankton bloom (April-June typical) or Po plume destroys diving quality on both coasts.
 
   - metric: tidal_current_speed_kn
     condition: gt
@@ -173,11 +173,3 @@ meta:
   notes: |
     Spot overrides vs scuba-adriatic: matches regional baseline.
     22-week season (Adriatic-standard).
-
-    v0.2.0 — realigned to v2.0.0 scuba-adriatic structure: dimensions and
-    gates replaced verbatim with the regional variant. water_clarity is
-    now the top-weighted signal (0.28), surface_visibility demoted to a
-    minor gate-support role (0.04), and a current dimension (0.08,
-    tidal_current_speed_kn) was added for tidal-channel sensitivity.
-    The turbidity_proxy gate value is corrected from the wrong-scale
-    22 to 0.7 on the 0-1 scale matching the consumer engine output.

@@ -153,7 +153,7 @@ meta:
     - "ENSA (École nationale de ski et d'alpinisme) outdoor climbing weather criteria"
   maturity: provisional
   notes: |
-    v0.2.0 scores rockfall_risk_index as a low-weight (0.08) freeze-thaw
+    Scores rockfall_risk_index as a low-weight (0.08) freeze-thaw
     hazard dimension; consumers without a freeze-thaw history source drop
     it silently (below the missing-dimension alert threshold). Still to
     come: lightning_proximity (hard-gated for alpine multipitch),

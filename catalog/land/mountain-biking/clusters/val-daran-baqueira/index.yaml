@@ -148,8 +148,7 @@ meta:
     - "Val d'Aran enduro trail network / Rider Bike shuttle documentation"
     - "Trailforks Val d'Aran trail database"
   notes: |
-    Cluster inherits base mountain-biking scoring unchanged. Coordinates
-    (42.7°N/0.9°E) fall inside the mediterranean region bbox
-    (lat 28-48, lng -10 to 38) despite the Pyrenean alpine terrain, so
-    region is set to mediterranean per RegionEnum bbox rules rather than
-    alpine.
+    Cluster inherits base mountain-biking scoring unchanged. The
+    coordinates (42.7°N/0.9°E) fall within the catalog's mediterranean
+    climate region despite the Pyrenean alpine terrain, so the region is
+    set to mediterranean rather than alpine.

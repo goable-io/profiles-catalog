@@ -152,9 +152,9 @@ meta:
     - "Roldanillo paragliding operators consolidated dry-season SOP"
   notes: |
     Spot overrides vs paragliding-andes: sun weight raised to 0.30
-    (thermal-quality proxy until L1d ships — Roldanillo is the most
-    sun-correlated paragliding regime in the catalog); wind sweet-
-    spot kept wide (6-14kn matching regional baseline). Once L1d's
-    thermal_lift_index, convective_cloud_base_m, and xc_condition_score
-    are wired in, this venue's PWC-grade XC scoring decouples from
-    sun-altitude approximation.
+    (thermal-quality proxy until dedicated thermal metrics are available —
+    Roldanillo is the most sun-correlated paragliding regime in the
+    catalog); wind sweet-spot kept wide (6-14kn matching regional
+    baseline). Once thermal-lift, convective-cloud-base, and cross-country
+    condition metrics are wired in, this venue's PWC-grade XC scoring
+    decouples from the sun-altitude approximation.

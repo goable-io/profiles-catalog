@@ -150,7 +150,7 @@ meta:
     - "European Avalanche Warning Services (EAWS) bulletin standards"
   maturity: provisional
   notes: |
-    Profile uses currently-implemented MetricEnum. As of v0.2.0, snow
+    Profile uses currently-available condition metrics. Snow
     quality is now modelled directly: snow_surface_quality (powder/pack
     condition, 0.25 weight) and swe_mm (snow water equivalent, a
     base-depth proxy, 0.10 weight) join the five atmospheric dimensions,
@@ -158,7 +158,7 @@ meta:
     than swe_mm since moment-to-moment surface quality matters more for
     ski-touring turns than accumulated base depth. Future work:
     snowpack_stability_class and snow_density_estimate_kg_m3 as
-    additional gates/dimensions. Once L1e ships, will add
+    additional gates/dimensions. Planned additions include
     freezing_level_m and aqi_composite. Avalanche stability proxy will
     provide an advisory tier, NEVER replacing professional avalanche
     bulletins.

@@ -175,9 +175,3 @@ meta:
     the Coral Triangle Pacific-fringe sector. 44-week season with
     year-round warm regime, cyclone periphery events low frequency
     (Sabah sits south of typhoon belt).
-
-    v0.2.0 realigned to v2.0.0 scuba-pacific structure — water_clarity
-    (0.28) replaces the old atmospheric-visibility top signal; current
-    dimension (0.10, tidal_current_speed_kn) added; surface_visibility
-    demoted to 0.05 (surface navigation only). turbidity_proxy gate
-    corrected to the 0.7 index scale.

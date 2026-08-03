@@ -142,7 +142,4 @@ meta:
     - "ACSM position stand: exertional heat illness during training and competition (2007)"
   notes: |
     Heat-stress weighting is heavier than hiking/trekking because aerobic
-    intensity drives metabolic heat production 4-8x resting. L1d will
-    refine via wbgt_c (replaces apparent_temp_c at high humidity) and
-    lightning_proximity_score (hard-gated above ridge). L1e will add
-    soil_moisture (trail muddiness) and aqi_composite for wildfire smoke.
+    intensity drives metabolic heat production 4-8x resting.

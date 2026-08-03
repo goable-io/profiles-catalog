@@ -25,7 +25,7 @@ description:
     Monsoon regimes partition seasons — SW monsoon (May-Oct) drives
     Maldive W-side clarity; NE monsoon (Nov-Apr) drives E-side.
 
-# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder pending diver review.
+# Placeholder curves pending diver review.
 
 dimensions:
   - name: water_clarity
@@ -179,7 +179,7 @@ meta:
     - "PADI Indian-Ocean regional dive condition handbook — TODO diver review"
     - "Coral Triangle Initiative site-monitoring reports 2018-2023"
   notes: |
-    v0.2.0 realigned — water_clarity 0.28 top signal. Current dimension
+    water_clarity 0.28 top signal. Current dimension
     0.10 (Maldive tidal channels + Komodo tidal races make current
     real). Monsoon deluge + high wind + surface visibility gates
     preserved.

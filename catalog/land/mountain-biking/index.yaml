@@ -145,7 +145,4 @@ meta:
     - "Marion & Wimpey 2007, environmental impact of mountain biking"
   notes: |
     Precipitation weighting is heavier than for trekking because wet-trail
-    damage is severe and irreversible on certain soils (peat, clay). L1d
-    will add soil_moisture as a direct trail-state metric. L1e additions:
-    lightning_proximity_score for ridge exposure, freezing_level_m for
-    high-altitude tours.
+    damage is severe and irreversible on certain soils (peat, clay).

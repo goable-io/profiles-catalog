@@ -133,7 +133,7 @@ gates:
     condition: gt
     value: 0.7
     reason_code: POOR_UNDERWATER_VISIBILITY
-    description: Elevated turbidity (rainfall-runoff proxy, ocean-colour once wired) crashes underwater visibility to sub-2m — dive quality destroyed and navigation-with-buddy compromised.
+    description: Elevated turbidity (rainfall-runoff proxy) crashes underwater visibility to sub-2m — dive quality destroyed and navigation-with-buddy compromised.
 
   - metric: tidal_current_speed_kn
     condition: gt
@@ -179,19 +179,3 @@ meta:
     2-4°C year-round regardless of season, unlike ocean sites; the
     52-week season reflects year-round permit access (winter access
     weather-dependent on Þingvellir road conditions).
-
-    v0.2.0 realigned to v2.0.0 base scuba structure (no scuba-atlantic
-    regional variant exists, so base dimensions/gates copied directly)
-    — water_clarity (0.25) replaces the old atmospheric-visibility
-    top signal; current dimension (0.10, tidal_current_speed_kn)
-    added, though Silfra's fissure is a still-water freshwater site
-    with negligible current in practice; surface_visibility demoted
-    to 0.05. NEW turbidity_proxy and tidal_current_speed_kn gates
-    added from base — largely inert for Silfra given the glacial-
-    filtered meltwater's near-zero turbidity and lack of tidal flow,
-    but included for structural consistency with the base contract.
-    Silfra's real differentiator (100 m+ clarity from 30-100 year
-    lava-filtered glacial meltwater) is best expressed once
-    water_clarity_index is wired to a real clarity signal rather than
-    the rainfall-turbidity heuristic, which does not apply to this
-    tectonic-fissure site.

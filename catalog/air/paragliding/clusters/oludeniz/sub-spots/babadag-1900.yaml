@@ -48,5 +48,5 @@ meta:
   notes: |
     Sub-spot of paragliding-spot-oludeniz cluster. Tier 3: afternoon
     instability, higher altitude commitment, more frequent turbulence
-    events. Domain-expert review needed for L1d thermal_lift_index +
-    convective_cloud_base_m thresholds.
+    events. Domain-expert review needed for future thermal-lift and
+    convective-cloud-base thresholds.

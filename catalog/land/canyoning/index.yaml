@@ -153,8 +153,7 @@ meta:
   notes: |
     Precipitation has the single highest weight (0.35) and the tightest
     gate (2 mm/h) of any profile in the catalog — driven by the
-    asymmetric risk profile of flash floods. L1e will add upstream_
-    catchment_precip_24h as a dedicated metric (current curve uses
-    on-site instantaneous rate as a proxy). L1d additions: lightning_
-    proximity_score (hard-gate, slot canyons are death traps in
-    lightning storms).
+    asymmetric risk profile of flash floods. The current precipitation
+    curve uses the on-site instantaneous rate as a proxy for rainfall
+    across the upstream catchment. Lightning is a further serious
+    hazard — slot canyons are death traps in lightning storms.

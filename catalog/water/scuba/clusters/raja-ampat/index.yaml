@@ -181,10 +181,3 @@ meta:
     the Coral Triangle / West Papua sector. 40-week season; NW
     monsoon (Dec-Mar) brings choppier surface conditions and reduced
     visibility on exposed channel sites.
-
-    v0.2.0 realigned to v2.0.0 scuba-pacific structure — water_clarity
-    (0.28) replaces the old atmospheric-visibility top signal; current
-    dimension (0.10, tidal_current_speed_kn) added to reflect Dampier
-    Strait's tidally-driven channel currents; surface_visibility
-    demoted to 0.05 (surface navigation only). turbidity_proxy gate
-    corrected to the 0.7 index scale.

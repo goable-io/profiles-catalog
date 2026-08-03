@@ -25,7 +25,7 @@ description:
     on these drift-wall sites. Cyclone / typhoon season windows are
     basin-partitioned.
 
-# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder pending diver review.
+# Placeholder curves pending diver review.
 
 dimensions:
   - name: water_clarity
@@ -180,7 +180,7 @@ meta:
     - "PADI Pacific regional dive condition handbook — TODO diver review"
     - "NOAA CoralReefWatch Pacific bleaching thermal-stress bulletins"
   notes: |
-    v0.2.0 realigned to v2.0.0 base — water_clarity 0.28 top signal.
+    water_clarity 0.28 top signal.
     Current dimension 0.10 (Pacific drift walls at Palau + Cocos +
     Galápagos are current-driven quality zones). Water_temp curve
     extended into 14°C temperate range for California kelp fringe.

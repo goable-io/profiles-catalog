@@ -164,7 +164,7 @@ meta:
     to 0.25 (the loop's value IS the view; whiteout removes both
     safety and reason to be there); precipitation weight raised to 0.30
     (no shelter on the exposed ridge); explicit gates for ridge-
-    exposure scenarios. Future L1d/L1e: lightning_proximity will be
-    HARD-GATED for this profile given exposure and lack of escape;
-    aqi_composite advisory during wildfire smoke episodes
-    (increasingly common in Alpine summers post-2022).
+    exposure scenarios. Lightning is an especially serious hazard on
+    this exposed loop given the lack of escape terrain, and wildfire
+    smoke episodes have become increasingly common in Alpine summers
+    since 2022.

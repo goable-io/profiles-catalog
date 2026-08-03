@@ -184,10 +184,3 @@ meta:
     varies sharply between the warm/wet season (Jan-May, 24-27°C)
     and the cool/garúa season (Jun-Dec, 18-22°C, stronger Cromwell
     upwelling at Darwin/Wolf).
-
-    v0.2.0 realigned to v2.0.0 scuba-pacific structure — water_clarity
-    (0.28) replaces the old atmospheric-visibility top signal; current
-    dimension (0.10, tidal_current_speed_kn) added, directly relevant
-    to Darwin/Wolf's strong-current pelagic drift sites; surface_visibility
-    demoted to 0.05 (surface navigation only). turbidity_proxy gate
-    corrected to the 0.7 index scale.

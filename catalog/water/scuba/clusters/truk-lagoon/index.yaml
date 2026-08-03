@@ -181,11 +181,3 @@ meta:
     supporting a longer 48-week season than open-reef Pacific sites.
     Typhoon season (Jun-Nov) is a reduced-frequency risk given the
     lagoon's partial shelter from Weno island.
-
-    v0.2.0 realigned to v2.0.0 scuba-pacific structure — water_clarity
-    (0.28) replaces the old atmospheric-visibility top signal; current
-    dimension (0.10, tidal_current_speed_kn) added, though the
-    sheltered lagoon typically keeps current well below the drift-
-    management threshold; surface_visibility demoted to 0.05 (surface
-    navigation only). turbidity_proxy gate corrected to the 0.7 index
-    scale.

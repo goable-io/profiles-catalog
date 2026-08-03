@@ -20,7 +20,8 @@ description:
     valley-wind dynamics tighten the wind-speed sweet spot, and gust-
     factor tolerance is lower because alpine convergence lines create
     sharp wind transitions on ridges. Cross-country potential scoring
-    benefits significantly from convective indices, which L1d will add.
+    benefits significantly from convective indices, which future thermal
+    metrics will add.
 
 dimensions:
   - name: wind_speed

@@ -153,9 +153,9 @@ meta:
   notes: |
     Spot overrides vs paragliding-himalayas: extended wind sweet-spot
     (6-12kn) reflecting valley-flow consistency; sun weighting raised
-    to 0.20 (thermal-quality proxy until L1d ships); same 24-kn wind
-    gate as regional baseline. The Dhauladhar ridge provides the
-    most consistent post-monsoon thermal-streeting regime in the
-    Indian Himalaya — once L1d's thermal_lift_index and
-    convective_cloud_base_m are wired in, this site's PWC-grade XC
+    to 0.20 (thermal-quality proxy until dedicated thermal metrics are
+    available); same 24-kn wind gate as regional baseline. The Dhauladhar
+    ridge provides the most consistent post-monsoon thermal-streeting
+    regime in the Indian Himalaya — once thermal-lift and
+    convective-cloud-base metrics are wired in, this site's PWC-grade XC
     profile becomes scoring-grade.

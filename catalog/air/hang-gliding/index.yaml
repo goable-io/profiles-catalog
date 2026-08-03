@@ -15,13 +15,13 @@ description:
     thanks to the rigid wing's higher penetration and stability. Cross-
     country potential is highest when thermal activity is strong and
     cloud bases are elevated; minimum wind for safe ridge soaring is
-    slightly higher than paragliding. This profile encodes baseline
-    physics with current MetricEnum; L1d additions will refine.
+    slightly higher than paragliding. This profile scores the baseline
+    weather physics; additional thermal metrics will refine scoring further.
 
 dimensions:
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.30
+    weight: 0.26
     curve:
       - { x: 0,  s: 0.30 }
       - { x: 4,  s: 0.70 }
@@ -34,7 +34,7 @@ dimensions:
 
   - name: gust_factor
     metric: wind_gust_factor
-    weight: 0.20
+    weight: 0.18
     curve:
       - { x: 1.0, s: 1.00 }
       - { x: 1.3, s: 0.90 }
@@ -44,7 +44,7 @@ dimensions:
 
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.15
+    weight: 0.13
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 10, s: 0.55 }
@@ -53,7 +53,7 @@ dimensions:
 
   - name: visibility
     metric: visibility_km
-    weight: 0.15
+    weight: 0.13
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 2,  s: 0.30 }
@@ -62,7 +62,7 @@ dimensions:
 
   - name: precipitation
     metric: precipitation_mm_h
-    weight: 0.10
+    weight: 0.09
     curve:
       - { x: 0,   s: 1.00 }
       - { x: 0.2, s: 0.55 }
@@ -71,7 +71,7 @@ dimensions:
 
   - name: temperature
     metric: apparent_temp_c
-    weight: 0.10
+    weight: 0.09
     curve:
       - { x: -10, s: 0.20 }
       - { x: 0,   s: 0.65 }
@@ -79,6 +79,17 @@ dimensions:
       - { x: 28,  s: 1.00 }
       - { x: 38,  s: 0.60 }
       - { x: 45,  s: 0.15 }
+
+  - name: xc_condition
+    metric: xc_condition_score
+    weight: 0.12
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.50 }
+      - { x: 0.6, s: 0.75 }
+      - { x: 0.8, s: 0.92 }
+      - { x: 1.0, s: 1.00 }
 
 gates:
   - metric: wind_speed_kn
@@ -139,8 +150,22 @@ meta:
     - "USHPA (US Hang Gliding & Paragliding Association) site rating standards (reference baseline)"
   maturity: provisional
   notes: |
-    Profile uses currently-implemented MetricEnum. L1d extension will add
-    thermal_lift_index, convective_cloud_base_m, and xc_condition_score
-    for cross-country scoring. L1e adds twilight_band for evening glass-off
-    sessions and aqi_composite for wildfire-affected regions (increasingly
-    relevant in southern EU summers).
+    The xc_condition dimension (xc_condition_score, weight 0.12) is a scored
+    quality signal: a 0..1 cross-country soaring index (thermal lift +
+    convective cloud base + low vertical wind shear + moderate cloud cover).
+    Cross-country potential is the core quality signal for hang-gliding
+    flight, so it earns a meaningful weight, but wind and safety (gust,
+    visibility, precipitation) still lead. The suitability curve is
+    monotonic-increasing (0.0→0.00, 0.2→0.20, 0.4→0.50, 0.6→0.75, 0.8→0.92,
+    1.0→1.00): higher = better cross-country day. Its inputs (boundary layer
+    height, shortwave radiation, 900hPa wind, dewpoint, cloud cover) are
+    reliably available, so the metric is well populated. Adding this
+    dimension rebalanced the pre-existing weights proportionally (each scaled
+    by 0.88 so the set still sums to 1.0): wind_speed 0.30→0.26, gust_factor
+    0.20→0.18, sun 0.15→0.13, visibility 0.15→0.13, precipitation
+    0.10→0.09, temperature 0.10→0.09, with xc_condition taking the remaining
+    0.12; relative proportions are preserved. Additional thermal metrics
+    (thermal lift, convective cloud base) remain available as finer-grained
+    future dimensions, along with a twilight-band signal for evening
+    glass-off sessions and an air-quality signal for wildfire-affected
+    regions (increasingly relevant in southern EU summers).

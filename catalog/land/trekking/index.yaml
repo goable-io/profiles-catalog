@@ -13,10 +13,7 @@ description:
     Trekking covers day hikes and multi-day backpacking on established
     trails. Conditions favour moderate temperatures, dry trails, low wind,
     and good visibility for navigation. Lightning risk and active heavy
-    precipitation are hard gates. Profile uses currently-implemented
-    MetricEnum; L1d (WBGT for heat stress, lightning_proximity, precip
-    forms) and L1e (soil_moisture, trail_surface, freezing_level for
-    high-altitude treks) will refine scoring once those layers ship.
+    precipitation are hard gates.
 
 dimensions:
   - name: temperature
@@ -125,10 +122,3 @@ meta:
     - "UIAA (International Climbing and Mountaineering Federation) trekking safety guidance"
     - "European hiking federation (ERA) trail rating standards"
   maturity: provisional
-  notes: |
-    Profile uses currently-implemented MetricEnum. L1d additions will
-    refine: wbgt_c for heat stress (replaces apparent_temp at high
-    humidity), lightning_proximity_score (hard-gated), precipitation_form
-    (distinguishes rain/sleet/snow impact). L1e additions: soil_moisture
-    for trail muddiness, trail_surface_state, freezing_level_m for
-    high-altitude routes, aqi_composite for wildfire-affected regions.

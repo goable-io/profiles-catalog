@@ -133,7 +133,7 @@ gates:
     condition: gt
     value: 0.7
     reason_code: POOR_UNDERWATER_VISIBILITY_MED
-    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply. (Previous v0.1.0 used the wrong scale value 25 — corrected to 0.7 on the 0-1 turbidity_proxy scale.)
+    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply.
 
   - metric: tidal_current_speed_kn
     condition: gt
@@ -176,21 +176,3 @@ meta:
     slightly farther south than Portofino and stays workable a few
     weeks longer into autumn). No AMP overlay but Pelagos cetacean-
     corridor briefing applies to boat operators.
-
-    v0.2.0 (breaking) — realigned to the v2.0.0 scuba-mediterranean
-    structure. This cluster is the origin of the real-diver feedback
-    that drove the v2.0.0 semantics reset: divers reported that the
-    old top-weighted `visibility` dimension (visibility_km, a surface
-    haze/navigation metric) was being scored as if it represented
-    underwater dive-quality visibility at Capo Berta, producing
-    verdicts that diverged sharply from what divers actually
-    experienced at depth on hazy-but-clear-underwater days (and vice
-    versa on clear-surface, sediment-turbid days). v2.0.0 corrects
-    this: water_clarity (water_clarity_index) is now the top-weighted
-    signal (0.30), current is added as its own dimension (0.08,
-    tidal_current_speed_kn), the old `visibility` dimension is renamed
-    surface_visibility and demoted to 0.04 (surface-navigation proxy
-    only), and the turbidity_proxy gate is corrected from the wrong
-    0-100 scale (25) to the correct 0-1 scale (0.7) matching the
-    consumer engine's actual output range. See scuba/index.yaml
-    meta.notes for the full v2.0.0 changelog.

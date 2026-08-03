@@ -152,7 +152,6 @@ meta:
     (lee-rotor amplification on continental-scale terrain); visibility
     floor raised from 2 to 4 km (mid-XC orographic cloud-in risk);
     typical season reduced to 16 weeks (post-monsoon Oct-Nov + pre-
-    monsoon Mar-May only). Density-altitude effects pending L1f's
-    `air_density_kg_m3` and `density_altitude_m` dimensions — these
-    are the missing physics that distinguish Himalayan flight from
-    Alpine flight.
+    monsoon Mar-May only). Density-altitude effects await future
+    air-density and density-altitude dimensions — these are the missing
+    physics that distinguish Himalayan flight from Alpine flight.

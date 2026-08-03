@@ -158,4 +158,3 @@ meta:
   notes: |
     Cluster tagged `region: caribbean` (Caribbean tropical trade-wind
     regime, distinct from the synoptic-driven northern-Atlantic regime).
-    `caribbean` was added to RegionEnum in schema v2.2.

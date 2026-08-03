@@ -18,7 +18,58 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.8.0
+## [Unreleased] — lands as 3.0.0
+
+A milestone release: the soaring-flight XC scoring addition below, plus a
+catalog-wide **public-notes cleanup**. No profile data (dimensions, weights,
+curves, gates, slugs, coordinates) changed in the cleanup — only human-facing
+prose — but the major bump signals the presentation reset for a public catalog.
+
+### Cleaned — removed internal development jargon from public notes (catalog-wide)
+
+This is an open, publicly consumed catalog (CC BY 4.0); its `description`,
+`meta.notes`, gate descriptions, and YAML comments carried internal
+development-stage artifacts that don't belong in a public artifact. Swept
+across ~90 files:
+
+- Layer/phase codenames (`L1d`/`L1e`/`L1f`, `Phase N`), internal spec/feature
+  tags (`F3`–`F9`, `§4.x`, "Multi-Source Truthfulness"), and schema internals
+  (`MetricEnum`, `RegionEnum`, `dimsSumToOne`, `schema vX.Y`) removed or
+  restated in plain, public language.
+- Internal version-migration + bug-fix history in scuba cluster/region prose
+  ("v0.2.0 (breaking) — realigned…", "used the wrong scale value 25 →
+  corrected to 0.7", "ocean-colour once wired") stripped from gate
+  descriptions and notes, keeping the user-facing hazard/physics content.
+- Substantive content — physics rationale, weight reasoning, sources, gate
+  logic — preserved throughout. French climbing grades (F4/F6a/F9a) correctly
+  left intact (public content, not internal tags).
+
+### Changed — soaring-flight XC condition now a scored dimension (paragliding + hang-gliding)
+
+**Trigger:** `xc_condition_score` — the backend scoring engine's 0..1
+cross-country soaring index (thermal lift + convective cloud base + low
+vertical wind shear + moderate cloud cover) — was COMPUTED on every request
+in `packages/scoring` (`summarize.ts`) but scored by NO profile. Its inputs
+(boundary_layer_height, shortwave_radiation, 900hPa wind, dewpoint,
+cloud_cover) are always fetched in production, so the metric is reliably
+populated, not dormant. Wired it into the two soaring-flight profiles as a
+real weighted dimension.
+
+- **NEW `xc_condition` (xc_condition_score) 0.12** on both **paragliding**
+  and **hang-gliding**. Monotonic-increasing suitability curve
+  (0.0→0.00, 0.2→0.20, 0.4→0.50, 0.6→0.75, 0.8→0.92, 1.0→1.00): higher =
+  better XC day. Meaningful but not dominant — wind and safety still lead.
+- **Rebalanced** each profile's pre-existing dimension weights
+  proportionally (×0.88) so the set still sums to 1.0 and relative
+  proportions are preserved: wind_speed 0.30→0.26, gust_factor 0.20→0.18,
+  sun 0.15→0.13, visibility 0.15→0.13, precipitation 0.10→0.09,
+  temperature 0.10→0.09.
+- **NOT** applied to hot-air-ballooning — ballooning is not cross-country
+  soaring; it already scores `convective_cloud_base_m` appropriately.
+- `meta.notes` updated on both profiles to document the dimension,
+  rationale, and rebalance. `maturity` unchanged (provisional).
+
+## [2.8.0]
 
 ### Changed — scuba scoring semantics reset (base + 6 region variants + 42 clusters)
 

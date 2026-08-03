@@ -21,7 +21,8 @@ description:
     precipitation tolerance (rapid weather deterioration in afternoon
     convective storms is the recurring fatality driver in the Western
     Alps and Dolomites in July-August). Rockfall risk after freeze-thaw
-    nights is a critical factor not yet captured by current MetricEnum.
+    nights is a critical factor that the current metrics do not yet
+    directly capture.
 
 dimensions:
   - name: temperature
@@ -156,5 +157,4 @@ meta:
     upper threshold to 38 kn (ridge exposure); temperature optimum
     shifted cooler (12°C peak vs 18°C valley reference) reflecting
     altitude. The freezing_proxy via water_temperature_c is a coarse
-    rockfall-after-freeze-thaw indicator; L1e adds direct rockfall_risk_
-    index for this.
+    rockfall-after-freeze-thaw indicator.

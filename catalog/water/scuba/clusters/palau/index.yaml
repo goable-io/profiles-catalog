@@ -181,10 +181,3 @@ meta:
     Spot overrides vs scuba-pacific: matches regional baseline for
     the Micronesian reef sector. 44-week season; NE monsoon (Nov-Mar)
     brings choppier surface conditions at exposed outer-reef sites.
-
-    v0.2.0 realigned to v2.0.0 scuba-pacific structure — water_clarity
-    (0.28) replaces the old atmospheric-visibility top signal; current
-    dimension (0.10, tidal_current_speed_kn) added, directly relevant
-    given Palau's reef-hook drift-wall sites; surface_visibility
-    demoted to 0.05 (surface navigation only). turbidity_proxy gate
-    corrected to the 0.7 index scale.
