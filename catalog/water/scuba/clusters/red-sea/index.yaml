@@ -186,16 +186,5 @@ meta:
     enforced for safari-route operations; visibility weight slightly
     reduced (0.25 vs base 0.30) because Red Sea baseline visibility is
     so consistently excellent that diminishing-returns saturation makes
-    other factors more discriminating. Cluster tagged `region: red-sea`
-    (added to RegionEnum in schema v2.2; previously tagged `indian` as
-    a least-bad fit). Season is 50 weeks/year — among the longest in
-    the catalog.
-
-    v0.2.0 realigned to v2.0.0 base structure: cluster now correctly
-    `extends: scuba-red-sea` (was incorrectly `extends: scuba` directly,
-    bypassing the region variant entirely). dimensions/gates copied
-    verbatim from scuba-red-sea v0.2.0 — water_clarity is now the top
-    signal (0.30), surface_visibility (renamed from visibility) demoted
-    to 0.05, current dimension added (0.08) for offshore seamount drift
-    (Brothers/Daedalus/Elphinstone), turbidity_proxy gate scale
-    corrected to the 0-1 index range (>0.7).
+    other factors more discriminating. Cluster tagged `region: red-sea`.
+    Season is 50 weeks/year — among the longest in the catalog.

@@ -156,7 +156,7 @@ meta:
     (same as region) with slightly steeper degradation 14kn → 22kn
     (Tournette lee-rotor sensitivity); gust factor curve and gate kept
     at alpine baseline (1.8x); season set to 32 weeks (Annecy operates
-    Mar-Oct routinely, with Nov-Feb on warm anticyclone days). Once
-    L1d's thermal_lift_index ships, the Tournette south face's
+    Mar-Oct routinely, with Nov-Feb on warm anticyclone days). Once a
+    thermal-lift metric is available, the Tournette south face's
     afternoon convergence becomes scoring-grade rather than the current
     sun-altitude approximation.

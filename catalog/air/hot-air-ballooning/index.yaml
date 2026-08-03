@@ -148,7 +148,7 @@ meta:
     gate (12 kn) of any air sport in the catalog because balloons have
     no propulsion to fight wind. The pre_dawn_window dimension via
     sun_altitude_deg captures the operational reality that most flights
-    occur in the calm 30-60min after sunrise (or before sunset). L1d
-    additions: density_altitude_m (already in MetricEnum, would replace
-    air_temp_density approximation) for high-elevation flights
+    occur in the calm 30-60min after sunrise (or before sunset). A future
+    density-altitude metric would replace the current air-temperature
+    density approximation for high-elevation flights
     (Cappadocia 1100m, Sossusvlei).

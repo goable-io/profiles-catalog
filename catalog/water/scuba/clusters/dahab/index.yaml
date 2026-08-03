@@ -176,10 +176,3 @@ meta:
     Spot overrides vs scuba-red-sea: matches regional baseline for
     the Gulf-of-Aqaba shore-entry sector. 44-week season. Blue Hole
     fatality-site status captured at sub-spot level.
-
-    v0.2.0 realigned to v2.0.0 base structure: water_clarity is now the
-    top signal (0.30 weight, replacing the old `visibility` top-weighted
-    dimension); surface_visibility (surface fog/haze) demoted to 0.05;
-    current dimension added (0.08); turbidity_proxy gate scale corrected
-    to the 0-1 index range. Dimensions/gates copied verbatim from
-    scuba-red-sea v0.2.0.

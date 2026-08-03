@@ -16,8 +16,8 @@ description:
     federations gate marathon swims below 16°C (hypothermia) and above
     31°C (heat stroke). Sea state, currents, and visibility for boat
     traffic complete the safety picture. Algal blooms and water quality
-    are emergent risk metrics that current MetricEnum approximates with
-    water_clarity_index and algal_bloom_risk.
+    are emerging risk factors, approximated here by water_clarity_index
+    and algal_bloom_risk.
 
 dimensions:
   - name: water_temp
@@ -154,6 +154,6 @@ meta:
     water_temperature_c carries the highest single weight (0.35) of any
     catalog profile — it dominates both safety and comfort. Two-sided
     gates (lower hypothermia + upper heat-stroke) are unique to open-
-    water swimming. L1e additions already used here: water_clarity_index
-    and algal_bloom_risk. Future refinement: rip_current_proxy as gate
-    for coastal events; tidal_current_speed_kn for tidal-zone swims.
+    water swimming. Uses water_clarity_index and algal_bloom_risk.
+    Future refinement: rip_current_proxy as gate for coastal events;
+    tidal_current_speed_kn for tidal-zone swims.

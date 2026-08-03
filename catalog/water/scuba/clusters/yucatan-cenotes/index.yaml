@@ -161,24 +161,3 @@ meta:
     0.08 (freshwater sinkhole = no surface wave); year-round 48-week
     season (no hurricane season closure for road-accessible cenotes
     outside of periphery). Freshwater sub-regime.
-
-    v0.2.0 realigned to v2.0.0 base structure, with cenote-specific
-    deviations preserved deliberately: the old `visibility` dimension
-    (weight 0.35) is renamed `surface_visibility` and demoted to 0.05
-    (it measures surface fog/haze at the cenote mouth, not underwater
-    clarity — the v0.1.0 weighting conflated the two). `water_clarity`
-    is promoted to the top signal at 0.40 (higher than the 0.30 used
-    in reef-diving region variants) because cenote visibility swings
-    dramatically with halocline disturbance and recent-rain turbidity,
-    making it an even more dominant quality factor here than on open
-    reef. A `current` dimension is added at a deliberately minimal
-    0.05 weight with the region-variant curve, reflecting that cenotes
-    are enclosed freshwater sinkholes with near-zero ambient current —
-    present for schema consistency, not because it discriminates
-    quality at these sites. `wave` (0.08) and the freshwater-tuned
-    `water_temp` curve (24-28°C sweet spot vs 27°C reef) are unchanged
-    cenote-specific overrides. A `turbidity_proxy` gate (>0.7 on the
-    0-1 index) is added, replacing the ambiguous 25 mm/h precipitation
-    proxy as the underwater-visibility gate; the precipitation gate
-    is retained separately as the surface-runoff/access trigger.
-    Weights sum to 1.000.

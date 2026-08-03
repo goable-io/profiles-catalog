@@ -132,7 +132,7 @@ gates:
     condition: gt
     value: 0.7
     reason_code: POOR_UNDERWATER_VISIBILITY_MED
-    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply. (Previous v0.1.0 used the wrong scale value 25 — corrected to 0.7 on the 0-1 turbidity_proxy scale.)
+    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply.
 
   - metric: tidal_current_speed_kn
     condition: gt
@@ -173,14 +173,3 @@ meta:
     Spot overrides vs scuba-mediterranean: 34-week season reflects
     year-round African-climate diving feasibility. Turtle-nesting
     seasonal closures at Zone A managed by AMP outside this profile.
-
-    v0.2.0 — realigned dimensions + gates to the scuba-mediterranean
-    v2.0.0 restructure: water_clarity is now the top-weighted signal
-    (0.30), a new current dimension was added (0.08), surface_visibility
-    (renamed from visibility) was demoted to a minor gate-adjacent
-    signal (0.04), and the turbidity_proxy gate scale was corrected
-    from the wrong-scale value 25 to 0.7 on the 0-1 scale. The
-    previous cluster-specific warm-shifted water_temp curve was
-    dropped in favor of the region-variant curve (verbatim per the
-    v2.0.0 realignment); Pelagie's warmer climate is still reflected
-    via the 34-week season length.

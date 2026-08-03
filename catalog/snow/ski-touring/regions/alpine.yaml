@@ -163,6 +163,6 @@ meta:
     descents); precipitation gate tightened from 10 to 8 mm/h (acute
     avalanche loading). Critical caveat in description: avalanche safety
     is OUT OF SCOPE for this engine; operators must consult national
-    bulletins. v0.2.0: snow_surface_quality (0.25) and swe_mm (0.10)
+    bulletins. snow_surface_quality (0.25) and swe_mm (0.10)
     added, atmospheric weights rescaled by 0.65 to preserve their
     relative split.

@@ -148,7 +148,7 @@ meta:
   notes: |
     Cluster inherits trekking base scoring unmodified. Region field
     omitted — the route crosses France and Spain, low meseta plateau,
-    and Galician hill country, none of which fits a single RegionEnum
-    cleanly. 40-week near-year-round season reflects the low-altitude,
+    and Galician hill country, none of which fits a single climate
+    region cleanly. 40-week near-year-round season reflects the low-altitude,
     village-supported nature of the pilgrimage relative to Nordic and
     Alpine wilderness clusters.

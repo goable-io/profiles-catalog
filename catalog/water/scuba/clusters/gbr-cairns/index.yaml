@@ -179,9 +179,3 @@ meta:
     Spot overrides vs scuba-pacific: matches regional baseline for
     the tropical-Pacific GBR sector. 40-week season with cyclone
     closure risk (Nov-Apr peak).
-
-    v0.2.0 realigned to v2.0.0 scuba-pacific structure — water_clarity
-    (0.28) replaces the old atmospheric-visibility top signal; current
-    dimension (0.10, tidal_current_speed_kn) added; surface_visibility
-    demoted to 0.05 (surface navigation only). turbidity_proxy gate
-    corrected to the 0.7 index scale.

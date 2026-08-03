@@ -143,11 +143,12 @@ meta:
     - "Federation Internationale de Ski (FIS) freeride safety guidance"
   maturity: provisional
   notes: |
-    Profile uses currently-implemented MetricEnum. As of v0.2.0, snow
+    Profile uses currently-available condition metrics. Snow
     quality is now modelled directly: snow_surface_quality (powder/pack
     condition, 0.30 weight — the dominant factor, since fresh powder is
     freeride's core value proposition) and swe_mm (snow water equivalent,
     a base-depth proxy, 0.15 weight) join the five atmospheric dimensions.
     Future work: snow_density_estimate_kg_m3 (favours <100 kg/m³) and
     snowpack_stability_class advisory once surfaced as gates rather than
-    weighted dimensions. L1e adds aqi_composite and freezing_level_m.
+    weighted dimensions. Planned additions include aqi_composite and
+    freezing_level_m.

@@ -26,7 +26,7 @@ description:
     world-class but under active bleaching pressure since the 2015
     basin-wide event.
 
-# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder pending diver review.
+# Placeholder curves pending diver review.
 
 dimensions:
   - name: water_clarity
@@ -179,7 +179,7 @@ meta:
     - "PADI Red Sea regional dive condition handbook — TODO diver review"
     - "Kleinhaus et al. 2020 Red Sea coral thermal-tolerance research"
   notes: |
-    v0.2.0 realigned to v2.0.0 base — water_clarity 0.30 top signal.
+    water_clarity 0.30 top signal.
     Etesian wind gate 25 kn + shamal surface-visibility 1.0 km +
     wadi flash-flood 5 mm/h preserved. Current dimension 0.08 (offshore
     seamount drift is relevant but not dominant).

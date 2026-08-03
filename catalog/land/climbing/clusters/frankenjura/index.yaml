@@ -153,6 +153,6 @@ meta:
   notes: |
     Cluster overrides vs global climbing: visibility weight raised to 0.14
     given the dense, forested multi-crag navigation between sectors; region
-    field omitted since Franconian Jura does not cleanly map to any
-    RegionEnum value; season set to 28 weeks (April-October primary
+    field omitted since the Franconian Jura does not cleanly map to any
+    single climate region; season set to 28 weeks (April-October primary
     window).

@@ -140,6 +140,4 @@ meta:
     Temperature gets the highest single weight because friction-on-rock
     is dominated by skin and rubber temperature, not by traditional
     comfort metrics. The humidity_proxy via water_temperature_c is a
-    crude stand-in: L1e additions will introduce a direct relative_
-    humidity_pct metric. L1e will also add rockfall_risk_index for
-    after-rain freeze-thaw cycles in alpine bouldering areas.
+    crude stand-in for a direct humidity measurement.

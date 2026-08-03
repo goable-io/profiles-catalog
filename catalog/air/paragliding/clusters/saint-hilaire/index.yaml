@@ -157,6 +157,6 @@ meta:
     closely (Saint-Hilaire is the historical reference site for the
     alpine variant). Season set to 36 weeks (Saint-Hilaire is unusually
     long-season due to year-round school operations + south-facing
-    plateau-edge orientation favourable in winter anticyclone). Once
-    L1d's thermal_lift_index ships, the Grésivaudan-Chartreuse
+    plateau-edge orientation favourable in winter anticyclone). Once a
+    thermal-lift metric is available, the Grésivaudan-Chartreuse
     convergence couples cleanly to scoring.

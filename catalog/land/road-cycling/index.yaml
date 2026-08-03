@@ -146,6 +146,4 @@ meta:
   notes: |
     Wind weighting is higher than trail running because road speeds (30-70
     km/h on descents) interact dangerously with crosswind, and because
-    sustained headwinds gate long routes. L1d additions: lightning_
-    proximity_score (hard-gate on exposed cols), wbgt_c for sustained
-    heat. L1e: aqi_composite (urban routes and wildfire seasons).
+    sustained headwinds gate long routes.

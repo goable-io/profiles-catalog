@@ -151,6 +151,6 @@ meta:
     gust factor gate tightened from 2.0 to 1.8 (alpine boundary layer
     more turbulent); visibility gate raised from 2 to 3 km (terrain
     awareness on glides); precipitation gate tightened (alpine downdraft
-    risk). Once L1d ships, thermal_lift_index becomes the highest-weight
+    risk). Once available, a thermal-lift metric becomes the highest-weight
     quality dimension for alpine paragliding (currently approximated by
-    sun_altitude_deg only).
+    sun altitude only).

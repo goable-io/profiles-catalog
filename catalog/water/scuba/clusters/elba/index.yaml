@@ -133,7 +133,7 @@ gates:
     condition: gt
     value: 0.7
     reason_code: POOR_UNDERWATER_VISIBILITY_MED
-    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply. (Previous v0.1.0 used the wrong scale value 25 — corrected to 0.7 on the 0-1 turbidity_proxy scale.)
+    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply.
 
   - metric: tidal_current_speed_kn
     condition: gt
@@ -174,14 +174,3 @@ meta:
     Spot overrides vs scuba-mediterranean: matches regional baseline
     for the central-Tirreno sector. Season 30 weeks (April-October
     core; Nov-March mostly closed by weather + operator seasonality).
-
-    v0.2.0 (breaking) — realigned to the v2.0.0 scuba-mediterranean
-    structure. water_clarity is now the top-weighted signal (0.30,
-    water_clarity_index metric), current added as a dimension (0.08,
-    tidal_current_speed_kn), surface_visibility (formerly `visibility`,
-    now the surface-navigation visibility_km proxy) demoted to 0.04,
-    and the turbidity_proxy gate corrected from the wrong 0-100 scale
-    (25) to the correct 0-1 scale (0.7). Driven by Diano Marina
-    real-diver feedback that surface haze/sirocco visibility was being
-    conflated with underwater dive-quality visibility. See
-    scuba/index.yaml meta.notes for the full v2.0.0 changelog.

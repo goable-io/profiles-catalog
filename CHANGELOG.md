@@ -18,7 +18,31 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.9.0
+## [Unreleased] — lands as 3.0.0
+
+A milestone release: the soaring-flight XC scoring addition below, plus a
+catalog-wide **public-notes cleanup**. No profile data (dimensions, weights,
+curves, gates, slugs, coordinates) changed in the cleanup — only human-facing
+prose — but the major bump signals the presentation reset for a public catalog.
+
+### Cleaned — removed internal development jargon from public notes (catalog-wide)
+
+This is an open, publicly consumed catalog (CC BY 4.0); its `description`,
+`meta.notes`, gate descriptions, and YAML comments carried internal
+development-stage artifacts that don't belong in a public artifact. Swept
+across ~90 files:
+
+- Layer/phase codenames (`L1d`/`L1e`/`L1f`, `Phase N`), internal spec/feature
+  tags (`F3`–`F9`, `§4.x`, "Multi-Source Truthfulness"), and schema internals
+  (`MetricEnum`, `RegionEnum`, `dimsSumToOne`, `schema vX.Y`) removed or
+  restated in plain, public language.
+- Internal version-migration + bug-fix history in scuba cluster/region prose
+  ("v0.2.0 (breaking) — realigned…", "used the wrong scale value 25 →
+  corrected to 0.7", "ocean-colour once wired") stripped from gate
+  descriptions and notes, keeping the user-facing hazard/physics content.
+- Substantive content — physics rationale, weight reasoning, sources, gate
+  logic — preserved throughout. French climbing grades (F4/F6a/F9a) correctly
+  left intact (public content, not internal tags).
 
 ### Changed — soaring-flight XC condition now a scored dimension (paragliding + hang-gliding)
 

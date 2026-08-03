@@ -21,27 +21,27 @@ description:
     relevant to surface navigation to and from the site but are minor
     quality signals for the dive itself.
 
-# ─── DIMENSION SEMANTICS RESET (v2.0.0) ─────────────────────────────────
-#   In v1.x the top-weight dimension was `visibility` on metric
+# ─── DIMENSION SEMANTICS ────────────────────────────────────────────────
+#   Earlier versions gave the top weight to `visibility` on metric
 #   `visibility_km` — but that metric is atmospheric/sky visibility
-#   above the water, NOT what a diver experiences underwater. Real diver
-#   feedback (Diano Marina, Liguria di Ponente) surfaced the mismatch.
+#   above the water, NOT what a diver experiences underwater. Diver
+#   feedback from Diano Marina (Liguria di Ponente) highlighted the
+#   mismatch.
 #
-#   In v2.0.0 the top signal is `water_clarity` on metric
-#   `water_clarity_index` (Kd490 + turbidity + algal-bloom + depth
-#   derivation in the consumer scoring engine). `surface_visibility` is
-#   still present as a minor factor for boat navigation + surface
-#   signalling but is demoted from weight 0.30 to weight 0.05.
+#   The top signal is now `water_clarity` on metric
+#   `water_clarity_index` (derived from Kd490, turbidity, algal-bloom
+#   and depth). `surface_visibility` remains as a minor factor for boat
+#   navigation and surface signalling but is weighted only 0.05
+#   (down from 0.30).
 #
-#   A new `current` dimension on `tidal_current_speed_kn` and two new
-#   gates (`turbidity_proxy` for underwater visibility crashes and
-#   `tidal_current_speed_kn` for drift-management safety) round out the
+#   A `current` dimension on `tidal_current_speed_kn` and two gates
+#   (`turbidity_proxy` for underwater-visibility crashes and
+#   `tidal_current_speed_kn` for drift-management safety) complete the
 #   diver-relevant physics.
 #
-#   Weights + curves + gate thresholds in this file are PLACEHOLDERS
-#   pending validation by a certified diver reviewer. The structural
-#   shape is what changed in v2.0.0; the numeric calibration is a
-#   separate follow-on session.
+#   Weights, curves and gate thresholds here are provisional pending
+#   validation by a certified diver reviewer. The structural shape is
+#   what changed; the numeric calibration is still to be finalised.
 # ────────────────────────────────────────────────────────────────────────
 
 dimensions:
@@ -150,7 +150,7 @@ gates:
     condition: gt
     value: 0.7
     reason_code: POOR_UNDERWATER_VISIBILITY
-    description: Elevated turbidity (rainfall-runoff proxy, ocean-colour once wired) crashes underwater visibility to sub-2m — dive quality destroyed and navigation-with-buddy compromised.
+    description: Elevated turbidity (rainfall-runoff proxy) crashes underwater visibility to sub-2m — dive quality destroyed and navigation-with-buddy compromised.
 
   - metric: tidal_current_speed_kn
     condition: gt
@@ -169,7 +169,7 @@ sustainability:
     wetsuit, fins, mask) but amortised over 10-15 years. Dive sites are fragile
     ecosystems — carrying capacity sensitivity is low per session but cumulative
     stress from high visitor volume is a documented concern (coral bleaching,
-    sediment disturbance). Phase 2 will add MPA proximity flagging.
+    sediment disturbance).
 
 verdict_buckets:
   unsafe: 0
@@ -187,40 +187,28 @@ meta:
     - "CMAS + SSI recreational-diving safety thresholds (current, thermal) — TODO diver review"
     - "Rouabah et al. 2022, coastal diving site assessment, Mediterranean"
   notes: |
-    v2.0.0 (breaking) — restructured scoring semantics based on real
-    diver feedback from Diano Marina, Liguria di Ponente.
+    The profile scores dive quality primarily on underwater clarity
+    (`water_clarity`, the top-weight signal — what the diver actually
+    sees at depth, driven by turbidity, algal bloom and depth context),
+    wave height for safe entry/exit, and water temperature for thermal
+    safety. A `current` dimension penalises strong tidal current, since
+    drift management becomes unsafe past ~1.5 kn for recreational
+    divers. `surface_visibility` (atmospheric sky visibility) is a minor
+    signal, relevant only to surface navigation and signalling. Two
+    safety gates back this up: `turbidity_proxy > 0.7`
+    (POOR_UNDERWATER_VISIBILITY) and `tidal_current_speed_kn > 2.5`
+    (STRONG_CURRENT_UNSAFE).
 
-    Changes vs v1.x:
-    - `visibility` (0.30 weight, metric visibility_km) — the ATMOSPHERIC
-      visibility above the water — is renamed `surface_visibility` and
-      demoted to 0.05. It remains relevant only for surface navigation
-      + signalling.
-    - NEW `water_clarity` (0.25 weight, metric water_clarity_index) —
-      the TRUE underwater-visibility signal driven by turbidity + algal
-      bloom + depth-context in the consumer scoring engine. Now the
-      top-weight dimension.
-    - NEW `current` (0.10 weight, metric tidal_current_speed_kn) — a
-      penalty on strong tidal current, since drift management becomes
-      unsafe past ~1.5 kn for recreational divers.
-    - NEW gate `turbidity_proxy > 0.7` → POOR_UNDERWATER_VISIBILITY.
-    - NEW gate `tidal_current_speed_kn > 2.5` → STRONG_CURRENT_UNSAFE.
-    - Existing `visibility_km < 0.5` gate reason_code renamed to
-      POOR_SURFACE_VISIBILITY for clarity.
-    - Wave weight nudged 0.25 → 0.22. Water_temp 0.20 → 0.18. Wind_speed
-      0.10 → 0.08. Air_temp 0.10 → 0.07. Sun unchanged at 0.05.
-
-    HONEST CAVEATS (do not treat as final calibration):
-    - `turbidity_proxy` today is a rainfall-72h heuristic in the consumer
-      engine, not ocean-colour. It's a legitimate signal but weak — a
-      real fix requires CMEMS Kd490 + SPM (follow-on task on provider
-      side).
-    - `tidal_current_speed_kn` today reflects TIDAL current only, not
-      surface currents. Also follow-on on provider side (CMEMS surface
-      currents u/v).
-    - All curves + weights + gate thresholds are PLACEHOLDER pending
-      certified-diver validation in a separate calibration session.
-      They preserve monotonic sensibility; the numeric values will move.
-    - This structural change ripples to the 6 scuba region variants and
-      37 clusters — the same v2.0.0 treatment is applied catalog-wide
-      in this PR so scoring at real coordinates (e.g. Diano Marina
-      43.9085/8.0825) actually reflects the fix.
+    Current limitations (not final calibration):
+    - `turbidity_proxy` is currently derived from recent (72h) rainfall
+      rather than ocean-colour data. It is a legitimate but weak signal;
+      a fuller implementation would use satellite ocean-colour
+      measurements (Kd490 and suspended particulate matter).
+    - `tidal_current_speed_kn` currently reflects tidal current only,
+      not wind-driven surface currents.
+    - All curves, weights and gate thresholds are provisional pending
+      certified-diver validation. They preserve monotonic sensibility;
+      the numeric values will move.
+    - The same structure is applied across the scuba region variants and
+      clusters so scoring at real coordinates (e.g. Diano Marina
+      43.9085/8.0825) reflects it consistently.

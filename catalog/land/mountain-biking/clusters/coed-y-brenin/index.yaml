@@ -155,7 +155,7 @@ meta:
     - "MBR (Mountain Bike Rider) Coed y Brenin trail guides"
   notes: |
     Cluster inherits base mountain-biking scoring unchanged. Region
-    omitted: Wales (~52.8°N/-3.9°W) falls outside all defined RegionEnum
-    bounding boxes in this catalog. Season is the longest of the five
+    omitted: Wales (~52.8°N/-3.9°W) falls outside all of the catalog's
+    defined climate regions. Season is the longest of the five
     extra-European clusters (50 weeks) reflecting Forestry England's
     year-round, engineered-tread trail-centre model.

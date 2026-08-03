@@ -166,5 +166,5 @@ meta:
     temperature tolerance (Mediterranean climate); visibility floor
     raised to 3km (summit-to-valley terrain). Site is known for late-
     afternoon thermal-coastal convergence creating excellent XC
-    potential — captured once L1d's thermal_lift_index and
-    convective_cloud_base_m are wired in.
+    potential — captured once thermal-lift and convective-cloud-base
+    metrics are wired in.

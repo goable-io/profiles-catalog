@@ -156,5 +156,4 @@ meta:
   notes: |
     Cluster aggregates Mui Ne main beach (resort strip) + Malibu Beach
     3 km east. Cluster tagged `region: south-china-sea` (SE Asia NE-
-    monsoon regime, distinct from the broader Pacific basin). The
-    `south-china-sea` value was added to RegionEnum in schema v2.2.
+    monsoon regime, distinct from the broader Pacific basin).

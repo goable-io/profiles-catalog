@@ -184,7 +184,7 @@ meta:
     powder windows are best) rather than 0.5; explicit ACUTE_AVALANCHE_
     LOADING gate at 8 mm/h. Operators using this profile MUST cross-
     reference the daily Météo-France BERA bulletin; this profile
-    NEVER replaces a professional avalanche bulletin. v0.2.0:
+    NEVER replaces a professional avalanche bulletin.
     snow_surface_quality (0.30) and swe_mm (0.15) added, matching the
     base freeride profile; the five atmospheric weights above are
     scaled by 0.55 to preserve their original relative emphasis.

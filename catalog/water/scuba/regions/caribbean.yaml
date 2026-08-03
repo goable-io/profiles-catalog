@@ -25,7 +25,7 @@ description:
     transitions, cavern/cave overhead environments requiring specific
     training.
 
-# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder pending diver review.
+# Placeholder curves pending diver review.
 
 dimensions:
   - name: water_clarity
@@ -179,8 +179,8 @@ meta:
     - "Belize Barrier Reef Reserve System UNESCO management plan"
     - "CENOTES / Sistema Sac Actun Yucatán karst-diving standards (NSS-CDS)"
   notes: |
-    v0.2.0 realigned to v2.0.0 base structure — water_clarity is now the
-    top signal (0.30 weight, Caribbean clarity is the value proposition).
+    water_clarity is now the top signal (0.30 weight, Caribbean clarity
+    is the value proposition).
     Current dimension retains meaningful weight (0.10) since drift-diving
     on Cozumel + Cayman walls is a real quality factor. Hurricane
     periphery + tropical deluge gates preserved.

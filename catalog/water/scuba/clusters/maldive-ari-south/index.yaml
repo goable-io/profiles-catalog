@@ -178,10 +178,3 @@ meta:
     the SW-Indian atoll sector. 40-week season with SW-monsoon peak
     windows (Jul-Sep) delivering the manta + whale-shark encounter
     concentration.
-
-    v0.2.0 realigned to v2.0.0 scuba-indian structure — water_clarity
-    (0.28) replaces the old atmospheric-visibility top signal; current
-    dimension (0.10, tidal_current_speed_kn) added to reflect the
-    E-channel tidal flow that concentrates the manta + whale-shark
-    encounter; surface_visibility demoted to 0.05 (surface navigation
-    only). turbidity_proxy gate corrected to the 0.7 index scale.

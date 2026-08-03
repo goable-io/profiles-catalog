@@ -50,5 +50,5 @@ meta:
     Sub-spot of kitesurfing-spot-tarifa cluster. Tier 3: hazardous
     downwind rock section, wave-influenced, no immediate rescue coverage
     at the point. Errors here can cause severe injury, especially on
-    big-swell Poniente days. Domain-expert review needed for L1f
-    breaker_height_m calibration.
+    big-swell Poniente days. Domain-expert review is needed to
+    calibrate breaker_height_m.

@@ -175,11 +175,3 @@ meta:
     Spot overrides vs scuba-caribbean: matches regional baseline for
     the Yucatán-Belize reef sector. 44-week season with 8-week
     hurricane closure risk (Aug-Oct).
-
-    v0.2.0 realigned to v2.0.0 base structure: water_clarity is now the
-    top signal (0.30 weight, replacing the old `visibility` top-weighted
-    dimension); surface_visibility (surface fog/haze) demoted to 0.05;
-    current dimension added (0.10) reflecting Cozumel's real drift-dive
-    quality factor on Santa Rosa Wall; turbidity_proxy gate scale
-    corrected to the 0-1 index range (was previously mis-scaled).
-    Dimensions/gates copied verbatim from scuba-caribbean v0.2.0.

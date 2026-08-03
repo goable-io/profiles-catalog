@@ -166,6 +166,6 @@ meta:
     bodyboarding pockets need both height AND adequate period (12-15s
     optimal) for rotational manoeuvres. Wind tolerance gate is set at 35
     kn vs surfing's typical 40 kn — shorebreak orientation is more
-    sensitive to onshore breeze. L1f additions: breaker_type for
-    distinguishing barrel/spilling/dumping conditions critical to
-    bodyboarding suitability.
+    sensitive to onshore breeze. A future breaker_type signal
+    (distinguishing barrel, spilling and dumping conditions) would
+    further refine bodyboarding suitability.

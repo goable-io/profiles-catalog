@@ -154,5 +154,5 @@ meta:
     Season set to 30 weeks (Söll operates Mar-Oct routinely with
     winter on warm anticyclone days). Wilder Kaiser as the dominant
     terrain feature drives both the thermal-cycle reliability and
-    the cross-flow rotor sensitivity — once L1d's thermal_lift_index
-    ships, the Salzach-Inn convergence becomes scoring-grade.
+    the cross-flow rotor sensitivity — once a thermal-lift metric is
+    available, the Salzach-Inn convergence becomes scoring-grade.

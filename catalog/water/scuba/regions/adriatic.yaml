@@ -26,7 +26,7 @@ description:
     low; the current dimension retains a minor weight for tidal-
     channel sites like the Trieste Gulf.
 
-# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder values pending
+# Placeholder values pending
 # diver review. See scuba/index.yaml meta.notes for full changelog.
 
 dimensions:
@@ -141,7 +141,7 @@ gates:
     condition: gt
     value: 0.7
     reason_code: POOR_UNDERWATER_VISIBILITY_ADRIATIC
-    description: Elevated turbidity from spring/summer plankton bloom (April-June typical) or Po plume destroys diving quality on both coasts. (v0.1.0 used wrong scale value 22 → corrected to 0.7 on 0-1 turbidity_proxy scale.)
+    description: Elevated turbidity from spring/summer plankton bloom (April-June typical) or Po plume destroys diving quality on both coasts.
 
   - metric: tidal_current_speed_kn
     condition: gt
@@ -181,8 +181,7 @@ meta:
     - "Parco del Conero AMP guidance"
     - "PADI + CMAS Mediterranean regional dive condition guidance — TODO diver review"
   notes: |
-    v0.2.0 realigned to v2.0.0 base structure — water_clarity is now the
-    top signal, surface_visibility demoted, current dimension added,
-    turbidity_proxy gate value CORRECTED from wrong-scale 22 to 0.7 on
-    the 0-1 scale. Regional overrides preserved: Bora wind gate 24 kn,
-    Adriatic-tight wave gate 2.2 m, Po-plume 10 mm/h rain gate.
+    water_clarity is now the top signal, surface_visibility demoted,
+    current dimension added. Regional overrides preserved: Bora wind
+    gate 24 kn, Adriatic-tight wave gate 2.2 m, Po-plume 10 mm/h rain
+    gate.

@@ -12,7 +12,7 @@ description:
   en: |
     Surfing is primarily wave-driven. Clean groundswell (long period, 0.5-2.5m)
     with light offshore or cross-shore wind is optimal. Onshore wind creates
-    choppy, disorganised waves. Tide data will refine scoring in Phase 2.
+    choppy, disorganised waves.
 
 dimensions:
   - name: wave_height
@@ -137,6 +137,6 @@ meta:
     - "Butt, T. & Russell, P. (2002) Surf Science, University of Hawaii Press"
     - "Mach et al. 2021, surf resource scoring framework, Journal of Coastal Research"
   notes: |
-    Provisional profile v1.0. Tide data (phase and height) will be added in
-    Phase 2 to improve low-tide sandbar and reef break differentiation.
+    Provisional profile. Tide data (phase and height) is not yet modelled;
+    adding it would improve low-tide sandbar and reef break differentiation.
     Expert review pending.
