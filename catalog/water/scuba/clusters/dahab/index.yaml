@@ -1,6 +1,6 @@
 slug: scuba-spot-dahab
 spot_kind: cluster
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba-red-sea
 region: red-sea
@@ -26,19 +26,20 @@ description:
     dedicated Dahab shore-entry sub-region.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
-    weight: 0.28
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.30
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.15 }
-      - { x: 2.0, s: 0.65 }
-      - { x: 5.0, s: 0.92 }
-      - { x: 10,  s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
-    weight: 0.22
+    weight: 0.20
     curve:
       - { x: 0.0, s: 1.00 }
       - { x: 0.4, s: 1.00 }
@@ -49,7 +50,7 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.18
+    weight: 0.15
     curve:
       - { x: 18, s: 0.35 }
       - { x: 22, s: 0.75 }
@@ -57,24 +58,26 @@ dimensions:
       - { x: 29, s: 1.00 }
       - { x: 32, s: 0.80 }
 
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
+
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.15
+    weight: 0.13
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 10, s: 1.00 }
       - { x: 18, s: 0.60 }
       - { x: 24, s: 0.20 }
       - { x: 30, s: 0.00 }
-
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.07
-    curve:
-      - { x: 0.0, s: 0.10 }
-      - { x: 0.3, s: 0.50 }
-      - { x: 0.7, s: 0.85 }
-      - { x: 1.0, s: 1.00 }
 
   - name: air_temp_comfort
     metric: apparent_temp_c
@@ -86,9 +89,19 @@ dimensions:
       - { x: 36, s: 0.90 }
       - { x: 44, s: 0.30 }
 
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.05
+    weight: 0.04
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 10, s: 0.55 }
@@ -99,22 +112,37 @@ gates:
     condition: gt
     value: 2.5
     reason_code: RED_SEA_HIGH_SEAS
-    description: Wave above 2.5 m at Dahab shore-entry sites (Etesian + N-blow days) makes cliff-edge entry unsafe.
+    description: Wave height above 2.5 m in the Red Sea (Etesian + Khamsin winter storms) makes offshore safari access unsafe; RIB drop-offs on wall sites become dangerous.
+
   - metric: wind_speed_kn
     condition: gt
     value: 25
     reason_code: ETESIAN_HIGH_WIND
-    description: Sustained wind above 25 knots (N Etesian) shuts Dahab shore-entry cliff descents.
+    description: Sustained wind above 25 knots in the Red Sea basin generates short-period chop that shuts safari operations to Brothers / Daedalus / Elphinstone.
+
   - metric: visibility_km
     condition: lt
     value: 1.0
-    reason_code: SHAMAL_LOW_VISIBILITY
-    description: Surface visibility below 1 km during shamal sandstorms shuts Dahab operations.
+    reason_code: SHAMAL_LOW_SURFACE_VISIBILITY
+    description: Surface visibility below 1 km during shamal sandstorm events makes site-finding and boat navigation unsafe (underwater visibility crashes separately via turbidity_proxy).
+
   - metric: precipitation_mm_h
     condition: gt
     value: 5
     reason_code: FLASH_FLOOD
-    description: Heavy rain (rare) triggers wadi flash-flood runoff into Dahab coastal sites; visibility crash for 24-48 h.
+    description: Heavy rain in the Red Sea coastal plain (rare but severe) triggers wadi flash-flood runoff into coastal sites, killing visibility.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_RED_SEA
+    description: Elevated turbidity from post-shamal sediment or rare wadi runoff crashes the normally exceptional Red Sea clarity below 5 m.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE_RED_SEA
+    description: Sustained current above 2.5 knots on the offshore seamount chain (Elphinstone plateau, Rocky Island) exceeds standard recreational drift-management.
 
 sustainability:
   carbon_neutral: true
@@ -148,3 +176,10 @@ meta:
     Spot overrides vs scuba-red-sea: matches regional baseline for
     the Gulf-of-Aqaba shore-entry sector. 44-week season. Blue Hole
     fatality-site status captured at sub-spot level.
+
+    v0.2.0 realigned to v2.0.0 base structure: water_clarity is now the
+    top signal (0.30 weight, replacing the old `visibility` top-weighted
+    dimension); surface_visibility (surface fog/haze) demoted to 0.05;
+    current dimension added (0.08); turbidity_proxy gate scale corrected
+    to the 0-1 index range. Dimensions/gates copied verbatim from
+    scuba-red-sea v0.2.0.

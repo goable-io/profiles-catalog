@@ -1,6 +1,6 @@
 slug: scuba
 spot_kind: base
-version: "1.0.0"
+version: "2.0.0"
 category: water
 display_name:
   en: Scuba Diving
@@ -10,26 +10,55 @@ display_name:
   de: Tauchen
 description:
   en: |
-    Scuba diving requires calm surface conditions and good visibility.
-    Wave height affects safe entry and exit; rough seas stir up sediment
-    reducing underwater visibility. Water temperature determines wetsuit
-    thickness and thermal safety. Wind affects surface navigation to and
-    from the dive site.
+    Scuba diving quality is primarily driven by underwater clarity (what
+    the diver actually sees at depth) and current, not by surface-level
+    visibility of the sky. Wave height affects safe entry and exit;
+    water temperature determines wetsuit thickness and thermal safety.
+    Turbidity spikes from rain-driven runoff or post-storm sediment
+    stir-up briefly destroy dive quality even when the sky is clear.
+    Current above the recreational threshold makes drift management and
+    ascent-line hold unsafe. Wind and atmospheric visibility remain
+    relevant to surface navigation to and from the site but are minor
+    quality signals for the dive itself.
+
+# ─── DIMENSION SEMANTICS RESET (v2.0.0) ─────────────────────────────────
+#   In v1.x the top-weight dimension was `visibility` on metric
+#   `visibility_km` — but that metric is atmospheric/sky visibility
+#   above the water, NOT what a diver experiences underwater. Real diver
+#   feedback (Diano Marina, Liguria di Ponente) surfaced the mismatch.
+#
+#   In v2.0.0 the top signal is `water_clarity` on metric
+#   `water_clarity_index` (Kd490 + turbidity + algal-bloom + depth
+#   derivation in the consumer scoring engine). `surface_visibility` is
+#   still present as a minor factor for boat navigation + surface
+#   signalling but is demoted from weight 0.30 to weight 0.05.
+#
+#   A new `current` dimension on `tidal_current_speed_kn` and two new
+#   gates (`turbidity_proxy` for underwater visibility crashes and
+#   `tidal_current_speed_kn` for drift-management safety) round out the
+#   diver-relevant physics.
+#
+#   Weights + curves + gate thresholds in this file are PLACEHOLDERS
+#   pending validation by a certified diver reviewer. The structural
+#   shape is what changed in v2.0.0; the numeric calibration is a
+#   separate follow-on session.
+# ────────────────────────────────────────────────────────────────────────
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
-    weight: 0.30
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.25
     curve:
-      - { x: 0.0, s: 0.0 }
-      - { x: 0.5, s: 0.0 }
-      - { x: 1.0, s: 0.4 }
-      - { x: 3.0, s: 0.8 }
-      - { x: 5.0, s: 1.0 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
-    weight: 0.25
+    weight: 0.22
     curve:
       - { x: 0.0, s: 1.00 }
       - { x: 0.3, s: 1.00 }
@@ -40,17 +69,28 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.20
+    weight: 0.18
     curve:
-      - { x: 0, s: 0.0 }
-      - { x: 8, s: 0.3 }
-      - { x: 15, s: 0.7 }
-      - { x: 22, s: 1.0 }
-      - { x: 30, s: 0.9 }
+      - { x: 0, s: 0.00 }
+      - { x: 8, s: 0.30 }
+      - { x: 15, s: 0.70 }
+      - { x: 22, s: 1.00 }
+      - { x: 30, s: 0.90 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.10
+    weight: 0.08
     curve:
       - { x: 0, s: 1.00 }
       - { x: 8, s: 1.00 }
@@ -61,21 +101,31 @@ dimensions:
 
   - name: air_temp_comfort
     metric: apparent_temp_c
-    weight: 0.10
+    weight: 0.07
     curve:
-      - { x: -5, s: 0.0 }
-      - { x: 5, s: 0.3 }
-      - { x: 15, s: 0.8 }
-      - { x: 25, s: 1.0 }
-      - { x: 38, s: 0.7 }
+      - { x: -5, s: 0.00 }
+      - { x: 5, s: 0.30 }
+      - { x: 15, s: 0.80 }
+      - { x: 25, s: 1.00 }
+      - { x: 38, s: 0.70 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
     weight: 0.05
     curve:
-      - { x: 0, s: 0.0 }
-      - { x: 10, s: 0.6 }
-      - { x: 30, s: 1.0 }
+      - { x: 0, s: 0.00 }
+      - { x: 10, s: 0.60 }
+      - { x: 30, s: 1.00 }
 
 gates:
   - metric: wave_height_m
@@ -87,14 +137,26 @@ gates:
   - metric: visibility_km
     condition: lt
     value: 0.5
-    reason_code: POOR_VISIBILITY
-    description: Visibility below 500m is unsafe for navigation to dive sites.
+    reason_code: POOR_SURFACE_VISIBILITY
+    description: Surface visibility below 500m is unsafe for surface navigation to dive sites and for VHF-line-of-sight boat-to-shore signalling.
 
   - metric: precipitation_mm_h
     condition: gt
     value: 15
     reason_code: HEAVY_RAIN
     description: Heavy rain reduces surface visibility and indicates storm conditions.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY
+    description: Elevated turbidity (rainfall-runoff proxy, ocean-colour once wired) crashes underwater visibility to sub-2m — dive quality destroyed and navigation-with-buddy compromised.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE
+    description: Sustained current above 2.5 knots exceeds recreational-diver drift-management capacity; ascent-line hold and buddy separation become material risks.
 
 sustainability:
   carbon_neutral: true
@@ -121,10 +183,44 @@ meta:
   maturity: provisional
   reviewed_by: []
   sources:
-    - "PADI dive condition guidelines and open water standards"
+    - "PADI Open Water Diver Manual (in-water visibility + current guidance) — TODO diver review"
+    - "CMAS + SSI recreational-diving safety thresholds (current, thermal) — TODO diver review"
     - "Rouabah et al. 2022, coastal diving site assessment, Mediterranean"
   notes: |
-    Provisional profile v1.0. visibility_km is a proxy for surface conditions;
-    underwater visibility depends on water turbidity (sediment, plankton bloom,
-    runoff) which requires a dedicated metric not yet in Phase 1. Wave height
-    is used as the primary proxy for turbidity at the surface entry point.
+    v2.0.0 (breaking) — restructured scoring semantics based on real
+    diver feedback from Diano Marina, Liguria di Ponente.
+
+    Changes vs v1.x:
+    - `visibility` (0.30 weight, metric visibility_km) — the ATMOSPHERIC
+      visibility above the water — is renamed `surface_visibility` and
+      demoted to 0.05. It remains relevant only for surface navigation
+      + signalling.
+    - NEW `water_clarity` (0.25 weight, metric water_clarity_index) —
+      the TRUE underwater-visibility signal driven by turbidity + algal
+      bloom + depth-context in the consumer scoring engine. Now the
+      top-weight dimension.
+    - NEW `current` (0.10 weight, metric tidal_current_speed_kn) — a
+      penalty on strong tidal current, since drift management becomes
+      unsafe past ~1.5 kn for recreational divers.
+    - NEW gate `turbidity_proxy > 0.7` → POOR_UNDERWATER_VISIBILITY.
+    - NEW gate `tidal_current_speed_kn > 2.5` → STRONG_CURRENT_UNSAFE.
+    - Existing `visibility_km < 0.5` gate reason_code renamed to
+      POOR_SURFACE_VISIBILITY for clarity.
+    - Wave weight nudged 0.25 → 0.22. Water_temp 0.20 → 0.18. Wind_speed
+      0.10 → 0.08. Air_temp 0.10 → 0.07. Sun unchanged at 0.05.
+
+    HONEST CAVEATS (do not treat as final calibration):
+    - `turbidity_proxy` today is a rainfall-72h heuristic in the consumer
+      engine, not ocean-colour. It's a legitimate signal but weak — a
+      real fix requires CMEMS Kd490 + SPM (follow-on task on provider
+      side).
+    - `tidal_current_speed_kn` today reflects TIDAL current only, not
+      surface currents. Also follow-on on provider side (CMEMS surface
+      currents u/v).
+    - All curves + weights + gate thresholds are PLACEHOLDER pending
+      certified-diver validation in a separate calibration session.
+      They preserve monotonic sensibility; the numeric values will move.
+    - This structural change ripples to the 6 scuba region variants and
+      37 clusters — the same v2.0.0 treatment is applied catalog-wide
+      in this PR so scoring at real coordinates (e.g. Diano Marina
+      43.9085/8.0825) actually reflects the fix.

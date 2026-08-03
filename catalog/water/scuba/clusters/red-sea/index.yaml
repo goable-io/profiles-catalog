@@ -1,8 +1,8 @@
 slug: scuba-spot-red-sea
 spot_kind: cluster
-version: "1.0.0"
+version: "0.2.0"
 category: water
-extends: scuba
+extends: scuba-red-sea
 region: red-sea
 country_code: EG
 sub_spots:
@@ -30,99 +30,123 @@ description:
     operations.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
-    weight: 0.25
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.30
     curve:
-      - { x: 0.0, s: 0.0 }
-      - { x: 0.5, s: 0.1 }
-      - { x: 1.5, s: 0.6 }
-      - { x: 3.0, s: 0.9 }
-      - { x: 5.0, s: 1.0 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
-    weight: 0.25
+    weight: 0.20
     curve:
       - { x: 0.0, s: 1.00 }
-      - { x: 0.4, s: 0.95 }
-      - { x: 0.8, s: 0.80 }
-      - { x: 1.5, s: 0.45 }
+      - { x: 0.4, s: 1.00 }
+      - { x: 1.0, s: 0.75 }
+      - { x: 1.8, s: 0.40 }
       - { x: 2.5, s: 0.10 }
       - { x: 3.5, s: 0.00 }
-
-  - name: wind_speed
-    metric: wind_speed_kn
-    weight: 0.15
-    curve:
-      - { x: 0,  s: 1.00 }
-      - { x: 8,  s: 1.00 }
-      - { x: 15, s: 0.80 }
-      - { x: 22, s: 0.40 }
-      - { x: 30, s: 0.05 }
 
   - name: water_temp
     metric: water_temperature_c
     weight: 0.15
     curve:
-      - { x: 18, s: 0.30 }
-      - { x: 21, s: 0.65 }
-      - { x: 24, s: 0.95 }
-      - { x: 27, s: 1.00 }
-      - { x: 30, s: 1.00 }
-      - { x: 32, s: 0.85 }
+      - { x: 18, s: 0.35 }
+      - { x: 22, s: 0.75 }
+      - { x: 26, s: 1.00 }
+      - { x: 29, s: 1.00 }
+      - { x: 32, s: 0.80 }
 
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.10
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.08
     curve:
-      - { x: 0.0, s: 0.10 }
-      - { x: 0.4, s: 0.55 }
-      - { x: 0.7, s: 0.90 }
-      - { x: 1.0, s: 1.00 }
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
+
+  - name: wind_speed
+    metric: wind_speed_kn
+    weight: 0.13
+    curve:
+      - { x: 0,  s: 1.00 }
+      - { x: 10, s: 1.00 }
+      - { x: 18, s: 0.60 }
+      - { x: 24, s: 0.20 }
+      - { x: 30, s: 0.00 }
 
   - name: air_temp_comfort
     metric: apparent_temp_c
     weight: 0.05
     curve:
-      - { x: 10, s: 0.20 }
-      - { x: 18, s: 0.65 }
-      - { x: 25, s: 1.00 }
-      - { x: 35, s: 0.95 }
-      - { x: 42, s: 0.50 }
+      - { x: 12, s: 0.35 }
+      - { x: 22, s: 0.85 }
+      - { x: 28, s: 1.00 }
+      - { x: 36, s: 0.90 }
+      - { x: 44, s: 0.30 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.05
+    weight: 0.04
     curve:
       - { x: 0,  s: 0.00 }
-      - { x: 12, s: 0.70 }
-      - { x: 30, s: 1.00 }
+      - { x: 10, s: 0.55 }
+      - { x: 40, s: 1.00 }
 
 gates:
   - metric: wave_height_m
     condition: gt
-    value: 3
-    reason_code: SHAMAL_HIGH_SEAS
-    description: Wave height above 3m during shamal (northwesterly) events makes liveaboard transfer and small-boat zodiac drops to offshore reefs unsafe.
+    value: 2.5
+    reason_code: RED_SEA_HIGH_SEAS
+    description: Wave height above 2.5 m in the Red Sea (Etesian + Khamsin winter storms) makes offshore safari access unsafe; RIB drop-offs on wall sites become dangerous.
 
   - metric: wind_speed_kn
     condition: gt
-    value: 28
-    reason_code: SAFARI_OPERATIONS_GATE
-    description: Sustained wind above 28 knots gates Red Sea safari (liveaboard) routes to offshore reefs — boats remain on coastal stops only.
+    value: 25
+    reason_code: ETESIAN_HIGH_WIND
+    description: Sustained wind above 25 knots in the Red Sea basin generates short-period chop that shuts safari operations to Brothers / Daedalus / Elphinstone.
 
   - metric: visibility_km
     condition: lt
-    value: 0.8
-    reason_code: SURFACE_VISIBILITY_NAVIGATION
-    description: Surface visibility below 800m during khamsin sandstorms makes site-finding and small-boat navigation unsafe.
+    value: 1.0
+    reason_code: SHAMAL_LOW_SURFACE_VISIBILITY
+    description: Surface visibility below 1 km during shamal sandstorm events makes site-finding and boat navigation unsafe (underwater visibility crashes separately via turbidity_proxy).
 
-  - metric: water_temperature_c
-    condition: lt
-    value: 17
-    reason_code: COLD_WATER_UNUSUAL
-    description: Water temperature below 17°C (unusual for Red Sea; January Northern Red Sea minimums) requires thicker exposure protection than typical dive operator stock.
+  - metric: precipitation_mm_h
+    condition: gt
+    value: 5
+    reason_code: FLASH_FLOOD
+    description: Heavy rain in the Red Sea coastal plain (rare but severe) triggers wadi flash-flood runoff into coastal sites, killing visibility.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_RED_SEA
+    description: Elevated turbidity from post-shamal sediment or rare wadi runoff crashes the normally exceptional Red Sea clarity below 5 m.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE_RED_SEA
+    description: Sustained current above 2.5 knots on the offshore seamount chain (Elphinstone plateau, Rocky Island) exceeds standard recreational drift-management.
 
 sustainability:
   carbon_neutral: false
@@ -166,3 +190,12 @@ meta:
     (added to RegionEnum in schema v2.2; previously tagged `indian` as
     a least-bad fit). Season is 50 weeks/year — among the longest in
     the catalog.
+
+    v0.2.0 realigned to v2.0.0 base structure: cluster now correctly
+    `extends: scuba-red-sea` (was incorrectly `extends: scuba` directly,
+    bypassing the region variant entirely). dimensions/gates copied
+    verbatim from scuba-red-sea v0.2.0 — water_clarity is now the top
+    signal (0.30), surface_visibility (renamed from visibility) demoted
+    to 0.05, current dimension added (0.08) for offshore seamount drift
+    (Brothers/Daedalus/Elphinstone), turbidity_proxy gate scale
+    corrected to the 0-1 index range (>0.7).

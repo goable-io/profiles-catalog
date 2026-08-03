@@ -1,6 +1,6 @@
 slug: scuba-caribbean
 spot_kind: region
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba
 region: caribbean
@@ -16,24 +16,28 @@ description:
     Grand Cayman, Turks and Caicos, Dominican Republic), the Belize
     barrier reef system, Cuba, and the Yucatán cenote karst freshwater
     network. Warm-water regime year-round (26-29°C surface), typically
-    excellent visibility (25-40 m on healthy reef sites) but with strong
-    drift-diving currents on wall sites (Cozumel Palancar, Cayman North
-    Wall). Hurricane season (June-Nov, peak Aug-Oct) drives closures
-    with 5-7 day warning windows. Cenote diving is a distinct sub-regime:
-    freshwater, halocline transitions, cavern/cave overhead environments
-    requiring specific training. Reef degradation is severe on
-    high-traffic sites — MPA + daily-visitor caps are the norm.
+    excellent underwater clarity (25-40 m on healthy reef sites) but
+    with strong drift-diving currents on wall sites (Cozumel Palancar,
+    Cayman North Wall) that make the `current` dimension a meaningful
+    quality factor here rather than a rare edge case. Hurricane season
+    (Jun-Nov, peak Aug-Oct) drives closures with 5-7 day warning windows.
+    Cenote diving is a distinct sub-regime: freshwater, halocline
+    transitions, cavern/cave overhead environments requiring specific
+    training.
+
+# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder pending diver review.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
+  - name: water_clarity
+    metric: water_clarity_index
     weight: 0.30
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.15 }
-      - { x: 2.0, s: 0.60 }
-      - { x: 5.0, s: 0.90 }
-      - { x: 10,  s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
@@ -48,13 +52,24 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.18
+    weight: 0.15
     curve:
       - { x: 20, s: 0.40 }
       - { x: 24, s: 0.80 }
       - { x: 27, s: 1.00 }
       - { x: 30, s: 1.00 }
       - { x: 32, s: 0.85 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
@@ -66,24 +81,25 @@ dimensions:
       - { x: 24, s: 0.25 }
       - { x: 30, s: 0.00 }
 
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.10
-    curve:
-      - { x: 0.0, s: 0.10 }
-      - { x: 0.3, s: 0.50 }
-      - { x: 0.7, s: 0.90 }
-      - { x: 1.0, s: 1.00 }
-
   - name: air_temp_comfort
     metric: apparent_temp_c
-    weight: 0.07
+    weight: 0.05
     curve:
       - { x: 12, s: 0.30 }
       - { x: 22, s: 0.85 }
       - { x: 28, s: 1.00 }
       - { x: 34, s: 0.95 }
       - { x: 42, s: 0.35 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
@@ -109,14 +125,26 @@ gates:
   - metric: visibility_km
     condition: lt
     value: 0.5
-    reason_code: POOR_VISIBILITY_CARIB
-    description: Surface visibility below 500 m during squall passage or heavy tropical rain makes site-finding unsafe.
+    reason_code: POOR_SURFACE_VISIBILITY_CARIB
+    description: Surface visibility below 500 m during squall passage or heavy tropical rain makes site-finding unsafe (surface navigation only).
 
   - metric: precipitation_mm_h
     condition: gt
     value: 20
     reason_code: TROPICAL_DELUGE
     description: Heavy tropical rainfall above 20 mm/h correlates with tropical storm systems; operations pause.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_CARIB
+    description: Elevated turbidity from runoff or hurricane sediment stir crashes underwater visibility below 5 m and destroys reef-dive quality.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 3.0
+    reason_code: STRONG_CURRENT_UNSAFE_CARIB
+    description: Sustained tidal current above 3.0 knots on Caribbean drift walls (Cozumel Santa Rosa, Cayman North Wall) exceeds standard recreational drift-management — technical certifications recommended.
 
 sustainability:
   carbon_neutral: true
@@ -145,17 +173,14 @@ meta:
   maturity: provisional
   reviewed_by: []
   sources:
-    - "PADI Caribbean regional dive condition handbook"
+    - "PADI Caribbean regional dive condition handbook — TODO diver review"
     - "NOAA CoralReefWatch bleaching thermal-stress bulletins"
     - "Cozumel National Marine Park permit + capacity documentation"
     - "Belize Barrier Reef Reserve System UNESCO management plan"
     - "CENOTES / Sistema Sac Actun Yucatán karst-diving standards (NSS-CDS)"
   notes: |
-    Regional overrides vs global scuba: water_temp sweet-spot shifted to
-    27-30°C (year-round warm regime); visibility weight raised (Caribbean
-    clarity is the value proposition and drift-diving demands long
-    sight-lines); hurricane-periphery gate added at 30 kn (2-3 kn tighter
-    than global). 44-week season reflects year-round tropical operations
-    outside the 8-week hurricane peak (Aug-Oct). Cenote-specific overrides
-    (freshwater, halocline, overhead) are handled at cluster level, not
-    here.
+    v0.2.0 realigned to v2.0.0 base structure — water_clarity is now the
+    top signal (0.30 weight, Caribbean clarity is the value proposition).
+    Current dimension retains meaningful weight (0.10) since drift-diving
+    on Cozumel + Cayman walls is a real quality factor. Hurricane
+    periphery + tropical deluge gates preserved.

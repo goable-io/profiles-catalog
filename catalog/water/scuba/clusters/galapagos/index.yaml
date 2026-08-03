@@ -1,6 +1,6 @@
 slug: scuba-spot-galapagos
 spot_kind: cluster
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba-pacific
 region: pacific
@@ -29,15 +29,16 @@ description:
     site.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
+  - name: water_clarity
+    metric: water_clarity_index
     weight: 0.28
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.15 }
-      - { x: 2.0, s: 0.65 }
-      - { x: 5.0, s: 0.92 }
-      - { x: 10,  s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
@@ -61,9 +62,20 @@ dimensions:
       - { x: 30, s: 1.00 }
       - { x: 32, s: 0.80 }
 
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
+
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.12
+    weight: 0.10
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 10, s: 1.00 }
@@ -71,18 +83,9 @@ dimensions:
       - { x: 24, s: 0.25 }
       - { x: 30, s: 0.00 }
 
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.08
-    curve:
-      - { x: 0.0, s: 0.15 }
-      - { x: 0.3, s: 0.55 }
-      - { x: 0.7, s: 0.90 }
-      - { x: 1.0, s: 1.00 }
-
   - name: air_temp_comfort
     metric: apparent_temp_c
-    weight: 0.07
+    weight: 0.05
     curve:
       - { x: 8,  s: 0.30 }
       - { x: 18, s: 0.75 }
@@ -90,9 +93,19 @@ dimensions:
       - { x: 34, s: 0.90 }
       - { x: 42, s: 0.35 }
 
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.07
+    weight: 0.04
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 10, s: 0.55 }
@@ -103,25 +116,37 @@ gates:
     condition: gt
     value: 3.0
     reason_code: PACIFIC_HIGH_SEAS
-    description: Wave height above 3.0 m at Galápagos's exposed offshore pinnacles makes drift drop-off and open-water retrieval unsafe.
+    description: Wave height above 3.0 m on Pacific reef and pinnacle sites (typhoon periphery, SW-Pacific cyclone edge) makes drift drop-off and safety-stop hold unsafe.
 
   - metric: wind_speed_kn
     condition: gt
     value: 30
     reason_code: TROPICAL_CYCLONE_PERIPHERY
-    description: Sustained wind above 30 knots on the exposed Darwin / Wolf crossing makes liveaboard tender operations unsafe.
+    description: Sustained wind above 30 knots signals cyclone or typhoon periphery; all Pacific reef and liveaboard operations stand down.
 
   - metric: visibility_km
     condition: lt
     value: 0.8
-    reason_code: POOR_VISIBILITY_PAC
-    description: Surface visibility below 800 m during upwelling-driven fog or squall makes site-finding at remote offshore pinnacles unsafe.
+    reason_code: POOR_SURFACE_VISIBILITY_PAC
+    description: Surface visibility below 800 m during tropical squall or coastal-front passage makes site-finding unsafe (surface navigation only).
 
   - metric: precipitation_mm_h
     condition: gt
     value: 20
     reason_code: TROPICAL_DELUGE_PAC
-    description: Heavy rain above 20 mm/h during the warm/wet season (Jan-May) correlates with squall passage and swell buildup.
+    description: Heavy tropical rain above 20 mm/h correlates with cyclone systems and coastal-runoff visibility crashes on high-island sites.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_PAC
+    description: Elevated turbidity from cyclone or high-island runoff crashes underwater visibility on the coastal Pacific + Coral Triangle sites.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 3.0
+    reason_code: STRONG_CURRENT_UNSAFE_PAC
+    description: Sustained current above 3.0 knots at Palau Blue Corner / German Channel / Cocos / Galápagos drift sites exceeds standard recreational drift-management; reef-hook + technical certifications recommended.
 
 sustainability:
   carbon_neutral: true
@@ -159,3 +184,10 @@ meta:
     varies sharply between the warm/wet season (Jan-May, 24-27°C)
     and the cool/garúa season (Jun-Dec, 18-22°C, stronger Cromwell
     upwelling at Darwin/Wolf).
+
+    v0.2.0 realigned to v2.0.0 scuba-pacific structure — water_clarity
+    (0.28) replaces the old atmospheric-visibility top signal; current
+    dimension (0.10, tidal_current_speed_kn) added, directly relevant
+    to Darwin/Wolf's strong-current pelagic drift sites; surface_visibility
+    demoted to 0.05 (surface navigation only). turbidity_proxy gate
+    corrected to the 0.7 index scale.

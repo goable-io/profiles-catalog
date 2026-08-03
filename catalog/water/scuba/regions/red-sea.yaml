@@ -1,6 +1,6 @@
 slug: scuba-red-sea
 spot_kind: region
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba
 region: red-sea
@@ -16,28 +16,33 @@ description:
     mainland coast (Sharm-Hurghada-Marsa Alam), the offshore Brothers/
     Daedalus/Elphinstone/Rocky Island seamount chain, and Sudanese +
     Saudi coastlines. The regime is warm-water year-round (22-29°C),
-    exceptionally clear (25-40 m routine), fringing-reef + wall
-    dominant with sharp thermoclines and pelagic-corridor drift dives
-    on the offshore seamounts. Dominant safety variable is wind — the
-    prevailing NW Etesian regime creates short-period chop above 20 kn
-    that gates safari operations; the seasonal shamal sandstorms drop
-    surface visibility to <1 km for 24-48 h. Coral-cover is world-class
-    but under active bleaching pressure since the 2015 basin-wide event.
+    underwater clarity is exceptional (25-40 m routine), fringing-reef
+    + wall dominant with sharp thermoclines and pelagic-corridor
+    drift dives on the offshore seamounts (current is a meaningful
+    quality factor here). Dominant surface safety variable is wind —
+    the prevailing NW Etesian regime creates short-period chop above
+    20 kn that gates safari operations; the seasonal shamal sandstorms
+    drop surface visibility to <1 km for 24-48 h. Coral cover is
+    world-class but under active bleaching pressure since the 2015
+    basin-wide event.
+
+# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder pending diver review.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
-    weight: 0.28
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.30
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.15 }
-      - { x: 2.0, s: 0.65 }
-      - { x: 5.0, s: 0.92 }
-      - { x: 10,  s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
-    weight: 0.22
+    weight: 0.20
     curve:
       - { x: 0.0, s: 1.00 }
       - { x: 0.4, s: 1.00 }
@@ -48,7 +53,7 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.18
+    weight: 0.15
     curve:
       - { x: 18, s: 0.35 }
       - { x: 22, s: 0.75 }
@@ -56,24 +61,26 @@ dimensions:
       - { x: 29, s: 1.00 }
       - { x: 32, s: 0.80 }
 
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
+
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.15
+    weight: 0.13
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 10, s: 1.00 }
       - { x: 18, s: 0.60 }
       - { x: 24, s: 0.20 }
       - { x: 30, s: 0.00 }
-
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.07
-    curve:
-      - { x: 0.0, s: 0.10 }
-      - { x: 0.3, s: 0.50 }
-      - { x: 0.7, s: 0.85 }
-      - { x: 1.0, s: 1.00 }
 
   - name: air_temp_comfort
     metric: apparent_temp_c
@@ -85,9 +92,19 @@ dimensions:
       - { x: 36, s: 0.90 }
       - { x: 44, s: 0.30 }
 
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
+
   - name: sun
     metric: sun_altitude_deg
-    weight: 0.05
+    weight: 0.04
     curve:
       - { x: 0,  s: 0.00 }
       - { x: 10, s: 0.55 }
@@ -109,14 +126,26 @@ gates:
   - metric: visibility_km
     condition: lt
     value: 1.0
-    reason_code: SHAMAL_LOW_VISIBILITY
-    description: Surface visibility below 1 km during shamal sandstorm events makes site-finding and boat navigation unsafe; underwater visibility drops from 30 m+ to <5 m within hours.
+    reason_code: SHAMAL_LOW_SURFACE_VISIBILITY
+    description: Surface visibility below 1 km during shamal sandstorm events makes site-finding and boat navigation unsafe (underwater visibility crashes separately via turbidity_proxy).
 
   - metric: precipitation_mm_h
     condition: gt
     value: 5
     reason_code: FLASH_FLOOD
     description: Heavy rain in the Red Sea coastal plain (rare but severe) triggers wadi flash-flood runoff into coastal sites, killing visibility.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_RED_SEA
+    description: Elevated turbidity from post-shamal sediment or rare wadi runoff crashes the normally exceptional Red Sea clarity below 5 m.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE_RED_SEA
+    description: Sustained current above 2.5 knots on the offshore seamount chain (Elphinstone plateau, Rocky Island) exceeds standard recreational drift-management.
 
 sustainability:
   carbon_neutral: true
@@ -147,13 +176,10 @@ meta:
   sources:
     - "HEPCA (Hurghada Environmental Protection and Conservation Association) reef and mooring standards"
     - "Egyptian Ministry of Environment Ras Mohammed / Brothers / Daedalus / Elphinstone MPA rules"
-    - "PADI Red Sea regional dive condition handbook"
+    - "PADI Red Sea regional dive condition handbook — TODO diver review"
     - "Kleinhaus et al. 2020 Red Sea coral thermal-tolerance research"
   notes: |
-    Regional overrides vs global scuba: visibility weight lowered to 0.28
-    from 0.30 (Red Sea clarity is dependably high, less discriminating);
-    wind weight raised to 0.15 (Etesian gate is the dominant operational
-    constraint); water_temp sweet-spot 26-29°C. Added Etesian wind gate
-    at 25 kn (5 kn tighter than global). 44-week season with 4 weeks
-    of Khamsin storm windows (Mar-May) as the primary shoulder-closure
-    risk.
+    v0.2.0 realigned to v2.0.0 base — water_clarity 0.30 top signal.
+    Etesian wind gate 25 kn + shamal surface-visibility 1.0 km +
+    wadi flash-flood 5 mm/h preserved. Current dimension 0.08 (offshore
+    seamount drift is relevant but not dominant).

@@ -1,6 +1,6 @@
 slug: scuba-spot-villasimius-capo-carbonara
 spot_kind: cluster
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba-mediterranean
 region: mediterranean
@@ -24,15 +24,16 @@ description:
     Villasimius Porto.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
-    weight: 0.32
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.30
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.10 }
-      - { x: 1.0, s: 0.50 }
-      - { x: 3.0, s: 0.85 }
-      - { x: 5.0, s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
@@ -53,27 +54,29 @@ dimensions:
       - { x: 16, s: 0.45 }
       - { x: 20, s: 0.85 }
       - { x: 24, s: 1.00 }
-      - { x: 26, s: 1.00 }
-      - { x: 28, s: 0.85 }
+      - { x: 28, s: 1.00 }
+      - { x: 30, s: 0.90 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.10
+    weight: 0.08
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 8,  s: 1.00 }
       - { x: 14, s: 0.75 }
       - { x: 20, s: 0.40 }
       - { x: 28, s: 0.00 }
-
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.08
-    curve:
-      - { x: 0.0, s: 0.15 }
-      - { x: 0.3, s: 0.55 }
-      - { x: 0.6, s: 0.85 }
-      - { x: 1.0, s: 1.00 }
 
   - name: air_temp_comfort
     metric: apparent_temp_c
@@ -84,6 +87,16 @@ dimensions:
       - { x: 22, s: 1.00 }
       - { x: 32, s: 1.00 }
       - { x: 40, s: 0.55 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.04
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
@@ -98,22 +111,31 @@ gates:
     condition: gt
     value: 2.3
     reason_code: MED_HIGH_SEAS
-    description: Wave above 2.3 m makes Serpentara islet + Secca dei Berni offshore boat mooring unsafe.
+    description: Wave height above 2.3m in Mediterranean coastal sites (Tramontane/Mistral storm events) creates unsafe shore-entry and small-boat access conditions.
+
   - metric: visibility_km
     condition: lt
     value: 0.8
-    reason_code: POOR_VISIBILITY_MED
-    description: Surface visibility below 800 m during Sirocco haze makes navigation unsafe.
+    reason_code: POOR_SURFACE_VISIBILITY_MED
+    description: Surface visibility below 800m during Mediterranean haze/sirocco events makes site-finding unsafe (surface navigation only — underwater visibility is scored separately via water_clarity + turbidity_proxy).
+
   - metric: precipitation_mm_h
     condition: gt
     value: 12
     reason_code: HEAVY_RAIN_RUNOFF
-    description: Heavy rain triggers Cagliari + Flumendosa runoff; visibility drops for 24 h.
+    description: Heavy active rain in coastal sites triggers terrestrial runoff that drops underwater visibility from 20m+ to 1-3m at impacted sites within hours.
+
   - metric: turbidity_proxy
     condition: gt
-    value: 25
-    reason_code: HIGH_TURBIDITY_POSTSTORM
-    description: Elevated turbidity from storm sediment destroys wall dive quality.
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_MED
+    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply. (Previous v0.1.0 used the wrong scale value 25 — corrected to 0.7 on the 0-1 turbidity_proxy scale.)
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE_MED
+    description: Sustained tidal current above 2.5 knots (rare in Mediterranean coastal sites but real in Bocche di Bonifacio, Strait of Messina, and Gibraltar current cone) exceeds recreational drift-management capacity.
 
 sustainability:
   carbon_neutral: true
@@ -143,3 +165,10 @@ meta:
   notes: |
     Spot overrides vs scuba-mediterranean: matches regional baseline.
     30-week season.
+
+    v0.2.0 — realigned dimensions + gates to the scuba-mediterranean
+    v2.0.0 restructure: water_clarity is now the top-weighted signal
+    (0.30), a new current dimension was added (0.08), surface_visibility
+    (renamed from visibility) was demoted to a minor gate-adjacent
+    signal (0.04), and the turbidity_proxy gate scale was corrected
+    from the wrong-scale value 25 to 0.7 on the 0-1 scale.
