@@ -1,6 +1,6 @@
 slug: scuba-spot-tremiti
 spot_kind: cluster
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba-adriatic
 region: adriatic
@@ -26,19 +26,20 @@ description:
     Peschici, or Rodi Garganico ferries.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
+  - name: water_clarity
+    metric: water_clarity_index
     weight: 0.28
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.10 }
-      - { x: 1.0, s: 0.45 }
-      - { x: 3.0, s: 0.80 }
-      - { x: 5.0, s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
-    weight: 0.24
+    weight: 0.22
     curve:
       - { x: 0.0, s: 1.00 }
       - { x: 0.3, s: 1.00 }
@@ -49,7 +50,7 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.22
+    weight: 0.18
     curve:
       - { x: 10, s: 0.10 }
       - { x: 14, s: 0.40 }
@@ -57,6 +58,17 @@ dimensions:
       - { x: 22, s: 1.00 }
       - { x: 26, s: 1.00 }
       - { x: 28, s: 0.90 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
@@ -68,15 +80,6 @@ dimensions:
       - { x: 18, s: 0.30 }
       - { x: 24, s: 0.00 }
 
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.06
-    curve:
-      - { x: 0.0, s: 0.15 }
-      - { x: 0.3, s: 0.50 }
-      - { x: 0.6, s: 0.80 }
-      - { x: 1.0, s: 1.00 }
-
   - name: air_temp_comfort
     metric: apparent_temp_c
     weight: 0.05
@@ -86,6 +89,16 @@ dimensions:
       - { x: 22, s: 1.00 }
       - { x: 32, s: 1.00 }
       - { x: 40, s: 0.55 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.04
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
@@ -100,27 +113,37 @@ gates:
     condition: gt
     value: 24
     reason_code: BORA_ROTOR
-    description: NE Bora above 24 knots at Tremiti creates rotor turbulence and shuts inter-island boat access from Termoli.
+    description: NE Bora above 24 knots on the Croatian and Italian NE coasts creates rotor turbulence at shore entries and downdrafts on sheltered lee slopes; boat access is unsafe within 2-4 hours of onset.
+
   - metric: wave_height_m
     condition: gt
     value: 2.2
     reason_code: ADRIATIC_HIGH_SEAS
-    description: Wave above 2.2 m makes offshore reef mooring and island transit from Termoli unsafe.
+    description: Wave height above 2.2 m in the Adriatic (Bora + Sirocco events) makes shore entry and small-RIB access to offshore sites unsafe.
+
   - metric: visibility_km
     condition: lt
     value: 0.8
-    reason_code: POOR_VISIBILITY_ADRIATIC
-    description: Surface visibility below 800 m during Sirocco haze makes navigation from Termoli unsafe.
+    reason_code: POOR_SURFACE_VISIBILITY_ADRIATIC
+    description: Surface visibility below 800 m during Sirocco haze events makes site-finding unsafe on the Italian side (surface navigation only — underwater visibility is scored separately).
+
   - metric: precipitation_mm_h
     condition: gt
     value: 10
     reason_code: HEAVY_RAIN_PO_PLUME
-    description: Heavy rain triggers Adriatic plume events that drop visibility for 24-72 h.
+    description: Heavy active rain funnelled through Po + Isonzo river basins triggers plume events that drop underwater visibility from 15-25 m to 1-3 m for 24-72 h.
+
   - metric: turbidity_proxy
     condition: gt
-    value: 22
-    reason_code: HIGH_TURBIDITY_BLOOM
-    description: Elevated turbidity from spring/summer plankton bloom (April-June) destroys diving quality.
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_ADRIATIC
+    description: Elevated turbidity from spring/summer plankton bloom (April-June typical) or Po plume destroys diving quality on both coasts. (v0.1.0 used wrong scale value 22 → corrected to 0.7 on 0-1 turbidity_proxy scale.)
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE_ADRIATIC
+    description: Sustained tidal current above 2.5 knots exceeds recreational drift-management capacity (rare in Adriatic but relevant in Trieste Gulf channels).
 
 sustainability:
   carbon_neutral: true
@@ -151,3 +174,11 @@ meta:
   notes: |
     Spot overrides vs scuba-adriatic: matches regional baseline.
     22-week season (Adriatic-standard).
+
+    v0.2.0 — realigned to v2.0.0 scuba-adriatic structure: dimensions and
+    gates replaced verbatim with the regional variant. water_clarity is
+    now the top-weighted signal (0.28), surface_visibility demoted to a
+    minor gate-support role (0.04), and a current dimension (0.08,
+    tidal_current_speed_kn) was added for tidal-channel sensitivity.
+    The turbidity_proxy gate value is corrected from the wrong-scale
+    22 to 0.7 on the 0-1 scale matching the consumer engine output.

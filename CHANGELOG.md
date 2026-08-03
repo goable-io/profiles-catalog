@@ -18,7 +18,83 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.7.0
+## [Unreleased] — lands as 2.8.0
+
+### Changed — scuba scoring semantics reset (base + 6 region variants + 42 clusters)
+
+**Trigger:** real diver feedback from Diano Marina (Liguria di Ponente)
+surfaced that the scuba profile top-weighted (0.30) an ATMOSPHERIC visibility
+signal (`visibility_km` = sky visibility above the water) instead of what
+divers actually experience underwater. Fixed catalog-wide.
+
+### Structural changes (all files v2.0.0 base semantics, region variants v0.2.0, clusters v0.2.0)
+
+- **`visibility` (visibility_km) 0.30 → `surface_visibility` 0.05** — renamed
+  and demoted. Still relevant for boat surface navigation + signalling but
+  no longer a top-weight quality signal.
+- **NEW `water_clarity` (water_clarity_index) 0.25 → 0.30** — top-weight in
+  base and region variants. This is the real diver-relevant "visibility"
+  (Kd490 + turbidity + algal-bloom + depth in the consumer scoring engine).
+- **NEW `current` (tidal_current_speed_kn) 0.08–0.10** — dimension penalising
+  strong tidal current; drift-management becomes unsafe past ~1.5 kn for
+  recreational divers.
+- **NEW gate `turbidity_proxy > 0.7`** (POOR_UNDERWATER_VISIBILITY) —
+  underwater visibility crash triggers hard gate.
+- **NEW gate `tidal_current_speed_kn > 2.5`** (STRONG_CURRENT_UNSAFE).
+- **Bug fix:** turbidity_proxy gate value CORRECTED from wrong-scale 22–25
+  (the metric returns 0–1 in the engine) to 0.7. Region variants had been
+  effectively no-op on this gate. Affects 6 region variants (mediterranean,
+  adriatic, caribbean, red-sea, indian, pacific) — the gate was dead code
+  in the 25 form.
+- **`visibility_km < 0.5` gate** kept but reason_code renamed to
+  `POOR_SURFACE_VISIBILITY` to disambiguate from underwater visibility.
+
+### Cascaded across the catalog (42 scuba clusters)
+
+Every scuba cluster inherits dimensions from its region variant (existing
+pattern). The realignment was applied to all 42 clusters so scoring at
+real coordinates (e.g. Diano Marina 43.9085 / 8.0825) actually reflects
+the fix. Cluster-specific deviations preserved for:
+- **`yucatan-cenotes`**: freshwater regime — water_clarity boosted to 0.40
+  (halocline/runoff swings dominate), current dim at 0.05 (near-zero
+  freshwater flow), documented in meta.notes.
+- **`silfra`**: still-water glacial fissure — current + turbidity gates
+  effectively inert but retained for schema-contract consistency,
+  documented.
+
+### Version bumps
+
+- `catalog/water/scuba/index.yaml`: **1.0.0 → 2.0.0** (breaking scoring semantics)
+- 6 region variants: **0.1.0 → 0.2.0**
+- 42 clusters: **0.1.0 → 0.2.0**
+- `package.json`: **2.7.0 → 2.8.0** (minor — scuba scoring is meaningfully different for consumers)
+- `dist/catalog.json` schemaVersion stays at 2.3.0 — no schema change.
+
+### Honest caveats
+
+- **All curves, weights, and gate thresholds are PLACEHOLDER** pending
+  certified-diver review in a separate calibration session. They preserve
+  monotonic sensibility; numeric values will move once validated.
+- **`turbidity_proxy`** in the consumer engine today is a rainfall-72h
+  heuristic, not ocean-colour. Legitimate signal but weak. A real fix
+  requires CMEMS Kd490 + SPM (follow-on task on the provider side).
+- **`tidal_current_speed_kn`** reflects TIDAL current only, not surface
+  currents. Also follow-on: CMEMS surface currents u/v.
+- **`meta.maturity`** stays `provisional` catalog-wide for scuba.
+- **Sub-spot files not touched** — sub-spots inherit dimensions from cluster
+  per schema, so cluster-level realignment propagates automatically.
+
+### Consumer-side coordination
+
+The monorepo (packages/profiles) shares the same Zod MetricEnum. All three
+new metrics (`water_clarity_index`, `turbidity_proxy`, `tidal_current_speed_kn`)
+were already in the enum from L1e — **no coordinated schema change required**.
+Consumer scoring tests for scuba will need expectation updates after `pnpm
+update @goable-io/profiles-catalog` — the breakdown at a scuba coordinate
+will now show `water_clarity` (top) + `current` where it previously showed
+`visibility` at 0.30.
+
+## [2.7.0] — released
 
 ### Added — MEGA catalog expansion pack (land + air + snow + water + coverage gaps)
 

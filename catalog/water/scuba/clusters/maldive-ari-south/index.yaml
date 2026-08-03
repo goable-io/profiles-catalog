@@ -1,6 +1,6 @@
 slug: scuba-spot-maldive-ari-south
 spot_kind: cluster
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba-indian
 region: indian
@@ -26,15 +26,16 @@ description:
     action. Water 27-30°C year-round. Liveaboard-dominant format.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
+  - name: water_clarity
+    metric: water_clarity_index
     weight: 0.28
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.15 }
-      - { x: 2.0, s: 0.65 }
-      - { x: 5.0, s: 0.92 }
-      - { x: 10,  s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
@@ -49,13 +50,24 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.18
+    weight: 0.15
     curve:
       - { x: 22, s: 0.50 }
       - { x: 26, s: 0.90 }
       - { x: 28, s: 1.00 }
       - { x: 30, s: 1.00 }
       - { x: 32, s: 0.80 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
@@ -67,24 +79,25 @@ dimensions:
       - { x: 24, s: 0.30 }
       - { x: 30, s: 0.00 }
 
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.10
-    curve:
-      - { x: 0.0, s: 0.10 }
-      - { x: 0.3, s: 0.50 }
-      - { x: 0.7, s: 0.90 }
-      - { x: 1.0, s: 1.00 }
-
   - name: air_temp_comfort
     metric: apparent_temp_c
-    weight: 0.07
+    weight: 0.05
     curve:
       - { x: 15, s: 0.40 }
       - { x: 24, s: 0.90 }
       - { x: 28, s: 1.00 }
       - { x: 34, s: 0.90 }
       - { x: 42, s: 0.30 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
@@ -99,22 +112,37 @@ gates:
     condition: gt
     value: 3.0
     reason_code: MONSOON_HIGH_SEAS
-    description: Wave above 3.0 m during SW monsoon peak makes E-channel drop-off + drift-dive retrieval unsafe.
+    description: Wave height above 3.0 m in Indian-Ocean coastal or atoll-outer sites (monsoon exposure) makes RIB access and drift-dive drop-off unsafe.
+
   - metric: wind_speed_kn
     condition: gt
     value: 28
     reason_code: MONSOON_HIGH_WIND
-    description: Sustained wind above 28 knots during monsoon transition makes liveaboard operations stand down.
+    description: Sustained wind above 28 knots on monsoon side of atoll or coastal site makes surface support and safety-stop hold unsafe.
+
   - metric: visibility_km
     condition: lt
     value: 0.8
-    reason_code: MONSOON_POOR_VISIBILITY
-    description: Surface visibility below 800 m during monsoon squall makes site-finding unsafe.
+    reason_code: MONSOON_POOR_SURFACE_VISIBILITY
+    description: Surface visibility below 800 m during monsoon squall periods makes site-finding unsafe.
+
   - metric: precipitation_mm_h
     condition: gt
     value: 20
     reason_code: MONSOON_DELUGE
-    description: Heavy monsoon rain above 20 mm/h correlates with atoll-wide visibility crash.
+    description: Heavy monsoon rainfall above 20 mm/h correlates with atoll-wide underwater visibility crash (plankton bloom + terrestrial runoff on high-island sites like Tulamben, Komodo, Pemba).
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_INDIAN
+    description: Elevated turbidity from monsoon-band runoff or plankton bloom crashes the Indian-Ocean atoll clarity below 5 m.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 3.0
+    reason_code: STRONG_CURRENT_UNSAFE_INDIAN
+    description: Sustained current above 3.0 knots on Maldive channel + Komodo tidal-race sites exceeds standard recreational drift-management (advanced-drift certifications recommended).
 
 sustainability:
   carbon_neutral: true
@@ -150,3 +178,10 @@ meta:
     the SW-Indian atoll sector. 40-week season with SW-monsoon peak
     windows (Jul-Sep) delivering the manta + whale-shark encounter
     concentration.
+
+    v0.2.0 realigned to v2.0.0 scuba-indian structure — water_clarity
+    (0.28) replaces the old atmospheric-visibility top signal; current
+    dimension (0.10, tidal_current_speed_kn) added to reflect the
+    E-channel tidal flow that concentrates the manta + whale-shark
+    encounter; surface_visibility demoted to 0.05 (surface navigation
+    only). turbidity_proxy gate corrected to the 0.7 index scale.

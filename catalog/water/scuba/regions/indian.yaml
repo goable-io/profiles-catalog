@@ -1,6 +1,6 @@
 slug: scuba-indian
 spot_kind: region
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba
 region: indian
@@ -19,21 +19,25 @@ description:
     fringe). The regime is warm-water year-round (26-30°C), atoll +
     pinnacle + wall + drift-dominant, with strong tidal current cycles
     driving the pelagic-encounter windows (manta cleaning stations,
-    whale-shark aggregations at Ari South May-Sep). Monsoon regimes
-    partition seasons — SW monsoon (May-Oct) drives Maldive W-side
-    visibility; NE monsoon (Nov-Apr) drives E-side. Coral-cover under
-    bleaching pressure since 1998, 2016, 2023 basin events.
+    whale-shark aggregations at Ari South May-Sep). Current is a
+    meaningful quality factor here (both a positive when it drives the
+    pelagic show and a negative past the drift-management threshold).
+    Monsoon regimes partition seasons — SW monsoon (May-Oct) drives
+    Maldive W-side clarity; NE monsoon (Nov-Apr) drives E-side.
+
+# v0.2.0 — realigned to v2.0.0 base semantics. Placeholder pending diver review.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
+  - name: water_clarity
+    metric: water_clarity_index
     weight: 0.28
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.15 }
-      - { x: 2.0, s: 0.65 }
-      - { x: 5.0, s: 0.92 }
-      - { x: 10,  s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
@@ -48,13 +52,24 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.18
+    weight: 0.15
     curve:
       - { x: 22, s: 0.50 }
       - { x: 26, s: 0.90 }
       - { x: 28, s: 1.00 }
       - { x: 30, s: 1.00 }
       - { x: 32, s: 0.80 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
@@ -66,24 +81,25 @@ dimensions:
       - { x: 24, s: 0.30 }
       - { x: 30, s: 0.00 }
 
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.10
-    curve:
-      - { x: 0.0, s: 0.10 }
-      - { x: 0.3, s: 0.50 }
-      - { x: 0.7, s: 0.90 }
-      - { x: 1.0, s: 1.00 }
-
   - name: air_temp_comfort
     metric: apparent_temp_c
-    weight: 0.07
+    weight: 0.05
     curve:
       - { x: 15, s: 0.40 }
       - { x: 24, s: 0.90 }
       - { x: 28, s: 1.00 }
       - { x: 34, s: 0.90 }
       - { x: 42, s: 0.30 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
@@ -109,7 +125,7 @@ gates:
   - metric: visibility_km
     condition: lt
     value: 0.8
-    reason_code: MONSOON_POOR_VISIBILITY
+    reason_code: MONSOON_POOR_SURFACE_VISIBILITY
     description: Surface visibility below 800 m during monsoon squall periods makes site-finding unsafe.
 
   - metric: precipitation_mm_h
@@ -117,6 +133,18 @@ gates:
     value: 20
     reason_code: MONSOON_DELUGE
     description: Heavy monsoon rainfall above 20 mm/h correlates with atoll-wide underwater visibility crash (plankton bloom + terrestrial runoff on high-island sites like Tulamben, Komodo, Pemba).
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_INDIAN
+    description: Elevated turbidity from monsoon-band runoff or plankton bloom crashes the Indian-Ocean atoll clarity below 5 m.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 3.0
+    reason_code: STRONG_CURRENT_UNSAFE_INDIAN
+    description: Sustained current above 3.0 knots on Maldive channel + Komodo tidal-race sites exceeds standard recreational drift-management (advanced-drift certifications recommended).
 
 sustainability:
   carbon_neutral: true
@@ -148,14 +176,10 @@ meta:
     - "Maldives Marine Research Institute (MRI) tourism-diving standards"
     - "Hanifaru Bay UNESCO Biosphere Reserve management plan"
     - "Indonesian Ministry of Marine Affairs Komodo + Nusa Penida MPA rules"
-    - "PADI Indian-Ocean regional dive condition handbook"
+    - "PADI Indian-Ocean regional dive condition handbook — TODO diver review"
     - "Coral Triangle Initiative site-monitoring reports 2018-2023"
   notes: |
-    Regional overrides vs global scuba: water_temp sweet-spot 28-30°C
-    (year-round warm regime); wind gate raised to 28 kn (monsoon
-    tolerance vs Red Sea's tighter 25 kn); added monsoon-deluge gate at
-    20 mm/h reflecting plankton-bloom + runoff coupling on high-island
-    sites. 40-week season with 8 weeks of monsoon-transition storm
-    windows partitioned per basin. Cross-basin variance (Maldives vs
-    Indonesian E-fringe vs E-African coast) is captured at cluster
-    level, not here.
+    v0.2.0 realigned — water_clarity 0.28 top signal. Current dimension
+    0.10 (Maldive tidal channels + Komodo tidal races make current
+    real). Monsoon deluge + high wind + surface visibility gates
+    preserved.

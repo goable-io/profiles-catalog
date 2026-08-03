@@ -1,6 +1,6 @@
 slug: scuba-mediterranean
 spot_kind: region
-version: "1.0.0"
+version: "0.2.0"
 category: water
 extends: scuba
 region: mediterranean
@@ -13,25 +13,32 @@ display_name:
 description:
   en: |
     Mediterranean diving spans coastal walls, posidonia meadows, wrecks,
-    and seamount drift dives across the basin. Visibility is generally
-    better than Atlantic sites (15-30m typical) but seasonally variable —
-    spring blooms and post-storm sediment can briefly halve it. Water
-    temperature stratification is sharp: thermocline at 15-25m drops
-    bottom temperatures by 6-10°C below mixed-layer values. Regional
-    overrides shift the optimal water_temperature curve to a higher
-    sweet spot (basin warms to 26-28°C in August) and weight visibility
-    higher because Mediterranean clarity is part of the value proposition.
+    and seamount drift dives across the basin. Underwater clarity is
+    the value proposition — 15-30 m typical — but is seasonally variable:
+    spring blooms and post-storm sediment can briefly halve it.
+    Regional overrides raise the `water_clarity` weight above the base
+    (Mediterranean clarity carries scoring weight), shift the
+    `water_temp` sweet spot warmer (basin warms to 26-28°C in August),
+    and tighten the turbidity + surface-visibility gates. Current is
+    generally low in coastal Mediterranean sites; the `current`
+    dimension retains a small weight for the drift-diving fringe
+    (Bocche di Bonifacio, Strait of Messina, Gibraltar current cone).
+
+# v0.2.0 — restructured on the v2.0.0 base semantics. Placeholder curves +
+# weights pending certified-diver review. See scuba/index.yaml meta.notes
+# for the full v2.0.0 change rationale (Diano Marina real-diver feedback).
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
-    weight: 0.32
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.30
     curve:
-      - { x: 0.0, s: 0.0 }
-      - { x: 0.5, s: 0.1 }
-      - { x: 1.0, s: 0.5 }
-      - { x: 3.0, s: 0.85 }
-      - { x: 5.0, s: 1.0 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
@@ -55,24 +62,26 @@ dimensions:
       - { x: 28, s: 1.00 }
       - { x: 30, s: 0.90 }
 
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.08
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
+
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.10
+    weight: 0.08
     curve:
       - { x: 0,  s: 1.00 }
       - { x: 8,  s: 1.00 }
       - { x: 14, s: 0.75 }
       - { x: 20, s: 0.40 }
       - { x: 28, s: 0.00 }
-
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.08
-    curve:
-      - { x: 0.0, s: 0.15 }
-      - { x: 0.3, s: 0.55 }
-      - { x: 0.6, s: 0.85 }
-      - { x: 1.0, s: 1.00 }
 
   - name: air_temp_comfort
     metric: apparent_temp_c
@@ -83,6 +92,16 @@ dimensions:
       - { x: 22, s: 1.00 }
       - { x: 32, s: 1.00 }
       - { x: 40, s: 0.55 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.04
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
@@ -102,8 +121,8 @@ gates:
   - metric: visibility_km
     condition: lt
     value: 0.8
-    reason_code: POOR_VISIBILITY_MED
-    description: Surface visibility below 800m during Mediterranean haze/sirocco events makes site-finding unsafe.
+    reason_code: POOR_SURFACE_VISIBILITY_MED
+    description: Surface visibility below 800m during Mediterranean haze/sirocco events makes site-finding unsafe (surface navigation only — underwater visibility is scored separately via water_clarity + turbidity_proxy).
 
   - metric: precipitation_mm_h
     condition: gt
@@ -113,9 +132,15 @@ gates:
 
   - metric: turbidity_proxy
     condition: gt
-    value: 25
-    reason_code: HIGH_TURBIDITY_POSTSTORM
-    description: Elevated turbidity (post-storm sediment, river plumes) destroys diving quality and creates underwater navigation hazards.
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_MED
+    description: Elevated turbidity (post-storm sediment, river plumes) crashes underwater visibility to sub-2m — dive quality destroyed and buddy separation risk rises sharply. (Previous v0.1.0 used the wrong scale value 25 — corrected to 0.7 on the 0-1 turbidity_proxy scale.)
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE_MED
+    description: Sustained tidal current above 2.5 knots (rare in Mediterranean coastal sites but real in Bocche di Bonifacio, Strait of Messina, and Gibraltar current cone) exceeds recreational drift-management capacity.
 
 sustainability:
   carbon_neutral: true
@@ -146,13 +171,24 @@ meta:
     - "FIPSAS (Italian underwater federation) Mediterranean dive site classification"
     - "Mediterranean Action Plan (UNEP/MAP) MPA carrying capacity guidance"
     - "Lloret et al. 2008, Mediterranean SCUBA diving impact studies"
-    - "PADI Mediterranean regional dive condition handbook"
+    - "PADI Mediterranean regional dive condition handbook — TODO diver review"
   notes: |
-    Regional overrides vs global scuba: visibility weight raised from
-    0.30 to 0.32 (Mediterranean clarity is part of the value proposition);
-    water_temp optimal shifted from 22 to 26°C (basin warming); added
-    turbidity_proxy gate (post-storm sediment events are the main
-    quality killer in shoulder seasons). Water clarity sub-metric added
-    explicitly as a small weight to flag bloom periods (April-May,
-    September). Wave gate tightened from 2.5 to 2.3 m given prevailing
-    shore-entry sites.
+    v0.2.0 (breaking) — realigned to v2.0.0 base structure. Diano Marina
+    real-diver feedback drove the semantics reset. See scuba/index.yaml
+    meta.notes for the full changelog.
+
+    Regional overrides vs v2.0.0 base:
+    - water_clarity weight raised 0.25 → 0.30 (Mediterranean clarity is
+      the value proposition — every degree of clarity loss is felt).
+    - water_temp weight raised 0.18 → 0.20 (Mediterranean basin warms
+      to 26-28°C August; cold-shoulder-months hit tourist-comfort hard).
+    - current weight lowered 0.10 → 0.08 (Mediterranean coastal sites
+      are generally low-current outside Bocche di Bonifacio + Messina).
+    - surface_visibility weight lowered 0.05 → 0.04.
+    - wave gate tightened 2.5 → 2.3 (prevailing shore-entry sites).
+    - visibility_km surface gate tightened 0.5 → 0.8 km.
+    - precip gate tightened 15 → 12 mm/h.
+    - turbidity_proxy gate CORRECTED from 25 (wrong 0-100 scale) to
+      0.7 (correct 0-1 scale matching the consumer engine output).
+
+    Placeholder — all numeric values pending diver review.

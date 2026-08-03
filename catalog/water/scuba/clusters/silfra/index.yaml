@@ -1,6 +1,6 @@
 slug: scuba-spot-silfra
 spot_kind: cluster
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba
 region: atlantic
@@ -28,19 +28,20 @@ description:
     and char — the draw is the geology and visibility itself.
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
-    weight: 0.30
+  - name: water_clarity
+    metric: water_clarity_index
+    weight: 0.25
     curve:
-      - { x: 0.0, s: 0.0 }
-      - { x: 0.5, s: 0.0 }
-      - { x: 1.0, s: 0.4 }
-      - { x: 3.0, s: 0.8 }
-      - { x: 5.0, s: 1.0 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
-    weight: 0.25
+    weight: 0.22
     curve:
       - { x: 0.0, s: 1.00 }
       - { x: 0.3, s: 1.00 }
@@ -51,17 +52,28 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.20
+    weight: 0.18
     curve:
-      - { x: 0, s: 0.0 }
-      - { x: 8, s: 0.3 }
-      - { x: 15, s: 0.7 }
-      - { x: 22, s: 1.0 }
-      - { x: 30, s: 0.9 }
+      - { x: 0, s: 0.00 }
+      - { x: 8, s: 0.30 }
+      - { x: 15, s: 0.70 }
+      - { x: 22, s: 1.00 }
+      - { x: 30, s: 0.90 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
-    weight: 0.10
+    weight: 0.08
     curve:
       - { x: 0, s: 1.00 }
       - { x: 8, s: 1.00 }
@@ -72,21 +84,31 @@ dimensions:
 
   - name: air_temp_comfort
     metric: apparent_temp_c
-    weight: 0.10
+    weight: 0.07
     curve:
-      - { x: -5, s: 0.0 }
-      - { x: 5, s: 0.3 }
-      - { x: 15, s: 0.8 }
-      - { x: 25, s: 1.0 }
-      - { x: 38, s: 0.7 }
+      - { x: -5, s: 0.00 }
+      - { x: 5, s: 0.30 }
+      - { x: 15, s: 0.80 }
+      - { x: 25, s: 1.00 }
+      - { x: 38, s: 0.70 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
     weight: 0.05
     curve:
-      - { x: 0, s: 0.0 }
-      - { x: 10, s: 0.6 }
-      - { x: 30, s: 1.0 }
+      - { x: 0, s: 0.00 }
+      - { x: 10, s: 0.60 }
+      - { x: 30, s: 1.00 }
 
 gates:
   - metric: wave_height_m
@@ -98,14 +120,26 @@ gates:
   - metric: visibility_km
     condition: lt
     value: 0.5
-    reason_code: POOR_VISIBILITY
-    description: Visibility below 500m is unsafe for navigation to dive sites.
+    reason_code: POOR_SURFACE_VISIBILITY
+    description: Surface visibility below 500m is unsafe for surface navigation to dive sites and for VHF-line-of-sight boat-to-shore signalling.
 
   - metric: precipitation_mm_h
     condition: gt
     value: 15
     reason_code: HEAVY_RAIN
     description: Heavy rain reduces surface visibility and indicates storm conditions.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY
+    description: Elevated turbidity (rainfall-runoff proxy, ocean-colour once wired) crashes underwater visibility to sub-2m — dive quality destroyed and navigation-with-buddy compromised.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 2.5
+    reason_code: STRONG_CURRENT_UNSAFE
+    description: Sustained current above 2.5 knots exceeds recreational-diver drift-management capacity; ascent-line hold and buddy separation become material risks.
 
 sustainability:
   carbon_neutral: true
@@ -145,3 +179,19 @@ meta:
     2-4°C year-round regardless of season, unlike ocean sites; the
     52-week season reflects year-round permit access (winter access
     weather-dependent on Þingvellir road conditions).
+
+    v0.2.0 realigned to v2.0.0 base scuba structure (no scuba-atlantic
+    regional variant exists, so base dimensions/gates copied directly)
+    — water_clarity (0.25) replaces the old atmospheric-visibility
+    top signal; current dimension (0.10, tidal_current_speed_kn)
+    added, though Silfra's fissure is a still-water freshwater site
+    with negligible current in practice; surface_visibility demoted
+    to 0.05. NEW turbidity_proxy and tidal_current_speed_kn gates
+    added from base — largely inert for Silfra given the glacial-
+    filtered meltwater's near-zero turbidity and lack of tidal flow,
+    but included for structural consistency with the base contract.
+    Silfra's real differentiator (100 m+ clarity from 30-100 year
+    lava-filtered glacial meltwater) is best expressed once
+    water_clarity_index is wired to a real clarity signal rather than
+    the rainfall-turbidity heuristic, which does not apply to this
+    tectonic-fissure site.

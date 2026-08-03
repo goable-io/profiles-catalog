@@ -1,6 +1,6 @@
 slug: scuba-spot-belize-blue-hole
 spot_kind: cluster
-version: "0.1.0"
+version: "0.2.0"
 category: water
 extends: scuba-caribbean
 region: caribbean
@@ -26,15 +26,16 @@ description:
     Liveaboard-only access (65 km from Belize mainland).
 
 dimensions:
-  - name: visibility
-    metric: visibility_km
+  - name: water_clarity
+    metric: water_clarity_index
     weight: 0.30
     curve:
-      - { x: 0.0, s: 0.00 }
-      - { x: 0.5, s: 0.15 }
-      - { x: 2.0, s: 0.60 }
-      - { x: 5.0, s: 0.90 }
-      - { x: 10,  s: 1.00 }
+      - { x: 0.0, s: 0.05 }
+      - { x: 0.2, s: 0.20 }
+      - { x: 0.4, s: 0.55 }
+      - { x: 0.6, s: 0.85 }
+      - { x: 0.8, s: 0.95 }
+      - { x: 1.0, s: 1.00 }
 
   - name: wave
     metric: wave_height_m
@@ -49,13 +50,24 @@ dimensions:
 
   - name: water_temp
     metric: water_temperature_c
-    weight: 0.18
+    weight: 0.15
     curve:
       - { x: 20, s: 0.40 }
       - { x: 24, s: 0.80 }
       - { x: 27, s: 1.00 }
       - { x: 30, s: 1.00 }
       - { x: 32, s: 0.85 }
+
+  - name: current
+    metric: tidal_current_speed_kn
+    weight: 0.10
+    curve:
+      - { x: 0.0, s: 1.00 }
+      - { x: 0.3, s: 1.00 }
+      - { x: 0.7, s: 0.85 }
+      - { x: 1.2, s: 0.60 }
+      - { x: 1.8, s: 0.30 }
+      - { x: 2.5, s: 0.05 }
 
   - name: wind_speed
     metric: wind_speed_kn
@@ -67,24 +79,25 @@ dimensions:
       - { x: 24, s: 0.25 }
       - { x: 30, s: 0.00 }
 
-  - name: water_clarity
-    metric: water_clarity_index
-    weight: 0.10
-    curve:
-      - { x: 0.0, s: 0.10 }
-      - { x: 0.3, s: 0.50 }
-      - { x: 0.7, s: 0.90 }
-      - { x: 1.0, s: 1.00 }
-
   - name: air_temp_comfort
     metric: apparent_temp_c
-    weight: 0.07
+    weight: 0.05
     curve:
       - { x: 12, s: 0.30 }
       - { x: 22, s: 0.85 }
       - { x: 28, s: 1.00 }
       - { x: 34, s: 0.95 }
       - { x: 42, s: 0.35 }
+
+  - name: surface_visibility
+    metric: visibility_km
+    weight: 0.05
+    curve:
+      - { x: 0.0, s: 0.00 }
+      - { x: 0.5, s: 0.20 }
+      - { x: 1.0, s: 0.55 }
+      - { x: 3.0, s: 0.85 }
+      - { x: 5.0, s: 1.00 }
 
   - name: sun
     metric: sun_altitude_deg
@@ -99,22 +112,37 @@ gates:
     condition: gt
     value: 3.0
     reason_code: CARIBBEAN_HIGH_SEAS
-    description: Wave above 3.0 m at Lighthouse Reef makes 65 km mainland liveaboard transit and drop-off unsafe.
+    description: Wave height above 3.0 m in Caribbean coastal sites (usually cold-front or hurricane periphery) makes boat access and drift-dive drop-off unsafe.
+
   - metric: wind_speed_kn
     condition: gt
     value: 30
     reason_code: HURRICANE_PERIPHERY
-    description: Sustained wind above 30 knots signals hurricane periphery; Belize offshore atolls stand down + evacuate.
+    description: Sustained wind above 30 knots signals hurricane periphery or strong cold-front passage; all operations stand down and evacuation protocols may be triggered.
+
   - metric: visibility_km
     condition: lt
     value: 0.5
-    reason_code: POOR_VISIBILITY_CARIB
-    description: Surface visibility below 500 m during tropical squall makes drop-off retrieval unsafe.
+    reason_code: POOR_SURFACE_VISIBILITY_CARIB
+    description: Surface visibility below 500 m during squall passage or heavy tropical rain makes site-finding unsafe (surface navigation only).
+
   - metric: precipitation_mm_h
     condition: gt
     value: 20
     reason_code: TROPICAL_DELUGE
-    description: Heavy tropical rain above 20 mm/h correlates with squall passage; operations pause.
+    description: Heavy tropical rainfall above 20 mm/h correlates with tropical storm systems; operations pause.
+
+  - metric: turbidity_proxy
+    condition: gt
+    value: 0.7
+    reason_code: POOR_UNDERWATER_VISIBILITY_CARIB
+    description: Elevated turbidity from runoff or hurricane sediment stir crashes underwater visibility below 5 m and destroys reef-dive quality.
+
+  - metric: tidal_current_speed_kn
+    condition: gt
+    value: 3.0
+    reason_code: STRONG_CURRENT_UNSAFE_CARIB
+    description: Sustained tidal current above 3.0 knots on Caribbean drift walls (Cozumel Santa Rosa, Cayman North Wall) exceeds standard recreational drift-management — technical certifications recommended.
 
 sustainability:
   carbon_neutral: true
@@ -147,3 +175,11 @@ meta:
     Spot overrides vs scuba-caribbean: matches regional baseline for
     the W-Caribbean atoll sector. 44-week season with 8-week
     hurricane peak (Aug-Oct).
+
+    v0.2.0 realigned to v2.0.0 base structure: water_clarity is now the
+    top signal (0.30 weight, replacing the old `visibility` top-weighted
+    dimension); surface_visibility (surface fog/haze) demoted to 0.05;
+    current dimension added (0.10) — offshore atoll drift is a real
+    quality factor at Lighthouse Reef; turbidity_proxy gate scale
+    corrected to the 0-1 index range. Dimensions/gates copied verbatim
+    from scuba-caribbean v0.2.0.
