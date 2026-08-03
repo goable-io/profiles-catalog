@@ -134,6 +134,12 @@ gates:
     reason_code: COLD_WATER_HYPOTHERMIA
     description: Water below 6°C (rare but possible during cold-front upwelling spikes) requires hooded 6/5 mm beyond standard NorCal stock.
 
+  - metric: rip_current_proxy
+    condition: gt
+    value: 0.75
+    reason_code: RIP_CURRENT_HAZARD
+    description: A rip-current proxy above 0.75 indicates strong channelised offshore flow from oblique groundswell over a sand or mixed bottom, a drowning hazard when entering or exiting the water.
+
 sustainability:
   carbon_neutral: true
   equipment_dependency: medium

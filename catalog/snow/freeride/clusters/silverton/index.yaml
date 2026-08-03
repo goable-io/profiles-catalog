@@ -135,6 +135,12 @@ gates:
     reason_code: HEAVY_SNOWFALL_AVALANCHE_LOADING
     description: Heavy active snowfall loads slopes acutely onto the San Juans' persistent weak layers; consult CAIC San Juan zone daily.
 
+  - metric: snow_visibility_m
+    condition: lt
+    value: 150
+    reason_code: BLOWING_SNOW_WHITEOUT
+    description: Wind-driven snow (spindrift or ground blizzard) reducing visibility below ~150 m causes whiteout and loss of horizon even when the air is otherwise clear, making route-finding and terrain reading unsafe.
+
 sustainability:
   carbon_neutral: false
   equipment_dependency: high

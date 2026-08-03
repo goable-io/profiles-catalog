@@ -18,7 +18,49 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 3.0.0
+## [Unreleased] — lands as 3.1.0
+
+Cross-domain engine enrichment: new scored dimensions and safety gates that
+surface physics the scoring engine already computed but no profile consumed —
+deliberately weighted toward the under-served air, land and snow domains rather
+than water. Purely additive at the API level (no metric removed or renamed).
+
+### Added — scored dimensions (weighted into the 0–100 score)
+
+- **Air — launch/lift performance.** `density_altitude` (metric
+  `density_altitude_m`, weight 0.08) on paragliding and hang-gliding, and
+  `air_density` (metric `air_density_kg_m3`, weight 0.10) on hot-air-ballooning.
+  Thin, hot, high air degrades wing launch and balloon lift; the curves are
+  anchored on the ICAO standard atmosphere (ρ ≈ 1.225 kg/m³ at ISA sea level).
+- **Land — trail traction.** `trail_traction` (metric `soil_moisture_proxy`,
+  weight 0.10) on trail-running, mountain-biking and trekking. A wet or
+  saturated surface degrades grip and worsens trail erosion; the signal is a
+  precipitation-minus-evapotranspiration water balance (FAO-56 ET₀), distinct
+  from and complementary to the existing `apparent_temp_c` comfort dimension —
+  no thermal double-counting.
+
+Each dimension addition preserves the sum-to-one weight invariant by moving its
+weight out of that profile's single dominant dimension, so existing relative
+weightings are otherwise unchanged.
+
+### Added — safety gates (can force an unsafe verdict)
+
+- **Snow — blowing-snow whiteout.** `snow_visibility_m < 150 m`
+  (`BLOWING_SNOW_WHITEOUT`) across freeride, snowboarding, ski-touring and
+  alpine-skiing. Wind-driven spindrift/ground-blizzard whiteout is a distinct
+  hazard from horizontal `visibility_km`, so this complements — does not replace
+  — any existing visibility gate.
+- **Water — rip current.** `rip_current_proxy` (`RIP_CURRENT_HAZARD`) on
+  surfing, bodyboarding and SUP (> 0.75) and, stricter for unaided swimmers,
+  open-water swimming (> 0.6).
+
+### Changed — schema
+
+- `MetricEnum` gains `soil_moisture_proxy`.
+- Removed the last residual internal-development comments (`L1d`/`L1e`/`L1f`
+  markers) from the metric enum, completing the 3.0.0 public-notes cleanup.
+
+## [3.0.0]
 
 A milestone release: the soaring-flight XC scoring addition below, plus a
 catalog-wide **public-notes cleanup**. No profile data (dimensions, weights,
