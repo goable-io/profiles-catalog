@@ -18,7 +18,34 @@ resolves the version to publish as follows:
 
 The format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
-## [Unreleased] — lands as 2.8.0
+## [Unreleased] — lands as 2.9.0
+
+### Changed — soaring-flight XC condition now a scored dimension (paragliding + hang-gliding)
+
+**Trigger:** `xc_condition_score` — the backend scoring engine's 0..1
+cross-country soaring index (thermal lift + convective cloud base + low
+vertical wind shear + moderate cloud cover) — was COMPUTED on every request
+in `packages/scoring` (`summarize.ts`) but scored by NO profile. Its inputs
+(boundary_layer_height, shortwave_radiation, 900hPa wind, dewpoint,
+cloud_cover) are always fetched in production, so the metric is reliably
+populated, not dormant. Wired it into the two soaring-flight profiles as a
+real weighted dimension.
+
+- **NEW `xc_condition` (xc_condition_score) 0.12** on both **paragliding**
+  and **hang-gliding**. Monotonic-increasing suitability curve
+  (0.0→0.00, 0.2→0.20, 0.4→0.50, 0.6→0.75, 0.8→0.92, 1.0→1.00): higher =
+  better XC day. Meaningful but not dominant — wind and safety still lead.
+- **Rebalanced** each profile's pre-existing dimension weights
+  proportionally (×0.88) so the set still sums to 1.0 and relative
+  proportions are preserved: wind_speed 0.30→0.26, gust_factor 0.20→0.18,
+  sun 0.15→0.13, visibility 0.15→0.13, precipitation 0.10→0.09,
+  temperature 0.10→0.09.
+- **NOT** applied to hot-air-ballooning — ballooning is not cross-country
+  soaring; it already scores `convective_cloud_base_m` appropriately.
+- `meta.notes` updated on both profiles to document the dimension,
+  rationale, and rebalance. `maturity` unchanged (provisional).
+
+## [2.8.0]
 
 ### Changed — scuba scoring semantics reset (base + 6 region variants + 42 clusters)
 
